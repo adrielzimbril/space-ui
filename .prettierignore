@@ -1,0 +1,8 @@
+dist
+node_modules
+.next
+build
+public
+public/r
+src/__registry__
+registry.json
