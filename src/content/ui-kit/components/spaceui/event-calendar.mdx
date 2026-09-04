@@ -21,19 +21,22 @@ The composition contract is a provider plus slots: `<EventCalendar>` wraps `<Eve
 ## Usage
 
 ```tsx
+import * as React from 'react'
 import { EventCalendar } from '@/components/spaceui/event-calendar/event-calendar'
 import { EventCalendarContent } from '@/components/spaceui/event-calendar/event-calendar-content'
 import { EventCalendarNav } from '@/components/spaceui/event-calendar/event-calendar-nav'
 import type { CalendarEvent } from '@/components/spaceui/event-calendar/event-calendar-types'
 
-const [events, setEvents] = useState<CalendarEvent[]>(initialEvents)
+export default function SpaceUI() {
+  const [events, setEvents] = React.useState<CalendarEvent[]>(initialEvents)
 
-return (
-  <EventCalendar events={events} onEventsChange={setEvents} defaultView="week" className="h-[600px]">
-    <EventCalendarNav />
-    <EventCalendarContent />
-  </EventCalendar>
-)
+  return (
+    <EventCalendar events={events} onEventsChange={setEvents} defaultView="week" className="h-[600px]">
+      <EventCalendarNav />
+      <EventCalendarContent />
+    </EventCalendar>
+  )
+}
 ```
 
 Pass `defaultEvents` for uncontrolled state or `events` + `onEventsChange` for controlled state; the same pairing exists for `view`, `date`, `dayCount`, `selection`, `interactions`, and `viewSettings`. In the default `scrollMode="contained"` the calendar fills its container and scrolls internally, so give the root an explicit height (the examples use `h-[560px]`). Every timing change, whether from a drag, a resize, or `api.updateEvent`, funnels through `onEventUpdate`: return `false` to reject and revert, return nothing (or `true`) to accept, or return `{ start, end, allDay }` to accept with an adjustment, then persist to your backend from `onEventsChange` or inside `onEventUpdate` itself. Use `onRangeChange` to fetch remote events for the visible range, and `apiRef` (or a hoisted `useEventCalendarState` instance passed as `calendar`) for imperative control from outside the tree.

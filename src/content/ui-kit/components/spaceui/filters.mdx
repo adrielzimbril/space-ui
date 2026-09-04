@@ -16,24 +16,27 @@ preview:
 ## Usage
 
 ```tsx
+import * as React from 'react'
 import { createFilter, Filters, type Filter, type FilterFieldConfig } from '@/components/spaceui/filters'
 
-const [filters, setFilters] = useState<Filter[]>([createFilter('priority', 'is_any_of', ['low', 'medium'])])
+export default function SpaceUI() {
+  const [filters, setFilters] = React.useState<Filter[]>([createFilter('priority', 'is_any_of', ['low', 'medium'])])
 
-const fields: FilterFieldConfig[] = [
-  {
-    key: 'priority',
-    label: 'Priority',
-    type: 'multiselect',
-    options: [
-      { value: 'low', label: 'Low' },
-      { value: 'medium', label: 'Medium' },
-      { value: 'high', label: 'High' },
-    ],
-  },
-]
+  const fields: FilterFieldConfig[] = [
+    {
+      key: 'priority',
+      label: 'Priority',
+      type: 'multiselect',
+      options: [
+        { value: 'low', label: 'Low' },
+        { value: 'medium', label: 'Medium' },
+        { value: 'high', label: 'High' },
+      ],
+    },
+  ]
 
-return <Filters filters={filters} fields={fields} onChange={setFilters} />
+  return <Filters filters={filters} fields={fields} onChange={setFilters} />
+}
 ```
 
 ## Examples

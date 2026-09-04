@@ -15,27 +15,29 @@ The Date Picker is a composition pattern combining Calendar, Popover, and Button
 ## Usage
 
 ```tsx
+import * as React from 'react'
 import { format } from 'date-fns'
-import { CalendarIcon } from 'lucide-react'
-import { useState } from 'react'
+import { IconCalendar } from '@tabler/icons-react'
 
 import { Button } from '@/components/ui/button'
 import { Calendar } from '@/components/ui/calendar'
 import { Popover, PopoverPopup, PopoverTrigger } from '@/components/ui/popover'
 
-const [date, setDate] = useState<Date>()
+export default function SpaceUI() {
+  const [date, setDate] = React.useState<Date>()
 
-return (
-  <Popover>
-    <PopoverTrigger render={<Button className="w-[280px] justify-start text-left font-normal" variant="outline" />}>
-      <CalendarIcon />
-      {date ? format(date, 'PPP') : <span>Pick a date</span>}
-    </PopoverTrigger>
-    <PopoverPopup align="start" className="w-auto p-0">
-      <Calendar mode="single" selected={date} onSelect={setDate} />
-    </PopoverPopup>
-  </Popover>
-)
+  return (
+    <Popover>
+      <PopoverTrigger render={<Button className="w-[280px] justify-start text-left font-normal" variant="outline" />}>
+        <IconCalendar className="size-4" />
+        {date ? format(date, 'PPP') : <span>Pick a date</span>}
+      </PopoverTrigger>
+      <PopoverPopup align="start" className="w-auto p-0">
+        <Calendar mode="single" selected={date} onSelect={setDate} />
+      </PopoverPopup>
+    </Popover>
+  )
+}
 ```
 
 ## Examples

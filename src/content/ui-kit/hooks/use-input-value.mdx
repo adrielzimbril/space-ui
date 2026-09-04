@@ -13,16 +13,12 @@ preview: demo-h-input-value-01
 ```tsx
 import { useInputValue } from '@/hooks/use-input-value'
 
-// Pattern 1: Tuple destructuring with binder
-const [value, bind, { reset, clear }] = useInputValue('Space UI')
-return <input {...bind} />
+export default function SpaceUI() {
+  // Pattern 1: Tuple destructuring with binder
+  const [value, bind, { reset, clear }] = useInputValue('Space UI')
 
-// Pattern 2: Direct spread
-const nameInput = useInputValue('')
-return <input {...nameInput} placeholder="Enter your name" />
-
-// Pattern 3: Object destructuring
-const { value, onChange, reset, clear } = useInputValue('Default')
+  return <input {...bind} />
+}
 ```
 
 ## API Reference

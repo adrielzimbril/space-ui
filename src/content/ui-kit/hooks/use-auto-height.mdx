@@ -15,12 +15,18 @@ preview: demo-h-auto-height-01
 ## Usage
 
 ```tsx
+import * as React from 'react'
 import { useAutoHeight } from '@/hooks/use-auto-height'
 
-const { ref, height } = useAutoHeight([items])
-<div style={{ height }}>
-  <div ref={ref}>{items}</div>
-</div>
+export default function SpaceUI({ items }: { items: React.ReactNode }) {
+  const { ref, height } = useAutoHeight([items])
+
+  return (
+    <div style={{ height }}>
+      <div ref={ref}>{items}</div>
+    </div>
+  )
+}
 ```
 
 ## API Reference

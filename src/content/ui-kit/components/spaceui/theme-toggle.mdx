@@ -15,9 +15,11 @@ Requires `next-themes` and a theme provider already in the app.
 ## Usage
 
 ```tsx
-import { ThemeToggleButton, useThemeToggle } from '@/components/spaceui/theme-toggle'
+import { ThemeToggleButton } from '@/components/spaceui/theme-toggle'
 
-;<ThemeToggleButton variant="circle" start="top-left" blur size="lg" />
+export default function SpaceUI() {
+  return <ThemeToggleButton variant="circle" start="top-left" blur size="lg" />
+}
 ```
 
 ```tsx

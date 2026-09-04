@@ -13,8 +13,11 @@ preview: demo-h-hold-01
 ```tsx
 import { useHold } from '@/hooks/use-hold'
 
-const bind = useHold(() => onDelete(), { delay: 600 })
-<button {...bind}>Hold to delete</button>
+export default function SpaceUI({ onDelete }: { onDelete: () => void }) {
+  const bind = useHold(() => onDelete(), { delay: 600 })
+
+  return <button {...bind}>Hold to delete</button>
+}
 ```
 
 ## API Reference

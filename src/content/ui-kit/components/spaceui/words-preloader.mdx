@@ -15,9 +15,13 @@ The overlay is `absolute` inside a relative parent so it does not cover the docs
 ```tsx
 import { WordsPreloader } from '@/components/spaceui/words-preloader'
 
-;<WordsPreloader words={['Hello', 'bonjour', 'Ciao']} duration={2000}>
-  <YourPage />
-</WordsPreloader>
+export default function SpaceUI() {
+  return (
+    <WordsPreloader words={['Hello', 'bonjour', 'Ciao']} duration={2000}>
+      <YourPage />
+    </WordsPreloader>
+  )
+}
 ```
 
 ## Files

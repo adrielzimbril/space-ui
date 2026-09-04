@@ -15,14 +15,21 @@ Mark each block with `data-page-section` and an `h2`. The bar reads the heading 
 ## Usage
 
 ```tsx
+import * as React from 'react'
 import { SectionScrollspy } from '@/components/spaceui/section-scrollspy'
 
-;<div ref={scrollRef} className="relative h-[420px] overflow-y-auto">
-  <section data-page-section>
-    <h2>Installation</h2>
-  </section>
-  <SectionScrollspy containerRef={scrollRef} />
-</div>
+export default function SpaceUI() {
+  const scrollRef = React.useRef<HTMLDivElement>(null)
+
+  return (
+    <div ref={scrollRef} className="relative h-[420px] overflow-y-auto">
+      <section data-page-section>
+        <h2>Installation</h2>
+      </section>
+      <SectionScrollspy containerRef={scrollRef} />
+    </div>
+  )
+}
 ```
 
 Pass `portal` to pin it to the viewport. Omit `containerRef` to track `window` scroll.

@@ -15,19 +15,23 @@ The canvas is `registry/components/shader/paper-shader/index.tsx` (default expor
 ```tsx
 import PaperShader from '@/components/shader/paper-shader'
 
-;<PaperShader
-  fragmentShader={shader}
-  uniforms={{
-    u_colorBack: [0.1, 0.1, 0.1, 1],
-    u_colorTint: [1, 1, 1, 1],
-    u_contour: 0.5,
-    u_distortion: 0.1,
-    u_softness: 0.05,
-    u_speed: 1,
-  }}
-  speed={1}
-  webGlContextAttributes={{ alpha: true, antialias: true }}
-/>
+export default function SpaceUI() {
+  return (
+    <PaperShader
+      fragmentShader={shader}
+      uniforms={{
+        u_colorBack: [0.1, 0.1, 0.1, 1],
+        u_colorTint: [1, 1, 1, 1],
+        u_contour: 0.5,
+        u_distortion: 0.1,
+        u_softness: 0.05,
+        u_speed: 1,
+      }}
+      speed={1}
+      webGlContextAttributes={{ alpha: true, antialias: true }}
+    />
+  )
+}
 ```
 
 ## Files

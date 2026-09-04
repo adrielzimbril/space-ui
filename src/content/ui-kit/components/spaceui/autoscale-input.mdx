@@ -15,7 +15,9 @@ Implementation: `registry/components/spaceui/autoscale-input/index.tsx`. A `Resi
 ```tsx
 import { AutoscaleInput } from '@/components/spaceui/autoscale-input'
 
-;<AutoscaleInput defaultValue="1234567.89" prefix="$" numberFormat="us" aria-label="Amount" />
+export default function SpaceUI() {
+  return <AutoscaleInput defaultValue="1234567.89" prefix="$" numberFormat="us" aria-label="Amount" />
+}
 ```
 
 ## Files

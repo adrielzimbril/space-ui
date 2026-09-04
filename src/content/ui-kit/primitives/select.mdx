@@ -17,25 +17,29 @@ preview: demo-p-select-01
 import { Select, SelectItem, SelectPopup, SelectLabel, SelectTrigger, SelectValue } from '@/components/ui/select'
 
 const items = [
-  { label: "Select framework", value: null },
-  { label: "Next.js", value: "next" },
-  { label: "Vite", value: "vite" },
-  { label: "Astro", value: "astro" },
+  { label: 'Select framework', value: null },
+  { label: 'Next.js', value: 'next' },
+  { label: 'Vite', value: 'vite' },
+  { label: 'Astro', value: 'astro' },
 ]
 
-<Select items={items}>
-  <SelectTrigger>
-    <SelectValue />
-  </SelectTrigger>
-  <SelectPopup>
-    <SelectLabel>Frameworks</SelectLabel>
-    {items.map((item) => (
-      <SelectItem key={item.value} value={item}>
-        {item.label}
-      </SelectItem>
-    ))}
-  </SelectPopup>
-  </Select>
+export default function SpaceUI() {
+  return (
+    <Select items={items}>
+      <SelectTrigger>
+        <SelectValue />
+      </SelectTrigger>
+      <SelectPopup>
+        <SelectLabel>Frameworks</SelectLabel>
+        {items.map((item) => (
+          <SelectItem key={item.value} value={item}>
+            {item.label}
+          </SelectItem>
+        ))}
+      </SelectPopup>
+    </Select>
+  )
+}
 ```
 
 ## Anatomy

@@ -15,12 +15,16 @@ preview:
 ```tsx
 import { BouncyAccordion } from '@/components/spaceui/bouncy-accordion'
 
-;<BouncyAccordion
-  items={[
-    { title: 'Families', description: 'Pick a variant.' },
-    { title: 'Capabilities', description: 'Inspect supported effects.' },
-  ]}
-/>
+export default function SpaceUI() {
+  return (
+    <BouncyAccordion
+      items={[
+        { title: 'Families', description: 'Pick a variant.' },
+        { title: 'Capabilities', description: 'Inspect supported effects.' },
+      ]}
+    />
+  )
+}
 ```
 
 ## API Reference

@@ -91,19 +91,21 @@ You do NOT need a React component to use Squircles. Just use the `squircle-*` cl
 ### 1. Sizing
 
 ```tsx
-export default function Squircle() {
+export default function SpaceUI() {
   return (
-    {/* Matches rounded-md */}
-    <div className="squircle-md p-4 bg-primary text-primary-foreground">Squircle!</div>
+    <>
+      {/* Matches rounded-md */}
+      <div className="squircle-md p-4 bg-primary text-primary-foreground">Squircle!</div>
 
-    {/* Matches rounded-2xl */}
-    <div className="squircle-2xl bg-muted"></div>
+      {/* Matches rounded-2xl */}
+      <div className="squircle-2xl bg-muted" />
 
-    {/* Perfectly circular/pill shape */}
-    <div className="squircle-full"></div>
+      {/* Perfectly circular/pill shape */}
+      <div className="squircle-full" />
 
-    {/* Arbitrary values are fully supported */}
-    <div className="squircle-[40px]"></div>
+      {/* Arbitrary values are fully supported */}
+      <div className="squircle-[40px]" />
+    </>
   )
 }
 ```
@@ -115,16 +117,18 @@ By default, the plugin applies a **60% smooth transition** between the straight 
 You can adjust this intensity using modifiers (`/0`, `/20`, `/40`, `/60`, `/80`, `/100`).
 
 ```tsx
-export default function Squircle() {
+export default function SpaceUI() {
   return (
-    {/* Maximum smoothing */}
-    <div className="squircle-2xl/100 bg-primary"></div>
+    <>
+      {/* Maximum smoothing */}
+      <div className="squircle-2xl/100 bg-primary" />
 
-    {/* Minimal smoothing (closer to a plain rounded rectangle) */}
-    <div className="squircle-2xl/20 bg-primary"></div>
+      {/* Minimal smoothing (closer to a plain rounded rectangle) */}
+      <div className="squircle-2xl/20 bg-primary" />
 
-    {/* Arbitrary smoothing */}
-    <div className="squircle-2xl/[25] bg-primary"></div>
+      {/* Arbitrary smoothing */}
+      <div className="squircle-2xl/[25] bg-primary" />
+    </>
   )
 }
 ```
@@ -134,13 +138,13 @@ export default function Squircle() {
 Unlike basic CSS masks, the Houdini worklet reads your **native CSS border and background classes** and draws them flawlessly.
 
 ```tsx
-export default function Squircle() {
+export default function SpaceUI() {
   return (
     <div>
       {/* 8px red border perfectly drawn onto the squircle shape */}
-      <div className="squircle-2xl border-8 border-red-500 bg-black"></div>
+      <div className="squircle-2xl border-8 border-red-500 bg-black" />
       {/* 1px semi-transparent blue border */}
-      <div className="squircle-[30px] border border-blue-500/50 bg-white"></div>
+      <div className="squircle-[30px] border border-blue-500/50 bg-white" />
     </div>
   )
 }

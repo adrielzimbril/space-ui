@@ -39,25 +39,29 @@ const items = [
   { value: "slack", label: "Slack" },
 ]
 
-<CommandDialog>
-  <CommandDialogTrigger render={<Button variant="outline" />}>
-    Open Command Palette
-  </CommandDialogTrigger>
+export default function SpaceUI() {
+  return (
+    <CommandDialog>
+      <CommandDialogTrigger render={<Button variant="outline" />}>
+        Open Command Palette
+      </CommandDialogTrigger>
 
-  <CommandDialogPopup>
-    <Command items={items}>
-      <CommandInput placeholder="Search..." />
-      <CommandEmpty>No results found.</CommandEmpty>
-      <CommandList>
-        {(item) => (
-          <CommandItem key={item.value} value={item.value}>
-            {item.label}
-          </CommandItem>
-        )}
-      </CommandList>
-    </Command>
-  </CommandDialogPopup>
-</CommandDialog>
+      <CommandDialogPopup>
+        <Command items={items}>
+          <CommandInput placeholder="Search..." />
+          <CommandEmpty>No results found.</CommandEmpty>
+          <CommandList>
+            {(item) => (
+              <CommandItem key={item.value} value={item.value}>
+                {item.label}
+              </CommandItem>
+            )}
+          </CommandList>
+        </Command>
+      </CommandDialogPopup>
+    </CommandDialog>
+  )
+}
 ```
 
 ## Anatomy

@@ -73,26 +73,28 @@ import {
   DataGridTableFootRowCell,
 } from '@/components/spaceui/data-grid'
 
-const footer = (
-  <DataGridTableFootRow>
-    <DataGridTableFootRowCell colSpan={columns.length}>Showing {data.length} rows</DataGridTableFootRowCell>
-  </DataGridTableFootRow>
-)
+export default function SpaceUI() {
+  const footer = (
+    <DataGridTableFootRow>
+      <DataGridTableFootRowCell colSpan={columns.length}>Showing {data.length} rows</DataGridTableFootRowCell>
+    </DataGridTableFootRow>
+  )
 
-const table = useReactTable({
-  data,
-  columns,
-  getCoreRowModel: getCoreRowModel(),
-})
+  const table = useReactTable({
+    data,
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+  })
 
-return (
-  <DataGrid table={table} recordCount={data.length} tableLayout={{ rowsPinnable: true }}>
-    <DataGridContainer>
-      <DataGridTable footerContent={footer} />
-    </DataGridContainer>
-    <DataGridPagination />
-  </DataGrid>
-)
+  return (
+    <DataGrid table={table} recordCount={data.length} tableLayout={{ rowsPinnable: true }}>
+      <DataGridContainer>
+        <DataGridTable footerContent={footer} />
+      </DataGridContainer>
+      <DataGridPagination />
+    </DataGrid>
+  )
+}
 ```
 
 Use `DataGridTableRowPin` inside a column definition to let users pin rows, swap in `DataGridTableVirtual` when you need virtualization or infinite scroll, and wrap sticky-header tables with `DataGridScrollArea` when you want the dedicated base scroll wrapper. When rows can be pinned or virtualized, provide a stable `getRowId` so row identity stays intact across reordering.

@@ -14,17 +14,21 @@ preview: demo-c-orb-bloop-01
 import { OrbBloop } from '@/components/orb/bloop'
 import { BLOOP_PALETTES } from '@/components/orb/bloop-palettes'
 
-const palette = BLOOP_PALETTES.BLUE
+export default function SpaceUI() {
+  const palette = BLOOP_PALETTES.BLUE
 
-<OrbBloop
-  size={220}
-  audioMode="ambient"
-  state="speak"
-  bloopColorMain={palette.main}
-  bloopColorLow={palette.low}
-  bloopColorMid={palette.mid}
-  bloopColorHigh={palette.high}
-/>
+  return (
+    <OrbBloop
+      size={220}
+      audioMode="ambient"
+      state="speak"
+      bloopColorMain={palette.main}
+      bloopColorLow={palette.low}
+      bloopColorMid={palette.mid}
+      bloopColorHigh={palette.high}
+    />
+  )
+}
 ```
 
 ## Files

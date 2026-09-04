@@ -16,11 +16,14 @@ preview:
 ## Usage
 
 ```tsx
+import * as React from 'react'
 import { DateSelector, type DateSelectorValue } from '@/components/spaceui/date-selector'
 
-const [value, setValue] = useState<DateSelectorValue | undefined>()
+export default function SpaceUI() {
+  const [value, setValue] = React.useState<DateSelectorValue | undefined>()
 
-return <DateSelector value={value} onChange={setValue} label="Due date" />
+  return <DateSelector value={value} onChange={setValue} label="Due date" />
+}
 ```
 
 ## Examples

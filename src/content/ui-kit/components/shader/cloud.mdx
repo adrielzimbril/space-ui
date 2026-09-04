@@ -24,7 +24,9 @@ Depends on `vgpu`. WebGPU required.
 ```tsx
 import { Cloud } from '@/components/shader/cloud'
 
-;<Cloud className="h-96 w-full" sky="#68b8d7" cloudColor="#adc1de" sun="#ff9919" speed={1} />
+export default function SpaceUI() {
+  return <Cloud className="h-96 w-full" sky="#68b8d7" cloudColor="#adc1de" sun="#ff9919" speed={1} />
+}
 ```
 
 ## API Reference
