@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { motion } from 'motion/react'
 import { IconLayout2 } from '@tabler/icons-react'
 import { ToolbarButton } from './playground-toolbar-button'
@@ -16,7 +16,7 @@ import { cn } from '@/registry/lib/utils'
 import { MobileNavDrawer } from '@/components/layout/mobile-nav-drawer'
 import { source, uiKitSource, resourcesSource } from '@/lib/source'
 import { getEffectiveContained } from '@/config/preview-config'
-import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
+import { useMediaQuery, useIsMobile } from '@/registry/hooks/browser/use-media-query'
 import { useRegistryEntry } from '@/components/docs/preview/hooks/use-registry-entry'
 
 export interface PlaygroundCanvasStageProps {
@@ -80,9 +80,19 @@ export function PlaygroundCanvasStage({
   reloadKey,
 }: PlaygroundCanvasStageProps) {
   const isDesktop = useMediaQuery('(min-width: 1024px)', true)
+  const isMobile = useIsMobile()
   const { setActivePreview } = useLayoutMode()
   const { entry } = useRegistryEntry(activePreview?.name ?? null)
-  const [tweakMode, setTweakMode] = useState(true)
+  const [tweakMode, setTweakMode] = useState(false)
+  const hasAutoOpenedRef = useRef(false)
+
+  useEffect(() => {
+    if (!hasAutoOpenedRef.current && !isMobile) {
+      hasAutoOpenedRef.current = true
+      setTweakMode(true)
+    }
+  }, [isMobile])
+
   const [tweakpaneKey, setTweakpaneKey] = useState(0)
   const [localBinds, setLocalBinds] = useState<Binds | null>(activePreview?.binds ?? null)
   const [localProps, setLocalProps] = useState<Record<string, any> | null>(activePreview?.componentProps ?? null)
