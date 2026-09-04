@@ -1,9 +1,10 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { IconLayout2 } from '@tabler/icons-react'
 import { resolveVariant, type AvatarEffect, type AvatarVariant } from '@usespaceui/avatars'
 import { bloomSound } from '@/components/providers/sound-provider'
+import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
 import { MobileNavDrawer } from '@/components/layout/mobile-nav-drawer'
 import { ToolbarButton } from '@/components/playground/playground-toolbar-button'
 import { source, uiKitSource, resourcesSource } from '@/lib/source'
@@ -14,6 +15,7 @@ import { AvatarCodeModal } from './code-modal'
 import { AvatarControlPanel } from './control-panel'
 import { MockupView } from './mockup-view'
 import { GalleryView } from './gallery-view'
+import { AvatarInfoPanel } from './info-panel'
 import { getRandomPersonas, getSelectedAvatarDetails, resolvePaletteColors } from './utils'
 
 type ViewMode = 'canvas' | 'mockup' | 'gallery'
@@ -29,9 +31,18 @@ export function AvatarsPlayground() {
   const [circle, setCircle] = useState(true)
   const [view, setView] = useState<ViewMode>('gallery')
   const [canvasKey, setCanvasKey] = useState(0)
+  const [showLeft, setShowLeft] = useState(true)
   const [showRight, setShowRight] = useState(true)
   const [expanded, setExpanded] = useState(false)
   const [selectedAvatar, setSelectedAvatar] = useState<SelectedCanvasAvatar | null>(null)
+  const isDesktop = useMediaQuery('(min-width: 768px)', true)
+
+  useEffect(() => {
+    if (!isDesktop) {
+      setShowLeft(false)
+      setShowRight(false)
+    }
+  }, [isDesktop])
 
   const parsedColors = useMemo(() => resolvePaletteColors(paletteIndex, customColors), [paletteIndex, customColors])
   const details = useMemo(() => getSelectedAvatarDetails(pattern), [pattern])
@@ -54,7 +65,8 @@ export function AvatarsPlayground() {
     setCustomColors([])
     setCircle(true)
     setView('gallery')
-    setShowRight(true)
+    setShowLeft(isDesktop)
+    setShowRight(isDesktop)
     setExpanded(false)
     setSelectedAvatar(null)
     setCanvasKey((key) => key + 1)
@@ -63,6 +75,7 @@ export function AvatarsPlayground() {
   const toolbarConfig: ResourceToolbarConfig = {
     theme: true,
     expand: true,
+    info: true,
     sidebar: true,
     reset: true,
     viewToggle: true,
@@ -70,7 +83,9 @@ export function AvatarsPlayground() {
     onViewChange: setView,
     onReset: reset,
     onToggleExpand: setExpanded,
+    onToggleInfo: setShowLeft,
     onToggleSidebar: setShowRight,
+    infoVisible: showLeft,
     sidebarVisible: showRight,
     expanded,
   }
@@ -78,9 +93,14 @@ export function AvatarsPlayground() {
   return (
     <>
       <ResourceStudio
+        showLeft={showLeft && !expanded}
         showRight={showRight && !expanded}
+        leftWidth="30%"
+        rightWidth="20rem"
+        onToggleLeft={setShowLeft}
         onToggleRight={setShowRight}
         className={expanded ? 'p-0' : undefined}
+        left={<AvatarInfoPanel />}
         canvas={
           view === 'canvas' ? (
             <AvatarCanvas
@@ -110,7 +130,6 @@ export function AvatarsPlayground() {
             <GalleryView
               pool={pool}
               pattern={pattern}
-              size={size}
               effect={effect}
               animate={animate}
               circle={circle}

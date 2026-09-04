@@ -10,7 +10,6 @@ import type { SelectedCanvasAvatar } from './canvas'
 interface GalleryViewProps {
   pool: string[]
   pattern: AvatarVariant | 'all'
-  size: number
   effect: AvatarEffect
   animate: boolean
   circle: boolean
@@ -22,7 +21,6 @@ interface GalleryViewProps {
 export function GalleryView({
   pool,
   pattern,
-  size,
   effect,
   animate,
   circle,
@@ -35,7 +33,6 @@ export function GalleryView({
     while (result.length < 293 && pool.length > 0) result.push(...pool)
     return result.slice(0, 293)
   }, [pool])
-  const cardAvatarSize = Math.max(48, Math.min(164, Math.round(size * 0.78)))
 
   return (
     <ScrollArea className="h-full w-full md:p-1" data-lenis-prevent="true" scrollbarGutter scrollFade>
@@ -61,15 +58,16 @@ export function GalleryView({
               <span className="absolute top-4 right-4 max-w-[50%] truncate text-[0.625rem] text-muted-foreground">
                 {seed}
               </span>
-              <div className="my-auto flex items-center justify-center">
+              <div className="pointer-events-none absolute inset-9 flex self-center items-center justify-center sm:inset-10">
                 <Avatar
                   name={seed}
-                  size={cardAvatarSize}
+                  size={164}
                   variant={pattern}
                   colors={currentColors}
                   animate={animate}
                   effect={effect}
                   circle={circle}
+                  className="flex size-full max-h-full max-w-full items-center justify-center [&_svg]:size-full"
                 />
               </div>
               <span className="absolute inset-x-4 bottom-4 truncate text-[0.625rem] font-medium capitalize text-muted-foreground">

@@ -2,6 +2,36 @@
 
 import type { ReactNode } from 'react'
 import { cn } from '@/registry/lib/utils'
+import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
+import { Drawer, DrawerPanel, DrawerPopup } from '@/registry/primitives/drawer'
+
+function StudioDrawer({
+  open,
+  onOpenChange,
+  position,
+  children,
+}: {
+  open: boolean
+  onOpenChange: (open: boolean) => void
+  position: 'left' | 'right'
+  children: ReactNode
+}) {
+  return (
+    <Drawer open={open} onOpenChange={onOpenChange} position={position}>
+      <DrawerPopup
+        variant="inset"
+        className={cn(
+          'flex h-full max-h-full flex-col border-none bg-muted p-2 shadow-none before:shadow-none dark:before:shadow-none',
+          position === 'left' ? 'max-w-lg' : 'max-w-sm',
+        )}
+      >
+        <DrawerPanel className="h-full min-h-0 rounded-2xl bg-background p-0" scrollable={false}>
+          {children}
+        </DrawerPanel>
+      </DrawerPopup>
+    </Drawer>
+  )
+}
 
 export function ResourceStudio({
   canvas,
@@ -9,7 +39,11 @@ export function ResourceStudio({
   right,
   bottom,
   float,
+  showLeft = true,
   showRight = true,
+  leftWidth = '18rem',
+  rightWidth = '20rem',
+  onToggleLeft,
   onToggleRight,
   className,
 }: {
@@ -18,20 +52,25 @@ export function ResourceStudio({
   right?: ReactNode
   bottom?: ReactNode
   float?: ReactNode
+  showLeft?: boolean
   showRight?: boolean
+  leftWidth?: string
+  rightWidth?: string
+  onToggleLeft?: (show: boolean) => void
   onToggleRight?: (show: boolean) => void
   className?: string
 }) {
+  const isDesktop = useMediaQuery('(min-width: 768px)', true)
+
   return (
-    <div
-      className={cn(
-        'relative flex h-dvh w-full flex-col overflow-hidden bg-muted p-2 text-foreground',
-        className,
-      )}
-    >
+    <div className={cn('relative flex h-dvh w-full flex-col overflow-hidden bg-muted p-2 text-foreground', className)}>
       <div className="flex min-h-0 flex-1 gap-2">
-        {left ? (
-          <aside data-resource-ui className="flex w-72 shrink-0 flex-col overflow-hidden rounded-2xl bg-background">
+        {isDesktop && left && showLeft ? (
+          <aside
+            data-resource-ui
+            className="flex shrink-0 flex-col overflow-hidden rounded-2xl bg-background"
+            style={{ width: leftWidth }}
+          >
             {left}
           </aside>
         ) : null}
@@ -39,10 +78,11 @@ export function ResourceStudio({
           {canvas}
           {float}
         </div>
-        {right && showRight ? (
+        {isDesktop && right && showRight ? (
           <aside
             data-resource-ui
-            className="flex w-[min(20rem,calc(100vw-2rem))] shrink-0 flex-col overflow-hidden rounded-2xl bg-background"
+            className="flex shrink-0 flex-col overflow-hidden rounded-2xl bg-background"
+            style={{ width: rightWidth }}
           >
             {right}
           </aside>
@@ -52,6 +92,16 @@ export function ResourceStudio({
         <div data-resource-ui className="mt-2 shrink-0">
           {bottom}
         </div>
+      ) : null}
+      {!isDesktop && left ? (
+        <StudioDrawer open={Boolean(showLeft)} onOpenChange={(open) => onToggleLeft?.(open)} position="left">
+          {left}
+        </StudioDrawer>
+      ) : null}
+      {!isDesktop && right ? (
+        <StudioDrawer open={Boolean(showRight)} onOpenChange={(open) => onToggleRight?.(open)} position="right">
+          {right}
+        </StudioDrawer>
       ) : null}
     </div>
   )

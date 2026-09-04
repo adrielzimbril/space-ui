@@ -145,10 +145,12 @@ export function AvatarControlPanel({
             </div>
           </div>
 
-          <div className="flex flex-col gap-2">
-            <span className="text-[0.6875rem] font-semibold text-muted-foreground">Size · {size}px</span>
-            <Slider value={[size]} min={SIZE_MIN} max={SIZE_MAX} onValueChange={(value) => setSize(value[0] ?? size)} />
-          </div>
+          {view === 'canvas' ? (
+            <div className="flex flex-col gap-2">
+              <span className="text-[0.6875rem] font-semibold text-muted-foreground">Size · {size}px</span>
+              <Slider value={[size]} min={SIZE_MIN} max={SIZE_MAX} onValueChange={(value) => setSize(value[0] ?? size)} />
+            </div>
+          ) : null}
 
           <div className="flex flex-col gap-2">
             <span className="text-[0.6875rem] font-semibold text-muted-foreground">Effect</span>
