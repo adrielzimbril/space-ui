@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-field-15",
+  "name": "demo-p-field-15",
   "type": "registry:ui",
   "title": "Field 15",
   "description": "Field with toggle switch",

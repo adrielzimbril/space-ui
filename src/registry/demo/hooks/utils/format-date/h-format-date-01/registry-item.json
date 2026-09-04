@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-format-date-01",
+  "type": "registry:hook",
+  "title": "formatDate",
+  "description": "Localized date formatting",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-utils-format-date",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "hooks",
+    "utils",
+    "format-date",
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/utils/format-date/h-format-date-01/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-format-date-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

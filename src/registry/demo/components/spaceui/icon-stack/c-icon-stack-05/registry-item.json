@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-icon-stack-05",
+  "type": "registry:component",
+  "title": "Empty state illustration",
+  "description": "Shadcn empty state illustration",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-icon-stack",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-empty"
+  ],
+  "categories": [
+    "component",
+    "icon-stack"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/icon-stack/c-icon-stack-05/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-icon-stack-05.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

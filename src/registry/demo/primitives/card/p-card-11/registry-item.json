@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-card-11",
+  "name": "demo-p-card-11",
   "type": "registry:ui",
   "title": "Card 11",
   "description": "CardFrame with header action",

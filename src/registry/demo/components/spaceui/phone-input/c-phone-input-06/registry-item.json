@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-phone-input-06",
+  "type": "registry:component",
+  "title": "Phone input with error state",
+  "description": "Phone input with error state",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-phone-input"
+  ],
+  "categories": [
+    "component",
+    "phone-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/phone-input/c-phone-input-06/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-phone-input-06.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

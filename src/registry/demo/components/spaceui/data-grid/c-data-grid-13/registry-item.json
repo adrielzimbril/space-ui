@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-components-spaceui-c-data-grid-13",
+  "name": "demo-c-data-grid-13",
   "type": "registry:component",
   "title": "Data grid with draggable columns",
   "description": "Data grid with draggable columns",

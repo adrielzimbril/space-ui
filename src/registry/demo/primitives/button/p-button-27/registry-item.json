@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-button-27",
+  "name": "demo-p-button-27",
   "type": "registry:ui",
   "title": "Button 27",
   "description": "Hamburger menu button with animated icon",

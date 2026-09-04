@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-components-spaceui-c-data-grid-17",
+  "name": "demo-c-data-grid-17",
   "type": "registry:component",
   "title": "Data grid with sticky header",
   "description": "Data grid with sticky header",

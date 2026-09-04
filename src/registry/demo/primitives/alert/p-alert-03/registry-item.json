@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-alert-03",
+  "type": "registry:ui",
+  "title": "Alert 3",
+  "description": "Alert with icon and action buttons",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-alert",
+    "@usespaceui/primitives-button"
+  ],
+  "categories": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/alert/p-alert-03/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-alert-03.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

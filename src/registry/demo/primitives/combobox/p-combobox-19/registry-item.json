@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-combobox-19",
+  "name": "demo-p-combobox-19",
   "type": "registry:ui",
   "title": "Combobox 19",
   "description": "Combobox multiple with stacked divided chips",

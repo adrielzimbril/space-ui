@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-use-cookie-01",
+  "type": "registry:hook",
+  "title": "useCookie",
+  "description": "Cookie read and write manager",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-browser-use-cookie",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-input"
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "cookie"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/browser/cookie/h-use-cookie-01/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-use-cookie-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

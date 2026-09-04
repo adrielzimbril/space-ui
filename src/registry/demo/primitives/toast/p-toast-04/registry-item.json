@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-toast-04",
+  "type": "registry:ui",
+  "title": "Toast 4",
+  "description": "Anchored error toast after async failure",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-spinner",
+    "@usespaceui/primitives-toast"
+  ],
+  "categories": [
+    "toast"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/toast/p-toast-04/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-toast-04.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-input-16",
+  "name": "demo-p-input-16",
   "type": "registry:ui",
   "title": "Input 16",
   "description": "Read-only input",

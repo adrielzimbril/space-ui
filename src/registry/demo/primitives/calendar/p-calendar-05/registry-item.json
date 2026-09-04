@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-calendar-05",
+  "type": "registry:ui",
+  "title": "Calendar 5",
+  "description": "Calendar with custom Select dropdown for month/year",
+  "dependencies": [
+    "@daypicker/react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-calendar",
+    "@usespaceui/primitives-select"
+  ],
+  "categories": [
+    "calendar",
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/calendar/p-calendar-05/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-calendar-05.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

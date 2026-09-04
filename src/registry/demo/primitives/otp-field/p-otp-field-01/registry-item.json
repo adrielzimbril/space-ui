@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-otp-field-01",
+  "type": "registry:ui",
+  "title": "Otp Field 1",
+  "description": "Basic OTP field",
+  "registryDependencies": [
+    "@usespaceui/primitives-otp-field"
+  ],
+  "categories": [
+    "otp field",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/otp-field/p-otp-field-01/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-otp-field-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

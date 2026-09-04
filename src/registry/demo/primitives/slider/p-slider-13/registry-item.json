@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-slider-13",
+  "name": "demo-p-slider-13",
   "type": "registry:ui",
   "title": "Slider 13",
   "description": "Range slider with inputs",

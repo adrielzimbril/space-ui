@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-button-21",
+  "name": "demo-p-button-21",
   "type": "registry:ui",
   "title": "Button 21",
   "description": "Paired buttons (Cancel/Save)",

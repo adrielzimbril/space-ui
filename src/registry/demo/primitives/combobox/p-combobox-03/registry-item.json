@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-combobox-03",
+  "type": "registry:ui",
+  "title": "Combobox 3",
+  "description": "Large combobox",
+  "registryDependencies": [
+    "@usespaceui/primitives-combobox"
+  ],
+  "categories": [
+    "combobox",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/combobox/p-combobox-03/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-combobox-03.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

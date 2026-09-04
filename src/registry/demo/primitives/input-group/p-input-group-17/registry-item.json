@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-input-group-17",
+  "name": "demo-p-input-group-17",
   "type": "registry:ui",
   "title": "Input Group 17",
   "description": "Input group with textarea",

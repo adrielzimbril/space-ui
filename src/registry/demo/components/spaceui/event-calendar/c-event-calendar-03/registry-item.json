@@ -1,0 +1,39 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-event-calendar-03",
+  "type": "registry:component",
+  "title": "Event calendar with create and edit dialog",
+  "description": "Month calendar with event CRUD in one dialog: open from an empty day, an event, or Add event, commit via apiRef. Title, color, start, duration, all-day fields. Space UI EventCalendar, Nav, Toolbar; Dialog, Field, Select, Switch. Scheduling apps.",
+  "dependencies": [
+    "@tabler/icons-react",
+    "date-fns"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-event-calendar",
+    "@usespaceui/components-spaceui-event-calendar-content",
+    "@usespaceui/components-spaceui-event-calendar-nav",
+    "@usespaceui/components-spaceui-event-calendar-types",
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-dialog",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-input",
+    "@usespaceui/primitives-select",
+    "@usespaceui/primitives-switch"
+  ],
+  "categories": [
+    "component",
+    "event-calendar",
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/event-calendar/c-event-calendar-03/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-event-calendar-03.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

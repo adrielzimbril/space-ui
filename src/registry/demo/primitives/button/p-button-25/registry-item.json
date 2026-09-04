@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-button-25",
+  "name": "demo-p-button-25",
   "type": "registry:ui",
   "title": "Button 25",
   "description": "Rotating icon button (FAB-style toggle)",

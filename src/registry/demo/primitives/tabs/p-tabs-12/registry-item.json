@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-tabs-12",
+  "name": "demo-p-tabs-12",
   "type": "registry:ui",
   "title": "Tabs 12",
   "description": "Small tabs with size='sm'",

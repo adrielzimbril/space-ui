@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-preview-link-card-01",
+  "type": "registry:ui",
+  "title": "Base Preview Link Card Demo",
+  "description": "Demo showing an animated base preview link card.",
+  "registryDependencies": [
+    "@usespaceui/primitives-preview-link-card"
+  ],
+  "categories": [
+    "preview-link-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/p-preview-link-card-01/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-preview-link-card-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

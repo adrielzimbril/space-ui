@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-select-14",
+  "name": "demo-p-select-14",
   "type": "registry:ui",
   "title": "Select 14",
   "description": "Pill-shaped select trigger",

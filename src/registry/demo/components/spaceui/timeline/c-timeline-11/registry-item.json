@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-components-spaceui-c-timeline-11",
+  "name": "demo-c-timeline-11",
   "type": "registry:component",
   "title": "Activity feed timeline with user avatars",
   "description": "Activity feed timeline with user avatars",

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-avatar-03",
+  "type": "registry:ui",
+  "title": "Avatar Rings",
+  "description": "Avatar with offset rings",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-avatar-extended",
+    "@usespaceui/primitives-avatar"
+  ],
+  "categories": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/avatar/p-avatar-03/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-avatar-03.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

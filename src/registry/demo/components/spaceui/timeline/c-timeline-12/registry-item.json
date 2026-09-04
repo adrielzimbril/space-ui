@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-components-spaceui-c-timeline-12",
+  "name": "demo-c-timeline-12",
   "type": "registry:component",
   "title": "Compact horizontal milestone timeline",
   "description": "Compact horizontal milestone timeline",

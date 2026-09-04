@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-cookie-listener-01",
+  "type": "registry:hook",
+  "title": "useCookieListener",
+  "description": "Real-time cookie change observer",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-browser-use-cookie-listener",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "cookie-listener"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/browser/cookie-listener/h-cookie-listener-01/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-cookie-listener-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

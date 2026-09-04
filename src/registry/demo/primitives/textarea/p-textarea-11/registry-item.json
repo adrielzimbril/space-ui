@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-textarea-11",
+  "name": "demo-p-textarea-11",
   "type": "registry:ui",
   "title": "Textarea 11",
   "description": "Textarea field with required indicator",

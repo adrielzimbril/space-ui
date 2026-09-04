@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-checkbox-04",
+  "type": "registry:ui",
+  "title": "Checkbox 4",
+  "description": "Checkbox form",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-checkbox",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-form"
+  ],
+  "categories": [
+    "checkbox",
+    "form"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/checkbox/p-checkbox-04/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-checkbox-04.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-scroll-position-01",
+  "type": "registry:hook",
+  "title": "useScrollPosition",
+  "description": "Window scroll offset tracker",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-dom-use-scroll-position",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "hooks",
+    "dom",
+    "scroll-position"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/dom/scroll-position/h-scroll-position-01/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-scroll-position-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

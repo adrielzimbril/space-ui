@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-input-group-10",
+  "name": "demo-p-input-group-10",
   "type": "registry:ui",
   "title": "Input Group 10",
   "description": "Input group with badge",

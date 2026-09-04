@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-field-16",
+  "name": "demo-p-field-16",
   "type": "registry:ui",
   "title": "Field 16",
   "description": "Field with slider",

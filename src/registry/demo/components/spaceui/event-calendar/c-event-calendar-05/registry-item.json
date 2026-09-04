@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-event-calendar-05",
+  "type": "registry:component",
+  "title": "Event calendar with drag-to-book appointments",
+  "description": "Event calendar with drag-to-book appointments",
+  "dependencies": [
+    "@tabler/icons-react",
+    "date-fns"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-event-calendar",
+    "@usespaceui/components-spaceui-event-calendar-content",
+    "@usespaceui/components-spaceui-event-calendar-nav",
+    "@usespaceui/components-spaceui-event-calendar-types",
+    "@usespaceui/primitives-avatar",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "component",
+    "event-calendar",
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/event-calendar/c-event-calendar-05/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-event-calendar-05.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

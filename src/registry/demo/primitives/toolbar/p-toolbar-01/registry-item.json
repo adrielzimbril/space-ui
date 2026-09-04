@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-toolbar-01",
+  "type": "registry:ui",
+  "title": "Toolbar 1",
+  "description": "Toolbar with toggles, buttons, and select",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-select",
+    "@usespaceui/primitives-toggle-group",
+    "@usespaceui/primitives-toolbar",
+    "@usespaceui/primitives-tooltip"
+  ],
+  "categories": [
+    "toolbar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/toolbar/p-toolbar-01/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-toolbar-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

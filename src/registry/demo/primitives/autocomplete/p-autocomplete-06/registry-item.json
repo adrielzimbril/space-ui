@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-autocomplete-06",
+  "type": "registry:ui",
+  "title": "Autocomplete 6",
+  "description": "Autocomplete auto highlighting the first option",
+  "registryDependencies": [
+    "@usespaceui/primitives-autocomplete"
+  ],
+  "categories": [
+    "autocomplete",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/autocomplete/p-autocomplete-06/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-autocomplete-06.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

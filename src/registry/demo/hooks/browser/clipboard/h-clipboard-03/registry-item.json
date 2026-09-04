@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-clipboard-03",
+  "type": "registry:hook",
+  "title": "useClipboard (API Keys List)",
+  "description": "Multi-credential copy list",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-browser-use-clipboard",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "clipboard"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/browser/clipboard/h-clipboard-03/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-clipboard-03.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

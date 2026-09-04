@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-drawer-11",
+  "name": "demo-p-drawer-11",
   "type": "registry:ui",
   "title": "Drawer 11",
   "description": "Mobile menu drawer from the left",

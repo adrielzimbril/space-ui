@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-calendar-09",
+  "type": "registry:ui",
+  "title": "Calendar 9",
+  "description": "Calendar with rounded day buttons",
+  "registryDependencies": [
+    "@usespaceui/primitives-calendar"
+  ],
+  "categories": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/calendar/p-calendar-09/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-calendar-09.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

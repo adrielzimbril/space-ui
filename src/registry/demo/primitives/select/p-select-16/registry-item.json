@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-select-16",
+  "name": "demo-p-select-16",
   "type": "registry:ui",
   "title": "Select 16",
   "description": "Select with country flags",

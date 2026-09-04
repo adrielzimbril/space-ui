@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-rating-06",
+  "type": "registry:component",
+  "title": "Rating with review summary",
+  "description": "Rating with review summary",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-rating",
+    "@usespaceui/primitives-progress",
+    "@usespaceui/primitives-separator"
+  ],
+  "categories": [
+    "component",
+    "rating"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/rating/c-rating-06/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-rating-06.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

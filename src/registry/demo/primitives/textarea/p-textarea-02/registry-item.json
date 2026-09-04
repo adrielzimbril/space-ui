@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-textarea-02",
+  "type": "registry:ui",
+  "title": "Textarea Sizes",
+  "description": "Textarea in sm, default, and lg sizes",
+  "registryDependencies": [
+    "@usespaceui/primitives-textarea"
+  ],
+  "categories": [
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/textarea/p-textarea-02/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-textarea-02.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

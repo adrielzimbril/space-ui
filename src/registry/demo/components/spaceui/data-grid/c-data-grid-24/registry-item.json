@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-components-spaceui-c-data-grid-24",
+  "name": "demo-c-data-grid-24",
   "type": "registry:component",
   "title": "Data grid with column totals footer",
   "description": "Data grid with column totals footer",

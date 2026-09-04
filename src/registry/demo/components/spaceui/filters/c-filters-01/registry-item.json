@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-filters-01",
+  "type": "registry:component",
+  "title": "Filters with various field types",
+  "description": "Filters with various field types",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-filters",
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-avatar",
+    "@usespaceui/primitives-button"
+  ],
+  "categories": [
+    "component",
+    "filters"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/filters/c-filters-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-filters-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

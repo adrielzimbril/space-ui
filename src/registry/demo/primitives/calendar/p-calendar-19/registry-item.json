@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-calendar-19",
+  "name": "demo-p-calendar-19",
   "type": "registry:ui",
   "title": "Calendar 19",
   "description": "Calendar with time slots (appointment picker)",

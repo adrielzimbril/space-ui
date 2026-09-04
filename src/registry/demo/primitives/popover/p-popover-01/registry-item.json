@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-popover-01",
+  "type": "registry:ui",
+  "title": "Popover 1",
+  "description": "Popover with a form",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-form",
+    "@usespaceui/primitives-popover",
+    "@usespaceui/primitives-textarea"
+  ],
+  "categories": [
+    "button",
+    "field",
+    "form",
+    "popover",
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/popover/p-popover-01/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-popover-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

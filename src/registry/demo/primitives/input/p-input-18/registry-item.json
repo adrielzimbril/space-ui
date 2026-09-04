@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-input-18",
+  "name": "demo-p-input-18",
   "type": "registry:ui",
   "title": "Input 18",
   "description": "Pill-shaped input",

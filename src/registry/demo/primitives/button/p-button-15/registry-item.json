@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-button-15",
+  "name": "demo-p-button-15",
   "type": "registry:ui",
   "title": "Button 15",
   "description": "Button group with QR code icon and sign in",

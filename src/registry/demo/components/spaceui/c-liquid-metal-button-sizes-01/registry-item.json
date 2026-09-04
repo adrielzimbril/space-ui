@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-liquid-metal-button-sizes-01",
+  "type": "registry:component",
+  "title": "Liquid Metal Button Sizes",
+  "description": "Interactive demo showcasing the Liquid Metal Button Sizes component.",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-liquid-metal-button"
+  ],
+  "categories": [
+    "liquid-metal-button-sizes"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/c-liquid-metal-button-sizes-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-liquid-metal-button-sizes-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

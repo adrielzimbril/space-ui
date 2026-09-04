@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-components-spaceui-c-file-upload-10",
+  "name": "demo-c-file-upload-10",
   "type": "registry:component",
   "title": "Cover image upload.",
   "description": "Cover image upload.",

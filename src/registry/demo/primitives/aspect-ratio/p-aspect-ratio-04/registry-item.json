@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-aspect-ratio-04",
+  "type": "registry:ui",
+  "title": "21:9 ultrawide aspect ratio",
+  "description": "21:9 ultrawide aspect ratio",
+  "registryDependencies": [
+    "@usespaceui/primitives-aspect-ratio"
+  ],
+  "categories": [
+    "aspect-ratio"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/aspect-ratio/p-aspect-ratio-04/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-aspect-ratio-04.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-calendar-21",
+  "name": "demo-p-calendar-21",
   "type": "registry:ui",
   "title": "Calendar 21",
   "description": "Range calendar with date presets",

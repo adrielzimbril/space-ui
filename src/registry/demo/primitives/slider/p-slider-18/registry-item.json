@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-slider-18",
+  "name": "demo-p-slider-18",
   "type": "registry:ui",
   "title": "Slider 18",
   "description": "Vertical range slider",

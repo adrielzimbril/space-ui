@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-toast-09",
+  "type": "registry:ui",
+  "title": "Toast 9",
+  "description": "Anchored deduplicated error toast",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-toast",
+    "@usespaceui/primitives-tooltip"
+  ],
+  "categories": [
+    "toast",
+    "button",
+    "error"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/toast/p-toast-09/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-toast-09.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

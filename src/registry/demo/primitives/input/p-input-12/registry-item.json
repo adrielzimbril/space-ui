@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-input-12",
+  "name": "demo-p-input-12",
   "type": "registry:ui",
   "title": "Input 12",
   "description": "Input with label and required indicator",

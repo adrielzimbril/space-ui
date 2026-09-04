@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-button-19",
+  "name": "demo-p-button-19",
   "type": "registry:ui",
   "title": "Button 19",
   "description": "Button with keyboard shortcut indicator",

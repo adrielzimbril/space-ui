@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-avatar-09",
+  "type": "registry:ui",
+  "title": "Avatar Group Actions",
+  "description": "Avatar group with count and icon actions.",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-avatar-group",
+    "@usespaceui/primitives-avatar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/avatar/p-avatar-09/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-avatar-09.tsx"
+    }
+  ],
+  "createdAt": "2026-09-01",
+  "updatedAt": "2026-09-01"
+}

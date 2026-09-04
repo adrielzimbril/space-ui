@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-command-01",
+  "type": "registry:ui",
+  "title": "Command 1",
+  "description": "Command palette with dialog",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-dom-use-event-listener",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-command",
+    "@usespaceui/primitives-kbd"
+  ],
+  "categories": [
+    "command",
+    "dialog"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/command/p-command-01/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-command-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

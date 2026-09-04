@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-field-14",
+  "name": "demo-p-field-14",
   "type": "registry:ui",
   "title": "Field 14",
   "description": "Field with radio group",

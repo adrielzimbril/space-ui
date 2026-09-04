@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-components-spaceui-c-data-grid-28",
+  "name": "demo-c-data-grid-28",
   "type": "registry:component",
   "title": "Data grid with remote infinite scroll",
   "description": "Data grid with remote infinite scroll",

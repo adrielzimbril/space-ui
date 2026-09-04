@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-components-spaceui-c-data-grid-23",
+  "name": "demo-c-data-grid-23",
   "type": "registry:component",
   "title": "Data grid with CRUD in frame container",
   "description": "Data grid with CRUD in frame container",

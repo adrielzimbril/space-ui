@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-textarea-10",
+  "name": "demo-p-textarea-10",
   "type": "registry:ui",
   "title": "Textarea 10",
   "description": "Textarea with characters remaining counter",

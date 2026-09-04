@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-components-spaceui-c-data-grid-19",
+  "name": "demo-c-data-grid-19",
   "type": "registry:component",
   "title": "Data grid with card container",
   "description": "Data grid with card container",

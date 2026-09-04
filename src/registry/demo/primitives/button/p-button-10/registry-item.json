@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-button-10",
+  "name": "demo-p-button-10",
   "type": "registry:ui",
   "title": "Button 10",
   "description": "Card-style button with heading and description",

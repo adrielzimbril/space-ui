@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-table-02",
+  "type": "registry:ui",
+  "title": "Table 2",
+  "description": "Frame with card-style table",
+  "registryDependencies": [
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-frame",
+    "@usespaceui/primitives-table"
+  ],
+  "categories": [
+    "frame",
+    "table"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/table/p-table-02/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-table-02.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

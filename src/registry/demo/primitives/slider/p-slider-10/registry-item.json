@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-slider-10",
+  "name": "demo-p-slider-10",
   "type": "registry:ui",
   "title": "Slider 10",
   "description": "Range slider with collision behavior swap",

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-skeleton-01",
+  "type": "registry:ui",
+  "title": "Skeleton 1",
+  "description": "Basic skeleton",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-avatar",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-skeleton"
+  ],
+  "categories": [
+    "skeleton"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/skeleton/p-skeleton-01/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-skeleton-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

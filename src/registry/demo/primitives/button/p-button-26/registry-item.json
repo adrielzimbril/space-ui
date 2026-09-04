@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-button-26",
+  "name": "demo-p-button-26",
   "type": "registry:ui",
   "title": "Button 26",
   "description": "Social login buttons (Google, X, GitHub)",

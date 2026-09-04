@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-calendar-03",
+  "type": "registry:ui",
+  "title": "Calendar 3",
+  "description": "Calendar with date range selection",
+  "dependencies": [
+    "@daypicker/react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-calendar"
+  ],
+  "categories": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/calendar/p-calendar-03/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-calendar-03.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

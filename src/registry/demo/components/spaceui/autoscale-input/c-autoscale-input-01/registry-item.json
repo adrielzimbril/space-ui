@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-autoscale-input-01",
+  "type": "registry:component",
+  "title": "Autoscale Input Demo",
+  "description": "Amount field that scales to fit its container.",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-autoscale-input"
+  ],
+  "categories": [
+    "component",
+    "autoscale-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/autoscale-input/c-autoscale-input-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-autoscale-input-01.tsx"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

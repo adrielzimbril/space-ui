@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-input-group-12",
+  "name": "demo-p-input-group-12",
   "type": "registry:ui",
   "title": "Input Group 12",
   "description": "Input group with inner label",

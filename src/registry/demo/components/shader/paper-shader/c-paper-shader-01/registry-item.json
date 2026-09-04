@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-paper-shader-01",
+  "type": "registry:component",
+  "title": "Paper Shader Demo",
+  "description": "Paper WebGL fragment shader canvas.",
+  "registryDependencies": [
+    "@usespaceui/components-shader-paper-shader"
+  ],
+  "categories": [
+    "shader",
+    "webgl"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/shader/paper-shader/c-paper-shader-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/shader/c-paper-shader-01.tsx"
+    },
+    {
+      "path": "src/registry/demo/components/shader/paper-shader/c-paper-shader-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/shader/c-paper-shader-01.tsx"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

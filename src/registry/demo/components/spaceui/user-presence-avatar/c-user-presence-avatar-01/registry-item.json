@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-user-presence-avatar-01",
+  "type": "registry:component",
+  "title": "User Presence Avatar",
+  "description": "Animated avatar group showing online and offline users with status toggling.",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-user-presence-avatar"
+  ],
+  "categories": [
+    "component",
+    "user-presence-avatar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/user-presence-avatar/c-user-presence-avatar-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-user-presence-avatar-01.tsx"
+    }
+  ],
+  "createdAt": "2026-09-02",
+  "updatedAt": "2026-09-02"
+}

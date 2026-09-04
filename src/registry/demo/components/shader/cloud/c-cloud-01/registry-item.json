@@ -1,0 +1,54 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-cloud-01",
+  "type": "registry:component",
+  "title": "Cloud Demo",
+  "description": "Interactive cloud material surface.",
+  "registryDependencies": [
+    "@usespaceui/components-shader-cloud"
+  ],
+  "categories": [
+    "shader",
+    "cloud"
+  ],
+  "meta": {
+    "demoProps": {
+      "speed": {
+        "value": 1,
+        "min": 0,
+        "max": 5,
+        "step": 0.1
+      },
+      "sky": {
+        "value": "#68b8d7"
+      },
+      "cloudColor": {
+        "value": "#adc1de"
+      },
+      "shadow": {
+        "value": "#183550"
+      },
+      "sun": {
+        "value": "#ff9919"
+      },
+      "glare": {
+        "value": "#ff6633"
+      },
+      "sunlight": {
+        "value": "#ff9933"
+      },
+      "bg": {
+        "value": "#ffffff"
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "src/registry/demo/components/shader/cloud/c-cloud-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/shader/c-cloud-01.tsx"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

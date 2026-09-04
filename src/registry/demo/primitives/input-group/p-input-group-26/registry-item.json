@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-input-group-26",
+  "name": "demo-p-input-group-26",
   "type": "registry:ui",
   "title": "Input Group 26",
   "description": "Code snippet input with language selector",

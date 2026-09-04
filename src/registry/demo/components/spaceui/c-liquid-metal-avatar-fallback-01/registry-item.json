@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-liquid-metal-avatar-fallback-01",
+  "type": "registry:component",
+  "title": "Liquid Metal Avatar Fallback",
+  "description": "Interactive demo showcasing the Liquid Metal Avatar Fallback component.",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-liquid-metal-avatar"
+  ],
+  "categories": [
+    "liquid-metal-avatar-fallback"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/c-liquid-metal-avatar-fallback-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-liquid-metal-avatar-fallback-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

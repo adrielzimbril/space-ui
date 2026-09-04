@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-timeline-01",
+  "type": "registry:component",
+  "title": "Basic timeline.",
+  "description": "Basic timeline.",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-timeline"
+  ],
+  "categories": [
+    "component",
+    "timeline"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/timeline/c-timeline-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-timeline-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-group-14",
+  "name": "demo-p-group-14",
   "type": "registry:ui",
   "title": "Group 14",
   "description": "Group with select",

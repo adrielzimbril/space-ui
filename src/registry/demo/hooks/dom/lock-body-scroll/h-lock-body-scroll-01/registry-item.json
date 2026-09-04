@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-lock-body-scroll-01",
+  "type": "registry:hook",
+  "title": "useLockBodyScroll",
+  "description": "Lock page scrolling without layout shift",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-dom-use-lock-body-scroll",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-switch"
+  ],
+  "categories": [
+    "hooks",
+    "dom",
+    "lock-body-scroll"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/dom/lock-body-scroll/h-lock-body-scroll-01/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-lock-body-scroll-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-input-14",
+  "name": "demo-p-input-14",
   "type": "registry:ui",
   "title": "Input 14",
   "description": "Input with custom border and background",

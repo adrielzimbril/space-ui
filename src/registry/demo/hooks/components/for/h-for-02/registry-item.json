@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-for-02",
+  "type": "registry:hook",
+  "title": "For (Interactive Product Catalog)",
+  "description": "Rich list mapping with search filter",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-components-for",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-input"
+  ],
+  "categories": [
+    "hooks",
+    "components",
+    "for"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/components/for/h-for-02/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-for-02.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

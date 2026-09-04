@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-slider-20",
+  "name": "demo-p-slider-20",
   "type": "registry:ui",
   "title": "Slider 20",
   "description": "Equalizer with vertical sliders",

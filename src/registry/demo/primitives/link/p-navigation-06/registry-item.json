@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-navigation-06",
+  "type": "registry:ui",
+  "title": "Navigation 6",
+  "description": "Large segmented navigation links",
+  "registryDependencies": [
+    "@usespaceui/lib-segmented-control"
+  ],
+  "categories": [
+    "link",
+    "navigation",
+    "segmented-control"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/link/p-navigation-06/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-navigation-06.tsx"
+    }
+  ],
+  "createdAt": "2026-08-28",
+  "updatedAt": "2026-08-28"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-tabs-02",
+  "type": "registry:ui",
+  "title": "Tabs Sizes",
+  "description": "Tabs list in sm, default, and lg sizes",
+  "registryDependencies": [
+    "@usespaceui/primitives-tabs"
+  ],
+  "categories": [
+    "tabs"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/tabs/p-tabs-02/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-tabs-02.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

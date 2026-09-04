@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-group-23",
+  "name": "demo-p-group-23",
   "type": "registry:ui",
   "title": "Button group with user selection select",
   "description": "Button group with user selection select",

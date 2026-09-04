@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-timeline-05",
+  "type": "registry:component",
+  "title": "Timeline with milestones.",
+  "description": "Timeline with milestones.",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-timeline",
+    "@usespaceui/lib-utils"
+  ],
+  "categories": [
+    "component",
+    "timeline"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/timeline/c-timeline-05/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-timeline-05.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

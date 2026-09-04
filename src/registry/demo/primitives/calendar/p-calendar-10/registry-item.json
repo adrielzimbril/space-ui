@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-calendar-10",
+  "name": "demo-p-calendar-10",
   "type": "registry:ui",
   "title": "Calendar 10",
   "description": "Calendar with rounded range selection style",
