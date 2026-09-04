@@ -1,9 +1,12 @@
+import type { NextConfig } from 'next'
 import { createMDX } from 'fumadocs-mdx/next'
 
 const withMDX = createMDX()
 
-import type { NextConfig } from 'next'
 const config: NextConfig = {
+  turbopack: {
+    root: '../../',
+  },
   images: {
     remotePatterns: [
       {

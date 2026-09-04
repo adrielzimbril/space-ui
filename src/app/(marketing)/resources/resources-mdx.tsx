@@ -3,7 +3,6 @@ import { DocsPage, DocsBody, DocsDescription, DocsTitle } from 'fumadocs-ui/page
 import { notFound } from 'next/navigation'
 import { createRelativeLink } from 'fumadocs-ui/mdx'
 import { getMDXComponents } from '@/mdx-components'
-import { Metadata } from 'next'
 import { DocsAuthor } from '@/components/docs/layout/author'
 import { PageActions } from '@/components/docs/layout/page-actions'
 import { Button } from '@/registry/primitives/button'
@@ -11,24 +10,22 @@ import { IconArrowLeft, IconArrowRight } from '@tabler/icons-react'
 import Link from 'next/link'
 import { getDocsNeighbours } from '@/lib/docs-nav'
 
-export default async function Page(props: { params: Promise<{ slug?: string[] }> }) {
-  const params = await props.params
-  const page = source.getPage(params.slug)
+export async function ResourcesMdx({ slug }: { slug?: string[] }) {
+  const page = source.getPage(slug)
   if (!page) notFound()
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const pageData = page.data as any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const MDXContent = pageData.body as any
-
   const { prev: prevNav, next: nextNav } = getDocsNeighbours(source, page.url)
 
   return (
     <DocsPage toc={pageData.toc as any} full={pageData.full}>
-      <div className="flex flex-row gap-2 items-start w-full justify-between">
+      <div className="flex w-full flex-row items-start justify-between gap-2">
         <DocsTitle className="font-medium">{pageData.title}</DocsTitle>
         {(prevNav || nextNav) && (
-          <div className="flex flex-row gap-1.5 items-center pt-0.5">
+          <div className="flex flex-row items-center gap-1.5 pt-0.5">
             <Link
               href={prevNav?.url ?? page.url}
               aria-disabled={!prevNav}
@@ -54,60 +51,12 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
       </div>
       <DocsDescription className="mb-1 font-normal">{pageData.description}</DocsDescription>
       {pageData.author && <DocsAuthor name={pageData.author.name} url={pageData.author?.url} />}
-
-      <div className="flex flex-row gap-2 items-center">
+      <div className="flex flex-row items-center gap-2">
         <PageActions path={`resources/${page.path}`} url={page.url} />
       </div>
-
       <DocsBody id="docs-body" className="pb-10 pt-4">
         <MDXContent components={getMDXComponents({ a: createRelativeLink(source, page) }) as any} />
       </DocsBody>
     </DocsPage>
   )
 }
-
-export async function generateStaticParams() {
-  return source.generateParams()
-}
-
-export async function generateMetadata(props: { params: Promise<{ slug?: string[] }> }): Promise<Metadata> {
-  const { slug = [] } = await props.params
-  const page = source.getPage(slug)
-  if (!page) notFound()
-
-  const image = ['/docs-og', ...slug, 'image.png'].join('/')
-
-  return {
-    title: page.data.title,
-    description: page.data.description,
-    authors: page.data?.author
-      ? [
-          {
-            name: page.data.author.name,
-            ...(page.data.author?.url && { url: page.data.author.url }),
-          },
-        ]
-      : {
-          name: 'usespaceui',
-          url: 'https://github.com/usespaceui',
-        },
-    openGraph: {
-      title: page.data.title,
-      description: page.data.description,
-      url: 'https://www.spaceui.one',
-      siteName: 'Space UI',
-      images: image,
-      locale: 'en_US',
-      type: 'website',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      site: '@space_ui',
-      title: page.data.title,
-      description: page.data.description,
-      images: image,
-    },
-  }
-}
-
-export const instant = false
