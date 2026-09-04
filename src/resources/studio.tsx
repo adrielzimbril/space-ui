@@ -9,6 +9,8 @@ export function ResourceStudio({
   right,
   bottom,
   float,
+  showRight = true,
+  onToggleRight,
   className,
 }: {
   canvas: ReactNode
@@ -16,6 +18,8 @@ export function ResourceStudio({
   right?: ReactNode
   bottom?: ReactNode
   float?: ReactNode
+  showRight?: boolean
+  onToggleRight?: (show: boolean) => void
   className?: string
 }) {
   return (
@@ -35,7 +39,7 @@ export function ResourceStudio({
           {canvas}
           {float}
         </div>
-        {right ? (
+        {right && showRight ? (
           <aside
             data-resource-ui
             className="flex w-[min(20rem,calc(100vw-2rem))] shrink-0 flex-col overflow-hidden rounded-2xl bg-background"

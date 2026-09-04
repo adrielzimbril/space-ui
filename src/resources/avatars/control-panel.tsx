@@ -34,6 +34,8 @@ export function AvatarControlPanel({
   parsedColors,
   details,
   regenerateSeeds,
+  view,
+  setView,
 }: {
   pool: string[]
   pattern: AvatarVariant | 'all'
@@ -53,12 +55,31 @@ export function AvatarControlPanel({
   parsedColors: string[] | undefined
   details: AvatarDetails
   regenerateSeeds: () => void
+  view: 'canvas' | 'mockup'
+  setView: (view: 'canvas' | 'mockup') => void
 }) {
   return (
     <div className="flex h-full min-h-0 flex-col">
-      <div className="flex h-10 shrink-0 items-center px-3">
-        <h2 className="text-xs font-semibold">Avatar</h2>
-        <span className="ml-2 text-[0.625rem] text-muted-foreground">Canvas</span>
+      <div className="flex h-10 shrink-0 items-center justify-between px-3">
+        <div className="flex items-center gap-2">
+          <h2 className="text-xs font-semibold">Avatar</h2>
+          <span className="text-[0.625rem] text-muted-foreground">{view === 'canvas' ? 'Canvas' : 'Mockup'}</span>
+        </div>
+        <ToggleGroup
+          value={[view]}
+          onValueChange={(value) => {
+            const next = value[0]
+            if (next === 'canvas' || next === 'mockup') setView(next)
+          }}
+          className="h-7"
+        >
+          <ToggleGroupItem value="canvas" className="h-6 px-2 text-[0.625rem]">
+            Canvas
+          </ToggleGroupItem>
+          <ToggleGroupItem value="mockup" className="h-6 px-2 text-[0.625rem]">
+            Mockup
+          </ToggleGroupItem>
+        </ToggleGroup>
       </div>
       <ScrollArea className="min-h-0 flex-1">
         <div className="flex flex-col gap-4 p-3.5">

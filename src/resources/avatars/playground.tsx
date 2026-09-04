@@ -144,6 +144,8 @@ export function AvatarsPlayground() {
           parsedColors={parsedColors}
           details={details}
           regenerateSeeds={() => setPool(getRandomPersonas(200))}
+          view={view}
+          setView={setView}
         />
       }
     />
