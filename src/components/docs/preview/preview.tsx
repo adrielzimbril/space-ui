@@ -321,7 +321,7 @@ export function ComponentPreview({
                 size="icon-lg"
                 value={themeOverride}
                 onValueChange={setThemeOverride}
-                className="size-7 bg-background hover:bg-background text-muted-foreground hover:text-foreground cursor-pointer shrink-0 transition-all duration-300 active:scale-[0.96]"
+                className="bg-background hover:bg-background text-muted-foreground hover:text-foreground cursor-pointer shrink-0 transition-all duration-300 active:scale-[0.96]"
                 iconSize="size-3.5"
                 enableTransition={false}
               />
