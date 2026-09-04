@@ -90,11 +90,12 @@ export function SeedView({
             <div className="flex flex-wrap items-center gap-2 text-lg tracking-tight text-muted-foreground">
               <span>Let&apos;s find your avatar</span>
               <Input
+                unstyled
                 value={seed}
                 onChange={(event) => setSeed(event.target.value)}
                 aria-label="Avatar seed"
                 placeholder={DEFAULT_SEEDS}
-                className="w-auto min-w-36 max-w-28 rounded-none border-0 border-b border-foreground/50 bg-transparent [*>p-0]! px-0 pb-0.5 text-lg font-medium text-foreground outline-none placeholder:text-muted-foreground/50 focus:border-foreground shadow-none"
+                className="w-auto min-w-36 max-w-28 border-0 border-b border-foreground/50 bg-transparent px-0 pb-0.5 text-lg font-medium text-foreground outline-none placeholder:text-muted-foreground/50 focus:border-b-foreground focus-within:ring-0! focus-visible:ring-0! shadow-none [&_input]:p-0! [&_input]:h-auto [&_input]:border-none [&_input]:outline-none [&_input]:ring-0!"
               />
               <Button
                 variant="ghost"

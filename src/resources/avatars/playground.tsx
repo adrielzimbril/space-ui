@@ -9,6 +9,7 @@ import { MobileNavDrawer } from '@/components/layout/mobile-nav-drawer'
 import { ToolbarButton } from '@/components/playground/playground-toolbar-button'
 import { source, uiKitSource, resourcesSource } from '@/lib/source'
 import { ResourceStudio } from '@/resources/studio'
+import { InlineInstallBar } from '@/components/docs/installation/inline-install-bar'
 import { ResourceToolbar, type ResourceToolbarConfig } from '@/resources/components/resource-toolbar'
 import { AvatarCanvas, type SelectedCanvasAvatar } from './canvas'
 import { AvatarCodeModal } from './code-modal'
@@ -103,6 +104,11 @@ export function AvatarsPlayground() {
         onToggleRight={setShowRight}
         className={expanded ? 'p-0' : undefined}
         left={<AvatarInfoPanel />}
+        installBar={
+          view !== 'seed' && !expanded ? (
+            <InlineInstallBar packageName="@usespaceui/avatars" isShadcn={false} />
+          ) : null
+        }
         canvas={
           view === 'canvas' ? (
             <AvatarCanvas

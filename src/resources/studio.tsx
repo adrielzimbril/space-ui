@@ -42,6 +42,7 @@ export function ResourceStudio({
   right,
   bottom,
   float,
+  installBar,
   showLeft = false,
   showRight = true,
   leftWidth = '18rem',
@@ -55,6 +56,7 @@ export function ResourceStudio({
   right?: ReactNode
   bottom?: ReactNode
   float?: ReactNode
+  installBar?: ReactNode
   showLeft?: boolean
   showRight?: boolean
   leftWidth?: string
@@ -101,6 +103,14 @@ export function ResourceStudio({
         >
           {canvas}
           {float}
+          {installBar ? (
+            <div
+              data-resource-ui
+              className="pointer-events-auto absolute bottom-6 left-1/2 z-30 hidden -translate-x-1/2 md:block max-w-[calc(100%-2rem)]"
+            >
+              {installBar}
+            </div>
+          ) : null}
         </motion.div>
 
         {isDesktop && right ? (
