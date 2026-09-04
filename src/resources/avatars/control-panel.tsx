@@ -1,6 +1,11 @@
 'use client'
 
-import { AvatarEffect, type AvatarDetails, type AvatarEffect as AvatarEffectType, type AvatarVariant } from '@usespaceui/avatars'
+import {
+  AvatarEffect,
+  type AvatarDetails,
+  type AvatarEffect as AvatarEffectType,
+  type AvatarVariant,
+} from '@usespaceui/avatars'
 import { Avatar } from '@usespaceui/avatars/react'
 import { PRESET_PALETTES } from '@usespaceui/gradients'
 import { IconRefresh } from '@tabler/icons-react'
@@ -10,7 +15,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { ToggleGroup, ToggleGroupItem } from '@/registry/primitives/toggle-group'
 import { AvatarVariantSelect, PaletteSelect } from './option-select'
 import { DEFAULT_SEEDS } from './seeds'
-import { toLabel } from './utils'
+import { toLabel, type AvatarViewMode } from './utils'
 
 const SIZE_MIN = 64
 const SIZE_MAX = 256
@@ -36,6 +41,7 @@ export function AvatarControlPanel({
   regenerateSeeds,
   view,
   setView,
+  previewSeed,
 }: {
   pool: string[]
   pattern: AvatarVariant | 'all'
@@ -55,16 +61,19 @@ export function AvatarControlPanel({
   parsedColors: string[] | undefined
   details: AvatarDetails
   regenerateSeeds: () => void
-  view: 'canvas' | 'mockup' | 'gallery'
-  setView: (view: 'canvas' | 'mockup' | 'gallery') => void
+  view: AvatarViewMode
+  setView: (view: AvatarViewMode) => void
+  previewSeed?: string
 }) {
+  const activeSeed = (view === 'seed' ? previewSeed : pool[0]) ?? DEFAULT_SEEDS
+
   return (
     <div className="flex h-full min-h-0 flex-col">
       <div className="flex h-10 shrink-0 items-center px-3">
         <div className="flex items-center gap-2">
           <h2 className="text-xs font-semibold">Avatar</h2>
           <span className="text-[0.625rem] text-muted-foreground">
-            {view === 'canvas' ? 'Canvas' : view === 'mockup' ? 'Mockup' : 'Gallery'}
+            {view === 'canvas' ? 'Canvas' : view === 'mockup' ? 'Mockup' : view === 'gallery' ? 'Gallery' : 'Seed'}
           </span>
         </div>
       </div>
@@ -73,7 +82,7 @@ export function AvatarControlPanel({
           <div className="flex items-center gap-3 rounded-xl bg-muted p-2.5">
             <div className="grid size-11 shrink-0 place-items-center overflow-hidden rounded-[0.625rem] bg-background">
               <Avatar
-                name={pool[0] ?? DEFAULT_SEEDS}
+                name={activeSeed}
                 variant={pattern === 'all' ? 'triton' : pattern}
                 size={44}
                 colors={parsedColors}
@@ -98,7 +107,7 @@ export function AvatarControlPanel({
             <span className="text-[0.6875rem] font-semibold text-muted-foreground">Family</span>
             <AvatarVariantSelect
               value={pattern}
-              seed={pool[0] ?? 'family-preview'}
+              seed={activeSeed}
               colors={parsedColors}
               onChange={(value) => {
                 setPattern(value)
@@ -112,7 +121,7 @@ export function AvatarControlPanel({
             <span className="text-[0.6875rem] font-semibold text-muted-foreground">Palette</span>
             <PaletteSelect
               value={String(paletteIndex)}
-              seed={pool[0] ?? 'palette-preview'}
+              seed={activeSeed}
               customColors={customColors}
               onChange={(value) => {
                 const next = Number(value)
@@ -145,10 +154,15 @@ export function AvatarControlPanel({
             </div>
           </div>
 
-          {view === 'canvas' ? (
+          {view === 'canvas' || view === 'seed' ? (
             <div className="flex flex-col gap-2">
               <span className="text-[0.6875rem] font-semibold text-muted-foreground">Size · {size}px</span>
-              <Slider value={[size]} min={SIZE_MIN} max={SIZE_MAX} onValueChange={(value) => setSize(value[0] ?? size)} />
+              <Slider
+                value={[size]}
+                min={SIZE_MIN}
+                max={SIZE_MAX}
+                onValueChange={(value) => setSize(value[0] ?? size)}
+              />
             </div>
           ) : null}
 

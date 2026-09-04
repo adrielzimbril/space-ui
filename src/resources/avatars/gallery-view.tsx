@@ -5,6 +5,7 @@ import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { Avatar } from '@usespaceui/avatars/react'
 import { generatePalette } from '@usespaceui/gradients'
 import { resolveVariant, type AvatarEffect, type AvatarVariant } from '@usespaceui/avatars'
+import { cn } from '@/registry/lib/utils'
 import type { SelectedCanvasAvatar } from './canvas'
 
 interface GalleryViewProps {
@@ -16,6 +17,8 @@ interface GalleryViewProps {
   parsedColors?: string[]
   paletteIndex: number
   onSelectAvatar: (avatar: SelectedCanvasAvatar) => void
+  sidebarLeft?: boolean
+  sidebarRight?: boolean
 }
 
 export function GalleryView({
@@ -27,6 +30,8 @@ export function GalleryView({
   parsedColors,
   paletteIndex,
   onSelectAvatar,
+  sidebarLeft = false,
+  sidebarRight = false,
 }: GalleryViewProps) {
   const expandedPool = useMemo(() => {
     const result: string[] = []
@@ -34,9 +39,18 @@ export function GalleryView({
     return result.slice(0, 293)
   }, [pool])
 
+  const activeSidebarsCount = Number(sidebarLeft) + Number(sidebarRight)
+
   return (
     <ScrollArea className="h-full w-full md:p-1" data-lenis-prevent="true" scrollbarGutter scrollFade>
-      <div className="grid w-full grid-cols-2 md:grid-cols-5 xl:grid-cols-7 gap-4 p-1.5">
+      <div
+        className={cn(
+          'grid w-full grid-cols-2 md:grid-cols-5 gap-4 p-1.5',
+          activeSidebarsCount === 0 && 'xl:grid-cols-7',
+          activeSidebarsCount === 1 && 'xl:grid-cols-6',
+          activeSidebarsCount === 2 && 'xl:grid-cols-5',
+        )}
+      >
         {expandedPool.map((seed, i) => {
           const currentColors = paletteIndex === -2 ? generatePalette(seed).colors : parsedColors
           return (

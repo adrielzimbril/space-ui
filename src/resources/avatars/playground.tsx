@@ -16,9 +16,9 @@ import { AvatarControlPanel } from './control-panel'
 import { MockupView } from './mockup-view'
 import { GalleryView } from './gallery-view'
 import { AvatarInfoPanel } from './info-panel'
-import { getRandomPersonas, getSelectedAvatarDetails, resolvePaletteColors } from './utils'
-
-type ViewMode = 'canvas' | 'mockup' | 'gallery'
+import { SeedView } from './seed-view'
+import { DEFAULT_SEEDS } from './seeds'
+import { getRandomPersonas, getSelectedAvatarDetails, resolvePaletteColors, type AvatarViewMode } from './utils'
 
 export function AvatarsPlayground() {
   const [pool, setPool] = useState<string[]>(() => getRandomPersonas(200))
@@ -29,9 +29,10 @@ export function AvatarsPlayground() {
   const [paletteIndex, setPaletteIndex] = useState(-2)
   const [customColors, setCustomColors] = useState<string[]>([])
   const [circle, setCircle] = useState(true)
-  const [view, setView] = useState<ViewMode>('gallery')
+  const [view, setView] = useState<AvatarViewMode>('gallery')
+  const [seedName, setSeedName] = useState(DEFAULT_SEEDS)
   const [canvasKey, setCanvasKey] = useState(0)
-  const [showLeft, setShowLeft] = useState(true)
+  const [showLeft, setShowLeft] = useState(false)
   const [showRight, setShowRight] = useState(true)
   const [expanded, setExpanded] = useState(false)
   const [selectedAvatar, setSelectedAvatar] = useState<SelectedCanvasAvatar | null>(null)
@@ -64,8 +65,9 @@ export function AvatarsPlayground() {
     setPaletteIndex(-2)
     setCustomColors([])
     setCircle(true)
+    setSeedName(DEFAULT_SEEDS)
     setView('gallery')
-    setShowLeft(isDesktop)
+    setShowLeft(false)
     setShowRight(isDesktop)
     setExpanded(false)
     setSelectedAvatar(null)
@@ -126,7 +128,7 @@ export function AvatarsPlayground() {
               parsedColors={parsedColors}
               paletteIndex={paletteIndex}
             />
-          ) : (
+          ) : view === 'gallery' ? (
             <GalleryView
               pool={pool}
               pattern={pattern}
@@ -136,6 +138,19 @@ export function AvatarsPlayground() {
               parsedColors={parsedColors}
               paletteIndex={paletteIndex}
               onSelectAvatar={selectAvatar}
+              sidebarLeft={showLeft && !expanded}
+              sidebarRight={showRight && !expanded}
+            />
+          ) : (
+            <SeedView
+              seed={seedName}
+              setSeed={setSeedName}
+              pattern={pattern}
+              size={size}
+              effect={effect}
+              animate={animate}
+              circle={circle}
+              parsedColors={parsedColors}
             />
           )
         }
@@ -174,9 +189,14 @@ export function AvatarsPlayground() {
             setAnimate={setAnimate}
             parsedColors={parsedColors}
             details={details}
-            regenerateSeeds={() => setPool(getRandomPersonas(200))}
+            regenerateSeeds={() => {
+              const next = getRandomPersonas(200)
+              setPool(next)
+              setSeedName(next[0] ?? DEFAULT_SEEDS)
+            }}
             view={view}
             setView={setView}
+            previewSeed={seedName}
           />
         }
       />

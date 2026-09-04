@@ -1,9 +1,12 @@
 'use client'
 
 import type { ReactNode } from 'react'
+import { motion } from 'motion/react'
 import { cn } from '@/registry/lib/utils'
 import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
 import { Drawer, DrawerPanel, DrawerPopup } from '@/registry/primitives/drawer'
+
+const SPRING = { type: 'spring', stiffness: 150, damping: 26, mass: 0.82 } as const
 
 function StudioDrawer({
   open,
@@ -39,7 +42,7 @@ export function ResourceStudio({
   right,
   bottom,
   float,
-  showLeft = true,
+  showLeft = false,
   showRight = true,
   leftWidth = '18rem',
   rightWidth = '20rem',
@@ -61,31 +64,63 @@ export function ResourceStudio({
   className?: string
 }) {
   const isDesktop = useMediaQuery('(min-width: 768px)', true)
+  const leftOpen = Boolean(isDesktop && left && showLeft)
+  const rightOpen = Boolean(isDesktop && right && showRight)
 
   return (
     <div className={cn('relative flex h-dvh w-full flex-col overflow-hidden bg-muted p-2 text-foreground', className)}>
-      <div className="flex min-h-0 flex-1 gap-2">
-        {isDesktop && left && showLeft ? (
-          <aside
+      <div className="relative min-h-0 flex-1 overflow-hidden">
+        {isDesktop && left ? (
+          <motion.aside
             data-resource-ui
-            className="flex shrink-0 flex-col overflow-hidden rounded-2xl bg-background"
+            initial={false}
+            animate={{
+              x: leftOpen ? 0 : 'calc(-100% - 0.5rem)',
+              opacity: leftOpen ? 1 : 0,
+            }}
+            transition={SPRING}
+            aria-hidden={!leftOpen}
+            className={cn(
+              'absolute inset-y-0 left-0 z-20 flex flex-col overflow-hidden rounded-2xl bg-background will-change-transform',
+              !leftOpen && 'pointer-events-none select-none',
+            )}
             style={{ width: leftWidth }}
           >
             {left}
-          </aside>
+          </motion.aside>
         ) : null}
-        <div className="relative min-w-0 flex-1 overflow-hidden rounded-2xl bg-background">
+
+        <motion.div
+          initial={false}
+          animate={{
+            left: leftOpen ? `calc(${leftWidth} + 0.5rem)` : 0,
+            right: rightOpen ? `calc(${rightWidth} + 0.5rem)` : 0,
+          }}
+          transition={SPRING}
+          className="absolute inset-y-0 overflow-hidden rounded-2xl bg-background will-change-[left,right]"
+        >
           {canvas}
           {float}
-        </div>
-        {isDesktop && right && showRight ? (
-          <aside
+        </motion.div>
+
+        {isDesktop && right ? (
+          <motion.aside
             data-resource-ui
-            className="flex shrink-0 flex-col overflow-hidden rounded-2xl bg-background"
+            initial={false}
+            animate={{
+              x: rightOpen ? 0 : 'calc(100% + 0.5rem)',
+              opacity: rightOpen ? 1 : 0,
+            }}
+            transition={SPRING}
+            aria-hidden={!rightOpen}
+            className={cn(
+              'absolute inset-y-0 right-0 z-20 flex flex-col overflow-hidden rounded-2xl bg-background will-change-transform',
+              !rightOpen && 'pointer-events-none select-none',
+            )}
             style={{ width: rightWidth }}
           >
             {right}
-          </aside>
+          </motion.aside>
         ) : null}
       </div>
       {bottom ? (

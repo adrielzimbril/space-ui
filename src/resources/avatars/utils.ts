@@ -1,4 +1,6 @@
 import { AvatarVariant, getAvatarDetails, type AvatarDetails } from '@usespaceui/avatars'
+
+export type AvatarViewMode = 'canvas' | 'mockup' | 'gallery' | 'seed'
 import { PRESET_PALETTES } from '@usespaceui/gradients'
 import { HISTORICAL_PERSONAS } from './seeds'
 

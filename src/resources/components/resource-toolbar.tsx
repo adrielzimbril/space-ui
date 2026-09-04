@@ -1,9 +1,26 @@
 'use client'
 
 import type { ReactNode } from 'react'
-import { IconLayoutSidebarLeftCollapse, IconLayoutSidebarLeftExpand } from '@tabler/icons-react'
+import { useTheme } from 'next-themes'
+import {
+  IconLayoutSidebarLeftCollapse,
+  IconLayoutSidebarLeftExpand,
+  IconLayoutSidebarRightCollapse,
+  IconLayoutSidebarRightExpand,
+  IconArrowsMaximize,
+  IconArrowsMinimize,
+  IconArtboard,
+  IconAppWindow,
+  IconLayoutGrid,
+  IconFingerprint,
+  IconRotateClockwise,
+  IconSun,
+  IconMoon,
+} from '@tabler/icons-react'
 import { ToolbarButton } from '@/components/playground/playground-toolbar-button'
 import { ToolbarSection } from '@/components/playground/playground-toolbar-section'
+import { MorphIcon } from '@/registry/components/spaceui/morph-icon'
+import { triggerThemeTransition } from '@/registry/components/spaceui/mode-switcher'
 
 export type ResourceToolbarConfig = {
   theme?: boolean
@@ -12,8 +29,8 @@ export type ResourceToolbarConfig = {
   sidebar?: boolean
   reset?: boolean
   viewToggle?: boolean
-  view?: 'canvas' | 'mockup' | 'gallery'
-  onViewChange?: (view: 'canvas' | 'mockup' | 'gallery') => void
+  view?: 'canvas' | 'mockup' | 'gallery' | 'seed'
+  onViewChange?: (view: 'canvas' | 'mockup' | 'gallery' | 'seed') => void
   onReset?: () => void
   onToggleExpand?: (expanded: boolean) => void
   onToggleInfo?: (visible: boolean) => void
@@ -50,17 +67,28 @@ export function ResourceToolbar({
     expanded = false,
   } = config
 
+  const { resolvedTheme, setTheme } = useTheme()
+  const activeTheme = resolvedTheme === 'dark' ? 'dark' : 'light'
+
+  const handleToggleTheme = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const next = activeTheme === 'dark' ? 'light' : 'dark'
+    void triggerThemeTransition(event.currentTarget, () => setTheme(next))
+  }
+
   const cycleView = () => {
     if (!onViewChange) return
     if (view === 'canvas') onViewChange('mockup')
     else if (view === 'mockup') onViewChange('gallery')
+    else if (view === 'gallery') onViewChange('seed')
     else onViewChange('canvas')
   }
 
-  const viewLabel = view === 'canvas' ? 'Mockup' : view === 'mockup' ? 'Gallery' : 'Canvas'
+  const viewLabel =
+    view === 'canvas' ? 'Mockup' : view === 'mockup' ? 'Gallery' : view === 'gallery' ? 'Seed' : 'Canvas'
 
   const defaultButtons = (
     <>
+      {/* 1. Panneau Gauche (Info) */}
       {info && !expanded ? (
         <ToolbarButton
           label={infoVisible ? 'Hide info' : 'Show info'}
@@ -74,173 +102,64 @@ export function ResourceToolbar({
           )}
         </ToolbarButton>
       ) : null}
+
+      {/* 2. Panneau Droit (Controls / Sidebar) */}
+      {sidebar && !expanded ? (
+        <ToolbarButton
+          label={sidebarVisible ? 'Hide controls' : 'Show controls'}
+          pressed={sidebarVisible}
+          onClick={() => onToggleSidebar?.(!sidebarVisible)}
+        >
+          {sidebarVisible ? (
+            <IconLayoutSidebarRightCollapse className="size-4" />
+          ) : (
+            <IconLayoutSidebarRightExpand className="size-4" />
+          )}
+        </ToolbarButton>
+      ) : null}
+
+      {/* 3. Plein écran (Expand) */}
       {expand ? (
         <ToolbarButton
           label={expanded ? 'Show panels' : 'Hide panels'}
           pressed={expanded}
           onClick={() => onToggleExpand?.(!expanded)}
         >
-          {expanded ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="size-4"
-            >
-              <path d="M4 14h6v6" />
-              <path d="M20 10h-6V4" />
-              <path d="M14 10l7-7" />
-              <path d="M3 21l7-7" />
-            </svg>
-          ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="size-4"
-            >
-              <path d="M4 10h6V4" />
-              <path d="M20 14h-6v6" />
-              <path d="M10 14l-7 7" />
-              <path d="M21 3l-7 7" />
-            </svg>
-          )}
+          {expanded ? <IconArrowsMinimize className="size-4" /> : <IconArrowsMaximize className="size-4" />}
         </ToolbarButton>
       ) : null}
-      {sidebar && !expanded ? (
-        <ToolbarButton
-          label={sidebarVisible ? 'Hide controls' : 'Show controls'}
-          pressed={!sidebarVisible}
-          onClick={() => onToggleSidebar?.(!sidebarVisible)}
-        >
-          {sidebarVisible ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="size-4"
-            >
-              <rect width="18" height="18" x="3" y="3" rx="2" />
-              <path d="M9 3v18" />
-            </svg>
-          ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="size-4"
-            >
-              <rect width="18" height="18" x="3" y="3" rx="2" />
-              <path d="M15 3v18" />
-            </svg>
-          )}
-        </ToolbarButton>
-      ) : null}
+
+      {/* 4. Vue (Canvas / Mockup / Gallery / Seed) */}
       {viewToggle ? (
         <ToolbarButton label={viewLabel} pressed={view !== 'canvas'} onClick={cycleView}>
           {view === 'canvas' ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="size-4"
-            >
-              <path d="M3 3h7v7H3z" />
-              <path d="M14 3h7v7h-7z" />
-              <path d="M14 14h7v7h-7z" />
-              <path d="M3 14h7v7H3z" />
-            </svg>
+            <IconArtboard className="size-4" />
           ) : view === 'mockup' ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="size-4"
-            >
-              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
-            </svg>
+            <IconAppWindow className="size-4" />
+          ) : view === 'gallery' ? (
+            <IconLayoutGrid className="size-4" />
           ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="size-4"
-            >
-              <rect width="7" height="7" x="3" y="3" rx="1" />
-              <rect width="7" height="7" x="14" y="3" rx="1" />
-              <rect width="7" height="7" x="14" y="14" rx="1" />
-              <rect width="7" height="7" x="3" y="14" rx="1" />
-            </svg>
+            <IconFingerprint className="size-4" />
           )}
         </ToolbarButton>
       ) : null}
+
+      {/* 5. Reset */}
       {reset ? (
         <ToolbarButton label="Reset" onClick={onReset}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="size-4"
-          >
-            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
-            <path d="M3 3v5h5" />
-          </svg>
+          <IconRotateClockwise className="size-4" />
         </ToolbarButton>
       ) : null}
+
+      {/* 6. Thème */}
       {theme ? (
-        <ToolbarButton label="Theme" onClick={() => {}}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="size-4"
-          >
-            <circle cx="12" cy="12" r="4" />
-            <path d="M12 2v2" />
-            <path d="M12 20v2" />
-            <path d="m4.93 4.93 1.41 1.41" />
-            <path d="m17.66 17.66 1.41 1.41" />
-            <path d="M2 12h2" />
-            <path d="M20 12h2" />
-            <path d="m6.34 17.66-1.41 1.41" />
-            <path d="m19.07 4.93-1.41 1.41" />
-          </svg>
+        <ToolbarButton
+          label={activeTheme === 'dark' ? 'Switch to light' : 'Switch to dark'}
+          onClick={handleToggleTheme}
+        >
+          <MorphIcon activeKey={activeTheme} variant="blur-scale">
+            {activeTheme === 'dark' ? <IconMoon className="size-4" /> : <IconSun className="size-4" />}
+          </MorphIcon>
         </ToolbarButton>
       ) : null}
     </>
