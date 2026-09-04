@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from 'react'
 import { cn } from '@/registry/lib/utils'
-import { attachGpuGate } from '@/registry/lib/gpu-runtime'
+import { attachGpuGate, deferUntilVisible } from '@/registry/lib/gpu-runtime'
 import { BloopState, type OrbBloopProps } from './types'
 import { useOrbAudio } from '@/registry/components/orb/smooth/use-orb-audio'
 import { BLOOP_WGSL } from './bloop.wgsl'
@@ -57,6 +57,7 @@ export function OrbBloop({
     let stop: (() => void) | undefined
     let disposeGpu: (() => void) | undefined
     let disposeGate: (() => void) | undefined
+    let disposeDefer: (() => void) | undefined
 
     async function mount() {
       const { init, effect, surface, frameLoop } = await import('vgpu')
@@ -70,8 +71,8 @@ export function OrbBloop({
       const gate = attachGpuGate(canvas)
       disposeGate = gate.dispose
       if (gate.state.lowPower) {
-        canvas.width = 256
-        canvas.height = 256
+        canvas.width = 160
+        canvas.height = 160
       }
       const canvasSurface = surface(gpu, canvasRef.current, {
         format: 'bgra8unorm',
@@ -83,7 +84,7 @@ export function OrbBloop({
       const loop = frameLoop(gpu, (frame) => {
         if (gate.state.paused) return
         const now = Date.now()
-        if (gate.state.lowPower && now - lastDraw < 33) return
+        if (gate.frameMs && now - lastDraw < gate.frameMs) return
         lastDraw = now
         const time = (now - startTime.current) / 1000
         let avg = [0, 0, 0, 0]
@@ -124,8 +125,8 @@ export function OrbBloop({
             avgMag: audioAverageRef.current,
             cumulativeAudio: cumulativeAudioRef.current,
             viewport: [canvasRef.current?.width || size, canvasRef.current?.height || size],
-            watercolorStrength: p.watercolorStrength,
-            watercolorAnimated: p.watercolorAnimated ? 1 : 0,
+            watercolorStrength: gate.state.lowPower ? 0 : p.watercolorStrength,
+            watercolorAnimated: 0,
             bloopColorMain: [...p.bloopColorMain, 1],
             bloopColorLow: [...p.bloopColorLow, 1],
             bloopColorMid: [...p.bloopColorMid, 1],
@@ -138,9 +139,12 @@ export function OrbBloop({
       disposeGpu = () => gpu.dispose()
     }
 
-    mount().catch((error) => console.error('OrbBloop WebGPU init failed:', error))
+    disposeDefer = deferUntilVisible(canvas, () => {
+      mount().catch((error) => console.error('OrbBloop WebGPU init failed:', error))
+    })
     return () => {
       cancelled = true
+      disposeDefer?.()
       stop?.()
       disposeGate?.()
       disposeGpu?.()
