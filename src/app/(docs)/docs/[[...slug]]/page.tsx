@@ -9,6 +9,8 @@ import { DocsPageHeader } from '@/components/docs/layout/docs-page-header'
 import { DocsPager } from '@/components/docs/layout/docs-pager'
 import { DocsTocSidebar } from '@/components/docs/layout/docs-toc-sidebar'
 import { getDocMetadata } from '@/lib/docs-metadata'
+import { PageLayoutSync } from '@/components/docs/layout/page-layout-sync'
+import { Mode } from '@/config/preview-config'
 
 export function generateStaticParams() {
   return source.generateParams()
@@ -72,6 +74,12 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
 
   return (
     <>
+      <PageLayoutSync
+        mode={Mode.standard}
+        defaultMode={Mode.standard}
+        path={`docs/${page.path}`}
+        title={pageData.title}
+      />
       <div className="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full">
         {/* Main Content Column */}
         <div className="flex min-w-0 flex-1 flex-col">

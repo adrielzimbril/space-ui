@@ -67,19 +67,9 @@ const config: NextConfig = {
   async redirects() {
     return [
       {
-        source: '/docs/components/avatar-group',
-        destination: '/docs/components/animate/avatar-group',
-        permanent: true,
-      },
-      {
-        source: '/docs/components/code-editor',
-        destination: '/docs/components/animate/code',
-        permanent: true,
-      },
-      {
-        source: '/docs/components/code-tabs',
-        destination: '/docs/components/animate/code-tabs',
-        permanent: true,
+        source: '/ui-kit',
+        destination: '/ui-kit/components',
+        permanent: false,
       },
     ]
   },
