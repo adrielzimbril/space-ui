@@ -566,7 +566,7 @@ export function MobileNavDrawer({ open, onOpenChange, trees = [], trigger, trigg
           </DrawerPanel>
         </DrawerContent>
         {/* Footer — mirrors CommandFooter + site-header right side actions */}
-        <DrawerFooter className="shrink-0 flex-row items-center justify-between! border-none px-0.5 pb-2 pt-0">
+        {/* <DrawerFooter className="shrink-0 flex-row items-center justify-between! border-none px-0.5 pb-2 pt-0">
           <ModeSwitcher className="bg-background" />
           <div className="flex items-center gap-1.5">
             <Link
@@ -589,7 +589,7 @@ export function MobileNavDrawer({ open, onOpenChange, trees = [], trigger, trigg
               <span>Sign in</span>
             </Link>
           </div>
-        </DrawerFooter>
+        </DrawerFooter> */}
       </DrawerPopup>
     </Drawer>
   )

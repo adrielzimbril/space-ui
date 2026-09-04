@@ -295,16 +295,6 @@ export function MegaMenu({ className }: { className?: string }) {
               </div>
             </NavigationMenuContent>
           </NavigationMenuItem>
-
-          {/* Dashboard Link */}
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              href="/dashboard"
-              className={cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-muted/50 focus:bg-muted/50')}
-            >
-              Dashboard
-            </NavigationMenuLink>
-          </NavigationMenuItem>
         </NavigationMenuList>
 
         {/* Base UI Animated Viewport & Positioner Portal */}

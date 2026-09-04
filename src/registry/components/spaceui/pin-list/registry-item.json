@@ -5,8 +5,8 @@
   "title": "Pin List",
   "description": "A playful list for pinning and unpinning items, with smooth animated transitions as items move between groups.",
   "dependencies": [
-    "lucide-react",
-    "motion"
+    "motion",
+    "@tabler/icons-react"
   ],
   "registryDependencies": [
     "@usespaceui/lib-utils"
@@ -23,5 +23,5 @@
     }
   ],
   "createdAt": "2026-08-21",
-  "updatedAt": "2026-08-21"
+  "updatedAt": "2026-09-04"
 }

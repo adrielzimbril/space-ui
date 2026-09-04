@@ -32,6 +32,8 @@ const appInfo = {
   site: 'https://www.spaceui.one',
   appName: 'Space UI',
   namespace: 'usespaceui',
+  // repoPath: 'usespaceui/ui',
+  repoPath: 'adrielzimbril/space-ui',
   twitterHandle: '@usespaceui',
 }
 
@@ -45,7 +47,7 @@ export const siteConfig = {
     'Space UI - A modern, high-performance UI kit built with React, TypeScript, Tailwind CSS, Base UI, and Framer Motion.',
   links: {
     docs: `${appInfo.site}/docs`,
-    // github: `https://github.com/${appInfo.namespace}/ui`,
+    // github: `https://github.com/${appInfo.repoPath}/`,
     github: `https://github.com/adrielzimbril/space-ui`,
     // twitter: `https://x.com/${appInfo.twitterHandle}`,
     x: 'https://x.com/adrielzimbril',

@@ -1,57 +1,85 @@
 'use client'
 
 import * as React from 'react'
-import { Pin } from 'lucide-react'
-import { motion, LayoutGroup, AnimatePresence, type HTMLMotionProps, type Transition } from 'motion/react'
+import { IconPin, IconPinFilled } from '@tabler/icons-react'
+import {
+  motion,
+  LayoutGroup,
+  AnimatePresence,
+  useReducedMotion,
+  type HTMLMotionProps,
+  type Transition,
+} from 'motion/react'
 import { cn } from '@/registry/lib/utils'
 
-type PinListItem = {
-  id: number
+export type PinListItem = {
+  id: number | string
   name: string
-  info: string
-  icon: React.ElementType
+  info?: string
+  icon?: React.ComponentType<{ className?: string }> | React.ReactNode
   pinned: boolean
 }
 
-type PinListProps = {
+export type PinListProps = {
   items: PinListItem[]
   labels?: {
     pinned?: string
     unpinned?: string
   }
   transition?: Transition
-  labelMotionProps?: HTMLMotionProps<'p'>
+  labelMotionProps?: HTMLMotionProps<'div'>
   className?: string
   labelClassName?: string
   pinnedSectionClassName?: string
   unpinnedSectionClassName?: string
   zIndexResetDelay?: number
-} & HTMLMotionProps<'div'>
+  onPinChange?: (items: PinListItem[]) => void
+  onItemClick?: (item: PinListItem) => void
+} & Omit<HTMLMotionProps<'div'>, 'children'>
 
-function PinList({
+function renderIcon(icon: React.ComponentType<{ className?: string }> | React.ReactNode) {
+  if (!icon) return null
+  if (React.isValidElement(icon)) return icon
+  if (typeof icon === 'function' || typeof icon === 'object') {
+    const IconComponent = icon as React.ComponentType<{ className?: string }>
+    return <IconComponent className="size-4.5" />
+  }
+  return null
+}
+
+export function PinList({
   items,
   labels = { pinned: 'Pinned Items', unpinned: 'All Items' },
-  transition = { stiffness: 320, damping: 20, mass: 0.8, type: 'spring' },
-  labelMotionProps = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1 },
-    exit: { opacity: 0 },
-    transition: { duration: 0.22, ease: 'easeInOut' },
-  },
+  transition,
+  labelMotionProps,
   className,
   labelClassName,
   pinnedSectionClassName,
   unpinnedSectionClassName,
   zIndexResetDelay = 500,
+  onPinChange,
+  onItemClick,
   ...props
 }: PinListProps) {
-  const [listItems, setListItems] = React.useState(items)
+  const [listItems, setListItems] = React.useState<PinListItem[]>(items)
   const [togglingGroup, setTogglingGroup] = React.useState<'pinned' | 'unpinned' | null>(null)
+  const reduced = useReducedMotion() ?? false
+
+  // Keep internal state in sync if external items change
+  React.useEffect(() => {
+    setListItems(items)
+  }, [items])
+
+  const defaultTransition: Transition = reduced
+    ? { duration: 0 }
+    : { type: 'spring', stiffness: 320, damping: 22, mass: 0.8 }
+
+  const springTransition = transition ?? defaultTransition
 
   const pinned = listItems.filter((u) => u.pinned)
   const unpinned = listItems.filter((u) => !u.pinned)
 
-  const toggleStatus = (id: number) => {
+  const toggleStatus = (id: number | string) => {
     const item = listItems.find((u) => u.id === id)
     if (!item) return
 
@@ -60,100 +88,188 @@ function PinList({
       const idx = prev.findIndex((u) => u.id === id)
       if (idx === -1) return prev
       const updated = [...prev]
-      const [item] = updated.splice(idx, 1)
-      if (!item) return prev
-      const toggled = { ...item, pinned: !item.pinned }
+      const [target] = updated.splice(idx, 1)
+      if (!target) return prev
+      const toggled = { ...target, pinned: !target.pinned }
       if (toggled.pinned) updated.push(toggled)
       else updated.unshift(toggled)
+      onPinChange?.(updated)
       return updated
     })
-    // Reset group z-index after the animation duration (keep in sync with animation timing)
+
     setTimeout(() => setTogglingGroup(null), zIndexResetDelay)
   }
 
-  return (
-    <motion.div className={cn('space-y-10', className)} {...props}>
-      <LayoutGroup>
-        <div>
-          {pinned.length > 0 && (
-            <div
-              className={cn('space-y-3 relative', togglingGroup === 'pinned' ? 'z-5' : 'z-10', pinnedSectionClassName)}
-            >
-              {pinned.map((item) => (
-                <motion.div
-                  key={item.id}
-                  layoutId={`item-${item.id}`}
-                  onClick={() => toggleStatus(item.id)}
-                  transition={transition}
-                  className="flex items-center justify-between gap-5 rounded-2xl bg-neutral-200 dark:bg-neutral-800 p-2"
-                >
-                  <div className="flex items-center gap-2">
-                    <div className="rounded-lg bg-background p-2">
-                      <item.icon className="size-5 text-neutral-500 dark:text-neutral-400" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-semibold">{item.name}</div>
-                      <div className="text-xs text-neutral-500 dark:text-neutral-400 font-medium">{item.info}</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-center size-8 rounded-full bg-neutral-400 dark:bg-neutral-600">
-                    <Pin className="size-4 text-white fill-white" />
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          )}
-        </div>
+  const handleToggle = (id: number | string, e?: React.MouseEvent) => {
+    e?.stopPropagation()
+    toggleStatus(id)
+  }
 
-        <div>
-          <AnimatePresence>
-            {unpinned.length > 0 && (
-              <motion.p
-                layout
-                key="all-label"
-                className={cn('font-medium px-3 text-neutral-500 dark:text-neutral-300 text-sm mb-2', labelClassName)}
-                {...labelMotionProps}
-              >
-                {labels.unpinned}
-              </motion.p>
-            )}
-          </AnimatePresence>
-          {unpinned.length > 0 && (
-            <div
-              className={cn(
-                'space-y-3 relative',
-                togglingGroup === 'unpinned' ? 'z-5' : 'z-10',
-                unpinnedSectionClassName,
-              )}
+  return (
+    <motion.div className={cn('flex w-full select-none flex-col gap-6', className)} {...props}>
+      <LayoutGroup>
+        {/* Pinned Section */}
+        <AnimatePresence initial={false}>
+          {pinned.length > 0 && (
+            <motion.div
+              key="pinned-section"
+              initial={reduced ? false : { opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={reduced ? { opacity: 0 } : { opacity: 0, height: 0 }}
+              transition={reduced ? { duration: 0 } : { type: 'spring', stiffness: 320, damping: 22 }}
+              className="space-y-2"
+              {...labelMotionProps}
             >
-              {unpinned.map((item) => (
-                <motion.div
-                  key={item.id}
-                  layoutId={`item-${item.id}`}
-                  onClick={() => toggleStatus(item.id)}
-                  transition={transition}
-                  className="flex items-center justify-between gap-5 rounded-2xl bg-neutral-200 dark:bg-neutral-800 p-2 group"
-                >
-                  <div className="flex items-center gap-2">
-                    <div className="rounded-lg bg-background p-2">
-                      <item.icon className="size-5 text-neutral-500 dark:text-neutral-400" />
+              <div className={cn('flex items-center justify-between px-2', labelClassName)}>
+                <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                  <IconPinFilled className="size-3.5 rotate-45 text-foreground" />
+                  <span>{labels.pinned}</span>
+                </div>
+                <span className="rounded-full bg-muted px-2 py-0.5 text-xs font-semibold text-muted-foreground">
+                  {pinned.length}
+                </span>
+              </div>
+
+              <div
+                className={cn(
+                  'relative flex flex-col gap-1 rounded-2xl border border-border/50 bg-muted/70 p-1.5 backdrop-blur-xs',
+                  togglingGroup === 'pinned' ? 'z-20' : 'z-10',
+                  pinnedSectionClassName,
+                )}
+              >
+                {pinned.map((item) => (
+                  <motion.div
+                    key={item.id}
+                    layoutId={`pin-item-${item.id}`}
+                    layout
+                    transition={springTransition}
+                    whileHover={reduced ? undefined : { scale: 1.01 }}
+                    whileTap={reduced ? undefined : { scale: 0.985 }}
+                    onClick={(e) => {
+                      if (onItemClick) onItemClick(item)
+                      else handleToggle(item.id, e)
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault()
+                        if (onItemClick) onItemClick(item)
+                        else handleToggle(item.id)
+                      }
+                    }}
+                    tabIndex={0}
+                    role="button"
+                    aria-label={`${item.name}, pinned`}
+                    className="group relative flex cursor-pointer items-center justify-between gap-3 rounded-xl border border-border/30 bg-background p-2.5 shadow-2xs transition-colors hover:border-border/70 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-foreground"
+                  >
+                    <div className="flex min-w-0 items-center gap-3">
+                      {item.icon ? (
+                        <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-muted/80 text-muted-foreground transition-colors group-hover:bg-muted group-hover:text-foreground">
+                          {renderIcon(item.icon)}
+                        </div>
+                      ) : null}
+                      <div className="min-w-0">
+                        <div className="truncate text-sm font-bold tracking-tight text-foreground">{item.name}</div>
+                        {item.info ? (
+                          <div className="truncate text-xs font-medium text-muted-foreground">{item.info}</div>
+                        ) : null}
+                      </div>
                     </div>
-                    <div>
-                      <div className="text-sm font-semibold">{item.name}</div>
-                      <div className="text-xs text-neutral-500 dark:text-neutral-400 font-medium">{item.info}</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-center size-8 rounded-full bg-neutral-400 dark:bg-neutral-600 opacity-0 group-hover:opacity-100 transition-opacity duration-250">
-                    <Pin className="size-4 text-white" />
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+
+                    <button
+                      type="button"
+                      aria-label={`Unpin ${item.name}`}
+                      onClick={(e) => handleToggle(item.id, e)}
+                      className="flex size-7 shrink-0 items-center justify-center rounded-full bg-foreground text-background shadow-2xs transition-all hover:scale-110 active:scale-95 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-foreground"
+                    >
+                      <IconPinFilled className="size-3.5 rotate-45" />
+                    </button>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           )}
-        </div>
+        </AnimatePresence>
+
+        {/* Unpinned Section */}
+        <AnimatePresence initial={false}>
+          {unpinned.length > 0 && (
+            <motion.div
+              key="unpinned-section"
+              initial={reduced ? false : { opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={reduced ? { opacity: 0 } : { opacity: 0 }}
+              className="space-y-2"
+              {...labelMotionProps}
+            >
+              <div className={cn('flex items-center justify-between px-2', labelClassName)}>
+                <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                  {labels.unpinned}
+                </span>
+                <span className="rounded-full bg-muted px-2 py-0.5 text-xs font-semibold text-muted-foreground">
+                  {unpinned.length}
+                </span>
+              </div>
+
+              <div
+                className={cn(
+                  'relative flex flex-col gap-1 rounded-2xl border border-border/50 bg-muted/70 p-1.5 backdrop-blur-xs',
+                  togglingGroup === 'unpinned' ? 'z-20' : 'z-10',
+                  unpinnedSectionClassName,
+                )}
+              >
+                {unpinned.map((item) => (
+                  <motion.div
+                    key={item.id}
+                    layoutId={`pin-item-${item.id}`}
+                    layout
+                    transition={springTransition}
+                    whileHover={reduced ? undefined : { scale: 1.01 }}
+                    whileTap={reduced ? undefined : { scale: 0.985 }}
+                    onClick={(e) => {
+                      if (onItemClick) onItemClick(item)
+                      else handleToggle(item.id, e)
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault()
+                        if (onItemClick) onItemClick(item)
+                        else handleToggle(item.id)
+                      }
+                    }}
+                    tabIndex={0}
+                    role="button"
+                    aria-label={`${item.name}, unpinned`}
+                    className="group relative flex cursor-pointer items-center justify-between gap-3 rounded-xl border border-border/30 bg-background p-2.5 shadow-2xs transition-colors hover:border-border/70 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-foreground"
+                  >
+                    <div className="flex min-w-0 items-center gap-3">
+                      {item.icon ? (
+                        <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-muted/80 text-muted-foreground transition-colors group-hover:bg-muted group-hover:text-foreground">
+                          {renderIcon(item.icon)}
+                        </div>
+                      ) : null}
+                      <div className="min-w-0">
+                        <div className="truncate text-sm font-bold tracking-tight text-foreground">{item.name}</div>
+                        {item.info ? (
+                          <div className="truncate text-xs font-medium text-muted-foreground">{item.info}</div>
+                        ) : null}
+                      </div>
+                    </div>
+
+                    <button
+                      type="button"
+                      aria-label={`Pin ${item.name}`}
+                      onClick={(e) => handleToggle(item.id, e)}
+                      className="flex size-7 shrink-0 items-center justify-center rounded-full bg-muted/80 text-muted-foreground opacity-40 transition-all hover:scale-110 hover:bg-foreground hover:text-background hover:opacity-100 active:scale-95 group-hover:opacity-100 group-focus-within:opacity-100 focus-visible:opacity-100 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-foreground"
+                    >
+                      <IconPin className="size-3.5 -rotate-45" />
+                    </button>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </LayoutGroup>
     </motion.div>
   )
 }
-
-export { PinList, type PinListProps, type PinListItem }

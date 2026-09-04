@@ -73,7 +73,10 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const MDXContent = pageData.body as any
 
-  const docMeta = await getDocMetadata(params.slug)
+  const showCatalog = isCatalogIndex(params.slug)
+  const docMeta = showCatalog
+    ? { dependencies: [], registryDependencies: [], relatedComponents: [] }
+    : await getDocMetadata(params.slug)
   const { prev: prevNav, next: nextNav } = getDocsNeighbours(source, page.url)
 
   const isBlocksOrComponents =
@@ -81,7 +84,6 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
     params.slug?.[0] === 'components' ||
     page.url.startsWith('/ui-kit/blocks') ||
     page.url.startsWith('/ui-kit/components')
-  const showCatalog = isCatalogIndex(params.slug)
   const catalog = showCatalog ? getUiKitCatalog(params.slug) : []
 
   const previewConfig = normalizePreviewConfig(pageData.preview)
@@ -114,6 +116,7 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
               lastModified={pageData.lastModified}
               prevNav={prevNav}
               nextNav={nextNav}
+              showMetadata={!showCatalog}
             />
 
             {/* Markdown Body */}

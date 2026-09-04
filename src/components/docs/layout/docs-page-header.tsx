@@ -15,6 +15,7 @@ export interface DocsPageHeaderProps {
   lastModified?: number | string | Date
   prevNav?: NavItem
   nextNav?: NavItem
+  showMetadata?: boolean
 }
 
 export function DocsPageHeader({
@@ -27,6 +28,7 @@ export function DocsPageHeader({
   lastModified,
   prevNav,
   nextNav,
+  showMetadata = true,
 }: DocsPageHeaderProps) {
   return (
     <div className="flex flex-col gap-3">
@@ -43,12 +45,14 @@ export function DocsPageHeader({
 
       {description && <p className="text-muted-foreground">{description}</p>}
 
-      <DocHeaderMetadata
-        updatedAt={docMeta.updatedAt || (lastModified ? new Date(lastModified).toISOString() : undefined)}
-        createdAt={docMeta.createdAt}
-        size={docMeta.size}
-        dependencies={docMeta.dependencies}
-      />
+      {showMetadata ? (
+        <DocHeaderMetadata
+          updatedAt={docMeta.updatedAt || (lastModified ? new Date(lastModified).toISOString() : undefined)}
+          createdAt={docMeta.createdAt}
+          size={docMeta.size}
+          dependencies={docMeta.dependencies}
+        />
+      ) : null}
     </div>
   )
 }
