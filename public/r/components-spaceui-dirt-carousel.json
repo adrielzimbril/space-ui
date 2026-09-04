@@ -6,6 +6,9 @@
   "dependencies": [
     "motion"
   ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
   "files": [
     {
       "path": "src/registry/components/spaceui/dirt-carousel/index.tsx",
@@ -18,8 +21,5 @@
     "component",
     "dirt-carousel"
   ],
-  "type": "registry:component",
-  "registryDependencies": [
-    "https://www.spaceui.one/r/lib-utils.json"
-  ]
+  "type": "registry:component"
 }

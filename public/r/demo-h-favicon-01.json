@@ -3,6 +3,9 @@
   "name": "demo-h-favicon-01",
   "title": "useFavicon",
   "description": "Dynamic browser favicon switcher",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-browser-use-favicon.json",
     "https://www.spaceui.one/r/primitives-badge.json",
@@ -22,8 +25,5 @@
     "browser",
     "favicon"
   ],
-  "type": "registry:hook",
-  "dependencies": [
-    "@tabler/icons-react"
-  ]
+  "type": "registry:hook"
 }

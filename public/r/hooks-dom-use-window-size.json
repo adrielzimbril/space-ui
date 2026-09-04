@@ -3,6 +3,7 @@
   "name": "hooks-dom-use-window-size",
   "title": "useWindowSize",
   "description": "useWindowSize hook.",
+  "dependencies": [],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-dom-use-event-listener.json",
     "https://www.spaceui.one/r/hooks-lifecycle-use-isomorphic-layout-effect.json"
@@ -20,6 +21,5 @@
     "dom",
     "window-size"
   ],
-  "type": "registry:hook",
-  "dependencies": []
+  "type": "registry:hook"
 }

@@ -132,17 +132,7 @@ async function buildRegistryFile() {
   const registryFolderPath = path.join(process.cwd(), 'src', 'registry')
   const newItems = await getRegistryItemsFromFolder(registryFolderPath)
 
-  registryData.items = [
-    {
-      name: 'index',
-      type: 'registry:style',
-      dependencies: ['tw-animate-css', 'class-variance-authority', 'lucide-react'],
-      registryDependencies: ['utils'],
-      cssVars: {},
-      files: [],
-    },
-    ...newItems,
-  ]
+  registryData.items = [...newItems]
 
   await writeFileWithRetry(REGISTRY_JSON_PATH, JSON.stringify(registryData, null, 2))
   await writeFileWithRetry(path.join(process.cwd(), 'registry.json'), JSON.stringify(registryData, null, 2))

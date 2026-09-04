@@ -3,6 +3,9 @@
   "name": "demo-h-in-view-01",
   "title": "InView",
   "description": "Viewport trigger component wrapper",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-components-in-view.json",
     "https://www.spaceui.one/r/primitives-badge.json",
@@ -21,8 +24,5 @@
     "components",
     "in-view"
   ],
-  "type": "registry:hook",
-  "dependencies": [
-    "@tabler/icons-react"
-  ]
+  "type": "registry:hook"
 }

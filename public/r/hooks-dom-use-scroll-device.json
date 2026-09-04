@@ -3,6 +3,10 @@
   "name": "hooks-dom-use-scroll-device",
   "title": "useScrollDevice",
   "description": "useScrollDevice hook.",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/hooks-dom-use-event-listener.json"
+  ],
   "files": [
     {
       "path": "src/registry/hooks/dom/use-scroll-device/index.ts",
@@ -16,9 +20,5 @@
     "dom",
     "scroll-device"
   ],
-  "type": "registry:hook",
-  "dependencies": [],
-  "registryDependencies": [
-    "https://www.spaceui.one/r/hooks-dom-use-event-listener.json"
-  ]
+  "type": "registry:hook"
 }

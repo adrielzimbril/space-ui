@@ -3,6 +3,9 @@
   "name": "demo-h-range-map-02",
   "title": "rangeMap & mapRange (Interpolation)",
   "description": "Linear range interpolation",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-utils-range-map.json",
     "https://www.spaceui.one/r/primitives-badge.json",
@@ -21,8 +24,5 @@
     "utils",
     "range-map"
   ],
-  "type": "registry:hook",
-  "dependencies": [
-    "@tabler/icons-react"
-  ]
+  "type": "registry:hook"
 }

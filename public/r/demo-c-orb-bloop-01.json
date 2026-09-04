@@ -3,6 +3,7 @@
   "name": "demo-c-orb-bloop-01",
   "title": "Bloop Orb Demo",
   "description": "Compact bloop orb shader.",
+  "dependencies": [],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-orb-bloop.json",
     "https://www.spaceui.one/r/components-orb-smooth.json"
@@ -101,6 +102,5 @@
     "orb",
     "bloop"
   ],
-  "type": "registry:component",
-  "dependencies": []
+  "type": "registry:component"
 }

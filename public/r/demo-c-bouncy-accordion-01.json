@@ -3,6 +3,9 @@
   "name": "demo-c-bouncy-accordion-01",
   "title": "Bouncy Accordion Demo",
   "description": "Spring accordion with icons and badge copy.",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-bouncy-accordion.json",
     "https://www.spaceui.one/r/primitives-badge.json"
@@ -19,8 +22,5 @@
     "component",
     "bouncy-accordion"
   ],
-  "type": "registry:component",
-  "dependencies": [
-    "@tabler/icons-react"
-  ]
+  "type": "registry:component"
 }

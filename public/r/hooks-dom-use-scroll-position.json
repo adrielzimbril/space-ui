@@ -3,6 +3,7 @@
   "name": "hooks-dom-use-scroll-position",
   "title": "useScrollPosition",
   "description": "useScrollPosition hook.",
+  "dependencies": [],
   "registryDependencies": [
     "https://www.spaceui.one/r/hooks-dom-use-event-listener.json",
     "https://www.spaceui.one/r/hooks-lifecycle-use-isomorphic-layout-effect.json"
@@ -20,6 +21,5 @@
     "dom",
     "scroll-position"
   ],
-  "type": "registry:hook",
-  "dependencies": []
+  "type": "registry:hook"
 }
