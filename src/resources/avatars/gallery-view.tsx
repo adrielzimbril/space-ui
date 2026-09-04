@@ -30,8 +30,8 @@ export function GalleryView({
 }: GalleryViewProps) {
   const expandedPool = useMemo(() => {
     const result: string[] = []
-    while (result.length < 320 && pool.length > 0) result.push(...pool)
-    return result.slice(0, 320)
+    while (result.length < 293 && pool.length > 0) result.push(...pool)
+    return result.slice(0, 293)
   }, [pool])
   const cardAvatarSize = Math.max(48, Math.min(164, Math.round(size * 0.78)))
 
