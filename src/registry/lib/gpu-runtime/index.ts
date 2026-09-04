@@ -2,31 +2,55 @@ export function isLowPowerGpu() {
   if (typeof window === 'undefined') return true
   const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection
   const coarse = window.matchMedia('(pointer: coarse)').matches
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   const narrow = window.innerWidth < 768
   const cores = navigator.hardwareConcurrency || 8
-  return Boolean(connection?.saveData || coarse || narrow || cores <= 6)
+  return Boolean(connection?.saveData || coarse || reduced || narrow || cores <= 6)
 }
 
-export function attachGpuGate(canvas: HTMLCanvasElement) {
-  const state = { paused: document.hidden, lowPower: isLowPowerGpu() }
+export function deferUntilVisible(canvas: HTMLCanvasElement, start: () => void) {
+  const io = new IntersectionObserver(
+    ([entry]) => {
+      if (!entry.isIntersecting) return
+      io.disconnect()
+      start()
+    },
+    { threshold: 0.12, rootMargin: '0px' },
+  )
+  io.observe(canvas)
+  return () => io.disconnect()
+}
 
-  const sync = (visible: boolean) => {
-    state.paused = document.hidden || !visible
+export function attachGpuGate(canvas: HTMLCanvasElement, onPaused?: (paused: boolean) => void) {
+  const state = { paused: true, lowPower: isLowPowerGpu() }
+
+  const setPaused = (next: boolean) => {
+    if (state.paused === next) return
+    state.paused = next
+    onPaused?.(next)
   }
 
-  const io = new IntersectionObserver(([entry]) => sync(entry.isIntersecting), {
-    threshold: 0.08,
-    rootMargin: '24px',
+  const sync = () => {
+    const rect = canvas.getBoundingClientRect()
+    const onScreen = rect.bottom > 0 && rect.top < window.innerHeight && rect.width > 0
+    setPaused(document.hidden || !onScreen)
+  }
+
+  const io = new IntersectionObserver(([entry]) => setPaused(document.hidden || !entry.isIntersecting), {
+    threshold: 0.12,
   })
   io.observe(canvas)
 
   const onVis = () => {
-    if (document.hidden) state.paused = true
+    if (document.hidden) setPaused(true)
+    else sync()
   }
   document.addEventListener('visibilitychange', onVis)
+  sync()
 
   return {
     state,
+    frameMs: state.lowPower ? 70 : 0,
     dispose() {
       io.disconnect()
       document.removeEventListener('visibilitychange', onVis)

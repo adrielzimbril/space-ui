@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { cn } from '@/registry/lib/utils'
-import { attachGpuGate } from '@/registry/lib/gpu-runtime'
+import { attachGpuGate, deferUntilVisible } from '@/registry/lib/gpu-runtime'
 import { CLOUDS_WGSL } from './clouds.wgsl'
 
 export type CloudProps = {
@@ -52,6 +52,7 @@ export function Cloud({
     let stopLoop: (() => void) | undefined
     let disposeGpu: (() => void) | undefined
     let disposeGate: (() => void) | undefined
+    let disposeDefer: (() => void) | undefined
 
     async function mount() {
       const { init, effect, surface, clock, frameLoop } = await import('vgpu')
@@ -64,8 +65,8 @@ export function Cloud({
 
       const gate = attachGpuGate(canvas)
       disposeGate = gate.dispose
-      const scale = gate.state.lowPower ? 16 : 3
-      const dpr = Math.max(window.devicePixelRatio / scale, 0.25)
+      const scale = gate.state.lowPower ? 24 : 3
+      const dpr = gate.state.lowPower ? 0.25 : Math.max(window.devicePixelRatio / scale, 0.35)
       const canvasSurface = surface(gpu, canvasRef.current, {
         dpr,
         alphaMode: 'opaque',
@@ -106,8 +107,12 @@ export function Cloud({
       let lastW = 0
       let lastH = 0
       let lastKey = ''
+      let lastDraw = 0
       const loop = frameLoop(gpu, (frame) => {
         if (gate.state.paused) return
+        const now = performance.now()
+        if (gate.frameMs && now - lastDraw < gate.frameMs) return
+        lastDraw = now
         const width = Math.max(canvas.clientWidth, 200)
         const height = Math.max(canvas.clientHeight, 200)
         const cur = propsRef.current
@@ -145,12 +150,15 @@ export function Cloud({
       }
     }
 
-    mount().catch((error) => {
-      console.error('Cloud WebGPU init failed:', error)
+    disposeDefer = deferUntilVisible(canvas, () => {
+      mount().catch((error) => {
+        console.error('Cloud WebGPU init failed:', error)
+      })
     })
 
     return () => {
       cancelled = true
+      disposeDefer?.()
       stopLoop?.()
       disposeGate?.()
       disposeGpu?.()

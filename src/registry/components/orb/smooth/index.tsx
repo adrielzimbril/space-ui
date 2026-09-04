@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect } from 'react'
 import { cn } from '@/registry/lib/utils'
-import { attachGpuGate } from '@/registry/lib/gpu-runtime'
+import { attachGpuGate, deferUntilVisible } from '@/registry/lib/gpu-runtime'
 import type { OrbSmoothProps } from './types'
 import { useOrbAudio } from './use-orb-audio'
 import {
@@ -120,6 +120,7 @@ export function OrbSmooth({
     let stop: (() => void) | undefined
     let disposeGpu: (() => void) | undefined
     let disposeGate: (() => void) | undefined
+    let disposeDefer: (() => void) | undefined
 
     async function mount() {
       const { init, effect, surface, frame, pingPong, sampler, target } = await import('vgpu')
@@ -130,15 +131,21 @@ export function OrbSmooth({
         return
       }
 
-      const gate = attachGpuGate(canvas)
+      let raf = 0
+      let render = () => {}
+      const gate = attachGpuGate(canvas, (paused) => {
+        if (paused) cancelAnimationFrame(raf)
+        else if (!cancelled) raf = requestAnimationFrame(render)
+      })
       disposeGate = gate.dispose
-      const lowPower = gate.state.lowPower
-      if (lowPower) {
-        canvas.width = 256
-        canvas.height = 256
+      const low = gate.state.lowPower
+      const lowPower = low
+      if (low) {
+        canvas.width = 160
+        canvas.height = 160
       }
-      const simRes = lowPower ? 48 : 128
-      const dyeRes = lowPower ? 96 : 256
+      const simRes = low ? 32 : 128
+      const dyeRes = low ? 64 : 256
       const floatFmt = 'rgba16float' as const
       const lin = sampler(gpu, { minFilter: 'linear', magFilter: 'linear' })
       const near = sampler(gpu, { minFilter: 'nearest', magFilter: 'nearest' })
@@ -208,18 +215,13 @@ export function OrbSmooth({
       let last = performance.now()
       const texelSize = 1 / simRes
       const dyeTexel = 1 / dyeRes
-      let raf = 0
 
       let lastDraw = 0
-      const render = () => {
-        if (cancelled) return
+      render = () => {
+        if (cancelled || gate.state.paused) return
         const cur = propsRef.current
-        if (gate.state.paused) {
-          if (cur.animated) raf = requestAnimationFrame(render)
-          return
-        }
         const now = performance.now()
-        if (lowPower && now - lastDraw < 33) {
+        if (gate.frameMs && now - lastDraw < gate.frameMs) {
           if (cur.animated) raf = requestAnimationFrame(render)
           return
         }
@@ -382,8 +384,8 @@ export function OrbSmooth({
             uExposure: cur.exposure,
             uContrast: cur.contrast,
             uSaturation: cur.saturation,
-            uNoiseOpacity: cur.grainOpacity,
-            uAnimatedNoise: cur.grainAnimated ? 1 : 0,
+            uNoiseOpacity: lowPower ? 0 : cur.grainOpacity,
+            uAnimatedNoise: lowPower ? 0 : cur.grainAnimated ? 1 : 0,
             uNoiseSpeed: cur.noiseSpeed,
             uNoiseAmplitude: cur.noiseAmplitude,
             uNoiseScale: cur.noiseScale,
@@ -397,7 +399,7 @@ export function OrbSmooth({
             uFbmSpeed: cur.fbmSpeed,
             uFadeInDuration: cur.fadeInDuration,
             uDpr: 1,
-            uWatercolorStrength: cur.watercolorStrength,
+            uWatercolorStrength: lowPower ? 0 : cur.watercolorStrength,
           },
         })
         frame(gpu, (f) => f.pass({ target: canvasSurface, clear: [0, 0, 0, 0] }, displayFx))
@@ -410,9 +412,12 @@ export function OrbSmooth({
       disposeGpu = () => gpu.dispose()
     }
 
-    mount().catch((error) => console.error('OrbSmooth WebGPU init failed:', error))
+    disposeDefer = deferUntilVisible(canvas, () => {
+      mount().catch((error) => console.error('OrbSmooth WebGPU init failed:', error))
+    })
     return () => {
       cancelled = true
+      disposeDefer?.()
       stop?.()
       disposeGate?.()
       disposeGpu?.()
