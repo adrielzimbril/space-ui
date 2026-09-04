@@ -33,7 +33,7 @@ export function StarsCount() {
     }
 
     let isMounted = true
-    const repoPath = siteConfig.links.github.replace('https://github.com/', '').replace(/\/$/, '') || 'usespaceui/ui'
+    const repoPath = siteConfig.links.github.replace('https://github.com/', '').replace(/\/$/, '')
 
     async function fetchStars() {
       try {

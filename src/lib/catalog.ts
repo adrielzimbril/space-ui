@@ -2,11 +2,12 @@ import hooksMeta from '@/content/ui-kit/hooks/meta.json'
 import primitivesMeta from '@/content/ui-kit/primitives/meta.json'
 import componentsMeta from '@/content/ui-kit/components/meta.json'
 import blocksMeta from '@/content/ui-kit/blocks/meta.json'
+import templatesMeta from '@/content/ui-kit/templates/meta.json'
 import type { RelatedComponent } from '@/lib/docs-metadata'
 import type { RelatedGroup } from '@/components/docs/layout/related-components'
 import { uiKitSource } from '@/lib/source'
 
-export const CATALOG_SECTIONS = ['hooks', 'primitives', 'components', 'blocks'] as const
+export const CATALOG_SECTIONS = ['hooks', 'primitives', 'components', 'blocks', 'templates'] as const
 export type CatalogSection = (typeof CATALOG_SECTIONS)[number]
 
 export const NESTED_COMPONENT_CATALOGS = ['orb', 'shader', 'backgrounds'] as const
@@ -16,6 +17,7 @@ const META: Record<CatalogSection, { title: string; pages: string[] }> = {
   primitives: primitivesMeta,
   components: componentsMeta,
   blocks: blocksMeta,
+  templates: templatesMeta,
 }
 
 function categoryBadge(section: CatalogSection, groupTitle: string, folder?: string) {
@@ -30,6 +32,7 @@ function categoryBadge(section: CatalogSection, groupTitle: string, folder?: str
   }
   if (section === 'primitives') return 'Primitive'
   if (section === 'components') return 'Component'
+  if (section === 'templates') return 'Template'
   return 'Block'
 }
 

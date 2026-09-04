@@ -53,7 +53,7 @@ export function SiteHeader() {
           <div className="hidden sm:flex items-center gap-1">
             <GitHubLink />
             <ModeSwitcher />
-            <Link
+            {/* <Link
               href="/dashboard"
               className="inline-flex size-8 items-center justify-center rounded-md"
               aria-label="Dashboard"
@@ -61,13 +61,13 @@ export function SiteHeader() {
               asButton
             >
               <IconLayoutDashboard className="size-4" />
-            </Link>
+            </Link> */}
           </div>
 
-          <Link href="/login" asButton className="hidden md:flex items-center gap-2 rounded-lg px-3">
+          {/* <Link href="/login" asButton className="hidden md:flex items-center gap-2 rounded-lg px-3">
             <IconLogin className="size-3.5" />
             <span>Sign in</span>
-          </Link>
+          </Link> */}
 
           <MobileNavDrawer trees={[source.pageTree, uiKitSource.pageTree, resourcesSource.pageTree]} />
         </div>
