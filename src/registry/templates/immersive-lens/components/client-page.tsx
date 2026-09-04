@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react'
+import { AnimatePresence, motion } from 'motion/react'
 import { categories, ease, galleryImages } from '../lib/data'
 import { CustomCursor } from './custom-cursor'
 import { GlassDock } from './glass-dock'

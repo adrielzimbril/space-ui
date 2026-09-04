@@ -30,5 +30,5 @@ function lazyRegistryComponent(
 }
 
 export const registryComponents: Record<string, RegistryComponent> = {
-  'block-mastermind': lazyRegistryComponent(() => import('@/registry/blocks/mastermind/mastermind-1/index.tsx'), {}),
+  'block-eleven-labs': lazyRegistryComponent(() => import('@/registry/blocks/eleven-labs/eleven-labs-1/index.tsx'), {}),
 }

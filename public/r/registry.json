@@ -69,6 +69,102 @@
       "updatedAt": "2026-08-31"
     },
     {
+      "name": "block-eleven-labs",
+      "type": "registry:block",
+      "title": "Eleven Labs Landing",
+      "description": "ElevenLabs-inspired landing page block with a live audio-reactive orb hero.",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "@usespaceui/lib-utils",
+        "@usespaceui/components-orb-smooth"
+      ],
+      "categories": [
+        "eleven-labs",
+        "block"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/eleven-labs/eleven-labs-1/index.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/eleven-labs/index.tsx"
+        },
+        {
+          "path": "src/registry/blocks/eleven-labs/eleven-labs-1/components/code-controls.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/eleven-labs/components/code-controls.tsx"
+        },
+        {
+          "path": "src/registry/blocks/eleven-labs/eleven-labs-1/components/shared.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/eleven-labs/components/shared.tsx"
+        },
+        {
+          "path": "src/registry/blocks/eleven-labs/eleven-labs-1/components/speech-select.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/eleven-labs/components/speech-select.tsx"
+        },
+        {
+          "path": "src/registry/blocks/eleven-labs/eleven-labs-1/data/flags.ts",
+          "type": "registry:block",
+          "target": "components/blocks/eleven-labs/data/flags.ts"
+        },
+        {
+          "path": "src/registry/blocks/eleven-labs/eleven-labs-1/data/index.ts",
+          "type": "registry:block",
+          "target": "components/blocks/eleven-labs/data/index.ts"
+        },
+        {
+          "path": "src/registry/blocks/eleven-labs/eleven-labs-1/sections/creative-platform/editor-demo.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/eleven-labs/sections/creative-platform/editor-demo.tsx"
+        },
+        {
+          "path": "src/registry/blocks/eleven-labs/eleven-labs-1/sections/creative-platform/index.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/eleven-labs/sections/creative-platform/index.tsx"
+        },
+        {
+          "path": "src/registry/blocks/eleven-labs/eleven-labs-1/sections/creative-platform/speech-demo.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/eleven-labs/sections/creative-platform/speech-demo.tsx"
+        },
+        {
+          "path": "src/registry/blocks/eleven-labs/eleven-labs-1/sections/product-tabs/agents/index.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/eleven-labs/sections/product-tabs/agents/index.tsx"
+        },
+        {
+          "path": "src/registry/blocks/eleven-labs/eleven-labs-1/sections/product-tabs/api/text-to-speech.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/eleven-labs/sections/product-tabs/api/text-to-speech.tsx"
+        },
+        {
+          "path": "src/registry/blocks/eleven-labs/eleven-labs-1/sections/product-tabs/creative/music.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/eleven-labs/sections/product-tabs/creative/music.tsx"
+        },
+        {
+          "path": "src/registry/blocks/eleven-labs/eleven-labs-1/sections/product-tabs/creative/text-to-speech.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/eleven-labs/sections/product-tabs/creative/text-to-speech.tsx"
+        },
+        {
+          "path": "src/registry/blocks/eleven-labs/eleven-labs-1/sections/product-tabs/creative/voice-generator.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/eleven-labs/sections/product-tabs/creative/voice-generator.tsx"
+        },
+        {
+          "path": "src/registry/blocks/eleven-labs/eleven-labs-1/sections/product-tabs/index.tsx",
+          "type": "registry:block",
+          "target": "components/blocks/eleven-labs/sections/product-tabs/index.tsx"
+        }
+      ],
+      "createdAt": "2026-09-03",
+      "updatedAt": "2026-09-04"
+    },
+    {
       "name": "block-interactive-fun-facts",
       "type": "registry:block",
       "title": "Interactive 3D Fun Facts Game",
@@ -111,102 +207,6 @@
       ],
       "createdAt": "2026-08-31",
       "updatedAt": "2026-08-31"
-    },
-    {
-      "name": "block-mastermind",
-      "type": "registry:block",
-      "title": "Mastermind",
-      "description": "Product landing block with a live audio-reactive orb hero.",
-      "dependencies": [
-        "@tabler/icons-react"
-      ],
-      "registryDependencies": [
-        "@usespaceui/lib-utils",
-        "@usespaceui/components-orb-smooth"
-      ],
-      "categories": [
-        "mastermind",
-        "block"
-      ],
-      "files": [
-        {
-          "path": "src/registry/blocks/mastermind/mastermind-1/index.tsx",
-          "type": "registry:block",
-          "target": "components/blocks/mastermind/index.tsx"
-        },
-        {
-          "path": "src/registry/blocks/mastermind/mastermind-1/components/code-controls.tsx",
-          "type": "registry:block",
-          "target": "components/blocks/mastermind/components/code-controls.tsx"
-        },
-        {
-          "path": "src/registry/blocks/mastermind/mastermind-1/components/shared.tsx",
-          "type": "registry:block",
-          "target": "components/blocks/mastermind/components/shared.tsx"
-        },
-        {
-          "path": "src/registry/blocks/mastermind/mastermind-1/components/speech-select.tsx",
-          "type": "registry:block",
-          "target": "components/blocks/mastermind/components/speech-select.tsx"
-        },
-        {
-          "path": "src/registry/blocks/mastermind/mastermind-1/data/flags.ts",
-          "type": "registry:block",
-          "target": "components/blocks/mastermind/data/flags.ts"
-        },
-        {
-          "path": "src/registry/blocks/mastermind/mastermind-1/data/index.ts",
-          "type": "registry:block",
-          "target": "components/blocks/mastermind/data/index.ts"
-        },
-        {
-          "path": "src/registry/blocks/mastermind/mastermind-1/sections/creative-platform/editor-demo.tsx",
-          "type": "registry:block",
-          "target": "components/blocks/mastermind/sections/creative-platform/editor-demo.tsx"
-        },
-        {
-          "path": "src/registry/blocks/mastermind/mastermind-1/sections/creative-platform/index.tsx",
-          "type": "registry:block",
-          "target": "components/blocks/mastermind/sections/creative-platform/index.tsx"
-        },
-        {
-          "path": "src/registry/blocks/mastermind/mastermind-1/sections/creative-platform/speech-demo.tsx",
-          "type": "registry:block",
-          "target": "components/blocks/mastermind/sections/creative-platform/speech-demo.tsx"
-        },
-        {
-          "path": "src/registry/blocks/mastermind/mastermind-1/sections/product-tabs/agents/index.tsx",
-          "type": "registry:block",
-          "target": "components/blocks/mastermind/sections/product-tabs/agents/index.tsx"
-        },
-        {
-          "path": "src/registry/blocks/mastermind/mastermind-1/sections/product-tabs/api/text-to-speech.tsx",
-          "type": "registry:block",
-          "target": "components/blocks/mastermind/sections/product-tabs/api/text-to-speech.tsx"
-        },
-        {
-          "path": "src/registry/blocks/mastermind/mastermind-1/sections/product-tabs/creative/music.tsx",
-          "type": "registry:block",
-          "target": "components/blocks/mastermind/sections/product-tabs/creative/music.tsx"
-        },
-        {
-          "path": "src/registry/blocks/mastermind/mastermind-1/sections/product-tabs/creative/text-to-speech.tsx",
-          "type": "registry:block",
-          "target": "components/blocks/mastermind/sections/product-tabs/creative/text-to-speech.tsx"
-        },
-        {
-          "path": "src/registry/blocks/mastermind/mastermind-1/sections/product-tabs/creative/voice-generator.tsx",
-          "type": "registry:block",
-          "target": "components/blocks/mastermind/sections/product-tabs/creative/voice-generator.tsx"
-        },
-        {
-          "path": "src/registry/blocks/mastermind/mastermind-1/sections/product-tabs/index.tsx",
-          "type": "registry:block",
-          "target": "components/blocks/mastermind/sections/product-tabs/index.tsx"
-        }
-      ],
-      "createdAt": "2026-09-03",
-      "updatedAt": "2026-09-03"
     },
     {
       "name": "block-sign-in",

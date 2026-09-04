@@ -227,6 +227,129 @@
       }
     ]
   },
+  "block-eleven-labs": {
+    "name": "block-eleven-labs",
+    "shortName": "block-eleven-labs",
+    "title": "Eleven Labs Landing",
+    "description": "ElevenLabs-inspired landing page block with a live audio-reactive orb hero.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/eleven-labs",
+    "category": "Eleven-labs",
+    "categories": [
+      "eleven-labs",
+      "block"
+    ],
+    "createdAt": "2026-09-03",
+    "updatedAt": "2026-09-04",
+    "size": "136.3 KB",
+    "rawSize": 139555,
+    "directSize": "98.7 KB",
+    "fileCount": 22,
+    "dependencies": [
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "@usespaceui/lib-utils",
+      "@usespaceui/components-orb-smooth"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "smooth",
+        "title": "Smooth Orb",
+        "description": "Audio-reactive smooth orb with a WebGPU fluid simulation.",
+        "url": "/ui-kit/components/orb/smooth",
+        "category": "Orb",
+        "categories": [
+          "orb",
+          "webgpu",
+          "smooth"
+        ]
+      }
+    ]
+  },
+  "eleven-labs": {
+    "name": "block-eleven-labs",
+    "shortName": "block-eleven-labs",
+    "title": "Eleven Labs Landing",
+    "description": "ElevenLabs-inspired landing page block with a live audio-reactive orb hero.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/eleven-labs",
+    "category": "Eleven-labs",
+    "categories": [
+      "eleven-labs",
+      "block"
+    ],
+    "createdAt": "2026-09-03",
+    "updatedAt": "2026-09-04",
+    "size": "136.3 KB",
+    "rawSize": 139555,
+    "directSize": "98.7 KB",
+    "fileCount": 22,
+    "dependencies": [
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "@usespaceui/lib-utils",
+      "@usespaceui/components-orb-smooth"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "smooth",
+        "title": "Smooth Orb",
+        "description": "Audio-reactive smooth orb with a WebGPU fluid simulation.",
+        "url": "/ui-kit/components/orb/smooth",
+        "category": "Orb",
+        "categories": [
+          "orb",
+          "webgpu",
+          "smooth"
+        ]
+      }
+    ]
+  },
+  "blocks-eleven-labs": {
+    "name": "block-eleven-labs",
+    "shortName": "block-eleven-labs",
+    "title": "Eleven Labs Landing",
+    "description": "ElevenLabs-inspired landing page block with a live audio-reactive orb hero.",
+    "type": "registry:block",
+    "url": "/ui-kit/blocks/eleven-labs",
+    "category": "Eleven-labs",
+    "categories": [
+      "eleven-labs",
+      "block"
+    ],
+    "createdAt": "2026-09-03",
+    "updatedAt": "2026-09-04",
+    "size": "136.3 KB",
+    "rawSize": 139555,
+    "directSize": "98.7 KB",
+    "fileCount": 22,
+    "dependencies": [
+      "@tabler/icons-react"
+    ],
+    "registryDependencies": [
+      "@usespaceui/lib-utils",
+      "@usespaceui/components-orb-smooth"
+    ],
+    "dependents": [],
+    "related": [
+      {
+        "name": "smooth",
+        "title": "Smooth Orb",
+        "description": "Audio-reactive smooth orb with a WebGPU fluid simulation.",
+        "url": "/ui-kit/components/orb/smooth",
+        "category": "Orb",
+        "categories": [
+          "orb",
+          "webgpu",
+          "smooth"
+        ]
+      }
+    ]
+  },
   "block-interactive-fun-facts": {
     "name": "block-interactive-fun-facts",
     "shortName": "block-interactive-fun-facts",
@@ -409,129 +532,6 @@
         "category": "Card",
         "categories": [
           "card"
-        ]
-      }
-    ]
-  },
-  "block-mastermind": {
-    "name": "block-mastermind",
-    "shortName": "block-mastermind",
-    "title": "Mastermind",
-    "description": "Product landing block with a live audio-reactive orb hero.",
-    "type": "registry:block",
-    "url": "/ui-kit/blocks/mastermind",
-    "category": "Mastermind",
-    "categories": [
-      "mastermind",
-      "block"
-    ],
-    "createdAt": "2026-09-03",
-    "updatedAt": "2026-09-03",
-    "size": "136.3 KB",
-    "rawSize": 139555,
-    "directSize": "98.7 KB",
-    "fileCount": 22,
-    "dependencies": [
-      "@tabler/icons-react"
-    ],
-    "registryDependencies": [
-      "@usespaceui/lib-utils",
-      "@usespaceui/components-orb-smooth"
-    ],
-    "dependents": [],
-    "related": [
-      {
-        "name": "smooth",
-        "title": "Smooth Orb",
-        "description": "Audio-reactive smooth orb with a WebGPU fluid simulation.",
-        "url": "/ui-kit/components/orb/smooth",
-        "category": "Orb",
-        "categories": [
-          "orb",
-          "webgpu",
-          "smooth"
-        ]
-      }
-    ]
-  },
-  "mastermind": {
-    "name": "block-mastermind",
-    "shortName": "block-mastermind",
-    "title": "Mastermind",
-    "description": "Product landing block with a live audio-reactive orb hero.",
-    "type": "registry:block",
-    "url": "/ui-kit/blocks/mastermind",
-    "category": "Mastermind",
-    "categories": [
-      "mastermind",
-      "block"
-    ],
-    "createdAt": "2026-09-03",
-    "updatedAt": "2026-09-03",
-    "size": "136.3 KB",
-    "rawSize": 139555,
-    "directSize": "98.7 KB",
-    "fileCount": 22,
-    "dependencies": [
-      "@tabler/icons-react"
-    ],
-    "registryDependencies": [
-      "@usespaceui/lib-utils",
-      "@usespaceui/components-orb-smooth"
-    ],
-    "dependents": [],
-    "related": [
-      {
-        "name": "smooth",
-        "title": "Smooth Orb",
-        "description": "Audio-reactive smooth orb with a WebGPU fluid simulation.",
-        "url": "/ui-kit/components/orb/smooth",
-        "category": "Orb",
-        "categories": [
-          "orb",
-          "webgpu",
-          "smooth"
-        ]
-      }
-    ]
-  },
-  "blocks-mastermind": {
-    "name": "block-mastermind",
-    "shortName": "block-mastermind",
-    "title": "Mastermind",
-    "description": "Product landing block with a live audio-reactive orb hero.",
-    "type": "registry:block",
-    "url": "/ui-kit/blocks/mastermind",
-    "category": "Mastermind",
-    "categories": [
-      "mastermind",
-      "block"
-    ],
-    "createdAt": "2026-09-03",
-    "updatedAt": "2026-09-03",
-    "size": "136.3 KB",
-    "rawSize": 139555,
-    "directSize": "98.7 KB",
-    "fileCount": 22,
-    "dependencies": [
-      "@tabler/icons-react"
-    ],
-    "registryDependencies": [
-      "@usespaceui/lib-utils",
-      "@usespaceui/components-orb-smooth"
-    ],
-    "dependents": [],
-    "related": [
-      {
-        "name": "smooth",
-        "title": "Smooth Orb",
-        "description": "Audio-reactive smooth orb with a WebGPU fluid simulation.",
-        "url": "/ui-kit/components/orb/smooth",
-        "category": "Orb",
-        "categories": [
-          "orb",
-          "webgpu",
-          "smooth"
         ]
       }
     ]
@@ -1022,17 +1022,17 @@
     ],
     "registryDependencies": [],
     "dependents": [
-      "block-mastermind"
+      "block-eleven-labs"
     ],
     "related": [
       {
-        "name": "block-mastermind",
-        "title": "Mastermind",
-        "description": "Product landing block with a live audio-reactive orb hero.",
-        "url": "/ui-kit/blocks/mastermind",
-        "category": "Mastermind",
+        "name": "block-eleven-labs",
+        "title": "Eleven Labs Landing",
+        "description": "ElevenLabs-inspired landing page block with a live audio-reactive orb hero.",
+        "url": "/ui-kit/blocks/eleven-labs",
+        "category": "Eleven-labs",
         "categories": [
-          "mastermind",
+          "eleven-labs",
           "block"
         ]
       },
@@ -1074,17 +1074,17 @@
     ],
     "registryDependencies": [],
     "dependents": [
-      "block-mastermind"
+      "block-eleven-labs"
     ],
     "related": [
       {
-        "name": "block-mastermind",
-        "title": "Mastermind",
-        "description": "Product landing block with a live audio-reactive orb hero.",
-        "url": "/ui-kit/blocks/mastermind",
-        "category": "Mastermind",
+        "name": "block-eleven-labs",
+        "title": "Eleven Labs Landing",
+        "description": "ElevenLabs-inspired landing page block with a live audio-reactive orb hero.",
+        "url": "/ui-kit/blocks/eleven-labs",
+        "category": "Eleven-labs",
         "categories": [
-          "mastermind",
+          "eleven-labs",
           "block"
         ]
       },
@@ -24590,7 +24590,7 @@
     "createdAt": "2026-09-04",
     "updatedAt": "2026-09-04",
     "size": "63.6 KB",
-    "rawSize": 65097,
+    "rawSize": 65152,
     "directSize": "63.6 KB",
     "fileCount": 15,
     "dependencies": [
@@ -24617,7 +24617,7 @@
     "createdAt": "2026-09-04",
     "updatedAt": "2026-09-04",
     "size": "63.6 KB",
-    "rawSize": 65097,
+    "rawSize": 65152,
     "directSize": "63.6 KB",
     "fileCount": 15,
     "dependencies": [
@@ -24644,7 +24644,7 @@
     "createdAt": "2026-09-04",
     "updatedAt": "2026-09-04",
     "size": "63.6 KB",
-    "rawSize": 65097,
+    "rawSize": 65152,
     "directSize": "63.6 KB",
     "fileCount": 15,
     "dependencies": [
