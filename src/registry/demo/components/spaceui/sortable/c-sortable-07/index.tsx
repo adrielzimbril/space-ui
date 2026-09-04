@@ -21,7 +21,7 @@ const defaultImages: GalleryImage[] = [
   { id: '6', name: 'favicon.ico', dimensions: '32×32', size: '4 KB' },
 ]
 
-export default function Pattern() {
+export default function Demo() {
   const [images, setImages] = useState<GalleryImage[]>(defaultImages)
 
   return (

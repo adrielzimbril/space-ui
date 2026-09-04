@@ -428,7 +428,7 @@ function SettingsTextSelect({
   )
 }
 
-export default function Pattern() {
+export default function Demo() {
   const events = useMemo(() => buildEvents(new Date()), [])
   const apiRef = useRef<EventCalendarApi | null>(null)
   const newEventCount = useRef(0)

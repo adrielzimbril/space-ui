@@ -1,6 +1,6 @@
 import { Tabs, TabsList, TabsTab } from '@/registry/primitives/tabs'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="flex w-full flex-col gap-4">
       <Tabs defaultValue="1">

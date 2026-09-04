@@ -9,7 +9,7 @@ import {
   DrawerTitle,
 } from '@/registry/primitives/drawer'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="relative min-h-80 w-full overflow-hidden rounded-xl border">
       <Drawer modal={false} position="left">

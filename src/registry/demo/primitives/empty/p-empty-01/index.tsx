@@ -2,7 +2,7 @@ import { IconSparkles } from '@tabler/icons-react'
 import { Button } from '@/registry/primitives/button'
 import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/registry/primitives/empty'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Empty>
       <EmptyHeader>

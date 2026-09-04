@@ -1785,7 +1785,7 @@ function OrderItemsSubTable({ items }: { items: OrderItemData[] }) {
   )
 }
 
-export default function Pattern() {
+export default function Demo() {
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
     pageSize: 5,

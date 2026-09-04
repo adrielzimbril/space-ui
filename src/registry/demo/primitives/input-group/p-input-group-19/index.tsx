@@ -5,7 +5,7 @@ import { Button } from '@/registry/primitives/button'
 import { InputGroup, InputGroupAddon, InputGroupTextarea } from '@/registry/primitives/input-group'
 import { Toggle } from '@/registry/primitives/toggle'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <InputGroup>
       <InputGroupTextarea placeholder="Tell us about yourself…" />

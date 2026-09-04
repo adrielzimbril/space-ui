@@ -9,7 +9,7 @@ const items = [
   { description: 'npx create-remix', label: 'Remix', value: 'remix' },
 ]
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Select aria-label="Select framework with command" defaultValue={items[0]} itemToStringValue={(item) => item.value}>
       <SelectTrigger className="py-1">

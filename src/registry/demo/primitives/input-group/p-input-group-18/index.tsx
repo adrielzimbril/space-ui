@@ -4,7 +4,7 @@ import { Button } from '@/registry/primitives/button'
 import { InputGroup, InputGroupAddon, InputGroupInput } from '@/registry/primitives/input-group'
 import { Menu, MenuItem, MenuPopup, MenuTrigger } from '@/registry/primitives/menu'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <InputGroup>
       <InputGroupInput defaultValue="hello@spaceui.one" placeholder="Enter email" type="email" />

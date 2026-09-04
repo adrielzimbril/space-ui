@@ -2,7 +2,7 @@
 import * as React from 'react'
 import { initSquircle } from '@usespaceui/squircle'
 
-export default function SquircleDemo() {
+export default function Demo() {
   React.useEffect(() => {
     initSquircle()
   }, [])

@@ -7,7 +7,7 @@ const items = [
   { label: 'Astro', value: 'astro' },
 ]
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Select aria-label="Select framework with icon" defaultValue="next" items={items}>
       <SelectTrigger>

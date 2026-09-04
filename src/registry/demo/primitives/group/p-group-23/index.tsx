@@ -46,7 +46,7 @@ const users = [
   },
 ]
 
-export default function Pattern() {
+export default function Demo() {
   const mappedUsers = users.map((user) => ({
     value: user.id,
     label: user.name,

@@ -1,7 +1,7 @@
 import { Button } from '@/registry/primitives/button'
 import { Textarea } from '@/registry/primitives/textarea'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="flex flex-col gap-2">
       <Textarea placeholder="Type your message here" />

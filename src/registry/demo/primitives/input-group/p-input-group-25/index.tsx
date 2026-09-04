@@ -13,7 +13,7 @@ const requirements = [
   { regex: /[A-Z]/, text: 'At least 1 uppercase letter' },
 ]
 
-export default function Particle() {
+export default function Demo() {
   const id = useId()
   const [password, setPassword] = useState('')
   const [isVisible, setIsVisible] = useState(false)

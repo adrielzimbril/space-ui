@@ -13,7 +13,7 @@ const frameworkOptions = [
   { label: 'Astro', value: 'astro' },
 ]
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Card className="w-full max-w-xs">
       <CardHeader>

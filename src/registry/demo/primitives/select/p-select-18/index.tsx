@@ -32,7 +32,7 @@ const users = [
   },
 ]
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Select aria-label="Select user" defaultValue={users[0]} itemToStringValue={(item) => item.value}>
       <SelectTrigger>

@@ -10,7 +10,7 @@ const items = [
   { color: 'bg-red-500', label: 'Failed', value: 'failed' },
 ]
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Select aria-label="Select status" defaultValue={items[0]} itemToStringValue={(item) => item.value}>
       <SelectTrigger>

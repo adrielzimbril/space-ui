@@ -1,5 +1,5 @@
 import { Spinner } from '@/registry/primitives/spinner'
 
-export default function Particle() {
+export default function Demo() {
   return <Spinner />
 }

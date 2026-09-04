@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { Progress } from '@/registry/primitives/progress'
 
-export default function Particle() {
+export default function Demo() {
   const [value, setValue] = useState(20)
 
   useEffect(() => {

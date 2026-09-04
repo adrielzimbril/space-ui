@@ -22,7 +22,7 @@ export interface OrbBloopDemoProps {
   watercolorStrength?: number
 }
 
-export default function OrbBloopDemo({
+export default function Demo({
   palette = BloopPaletteName.blue,
   orbState = BloopState.listen,
   size = 240,

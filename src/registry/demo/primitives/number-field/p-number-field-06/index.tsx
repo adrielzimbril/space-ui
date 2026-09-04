@@ -7,7 +7,7 @@ import {
   NumberFieldScrubArea,
 } from '@/registry/primitives/number-field'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <NumberField defaultValue={0}>
       <NumberFieldScrubArea label="Quantity" />

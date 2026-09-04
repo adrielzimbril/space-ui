@@ -22,7 +22,7 @@ const TEAMS: FilterOption[] = [
   { value: 'security', label: 'Security' },
 ]
 
-export default function Pattern() {
+export default function Demo() {
   const cacheRef = useRef<FilterOption[] | null>(null)
 
   const fields: FilterFieldConfig[] = useMemo(

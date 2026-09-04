@@ -8,7 +8,7 @@ import {
   NumberFieldScrubArea,
 } from '@/registry/primitives/number-field'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Field>
       <NumberField defaultValue={1} max={100} min={1}>

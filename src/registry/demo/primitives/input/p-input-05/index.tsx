@@ -4,7 +4,7 @@ import { useId } from 'react'
 import { Input } from '@/registry/primitives/input'
 import { Label } from '@/registry/primitives/label'
 
-export default function Particle() {
+export default function Demo() {
   const id = useId()
   return (
     <div className="flex flex-col items-start gap-2">

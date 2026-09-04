@@ -152,7 +152,7 @@ const columns: ColumnDef<Flight>[] = [
   },
 ]
 
-export default function Particle() {
+export default function Demo() {
   const pageSize = 10
 
   const [pagination, setPagination] = useState<PaginationState>({

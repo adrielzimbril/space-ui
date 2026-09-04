@@ -181,7 +181,7 @@ function CopyTimesPopover({
   )
 }
 
-export default function Particle() {
+export default function Demo() {
   const id = useId()
   const [availability, setAvailability] = useState<Record<Day, TimeRange[]>>(defaultAvailability)
 

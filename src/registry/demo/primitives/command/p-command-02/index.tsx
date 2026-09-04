@@ -157,7 +157,7 @@ function markdownToSafeHTML(markdown: string): string {
     .join('')
 }
 
-export default function PCommand2() {
+export default function Demo() {
   const [open, setOpen] = useState(false)
   const [aiState, setAIState] = useState<AIState>(initialAIState)
   const [searchQuery, setSearchQuery] = useState('')

@@ -3,7 +3,7 @@
 import { Field, FieldLabel, FieldValidity } from '@/registry/primitives/field'
 import { Input } from '@/registry/primitives/input'
 
-export default function FieldWithValidityDemo() {
+export default function Demo() {
   return (
     <Field>
       <FieldLabel>Email</FieldLabel>

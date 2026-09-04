@@ -1,7 +1,7 @@
 import { Label } from '@/registry/primitives/label'
 import { Radio, RadioGroup } from '@/registry/primitives/radio-group'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <RadioGroup defaultValue="next">
       <Label>

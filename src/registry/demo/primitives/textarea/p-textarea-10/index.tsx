@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Field, FieldDescription } from '@/registry/primitives/field'
 import { Textarea } from '@/registry/primitives/textarea'
 
-export default function Particle() {
+export default function Demo() {
   const maxLength = 280
   const [value, setValue] = useState('')
 

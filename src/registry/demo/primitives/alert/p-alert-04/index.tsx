@@ -37,7 +37,7 @@ const alerts = [
   },
 ]
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="flex w-full flex-col gap-3">
       {alerts.map((item, index) => (

@@ -80,7 +80,7 @@ function StatusBadge({ status, duration }: { status: string; duration: string })
   )
 }
 
-export default function Pattern() {
+export default function Demo() {
   return (
     <div className="w-full max-w-lg">
       <Timeline defaultValue={3}>

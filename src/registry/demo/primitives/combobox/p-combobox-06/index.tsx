@@ -22,7 +22,7 @@ const items = [
   { label: 'Pear', value: 'pear' },
 ]
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Combobox items={items}>
       <ComboboxInput aria-label="Select a item" placeholder="Select a item…" showClear />

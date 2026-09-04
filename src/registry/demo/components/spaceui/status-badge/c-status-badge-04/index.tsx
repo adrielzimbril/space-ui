@@ -1,6 +1,6 @@
 import { StatusBadge } from '@/registry/components/spaceui/status-badge'
 
-export default function StatusBadgeStackDemo() {
+export default function Demo() {
   return (
     <div className="flex flex-wrap items-center justify-center gap-4 p-4">
       <StatusBadge mode="stack" status="online" primaryText="Production API" animated>

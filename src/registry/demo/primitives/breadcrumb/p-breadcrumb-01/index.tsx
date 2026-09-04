@@ -11,7 +11,7 @@ import {
 import { Button } from '@/registry/primitives/button'
 import { Menu, MenuItem, MenuPopup, MenuTrigger } from '@/registry/primitives/menu'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Breadcrumb>
       <BreadcrumbList>
@@ -26,13 +26,13 @@ export default function Particle() {
             </MenuTrigger>
             <MenuPopup align="start">
               <MenuItem render={<Link href="/docs" />}>Docs</MenuItem>
-              <MenuItem render={<Link href="/particles" />}>Particles</MenuItem>
+              <MenuItem render={<Link href="/ui-kit/components" />}>Components</MenuItem>
             </MenuPopup>
           </Menu>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink render={<Link href="/docs/" />}>Components</BreadcrumbLink>
+          <BreadcrumbLink render={<Link href="/ui-kit/components" />}>Components</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>

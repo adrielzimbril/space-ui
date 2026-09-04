@@ -4,7 +4,7 @@ import * as React from 'react'
 import { WordsPreloader } from '@/registry/components/spaceui/words-preloader'
 import { Button } from '@/registry/primitives/button'
 
-export default function WordsPreloaderDemo() {
+export default function Demo() {
   const [key, setKey] = React.useState(0)
 
   return (

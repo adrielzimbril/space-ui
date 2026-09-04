@@ -44,7 +44,7 @@ const creditCardSchema = z.string().regex(/^\d{13,19}$/, {
   message: 'Please enter a valid credit card number (13-19 digits)',
 })
 
-export default function Pattern() {
+export default function Demo() {
   const fields: FilterFieldConfig[] = [
     {
       key: 'email',

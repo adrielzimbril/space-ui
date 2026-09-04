@@ -9,7 +9,7 @@ import {
   DrawerTrigger,
 } from '@/registry/primitives/drawer'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Drawer position="right">
       <DrawerTrigger render={<Button variant="outline" />}>Open drawer</DrawerTrigger>

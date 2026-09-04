@@ -16,7 +16,7 @@ const items = [
   },
 ]
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Select aria-label="Select plan" defaultValue={items[1]} itemToStringValue={(item) => item.value}>
       <SelectTrigger>

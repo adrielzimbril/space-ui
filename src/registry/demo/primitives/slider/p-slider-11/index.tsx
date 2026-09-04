@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { Field, FieldLabel } from '@/registry/primitives/field'
 import { Slider, SliderValue } from '@/registry/primitives/slider'
 
-export default function Particle() {
+export default function Demo() {
   const [value, setValue] = useState<number | readonly number[]>(25)
 
   return (

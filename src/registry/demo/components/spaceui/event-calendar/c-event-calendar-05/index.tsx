@@ -117,7 +117,7 @@ function renderChip({ occurrence, segment }: EventCalendarRenderEventProps<ApptD
   )
 }
 
-export default function Pattern() {
+export default function Demo() {
   const events = useMemo(() => buildAppointments(new Date()), [])
   const apiRef = useRef<EventCalendarApi<ApptData> | null>(null)
   const counter = useRef(0)

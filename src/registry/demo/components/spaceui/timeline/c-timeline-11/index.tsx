@@ -55,7 +55,7 @@ const activities = [
   },
 ]
 
-export default function Pattern() {
+export default function Demo() {
   return (
     <div className="w-full max-w-md">
       <Timeline defaultValue={5}>

@@ -3,7 +3,7 @@
 import { useMemo } from 'react'
 import { Select, SelectItem, SelectPopup, SelectTrigger, SelectValue } from '@/registry/primitives/select'
 
-export default function Particle() {
+export default function Demo() {
   const timezones = Intl.supportedValuesOf('timeZone')
 
   const formattedTimezones = useMemo(() => {

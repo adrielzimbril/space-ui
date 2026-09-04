@@ -27,7 +27,7 @@ const PriorityIcon = ({ priority }: { priority: string }) => {
   return <IconStar className={colors[priority as keyof typeof colors]} />
 }
 
-export default function Pattern() {
+export default function Demo() {
   // Basic filter fields for outline variant demo
   const fields: FilterFieldConfig[] = [
     {

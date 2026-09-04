@@ -78,7 +78,7 @@ const getTypeColor = (type: SortableItem['type']) => {
   }
 }
 
-export default function Pattern() {
+export default function Demo() {
   const [items, setItems] = useState<SortableItem[]>(defaultItems)
 
   const handleValueChange = (newItems: SortableItem[]) => {

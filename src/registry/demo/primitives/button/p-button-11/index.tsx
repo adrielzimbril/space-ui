@@ -1,7 +1,7 @@
 import { IconChevronDown, IconArrowLeft, IconArrowRight, IconArrowUp, IconSend } from '@tabler/icons-react'
 import { Button } from '@/registry/primitives/button'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="inline-grid w-fit grid-cols-3 gap-1">
       <Button aria-label="Pan camera up" className="col-start-2" size="icon" variant="outline">

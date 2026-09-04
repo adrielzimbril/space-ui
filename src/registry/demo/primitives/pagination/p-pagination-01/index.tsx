@@ -8,7 +8,7 @@ import {
   PaginationPrevious,
 } from '@/registry/primitives/pagination'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Pagination>
       <PaginationContent>

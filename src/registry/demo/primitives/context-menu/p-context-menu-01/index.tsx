@@ -6,7 +6,7 @@ import {
   ContextMenuTrigger,
 } from '@/registry/primitives/context-menu'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <ContextMenu>
       <ContextMenuTrigger className="flex h-32 w-full max-w-sm items-center justify-center rounded-lg border border-dashed text-muted-foreground text-sm">

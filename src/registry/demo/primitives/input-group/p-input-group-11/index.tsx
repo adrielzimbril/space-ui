@@ -1,7 +1,7 @@
 import { InputGroup, InputGroupAddon, InputGroupInput } from '@/registry/primitives/input-group'
 import { Kbd } from '@/registry/primitives/kbd'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <InputGroup>
       <InputGroupInput placeholder="Search…" type="search" />

@@ -41,7 +41,7 @@ const ITEMS = [
   },
 ]
 
-export default function PinListDemo() {
+export default function Demo() {
   return (
     <div className="w-full max-w-sm p-4">
       <PinList items={ITEMS} />

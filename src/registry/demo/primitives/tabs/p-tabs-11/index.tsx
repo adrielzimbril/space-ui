@@ -2,7 +2,7 @@ import { IconSettings, IconLayoutDashboard, IconFolder } from '@tabler/icons-rea
 import { Tabs, TabsList, TabsPanel, TabsTab } from '@/registry/primitives/tabs'
 import { Tooltip, TooltipPopup, TooltipProvider, TooltipTrigger } from '@/registry/primitives/tooltip'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <TooltipProvider>
       <Tabs className="items-center" defaultValue="tab-1">

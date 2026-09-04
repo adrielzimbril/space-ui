@@ -1,7 +1,7 @@
 import { IconCheck } from '@tabler/icons-react'
 import { IconStack } from '@/registry/components/spaceui/icon-stack'
 
-export default function Pattern() {
+export default function Demo() {
   return (
     <div className="flex items-center justify-center">
       <IconStack aria-hidden="true" className="text-primary h-24 w-22">

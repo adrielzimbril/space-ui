@@ -71,7 +71,7 @@ const DIRECTORY: FilterOption[] = Array.from({ length: 10000 }, (_, index) => {
   }
 })
 
-export default function Pattern() {
+export default function Demo() {
   const fields: FilterFieldConfig[] = useMemo(
     () => [
       {

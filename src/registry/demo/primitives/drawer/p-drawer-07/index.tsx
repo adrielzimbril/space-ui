@@ -11,7 +11,7 @@ import {
   DrawerTrigger,
 } from '@/registry/primitives/drawer'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Drawer>
       <DrawerTrigger render={<Button variant="outline" />}>Nested drawers</DrawerTrigger>

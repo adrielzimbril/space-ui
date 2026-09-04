@@ -12,7 +12,7 @@ import {
   DrawerTrigger,
 } from '@/registry/primitives/drawer'
 
-export default function Particle() {
+export default function Demo() {
   const snapPoints = ['300px', 1] as const
   const [snapPoint, setSnapPoint] = useState<(typeof snapPoints)[number] | null>(snapPoints[0])
 

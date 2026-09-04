@@ -40,7 +40,7 @@ const roadmap = [
   },
 ]
 
-export default function Pattern() {
+export default function Demo() {
   return (
     <Timeline defaultValue={2} className="w-full max-w-md">
       {roadmap.map((item) => (

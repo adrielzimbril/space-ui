@@ -2,7 +2,7 @@ import { segmentedControlItemVariants, segmentedControlRootClassName } from '@/r
 
 const itemClassName = segmentedControlItemVariants({ size: 'sm', state: 'current' })
 
-export default function Particle() {
+export default function Demo() {
   return (
     <nav aria-label="Project sections">
       <div className={segmentedControlRootClassName}>

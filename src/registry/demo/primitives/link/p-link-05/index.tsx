@@ -1,6 +1,6 @@
 import { Link } from '@/registry/primitives/link'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="flex flex-wrap items-center justify-center  gap-6 text-sm">
       <Link href="https://github.com" target="_blank" rel="noopener noreferrer">

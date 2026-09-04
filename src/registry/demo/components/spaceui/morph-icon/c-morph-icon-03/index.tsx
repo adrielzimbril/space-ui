@@ -14,7 +14,7 @@ import {
   IconThumbUpFilled,
 } from '@tabler/icons-react'
 
-export default function ActionTogglesDemo() {
+export default function Demo() {
   const [liked, setLiked] = React.useState(false)
   const [muted, setMuted] = React.useState(false)
   const [playing, setPlaying] = React.useState(false)

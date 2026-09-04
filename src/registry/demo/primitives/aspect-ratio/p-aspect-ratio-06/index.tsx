@@ -1,6 +1,6 @@
 import { AspectRatio } from '@/registry/primitives/aspect-ratio'
 
-export default function Pattern() {
+export default function Demo() {
   return (
     <div className="w-full max-w-md">
       <AspectRatio ratio={3 / 2} className="bg-muted rounded-xl overflow-hidden border">

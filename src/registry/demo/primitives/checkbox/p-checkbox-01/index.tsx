@@ -1,7 +1,7 @@
 import { Checkbox } from '@/registry/primitives/checkbox'
 import { Label } from '@/registry/primitives/label'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Label>
       <Checkbox />

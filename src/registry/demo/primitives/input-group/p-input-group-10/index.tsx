@@ -1,7 +1,7 @@
 import { Badge } from '@/registry/primitives/badge'
 import { InputGroup, InputGroupAddon, InputGroupInput } from '@/registry/primitives/input-group'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <InputGroup>
       <InputGroupInput placeholder="Type to search…" type="search" />

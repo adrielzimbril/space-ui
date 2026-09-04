@@ -1,6 +1,6 @@
 import { Button } from '@/registry/primitives/button'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="flex flex-wrap items-center gap-3">
       <Button size="xs">Extra Small</Button>

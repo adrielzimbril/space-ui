@@ -14,7 +14,7 @@ import {
   SheetTrigger,
 } from '@/registry/primitives/sheet'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Sheet>
       <SheetTrigger render={<Button variant="outline" />}>Open Sheet</SheetTrigger>

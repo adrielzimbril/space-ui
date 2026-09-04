@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { Button } from '@/registry/primitives/button'
 import { Calendar } from '@/registry/primitives/calendar'
 
-export default function Particle() {
+export default function Demo() {
   const today = new Date()
   const yesterday = subDays(today, 1)
   const lastWeek = subDays(today, 7)

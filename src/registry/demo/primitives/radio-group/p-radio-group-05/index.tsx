@@ -10,7 +10,7 @@ const items = [
   { label: 'Dark', value: 'dark' },
 ] as const
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Field className="gap-4" name="theme" render={(props) => <Fieldset {...props} />}>
       <FieldsetLegend className="font-medium text-sm">Choose a theme</FieldsetLegend>

@@ -38,7 +38,7 @@ function persistOrder(meta: SortableCommitMeta<Item>): Promise<void> {
   })
 }
 
-export default function Pattern() {
+export default function Demo() {
   const [items, setItems] = useState<Item[]>(defaultItems)
 
   // Sortable commits once, on drop. `onValueChange` has already applied the

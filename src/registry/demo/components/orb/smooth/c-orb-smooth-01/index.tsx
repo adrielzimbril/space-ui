@@ -22,7 +22,7 @@ export interface OrbSmoothDemoProps {
   size?: number
 }
 
-export default function OrbSmoothDemo({
+export default function Demo({
   audioMode = 'ambient',
   audioSource = 'url',
   audioUrl = '',

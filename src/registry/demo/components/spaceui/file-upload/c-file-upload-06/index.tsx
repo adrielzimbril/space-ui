@@ -39,7 +39,7 @@ interface TableUploadProps {
   simulateUpload?: boolean
 }
 
-export default function Pattern({
+export default function Demo({
   maxFiles = 10,
   maxSize = 50 * 1024 * 1024, // 50MB
   accept = '*',

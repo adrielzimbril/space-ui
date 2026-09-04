@@ -7,7 +7,7 @@ import { Button } from '@/registry/primitives/button'
 import { InputGroup, InputGroupAddon, InputGroupInput } from '@/registry/primitives/input-group'
 import { Tooltip, TooltipPopup, TooltipTrigger } from '@/registry/primitives/tooltip'
 
-export default function Particle() {
+export default function Demo() {
   const { copyToClipboard, isCopied } = useCopyToClipboard()
   const inputRef = useRef<HTMLInputElement>(null)
 

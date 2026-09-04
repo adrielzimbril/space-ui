@@ -1,6 +1,6 @@
 import { Kbd, KbdGroup } from '@/registry/primitives/kbd'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="flex flex-col gap-4">
       <div>

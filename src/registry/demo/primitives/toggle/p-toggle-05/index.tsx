@@ -1,7 +1,7 @@
 import { IconBold, IconStar } from '@tabler/icons-react'
 import { Toggle } from '@/registry/primitives/toggle'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="flex items-center gap-1">
       <Toggle aria-label="Toggle bold" variant="outline">

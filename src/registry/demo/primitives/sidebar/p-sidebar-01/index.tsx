@@ -65,7 +65,7 @@ const items = [
   },
 ]
 
-export default function SidebarDemo() {
+export default function Demo() {
   return (
     <div className="w-full max-w-4xl overflow-hidden rounded-xl border border-border/70 bg-background shadow-sm [transform:translate3d(0,0,0)]">
       <SidebarProvider className="min-h-[420px]">

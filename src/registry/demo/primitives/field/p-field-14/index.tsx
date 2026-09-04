@@ -4,7 +4,7 @@ import { Field, FieldDescription, FieldItem, FieldLabel } from '@/registry/primi
 import { Fieldset, FieldsetLegend } from '@/registry/primitives/fieldset'
 import { Radio, RadioGroup } from '@/registry/primitives/radio-group'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Field className="gap-2" name="plan" render={(props) => <Fieldset {...props} />}>
       <FieldsetLegend className="font-medium text-sm">Choose Plan</FieldsetLegend>

@@ -4,7 +4,7 @@ import { IconUserCircle } from '@tabler/icons-react'
 import { useFileUpload } from '@/registry/hooks/form/use-file-upload'
 
 import { Button } from '@/registry/primitives/button'
-export default function Pattern() {
+export default function Demo() {
   const [{ files }, { removeFile, openFileDialog, getInputProps }] = useFileUpload({
     accept: 'image/*',
   })

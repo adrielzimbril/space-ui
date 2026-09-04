@@ -9,7 +9,7 @@ import { Form } from '@/registry/primitives/form'
 import { Input } from '@/registry/primitives/input'
 import { Select, SelectItem, SelectPopup, SelectTrigger, SelectValue } from '@/registry/primitives/select'
 
-export default function Particle() {
+export default function Demo() {
   const [loading, setLoading] = useState(false)
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()

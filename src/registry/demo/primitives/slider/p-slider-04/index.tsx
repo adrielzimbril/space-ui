@@ -1,6 +1,6 @@
 import { Slider } from '@/registry/primitives/slider'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div>
       <Slider aria-label="Storage size in GB" defaultValue={15} max={35} min={5} />

@@ -1,6 +1,6 @@
 import { InputGroup, InputGroupAddon, InputGroupInput, InputGroupText } from '@/registry/primitives/input-group'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <InputGroup>
       <InputGroupInput aria-label="Enter your domain" className="*:[input]:px-0!" placeholder="space-ui" type="text" />

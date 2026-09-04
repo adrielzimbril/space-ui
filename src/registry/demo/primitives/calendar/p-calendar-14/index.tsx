@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { Calendar } from '@/registry/primitives/calendar'
 import { Select, SelectItem, SelectPopup, SelectTrigger, SelectValue } from '@/registry/primitives/select'
 
-export default function Particle() {
+export default function Demo() {
   const [date, setDate] = useState<Date | undefined>(new Date())
 
   const handleCalendarChange = (_value: string | number, _e: React.ChangeEventHandler<HTMLSelectElement>) => {

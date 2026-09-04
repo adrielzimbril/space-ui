@@ -6,7 +6,7 @@ const items = [
   { label: 'Orange', value: 'orange' },
 ]
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Select aria-label="Select fruit" defaultValue={items[0]} items={items}>
       <SelectLabel>Fruits</SelectLabel>

@@ -2,7 +2,7 @@ import { IconArrowBackUp, IconStar } from '@tabler/icons-react'
 import { Button } from '@/registry/primitives/button'
 import { PreviewCard, PreviewCardPopup, PreviewCardTrigger } from '@/registry/primitives/preview-card'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <PreviewCard>
       <PreviewCardTrigger render={<Button variant="ghost" />}>spaceui.one/ui</PreviewCardTrigger>

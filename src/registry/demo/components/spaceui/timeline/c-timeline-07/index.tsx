@@ -60,7 +60,7 @@ const roadmapItems = [
   },
 ]
 
-export default function Pattern() {
+export default function Demo() {
   return (
     <div className="w-full max-w-xs">
       <Timeline defaultValue={0} className="gap-2.5">

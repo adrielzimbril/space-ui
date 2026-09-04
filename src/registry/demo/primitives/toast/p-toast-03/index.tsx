@@ -7,7 +7,7 @@ import { Button } from '@/registry/primitives/button'
 import { anchoredToastManager } from '@/registry/primitives/toast'
 import { Tooltip, TooltipPopup, TooltipTrigger } from '@/registry/primitives/tooltip'
 
-export default function Particle() {
+export default function Demo() {
   const copyButtonRef = useRef<HTMLButtonElement>(null)
   const toastTimeout = 2000
 

@@ -17,7 +17,7 @@ const STATUS_CONFIG: Record<
   error: { label: 'Failed', desc: 'An error occurred', icon: IconAlertTriangle },
 }
 
-export default function MultiStateDemo() {
+export default function Demo() {
   const [status, setStatus] = React.useState<StepStatus>('idle')
 
   const cycleStatus = () => {

@@ -16,7 +16,7 @@ const languages = [
   { label: 'Rust', value: 'rust' },
 ]
 
-export default function Particle() {
+export default function Demo() {
   const textareaRef = useRef<HTMLTextAreaElement>(null)
   const { copy, copied } = useClipboard({ timeout: 2000 })
 

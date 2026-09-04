@@ -25,7 +25,7 @@ const UnderlineContent = () => {
   return <span>Underline text</span>
 }
 
-export default function Particle() {
+export default function Demo() {
   return (
     <TooltipProvider>
       <ToggleGroup defaultValue={['bold']} multiple>

@@ -2,7 +2,7 @@ import { Badge } from '@/registry/primitives/badge'
 import { CardFrame } from '@/registry/primitives/card'
 import { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow } from '@/registry/primitives/table'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <CardFrame className="w-full">
       <Table variant="card">

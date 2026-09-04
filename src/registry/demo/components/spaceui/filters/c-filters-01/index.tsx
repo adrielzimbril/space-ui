@@ -210,7 +210,7 @@ const countryFlags = [
   { code: 'ZW', name: 'Zimbabwe' },
 ]
 
-export default function Pattern() {
+export default function Demo() {
   // Example: All Possible Filter Field Types with Grouping
   const fields: FilterFieldConfig[] = [
     {

@@ -5,7 +5,7 @@ const OTP_LENGTH = 6
 
 const OTP_SLOT_KEYS = Array.from({ length: OTP_LENGTH }, (_, i) => `otp-slot-${i}`)
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Field className="items-center">
       <FieldLabel>Recovery code</FieldLabel>

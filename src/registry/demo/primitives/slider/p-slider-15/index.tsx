@@ -7,7 +7,7 @@ import { Slider } from '@/registry/primitives/slider'
 const min = 5
 const max = 1240
 
-export default function Particle() {
+export default function Demo() {
   const [values, setValues] = useState([min, max])
 
   const formatPrice = (price: number) => (price === max ? `$${price.toLocaleString()}+` : `$${price.toLocaleString()}`)

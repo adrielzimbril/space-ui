@@ -2,7 +2,7 @@ import { IconBold, IconItalic, IconUnderline } from '@tabler/icons-react'
 import { ToggleGroup, ToggleGroupItem } from '@/registry/primitives/toggle-group'
 import { Tooltip, TooltipPopup, TooltipProvider, TooltipTrigger } from '@/registry/primitives/tooltip'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <TooltipProvider>
       <ToggleGroup defaultValue={['bold']} multiple>

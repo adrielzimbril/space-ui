@@ -19,7 +19,7 @@ const subdomains = [
   { label: 'cdn', value: 'cdn' },
 ]
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Group aria-label="URL search">
       <Select defaultValue="both" items={protocols}>

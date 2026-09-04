@@ -7,7 +7,7 @@ import { Field, FieldLabel } from '@/registry/primitives/field'
 import { Form } from '@/registry/primitives/form'
 import { Switch } from '@/registry/primitives/switch'
 
-export default function Particle() {
+export default function Demo() {
   const [loading, setLoading] = useState(false)
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {

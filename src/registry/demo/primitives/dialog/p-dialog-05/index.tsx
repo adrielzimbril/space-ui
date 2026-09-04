@@ -10,7 +10,7 @@ import {
   DialogTrigger,
 } from '@/registry/primitives/dialog'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Dialog>
       <DialogTrigger render={<Button variant="outline" />}>Terms & Conditions</DialogTrigger>

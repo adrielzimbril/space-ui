@@ -11,7 +11,7 @@ const distribution = [
   { stars: 1, count: 5, percentage: 3 },
 ]
 
-export default function Pattern() {
+export default function Demo() {
   return (
     <div className="mx-auto w-full max-w-xs space-y-4">
       <div className="flex flex-col items-center gap-2">

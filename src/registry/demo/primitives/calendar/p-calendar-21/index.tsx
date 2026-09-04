@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { Button } from '@/registry/primitives/button'
 import { Calendar } from '@/registry/primitives/calendar'
 
-export default function Particle() {
+export default function Demo() {
   const today = new Date()
   const yesterday = {
     from: subDays(today, 1),

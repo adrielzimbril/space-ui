@@ -10,7 +10,7 @@ import {
   TableRow,
 } from '@/registry/primitives/table'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Table>
       <TableCaption>A list of current projects.</TableCaption>

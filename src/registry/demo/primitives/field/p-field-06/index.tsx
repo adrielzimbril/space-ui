@@ -3,7 +3,7 @@ import { Button } from '@/registry/primitives/button'
 import { Field, FieldError, FieldLabel } from '@/registry/primitives/field'
 import { InputGroup, InputGroupAddon, InputGroupInput } from '@/registry/primitives/input-group'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Field>
       <FieldLabel>Subscribe</FieldLabel>

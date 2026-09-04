@@ -1,6 +1,6 @@
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <ScrollArea className="h-80 max-w-80 rounded-lg border">
       <div className="min-w-100 p-4 text-sm leading-relaxed">

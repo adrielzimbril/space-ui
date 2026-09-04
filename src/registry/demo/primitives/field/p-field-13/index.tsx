@@ -5,7 +5,7 @@ import { CheckboxGroup } from '@/registry/primitives/checkbox-group'
 import { Field, FieldItem, FieldLabel } from '@/registry/primitives/field'
 import { Fieldset, FieldsetLegend } from '@/registry/primitives/fieldset'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Field className="gap-2" name="frameworks" render={(props) => <Fieldset {...props} />}>
       <FieldsetLegend className="font-medium text-sm">Frameworks</FieldsetLegend>

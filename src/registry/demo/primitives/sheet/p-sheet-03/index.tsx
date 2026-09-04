@@ -9,7 +9,7 @@ import {
   SheetTrigger,
 } from '@/registry/primitives/sheet'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="flex flex-wrap gap-2">
       <Sheet>

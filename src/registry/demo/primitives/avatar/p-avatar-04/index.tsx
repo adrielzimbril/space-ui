@@ -1,7 +1,7 @@
 import { IconUser } from '@tabler/icons-react'
 import { Avatar, AvatarFallback } from '@/registry/primitives/avatar'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Avatar>
       <AvatarFallback>

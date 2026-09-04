@@ -1,7 +1,7 @@
 import { Field, FieldError, FieldLabel } from '@/registry/primitives/field'
 import { Input } from '@/registry/primitives/input'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Field>
       <FieldLabel>

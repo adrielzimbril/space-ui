@@ -66,7 +66,7 @@ function createInitialData() {
   return Array.from({ length: PAGE_SIZE }, (_, index) => simulateRow(index))
 }
 
-export default function Pattern() {
+export default function Demo() {
   const [sorting, setSorting] = useState<SortingState>([])
   const [initialData] = useState<IData[]>(() => createInitialData())
   const [data, setData] = useState<IData[]>(initialData)

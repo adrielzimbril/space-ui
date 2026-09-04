@@ -6,7 +6,7 @@ import { InputGroup, InputGroupAddon, InputGroupInput } from '@/registry/primiti
 import { Label } from '@/registry/primitives/label'
 import { Popover, PopoverPopup, PopoverTrigger } from '@/registry/primitives/popover'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <InputGroup>
       <InputGroupInput id="email-1" placeholder="team@spaceui.one" type="email" />

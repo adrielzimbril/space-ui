@@ -216,7 +216,7 @@ const languageOptions = Object.entries(languageMetadata).map(([value, meta]) => 
   flag: meta.flag,
 }))
 
-export default function Pattern() {
+export default function Demo() {
   const [value, setValue] = useState<DateSelectorValue | undefined>()
   const [open, setOpen] = useState(false)
   const [internalValue, setInternalValue] = useState<DateSelectorValue | undefined>(value)

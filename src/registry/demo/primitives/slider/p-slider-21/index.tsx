@@ -13,7 +13,7 @@ const max = 10
 const defaultValues = { x: 0, y: 0, z: 0 }
 const initialValues = { x: -2, y: 4, z: 2 }
 
-export default function Particle() {
+export default function Demo() {
   const [values, setValues] = useState(initialValues)
 
   const updateValue = (axis: keyof typeof values, v: number | null) => {

@@ -8,7 +8,7 @@ import { Calendar } from '@/registry/primitives/calendar'
 
 const GOOD_PRICE_THRESHOLD = 100
 
-export default function Particle() {
+export default function Demo() {
   const today = new Date()
   const [date, setDate] = useState<Date | undefined>(today)
 

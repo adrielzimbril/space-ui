@@ -1,7 +1,7 @@
 import { IconBold, IconItalic, IconUnderline } from '@tabler/icons-react'
 import { ToggleGroup, ToggleGroupItem, ToggleGroupSeparator } from '@/registry/primitives/toggle-group'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <ToggleGroup defaultValue={['bold']} orientation="vertical" variant="outline">
       <ToggleGroupItem aria-label="Toggle bold" value="bold">

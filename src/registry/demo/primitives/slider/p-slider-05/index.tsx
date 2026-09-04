@@ -5,7 +5,7 @@ const max = 12
 const skipInterval = 2
 const ticks = [...Array(max + 1)].map((_, i) => i)
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div>
       <Slider aria-label="Value selector" defaultValue={5} max={max} />

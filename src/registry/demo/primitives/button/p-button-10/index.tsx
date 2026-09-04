@@ -1,7 +1,7 @@
 import { IconArrowRight } from '@tabler/icons-react'
 import { Button } from '@/registry/primitives/button'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Button className="h-auto! gap-4 px-4 py-3 text-left" variant="outline">
       <div className="flex flex-col gap-0.5">

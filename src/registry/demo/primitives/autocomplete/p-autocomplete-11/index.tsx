@@ -33,7 +33,7 @@ async function searchMovies(query: string, filter: (item: string, query: string)
   return top100Movies.filter((movie) => filter(movie.title, query) || filter(movie.year.toString(), query))
 }
 
-export default function Particle() {
+export default function Demo() {
   const [searchValue, setSearchValue] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [searchResults, setSearchResults] = useState<Movie[]>([])

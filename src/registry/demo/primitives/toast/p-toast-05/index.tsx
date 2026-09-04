@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Button } from '@/registry/primitives/button'
 import { toastManager } from '@/registry/primitives/toast'
 
-export default function Particle() {
+export default function Demo() {
   const [isGenerating, setIsGenerating] = useState(false)
   const [progress, setProgress] = useState(0)
   const abortControllerRef = useRef<AbortController | null>(null)

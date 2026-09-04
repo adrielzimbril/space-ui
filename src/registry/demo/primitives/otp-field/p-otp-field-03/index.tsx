@@ -5,7 +5,7 @@ const GROUP_LENGTH = 3
 
 const OTP_SLOT_KEYS = Array.from({ length: OTP_LENGTH }, (_, i) => `otp-slot-${i}`)
 
-export default function Particle() {
+export default function Demo() {
   return (
     <OTPField aria-label="Verification code" length={OTP_LENGTH}>
       {OTP_SLOT_KEYS.slice(0, GROUP_LENGTH).map((slotKey, index) => (

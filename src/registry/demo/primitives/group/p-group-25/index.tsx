@@ -35,7 +35,7 @@ const models = [
   },
 ]
 
-export default function Pattern() {
+export default function Demo() {
   const [active, setActive] = useState('claude')
 
   return (

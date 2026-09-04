@@ -1,7 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/registry/primitives/avatar'
 import { AvatarExtended, AvatarIcon } from '@/registry/components/spaceui/avatar-extended'
 
-export default function AvatarVerified() {
+export default function Demo() {
   return (
     <div className="flex flex-wrap items-center gap-6">
       <AvatarExtended>

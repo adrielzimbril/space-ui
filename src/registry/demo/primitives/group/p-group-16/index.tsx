@@ -3,7 +3,7 @@ import { Button } from '@/registry/primitives/button'
 import { Group, GroupSeparator } from '@/registry/primitives/group'
 import { Input } from '@/registry/primitives/input'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Group aria-label="Add item">
       <Button aria-label="Add" size="icon" variant="outline">

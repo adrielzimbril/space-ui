@@ -1,6 +1,6 @@
 import { Meter, MeterIndicator, MeterLabel, MeterTrack, MeterValue } from '@/registry/primitives/meter'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Meter value={75}>
       <div className="flex items-center justify-between gap-2">

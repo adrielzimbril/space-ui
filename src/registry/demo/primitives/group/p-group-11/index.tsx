@@ -4,7 +4,7 @@ import { Button } from '@/registry/primitives/button'
 import { Group, GroupSeparator } from '@/registry/primitives/group'
 import { Popover, PopoverDescription, PopoverPopup, PopoverTitle, PopoverTrigger } from '@/registry/primitives/popover'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Group aria-label="Repository actions">
       <Button variant="outline">

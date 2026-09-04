@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { IconArrowUpRight } from '@tabler/icons-react'
 import { StatusBadge } from '@/registry/components/spaceui/status-badge'
 
-export default function StatusBadgeUnavailableDemo() {
+export default function Demo() {
   return (
     <div className="flex flex-wrap items-center justify-center gap-4 p-4">
       <StatusBadge mode="inline" status="offline" primaryText="Complet" size="default">

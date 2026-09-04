@@ -55,7 +55,7 @@ export const groupedItems: Group[] = [
   { items: commands, value: 'Commands' },
 ]
 
-export default function Particle() {
+export default function Demo() {
   const [open, setOpen] = useState(false)
 
   function handleItemClick(_item: Item) {

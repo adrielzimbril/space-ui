@@ -1,6 +1,6 @@
 import { Accordion, AccordionItem, AccordionPanel, AccordionTrigger } from '@/registry/primitives/accordion'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Accordion className="w-full" multiple defaultValue={['item-1', 'item-2']}>
       <AccordionItem value="item-1">

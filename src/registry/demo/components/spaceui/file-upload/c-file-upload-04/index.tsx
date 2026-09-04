@@ -19,7 +19,7 @@ interface GalleryUploadProps {
   onFilesChange?: (files: FileWithPreview[]) => void
 }
 
-export default function Pattern({
+export default function Demo({
   maxFiles = 10,
   maxSize = 5 * 1024 * 1024, // 5MB
   accept = 'image/*',

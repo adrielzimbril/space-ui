@@ -1,7 +1,7 @@
 import { IconBold, IconItalic, IconUnderline } from '@tabler/icons-react'
 import { ToggleGroup, ToggleGroupItem } from '@/registry/primitives/toggle-group'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="flex flex-col gap-4">
       <ToggleGroup size="sm">

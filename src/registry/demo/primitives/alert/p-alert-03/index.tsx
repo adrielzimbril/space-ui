@@ -2,7 +2,7 @@ import { IconInfoCircle } from '@tabler/icons-react'
 import { Alert, AlertAction, AlertDescription, AlertTitle } from '@/registry/primitives/alert'
 import { Button } from '@/registry/primitives/button'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Alert>
       <IconInfoCircle />

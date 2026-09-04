@@ -60,7 +60,7 @@ const defaultTracks: Track[] = [
   },
 ]
 
-export default function Pattern() {
+export default function Demo() {
   const [tracks, setTracks] = useState<Track[]>(defaultTracks)
 
   return (

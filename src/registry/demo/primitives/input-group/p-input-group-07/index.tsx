@@ -5,7 +5,7 @@ import { Button } from '@/registry/primitives/button'
 import { InputGroup, InputGroupAddon, InputGroupInput } from '@/registry/primitives/input-group'
 import { Popover, PopoverPopup, PopoverTrigger } from '@/registry/primitives/popover'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <InputGroup>
       <InputGroupInput aria-label="Password" placeholder="Password" type="password" />

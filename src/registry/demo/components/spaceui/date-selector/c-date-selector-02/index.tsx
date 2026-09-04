@@ -7,7 +7,7 @@ import { DateSelector, formatDateValue, type DateSelectorValue } from '@/registr
 import { Button } from '@/registry/primitives/button'
 import { Popover, PopoverContent, PopoverTrigger } from '@/registry/primitives/popover'
 import { Separator } from '@/registry/primitives/separator'
-export default function Pattern() {
+export default function Demo() {
   const [value, setValue] = useState<DateSelectorValue | undefined>()
   const [open, setOpen] = useState(false)
   const [internalValue, setInternalValue] = useState<DateSelectorValue | undefined>(value)

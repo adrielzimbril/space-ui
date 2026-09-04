@@ -56,7 +56,7 @@ const defaultItems: NavItem[] = [
   },
 ]
 
-export default function Pattern() {
+export default function Demo() {
   const [items, setItems] = useState<NavItem[]>(defaultItems)
 
   return (

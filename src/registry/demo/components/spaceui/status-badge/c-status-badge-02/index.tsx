@@ -1,6 +1,6 @@
 import { StatusBadge } from '@/registry/components/spaceui/status-badge'
 
-export default function StatusBadgeSizesDemo() {
+export default function Demo() {
   return (
     <div className="flex flex-wrap items-center justify-center gap-3 p-4">
       <StatusBadge size="sm" status="online" primaryText="Small">

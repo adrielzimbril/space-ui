@@ -1,7 +1,7 @@
 import { IconSettings, IconLayoutDashboard, IconFolder } from '@tabler/icons-react'
 import { Tabs, TabsList, TabsPanel, TabsTab } from '@/registry/primitives/tabs'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Tabs className="w-full flex-row" defaultValue="tab-1" orientation="vertical">
       <div className="border-s">

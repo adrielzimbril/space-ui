@@ -1,6 +1,6 @@
 import { Select, SelectItem, SelectPopup, SelectTrigger, SelectValue } from '@/registry/primitives/select'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="flex w-full max-w-sm flex-col gap-3">
       <Select defaultValue="apple">

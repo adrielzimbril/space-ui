@@ -116,7 +116,7 @@ function TaskColumn({ value, tasks, isOverlay, ...props }: TaskColumnProps) {
   )
 }
 
-export default function Pattern() {
+export default function Demo() {
   const [columns, setColumns] = useState<Record<string, Task[]>>({
     backlog: [
       {

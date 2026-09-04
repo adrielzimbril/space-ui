@@ -4,7 +4,7 @@ const smClassName = segmentedControlItemVariants({ size: 'sm', state: 'current' 
 const defaultClassName = segmentedControlItemVariants({ state: 'current' })
 const lgClassName = segmentedControlItemVariants({ size: 'lg', state: 'current' })
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="flex w-full max-w-sm flex-col gap-4">
       <nav aria-label="Documentation sections">
