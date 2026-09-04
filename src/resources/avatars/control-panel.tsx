@@ -7,7 +7,6 @@ import { IconRefresh } from '@tabler/icons-react'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { Slider } from '@/registry/primitives/slider'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/registry/primitives/select'
-import { ToggleGroup, ToggleGroupItem } from '@/registry/primitives/toggle-group'
 import { AvatarVariantSelect, PaletteSelect } from './option-select'
 import { DEFAULT_SEEDS } from './seeds'
 import { toLabel } from './utils'
@@ -55,31 +54,18 @@ export function AvatarControlPanel({
   parsedColors: string[] | undefined
   details: AvatarDetails
   regenerateSeeds: () => void
-  view: 'canvas' | 'mockup'
-  setView: (view: 'canvas' | 'mockup') => void
+  view: 'canvas' | 'mockup' | 'gallery'
+  setView: (view: 'canvas' | 'mockup' | 'gallery') => void
 }) {
   return (
     <div className="flex h-full min-h-0 flex-col">
-      <div className="flex h-10 shrink-0 items-center justify-between px-3">
+      <div className="flex h-10 shrink-0 items-center px-3">
         <div className="flex items-center gap-2">
           <h2 className="text-xs font-semibold">Avatar</h2>
-          <span className="text-[0.625rem] text-muted-foreground">{view === 'canvas' ? 'Canvas' : 'Mockup'}</span>
+          <span className="text-[0.625rem] text-muted-foreground">
+            {view === 'canvas' ? 'Canvas' : view === 'mockup' ? 'Mockup' : 'Gallery'}
+          </span>
         </div>
-        <ToggleGroup
-          value={[view]}
-          onValueChange={(value) => {
-            const next = value[0]
-            if (next === 'canvas' || next === 'mockup') setView(next)
-          }}
-          className="h-7"
-        >
-          <ToggleGroupItem value="canvas" className="h-6 px-2 text-[0.625rem]">
-            Canvas
-          </ToggleGroupItem>
-          <ToggleGroupItem value="mockup" className="h-6 px-2 text-[0.625rem]">
-            Mockup
-          </ToggleGroupItem>
-        </ToggleGroup>
       </div>
       <ScrollArea className="min-h-0 flex-1">
         <div className="flex flex-col gap-4 p-3.5">
