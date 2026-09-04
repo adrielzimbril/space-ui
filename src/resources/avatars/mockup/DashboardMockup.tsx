@@ -1,5 +1,5 @@
 import { cn } from '@/registry/lib/utils'
-import { Avatar } from '@usespaceui/avatars/react'
+import { Persona as Avatar } from '@/resources/persona'
 import type { MockupAvatarOptions } from './MockupPrimitives'
 
 export default function DashboardMockup({ ...avatar }: MockupAvatarOptions): React.ReactElement {

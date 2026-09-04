@@ -1,7 +1,7 @@
 import { Button } from '@/registry/primitives/button'
 import { Heart, MessageCircle } from 'lucide-react'
 import { cn } from '@/registry/lib/utils'
-import { Avatar } from '@usespaceui/avatars/react'
+import { Persona as Avatar } from '@/resources/persona'
 import Image from 'next/image'
 import type { MockupAvatarOptions } from './MockupPrimitives'
 

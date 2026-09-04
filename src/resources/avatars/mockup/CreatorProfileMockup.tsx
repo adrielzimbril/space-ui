@@ -1,5 +1,5 @@
 import { Button } from '@/registry/primitives/button'
-import { Avatar } from '@usespaceui/avatars/react'
+import { Persona as Avatar } from '@/resources/persona'
 import Image from 'next/image'
 import type { MockupAvatarOptions } from './MockupPrimitives'
 import { cn } from '@/registry/lib/utils'

@@ -6,7 +6,7 @@ import { ResourcesMdx } from '../resources-mdx'
 
 export default async function Page(props: { params: Promise<{ slug: string[] }> }) {
   const { slug } = await props.params
-  if (slug[0] === 'avatars') notFound()
+  if (slug[0] === 'avatars' || slug[0] === 'squishmoji') notFound()
   return (
     <UiKitLayoutWrapper>
       <ResourcesMdx slug={slug} />
@@ -15,7 +15,9 @@ export default async function Page(props: { params: Promise<{ slug: string[] }> 
 }
 
 export async function generateStaticParams() {
-  return source.generateParams().filter((params) => params.slug?.[0] && params.slug[0] !== 'avatars')
+  return source
+    .generateParams()
+    .filter((params) => params.slug?.[0] && params.slug[0] !== 'avatars' && params.slug[0] !== 'squishmoji')
 }
 
 export async function generateMetadata(props: { params: Promise<{ slug: string[] }> }): Promise<Metadata> {

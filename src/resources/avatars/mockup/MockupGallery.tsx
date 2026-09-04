@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { cn } from '@/registry/lib/utils'
 import { type AvatarEffect, type AvatarVariant, getAllAvatarDetails } from '@usespaceui/avatars'
-import { Avatar } from '@usespaceui/avatars/react'
+import { Persona as Avatar } from '@/resources/persona'
 import { HISTORICAL_PERSONAS } from '../seeds'
 import DashboardMockup from './DashboardMockup'
 import ChatMockup from './ChatMockup'

@@ -161,7 +161,10 @@ export function AvatarControlPanel({
                 value={[size]}
                 min={SIZE_MIN}
                 max={SIZE_MAX}
-                onValueChange={(value) => setSize(value[0] ?? size)}
+                onValueChange={(val) => {
+                  const next = Array.isArray(val) ? val[0] : val
+                  if (typeof next === 'number') setSize(next)
+                }}
               />
             </div>
           ) : null}

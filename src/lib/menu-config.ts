@@ -133,6 +133,16 @@ export const megaMenuResources: ResourceItem[] = [
     color: DEFAULT_COLOR_CODE.INDIGO,
   },
   {
+    title: 'Squishmoji',
+    label: 'squishmoji',
+    description: 'Deterministic squishy SVG avatars and animated emojis.',
+    href: '/resources/squishmoji',
+    icon: IconMoodSmile,
+    upcoming: false,
+    release: 'beta',
+    color: DEFAULT_COLOR_CODE.YELLOW,
+  },
+  {
     title: 'Emoji',
     label: 'emoji',
     description: 'High-res 3D & animated fluent emoji sets.',

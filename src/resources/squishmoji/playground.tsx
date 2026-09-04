@@ -1,0 +1,262 @@
+'use client'
+
+import { useEffect, useMemo, useState } from 'react'
+import {
+  resolveExpression,
+  resolveShape,
+  type SquishBackgroundStyleChoice,
+  type SquishExpressionChoice,
+  type SquishShapeChoice,
+} from '@usespaceui/squishmoji'
+import { Squishmoji } from '@usespaceui/squishmoji/react'
+import { bloomSound } from '@/components/providers/sound-provider'
+import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
+import { ResourceStudio } from '@/resources/studio'
+import { ResourceNav } from '@/resources/components/resource-nav'
+import { ResourceToolbar, type ResourceToolbarConfig } from '@/resources/components/resource-toolbar'
+import { ResourceGallery } from '@/resources/components/resource-gallery'
+import { ResourceInfiniteCanvas } from '@/resources/components/resource-infinite-canvas'
+import { ResourceSeedView } from '@/resources/components/resource-seed-view'
+import { PersonaProvider } from '@/resources/persona'
+import { MockupView } from '@/resources/avatars/mockup-view'
+import { DEFAULT_SEEDS } from '@/resources/avatars/seeds'
+import { getRandomPersonas } from '@/resources/avatars/utils'
+import type { ResourceViewMode } from '@/resources/view-mode'
+import { SquishmojiControlPanel } from './control-panel'
+
+function captionFor(seed: string, shape: SquishShapeChoice, expression: SquishExpressionChoice) {
+  return `${resolveShape(seed, shape)} · ${resolveExpression(seed, expression)}`
+}
+
+function snippetFor({
+  seed,
+  shape,
+  expression,
+  size,
+  backgroundStyle,
+  animate,
+  animWobble,
+  animOnHover,
+  animOnClick,
+}: {
+  seed: string
+  shape: SquishShapeChoice
+  expression: SquishExpressionChoice
+  size: number
+  backgroundStyle: SquishBackgroundStyleChoice
+  animate: boolean
+  animWobble: boolean
+  animOnHover: boolean
+  animOnClick: boolean
+}) {
+  const resolvedShape = resolveShape(seed, shape)
+  const resolvedExpr = resolveExpression(seed, expression)
+  const lines = [`<Squishmoji`, `  seed="${seed}"`, `  shape="${resolvedShape}"`, `  expression="${resolvedExpr}"`]
+  if (size !== 120) lines.push(`  size={${size}}`)
+  if (backgroundStyle !== 'all' && backgroundStyle !== 'solid') lines.push(`  backgroundStyle="${backgroundStyle}"`)
+  if (!animate) lines.push('  animate={false}')
+  if (animWobble) lines.push('  animWobble')
+  if (animOnHover) lines.push('  animOnHover')
+  if (animOnClick) lines.push('  animOnClick')
+  lines.push('/>')
+  return `import { Squishmoji } from '@usespaceui/squishmoji/react'\n\n${lines.join('\n')}`
+}
+
+export function SquishmojiPlayground() {
+  const [pool, setPool] = useState<string[]>(() => getRandomPersonas(200))
+  const [shape, setShape] = useState<SquishShapeChoice>('all')
+  const [expression, setExpression] = useState<SquishExpressionChoice>('all')
+  const [backgroundStyle, setBackgroundStyle] = useState<SquishBackgroundStyleChoice>('all')
+  const [size, setSize] = useState(164)
+  const [animate, setAnimate] = useState(true)
+  const [animWobble, setAnimWobble] = useState(false)
+  const [animOnHover, setAnimOnHover] = useState(false)
+  const [animOnClick, setAnimOnClick] = useState(false)
+  const [view, setView] = useState<ResourceViewMode>('gallery')
+  const [seedName, setSeedName] = useState(DEFAULT_SEEDS)
+  const [canvasKey, setCanvasKey] = useState(0)
+  const [showRight, setShowRight] = useState(true)
+  const [expanded, setExpanded] = useState(false)
+  const isDesktop = useMediaQuery('(min-width: 768px)', true)
+
+  useEffect(() => {
+    if (!isDesktop) setShowRight(false)
+  }, [isDesktop])
+
+  const name = seedName.trim() || DEFAULT_SEEDS
+  const code = useMemo(
+    () =>
+      snippetFor({
+        seed: name,
+        shape,
+        expression,
+        size,
+        backgroundStyle,
+        animate,
+        animWobble,
+        animOnHover,
+        animOnClick,
+      }),
+    [name, shape, expression, size, backgroundStyle, animate, animWobble, animOnHover, animOnClick],
+  )
+
+  const renderSquish = (seed: string, mediaSize: number) => (
+    <Squishmoji
+      seed={seed}
+      size={mediaSize}
+      shape={shape}
+      expression={expression}
+      backgroundStyle={backgroundStyle}
+      animate={animate}
+      animWobble={animWobble}
+      animOnHover={animOnHover}
+      animOnClick={animOnClick}
+    />
+  )
+
+  const reset = () => {
+    setPool(getRandomPersonas(200))
+    setShape('all')
+    setExpression('all')
+    setBackgroundStyle('all')
+    setSize(164)
+    setAnimate(true)
+    setAnimWobble(false)
+    setAnimOnHover(false)
+    setAnimOnClick(false)
+    setSeedName(DEFAULT_SEEDS)
+    setView('gallery')
+    setShowRight(isDesktop)
+    setExpanded(false)
+    setCanvasKey((key) => key + 1)
+  }
+
+  const toolbarConfig: ResourceToolbarConfig = {
+    theme: true,
+    expand: true,
+    info: false,
+    sidebar: true,
+    reset: true,
+    viewToggle: true,
+    view,
+    onViewChange: setView,
+    onReset: reset,
+    onToggleExpand: setExpanded,
+    onToggleSidebar: setShowRight,
+    sidebarVisible: showRight,
+    expanded,
+  }
+
+  const select = (seed: string) => {
+    bloomSound()
+    setSeedName(seed)
+    setView('seed')
+  }
+
+  return (
+    <ResourceStudio
+      showLeft={false}
+      showRight={showRight && !expanded}
+      rightWidth="20rem"
+      onToggleRight={setShowRight}
+      className={expanded ? 'p-0' : undefined}
+      canvas={
+        view === 'canvas' ? (
+          <ResourceInfiniteCanvas
+            key={canvasKey}
+            pool={pool}
+            size={size}
+            onSelect={select}
+            renderMedia={(seed, _index, mediaSize) => renderSquish(seed, mediaSize)}
+            caption={(seed) => captionFor(seed, shape, expression)}
+          />
+        ) : view === 'mockup' ? (
+          <PersonaProvider
+            render={(props) => (
+              <Squishmoji
+                seed={props.name ?? DEFAULT_SEEDS}
+                size={props.size}
+                shape={shape}
+                expression={expression}
+                backgroundStyle={backgroundStyle}
+                animate={animate}
+                animWobble={animWobble}
+                animOnHover={animOnHover}
+                animOnClick={animOnClick}
+              />
+            )}
+          >
+            <MockupView
+              pool={pool}
+              pattern="all"
+              size={size}
+              effect="none"
+              animate={animate}
+              circle
+              parsedColors={undefined}
+              paletteIndex={-2}
+            />
+          </PersonaProvider>
+        ) : view === 'gallery' ? (
+          <ResourceGallery
+            pool={pool}
+            onSelect={select}
+            sidebarLeft={false}
+            sidebarRight={showRight && !expanded}
+            renderMedia={(seed) => (
+              <div className="flex size-full max-h-full max-w-full items-center justify-center [&_svg]:size-full">
+                {renderSquish(seed, 164)}
+              </div>
+            )}
+            caption={(seed) => captionFor(seed, shape, expression)}
+          />
+        ) : (
+          <ResourceSeedView
+            title="squishmoji"
+            description="Deterministic squishy SVG avatars from any string. Alive with motion, no assets, no network."
+            findLabel="Let's find your squishmoji"
+            seed={seedName}
+            setSeed={setSeedName}
+            placeholder={DEFAULT_SEEDS}
+            onRandomize={() => setSeedName(getRandomPersonas(1)[0] ?? DEFAULT_SEEDS)}
+            packageName="@usespaceui/squishmoji"
+            code={code}
+            codeTitle="Squishmoji.tsx"
+            footnote="Seed is the only required prop. The same seed always renders the same squishmoji."
+            preview={renderSquish(name, size)}
+          />
+        )
+      }
+      float={
+        <ResourceToolbar config={toolbarConfig} left={<ResourceNav />} />
+      }
+      right={
+        <SquishmojiControlPanel
+          seed={view === 'seed' ? seedName : (pool[0] ?? DEFAULT_SEEDS)}
+          shape={shape}
+          setShape={setShape}
+          expression={expression}
+          setExpression={setExpression}
+          backgroundStyle={backgroundStyle}
+          setBackgroundStyle={setBackgroundStyle}
+          size={size}
+          setSize={setSize}
+          animate={animate}
+          setAnimate={setAnimate}
+          animWobble={animWobble}
+          setAnimWobble={setAnimWobble}
+          animOnHover={animOnHover}
+          setAnimOnHover={setAnimOnHover}
+          animOnClick={animOnClick}
+          setAnimOnClick={setAnimOnClick}
+          regenerateSeeds={() => {
+            const next = getRandomPersonas(200)
+            setPool(next)
+            setSeedName(next[0] ?? DEFAULT_SEEDS)
+          }}
+          view={view}
+        />
+      }
+    />
+  )
+}

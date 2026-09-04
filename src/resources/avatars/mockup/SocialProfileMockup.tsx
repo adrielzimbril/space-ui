@@ -1,5 +1,5 @@
 import { cn } from '@/registry/lib/utils'
-import { Avatar } from '@usespaceui/avatars/react'
+import { Persona as Avatar } from '@/resources/persona'
 import { MockupMetric, type MockupAvatarOptions } from './MockupPrimitives'
 
 export default function SocialProfileMockup({

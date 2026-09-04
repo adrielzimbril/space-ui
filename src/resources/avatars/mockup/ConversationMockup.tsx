@@ -1,5 +1,5 @@
 import { Heart, MessageCircle } from 'lucide-react'
-import { Avatar } from '@usespaceui/avatars/react'
+import { Persona as Avatar } from '@/resources/persona'
 import type { MockupAvatarOptions } from './MockupPrimitives'
 import { cn } from '@/registry/lib/utils'
 

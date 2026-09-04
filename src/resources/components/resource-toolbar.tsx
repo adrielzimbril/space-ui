@@ -86,9 +86,8 @@ export function ResourceToolbar({
   const viewLabel =
     view === 'canvas' ? 'Mockup' : view === 'mockup' ? 'Gallery' : view === 'gallery' ? 'Seed' : 'Canvas'
 
-  const defaultButtons = (
+  const leftButtons = (
     <>
-      {/* 1. Panneau Gauche (Info) */}
       {info && !expanded ? (
         <ToolbarButton
           label={infoVisible ? 'Hide info' : 'Show info'}
@@ -102,8 +101,11 @@ export function ResourceToolbar({
           )}
         </ToolbarButton>
       ) : null}
+    </>
+  )
 
-      {/* 2. Panneau Droit (Controls / Sidebar) */}
+  const defaultButtons = (
+    <>
       {sidebar && !expanded ? (
         <ToolbarButton
           label={sidebarVisible ? 'Hide controls' : 'Show controls'}
@@ -167,9 +169,10 @@ export function ResourceToolbar({
 
   return (
     <>
-      {left ? (
+      {left || info ? (
         <ToolbarSection aria-label="Resource navigation" className="left-2 top-6">
           {left}
+          {leftButtons}
         </ToolbarSection>
       ) : null}
       <ToolbarSection aria-label="Resource actions" className="right-2 top-6">

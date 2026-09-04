@@ -1,15 +1,11 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
-import { IconLayout2 } from '@tabler/icons-react'
 import { resolveVariant, type AvatarEffect, type AvatarVariant } from '@usespaceui/avatars'
 import { bloomSound } from '@/components/providers/sound-provider'
 import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
-import { MobileNavDrawer } from '@/components/layout/mobile-nav-drawer'
-import { ToolbarButton } from '@/components/playground/playground-toolbar-button'
-import { source, uiKitSource, resourcesSource } from '@/lib/source'
 import { ResourceStudio } from '@/resources/studio'
-import { InlineInstallBar } from '@/components/docs/installation/inline-install-bar'
+import { ResourceNav } from '@/resources/components/resource-nav'
 import { ResourceToolbar, type ResourceToolbarConfig } from '@/resources/components/resource-toolbar'
 import { AvatarCanvas, type SelectedCanvasAvatar } from './canvas'
 import { AvatarCodeModal } from './code-modal'
@@ -163,17 +159,7 @@ export function AvatarsPlayground() {
         float={
           <ResourceToolbar
             config={toolbarConfig}
-            left={
-              <MobileNavDrawer
-                trees={[source.pageTree, uiKitSource.pageTree, resourcesSource.pageTree]}
-                triggerClassName="flex!"
-                trigger={
-                  <ToolbarButton label="Open navigation">
-                    <IconLayout2 className="size-4" />
-                  </ToolbarButton>
-                }
-              />
-            }
+            left={<ResourceNav />}
           />
         }
         right={
