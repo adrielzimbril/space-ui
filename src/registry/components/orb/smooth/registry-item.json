@@ -4,8 +4,14 @@
   "type": "registry:component",
   "title": "Smooth Orb",
   "description": "Audio-reactive smooth orb with a WebGPU fluid simulation.",
-  "dependencies": ["vgpu"],
-  "categories": ["orb", "webgpu", "smooth"],
+  "dependencies": [
+    "vgpu"
+  ],
+  "categories": [
+    "orb",
+    "webgpu",
+    "smooth"
+  ],
   "files": [
     {
       "path": "src/registry/components/orb/smooth/index.tsx",
@@ -39,5 +45,10 @@
     }
   ],
   "createdAt": "2026-09-03",
-  "updatedAt": "2026-09-03"
+  "updatedAt": "2026-09-03",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-gpu-runtime.json",
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-toast.json"
+  ]
 }

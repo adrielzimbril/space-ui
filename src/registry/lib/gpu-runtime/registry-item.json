@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lib-gpu-runtime",
+  "type": "registry:lib",
+  "title": "GPU Runtime",
+  "description": "GPU runtime utilities for WebGPU canvas lifecycle and visibility gating.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/lib/gpu-runtime/index.ts",
+      "type": "registry:lib",
+      "target": "lib/gpu-runtime.ts"
+    }
+  ]
+}

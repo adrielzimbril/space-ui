@@ -8,7 +8,8 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "https://www.spaceui.one/r/components-spaceui-icon-stack.json"
+    "https://www.spaceui.one/r/components-spaceui-icon-stack.json",
+    "https://www.spaceui.one/r/components-spaceui-item.json"
   ],
   "categories": [
     "component",
