@@ -26,11 +26,17 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ slu
 
   if (!page) notFound()
 
-  return new NextResponse(await getLLMText(page), {
-    headers: {
-      'Content-Type': 'text/markdown; charset=utf-8',
-    },
-  })
+  try {
+    const text = await getLLMText(page)
+    return new NextResponse(text, {
+      headers: {
+        'Content-Type': 'text/markdown; charset=utf-8',
+      },
+    })
+  } catch (error) {
+    console.error(`[llms.mdx] Error reading ${cleanSlug.join('/')}:`, error)
+    notFound()
+  }
 }
 
 export function generateStaticParams() {
