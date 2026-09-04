@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-date-selector",
+  "type": "registry:component",
+  "title": "Date Selector",
+  "description": "Date Selector component for Space UI.",
+  "dependencies": [
+    "@tabler/icons-react",
+    "date-fns",
+    "react-day-picker"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-browser-use-media-query",
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-calendar",
+    "@usespaceui/primitives-input",
+    "@usespaceui/primitives-scroll-area",
+    "@usespaceui/primitives-tabs"
+  ],
+  "categories": [
+    "component",
+    "date-selector",
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/date-selector/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/date-selector.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

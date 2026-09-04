@@ -1,0 +1,133 @@
+---
+title: Installation
+description: How to install dependencies, configure registries, and add Space UI components to your project.
+---
+
+Space UI is an open distribution of React components built on top of **React 19**, **Base UI**, **Tailwind CSS v4**, and **Motion**. It works seamlessly with the official `shadcn` CLI through custom registries.
+
+<Callout>
+  **Zero-lockin open code:** Space UI components are not a heavy NPM dependency. They install directly into your
+  codebase, giving you full ownership to inspect, edit, and style every line of code.
+</Callout>
+
+## Choose Your Integration
+
+Select your framework or development workflow to get started:
+
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+  <Card href="/docs/installation/nextjs" title="Next.js">
+    Next.js 15/16 App Router, React 19 Server Components, and Tailwind CSS v4 setup.
+  </Card>
+  <Card href="/docs/installation/vite" title="Vite + React">
+    Client-side React 19 SPA with Vite, `@tailwindcss/vite`, and TypeScript aliases.
+  </Card>
+  <Card href="/docs/installation/lovable" title="Lovable, Bolt & AI IDEs">
+    Prompting rules, custom registries, and `llms.txt` integration for Lovable, Bolt.new, v0, Cursor & Windsurf.
+  </Card>
+  <Card href="/docs/installation/manual" title="Manual Installation">
+    Step-by-step manual setup, components.json configuration, and custom registry reference.
+  </Card>
+  <Card href="/docs/mcp" title="Model Context Protocol (MCP)">
+    Connect Claude Code, Cursor, Windsurf, and VS Code directly to Space UI's registry.
+  </Card>
+  <Card href="/ui-kit/primitives" title="Explore Primitives">
+    Browse all animated Base UI primitives, interactive demos, and component sources.
+  </Card>
+</div>
+
+---
+
+## Prerequisites & Compatibility
+
+Ensure your project environment meets the minimum version requirements:
+
+| Technology       | Minimum Version | Notes                                                                 |
+| :--------------- | :-------------- | :-------------------------------------------------------------------- |
+| **React**        | `≥ 19.0.0`      | Full support for React 19 Actions, Server Components, and Transitions |
+| **Tailwind CSS** | `≥ 4.0.0`       | Built natively for CSS-first `@import "tailwindcss";` architecture    |
+| **Motion**       | `≥ 12.0.0`      | Fluid physics, layout animations, and gesture interactions            |
+| **Base UI**      | `≥ 1.7.0`       | Headless, accessible primitives powering menus, dialogs, and popovers |
+
+---
+
+## Quick Start (CLI)
+
+If you already have a React project with Tailwind CSS configured, integrate Space UI in three simple steps:
+
+<Steps>
+
+<Step>
+
+### Initialize the Space UI Preset
+
+Run the `init` command to automatically configure your `components.json`, color variables, and squircle utility classes:
+
+<InstallCommandBlock
+  commands={{
+    pnpm: 'pnpm dlx shadcn@latest init @usespaceui/lib-style',
+    npm: 'npx shadcn@latest init @usespaceui/lib-style',
+    yarn: 'yarn dlx shadcn@latest init @usespaceui/lib-style',
+    bun: 'bunx --bun shadcn@latest init @usespaceui/lib-style',
+  }}
+/>
+
+</Step>
+
+<Step>
+
+### Add Components
+
+Install any primitive or component directly from the `@usespaceui` registry:
+
+<InstallCommandBlock isShadcn packages="@usespaceui/dialog @usespaceui/button" />
+
+<Callout type="info">
+  Shared dependencies like `@base-ui/react`, `motion`, and `@usespaceui/*` primitives are resolved and downloaded
+  automatically by the CLI.
+</Callout>
+
+</Step>
+
+<Step>
+
+### Import and Use
+
+Import the installed component into your layout or page:
+
+```tsx title="app/page.tsx"
+import { Dialog, DialogTrigger, DialogPopup, DialogTitle, DialogDescription, DialogClose } from '@/components/ui/dialog'
+import { Button } from '@/components/ui/button'
+
+export default function Page() {
+  return (
+    <Dialog>
+      <DialogTrigger render={<Button variant="primary">Open Dialog</Button>} />
+      <DialogPopup>
+        <DialogTitle>Welcome to Space UI</DialogTitle>
+        <DialogDescription>
+          State of the art animations, accessible Base UI primitives, and sensory micro-interactions.
+        </DialogDescription>
+        <div className="flex justify-end gap-2 mt-4">
+          <DialogClose render={<Button variant="secondary">Dismiss</Button>} />
+          <Button variant="primary">Confirm</Button>
+        </div>
+      </DialogPopup>
+    </Dialog>
+  )
+}
+```
+
+</Step>
+
+</Steps>
+
+---
+
+## Next Steps
+
+Explore the core foundations and available component categories:
+
+- [Explore Primitives](/ui-kit/primitives) — Base UI animated primitives (Dialog, Menu, Tooltip, Tabs, Popover).
+- [Explore Components](/ui-kit/components) — High-level UI components, charts, and interactive tables.
+- [Sensory Hooks & Sounds](/ui-kit/hooks) — Haptic audio feedback and interaction utilities.
+- [Fundamentals & Theming](/docs/fundamentals/colors) — Color palettes, typography scales, and token systems.

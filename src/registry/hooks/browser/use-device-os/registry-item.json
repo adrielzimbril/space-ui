@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-browser-use-device-os",
+  "type": "registry:hook",
+  "title": "useDeviceOS",
+  "description": "useDeviceOS hook.",
+  "categories": [
+    "hooks",
+    "browser",
+    "device-os"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/browser/use-device-os/index.ts",
+      "type": "registry:hook",
+      "target": "hooks/use-device-os.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

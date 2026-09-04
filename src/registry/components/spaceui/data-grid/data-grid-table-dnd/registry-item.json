@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-data-grid-table-dnd",
+  "type": "registry:component",
+  "title": "Data Grid Table Dnd",
+  "description": "Data Grid Table Dnd component for Space UI.",
+  "dependencies": [
+    "@dnd-kit/core",
+    "@dnd-kit/sortable",
+    "@dnd-kit/utilities",
+    "@tabler/icons-react",
+    "@tanstack/react-table"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-data-grid",
+    "@usespaceui/components-spaceui-data-grid-table",
+    "@usespaceui/primitives-button"
+  ],
+  "categories": [
+    "component",
+    "data-grid",
+    "data-grid-data-grid-table-dnd"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/data-grid/data-grid-table-dnd/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/data-grid-table-dnd.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

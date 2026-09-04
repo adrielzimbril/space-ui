@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-textarea-10",
+  "type": "registry:ui",
+  "title": "Textarea 10",
+  "description": "Textarea with characters remaining counter",
+  "registryDependencies": [
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-textarea"
+  ],
+  "categories": [
+    "field",
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/textarea/p-textarea-10/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-textarea-10.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

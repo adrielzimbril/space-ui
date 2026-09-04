@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-components-class",
+  "type": "registry:hook",
+  "title": "Class",
+  "description": "Class component.",
+  "categories": [
+    "hooks",
+    "components",
+    "class"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/components/class/index.tsx",
+      "type": "registry:hook",
+      "target": "components/ui/class.tsx"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

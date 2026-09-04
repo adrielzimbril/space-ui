@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-event-calendar-i18n",
+  "type": "registry:component",
+  "title": "Event Calendar I18n",
+  "description": "Event Calendar I18n component for Space UI.",
+  "dependencies": [
+    "date-fns"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-event-calendar-types"
+  ],
+  "categories": [
+    "component",
+    "event-calendar",
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/event-calendar/event-calendar-i18n/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/event-calendar-i18n.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-browser-use-session-storage",
+  "type": "registry:hook",
+  "title": "useSessionStorage",
+  "description": "useSessionStorage hook.",
+  "categories": [
+    "hooks",
+    "browser",
+    "session-storage"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/browser/use-session-storage/index.ts",
+      "type": "registry:hook",
+      "target": "hooks/use-session-storage.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

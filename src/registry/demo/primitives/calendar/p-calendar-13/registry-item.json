@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-calendar-13",
+  "type": "registry:ui",
+  "title": "Calendar 13",
+  "description": "Calendar with year-only combobox dropdown",
+  "dependencies": [
+    "@daypicker/react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-calendar",
+    "@usespaceui/primitives-combobox"
+  ],
+  "categories": [
+    "calendar",
+    "combobox"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/calendar/p-calendar-13/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-calendar-13.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

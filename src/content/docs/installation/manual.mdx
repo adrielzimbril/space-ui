@@ -1,0 +1,217 @@
+---
+title: Manual Installation
+description: Step-by-step manual setup, components.json configuration, and custom registry reference.
+---
+
+This guide covers setting up Space UI manually—from configuring **`components.json`** for registry resolution to zero-CLI copy-pasting for custom stacks and monorepos.
+
+<Callout>
+  **Full Code Ownership:** Space UI components are open and unbundled. You have complete freedom to customize, tweak
+  styles, and adapt them directly in your codebase.
+</Callout>
+
+<Steps>
+
+<Step>
+
+### Install Core Dependencies
+
+Install Base UI, Motion, and class utility dependencies:
+
+<InstallCommandBlock
+  commands={{
+    pnpm: 'pnpm add @base-ui/react motion cn class-variance-authority lucide-react @tabler/icons-react',
+    npm: 'npm install @base-ui/react motion cn class-variance-authority lucide-react @tabler/icons-react',
+    yarn: 'yarn add @base-ui/react motion cn class-variance-authority lucide-react @tabler/icons-react',
+    bun: 'bun add @base-ui/react motion cn class-variance-authority lucide-react @tabler/icons-react',
+  }}
+/>
+
+</Step>
+
+<Step>
+
+### Configure `components.json`
+
+Create or update `components.json` at the root of your project to connect the `@usespaceui` registry namespace:
+
+```json title="components.json"
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "base-nova",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "app/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true
+  },
+  "aliases": {
+    "components": "@/components",
+    "ui": "@/components/ui",
+    "blocks": "@/components/blocks",
+    "lib": "@/lib",
+    "utils": "@/lib/utils",
+    "hooks": "@/hooks"
+  },
+  "registries": {
+    "@usespaceui": "https://www.spaceui.one/r/{name}.json"
+  }
+}
+```
+
+</Step>
+
+<Step>
+
+### Add Class Merging Utility (`lib/utils.ts`)
+
+Create `lib/utils.ts` to provide the `cn()` helper used throughout all Space UI primitives:
+
+```ts title="lib/utils.ts"
+export { cn, type ClassValue } from 'cn'
+```
+
+</Step>
+
+<Step>
+
+### Configure Theme & CSS Variables (`globals.css`)
+
+Add the standard design tokens to your global CSS stylesheet (`app/globals.css` or `src/index.css`):
+
+```css title="globals.css"
+@import 'tailwindcss';
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+```
+
+</Step>
+
+<Step>
+
+### Add Components
+
+Install via shadcn CLI or copy the primitive code directly:
+
+<InstallCommandBlock isShadcn packages="@usespaceui/dialog @usespaceui/button" />
+
+_(Or click the **Code** tab on any component documentation page and copy the source into your `components/ui/` directory)._
+
+</Step>
+
+<Step>
+
+### Render and Verify
+
+Import your component and verify its behavior:
+
+```tsx title="app/page.tsx"
+import { Button } from '@/components/ui/button'
+
+export default function Page() {
+  return (
+    <div className="p-6">
+      <Button variant="primary" size="md">
+        Space UI Active
+      </Button>
+    </div>
+  )
+}
+```
+
+</Step>
+
+</Steps>
+
+---
+
+## `components.json` Schema Reference
+
+| Property                    | Type      | Description                                                                                              |
+| :-------------------------- | :-------- | :------------------------------------------------------------------------------------------------------- |
+| **`style`**                 | `string`  | Style preset. Set to `"base-nova"` for Base UI and squircle token support.                               |
+| **`rsc`**                   | `boolean` | Set to `true` for Next.js App Router (React Server Components). When `false`, all files are client-only. |
+| **`tsx`**                   | `boolean` | Set to `true` to generate `.tsx`/`.ts` files, or `false` for `.jsx`/`.js`.                               |
+| **`tailwind.css`**          | `string`  | Relative path to your global CSS stylesheet (e.g. `app/globals.css` or `src/index.css`).                 |
+| **`tailwind.baseColor`**    | `string`  | Base palette color (`neutral`, `zinc`, `slate`, `gray`, `stone`).                                        |
+| **`tailwind.cssVariables`** | `boolean` | Set to `true` to enable CSS variables (`--background`, `--foreground`).                                  |
+| **`aliases`**               | `object`  | Mapping between logical imports and your project directory structure.                                    |
+| **`registries`**            | `object`  | Remote registry namespace mapping (e.g. `"@usespaceui": "https://www.spaceui.one/r/{name}.json"`).       |
+
+---
+
+## Multi-Registry Namespaces
+
+With the `@usespaceui` registry configured, you can install any component with:
+
+```bash
+npx shadcn@latest add @usespaceui/dialog @usespaceui/button
+```
+
+The CLI queries `https://www.spaceui.one/r/{name}.json`, resolves the component code and sub-dependencies, rewrites imports according to your local `aliases`, and places files into your `components/ui/` directory.
+
+---
+
+## Custom Path Aliases & Monorepos
+
+For monorepo structures (e.g. Turborepo, Nx) or custom folder hierarchies, adjust the `aliases` block:
+
+```json title="components.json"
+{
+  "aliases": {
+    "components": "@/shared/components",
+    "ui": "@/shared/components/ui",
+    "blocks": "@/shared/components/blocks",
+    "lib": "@/shared/lib",
+    "utils": "@/shared/utils",
+    "hooks": "@/shared/hooks"
+  }
+}
+```

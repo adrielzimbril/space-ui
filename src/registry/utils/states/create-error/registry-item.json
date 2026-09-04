@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-utils-states-create-error",
+  "type": "registry:lib",
+  "title": "create-error",
+  "description": "create-error state utility.",
+  "categories": [
+    "utils",
+    "create-error"
+  ],
+  "files": [
+    {
+      "path": "src/registry/utils/states/create-error/index.ts",
+      "type": "registry:lib",
+      "target": "utils/states/create-error.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

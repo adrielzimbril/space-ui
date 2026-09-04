@@ -1,0 +1,93 @@
+---
+title: Skills
+description: Specialized AI agent skills for UI engineering, accessibility, typography, motion, and code quality.
+---
+
+Space UI includes a comprehensive suite of **Agent Skills** located in `.agents/skills/`. These skills provide AI coding assistants (Claude Code, Cursor, Windsurf, Copilot, Codex, Antigravity) with expert guidelines for building, reviewing, and refactoring production interfaces.
+
+---
+
+## Available Skills
+
+| Skill                      | Purpose             | Key Focus Areas                                                        |
+| :------------------------- | :------------------ | :--------------------------------------------------------------------- |
+| **`better-interface`**     | Holistic UI review  | Cross-discipline audit coordinating a11y, layout, writing, and polish. |
+| **`better-accessibility`** | A11y compliance     | WCAG 2.2, WAI-ARIA patterns, keyboard focus rings, screen reader text. |
+| **`better-ui`**            | Design polish       | Micro-interactions, spring physics, hover states, optical alignments.  |
+| **`better-layout`**        | Layout architecture | Container queries, responsive breakpoints, negative space, RTL.        |
+| **`better-typography`**    | Typography design   | Variable fonts, type scales, tabular numbers, smart punctuation.       |
+| **`better-colors`**        | Color engineering   | OKLCH color palettes, contrast ratios, semantic token hierarchy.       |
+| **`better-writing`**       | UX microcopy        | Actionable button labels, concise error states, sentence casing.       |
+
+---
+
+## Detailed Skill Breakdown
+
+### 1. `better-interface`
+
+Coordinates a comprehensive, cross-discipline review across all aspects of your interface. Use it to perform holistic audits on complete pages or features before merging.
+
+- **Trigger Keywords**: `better-interface`, `interface audit`, `full review`, `review this page`
+- **What it checks**: Consistency between layout, typography contrast, interaction states, and accessibility compliance.
+
+### 2. `better-accessibility`
+
+Ensures your components strictly comply with **WCAG 2.2 AA** and **WAI-ARIA** specifications.
+
+- **Trigger Keywords**: `accessibility`, `a11y`, `WCAG`, `aria`, `focus ring`, `keyboard navigation`, `screen reader`
+- **What it checks**: Keyboard focus traps in modals, `aria-expanded` and `aria-controls` bindings, color contrast ratios, touch target sizes (minimum 44x44px), and reduced-motion safety.
+
+### 3. `better-ui`
+
+Applies high-end design engineering principles to elevate component feel from standard to polished.
+
+- **Trigger Keywords**: `UI polish`, `design details`, `micro-interactions`, `hover states`, `border radius`, `springs`
+- **What it checks**: Motion restraint, spring transitions, optical icon alignments, squircle border radii, and active/hover press feedback.
+
+### 4. `better-layout`
+
+Structures robust component layouts using modern CSS primitives.
+
+- **Trigger Keywords**: `layout`, `spacing`, `alignment`, `responsive`, `breakpoints`, `container queries`, `RTL`
+- **What it checks**: Flexbox and grid hierarchies, container queries for component-level responsiveness, logical properties (`ps-`, `pe-`, `ms-`, `me-`), and progressive disclosure.
+
+### 5. `better-typography`
+
+Configures type scales, variable font properties, and reading ergonomics.
+
+- **Trigger Keywords**: `typography`, `fonts`, `line-height`, `letter-spacing`, `tabular numbers`, `truncation`
+- **What it checks**: Tabular numbers (`tnum`) in numeric grids and data tables, heading hierarchy (`h1` through `h6`), line length constraints (60–75ch), and smart punctuation.
+
+### 6. `better-colors`
+
+Guides OKLCH color palettes, dark mode balance, and semantic token assignments.
+
+- **Trigger Keywords**: `colors`, `oklch`, `contrast ratio`, `palette`, `dark mode`, `accent`
+- **What it checks**: Perceptually uniform OKLCH contrast, semantic token hierarchy (`bg-background`, `text-foreground`, `border-border`), and dark-mode luminance adjustments.
+
+### 7. `better-writing`
+
+Crafts direct, clear, and actionable interface microcopy.
+
+- **Trigger Keywords**: `UX writing`, `microcopy`, `button labels`, `error messages`, `empty states`
+- **What it checks**: Action-oriented button verbs ("Save changes" over "Submit"), human-friendly error guidance, sentence casing, and elimination of technical jargon.
+
+---
+
+## How to Use Skills with AI Assistants
+
+### Claude Code & Antigravity
+
+Skills placed in `.agents/skills/` are automatically discovered by agent runtimes. Simply prompt:
+
+```text
+Audit this new settings form using the better-accessibility and better-writing skills.
+```
+
+### Cursor & Windsurf
+
+Reference the skill documentation in your `.cursorrules` or prompt directly:
+
+```markdown
+Review my component according to the rules in .agents/skills/better-ui/SKILL.md.
+```

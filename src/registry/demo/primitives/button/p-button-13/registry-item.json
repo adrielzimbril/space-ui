@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-button-13",
+  "type": "registry:ui",
+  "title": "Button 13",
+  "description": "Social login icon buttons",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button"
+  ],
+  "categories": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/button/p-button-13/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-button-13.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

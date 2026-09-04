@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-group-25",
+  "type": "registry:ui",
+  "title": "Model selector with tier badges",
+  "description": "Model selector with tier badges",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-group",
+    "@usespaceui/primitives-tooltip"
+  ],
+  "categories": [
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/group/p-group-25/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-group-25.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

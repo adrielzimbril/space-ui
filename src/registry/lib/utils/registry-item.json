@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lib-utils",
+  "type": "registry:lib",
+  "title": "Utils",
+  "description": "Utility and configuration helper for Utils.",
+  "dependencies": [
+    "cn"
+  ],
+  "categories": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/lib/utils/index.ts",
+      "type": "registry:lib",
+      "target": "lib/utils.ts"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

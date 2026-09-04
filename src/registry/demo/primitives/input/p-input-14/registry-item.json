@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-input-14",
+  "type": "registry:ui",
+  "title": "Input 14",
+  "description": "Input with custom border and background",
+  "registryDependencies": [
+    "@usespaceui/primitives-input"
+  ],
+  "categories": [
+    "input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/input/p-input-14/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-input-14.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

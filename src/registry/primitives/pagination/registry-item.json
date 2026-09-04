@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-pagination",
+  "type": "registry:ui",
+  "title": "Pagination",
+  "description": "Accessible Pagination primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-button"
+  ],
+  "categories": [
+    "pagination"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/pagination/index.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/pagination.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

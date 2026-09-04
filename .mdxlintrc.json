@@ -1,0 +1,7 @@
+{
+  "$schema": "https://raw.githubusercontent.com/remcohaszing/mdxlint/main/schema.json",
+  "plugins": [
+    "remark-frontmatter",
+    "remark-gfm"
+  ]
+}

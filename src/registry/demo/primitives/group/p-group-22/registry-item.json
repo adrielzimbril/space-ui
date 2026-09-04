@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-group-22",
+  "type": "registry:ui",
+  "title": "Group 22",
+  "description": "Group with filter label, combobox multi-select, and remove button",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-avatar",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-combobox",
+    "@usespaceui/primitives-group"
+  ],
+  "categories": [
+    "avatar",
+    "badge",
+    "button",
+    "combobox",
+    "group"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/group/p-group-22/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-group-22.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

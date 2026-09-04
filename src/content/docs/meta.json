@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "---Getting Started---",
+    "index",
+    "accessibility",
+    "---Installation---",
+    "installation",
+    "---Fundamentals---",
+    "fundamentals",
+    "---Ecosystem---",
+    "changelog",
+    "roadmap",
+    "---AI & Automation---",
+    "agents",
+    "skills",
+    "mcp",
+    "llms"
+  ]
+}

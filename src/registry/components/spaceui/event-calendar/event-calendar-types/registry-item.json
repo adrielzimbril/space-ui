@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-event-calendar-types",
+  "type": "registry:component",
+  "title": "Event Calendar Types",
+  "description": "Event Calendar Types component for Space UI.",
+  "categories": [
+    "component",
+    "event-calendar",
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/event-calendar/event-calendar-types/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/event-calendar-types.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

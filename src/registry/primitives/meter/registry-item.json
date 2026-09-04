@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-meter",
+  "type": "registry:ui",
+  "title": "Meter",
+  "description": "Accessible Meter primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "categories": [
+    "meter"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/meter/index.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/meter.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

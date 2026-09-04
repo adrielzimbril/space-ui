@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-browser-use-cookie",
+  "type": "registry:hook",
+  "title": "useCookie",
+  "description": "useCookie hook.",
+  "registryDependencies": [
+    "@usespaceui/hooks-lifecycle-use-event-callback",
+    "@usespaceui/hooks-lifecycle-use-single-effect",
+    "@usespaceui/hooks-utils-cookie"
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "cookie"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/browser/use-cookie/index.ts",
+      "type": "registry:hook",
+      "target": "hooks/use-cookie.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

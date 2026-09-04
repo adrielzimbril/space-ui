@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-input-13",
+  "type": "registry:ui",
+  "title": "Input 13",
+  "description": "Input with optional label",
+  "registryDependencies": [
+    "@usespaceui/primitives-input",
+    "@usespaceui/primitives-label"
+  ],
+  "categories": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/input/p-input-13/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-input-13.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

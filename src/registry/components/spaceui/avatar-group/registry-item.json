@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-avatar-group",
+  "type": "registry:component",
+  "title": "Avatar Group",
+  "description": "Avatar group stacking and overlapping system.",
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "categories": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/avatar-group/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/avatar-group.tsx"
+    }
+  ],
+  "createdAt": "2026-09-01",
+  "updatedAt": "2026-09-01"
+}

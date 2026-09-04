@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-utils-range-map",
+  "type": "registry:lib",
+  "title": "range-map",
+  "description": "range-map utility.",
+  "categories": [
+    "utils",
+    "range-map"
+  ],
+  "files": [
+    {
+      "path": "src/registry/utils/range-map/index.ts",
+      "type": "registry:lib",
+      "target": "utils/range-map.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-preview-card",
+  "type": "registry:ui",
+  "title": "Preview Card",
+  "description": "Accessible Preview Card primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "categories": [
+    "preview-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/preview-card/index.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/preview-card.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-morph-icon",
+  "type": "registry:component",
+  "title": "Morph Icon",
+  "description": "An animated morphing icon transition wrapper supporting motion presets like blur-scale, rotate-scale, flip, and spring.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "categories": [
+    "component",
+    "morph-icon"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/morph-icon/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/morph-icon.tsx"
+    }
+  ],
+  "createdAt": "2026-08-26",
+  "updatedAt": "2026-08-26"
+}

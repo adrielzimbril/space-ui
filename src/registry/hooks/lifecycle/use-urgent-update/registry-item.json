@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-lifecycle-use-urgent-update",
+  "type": "registry:hook",
+  "title": "useUrgentUpdate",
+  "description": "useUrgentUpdate hook.",
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "urgent-update",
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/lifecycle/use-urgent-update/index.ts",
+      "type": "registry:hook",
+      "target": "hooks/use-urgent-update.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

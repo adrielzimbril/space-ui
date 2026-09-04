@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-backgrounds-gradient",
+  "type": "registry:component",
+  "title": "Gradient Background",
+  "description": "A background component featuring a subtle yet engaging animated gradient effect, smoothly transitioning colors to enhance visual depth.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "categories": [
+    "background",
+    "canvas",
+    "effects",
+    "gradient"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/backgrounds/gradient/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/gradient.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

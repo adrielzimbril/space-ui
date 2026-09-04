@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-utils-cache",
+  "type": "registry:lib",
+  "title": "cache",
+  "description": "cache utility.",
+  "categories": [
+    "utils",
+    "cache"
+  ],
+  "files": [
+    {
+      "path": "src/registry/utils/cache/index.ts",
+      "type": "registry:lib",
+      "target": "utils/cache.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

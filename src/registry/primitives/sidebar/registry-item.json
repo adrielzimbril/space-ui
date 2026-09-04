@@ -1,0 +1,36 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-sidebar",
+  "type": "registry:ui",
+  "title": "Sidebar",
+  "description": "Accessible Sidebar primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react",
+    "class-variance-authority",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-browser-use-media-query",
+    "@usespaceui/hooks-dom-use-event-listener",
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-input",
+    "@usespaceui/primitives-scroll-area",
+    "@usespaceui/primitives-separator",
+    "@usespaceui/primitives-sheet",
+    "@usespaceui/primitives-skeleton",
+    "@usespaceui/primitives-tooltip"
+  ],
+  "categories": [
+    "sidebar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/sidebar/index.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/sidebar.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

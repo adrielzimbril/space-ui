@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-combobox-10",
+  "type": "registry:ui",
+  "title": "Combobox 10",
+  "description": "Combobox form",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-combobox",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-form"
+  ],
+  "categories": [
+    "combobox",
+    "form",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/combobox/p-combobox-10/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-combobox-10.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

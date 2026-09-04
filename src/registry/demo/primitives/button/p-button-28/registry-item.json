@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-button-28",
+  "type": "registry:ui",
+  "title": "Button 28",
+  "description": "Download button with progress and cancel action",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-group",
+    "@usespaceui/primitives-spinner",
+    "@usespaceui/primitives-toast",
+    "@usespaceui/primitives-tooltip"
+  ],
+  "categories": [
+    "button",
+    "group",
+    "tooltip",
+    "toast"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/button/p-button-28/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-button-28.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

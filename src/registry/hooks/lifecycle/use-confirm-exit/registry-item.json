@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-lifecycle-use-confirm-exit",
+  "type": "registry:hook",
+  "title": "useConfirmExit",
+  "description": "useConfirmExit hook.",
+  "registryDependencies": [
+    "@usespaceui/hooks-utils-event"
+  ],
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "confirm-exit"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/lifecycle/use-confirm-exit/index.ts",
+      "type": "registry:hook",
+      "target": "hooks/use-confirm-exit.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

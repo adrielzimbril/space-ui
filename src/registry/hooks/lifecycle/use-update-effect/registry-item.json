@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-lifecycle-use-update-effect",
+  "type": "registry:hook",
+  "title": "useUpdateEffect",
+  "description": "useUpdateEffect hook.",
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "update-effect",
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/lifecycle/use-update-effect/index.ts",
+      "type": "registry:hook",
+      "target": "hooks/use-update-effect.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

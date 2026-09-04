@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-words-preloader",
+  "type": "registry:component",
+  "title": "Words Preloader",
+  "description": "Typography preloader that cycles greetings then wipes away with a curved SVG mask.",
+  "dependencies": ["motion"],
+  "registryDependencies": ["@usespaceui/lib-utils"],
+  "categories": ["component", "words-preloader"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/words-preloader/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/words-preloader.tsx"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

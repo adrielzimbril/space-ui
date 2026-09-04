@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-lifecycle-use-is-mounted",
+  "type": "registry:hook",
+  "title": "useIsMounted",
+  "description": "useIsMounted hook.",
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "is-mounted"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/lifecycle/use-is-mounted/index.ts",
+      "type": "registry:hook",
+      "target": "hooks/use-is-mounted.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

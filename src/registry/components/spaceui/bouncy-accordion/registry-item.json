@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-bouncy-accordion",
+  "type": "registry:component",
+  "title": "Bouncy Accordion",
+  "description": "Spring accordion that splits rounded rows when a panel opens.",
+  "dependencies": ["motion", "@tabler/icons-react"],
+  "registryDependencies": ["@usespaceui/lib-utils"],
+  "categories": ["component", "bouncy-accordion"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/bouncy-accordion/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/bouncy-accordion.tsx"
+    }
+  ],
+  "createdAt": "2026-09-04",
+  "updatedAt": "2026-09-04"
+}

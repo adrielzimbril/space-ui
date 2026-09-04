@@ -1,0 +1,236 @@
+---
+title: Next.js
+description: Complete step-by-step integration for Next.js 15/16 App Router, React 19, and Tailwind CSS v4.
+---
+
+This guide walks you through setting up Space UI in a modern **Next.js** application with the **App Router**, **React 19**, and **Tailwind CSS v4**.
+
+<Callout>
+  Space UI components are fully compatible with Next.js Server Components. Interactive primitives automatically contain
+  the `'use client'` directive where necessary.
+</Callout>
+
+<Steps>
+
+<Step>
+
+### Create a Next.js Project
+
+Initialize a new Next.js application with TypeScript, Tailwind CSS, and App Router:
+
+<InstallCommandBlock
+  commands={{
+    pnpm: 'pnpm create next-app@latest my-app --typescript --tailwind --eslint --app',
+    npm: 'npx create-next-app@latest my-app --typescript --tailwind --eslint --app',
+    yarn: 'yarn create next-app my-app --typescript --tailwind --eslint --app',
+    bun: 'bun create next-app my-app --typescript --tailwind --eslint --app',
+  }}
+/>
+
+</Step>
+
+<Step>
+
+### Initialize Space UI Preset
+
+Run the official initialization command to configure the Space UI design tokens, Base UI dependencies, and squircle utilities:
+
+<InstallCommandBlock
+  commands={{
+    pnpm: 'pnpm dlx shadcn@latest init @usespaceui/lib-style',
+    npm: 'npx shadcn@latest init @usespaceui/lib-style',
+    yarn: 'yarn dlx shadcn@latest init @usespaceui/lib-style',
+    bun: 'bunx --bun shadcn@latest init @usespaceui/lib-style',
+  }}
+/>
+
+</Step>
+
+<Step>
+
+### Configure `components.json`
+
+Ensure your `components.json` includes the `@usespaceui` registry namespace alongside your project path aliases:
+
+```json title="components.json"
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "base-nova",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "app/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true
+  },
+  "aliases": {
+    "components": "@/components",
+    "ui": "@/components/ui",
+    "blocks": "@/components/blocks",
+    "lib": "@/lib",
+    "utils": "@/lib/utils",
+    "hooks": "@/hooks"
+  },
+  "registries": {
+    "@usespaceui": "https://www.spaceui.one/r/{name}.json"
+  }
+}
+```
+
+</Step>
+
+<Step>
+
+### Configure Tailwind CSS v4 in `globals.css`
+
+Tailwind CSS v4 uses CSS-first configuration. Verify that `app/globals.css` imports Tailwind and defines the Space UI theme tokens:
+
+```css title="app/globals.css"
+@import 'tailwindcss';
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+```
+
+</Step>
+
+<Step>
+
+### Setup Stacking Context in `app/layout.tsx`
+
+Add the `relative isolate` utility class to your application wrapper. This ensures portaled elements (dialogs, tooltips, select menus) layer above sticky headers without `z-index` conflicts:
+
+```tsx title="app/layout.tsx"
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
+
+const inter = Inter({ subsets: ['latin'] })
+
+export const metadata: Metadata = {
+  title: 'My App',
+  description: 'Built with Space UI and Next.js',
+}
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.className} min-h-screen bg-background text-foreground antialiased`}>
+        <div className="relative isolate flex min-h-svh flex-col">{children}</div>
+      </body>
+    </html>
+  )
+}
+```
+
+</Step>
+
+<Step>
+
+### Add Components
+
+Install any component from the catalog:
+
+<InstallCommandBlock isShadcn packages="@usespaceui/dialog @usespaceui/button" />
+
+</Step>
+
+<Step>
+
+### Test in Your Page
+
+Create a test page to verify smooth animations and styling:
+
+```tsx title="app/page.tsx"
+import { Dialog, DialogTrigger, DialogPopup, DialogTitle, DialogDescription, DialogClose } from '@/components/ui/dialog'
+import { Button } from '@/components/ui/button'
+
+export default function HomePage() {
+  return (
+    <main className="flex min-h-svh flex-col items-center justify-center p-6">
+      <div className="flex flex-col items-center gap-4 text-center">
+        <h1 className="text-3xl font-bold tracking-tight">Space UI + Next.js</h1>
+        <p className="text-muted-foreground max-w-md">
+          Sensory interactions, accessible Base UI primitives, and fluid Motion physics.
+        </p>
+
+        <Dialog>
+          <DialogTrigger
+            render={
+              <Button variant="primary" size="lg">
+                Open Interactive Dialog
+              </Button>
+            }
+          />
+          <DialogPopup>
+            <DialogTitle>Hello from Space UI</DialogTitle>
+            <DialogDescription>This dialog uses Base UI portal management and fluid Motion physics.</DialogDescription>
+            <div className="flex justify-end gap-2 mt-4">
+              <DialogClose render={<Button variant="secondary">Cancel</Button>} />
+              <Button variant="primary">Confirm Action</Button>
+            </div>
+          </DialogPopup>
+        </Dialog>
+      </div>
+    </main>
+  )
+}
+```
+
+</Step>
+
+</Steps>
+
+---
+
+## Tips & Best Practices
+
+<Callout type="tip">
+  **React 19 Server Components:** You can import and render Space UI primitives in Server Components without adding
+  `'use client'` to your page file, because the internal primitives encapsulate client boundaries directly.
+</Callout>

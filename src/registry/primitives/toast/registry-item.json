@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-toast",
+  "type": "registry:ui",
+  "title": "Toast",
+  "description": "Accessible Toast primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-button"
+  ],
+  "categories": [
+    "toast"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/toast/index.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/toast.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

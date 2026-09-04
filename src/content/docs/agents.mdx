@@ -1,0 +1,149 @@
+---
+title: AI Agents
+description: Build faster and cleaner interfaces with autonomous AI coding agents, specialized skills, and MCP tools.
+---
+
+import { IconArrowRight } from '@tabler/icons-react'
+
+Space UI is engineered from the ground up for both human developers and **autonomous AI coding agents** (Claude Code, Cursor, Windsurf, GitHub Copilot, Codex, and Antigravity).
+
+Thanks to standard shadcn registry schemas, headless Base UI primitives, and typed Motion animations, AI models can inspect, install, compose, and refactor Space UI components with zero hallucination.
+
+---
+
+## The 3 Pillars of AI Integration
+
+Space UI's agent ecosystem is structured into three dedicated layers:
+
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5 not-prose my-6">
+  <Link
+    href="/docs/mcp"
+    className="group relative flex flex-col justify-between rounded-2xl p-1 gap-1 bg-muted hover:bg-muted/80 transition-all duration-300 no-underline"
+  >
+    <div className="flex w-full px-2.5 pt-2 pb-1 items-center justify-between gap-2">
+      <span className="font-semibold text-sm text-foreground group-hover:text-primary transition-colors truncate">
+        MCP Server
+      </span>
+      <Badge variant="outline" className="bg-background">
+        Tools · 01
+      </Badge>
+    </div>
+
+    <div className="flex w-full p-3 flex-col justify-between gap-3 bg-background rounded-lg flex-1">
+      <p className="text-xs text-muted-foreground line-clamp-3 leading-relaxed">
+        Direct IDE tool integration exposing component search, TypeScript signatures, and autonomous installation.
+      </p>
+
+      <Badge variant="secondary" className="place-self-end">
+        Setup
+        <IconArrowRight className="size-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+      </Badge>
+    </div>
+
+  </Link>
+
+  <Link
+    href="/docs/skills"
+    className="group relative flex flex-col justify-between rounded-2xl p-1 gap-1 bg-muted hover:bg-muted/80 transition-all duration-300 no-underline"
+  >
+    <div className="flex w-full px-2.5 pt-2 pb-1 items-center justify-between gap-2">
+      <span className="font-semibold text-sm text-foreground group-hover:text-primary transition-colors truncate">
+        Agent Skills
+      </span>
+      <Badge variant="outline" className="bg-background">
+        Guides · 02
+      </Badge>
+    </div>
+
+    <div className="flex w-full p-3 flex-col justify-between gap-3 bg-background rounded-lg flex-1">
+      <p className="text-xs text-muted-foreground line-clamp-3 leading-relaxed">
+        7 specialized engineering skills in `.agents/skills/` covering accessibility, design polish, typography, and layout.
+      </p>
+
+      <Badge variant="secondary" className="place-self-end">
+        Explore
+        <IconArrowRight className="size-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+      </Badge>
+    </div>
+
+  </Link>
+
+  <Link
+    href="/docs/llms"
+    className="group relative flex flex-col justify-between rounded-2xl p-1 gap-1 bg-muted hover:bg-muted/80 transition-all duration-300 no-underline"
+  >
+    <div className="flex w-full px-2.5 pt-2 pb-1 items-center justify-between gap-2">
+      <span className="font-semibold text-sm text-foreground group-hover:text-primary transition-colors truncate">
+        LLM Context
+      </span>
+      <Badge variant="outline" className="bg-background">
+        Endpoints · 03
+      </Badge>
+    </div>
+
+    <div className="flex w-full p-3 flex-col justify-between gap-3 bg-background rounded-lg flex-1">
+      <p className="text-xs text-muted-foreground line-clamp-3 leading-relaxed">
+        Machine-readable endpoints (`/llms.txt`, `/llms-full.txt`, and raw per-component markdown).
+      </p>
+
+      <Badge variant="secondary" className="place-self-end">
+        View
+        <IconArrowRight className="size-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+      </Badge>
+    </div>
+
+  </Link>
+</div>
+
+---
+
+## How Agents Work with Space UI
+
+When an AI agent operates in your workspace with Space UI:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                      Your AI Agent                          │
+│          (Claude Code / Cursor / Windsurf / Copilot)         │
+└──────────────┬──────────────────────────────┬───────────────┘
+               │                              │
+               ▼                              ▼
+     [ 1. Query & Install ]        [ 2. Guide & Refactor ]
+               │                              │
+   MCP Server (`@usespaceui`)     Agent Skills (`.agents/skills/`)
+   - search_components            - better-accessibility (WCAG/ARIA)
+   - get_component (props)        - better-ui (micro-interactions)
+   - add_component                - better-layout (RTL/containers)
+               │                              │
+               └──────────────┬───────────────┘
+                              │
+                              ▼
+                 Your React 19 Workspace
+                 `src/components/ui/*`
+```
+
+---
+
+## Best Practices for Agent Prompts
+
+To get the highest quality code from your AI assistant:
+
+### 1. Specify Component Handles
+
+Always reference the exact `@usespaceui/<component>` identifier so the agent fetches the official registry item:
+
+```text
+Add an interactive notification list using @usespaceui/notification-list and @usespaceui/badge.
+```
+
+### 2. Combine with Specialized Skills
+
+Ask your agent to apply relevant engineering skills during code generation or code review:
+
+```text
+Review this dialog component. Apply the better-accessibility skill to verify keyboard traps and aria-describedby bindings.
+```
+
+### 3. Use Copy Markdown for Context
+
+If your agent does not have live MCP access, click the **"Copy Markdown"** button at the top of any component page and paste the complete spec into your prompt.

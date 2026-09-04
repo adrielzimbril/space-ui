@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-data-grid-pagination",
+  "type": "registry:component",
+  "title": "Data Grid Pagination",
+  "description": "Data Grid Pagination component for Space UI.",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-data-grid",
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-select",
+    "@usespaceui/primitives-skeleton"
+  ],
+  "categories": [
+    "component",
+    "data-grid",
+    "data-grid-data-grid-pagination"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/data-grid/data-grid-pagination/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/data-grid-pagination.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

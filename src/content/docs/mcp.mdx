@@ -1,0 +1,150 @@
+---
+title: Model Context Protocol (MCP)
+description: Connect Claude Code, Cursor, VS Code, and Windsurf to Space UI's component registry using MCP.
+---
+
+The **Model Context Protocol (MCP)** allows AI assistants to query the Space UI registry directly inside your editor. When enabled, your AI coding agent can search components, inspect TypeScript signatures, and install primitives without leaving the chat.
+
+<Callout>
+  Space UI leverages the official **shadcn MCP server**. Once configured, any `@usespaceui` primitive can be discovered
+  and installed autonomously by your AI tools.
+</Callout>
+
+---
+
+## Automatic Configuration (Recommended)
+
+Run the initialization command for your preferred editor to automatically write the MCP configuration file:
+
+<SpaceCodeTabs defaultValue="claude">
+  <TabsList>
+    <TabsTab value="claude">Claude Code</TabsTab>
+    <TabsTab value="cursor">Cursor</TabsTab>
+    <TabsTab value="vscode">VS Code</TabsTab>
+  </TabsList>
+  <TabsPanel value="claude">
+    <InstallCommandBlock
+      commands={{
+        pnpm: 'pnpm dlx shadcn@latest mcp init --client claude',
+        npm: 'npx shadcn@latest mcp init --client claude',
+        yarn: 'yarn shadcn@latest mcp init --client claude',
+        bun: 'bunx --bun shadcn@latest mcp init --client claude',
+      }}
+    />
+  </TabsPanel>
+  <TabsPanel value="cursor">
+    <InstallCommandBlock
+      commands={{
+        pnpm: 'pnpm dlx shadcn@latest mcp init --client cursor',
+        npm: 'npx shadcn@latest mcp init --client cursor',
+        yarn: 'yarn shadcn@latest mcp init --client cursor',
+        bun: 'bunx --bun shadcn@latest mcp init --client cursor',
+      }}
+    />
+  </TabsPanel>
+  <TabsPanel value="vscode">
+    <InstallCommandBlock
+      commands={{
+        pnpm: 'pnpm dlx shadcn@latest mcp init --client vscode',
+        npm: 'npx shadcn@latest mcp init --client vscode',
+        yarn: 'yarn shadcn@latest mcp init --client vscode',
+        bun: 'bunx --bun shadcn@latest mcp init --client vscode',
+      }}
+    />
+  </TabsPanel>
+</SpaceCodeTabs>
+
+---
+
+## Manual Configuration
+
+If you prefer adding the MCP server manually, save the corresponding JSON snippet in your project or global configuration directory:
+
+<SpaceCodeTabs defaultValue="claude">
+  <TabsList>
+    <TabsTab value="claude">Claude Code</TabsTab>
+    <TabsTab value="cursor">Cursor</TabsTab>
+    <TabsTab value="vscode">VS Code</TabsTab>
+    <TabsTab value="windsurf">Windsurf</TabsTab>
+  </TabsList>
+  <TabsPanel value="claude">
+
+```json title=".mcp.json"
+{
+  "mcpServers": {
+    "shadcn": {
+      "command": "npx",
+      "args": ["shadcn@latest", "mcp"]
+    }
+  }
+}
+```
+
+  </TabsPanel>
+  <TabsPanel value="cursor">
+
+```json title=".cursor/mcp.json"
+{
+  "mcpServers": {
+    "shadcn": {
+      "command": "npx",
+      "args": ["shadcn@latest", "mcp"]
+    }
+  }
+}
+```
+
+  </TabsPanel>
+  <TabsPanel value="vscode">
+
+```json title=".vscode/mcp.json"
+{
+  "mcpServers": {
+    "shadcn": {
+      "command": "npx",
+      "args": ["shadcn@latest", "mcp"]
+    }
+  }
+}
+```
+
+  </TabsPanel>
+  <TabsPanel value="windsurf">
+
+```json title=".codeium/windsurf/mcp_config.json"
+{
+  "mcpServers": {
+    "shadcn": {
+      "command": "npx",
+      "args": ["shadcn@latest", "mcp"]
+    }
+  }
+}
+```
+
+  </TabsPanel>
+</SpaceCodeTabs>
+
+---
+
+## Available MCP Capabilities
+
+When the MCP server is active, your AI agent has access to these capabilities:
+
+| Tool                    | Purpose                                              | Example Interaction                                               |
+| :---------------------- | :--------------------------------------------------- | :---------------------------------------------------------------- |
+| **`search_components`** | Finds matching primitives and blocks                 | _"Find dialog and drawer components in Space UI"_                 |
+| **`get_component`**     | Inspects TypeScript props, imports, and CSS tokens   | _"Show me the props and sub-components for `@usespaceui/dialog`"_ |
+| **`add_component`**     | Directly executes `shadcn add` inside your workspace | _"Install `@usespaceui/dialog` and create a confirmation modal"_  |
+
+---
+
+## Example Prompts with MCP
+
+Try prompting your AI assistant with natural language instructions:
+
+```text
+1. Search Space UI for animated tab primitives and install @usespaceui/tabs.
+2. Build a project settings view with 3 tabs: General, Members, and Billing.
+3. Add a delete confirmation dialog using @usespaceui/dialog with destructive styling.
+```

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-combobox-17",
+  "type": "registry:ui",
+  "title": "Combobox 17",
+  "description": "Combobox with select trigger",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-combobox",
+    "@usespaceui/primitives-select"
+  ],
+  "categories": [
+    "combobox",
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/combobox/p-combobox-17/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-combobox-17.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

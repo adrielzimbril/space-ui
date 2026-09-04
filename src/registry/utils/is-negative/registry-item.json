@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-utils-is-negative",
+  "type": "registry:lib",
+  "title": "is-negative",
+  "description": "is-negative utility.",
+  "categories": [
+    "utils",
+    "is-negative"
+  ],
+  "files": [
+    {
+      "path": "src/registry/utils/is-negative/index.ts",
+      "type": "registry:lib",
+      "target": "utils/is-negative.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

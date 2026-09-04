@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-calendar-19",
+  "type": "registry:ui",
+  "title": "Calendar 19",
+  "description": "Calendar with time slots (appointment picker)",
+  "dependencies": [
+    "date-fns"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-calendar",
+    "@usespaceui/primitives-scroll-area",
+    "@usespaceui/primitives-toggle",
+    "@usespaceui/primitives-toggle-group"
+  ],
+  "categories": [
+    "calendar",
+    "toggle",
+    "toggle group",
+    "scroll area"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/calendar/p-calendar-19/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-calendar-19.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

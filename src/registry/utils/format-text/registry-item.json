@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-utils-format-text",
+  "type": "registry:lib",
+  "title": "format-text",
+  "description": "format-text utility.",
+  "categories": [
+    "utils",
+    "format-text"
+  ],
+  "files": [
+    {
+      "path": "src/registry/utils/format-text/index.ts",
+      "type": "registry:lib",
+      "target": "utils/format-text.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

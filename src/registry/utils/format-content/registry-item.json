@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-utils-format-content",
+  "type": "registry:lib",
+  "title": "format-content",
+  "description": "format-content utility.",
+  "categories": [
+    "utils",
+    "format-content"
+  ],
+  "files": [
+    {
+      "path": "src/registry/utils/format-content/index.ts",
+      "type": "registry:lib",
+      "target": "utils/format-content.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

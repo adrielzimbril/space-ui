@@ -1,0 +1,34 @@
+---
+title: LLMs & AI Context
+description: Access full LLM context, global documentation dumps, and per-component markdown endpoints.
+---
+
+## Overview
+
+Space UI is engineered to be **machine-readable and AI-friendly**. We provide dedicated endpoints that output clean, LLM-optimized markdown without HTML noise or navigation clutter.
+
+## Endpoints
+
+### 1. Global LLMs Index (`/llms.txt`)
+
+A structured index of all available components, utilities, and documentation pages formatted according to the [llms.txt standard](https://llmstxt.org).
+
+- URL: [`/llms.txt`](/llms.txt)
+
+### 2. Full Documentation Dump (`/llms-full.txt`)
+
+The entire documentation corpus concatenated into a single plain-text stream, perfect for feeding into prompt context or creating local RAG embeddings.
+
+- URL: [`/llms-full.txt`](/llms-full.txt)
+
+### 3. Per-Component Markdown Endpoints (`/llms.mdx/...`)
+
+Every documentation page and primitive can be fetched directly as clean Markdown by prefixing the route with `/llms.mdx/`:
+
+- Example: `https://www.spaceui.one/llms.mdx/ui-kit/primitives/dialog`
+- Example: `https://www.spaceui.one/llms.mdx/ui-kit/primitives/tabs`
+- Example: `https://www.spaceui.one/llms.mdx/docs/fundamentals/colors`
+
+## Copy Markdown Feature
+
+Every component page in the web UI includes an instant **"Copy Markdown"** button in the header, allowing you to copy the entire page's prompt-ready context into your clipboard in one click.

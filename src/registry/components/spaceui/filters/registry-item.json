@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-filters",
+  "type": "registry:component",
+  "title": "Filters",
+  "description": "Filters component for Space UI.",
+  "dependencies": [
+    "@base-ui/react",
+    "@tabler/icons-react",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-dom-use-event-listener",
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-group",
+    "@usespaceui/primitives-input",
+    "@usespaceui/primitives-input-group",
+    "@usespaceui/primitives-kbd",
+    "@usespaceui/primitives-menu",
+    "@usespaceui/primitives-scroll-area",
+    "@usespaceui/primitives-tooltip"
+  ],
+  "categories": [
+    "component",
+    "filters"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/filters/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/filters.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

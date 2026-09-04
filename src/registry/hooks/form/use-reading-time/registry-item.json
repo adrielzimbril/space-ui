@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-form-use-reading-time",
+  "type": "registry:hook",
+  "title": "useReadingTime",
+  "description": "useReadingTime hook.",
+  "categories": [
+    "hooks",
+    "form",
+    "reading-time"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/form/use-reading-time/index.ts",
+      "type": "registry:hook",
+      "target": "hooks/use-reading-time.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

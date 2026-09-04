@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lib-base-ui-use-render",
+  "type": "registry:lib",
+  "title": "Use Render",
+  "description": "Utility and configuration helper for Use Render.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "categories": [
+    "base-ui"
+  ],
+  "files": [
+    {
+      "path": "src/registry/lib/base-ui/use-render/index.ts",
+      "type": "registry:lib",
+      "target": "lib/base-ui/use-render.ts"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

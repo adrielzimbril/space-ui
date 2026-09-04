@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-dom-use-click-outside",
+  "type": "registry:hook",
+  "title": "useClickOutside",
+  "description": "useClickOutside hook.",
+  "categories": [
+    "hooks",
+    "dom",
+    "click-outside"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/dom/use-click-outside/index.ts",
+      "type": "registry:hook",
+      "target": "hooks/use-click-outside.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

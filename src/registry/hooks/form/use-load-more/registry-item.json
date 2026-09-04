@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-form-use-load-more",
+  "type": "registry:hook",
+  "title": "useLoadMore",
+  "description": "useLoadMore hook.",
+  "registryDependencies": [
+    "@usespaceui/hooks-utils-logger",
+    "@usespaceui/hooks-utils-sleep"
+  ],
+  "categories": [
+    "hooks",
+    "form",
+    "load-more"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/form/use-load-more/index.ts",
+      "type": "registry:hook",
+      "target": "hooks/use-load-more.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

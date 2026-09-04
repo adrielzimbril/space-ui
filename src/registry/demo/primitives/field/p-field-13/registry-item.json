@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-field-13",
+  "type": "registry:ui",
+  "title": "Field 13",
+  "description": "Field with checkbox group",
+  "registryDependencies": [
+    "@usespaceui/primitives-checkbox",
+    "@usespaceui/primitives-checkbox-group",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-fieldset"
+  ],
+  "categories": [
+    "checkbox",
+    "checkbox group",
+    "field",
+    "fieldset",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/field/p-field-13/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-field-13.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

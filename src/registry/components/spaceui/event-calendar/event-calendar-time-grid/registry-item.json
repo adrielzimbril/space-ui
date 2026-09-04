@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-event-calendar-time-grid",
+  "type": "registry:component",
+  "title": "Event Calendar Time Grid",
+  "description": "Event Calendar Time Grid component for Space UI.",
+  "dependencies": [
+    "@base-ui/react",
+    "date-fns"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-event-calendar",
+    "@usespaceui/components-spaceui-event-calendar-dnd",
+    "@usespaceui/components-spaceui-event-calendar-event",
+    "@usespaceui/components-spaceui-event-calendar-lib",
+    "@usespaceui/components-spaceui-event-calendar-types",
+    "@usespaceui/hooks-dom-use-event-listener",
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-scroll-area"
+  ],
+  "categories": [
+    "component",
+    "event-calendar",
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/event-calendar/event-calendar-time-grid/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/event-calendar-time-grid.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

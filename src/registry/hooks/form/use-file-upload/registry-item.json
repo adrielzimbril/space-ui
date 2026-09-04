@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-form-use-file-upload",
+  "type": "registry:hook",
+  "title": "useFileUpload",
+  "description": "useFileUpload hook.",
+  "registryDependencies": [
+    "@usespaceui/hooks-utils-format-bytes"
+  ],
+  "categories": [
+    "hooks",
+    "form",
+    "file-upload"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/form/use-file-upload/index.ts",
+      "type": "registry:hook",
+      "target": "hooks/use-file-upload.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

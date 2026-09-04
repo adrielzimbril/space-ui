@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-navigation-menu",
+  "type": "registry:ui",
+  "title": "Navigation Menu",
+  "description": "Accessible Navigation Menu primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react",
+    "class-variance-authority",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "categories": [
+    "navigation-menu"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/navigation-menu/index.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/navigation-menu.tsx"
+    }
+  ],
+  "createdAt": "2026-08-25",
+  "updatedAt": "2026-08-25"
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lib-font-open-runde",
+  "type": "registry:file",
+  "title": "Font Open Runde",
+  "description": "Open Runde font family files and configuration.",
+  "categories": [
+    "font-open-runde",
+    "fonts"
+  ],
+  "files": [
+    {
+      "path": "src/registry/lib/fonts/font-open-runde/open-runde-regular.woff2",
+      "type": "registry:font",
+      "target": "public/fonts/open-runde/open-runde-regular.woff2"
+    },
+    {
+      "path": "src/registry/lib/fonts/font-open-runde/open-runde-medium.woff2",
+      "type": "registry:font",
+      "target": "public/fonts/open-runde/open-runde-medium.woff2"
+    },
+    {
+      "path": "src/registry/lib/fonts/font-open-runde/open-runde-semibold.woff2",
+      "type": "registry:font",
+      "target": "public/fonts/open-runde/open-runde-semibold.woff2"
+    },
+    {
+      "path": "src/registry/lib/fonts/font-open-runde/open-runde-bold.woff2",
+      "type": "registry:font",
+      "target": "public/fonts/open-runde/open-runde-bold.woff2"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-31"
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-calendar-24",
+  "type": "registry:ui",
+  "title": "Calendar 24",
+  "description": "Pricing calendar with custom day buttons",
+  "dependencies": [
+    "@daypicker/react",
+    "date-fns"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-calendar"
+  ],
+  "categories": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/calendar/p-calendar-24/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-calendar-24.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

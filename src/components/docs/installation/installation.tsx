@@ -1,0 +1,78 @@
+import fs from 'node:fs/promises'
+import path from 'node:path'
+import type * as React from 'react'
+import { ComponentSource } from '@/components/docs/preview/source'
+import { InstallCommandBlock } from '@/components/docs/installation/install-command-block'
+import { SpaceCodeTabs, TabsList, TabsTab, TabsPanel } from '@/components/docs/code/space-code-tabs'
+import { Steps, Step } from 'fumadocs-ui/components/steps'
+
+export interface ComponentInstallationProps {
+  name: string
+  className?: string
+}
+
+export async function ComponentInstallation({ name, className }: ComponentInstallationProps) {
+  const cleanName = name.replace(/^@[^/]+\//, '').replace(/\.json$/, '')
+  const packageName = `@usespaceui/${cleanName.replace(/^primitives-/, '').replace(/^components-spaceui-/, '')}`
+
+  // Try to load registry json to find dependencies and css
+  let parsed: any = null
+  try {
+    const jsonPath = path.join(process.cwd(), 'public', 'r', `${cleanName}.json`)
+    const fileData = await fs.readFile(jsonPath, 'utf8')
+    parsed = JSON.parse(fileData)
+  } catch {
+    // Continue with fallback lookup
+    try {
+      const directName = cleanName.replace(/^primitives-/, '').replace(/^components-spaceui-/, '')
+      const candidate = path.join(process.cwd(), 'src', 'registry', 'primitives', directName, 'registry-item.json')
+      const fileData = await fs.readFile(candidate, 'utf8')
+      parsed = JSON.parse(fileData)
+    } catch {
+      // ignore
+    }
+  }
+
+  const dependencies: string[] = parsed?.dependencies || []
+  const registryDependencies: string[] = parsed?.registryDependencies || []
+
+  return (
+    <SpaceCodeTabs className={className}>
+      <TabsList>
+        <TabsTab value="cli">CLI</TabsTab>
+        <TabsTab value="manual">Manual</TabsTab>
+      </TabsList>
+
+      <TabsPanel value="cli">
+        <InstallCommandBlock isShadcn packages={packageName} />
+      </TabsPanel>
+
+      <TabsPanel value="manual">
+        <Steps>
+          {dependencies.length > 0 && (
+            <Step>
+              <h4>Install the following dependencies:</h4>
+              <InstallCommandBlock packages={dependencies.join(' ')} />
+            </Step>
+          )}
+
+          {registryDependencies.length > 0 && (
+            <Step>
+              <h4>Install the following registry dependencies:</h4>
+              <InstallCommandBlock isShadcn packages={registryDependencies.join(' ')} />
+            </Step>
+          )}
+
+          <Step>
+            <h4>Copy and paste the following code into your project.</h4>
+            <ComponentSource name={name} />
+          </Step>
+
+          <Step>
+            <h4>Update the import paths to match your project setup.</h4>
+          </Step>
+        </Steps>
+      </TabsPanel>
+    </SpaceCodeTabs>
+  )
+}

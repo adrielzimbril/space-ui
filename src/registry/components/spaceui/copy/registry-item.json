@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-copy",
+  "type": "registry:component",
+  "title": "Copy Button",
+  "description": "A copy-to-clipboard button with animated icon transition.",
+  "dependencies": [
+    "class-variance-authority",
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-morph-icon",
+    "@usespaceui/hooks-animation-use-controlled-state",
+    "@usespaceui/hooks-browser-use-clipboard",
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-button"
+  ],
+  "categories": [
+    "component",
+    "copy"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/copy/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/copy.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

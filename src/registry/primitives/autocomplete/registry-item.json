@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-autocomplete",
+  "type": "registry:ui",
+  "title": "Autocomplete",
+  "description": "Accessible Autocomplete primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-input",
+    "@usespaceui/primitives-scroll-area"
+  ],
+  "categories": [
+    "autocomplete"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/autocomplete/index.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/autocomplete.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

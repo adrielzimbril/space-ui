@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-calendar-20",
+  "type": "registry:ui",
+  "title": "Calendar 20",
+  "description": "Calendar with date presets",
+  "dependencies": [
+    "date-fns"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-calendar"
+  ],
+  "categories": [
+    "calendar",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/calendar/p-calendar-20/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-calendar-20.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

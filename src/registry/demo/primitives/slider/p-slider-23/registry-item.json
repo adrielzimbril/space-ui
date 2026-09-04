@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-slider-23",
+  "type": "registry:ui",
+  "title": "Slider 23",
+  "description": "Slider in form",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-fieldset",
+    "@usespaceui/primitives-form",
+    "@usespaceui/primitives-slider"
+  ],
+  "categories": [
+    "slider",
+    "form"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/slider/p-slider-23/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-slider-23.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

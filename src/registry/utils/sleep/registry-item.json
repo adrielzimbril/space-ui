@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-utils-sleep",
+  "type": "registry:lib",
+  "title": "sleep",
+  "description": "sleep utility.",
+  "categories": [
+    "utils",
+    "sleep"
+  ],
+  "files": [
+    {
+      "path": "src/registry/utils/sleep/index.ts",
+      "type": "registry:lib",
+      "target": "utils/sleep.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

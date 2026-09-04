@@ -1,0 +1,43 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-orb-smooth",
+  "type": "registry:component",
+  "title": "Smooth Orb",
+  "description": "Audio-reactive smooth orb with a WebGPU fluid simulation.",
+  "dependencies": ["vgpu"],
+  "categories": ["orb", "webgpu", "smooth"],
+  "files": [
+    {
+      "path": "src/registry/components/orb/smooth/index.tsx",
+      "type": "registry:component",
+      "target": "components/orb/smooth/index.tsx"
+    },
+    {
+      "path": "src/registry/components/orb/smooth/sim.wgsl.ts",
+      "type": "registry:lib",
+      "target": "components/orb/smooth/sim.wgsl.ts"
+    },
+    {
+      "path": "src/registry/components/orb/smooth/display.wgsl.ts",
+      "type": "registry:lib",
+      "target": "components/orb/smooth/display.wgsl.ts"
+    },
+    {
+      "path": "src/registry/components/orb/smooth/audio-analyzer.ts",
+      "type": "registry:lib",
+      "target": "components/orb/smooth/audio-analyzer.ts"
+    },
+    {
+      "path": "src/registry/components/orb/smooth/use-orb-audio.ts",
+      "type": "registry:lib",
+      "target": "components/orb/smooth/use-orb-audio.ts"
+    },
+    {
+      "path": "src/registry/components/orb/smooth/types.ts",
+      "type": "registry:lib",
+      "target": "components/orb/smooth/types.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

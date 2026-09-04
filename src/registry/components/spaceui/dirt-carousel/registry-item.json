@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-dirt-carousel",
+  "type": "registry:component",
+  "title": "Dirt Carousel",
+  "description": "3D ring carousel with drag, snap, auto-rotate, and a live control panel.",
+  "dependencies": ["motion"],
+  "categories": ["component", "dirt-carousel"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/dirt-carousel/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/dirt-carousel.tsx"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

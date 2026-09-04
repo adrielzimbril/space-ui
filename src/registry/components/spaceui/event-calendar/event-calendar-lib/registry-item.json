@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-event-calendar-lib",
+  "type": "registry:component",
+  "title": "Event Calendar Lib",
+  "description": "Utility and configuration helper for Event Calendar Lib.",
+  "dependencies": [
+    "@date-fns/tz",
+    "date-fns"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-event-calendar-recurrence",
+    "@usespaceui/components-spaceui-event-calendar-types"
+  ],
+  "categories": [
+    "component",
+    "event-calendar",
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/event-calendar/event-calendar-lib/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/event-calendar-lib.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

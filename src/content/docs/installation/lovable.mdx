@@ -1,0 +1,138 @@
+---
+title: Lovable, Bolt & AI Builders
+description: Build faster with Space UI in Lovable, Bolt.new, v0, Cursor, Windsurf, and Claude Code.
+---
+
+Space UI is engineered from the ground up for the AI-assisted development era. Thanks to standard **shadcn registry** formatting, strict **React 19** typing, and a dedicated **`llms.txt`** index, language models and AI IDEs understand and generate Space UI components effortlessly.
+
+---
+
+## Lovable.dev
+
+**Lovable** natively supports custom shadcn registries. You can add the Space UI registry directly in your project settings:
+
+<Steps>
+
+<Step>
+
+### Configure the Registry Endpoint
+
+In your Lovable project, open **Settings → Registries** (or in `components.json`) and add:
+
+```json title="components.json"
+{
+  "registries": {
+    "@usespaceui": "https://www.spaceui.one/r/{name}.json"
+  }
+}
+```
+
+</Step>
+
+<Step>
+
+### Prompt Lovable with Space UI Primitives
+
+Use specific component handles in your prompt instructions:
+
+```text
+Build a modern dashboard settings view with:
+- Tabs using @usespaceui/tabs
+- Modal dialog for user invitations using @usespaceui/dialog
+- Button controls from @usespaceui/button with squircle radius
+- Follow the design tokens and dark mode styling from Space UI
+```
+
+</Step>
+
+</Steps>
+
+---
+
+## Bolt.new
+
+**Bolt.new** runs in-browser WebContainer environments. To use Space UI inside Bolt:
+
+<Steps>
+
+<Step>
+
+### Initialize Space UI in WebContainer Terminal
+
+Run the standard initialization in the Bolt terminal:
+
+```bash
+npx shadcn@latest init @usespaceui/lib-style -y
+```
+
+</Step>
+
+<Step>
+
+### Add Space UI Components
+
+Install any required primitives directly:
+
+```bash
+npx shadcn@latest add @usespaceui/dialog @usespaceui/button -y
+```
+
+</Step>
+
+</Steps>
+
+---
+
+## v0.dev (by Vercel)
+
+When generating UI blocks with **v0**, pass Space UI's documentation context or ask v0 to use Base UI primitives:
+
+```text
+Generate a multi-step checkout dialog using Base UI (@base-ui/react) and Motion.
+Use Space UI semantic tokens (--background, --foreground, --card, --primary).
+Ensure dialogs use Base UI Portal and Backdrop with smooth scale-in animations.
+```
+
+---
+
+## Cursor & Windsurf Rules (`.cursorrules`)
+
+Save a `.cursorrules` (or `.windsurfrules`) file in the root of your repository to ensure your AI assistant always recommends and writes Space UI code:
+
+```markdown title=".cursorrules"
+# Space UI Project Guidelines
+
+You are an expert React 19 & Tailwind CSS v4 developer working with Space UI.
+
+## Core Stack
+
+- React 19 (Server & Client Components)
+- Base UI headless primitives (@base-ui/react)
+- Motion for fluid physics and micro-interactions (motion)
+- Tailwind CSS v4 (@import "tailwindcss")
+
+## Component Installation
+
+When asked to add or use new UI components:
+
+1. Always check if the component exists in the Space UI registry (@usespaceui).
+2. Install via shadcn CLI:
+   npx shadcn@latest add @usespaceui/<component-name>
+3. Import from `@/components/ui/<component-name>`
+
+## Theming & Styling Rules
+
+- Use semantic color tokens: `bg-background`, `text-foreground`, `border-border`, `bg-muted`, `text-muted-foreground`.
+- Use squircle corner classes (`rounded-sm`, `rounded-md`, `rounded-lg`) for cards and dialogs.
+- Use `relative isolate` on page wrappers to prevent portal z-index collisions.
+- Reference documentation schemas from: https://www.spaceui.one/llms.txt
+```
+
+---
+
+## Direct `llms.txt` Context
+
+Feed our structured AI documentation directly into **Claude Projects**, **ChatGPT Custom GPTs**, or **OpenAI Assistant API**:
+
+- **Structured Map**: [https://www.spaceui.one/llms.txt](https://www.spaceui.one/llms.txt)
+- **Full Documentation**: Every page on Space UI includes a **Copy Markdown** action in the header to instantly grab the raw source for your LLM prompts.

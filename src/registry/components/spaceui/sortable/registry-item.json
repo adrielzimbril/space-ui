@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-sortable",
+  "type": "registry:component",
+  "title": "Sortable",
+  "description": "Sortable component for Space UI.",
+  "dependencies": [
+    "@base-ui/react",
+    "@dnd-kit/core",
+    "@dnd-kit/sortable",
+    "@dnd-kit/utilities"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "categories": [
+    "component",
+    "sortable"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/sortable/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/sortable.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

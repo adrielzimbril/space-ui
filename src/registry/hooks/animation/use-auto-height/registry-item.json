@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-animation-use-auto-height",
+  "type": "registry:hook",
+  "title": "useAutoHeight",
+  "description": "useAutoHeight hook.",
+  "categories": [
+    "hooks",
+    "animation",
+    "auto-height"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/animation/use-auto-height/index.ts",
+      "type": "registry:hook",
+      "target": "hooks/use-auto-height.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

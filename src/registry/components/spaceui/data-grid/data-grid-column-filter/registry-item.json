@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-data-grid-column-filter",
+  "type": "registry:component",
+  "title": "Data Grid Column Filter",
+  "description": "Data Grid Column Filter component for Space UI.",
+  "dependencies": [
+    "@tabler/icons-react",
+    "@tanstack/react-table"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-input",
+    "@usespaceui/primitives-popover",
+    "@usespaceui/primitives-separator"
+  ],
+  "categories": [
+    "component",
+    "data-grid",
+    "data-grid-data-grid-column-filter"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/data-grid/data-grid-column-filter/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/data-grid-column-filter.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

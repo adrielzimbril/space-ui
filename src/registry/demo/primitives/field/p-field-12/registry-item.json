@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-field-12",
+  "type": "registry:ui",
+  "title": "Field 12",
+  "description": "Field with checkbox",
+  "registryDependencies": [
+    "@usespaceui/primitives-checkbox",
+    "@usespaceui/primitives-field"
+  ],
+  "categories": [
+    "checkbox",
+    "field",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/field/p-field-12/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-field-12.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}
