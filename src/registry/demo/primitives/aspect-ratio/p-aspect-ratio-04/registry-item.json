@@ -5,7 +5,7 @@
   "title": "21:9 ultrawide aspect ratio",
   "description": "21:9 ultrawide aspect ratio",
   "registryDependencies": [
-    "@usespaceui/primitives-aspect-ratio"
+    "https://www.spaceui.one/r/primitives-aspect-ratio.json"
   ],
   "categories": [
     "aspect-ratio"

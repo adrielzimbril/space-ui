@@ -5,8 +5,8 @@
   "title": "Combobox 4",
   "description": "Combobox with label",
   "registryDependencies": [
-    "@usespaceui/primitives-combobox",
-    "@usespaceui/primitives-label"
+    "https://www.spaceui.one/r/primitives-combobox.json",
+    "https://www.spaceui.one/r/primitives-label.json"
   ],
   "categories": [
     "combobox",

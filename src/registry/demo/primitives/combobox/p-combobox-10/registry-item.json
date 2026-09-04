@@ -5,10 +5,10 @@
   "title": "Combobox 10",
   "description": "Combobox form",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-combobox",
-    "@usespaceui/primitives-field",
-    "@usespaceui/primitives-form"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-combobox.json",
+    "https://www.spaceui.one/r/primitives-field.json",
+    "https://www.spaceui.one/r/primitives-form.json"
   ],
   "categories": [
     "combobox",

@@ -9,7 +9,7 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-context-menu"
+    "https://www.spaceui.one/r/primitives-context-menu.json"
   ],
   "categories": [
     "context menu",

@@ -5,8 +5,8 @@
   "title": "Input 6",
   "description": "Input with label",
   "registryDependencies": [
-    "@usespaceui/primitives-input",
-    "@usespaceui/primitives-label"
+    "https://www.spaceui.one/r/primitives-input.json",
+    "https://www.spaceui.one/r/primitives-label.json"
   ],
   "categories": [
     "input",

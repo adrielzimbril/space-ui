@@ -5,7 +5,7 @@
   "title": "Badge 9",
   "description": "Status badges with indicator dots",
   "registryDependencies": [
-    "@usespaceui/primitives-badge"
+    "https://www.spaceui.one/r/primitives-badge.json"
   ],
   "categories": [
     "badge"

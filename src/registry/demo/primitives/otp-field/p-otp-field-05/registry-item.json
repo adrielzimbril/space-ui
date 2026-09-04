@@ -5,8 +5,8 @@
   "title": "Otp Field 5",
   "description": "OTP field with custom sanitization",
   "registryDependencies": [
-    "@usespaceui/primitives-field",
-    "@usespaceui/primitives-otp-field"
+    "https://www.spaceui.one/r/primitives-field.json",
+    "https://www.spaceui.one/r/primitives-otp-field.json"
   ],
   "categories": [
     "otp field",

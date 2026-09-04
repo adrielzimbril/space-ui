@@ -5,9 +5,9 @@
   "title": "Group 21",
   "description": "Group with two number inputs for range",
   "registryDependencies": [
-    "@usespaceui/primitives-group",
-    "@usespaceui/primitives-label",
-    "@usespaceui/primitives-number-field"
+    "https://www.spaceui.one/r/primitives-group.json",
+    "https://www.spaceui.one/r/primitives-label.json",
+    "https://www.spaceui.one/r/primitives-number-field.json"
   ],
   "categories": [
     "group",

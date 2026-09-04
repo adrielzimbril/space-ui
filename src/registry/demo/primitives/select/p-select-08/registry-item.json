@@ -9,7 +9,7 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-select"
+    "https://www.spaceui.one/r/primitives-select.json"
   ],
   "categories": [
     "select"

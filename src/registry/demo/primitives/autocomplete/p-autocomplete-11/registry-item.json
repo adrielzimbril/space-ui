@@ -5,8 +5,8 @@
   "title": "Autocomplete 11",
   "description": "Autocomplete with async items loading",
   "registryDependencies": [
-    "@usespaceui/primitives-autocomplete",
-    "@usespaceui/primitives-spinner"
+    "https://www.spaceui.one/r/primitives-autocomplete.json",
+    "https://www.spaceui.one/r/primitives-spinner.json"
   ],
   "categories": [
     "autocomplete",

@@ -5,7 +5,7 @@
   "title": "Avatar Sizes",
   "description": "Avatar in various size options",
   "registryDependencies": [
-    "@usespaceui/primitives-avatar"
+    "https://www.spaceui.one/r/primitives-avatar.json"
   ],
   "categories": [
     "avatar"

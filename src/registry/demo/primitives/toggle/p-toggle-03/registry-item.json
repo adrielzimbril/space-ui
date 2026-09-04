@@ -5,7 +5,7 @@
   "title": "Toggle 3",
   "description": "Large toggle",
   "registryDependencies": [
-    "@usespaceui/primitives-toggle"
+    "https://www.spaceui.one/r/primitives-toggle.json"
   ],
   "categories": [
     "toggle"

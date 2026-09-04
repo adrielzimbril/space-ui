@@ -5,7 +5,7 @@
   "title": "Large phone input",
   "description": "Large phone input",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-phone-input"
+    "https://www.spaceui.one/r/components-spaceui-phone-input.json"
   ],
   "categories": [
     "component",

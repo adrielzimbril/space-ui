@@ -5,11 +5,11 @@
   "title": "Dialog 6",
   "description": "Dialog with bare footer",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-dialog",
-    "@usespaceui/primitives-field",
-    "@usespaceui/primitives-form",
-    "@usespaceui/primitives-input"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-dialog.json",
+    "https://www.spaceui.one/r/primitives-field.json",
+    "https://www.spaceui.one/r/primitives-form.json",
+    "https://www.spaceui.one/r/primitives-input.json"
   ],
   "categories": [
     "dialog"

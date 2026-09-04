@@ -8,7 +8,7 @@
     "motion"
   ],
   "registryDependencies": [
-    "@usespaceui/lib-utils"
+    "https://www.spaceui.one/r/lib-utils.json"
   ],
   "categories": [
     "background",

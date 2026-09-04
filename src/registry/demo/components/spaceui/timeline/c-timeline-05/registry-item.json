@@ -5,8 +5,8 @@
   "title": "Timeline with milestones.",
   "description": "Timeline with milestones.",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-timeline",
-    "@usespaceui/lib-utils"
+    "https://www.spaceui.one/r/components-spaceui-timeline.json",
+    "https://www.spaceui.one/r/lib-utils.json"
   ],
   "categories": [
     "component",

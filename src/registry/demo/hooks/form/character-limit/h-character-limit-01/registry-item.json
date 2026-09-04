@@ -8,11 +8,11 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/hooks-form-use-character-limit",
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-card",
-    "@usespaceui/primitives-progress",
-    "@usespaceui/primitives-textarea"
+    "https://www.spaceui.one/r/hooks-form-use-character-limit.json",
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-card.json",
+    "https://www.spaceui.one/r/primitives-progress.json",
+    "https://www.spaceui.one/r/primitives-textarea.json"
   ],
   "categories": [
     "hooks",

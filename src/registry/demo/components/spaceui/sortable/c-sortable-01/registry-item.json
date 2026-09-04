@@ -9,8 +9,8 @@
     "sonner"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-sortable",
-    "@usespaceui/primitives-badge"
+    "https://www.spaceui.one/r/components-spaceui-sortable.json",
+    "https://www.spaceui.one/r/primitives-badge.json"
   ],
   "categories": [
     "component",

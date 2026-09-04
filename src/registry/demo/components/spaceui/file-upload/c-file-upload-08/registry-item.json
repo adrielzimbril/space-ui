@@ -9,12 +9,12 @@
     "sonner"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-sortable",
-    "@usespaceui/lib-utils",
-    "@usespaceui/primitives-alert",
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-card",
-    "@usespaceui/primitives-progress"
+    "https://www.spaceui.one/r/components-spaceui-sortable.json",
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-alert.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-card.json",
+    "https://www.spaceui.one/r/primitives-progress.json"
   ],
   "categories": [
     "component",

@@ -5,8 +5,8 @@
   "title": "Field 10",
   "description": "Field with textarea",
   "registryDependencies": [
-    "@usespaceui/primitives-field",
-    "@usespaceui/primitives-textarea"
+    "https://www.spaceui.one/r/primitives-field.json",
+    "https://www.spaceui.one/r/primitives-textarea.json"
   ],
   "categories": [
     "field",

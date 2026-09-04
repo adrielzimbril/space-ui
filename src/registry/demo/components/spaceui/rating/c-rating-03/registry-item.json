@@ -5,7 +5,7 @@
   "title": "Rating with show value.",
   "description": "Rating with show value.",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-rating"
+    "https://www.spaceui.one/r/components-spaceui-rating.json"
   ],
   "categories": [
     "component",

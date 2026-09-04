@@ -145,6 +145,7 @@ async function buildRegistryFile() {
   ]
 
   await writeFileWithRetry(REGISTRY_JSON_PATH, JSON.stringify(registryData, null, 2))
+  await writeFileWithRetry(path.join(process.cwd(), 'registry.json'), JSON.stringify(registryData, null, 2))
 
   await buildRegistryMetaGraph(newItems)
 }
@@ -1000,6 +1001,23 @@ async function buildRegistry(postprocessOnly = false) {
         return file
       })
       modified = true
+    }
+
+    // Normalize registryDependencies to direct URLs for universal CLI compatibility
+    if (Array.isArray(registryItem.registryDependencies) && registryItem.registryDependencies.length > 0) {
+      const updatedDeps = registryItem.registryDependencies.map((dep: string) => {
+        if (typeof dep !== 'string') return dep
+        if (dep.startsWith('http://') || dep.startsWith('https://')) return dep
+        const cleanDep = dep
+          .replace(/^@[^/]+\//, '')
+          .replace(/\.json$/, '')
+          .trim()
+        return `https://www.spaceui.one/r/${cleanDep}.json`
+      })
+      if (JSON.stringify(updatedDeps) !== JSON.stringify(registryItem.registryDependencies)) {
+        registryItem.registryDependencies = updatedDeps
+        modified = true
+      }
     }
 
     if (!modified) continue

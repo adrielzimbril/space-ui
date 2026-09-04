@@ -10,14 +10,14 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/lib-utils",
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-checkbox",
-    "@usespaceui/primitives-frame",
-    "@usespaceui/primitives-pagination",
-    "@usespaceui/primitives-select",
-    "@usespaceui/primitives-table"
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-checkbox.json",
+    "https://www.spaceui.one/r/primitives-frame.json",
+    "https://www.spaceui.one/r/primitives-pagination.json",
+    "https://www.spaceui.one/r/primitives-select.json",
+    "https://www.spaceui.one/r/primitives-table.json"
   ],
   "categories": [
     "checkbox",

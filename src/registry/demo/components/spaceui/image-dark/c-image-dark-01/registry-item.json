@@ -5,9 +5,9 @@
   "title": "Adaptive Brand Logo",
   "description": "Demonstrates ImageDark automatically switching between light and dark logo assets with zero layout shift.",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-image-dark",
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-separator"
+    "https://www.spaceui.one/r/components-spaceui-image-dark.json",
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-separator.json"
   ],
   "categories": [
     "component",

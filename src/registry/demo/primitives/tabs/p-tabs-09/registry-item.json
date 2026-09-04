@@ -9,7 +9,7 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-tabs"
+    "https://www.spaceui.one/r/primitives-tabs.json"
   ],
   "categories": [
     "tabs"

@@ -5,11 +5,11 @@
   "title": "Drawer 10",
   "description": "Edit profile form with default and bare footer variants",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-drawer",
-    "@usespaceui/primitives-field",
-    "@usespaceui/primitives-form",
-    "@usespaceui/primitives-input"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-drawer.json",
+    "https://www.spaceui.one/r/primitives-field.json",
+    "https://www.spaceui.one/r/primitives-form.json",
+    "https://www.spaceui.one/r/primitives-input.json"
   ],
   "categories": [
     "drawer"

@@ -5,8 +5,8 @@
   "title": "Input Group 6",
   "description": "Input group with number field",
   "registryDependencies": [
-    "@usespaceui/primitives-input-group",
-    "@usespaceui/primitives-number-field"
+    "https://www.spaceui.one/r/primitives-input-group.json",
+    "https://www.spaceui.one/r/primitives-number-field.json"
   ],
   "categories": [
     "input group",

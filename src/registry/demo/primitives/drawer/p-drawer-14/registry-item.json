@@ -5,8 +5,8 @@
   "title": "Drawer 14",
   "description": "Left drawer with swipe area",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-drawer"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-drawer.json"
   ],
   "categories": [
     "drawer"

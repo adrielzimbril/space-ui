@@ -5,8 +5,8 @@
   "title": "Section Scrollspy Demo",
   "description": "Floating section index that follows the active heading.",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-section-scrollspy",
-    "@usespaceui/primitives-badge"
+    "https://www.spaceui.one/r/components-spaceui-section-scrollspy.json",
+    "https://www.spaceui.one/r/primitives-badge.json"
   ],
   "categories": [
     "component",

@@ -5,7 +5,7 @@
   "title": "Slider 6",
   "description": "Slider with labels above",
   "registryDependencies": [
-    "@usespaceui/primitives-slider"
+    "https://www.spaceui.one/r/primitives-slider.json"
   ],
   "categories": [
     "slider"

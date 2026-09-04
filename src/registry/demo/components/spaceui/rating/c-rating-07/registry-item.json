@@ -5,7 +5,7 @@
   "title": "Interactive half-star rating",
   "description": "Interactive half-star rating",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-rating"
+    "https://www.spaceui.one/r/components-spaceui-rating.json"
   ],
   "categories": [
     "component",

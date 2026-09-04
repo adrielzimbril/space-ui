@@ -5,8 +5,8 @@
   "title": "Input Group 11",
   "description": "Input group with keyboard shortcut",
   "registryDependencies": [
-    "@usespaceui/primitives-input-group",
-    "@usespaceui/primitives-kbd"
+    "https://www.spaceui.one/r/primitives-input-group.json",
+    "https://www.spaceui.one/r/primitives-kbd.json"
   ],
   "categories": [
     "input group",

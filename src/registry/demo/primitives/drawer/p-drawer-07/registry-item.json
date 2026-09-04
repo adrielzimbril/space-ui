@@ -5,8 +5,8 @@
   "title": "Drawer 7",
   "description": "Nested bottom drawers with centered content",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-drawer"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-drawer.json"
   ],
   "categories": [
     "drawer"

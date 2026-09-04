@@ -5,7 +5,7 @@
   "title": "Select 4",
   "description": "Select without item alignment",
   "registryDependencies": [
-    "@usespaceui/primitives-select"
+    "https://www.spaceui.one/r/primitives-select.json"
   ],
   "categories": [
     "select"

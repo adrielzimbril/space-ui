@@ -5,8 +5,8 @@
   "title": "Activity feed timeline with user avatars",
   "description": "Activity feed timeline with user avatars",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-timeline",
-    "@usespaceui/primitives-avatar"
+    "https://www.spaceui.one/r/components-spaceui-timeline.json",
+    "https://www.spaceui.one/r/primitives-avatar.json"
   ],
   "categories": [
     "component",

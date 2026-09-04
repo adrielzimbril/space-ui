@@ -5,7 +5,7 @@
   "title": "1:1 square aspect ratio",
   "description": "1:1 square aspect ratio",
   "registryDependencies": [
-    "@usespaceui/primitives-aspect-ratio"
+    "https://www.spaceui.one/r/primitives-aspect-ratio.json"
   ],
   "categories": [
     "aspect-ratio"

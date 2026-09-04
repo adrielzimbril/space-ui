@@ -5,7 +5,7 @@
   "title": "Select 17",
   "description": "Select with description in options only",
   "registryDependencies": [
-    "@usespaceui/primitives-select"
+    "https://www.spaceui.one/r/primitives-select.json"
   ],
   "categories": [
     "select"

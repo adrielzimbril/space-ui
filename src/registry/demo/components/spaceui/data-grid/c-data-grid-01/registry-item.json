@@ -8,10 +8,10 @@
     "@tanstack/react-table"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-data-grid",
-    "@usespaceui/components-spaceui-data-grid-pagination",
-    "@usespaceui/components-spaceui-data-grid-scroll-area",
-    "@usespaceui/components-spaceui-data-grid-table"
+    "https://www.spaceui.one/r/components-spaceui-data-grid.json",
+    "https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json",
+    "https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json",
+    "https://www.spaceui.one/r/components-spaceui-data-grid-table.json"
   ],
   "categories": [
     "component",

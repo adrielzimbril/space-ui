@@ -5,7 +5,7 @@
   "title": "Select 5",
   "description": "Select with groups",
   "registryDependencies": [
-    "@usespaceui/primitives-select"
+    "https://www.spaceui.one/r/primitives-select.json"
   ],
   "categories": [
     "select"

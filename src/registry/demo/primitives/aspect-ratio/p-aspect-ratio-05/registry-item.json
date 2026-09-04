@@ -5,7 +5,7 @@
   "title": "9:16 portrait aspect ratio",
   "description": "9:16 portrait aspect ratio",
   "registryDependencies": [
-    "@usespaceui/primitives-aspect-ratio"
+    "https://www.spaceui.one/r/primitives-aspect-ratio.json"
   ],
   "categories": [
     "aspect-ratio"

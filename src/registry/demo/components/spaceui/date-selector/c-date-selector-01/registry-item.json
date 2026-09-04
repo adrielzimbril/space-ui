@@ -8,8 +8,8 @@
     "date-fns"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-date-selector",
-    "@usespaceui/primitives-card"
+    "https://www.spaceui.one/r/components-spaceui-date-selector.json",
+    "https://www.spaceui.one/r/primitives-card.json"
   ],
   "categories": [
     "component",

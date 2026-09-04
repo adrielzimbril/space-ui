@@ -5,7 +5,7 @@
   "title": "User Presence Avatar",
   "description": "Animated avatar group showing online and offline users with status toggling.",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-user-presence-avatar"
+    "https://www.spaceui.one/r/components-spaceui-user-presence-avatar.json"
   ],
   "categories": [
     "component",

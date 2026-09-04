@@ -5,7 +5,7 @@
   "title": "Input Sizes",
   "description": "Input fields in sm, default, and lg sizes",
   "registryDependencies": [
-    "@usespaceui/primitives-input"
+    "https://www.spaceui.one/r/primitives-input.json"
   ],
   "categories": [
     "input"

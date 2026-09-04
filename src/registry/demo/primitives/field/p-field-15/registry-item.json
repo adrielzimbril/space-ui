@@ -5,8 +5,8 @@
   "title": "Field 15",
   "description": "Field with toggle switch",
   "registryDependencies": [
-    "@usespaceui/primitives-field",
-    "@usespaceui/primitives-switch"
+    "https://www.spaceui.one/r/primitives-field.json",
+    "https://www.spaceui.one/r/primitives-switch.json"
   ],
   "categories": [
     "field",

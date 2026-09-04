@@ -5,12 +5,12 @@
   "title": "Checkbox Group 5",
   "description": "Checkbox group form",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-checkbox",
-    "@usespaceui/primitives-checkbox-group",
-    "@usespaceui/primitives-field",
-    "@usespaceui/primitives-fieldset",
-    "@usespaceui/primitives-form"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-checkbox.json",
+    "https://www.spaceui.one/r/primitives-checkbox-group.json",
+    "https://www.spaceui.one/r/primitives-field.json",
+    "https://www.spaceui.one/r/primitives-fieldset.json",
+    "https://www.spaceui.one/r/primitives-form.json"
   ],
   "categories": [
     "checkbox",

@@ -5,7 +5,7 @@
   "title": "Autocomplete 9",
   "description": "Autocomplete with grouped items",
   "registryDependencies": [
-    "@usespaceui/primitives-autocomplete"
+    "https://www.spaceui.one/r/primitives-autocomplete.json"
   ],
   "categories": [
     "autocomplete",

@@ -9,7 +9,7 @@
     "date-fns"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-calendar"
+    "https://www.spaceui.one/r/primitives-calendar.json"
   ],
   "categories": [
     "calendar"

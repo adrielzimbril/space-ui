@@ -8,9 +8,9 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-date-selector",
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-dialog"
+    "https://www.spaceui.one/r/components-spaceui-date-selector.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-dialog.json"
   ],
   "categories": [
     "component",

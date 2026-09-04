@@ -5,7 +5,7 @@
   "title": "Combobox 7",
   "description": "Combobox with grouped items",
   "registryDependencies": [
-    "@usespaceui/primitives-combobox"
+    "https://www.spaceui.one/r/primitives-combobox.json"
   ],
   "categories": [
     "combobox",

@@ -5,7 +5,7 @@
   "title": "Select 21",
   "description": "Select with custom border and background",
   "registryDependencies": [
-    "@usespaceui/primitives-select"
+    "https://www.spaceui.one/r/primitives-select.json"
   ],
   "categories": [
     "select"

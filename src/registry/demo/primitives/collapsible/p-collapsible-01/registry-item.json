@@ -9,7 +9,7 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-collapsible"
+    "https://www.spaceui.one/r/primitives-collapsible.json"
   ],
   "categories": [
     "collapsible"

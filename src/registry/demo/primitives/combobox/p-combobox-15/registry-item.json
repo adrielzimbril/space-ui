@@ -5,7 +5,7 @@
   "title": "Combobox 15",
   "description": "Timezone combobox",
   "registryDependencies": [
-    "@usespaceui/primitives-combobox"
+    "https://www.spaceui.one/r/primitives-combobox.json"
   ],
   "categories": [
     "combobox",

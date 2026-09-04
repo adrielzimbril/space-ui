@@ -5,7 +5,7 @@
   "title": "Select 12",
   "description": "Timezone select",
   "registryDependencies": [
-    "@usespaceui/primitives-select"
+    "https://www.spaceui.one/r/primitives-select.json"
   ],
   "categories": [
     "select",

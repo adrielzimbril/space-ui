@@ -5,7 +5,7 @@
   "title": "Spinner 1",
   "description": "Basic spinner",
   "registryDependencies": [
-    "@usespaceui/primitives-spinner"
+    "https://www.spaceui.one/r/primitives-spinner.json"
   ],
   "categories": [
     "spinner"

@@ -5,8 +5,8 @@
   "title": "Field 11",
   "description": "Field with select",
   "registryDependencies": [
-    "@usespaceui/primitives-field",
-    "@usespaceui/primitives-select"
+    "https://www.spaceui.one/r/primitives-field.json",
+    "https://www.spaceui.one/r/primitives-select.json"
   ],
   "categories": [
     "field",

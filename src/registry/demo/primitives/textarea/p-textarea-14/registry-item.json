@@ -5,8 +5,8 @@
   "title": "Textarea 14",
   "description": "Textarea with button aligned left",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-textarea"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-textarea.json"
   ],
   "categories": [
     "button",

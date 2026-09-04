@@ -8,8 +8,8 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-combobox",
-    "@usespaceui/primitives-select"
+    "https://www.spaceui.one/r/primitives-combobox.json",
+    "https://www.spaceui.one/r/primitives-select.json"
   ],
   "categories": [
     "combobox",

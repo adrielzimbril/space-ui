@@ -5,8 +5,8 @@
   "title": "Theme Toggle Demo",
   "description": "Theme toggle with variant, origin, and blur controls.",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-theme-toggle",
-    "@usespaceui/primitives-button"
+    "https://www.spaceui.one/r/components-spaceui-theme-toggle.json",
+    "https://www.spaceui.one/r/primitives-button.json"
   ],
   "categories": [
     "component",

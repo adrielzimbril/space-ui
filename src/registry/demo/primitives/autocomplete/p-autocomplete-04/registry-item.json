@@ -5,8 +5,8 @@
   "title": "Autocomplete 4",
   "description": "Autocomplete with label",
   "registryDependencies": [
-    "@usespaceui/primitives-autocomplete",
-    "@usespaceui/primitives-label"
+    "https://www.spaceui.one/r/primitives-autocomplete.json",
+    "https://www.spaceui.one/r/primitives-label.json"
   ],
   "categories": [
     "autocomplete",

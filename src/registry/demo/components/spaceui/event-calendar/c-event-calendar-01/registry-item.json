@@ -9,19 +9,19 @@
     "date-fns"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-event-calendar",
-    "@usespaceui/components-spaceui-event-calendar-content",
-    "@usespaceui/components-spaceui-event-calendar-i18n",
-    "@usespaceui/components-spaceui-event-calendar-nav",
-    "@usespaceui/components-spaceui-event-calendar-types",
-    "@usespaceui/primitives-avatar",
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-card",
-    "@usespaceui/primitives-label",
-    "@usespaceui/primitives-popover",
-    "@usespaceui/primitives-select",
-    "@usespaceui/primitives-switch",
-    "@usespaceui/primitives-tabs"
+    "https://www.spaceui.one/r/components-spaceui-event-calendar.json",
+    "https://www.spaceui.one/r/components-spaceui-event-calendar-content.json",
+    "https://www.spaceui.one/r/components-spaceui-event-calendar-i18n.json",
+    "https://www.spaceui.one/r/components-spaceui-event-calendar-nav.json",
+    "https://www.spaceui.one/r/components-spaceui-event-calendar-types.json",
+    "https://www.spaceui.one/r/primitives-avatar.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-card.json",
+    "https://www.spaceui.one/r/primitives-label.json",
+    "https://www.spaceui.one/r/primitives-popover.json",
+    "https://www.spaceui.one/r/primitives-select.json",
+    "https://www.spaceui.one/r/primitives-switch.json",
+    "https://www.spaceui.one/r/primitives-tabs.json"
   ],
   "categories": [
     "component",

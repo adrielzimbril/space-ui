@@ -5,7 +5,7 @@
   "title": "Pagination 1",
   "description": "Pagination example",
   "registryDependencies": [
-    "@usespaceui/primitives-pagination"
+    "https://www.spaceui.one/r/primitives-pagination.json"
   ],
   "categories": [
     "pagination"

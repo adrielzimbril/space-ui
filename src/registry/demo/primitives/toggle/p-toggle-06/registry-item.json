@@ -9,9 +9,9 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-toast",
-    "@usespaceui/primitives-toggle",
-    "@usespaceui/primitives-tooltip"
+    "https://www.spaceui.one/r/primitives-toast.json",
+    "https://www.spaceui.one/r/primitives-toggle.json",
+    "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
   "categories": [
     "toggle",

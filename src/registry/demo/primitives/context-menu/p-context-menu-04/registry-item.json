@@ -5,7 +5,7 @@
   "title": "Context Menu 4",
   "description": "Context menu with checkbox items",
   "registryDependencies": [
-    "@usespaceui/primitives-context-menu"
+    "https://www.spaceui.one/r/primitives-context-menu.json"
   ],
   "categories": [
     "context menu",

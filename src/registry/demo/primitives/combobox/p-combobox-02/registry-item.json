@@ -5,7 +5,7 @@
   "title": "Combobox Sizes",
   "description": "Combobox inputs in sm, default, and lg sizes",
   "registryDependencies": [
-    "@usespaceui/primitives-combobox"
+    "https://www.spaceui.one/r/primitives-combobox.json"
   ],
   "categories": [
     "combobox"

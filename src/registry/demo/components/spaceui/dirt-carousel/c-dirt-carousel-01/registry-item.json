@@ -5,7 +5,7 @@
   "title": "Dirt Carousel Demo",
   "description": "3D carousel with official Tweakpane controls.",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-dirt-carousel"
+    "https://www.spaceui.one/r/components-spaceui-dirt-carousel.json"
   ],
   "categories": [
     "component",

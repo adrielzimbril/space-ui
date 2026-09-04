@@ -5,7 +5,7 @@
   "title": "Badge 3",
   "description": "Secondary badge",
   "registryDependencies": [
-    "@usespaceui/primitives-badge"
+    "https://www.spaceui.one/r/primitives-badge.json"
   ],
   "categories": [
     "badge"

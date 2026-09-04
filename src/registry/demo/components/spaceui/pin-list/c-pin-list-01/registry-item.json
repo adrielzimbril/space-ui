@@ -8,7 +8,7 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-pin-list"
+    "https://www.spaceui.one/r/components-spaceui-pin-list.json"
   ],
   "categories": [
     "component",

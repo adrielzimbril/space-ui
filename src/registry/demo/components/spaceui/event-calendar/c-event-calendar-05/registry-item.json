@@ -9,13 +9,13 @@
     "date-fns"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-event-calendar",
-    "@usespaceui/components-spaceui-event-calendar-content",
-    "@usespaceui/components-spaceui-event-calendar-nav",
-    "@usespaceui/components-spaceui-event-calendar-types",
-    "@usespaceui/primitives-avatar",
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-card"
+    "https://www.spaceui.one/r/components-spaceui-event-calendar.json",
+    "https://www.spaceui.one/r/components-spaceui-event-calendar-content.json",
+    "https://www.spaceui.one/r/components-spaceui-event-calendar-nav.json",
+    "https://www.spaceui.one/r/components-spaceui-event-calendar-types.json",
+    "https://www.spaceui.one/r/primitives-avatar.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-card.json"
   ],
   "categories": [
     "component",

@@ -5,9 +5,9 @@
   "title": "Table 2",
   "description": "Frame with card-style table",
   "registryDependencies": [
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-frame",
-    "@usespaceui/primitives-table"
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-frame.json",
+    "https://www.spaceui.one/r/primitives-table.json"
   ],
   "categories": [
     "frame",

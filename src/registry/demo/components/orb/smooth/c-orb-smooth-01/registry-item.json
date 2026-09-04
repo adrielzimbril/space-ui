@@ -5,7 +5,7 @@
   "title": "Smooth Orb Demo",
   "description": "Audio-reactive smooth orb.",
   "registryDependencies": [
-    "@usespaceui/components-orb-smooth"
+    "https://www.spaceui.one/r/components-orb-smooth.json"
   ],
   "categories": [
     "orb",

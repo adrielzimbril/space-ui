@@ -5,7 +5,7 @@
   "title": "Basic timeline.",
   "description": "Basic timeline.",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-timeline"
+    "https://www.spaceui.one/r/components-spaceui-timeline.json"
   ],
   "categories": [
     "component",

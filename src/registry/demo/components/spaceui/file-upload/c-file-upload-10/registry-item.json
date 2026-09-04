@@ -8,10 +8,10 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/hooks-form-use-file-upload",
-    "@usespaceui/lib-utils",
-    "@usespaceui/primitives-alert",
-    "@usespaceui/primitives-button"
+    "https://www.spaceui.one/r/hooks-form-use-file-upload.json",
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-alert.json",
+    "https://www.spaceui.one/r/primitives-button.json"
   ],
   "categories": [
     "component",

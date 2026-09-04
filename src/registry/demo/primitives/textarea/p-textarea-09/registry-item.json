@@ -5,7 +5,7 @@
   "title": "Textarea 9",
   "description": "Read-only textarea",
   "registryDependencies": [
-    "@usespaceui/primitives-textarea"
+    "https://www.spaceui.one/r/primitives-textarea.json"
   ],
   "categories": [
     "textarea"

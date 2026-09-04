@@ -5,7 +5,7 @@
   "title": "Select 20",
   "description": "Auto width select",
   "registryDependencies": [
-    "@usespaceui/primitives-select"
+    "https://www.spaceui.one/r/primitives-select.json"
   ],
   "categories": [
     "select"

@@ -5,7 +5,7 @@
   "title": "Meter 3",
   "description": "Meter with formatted value",
   "registryDependencies": [
-    "@usespaceui/primitives-meter"
+    "https://www.spaceui.one/r/primitives-meter.json"
   ],
   "categories": [
     "meter"

@@ -9,8 +9,8 @@
     "motion"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-morph-icon",
-    "@usespaceui/primitives-button"
+    "https://www.spaceui.one/r/components-spaceui-morph-icon.json",
+    "https://www.spaceui.one/r/primitives-button.json"
   ],
   "categories": [
     "component",

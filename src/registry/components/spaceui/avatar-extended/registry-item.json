@@ -5,8 +5,8 @@
   "title": "Avatar Extended",
   "description": "Extended avatar components with badges, indicators, and logos.",
   "registryDependencies": [
-    "@usespaceui/lib-utils",
-    "@usespaceui/primitives-badge"
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-badge.json"
   ],
   "categories": [
     "avatar"

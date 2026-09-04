@@ -5,7 +5,7 @@
   "title": "Link 5",
   "description": "External links with icon",
   "registryDependencies": [
-    "@usespaceui/primitives-link"
+    "https://www.spaceui.one/r/primitives-link.json"
   ],
   "categories": [
     "link"

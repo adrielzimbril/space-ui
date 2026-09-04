@@ -5,7 +5,7 @@
   "title": "Toggle 4",
   "description": "Disabled toggle",
   "registryDependencies": [
-    "@usespaceui/primitives-toggle"
+    "https://www.spaceui.one/r/primitives-toggle.json"
   ],
   "categories": [
     "toggle"

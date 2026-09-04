@@ -5,8 +5,8 @@
   "title": "Input 11",
   "description": "Input group with start loading spinner",
   "registryDependencies": [
-    "@usespaceui/primitives-input-group",
-    "@usespaceui/primitives-spinner"
+    "https://www.spaceui.one/r/primitives-input-group.json",
+    "https://www.spaceui.one/r/primitives-spinner.json"
   ],
   "categories": [
     "input",

@@ -5,7 +5,7 @@
   "title": "Gradient Background Demo",
   "description": "Demo showing a gradient background.",
   "registryDependencies": [
-    "@usespaceui/components-backgrounds-gradient"
+    "https://www.spaceui.one/r/components-backgrounds-gradient.json"
   ],
   "categories": [
     "background",

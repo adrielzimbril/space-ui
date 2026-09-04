@@ -5,7 +5,7 @@
   "title": "Combobox 14",
   "description": "Pill-shaped combobox",
   "registryDependencies": [
-    "@usespaceui/primitives-combobox"
+    "https://www.spaceui.one/r/primitives-combobox.json"
   ],
   "categories": [
     "combobox",

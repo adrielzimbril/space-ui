@@ -9,15 +9,15 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-checkbox",
-    "@usespaceui/primitives-checkbox-group",
-    "@usespaceui/primitives-combobox",
-    "@usespaceui/primitives-label",
-    "@usespaceui/primitives-popover",
-    "@usespaceui/primitives-select",
-    "@usespaceui/primitives-switch",
-    "@usespaceui/primitives-tooltip"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-checkbox.json",
+    "https://www.spaceui.one/r/primitives-checkbox-group.json",
+    "https://www.spaceui.one/r/primitives-combobox.json",
+    "https://www.spaceui.one/r/primitives-label.json",
+    "https://www.spaceui.one/r/primitives-popover.json",
+    "https://www.spaceui.one/r/primitives-select.json",
+    "https://www.spaceui.one/r/primitives-switch.json",
+    "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
   "categories": [
     "switch",

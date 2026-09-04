@@ -5,7 +5,7 @@
   "title": "Radio Sizes",
   "description": "Radio controls in sm, default, and lg sizes",
   "registryDependencies": [
-    "@usespaceui/primitives-radio-group"
+    "https://www.spaceui.one/r/primitives-radio-group.json"
   ],
   "categories": [
     "radio-group"

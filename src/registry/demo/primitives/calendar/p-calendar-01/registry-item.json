@@ -5,7 +5,7 @@
   "title": "Calendar 1",
   "description": "Basic calendar",
   "registryDependencies": [
-    "@usespaceui/primitives-calendar"
+    "https://www.spaceui.one/r/primitives-calendar.json"
   ],
   "categories": [
     "calendar"

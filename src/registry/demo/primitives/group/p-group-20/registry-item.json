@@ -5,9 +5,9 @@
   "title": "Group 20",
   "description": "Group with input and text button",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-group",
-    "@usespaceui/primitives-input"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-group.json",
+    "https://www.spaceui.one/r/primitives-input.json"
   ],
   "categories": [
     "button",

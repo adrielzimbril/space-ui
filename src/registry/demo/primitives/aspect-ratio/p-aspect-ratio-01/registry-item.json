@@ -5,7 +5,7 @@
   "title": "16:9 widescreen aspect ratio",
   "description": "16:9 widescreen aspect ratio",
   "registryDependencies": [
-    "@usespaceui/primitives-aspect-ratio"
+    "https://www.spaceui.one/r/primitives-aspect-ratio.json"
   ],
   "categories": [
     "aspect-ratio"

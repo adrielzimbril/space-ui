@@ -8,8 +8,8 @@
     "@daypicker/react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-calendar",
-    "@usespaceui/primitives-select"
+    "https://www.spaceui.one/r/primitives-calendar.json",
+    "https://www.spaceui.one/r/primitives-select.json"
   ],
   "categories": [
     "calendar",

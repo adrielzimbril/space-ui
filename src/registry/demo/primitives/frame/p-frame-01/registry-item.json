@@ -5,7 +5,7 @@
   "title": "Frame 1",
   "description": "Basic frame",
   "registryDependencies": [
-    "@usespaceui/primitives-frame"
+    "https://www.spaceui.one/r/primitives-frame.json"
   ],
   "categories": [
     "frame"

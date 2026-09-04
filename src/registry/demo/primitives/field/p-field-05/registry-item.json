@@ -5,8 +5,8 @@
   "title": "Field 5",
   "description": "Show field validity state",
   "registryDependencies": [
-    "@usespaceui/primitives-field",
-    "@usespaceui/primitives-input"
+    "https://www.spaceui.one/r/primitives-field.json",
+    "https://www.spaceui.one/r/primitives-input.json"
   ],
   "categories": [
     "field",

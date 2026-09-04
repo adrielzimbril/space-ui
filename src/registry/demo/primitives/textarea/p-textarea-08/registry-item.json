@@ -5,7 +5,7 @@
   "title": "Textarea 8",
   "description": "Textarea with custom border and background",
   "registryDependencies": [
-    "@usespaceui/primitives-textarea"
+    "https://www.spaceui.one/r/primitives-textarea.json"
   ],
   "categories": [
     "textarea"

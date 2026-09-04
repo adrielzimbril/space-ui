@@ -4,9 +4,16 @@
   "type": "registry:component",
   "title": "Section Scrollspy",
   "description": "Floating section scrollbar that tracks the active heading as you scroll.",
-  "dependencies": ["motion"],
-  "registryDependencies": ["@usespaceui/lib-utils"],
-  "categories": ["component", "section-scrollspy"],
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "categories": [
+    "component",
+    "section-scrollspy"
+  ],
   "files": [
     {
       "path": "src/registry/components/spaceui/section-scrollspy/index.tsx",

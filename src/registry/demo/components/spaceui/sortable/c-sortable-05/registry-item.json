@@ -8,9 +8,9 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-sortable",
-    "@usespaceui/primitives-frame",
-    "@usespaceui/primitives-switch"
+    "https://www.spaceui.one/r/components-spaceui-sortable.json",
+    "https://www.spaceui.one/r/primitives-frame.json",
+    "https://www.spaceui.one/r/primitives-switch.json"
   ],
   "categories": [
     "component",

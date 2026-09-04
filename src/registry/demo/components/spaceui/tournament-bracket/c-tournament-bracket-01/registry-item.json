@@ -5,7 +5,7 @@
   "title": "Tournament Bracket Demo",
   "description": "Knockout bracket with round navigation.",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-tournament-bracket"
+    "https://www.spaceui.one/r/components-spaceui-tournament-bracket.json"
   ],
   "categories": [
     "component",

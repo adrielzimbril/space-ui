@@ -5,7 +5,7 @@
   "title": "Autocomplete 5",
   "description": "Autocomplete autofilling the input with the highlighted item",
   "registryDependencies": [
-    "@usespaceui/primitives-autocomplete"
+    "https://www.spaceui.one/r/primitives-autocomplete.json"
   ],
   "categories": [
     "autocomplete",

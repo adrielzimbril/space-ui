@@ -5,7 +5,7 @@
   "title": "Autocomplete 14",
   "description": "Pill-shaped autocomplete",
   "registryDependencies": [
-    "@usespaceui/primitives-autocomplete"
+    "https://www.spaceui.one/r/primitives-autocomplete.json"
   ],
   "categories": [
     "autocomplete",

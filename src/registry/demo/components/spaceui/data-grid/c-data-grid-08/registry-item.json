@@ -9,13 +9,13 @@
     "@tanstack/react-table"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-data-grid",
-    "@usespaceui/components-spaceui-data-grid-pagination",
-    "@usespaceui/components-spaceui-data-grid-scroll-area",
-    "@usespaceui/components-spaceui-data-grid-table",
-    "@usespaceui/primitives-avatar",
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-button"
+    "https://www.spaceui.one/r/components-spaceui-data-grid.json",
+    "https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json",
+    "https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json",
+    "https://www.spaceui.one/r/components-spaceui-data-grid-table.json",
+    "https://www.spaceui.one/r/primitives-avatar.json",
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-button.json"
   ],
   "categories": [
     "component",

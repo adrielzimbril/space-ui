@@ -5,8 +5,8 @@
   "title": "Field 1",
   "description": "Field with description",
   "registryDependencies": [
-    "@usespaceui/primitives-field",
-    "@usespaceui/primitives-input"
+    "https://www.spaceui.one/r/primitives-field.json",
+    "https://www.spaceui.one/r/primitives-input.json"
   ],
   "categories": [
     "field",

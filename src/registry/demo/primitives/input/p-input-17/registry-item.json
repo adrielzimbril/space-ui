@@ -5,8 +5,8 @@
   "title": "Input 17",
   "description": "Input with characters remaining counter",
   "registryDependencies": [
-    "@usespaceui/primitives-field",
-    "@usespaceui/primitives-input"
+    "https://www.spaceui.one/r/primitives-field.json",
+    "https://www.spaceui.one/r/primitives-input.json"
   ],
   "categories": [
     "field",

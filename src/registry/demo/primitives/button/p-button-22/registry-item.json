@@ -5,7 +5,7 @@
   "title": "Button 22",
   "description": "Button with animated status dot",
   "registryDependencies": [
-    "@usespaceui/primitives-button"
+    "https://www.spaceui.one/r/primitives-button.json"
   ],
   "categories": [
     "button"

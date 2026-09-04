@@ -9,9 +9,9 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-collapsible",
-    "@usespaceui/primitives-frame"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-collapsible.json",
+    "https://www.spaceui.one/r/primitives-frame.json"
   ],
   "categories": [
     "collapsible",

@@ -8,7 +8,7 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-toggle-group"
+    "https://www.spaceui.one/r/primitives-toggle-group.json"
   ],
   "categories": [
     "toggle",

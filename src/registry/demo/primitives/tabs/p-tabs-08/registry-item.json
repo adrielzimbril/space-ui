@@ -5,8 +5,8 @@
   "title": "Tabs 8",
   "description": "Tabs with count badge",
   "registryDependencies": [
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-tabs"
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-tabs.json"
   ],
   "categories": [
     "tabs",

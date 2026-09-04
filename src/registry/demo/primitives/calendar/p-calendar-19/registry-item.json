@@ -8,10 +8,10 @@
     "date-fns"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-calendar",
-    "@usespaceui/primitives-scroll-area",
-    "@usespaceui/primitives-toggle",
-    "@usespaceui/primitives-toggle-group"
+    "https://www.spaceui.one/r/primitives-calendar.json",
+    "https://www.spaceui.one/r/primitives-scroll-area.json",
+    "https://www.spaceui.one/r/primitives-toggle.json",
+    "https://www.spaceui.one/r/primitives-toggle-group.json"
   ],
   "categories": [
     "calendar",

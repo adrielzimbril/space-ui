@@ -5,8 +5,8 @@
   "title": "Avatar 7",
   "description": "Avatar group with overlapping edge",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-avatar-group",
-    "@usespaceui/primitives-avatar"
+    "https://www.spaceui.one/r/components-spaceui-avatar-group.json",
+    "https://www.spaceui.one/r/primitives-avatar.json"
   ],
   "categories": [
     "avatar"

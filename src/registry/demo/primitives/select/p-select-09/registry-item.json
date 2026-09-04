@@ -5,7 +5,7 @@
   "title": "Select 9",
   "description": "Select with object values",
   "registryDependencies": [
-    "@usespaceui/primitives-select"
+    "https://www.spaceui.one/r/primitives-select.json"
   ],
   "categories": [
     "select"

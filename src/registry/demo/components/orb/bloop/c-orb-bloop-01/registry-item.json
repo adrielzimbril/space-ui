@@ -5,7 +5,7 @@
   "title": "Bloop Orb Demo",
   "description": "Compact bloop orb shader.",
   "registryDependencies": [
-    "@usespaceui/components-orb-bloop"
+    "https://www.spaceui.one/r/components-orb-bloop.json"
   ],
   "categories": [
     "orb",

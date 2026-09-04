@@ -5,8 +5,8 @@
   "title": "Pagination 2",
   "description": "Pagination with previous and next buttons only",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-pagination"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-pagination.json"
   ],
   "categories": [
     "pagination"

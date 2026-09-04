@@ -5,7 +5,7 @@
   "title": "Select 16",
   "description": "Select with country flags",
   "registryDependencies": [
-    "@usespaceui/primitives-select"
+    "https://www.spaceui.one/r/primitives-select.json"
   ],
   "categories": [
     "select"

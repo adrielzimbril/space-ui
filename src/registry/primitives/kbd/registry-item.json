@@ -5,7 +5,7 @@
   "title": "Kbd",
   "description": "Accessible Kbd primitive component for Space UI.",
   "registryDependencies": [
-    "@usespaceui/lib-utils"
+    "https://www.spaceui.one/r/lib-utils.json"
   ],
   "categories": [
     "kbd"

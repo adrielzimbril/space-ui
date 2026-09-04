@@ -5,9 +5,9 @@
   "title": "Rating with review summary",
   "description": "Rating with review summary",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-rating",
-    "@usespaceui/primitives-progress",
-    "@usespaceui/primitives-separator"
+    "https://www.spaceui.one/r/components-spaceui-rating.json",
+    "https://www.spaceui.one/r/primitives-progress.json",
+    "https://www.spaceui.one/r/primitives-separator.json"
   ],
   "categories": [
     "component",
