@@ -10,7 +10,12 @@
     {
       "path": "src/registry/blocks/card-info/card-info-2/index.tsx",
       "type": "registry:block",
-      "target": "components/blocks/card-info/card-info-2.tsx"
+      "target": "components/blocks/card-info/index.tsx"
+    },
+    {
+      "path": "src/registry/blocks/card-info/card-info-1/icons.tsx",
+      "type": "registry:block",
+      "target": "components/blocks/card-info/icons.tsx"
     }
   ],
   "createdAt": "2026-08-31",

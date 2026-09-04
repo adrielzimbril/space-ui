@@ -31,6 +31,7 @@ import { InstallCommandBlock } from '@/components/docs/installation/install-comm
 import { DynamicCodeBlock } from '@/components/docs/code/dynamic-codeblock'
 import { bloomSound } from '@/components/providers/sound-provider'
 import { useClipboard } from '@/registry/hooks/browser/use-clipboard'
+import { siteConfig } from '@/lib/space-config'
 
 export interface CodeDrawerProps {
   open: boolean
@@ -48,7 +49,7 @@ export function CodeDrawer({ open, onOpenChange, name, title, code, previewName 
   const items = useMemo(() => {
     const q = `Help me use and customize the Space UI component '${displayTitle}' (slug: ${name}) from https://www.spaceui.one/r/${name}.json in my React Next.js project.`
     const v0Url = `https://v0.dev/chat?q=${encodeURIComponent(`Install and integrate the component from https://www.spaceui.one/r/${name}.json into my Next.js React project.`)}`
-    const githubUrl = `https://github.com/usespaceui/ui/blob/main/apps/www/src/registry`
+    const githubUrl = `${siteConfig.links.github}/blob/main/src/registry`
 
     return [
       {
