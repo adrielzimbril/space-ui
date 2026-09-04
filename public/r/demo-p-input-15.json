@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-input-15",
+  "title": "Input 15",
+  "description": "Input group with end loading spinner",
+  "registryDependencies": [
+    "@usespaceui/primitives-input-group",
+    "@usespaceui/primitives-spinner"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/input/p-input-15/index.tsx",
+      "content": "import { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'\nimport { Spinner } from '@/components/ui/spinner'\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput disabled placeholder=\"Processing…\" type=\"search\" />\n      <InputGroupAddon align=\"inline-end\">\n        <Spinner />\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/input.tsx"
+    }
+  ],
+  "categories": [
+    "input",
+    "input group",
+    "spinner",
+    "loading"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-accordion-01",
+  "title": "Accordion 1",
+  "description": "Basic accordion",
+  "registryDependencies": [
+    "@usespaceui/primitives-accordion"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/accordion/p-accordion-01/index.tsx",
+      "content": "import { Accordion, AccordionItem, AccordionPanel, AccordionTrigger } from '@/components/ui/accordion'\n\nexport default function Particle() {\n  return (\n    <Accordion className=\"w-full\" defaultValue={['item-1']}>\n      <AccordionItem value=\"item-1\">\n        <AccordionTrigger>Your Accordion Title Goes Here</AccordionTrigger>\n        <AccordionPanel>\n          This is where your accordion content will appear. You can customize this text with any message.\n        </AccordionPanel>\n      </AccordionItem>\n      <AccordionItem value=\"item-2\">\n        <AccordionTrigger>Your Accordion Title Goes Here</AccordionTrigger>\n        <AccordionPanel>\n          This is where your accordion content will appear. You can customize this text with any message.\n        </AccordionPanel>\n      </AccordionItem>\n      <AccordionItem value=\"item-3\">\n        <AccordionTrigger>Your Accordion Title Goes Here</AccordionTrigger>\n        <AccordionPanel>\n          This is where your accordion content will appear. You can customize this text with any message.\n        </AccordionPanel>\n      </AccordionItem>\n    </Accordion>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/accordion.tsx"
+    }
+  ],
+  "categories": [
+    "accordion"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-icon-stack-06",
+  "title": "Item media stack",
+  "description": "Icon stack in shadcn item",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-icon-stack"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/icon-stack/c-icon-stack-06/index.tsx",
+      "content": "import { IconPackage } from '@tabler/icons-react'\nimport { IconStack } from '@/components/spaceui/icon-stack'\n\nimport { Item, ItemContent, ItemDescription, ItemMedia, ItemTitle } from '@/components/spaceui/item'\nexport default function Pattern() {\n  return (\n    <div className=\"mx-auto flex w-full max-w-md items-center justify-center p-4\">\n      <Item variant=\"outline\" className=\"max-w-sm\">\n        <ItemMedia>\n          <IconStack aria-hidden=\"true\" className=\"text-primary h-12 w-11\">\n            <IconPackage className=\"text-primary size-3\" />\n          </IconStack>\n        </ItemMedia>\n        <ItemContent>\n          <ItemTitle>Registry package ready</ItemTitle>\n          <ItemDescription>Use IconStack as rich media inside compact shadcn items.</ItemDescription>\n        </ItemContent>\n      </Item>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/icon-stack.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "icon-stack"
+  ],
+  "type": "registry:component"
+}

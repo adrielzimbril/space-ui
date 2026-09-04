@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-prefers-theme-01",
+  "title": "usePrefersTheme",
+  "description": "System color scheme detector",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-browser-use-prefers-theme",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/browser/prefers-theme/h-prefers-theme-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { usePrefersTheme } from '@/hooks/use-prefers-theme'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Badge } from '@/components/ui/badge'\nimport { IconMoon, IconSun } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const theme = usePrefersTheme()\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            {theme === 'dark' ? (\n              <IconMoon className=\"size-4 text-muted-foreground\" />\n            ) : (\n              <IconSun className=\"size-4 text-muted-foreground\" />\n            )}\n          </Badge>\n          <span>Theme</span>\n        </div>\n        <Badge variant=\"outline\" size=\"sm\" className=\"capitalize\">\n          {theme}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex flex-col gap-3 rounded-[0.875rem] bg-background p-3\">\n        <div className=\"rounded-lg bg-muted p-2.5\">\n          <span className=\"block text-[.6875rem] font-semibold text-muted-foreground\">Preference</span>\n          <span className=\"mt-0.5 block font-mono text-sm font-semibold capitalize text-foreground\">{theme}</span>\n        </div>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/prefers-theme.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "prefers-theme"
+  ],
+  "type": "registry:hook"
+}

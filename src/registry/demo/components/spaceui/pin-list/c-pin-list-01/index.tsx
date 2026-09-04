@@ -1,12 +1,6 @@
 'use client'
 
-import {
-  IconGitCommit,
-  IconBug,
-  IconBrandNpm,
-  IconLock,
-  IconSparkles,
-} from '@tabler/icons-react'
+import { IconGitCommit, IconBug, IconBrandNpm, IconLock, IconSparkles } from '@tabler/icons-react'
 import { PinList } from '@/registry/components/spaceui/pin-list'
 
 const ITEMS = [

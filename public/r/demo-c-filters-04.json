@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-filters-04",
+  "title": "Filters with small size controls",
+  "description": "Filters with small size controls",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-filters",
+    "@usespaceui/primitives-button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/filters/c-filters-04/index.tsx",
+      "content": "'use client'\n\nimport {\n  IconClock,\n  IconAlertCircle,\n  IconCircleCheck,\n  IconBan,\n  IconCircle,\n  IconStar,\n  IconTag,\n  IconMail,\n  IconWorld,\n  IconFilter2,\n} from '@tabler/icons-react'\nimport { useCallback, useState } from 'react'\nimport { createFilter, Filters, type Filter, type FilterFieldConfig } from '@/components/spaceui/filters'\n\nimport { Button } from '@/components/ui/button'\nconst StatusIcon = ({ status }: { status: string }) => {\n  switch (status) {\n    case 'todo':\n      return <IconClock className=\"text-primary\" />\n    case 'in-progress':\n      return <IconAlertCircle className=\"text-yellow-500\" />\n    case 'done':\n      return <IconCircleCheck className=\"text-green-500\" />\n    case 'cancelled':\n      return <IconBan className=\"text-destructive\" />\n    default:\n      return <IconCircle className=\"text-muted-foreground\" />\n  }\n}\n\n// Priority icon component\nconst PriorityIcon = ({ priority }: { priority: string }) => {\n  const colors = {\n    low: 'text-green-500',\n    medium: 'text-yellow-500',\n    high: 'text-orange-500',\n    urgent: 'text-red-500',\n  }\n  return <IconStar className={colors[priority as keyof typeof colors]} />\n}\n\nexport default function Pattern() {\n  // Basic filter fields for size variant demo\n  const fields: FilterFieldConfig[] = [\n    {\n      key: 'text',\n      label: 'Text',\n      icon: <IconTag className=\"size-3.5\" />,\n      type: 'text',\n      className: 'w-36',\n      placeholder: 'Search text...',\n    },\n    {\n      key: 'email',\n      label: 'Email',\n      icon: <IconMail className=\"size-3.5\" />,\n      type: 'text',\n      className: 'w-48',\n      placeholder: 'user@example.com',\n    },\n    {\n      key: 'website',\n      label: 'Website',\n      icon: <IconWorld className=\"size-3.5\" />,\n      type: 'text',\n      className: 'w-40',\n      placeholder: 'https://example.com',\n    },\n    {\n      key: 'status',\n      label: 'Status',\n      icon: <IconClock className=\"size-3.5\" />,\n      type: 'select',\n      searchable: false,\n      className: 'w-[200px]',\n      options: [\n        { value: 'todo', label: 'To Do', icon: <StatusIcon status=\"todo\" /> },\n        {\n          value: 'in-progress',\n          label: 'In Progress',\n          icon: <StatusIcon status=\"in-progress\" />,\n        },\n        { value: 'done', label: 'Done', icon: <StatusIcon status=\"done\" /> },\n        {\n          value: 'cancelled',\n          label: 'Cancelled',\n          icon: <StatusIcon status=\"cancelled\" />,\n        },\n      ],\n    },\n    {\n      key: 'priority',\n      label: 'Priority',\n      icon: <IconAlertCircle className=\"size-3.5\" />,\n      type: 'multiselect',\n      className: 'w-[180px]',\n      options: [\n        { value: 'low', label: 'Low', icon: <PriorityIcon priority=\"low\" /> },\n        {\n          value: 'medium',\n          label: 'Medium',\n          icon: <PriorityIcon priority=\"medium\" />,\n        },\n        {\n          value: 'high',\n          label: 'High',\n          icon: <PriorityIcon priority=\"high\" />,\n        },\n        {\n          value: 'urgent',\n          label: 'Urgent',\n          icon: <PriorityIcon priority=\"urgent\" />,\n        },\n      ],\n    },\n  ]\n\n  const [smallFilters, setSmallFilters] = useState<Filter[]>([\n    createFilter('priority', 'is_any_of', ['high', 'urgent']),\n  ])\n\n  const [mediumFilters, setMediumFilters] = useState<Filter[]>([createFilter('status', 'is', ['todo'])])\n\n  const [largeFilters, setLargeFilters] = useState<Filter[]>([\n    createFilter('email', 'contains', ['example@example.com']),\n  ])\n\n  const handleSmallFiltersChange = useCallback((filters: Filter[]) => {\n    setSmallFilters(filters)\n  }, [])\n\n  const handleMediumFiltersChange = useCallback((filters: Filter[]) => {\n    setMediumFilters(filters)\n  }, [])\n\n  const handleLargeFiltersChange = useCallback((filters: Filter[]) => {\n    setLargeFilters(filters)\n  }, [])\n\n  return (\n    <div className=\"flex grow flex-col content-start items-start gap-2.5 space-y-6 self-start\">\n      <Filters\n        size=\"sm\"\n        filters={smallFilters}\n        fields={fields}\n        onChange={handleSmallFiltersChange}\n        trigger={\n          <Button variant=\"outline\" size=\"icon-sm\">\n            <IconFilter2 />\n          </Button>\n        }\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/filters.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "filters"
+  ],
+  "type": "registry:component"
+}

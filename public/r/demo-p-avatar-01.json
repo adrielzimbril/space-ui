@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-avatar-01",
+  "title": "Avatar 1",
+  "description": "Avatar with image and fallback",
+  "registryDependencies": [
+    "@usespaceui/primitives-avatar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/avatar/p-avatar-01/index.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'\n\nexport default function Particle() {\n  return (\n    <Avatar>\n      <AvatarImage alt=\"Lauren Tan\" src=\"https://avatars.spaceui.one/v1?name=laurentan&variant=glass\" />\n      <AvatarFallback>LT</AvatarFallback>\n    </Avatar>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/avatar.tsx"
+    }
+  ],
+  "categories": [
+    "avatar"
+  ],
+  "type": "registry:ui"
+}

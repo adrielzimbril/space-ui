@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-group-25",
+  "title": "Model selector with tier badges",
+  "description": "Model selector with tier badges",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-group",
+    "@usespaceui/primitives-tooltip"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/group/p-group-25/index.tsx",
+      "content": "'use client'\n\nimport { IconBolt, IconBrain, IconFlask } from '@tabler/icons-react'\nimport { useState } from 'react'\nimport { Badge } from '@/components/ui/badge'\n\nimport { cn } from '@/lib/utils'\nimport { Button } from '@/components/ui/button'\nimport { Group } from '@/components/ui/group'\nimport { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'\nconst models = [\n  {\n    id: 'gpt4o',\n    label: 'GPT-4o',\n    badge: 'Fast',\n    badgeVariant: 'success' as const,\n    tooltip: '128k context, fastest response',\n    icon: <IconBolt aria-hidden=\"true\" />,\n  },\n  {\n    id: 'claude',\n    label: 'Claude',\n    badge: 'Pro',\n    badgeVariant: 'info' as const,\n    tooltip: '200k context, best for analysis',\n    icon: <IconBrain aria-hidden=\"true\" />,\n  },\n  {\n    id: 'gemini',\n    label: 'Gemini',\n    badge: 'Preview',\n    badgeVariant: 'warning' as const,\n    tooltip: '1M context, experimental',\n    icon: <IconFlask aria-hidden=\"true\" />,\n  },\n]\n\nexport default function Pattern() {\n  const [active, setActive] = useState('claude')\n\n  return (\n    <Group>\n      {models.map((model) => (\n        <Tooltip key={model.id}>\n          <TooltipTrigger\n            render={\n              <Button\n                variant=\"outline\"\n                className={cn(active === model.id ? 'bg-muted' : '')}\n                onClick={() => setActive(model.id)}\n              >\n                {model.icon}\n                {model.label}\n                <Badge variant={model.badgeVariant} size=\"sm\">\n                  {model.badge}\n                </Badge>\n              </Button>\n            }\n          />\n          <TooltipContent>{model.tooltip}</TooltipContent>\n        </Tooltip>\n      ))}\n    </Group>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/group.tsx"
+    }
+  ],
+  "categories": [
+    "button-group"
+  ],
+  "type": "registry:ui"
+}

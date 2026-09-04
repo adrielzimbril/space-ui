@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-autoscale-input-01",
+  "title": "Autoscale Input Demo",
+  "description": "Amount field that scales to fit its container.",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-autoscale-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/autoscale-input/c-autoscale-input-01/index.tsx",
+      "content": "'use client'\n\nimport { AutoscaleInput } from '@/components/spaceui/autoscale-input'\n\nexport default function AutoscaleInputDemo() {\n  return (\n    <div className=\"flex w-full max-w-sm flex-col items-center justify-center px-6 py-10\">\n      <AutoscaleInput defaultValue=\"1234567.89\" prefix=\"$\" numberFormat=\"us\" aria-label=\"Amount\" />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/autoscale-input.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "autoscale-input"
+  ],
+  "type": "registry:component"
+}

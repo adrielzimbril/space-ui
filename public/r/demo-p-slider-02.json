@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-slider-02",
+  "title": "Slider 2",
+  "description": "Slider with label and value",
+  "registryDependencies": [
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-slider"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/slider/p-slider-02/index.tsx",
+      "content": "import { Field, FieldLabel } from '@/components/ui/field'\nimport { Slider, SliderValue } from '@/components/ui/slider'\n\nexport default function Particle() {\n  return (\n    <Field>\n      <Slider defaultValue={50}>\n        <div className=\"mb-2 flex items-center justify-between gap-1\">\n          <FieldLabel className=\"font-medium text-sm\">Opacity</FieldLabel>\n          <SliderValue />\n        </div>\n      </Slider>\n    </Field>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/slider.tsx"
+    }
+  ],
+  "categories": [
+    "slider"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-controlled-state-01",
+  "title": "useControlledState",
+  "description": "Uncontrolled / controlled state synchronizer",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-animation-use-controlled-state",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-switch"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/animation/controlled-state/h-controlled-state-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { useControlledState } from '@/hooks/use-controlled-state'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Button } from '@/components/ui/button'\nimport { Badge } from '@/components/ui/badge'\nimport { Switch } from '@/components/ui/switch'\nimport { IconPower } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const [val, setVal] = useControlledState({ defaultProp: 'Off', prop: undefined })\n  const isChecked = val === 'On'\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconPower className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Controlled</span>\n        </div>\n        <Badge variant={isChecked ? 'default' : 'outline'} size=\"sm\">\n          {val}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex items-center justify-between rounded-[0.875rem] bg-background p-3\">\n        <Button\n          size=\"sm\"\n          variant={isChecked ? 'secondary' : 'default'}\n          onClick={() => setVal((v) => (v === 'Off' ? 'On' : 'Off'))}\n        >\n          Toggle\n        </Button>\n        <Switch checked={isChecked} onCheckedChange={(c) => setVal(c ? 'On' : 'Off')} aria-label=\"Toggle power\" />\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/controlled-state.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "animation",
+    "controlled-state"
+  ],
+  "type": "registry:hook"
+}

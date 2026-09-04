@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-timeline-03",
+  "title": "Timeline with order status.",
+  "description": "Timeline with order status.",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-timeline"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/timeline/c-timeline-03/index.tsx",
+      "content": "'use client'\n\nimport { IconCheck } from '@tabler/icons-react'\nimport {\n  Timeline,\n  TimelineContent,\n  TimelineDate,\n  TimelineHeader,\n  TimelineIndicator,\n  TimelineItem,\n  TimelineSeparator,\n  TimelineTitle,\n} from '@/components/spaceui/timeline'\n\nconst orderStatus = [\n  {\n    id: 1,\n    date: 'Mar 15, 2024',\n    title: 'Order Placed',\n    description: 'Your order has been received and is being processed.',\n  },\n  {\n    id: 2,\n    date: 'Mar 16, 2024',\n    title: 'Payment Confirmed',\n    description: 'Transaction successful. Preparing for shipment.',\n  },\n  {\n    id: 3,\n    date: 'Mar 18, 2024',\n    title: 'Shipped',\n    description: 'Your package is on its way. Track your delivery.',\n  },\n  {\n    id: 4,\n    date: 'Mar 20, 2024',\n    title: 'Delivered',\n    description: 'Package successfully delivered to the recipient.',\n  },\n]\n\nexport default function Pattern() {\n  return (\n    <Timeline defaultValue={3} className=\"w-full max-w-md\">\n      {orderStatus.map((item) => (\n        <TimelineItem key={item.id} step={item.id} className=\"group-data-[orientation=vertical]/timeline:ms-10\">\n          <TimelineHeader>\n            <TimelineSeparator className=\"group-data-[orientation=vertical]/timeline:-left-7 group-data-[orientation=vertical]/timeline:h-[calc(100%-1.5rem-0.25rem)] group-data-[orientation=vertical]/timeline:translate-y-6.5\" />\n            <TimelineDate>{item.date}</TimelineDate>\n            <TimelineTitle>{item.title}</TimelineTitle>\n            <TimelineIndicator className=\"group-data-completed/timeline-item:bg-primary group-data-completed/timeline-item:text-primary-foreground flex size-6 items-center justify-center group-data-completed/timeline-item:border-none group-data-[orientation=vertical]/timeline:-left-7\">\n              <IconCheck className=\"size-4 group-not-data-completed/timeline-item:hidden\" />\n            </TimelineIndicator>\n          </TimelineHeader>\n          <TimelineContent>{item.description}</TimelineContent>\n        </TimelineItem>\n      ))}\n    </Timeline>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/timeline.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "timeline"
+  ],
+  "type": "registry:component"
+}

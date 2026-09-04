@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-toggle-01",
+  "title": "useToggle",
+  "description": "Boolean state toggle switch",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-lifecycle-use-toggle",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-switch"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/lifecycle/toggle/h-toggle-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { useToggle } from '@/hooks/use-toggle'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Badge } from '@/components/ui/badge'\nimport { Switch } from '@/components/ui/switch'\nimport { IconToggleLeft } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const [state, toggle] = useToggle(false)\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconToggleLeft className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Toggle</span>\n        </div>\n        <Badge variant={state ? 'success' : 'outline'} size=\"sm\">\n          {state ? 'On' : 'Off'}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex items-center justify-between rounded-[0.875rem] bg-background p-3\">\n        <span className=\"text-sm text-muted-foreground\">Boolean state</span>\n        <Switch checked={state} onCheckedChange={() => toggle()} aria-label=\"Toggle state\" />\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/toggle.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "toggle"
+  ],
+  "type": "registry:hook"
+}

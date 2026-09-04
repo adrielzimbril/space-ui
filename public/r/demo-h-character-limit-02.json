@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-character-limit-02",
+  "title": "useCharacterLimit (Social Post Composer)",
+  "description": "Social post counter with ring indicator",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-form-use-character-limit",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-progress",
+    "@usespaceui/primitives-textarea"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/form/character-limit/h-character-limit-02/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { useCharacterLimit } from '@/hooks/use-character-limit'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Badge } from '@/components/ui/badge'\nimport { Textarea } from '@/components/ui/textarea'\nimport { Button } from '@/components/ui/button'\nimport { Progress } from '@/components/ui/progress'\nimport { IconSend, IconMessageCircle } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const { value, remaining, isExceeded, handleChange } = useCharacterLimit({\n    maxLength: 140,\n    initialValue: 'Just shipped a brand new design system with Space UI hooks!',\n  })\n  const percentage = Math.min(100, Math.round((value.length / 140) * 100))\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconMessageCircle className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Composer</span>\n        </div>\n        <Badge variant={isExceeded ? 'destructive' : 'outline'} size=\"sm\" className=\"font-mono tabular-nums\">\n          {remaining}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex flex-col gap-3 rounded-[0.875rem] bg-background p-3\">\n        <Textarea\n          value={value}\n          onChange={handleChange}\n          rows={3}\n          placeholder=\"What is happening?!\"\n          className=\"text-base sm:text-sm resize-none\"\n          aria-label=\"Post content\"\n        />\n        <div className=\"flex items-center justify-between gap-3\">\n          <Progress value={percentage} className=\"flex-1\" />\n          <Button size=\"sm\" disabled={isExceeded || value.trim().length === 0} className=\"shrink-0\">\n            <IconSend className=\"size-3.5\" />\n            Post\n          </Button>\n        </div>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/character-limit.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "form",
+    "character-limit"
+  ],
+  "type": "registry:hook"
+}

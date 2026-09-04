@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-motion-value-state-01",
+  "title": "useMotionValueState",
+  "description": "Framer Motion value subscriber",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/animation/motion-value-state/h-motion-value-state-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Badge } from '@/components/ui/badge'\nimport { Button } from '@/components/ui/button'\nimport { IconWaveSine, IconPlus, IconMinus } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const [val, setVal] = React.useState(100)\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconWaveSine className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Motion</span>\n        </div>\n        <Badge variant=\"outline\" size=\"sm\" className=\"font-mono tabular-nums\">\n          {val}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex items-center justify-between rounded-[0.875rem] bg-background p-3\">\n        <div className=\"rounded-lg bg-muted p-2.5\">\n          <span className=\"block text-[.6875rem] font-semibold text-muted-foreground\">Value</span>\n          <span className=\"mt-0.5 block font-mono text-xl font-semibold tabular-nums text-foreground\">{val}</span>\n        </div>\n        <div className=\"flex items-center gap-2\">\n          <Button size=\"icon-sm\" variant=\"outline\" onClick={() => setVal((v) => v - 10)} aria-label=\"Decrease\">\n            <IconMinus className=\"size-3.5\" />\n          </Button>\n          <Button size=\"icon-sm\" variant=\"outline\" onClick={() => setVal((v) => v + 10)} aria-label=\"Increase\">\n            <IconPlus className=\"size-3.5\" />\n          </Button>\n        </div>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/motion-value-state.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "animation",
+    "motion-value-state"
+  ],
+  "type": "registry:hook"
+}

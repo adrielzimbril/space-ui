@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-menu-01",
+  "title": "Menu 1",
+  "description": "Basic menu",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-menu"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/menu/p-menu-01/index.tsx",
+      "content": "import {\n  IconPlayerPlay,\n  IconPlayerPause,\n  IconPlayerSkipBack,\n  IconPlayerSkipForward,\n  IconTrash,\n} from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport {\n  Menu,\n  MenuCheckboxItem,\n  MenuGroup,\n  MenuGroupLabel,\n  MenuItem,\n  MenuPopup,\n  MenuRadioGroup,\n  MenuRadioItem,\n  MenuSeparator,\n  MenuShortcut,\n  MenuSub,\n  MenuSubPopup,\n  MenuSubTrigger,\n  MenuTrigger,\n} from '@/components/ui/menu'\n\nexport default function Particle() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\n      <MenuPopup>\n        <MenuGroup>\n          <MenuGroupLabel>Playback</MenuGroupLabel>\n          <MenuItem>\n            <IconPlayerPlay aria-hidden=\"true\" />\n            Play\n            <MenuShortcut>⌘P</MenuShortcut>\n          </MenuItem>\n          <MenuItem disabled>\n            <IconPlayerPause aria-hidden=\"true\" />\n            Pause\n            <MenuShortcut>⇧⌘P</MenuShortcut>\n          </MenuItem>\n          <MenuItem>\n            <IconPlayerSkipBack aria-hidden=\"true\" />\n            Previous\n            <MenuShortcut>⌘[</MenuShortcut>\n          </MenuItem>\n          <MenuItem>\n            <IconPlayerSkipForward aria-hidden=\"true\" />\n            Next\n            <MenuShortcut>⌘]</MenuShortcut>\n          </MenuItem>\n        </MenuGroup>\n        <MenuSeparator />\n        <MenuCheckboxItem>Shuffle</MenuCheckboxItem>\n        <MenuCheckboxItem>Repeat</MenuCheckboxItem>\n        <MenuCheckboxItem disabled>Enhanced Audio</MenuCheckboxItem>\n        <MenuSeparator />\n        <MenuGroup>\n          <MenuGroupLabel>Sort by</MenuGroupLabel>\n          <MenuRadioGroup>\n            <MenuRadioItem value=\"artist\">Artist</MenuRadioItem>\n            <MenuRadioItem value=\"album\">Album</MenuRadioItem>\n            <MenuRadioItem value=\"title\">Title</MenuRadioItem>\n          </MenuRadioGroup>\n        </MenuGroup>\n        <MenuSeparator />\n        <MenuCheckboxItem variant=\"switch\">Auto save</MenuCheckboxItem>\n        <MenuSeparator />\n        <MenuSub>\n          <MenuSubTrigger>Add to Playlist</MenuSubTrigger>\n          <MenuSubPopup>\n            <MenuItem>Jazz</MenuItem>\n            <MenuSub>\n              <MenuSubTrigger>Rock</MenuSubTrigger>\n              <MenuSubPopup>\n                <MenuItem>Hard Rock</MenuItem>\n                <MenuItem>Soft Rock</MenuItem>\n                <MenuItem>Classic Rock</MenuItem>\n                <MenuSeparator />\n                <MenuItem>Metal</MenuItem>\n                <MenuItem>Punk</MenuItem>\n                <MenuItem>Grunge</MenuItem>\n                <MenuItem>Alternative</MenuItem>\n                <MenuItem>Indie</MenuItem>\n                <MenuItem>Electronic</MenuItem>\n              </MenuSubPopup>\n            </MenuSub>\n            <MenuItem>Pop</MenuItem>\n          </MenuSubPopup>\n        </MenuSub>\n        <MenuSeparator />\n        <MenuItem variant=\"destructive\">\n          <IconTrash aria-hidden=\"true\" />\n          Delete\n          <MenuShortcut>⌘⌫</MenuShortcut>\n        </MenuItem>\n      </MenuPopup>\n    </Menu>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/menu.tsx"
+    }
+  ],
+  "categories": [
+    "dropdown",
+    "menu"
+  ],
+  "type": "registry:ui"
+}

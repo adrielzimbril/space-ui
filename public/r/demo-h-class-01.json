@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-class-01",
+  "title": "Class",
+  "description": "Conditional class wrapper component",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-components-class",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/components/class/h-class-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { Class } from '@/components/ui/class'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Button } from '@/components/ui/button'\nimport { Badge } from '@/components/ui/badge'\nimport { IconPalette, IconSparkles } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const [active, setActive] = React.useState(true)\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconPalette className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Class</span>\n        </div>\n        <Badge variant={active ? 'default' : 'outline'} size=\"sm\">\n          {active ? 'On' : 'Off'}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex flex-col gap-3 rounded-[0.875rem] bg-background p-3\">\n        <Class className={active ? 'bg-primary/10 text-primary' : 'bg-muted text-muted-foreground'}>\n          <div className=\"flex items-center justify-between rounded-lg p-2.5 text-xs font-medium\">\n            <span>Styled target</span>\n            <IconSparkles className=\"size-4 opacity-80\" />\n          </div>\n        </Class>\n        <Button size=\"sm\" variant=\"outline\" onClick={() => setActive((a) => !a)} className=\"w-full\">\n          Toggle\n        </Button>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/class.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "components",
+    "class"
+  ],
+  "type": "registry:hook"
+}

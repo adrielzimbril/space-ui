@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-group-06",
+  "title": "Group 6",
+  "description": "Group with default button",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-group",
+    "@usespaceui/primitives-menu"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/group/p-group-06/index.tsx",
+      "content": "import { IconSearch, IconFile, IconShare, IconFolder } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { Group, GroupSeparator } from '@/components/ui/group'\nimport { Menu, MenuItem, MenuPopup, MenuTrigger } from '@/components/ui/menu'\n\nexport default function Particle() {\n  return (\n    <Group aria-label=\"File actions\">\n      <Button>\n        <IconFile aria-hidden=\"true\" />\n        Files\n      </Button>\n      <GroupSeparator className=\"bg-primary/72\" />\n      <Button>\n        <IconSearch aria-hidden=\"true\" />\n        Media\n      </Button>\n      <GroupSeparator className=\"bg-primary/72\" />\n      <Menu>\n        <MenuTrigger render={<Button aria-label=\"Menu\" size=\"icon\" />}>\n          <IconSearch aria-hidden=\"true\" className=\"size-4\" />\n        </MenuTrigger>\n        <MenuPopup align=\"end\">\n          <MenuItem>\n            <IconSearch aria-hidden=\"true\" />\n            Edit\n          </MenuItem>\n          <MenuItem>\n            <IconSearch aria-hidden=\"true\" />\n            Archive\n          </MenuItem>\n          <MenuItem>\n            <IconShare aria-hidden=\"true\" />\n            Share\n          </MenuItem>\n          <MenuItem variant=\"destructive\">\n            <IconFolder aria-hidden=\"true\" />\n            Delete\n          </MenuItem>\n        </MenuPopup>\n      </Menu>\n    </Group>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/group.tsx"
+    }
+  ],
+  "categories": [
+    "button",
+    "group"
+  ],
+  "type": "registry:ui"
+}

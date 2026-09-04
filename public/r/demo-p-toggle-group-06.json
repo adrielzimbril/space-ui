@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-toggle-group-06",
+  "title": "Toggle Group 6",
+  "description": "Multiple selection toggle group",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-toggle-group"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/toggle-group/p-toggle-group-06/index.tsx",
+      "content": "import { IconBold, IconItalic, IconUnderline } from '@tabler/icons-react'\nimport { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'\n\nexport default function Particle() {\n  return (\n    <ToggleGroup defaultValue={['bold']} multiple>\n      <ToggleGroupItem aria-label=\"Toggle bold\" value=\"bold\">\n        <IconBold />\n      </ToggleGroupItem>\n      <ToggleGroupItem aria-label=\"Toggle italic\" value=\"italic\">\n        <IconItalic />\n      </ToggleGroupItem>\n      <ToggleGroupItem aria-label=\"Toggle underline\" value=\"underline\">\n        <IconUnderline />\n      </ToggleGroupItem>\n    </ToggleGroup>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/toggle-group.tsx"
+    }
+  ],
+  "categories": [
+    "toggle",
+    "toggle group"
+  ],
+  "type": "registry:ui"
+}

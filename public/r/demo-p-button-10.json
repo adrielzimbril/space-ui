@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-button-10",
+  "title": "Button 10",
+  "description": "Card-style button with heading and description",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/button/p-button-10/index.tsx",
+      "content": "import { IconArrowRight } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\n\nexport default function Particle() {\n  return (\n    <Button className=\"h-auto! gap-4 px-4 py-3 text-left\" variant=\"outline\">\n      <div className=\"flex flex-col gap-0.5\">\n        <h3>Talent Agency</h3>\n        <p className=\"whitespace-break-spaces font-normal text-muted-foreground\">Matches for your roster</p>\n      </div>\n      <IconArrowRight\n        aria-hidden=\"true\"\n        className=\"in-[[data-slot=button]:hover]:translate-x-0.5 transition-transform\"\n      />\n    </Button>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/button.tsx"
+    }
+  ],
+  "categories": [
+    "button"
+  ],
+  "type": "registry:ui"
+}

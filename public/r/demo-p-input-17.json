@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-input-17",
+  "title": "Input 17",
+  "description": "Input with characters remaining counter",
+  "registryDependencies": [
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/input/p-input-17/index.tsx",
+      "content": "'use client'\n\nimport { useState } from 'react'\nimport { Field, FieldDescription } from '@/components/ui/field'\nimport { Input } from '@/components/ui/input'\n\nexport default function Particle() {\n  const maxLength = 14\n  const [value, setValue] = useState('')\n\n  return (\n    <Field>\n      <Input\n        aria-label=\"Code\"\n        maxLength={maxLength}\n        onChange={(e) => setValue(e.target.value)}\n        placeholder=\"Enter code\"\n        type=\"text\"\n        value={value}\n      />\n      <FieldDescription>\n        <span className=\"tabular-nums\">{maxLength - value.length}</span> characters left\n      </FieldDescription>\n    </Field>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/input.tsx"
+    }
+  ],
+  "categories": [
+    "field",
+    "input"
+  ],
+  "type": "registry:ui"
+}

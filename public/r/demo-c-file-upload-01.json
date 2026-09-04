@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-file-upload-01",
+  "title": "Basic file upload",
+  "description": "Basic file upload",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-form-use-file-upload",
+    "@usespaceui/primitives-button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/file-upload/c-file-upload-01/index.tsx",
+      "content": "'use client'\n\nimport { IconUserCircle } from '@tabler/icons-react'\nimport { useFileUpload } from '@/hooks/use-file-upload'\n\nimport { Button } from '@/components/ui/button'\nexport default function Pattern() {\n  const [{ files }, { removeFile, openFileDialog, getInputProps }] = useFileUpload({\n    accept: 'image/*',\n  })\n\n  const previewUrl = files[0]?.preview || null\n  const fileName = files[0]?.file.name || null\n\n  return (\n    <div className=\"flex flex-col items-center gap-2\">\n      <div className=\"inline-flex items-center gap-2 align-top\">\n        <div\n          className=\"border-input rounded-md relative flex size-9 shrink-0 items-center justify-center overflow-hidden border\"\n          aria-label={previewUrl ? 'Preview of uploaded image' : 'Default user avatar'}\n        >\n          {previewUrl ? (\n            <img\n              className=\"size-full object-cover\"\n              src={previewUrl}\n              alt=\"Preview of uploaded image\"\n              width={32}\n              height={32}\n            />\n          ) : (\n            <IconUserCircle className=\"opacity-60\" width={16} height={16} aria-hidden=\"true\" />\n          )}\n        </div>\n        <div className=\"relative inline-block\">\n          <Button onClick={openFileDialog} aria-haspopup=\"dialog\">\n            {fileName ? 'Change image' : 'Upload image'}\n          </Button>\n          <input {...getInputProps()} className=\"sr-only\" aria-label=\"Upload image file\" tabIndex={-1} />\n        </div>\n      </div>\n      {fileName ? (\n        <div className=\"inline-flex gap-2 text-xs\">\n          <p className=\"text-muted-foreground truncate\" aria-live=\"polite\">\n            {fileName}\n          </p>{' '}\n          <button\n            onClick={() => removeFile(files[0]?.id)}\n            className=\"text-destructive cursor-pointer font-medium hover:underline\"\n            aria-label={`Remove ${fileName}`}\n          >\n            Remove\n          </button>\n        </div>\n      ) : (\n        <div className=\"inline-flex gap-2 text-xs\">\n          <p className=\"text-muted-foreground truncate\" aria-live=\"polite\">\n            No image attached\n          </p>\n        </div>\n      )}\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/file-upload.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "file-upload"
+  ],
+  "type": "registry:component"
+}

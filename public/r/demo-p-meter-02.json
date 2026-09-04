@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-meter-02",
+  "title": "Meter 2",
+  "description": "Simple meter",
+  "registryDependencies": [
+    "@usespaceui/primitives-meter"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/meter/p-meter-02/index.tsx",
+      "content": "import { Meter } from '@/components/ui/meter'\n\nexport default function Particle() {\n  return <Meter value={50} />\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/meter.tsx"
+    }
+  ],
+  "categories": [
+    "meter"
+  ],
+  "type": "registry:ui"
+}

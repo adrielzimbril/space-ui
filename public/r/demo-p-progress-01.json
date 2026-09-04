@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-progress-01",
+  "title": "Progress 1",
+  "description": "Basic progress bar",
+  "registryDependencies": [
+    "@usespaceui/primitives-progress"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/progress/p-progress-01/index.tsx",
+      "content": "'use client'\n\nimport { useEffect, useState } from 'react'\nimport { Progress } from '@/components/ui/progress'\n\nexport default function Particle() {\n  const [value, setValue] = useState(20)\n\n  useEffect(() => {\n    const interval = setInterval(() => {\n      setValue((current) => Math.min(100, Math.round(current + Math.random() * 25)))\n    }, 1000)\n    return () => clearInterval(interval)\n  }, [])\n\n  return <Progress value={value} />\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/progress.tsx"
+    }
+  ],
+  "categories": [
+    "progress"
+  ],
+  "type": "registry:ui"
+}

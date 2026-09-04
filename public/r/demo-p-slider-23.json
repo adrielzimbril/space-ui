@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-slider-23",
+  "title": "Slider 23",
+  "description": "Slider in form",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-fieldset",
+    "@usespaceui/primitives-form",
+    "@usespaceui/primitives-slider"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/slider/p-slider-23/index.tsx",
+      "content": "'use client'\n\nimport type { FormEvent } from 'react'\nimport { useState } from 'react'\nimport { Button } from '@/components/ui/button'\nimport { Field, FieldDescription } from '@/components/ui/field'\nimport { Fieldset, FieldsetLegend } from '@/components/ui/fieldset'\nimport { Form } from '@/components/ui/form'\nimport { Slider, SliderValue } from '@/components/ui/slider'\n\nexport default function Particle() {\n  const [loading, setLoading] = useState<boolean>(false)\n  const [value, setValue] = useState<number | readonly number[]>([25, 75])\n\n  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {\n    e.preventDefault()\n    const formData = new FormData(e.currentTarget)\n    setLoading(true)\n    await new Promise((r) => setTimeout(r, 800))\n    setLoading(false)\n    const volumes = formData.getAll('volume')\n    alert(`Volume: ${volumes.join(', ')}`)\n  }\n\n  return (\n    <Form className=\"flex w-full flex-col gap-4\" onSubmit={onSubmit}>\n      <Fieldset className=\"flex w-full flex-col items-stretch gap-3\">\n        <Field>\n          <Slider name=\"volume\" onValueChange={setValue} value={value}>\n            <div className=\"mb-2 flex items-center justify-between gap-1\">\n              <FieldsetLegend>Volume</FieldsetLegend>\n              <SliderValue />\n            </div>\n          </Slider>\n          <FieldDescription>Choose a value between 0 and 100</FieldDescription>\n        </Field>\n      </Fieldset>\n      <Button loading={loading} type=\"submit\">\n        Submit\n      </Button>\n    </Form>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/slider.tsx"
+    }
+  ],
+  "categories": [
+    "slider",
+    "form"
+  ],
+  "type": "registry:ui"
+}

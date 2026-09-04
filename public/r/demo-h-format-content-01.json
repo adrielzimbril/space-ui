@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-format-content-01",
+  "title": "formatContent",
+  "description": "Text truncate and cleaner",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-utils-format-content",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/utils/format-content/h-format-content-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { slugifyHeadline } from '@/utils/format-content'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Badge } from '@/components/ui/badge'\nimport { Input } from '@/components/ui/input'\nimport { IconLink } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const [text, setText] = React.useState('Space UI provides modern React components and hooks.')\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconLink className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Slug</span>\n        </div>\n        <Badge variant=\"outline\" size=\"sm\">\n          URL\n        </Badge>\n      </div>\n      <CardPanel className=\"flex flex-col gap-3 rounded-[0.875rem] bg-background p-3\">\n        <Input\n          value={text}\n          onChange={(e) => setText(e.target.value)}\n          className=\"text-base sm:text-sm\"\n          aria-label=\"Headline to slugify\"\n        />\n        <div className=\"rounded-lg bg-muted p-2.5\">\n          <span className=\"block text-[.6875rem] font-semibold text-muted-foreground\">Slug</span>\n          <span className=\"mt-0.5 block truncate font-mono text-sm font-semibold text-foreground\">\n            /{slugifyHeadline(text)}\n          </span>\n        </div>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/format-content.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "utils",
+    "format-content"
+  ],
+  "type": "registry:hook"
+}

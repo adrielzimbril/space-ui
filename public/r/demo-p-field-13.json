@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-field-13",
+  "title": "Field 13",
+  "description": "Field with checkbox group",
+  "registryDependencies": [
+    "@usespaceui/primitives-checkbox",
+    "@usespaceui/primitives-checkbox-group",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-fieldset"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/field/p-field-13/index.tsx",
+      "content": "'use client'\n\nimport { Checkbox } from '@/components/ui/checkbox'\nimport { CheckboxGroup } from '@/components/ui/checkbox-group'\nimport { Field, FieldItem, FieldLabel } from '@/components/ui/field'\nimport { Fieldset, FieldsetLegend } from '@/components/ui/fieldset'\n\nexport default function Particle() {\n  return (\n    <Field className=\"gap-2\" name=\"frameworks\" render={(props) => <Fieldset {...props} />}>\n      <FieldsetLegend className=\"font-medium text-sm\">Frameworks</FieldsetLegend>\n      <CheckboxGroup defaultValue={['react']}>\n        <FieldItem>\n          <FieldLabel>\n            <Checkbox value=\"react\" /> React\n          </FieldLabel>\n        </FieldItem>\n        <FieldItem>\n          <FieldLabel>\n            <Checkbox value=\"vue\" /> Vue\n          </FieldLabel>\n        </FieldItem>\n        <FieldItem>\n          <FieldLabel>\n            <Checkbox value=\"svelte\" /> Svelte\n          </FieldLabel>\n        </FieldItem>\n      </CheckboxGroup>\n    </Field>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/field.tsx"
+    }
+  ],
+  "categories": [
+    "checkbox",
+    "checkbox group",
+    "field",
+    "fieldset",
+    "label"
+  ],
+  "type": "registry:ui"
+}

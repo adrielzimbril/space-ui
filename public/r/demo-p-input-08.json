@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-input-08",
+  "title": "Input 9",
+  "description": "Password input with toggle visibility",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-input-group",
+    "@usespaceui/primitives-tooltip"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/input/p-input-08/index.tsx",
+      "content": "'use client'\n\nimport { IconEye, IconEyeOff } from '@tabler/icons-react'\nimport { useState } from 'react'\nimport { Button } from '@/components/ui/button'\nimport { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'\nimport { Tooltip, TooltipPopup, TooltipTrigger } from '@/components/ui/tooltip'\n\nexport default function Particle() {\n  const [showPassword, setShowPassword] = useState(false)\n\n  return (\n    <InputGroup>\n      <InputGroupInput\n        aria-label=\"Password with toggle visibility\"\n        placeholder=\"Enter your password\"\n        type={showPassword ? 'text' : 'password'}\n      />\n      <InputGroupAddon align=\"inline-end\">\n        <Tooltip>\n          <TooltipTrigger\n            render={\n              <Button\n                aria-label={showPassword ? 'Hide password' : 'Show password'}\n                onClick={() => setShowPassword(!showPassword)}\n                size=\"icon-xs\"\n                variant=\"ghost\"\n              />\n            }\n          >\n            {showPassword ? <IconEyeOff /> : <IconEye />}\n          </TooltipTrigger>\n          <TooltipPopup>{showPassword ? 'Hide password' : 'Show password'}</TooltipPopup>\n        </Tooltip>\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/input.tsx"
+    }
+  ],
+  "categories": [
+    "button",
+    "input",
+    "input group",
+    "tooltip"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-first-render-01",
+  "title": "useFirstRender",
+  "description": "First render cycle indicator",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-lifecycle-use-first-render",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/lifecycle/first-render/h-first-render-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { useFirstRender } from '@/hooks/use-first-render'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Badge } from '@/components/ui/badge'\nimport { Button } from '@/components/ui/button'\nimport { IconSparkles } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const isFirst = useFirstRender()\n  const [, force] = React.useReducer((x) => x + 1, 0)\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconSparkles className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>First Render</span>\n        </div>\n        <Badge variant={isFirst ? 'default' : 'secondary'} size=\"sm\">\n          {isFirst ? 'First' : 'Later'}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex items-center justify-between rounded-[0.875rem] bg-background p-3\">\n        <span className=\"text-sm text-muted-foreground\">{isFirst ? 'Mount cycle' : 'Re-render'}</span>\n        <Button size=\"sm\" variant=\"outline\" onClick={force}>\n          Re-render\n        </Button>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/first-render.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "first-render"
+  ],
+  "type": "registry:hook"
+}

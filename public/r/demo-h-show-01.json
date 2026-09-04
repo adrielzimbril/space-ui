@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-show-01",
+  "title": "Show",
+  "description": "Truthy conditional renderer with unwrapped data",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-components-show",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/components/show/h-show-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { Show } from '@/components/ui/show'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Button } from '@/components/ui/button'\nimport { Badge } from '@/components/ui/badge'\nimport { IconUser, IconUserX } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const [user, setUser] = React.useState<{ name: string; role: string } | null>({\n    name: 'Adriel Zimbril',\n    role: 'Product Lead',\n  })\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            {user ? (\n              <IconUser className=\"size-4 text-muted-foreground\" />\n            ) : (\n              <IconUserX className=\"size-4 text-muted-foreground\" />\n            )}\n          </Badge>\n          <span>Show</span>\n        </div>\n        <Badge variant={user ? 'success' : 'outline'} size=\"sm\">\n          {user ? 'In' : 'Out'}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex flex-col gap-3 rounded-[0.875rem] bg-background p-3\">\n        <div className=\"rounded-lg bg-muted p-2.5\">\n          <Show when={user} fallback={<p className=\"text-center text-xs text-muted-foreground\">Logged out</p>}>\n            {(u) => (\n              <div className=\"flex items-center justify-between gap-3\">\n                <div className=\"min-w-0\">\n                  <span className=\"block text-[.6875rem] font-semibold text-muted-foreground\">{u.role}</span>\n                  <span className=\"mt-0.5 block truncate text-sm font-semibold text-foreground\">{u.name}</span>\n                </div>\n                <Badge variant=\"secondary\" size=\"sm\">\n                  Active\n                </Badge>\n              </div>\n            )}\n          </Show>\n        </div>\n        <Button\n          size=\"sm\"\n          variant=\"outline\"\n          onClick={() => setUser(user ? null : { name: 'Adriel Zimbril', role: 'Product Lead' })}\n          className=\"w-full\"\n        >\n          {user ? 'Sign out' : 'Sign in'}\n        </Button>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/show.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "components",
+    "show"
+  ],
+  "type": "registry:hook"
+}

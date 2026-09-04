@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-calendar-18",
+  "title": "Calendar 18",
+  "description": "Calendar with time input",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-calendar",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-input-group"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/calendar/p-calendar-18/index.tsx",
+      "content": "'use client'\n\nimport { IconClock } from '@tabler/icons-react'\nimport { useState } from 'react'\nimport { Calendar } from '@/components/ui/calendar'\nimport { Field, FieldLabel } from '@/components/ui/field'\nimport { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'\n\nexport default function Particle() {\n  const [date, setDate] = useState<Date | undefined>(() => new Date())\n  const [month, setMonth] = useState<Date>(() => new Date())\n  const [timeValue, setTimeValue] = useState('12:00:00')\n\n  const handleDayPickerSelect = (selectedDate: Date | undefined) => {\n    setDate(selectedDate)\n    if (selectedDate) {\n      setMonth(selectedDate)\n    }\n  }\n\n  const handleTimeChange = (e: React.ChangeEvent<HTMLInputElement>) => {\n    setTimeValue(e.target.value)\n  }\n\n  return (\n    <div className=\"flex flex-col gap-2\">\n      <Calendar mode=\"single\" month={month} onMonthChange={setMonth} onSelect={handleDayPickerSelect} selected={date} />\n      <Field className=\"flex-row items-center gap-3\">\n        <FieldLabel className=\"whitespace-nowrap text-xs\">Enter time</FieldLabel>\n        <InputGroup className=\"grow\">\n          <InputGroupInput\n            aria-label=\"Select time\"\n            className=\"*:[input]:[&::-webkit-calendar-picker-indicator]:hidden *:[input]:[&::-webkit-calendar-picker-indicator]:appearance-none\"\n            onChange={handleTimeChange}\n            step=\"1\"\n            type=\"time\"\n            value={timeValue}\n          />\n          <InputGroupAddon>\n            <IconClock aria-hidden=\"true\" />\n          </InputGroupAddon>\n        </InputGroup>\n      </Field>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/calendar.tsx"
+    }
+  ],
+  "categories": [
+    "calendar",
+    "input",
+    "field"
+  ],
+  "type": "registry:ui"
+}

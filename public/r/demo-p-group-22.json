@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-group-22",
+  "title": "Group 22",
+  "description": "Group with filter label, combobox multi-select, and remove button",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-avatar",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-combobox",
+    "@usespaceui/primitives-group"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/group/p-group-22/index.tsx",
+      "content": "'use client'\n\nimport { IconInfoCircle, IconFilter, IconSearch, IconX } from '@tabler/icons-react'\nimport { useState } from 'react'\nimport { cn } from '@/lib/utils'\nimport { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'\nimport { Badge } from '@/components/ui/badge'\nimport { Button, buttonVariants } from '@/components/ui/button'\nimport {\n  Combobox,\n  ComboboxEmpty,\n  ComboboxInput,\n  ComboboxItem,\n  ComboboxList,\n  ComboboxPopup,\n  ComboboxTrigger,\n} from '@/components/ui/combobox'\nimport { Group, GroupSeparator, GroupText } from '@/components/ui/group'\n\ntype FilterOption = {\n  id: string\n  label: string\n  avatar?: string\n}\n\nconst members: FilterOption[] = [\n  {\n    avatar: 'https://avatars.spaceui.one/v1?name=jupiter&variant=pebble',\n    id: 'alex-chen',\n    label: 'Alex Chen',\n  },\n  {\n    avatar: 'https://avatars.spaceui.one/v1?name=saturn&variant=invader',\n    id: 'sarah-johnson',\n    label: 'Sarah Johnson',\n  },\n  {\n    avatar: 'https://avatars.spaceui.one/v1?name=venus&variant=kendo',\n    id: 'marcus-williams',\n    label: 'Marcus Williams',\n  },\n  {\n    avatar: 'https://avatars.spaceui.one/v1?name=mercury&variant=lumina',\n    id: 'emma-davis',\n    label: 'Emma Davis',\n  },\n  {\n    avatar: 'https://avatars.spaceui.one/v1?name=pluto&variant=shaula',\n    id: 'james-miller',\n    label: 'James Miller',\n  },\n]\n\nfunction getInitials(name: string): string {\n  const parts = name.trim().split(/\\s+/)\n  if (parts.length === 1) {\n    return parts[0]?.charAt(0).toUpperCase() ?? ''\n  }\n  const first = parts[0]?.charAt(0) ?? ''\n  const last = parts[parts.length - 1]?.charAt(0) ?? ''\n  return (first + last).toUpperCase()\n}\n\nfunction MemberAvatar({ name, avatarUrl, className }: { name: string; avatarUrl?: string; className?: string }) {\n  return (\n    <Avatar className={cn('size-5', className)}>\n      {avatarUrl ? <AvatarImage alt={name} src={avatarUrl} /> : null}\n      <AvatarFallback className=\"text-[0.5rem]\">{getInitials(name)}</AvatarFallback>\n    </Avatar>\n  )\n}\n\nexport default function Particle() {\n  const [selectedMembers, setSelectedMembers] = useState<FilterOption[]>(members.slice(0, 2))\n\n  const renderTriggerContent = () => {\n    if (selectedMembers.length === 0) return 'Select'\n    const firstMember = selectedMembers[0]\n    const remainingCount = selectedMembers.length - 1\n\n    return (\n      <div className=\"flex items-center gap-2\">\n        <MemberAvatar avatarUrl={firstMember?.avatar} name={firstMember?.label ?? ''} />\n        <span className=\"truncate\">{firstMember?.label}</span>\n        {remainingCount > 0 && (\n          <Badge className=\"tabular-nums\" variant=\"secondary\">\n            +{remainingCount}\n          </Badge>\n        )}\n      </div>\n    )\n  }\n\n  return (\n    <Group>\n      <GroupText\n        className={cn(\n          buttonVariants({\n            size: 'sm',\n            variant: 'outline',\n          }),\n          'pointer-events-none',\n        )}\n      >\n        <IconFilter />\n        Member\n      </GroupText>\n      <GroupSeparator />\n      <Combobox\n        autoHighlight\n        items={members}\n        multiple\n        onValueChange={(value) => {\n          if (Array.isArray(value)) {\n            setSelectedMembers(value)\n          }\n        }}\n        value={selectedMembers}\n      >\n        <ComboboxTrigger\n          render={\n            <Button\n              className={selectedMembers.length === 0 ? 'justify-between' : undefined}\n              size=\"sm\"\n              variant=\"outline\"\n            />\n          }\n        >\n          {renderTriggerContent()}\n          {selectedMembers.length === 0 && <IconInfoCircle className=\"-me-1!\" />}\n        </ComboboxTrigger>\n        <ComboboxPopup aria-label=\"Select member\">\n          <div className=\"border-b p-2\">\n            <ComboboxInput\n              className=\"rounded-md before:rounded-[calc(var(--radius-md)-1px)]\"\n              placeholder=\"Search members...\"\n              showTrigger={false}\n              startAddon={<IconSearch />}\n            />\n          </div>\n          <ComboboxEmpty>No members found.</ComboboxEmpty>\n          <ComboboxList>\n            {(option: FilterOption) => (\n              <ComboboxItem key={option.id} value={option}>\n                <div className=\"flex items-center gap-2\">\n                  <MemberAvatar avatarUrl={option.avatar} name={option.label} />\n                  <span>{option.label}</span>\n                </div>\n              </ComboboxItem>\n            )}\n          </ComboboxList>\n        </ComboboxPopup>\n      </Combobox>\n      <GroupSeparator />\n      <Button aria-label=\"Remove filter\" onClick={() => setSelectedMembers([])} size=\"icon-sm\" variant=\"outline\">\n        <IconX />\n      </Button>\n    </Group>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/group.tsx"
+    }
+  ],
+  "categories": [
+    "avatar",
+    "badge",
+    "button",
+    "combobox",
+    "group"
+  ],
+  "type": "registry:ui"
+}

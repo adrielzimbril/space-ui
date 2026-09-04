@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-device-os-01",
+  "title": "useDeviceOS",
+  "description": "Operating system detection",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-browser-use-device-os",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/browser/device-os/h-device-os-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { useDeviceOS } from '@/hooks/use-device-os'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Badge } from '@/components/ui/badge'\nimport { IconDeviceDesktop, IconBrandApple, IconBrandWindows, IconBrandAndroid } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const os = useDeviceOS()\n\n  const getIcon = () => {\n    switch (os.toLowerCase()) {\n      case 'macos':\n      case 'ios':\n        return <IconBrandApple className=\"size-4 text-muted-foreground\" />\n      case 'windows':\n        return <IconBrandWindows className=\"size-4 text-muted-foreground\" />\n      case 'android':\n        return <IconBrandAndroid className=\"size-4 text-muted-foreground\" />\n      default:\n        return <IconDeviceDesktop className=\"size-4 text-muted-foreground\" />\n    }\n  }\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            {getIcon()}\n          </Badge>\n          <span>OS</span>\n        </div>\n        <Badge variant=\"outline\" size=\"sm\" className=\"capitalize\">\n          {os}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex flex-col gap-3 rounded-[0.875rem] bg-background p-3\">\n        <div className=\"rounded-lg bg-muted p-2.5\">\n          <span className=\"block text-[.6875rem] font-semibold text-muted-foreground\">Detected</span>\n          <span className=\"mt-0.5 block font-mono text-sm font-semibold capitalize text-foreground\">{os}</span>\n        </div>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/device-os.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "device-os"
+  ],
+  "type": "registry:hook"
+}

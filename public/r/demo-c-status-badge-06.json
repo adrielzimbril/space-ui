@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-status-badge-06",
+  "title": "Status Badge Unavailable",
+  "description": "Unavailable status badge displaying upcoming resumption date.",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-status-badge"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/status-badge/c-status-badge-06/index.tsx",
+      "content": "import Link from 'next/link'\nimport { IconArrowUpRight } from '@tabler/icons-react'\nimport { StatusBadge } from '@/components/spaceui/status-badge'\n\nexport default function StatusBadgeUnavailableDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4 p-4\">\n      <StatusBadge mode=\"inline\" status=\"offline\" primaryText=\"Complet\" size=\"default\">\n        <Link href=\"#planning\" className=\"inline-flex items-center gap-1 hover:text-foreground transition-colors\">\n          <span>Prochaines disponibilités : 15 Septembre</span>\n          <IconArrowUpRight className=\"size-3.5\" />\n        </Link>\n      </StatusBadge>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/status-badge.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "status-badge"
+  ],
+  "type": "registry:component"
+}

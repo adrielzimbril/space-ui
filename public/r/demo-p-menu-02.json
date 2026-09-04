@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-menu-02",
+  "title": "Menu 2",
+  "description": "Menu with hover",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-menu"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/menu/p-menu-02/index.tsx",
+      "content": "import { Button } from '@/components/ui/button'\nimport { Menu, MenuItem, MenuPopup, MenuTrigger } from '@/components/ui/menu'\n\nexport default function Particle() {\n  return (\n    <Menu>\n      <MenuTrigger openOnHover render={<Button variant=\"outline\" />}>\n        Hover me\n      </MenuTrigger>\n      <MenuPopup>\n        <MenuItem>Item one</MenuItem>\n        <MenuItem>Item two</MenuItem>\n      </MenuPopup>\n    </Menu>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/menu.tsx"
+    }
+  ],
+  "categories": [
+    "dropdown",
+    "menu"
+  ],
+  "type": "registry:ui"
+}

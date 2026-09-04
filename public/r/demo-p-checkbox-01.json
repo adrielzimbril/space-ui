@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-checkbox-01",
+  "title": "Checkbox 1",
+  "description": "Basic checkbox",
+  "registryDependencies": [
+    "@usespaceui/primitives-checkbox",
+    "@usespaceui/primitives-label"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/checkbox/p-checkbox-01/index.tsx",
+      "content": "import { Checkbox } from '@/components/ui/checkbox'\nimport { Label } from '@/components/ui/label'\n\nexport default function Particle() {\n  return (\n    <Label>\n      <Checkbox />\n      Accept terms and conditions\n    </Label>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/checkbox.tsx"
+    }
+  ],
+  "categories": [
+    "checkbox"
+  ],
+  "type": "registry:ui"
+}

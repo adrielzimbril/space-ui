@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-favicon-01",
+  "title": "useFavicon",
+  "description": "Dynamic browser favicon switcher",
+  "registryDependencies": [
+    "@usespaceui/hooks-browser-use-favicon",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/browser/favicon/h-favicon-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { useFavicon } from '@/hooks/use-favicon'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Button } from '@/components/ui/button'\nimport { Badge } from '@/components/ui/badge'\nimport { IconStar } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const [icon, setIcon] = React.useState('⚡')\n  useFavicon(\n    `data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>${icon}</text></svg>`,\n  )\n\n  const emojis = [\n    { label: 'Rocket', emoji: '🚀' },\n    { label: 'Star', emoji: '⭐' },\n    { label: 'Fire', emoji: '🔥' },\n    { label: 'Bolt', emoji: '⚡' },\n  ]\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconStar className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Favicon</span>\n        </div>\n        <Badge variant=\"outline\" size=\"sm\">\n          {icon}\n        </Badge>\n      </div>\n      <CardPanel className=\"grid grid-cols-4 gap-2 rounded-[0.875rem] bg-background p-3\">\n        {emojis.map((item) => (\n          <Button\n            key={item.emoji}\n            size=\"sm\"\n            variant={icon === item.emoji ? 'default' : 'outline'}\n            onClick={() => setIcon(item.emoji)}\n            aria-label={item.label}\n          >\n            {item.emoji}\n          </Button>\n        ))}\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/favicon.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "favicon"
+  ],
+  "type": "registry:hook"
+}

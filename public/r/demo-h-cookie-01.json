@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-cookie-01",
+  "title": "cookie",
+  "description": "Imperative cookie helper",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-utils-cookie",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/utils/cookie/h-cookie-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { getCookie, setCookie } from '@/utils/cookie'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Button } from '@/components/ui/button'\nimport { Badge } from '@/components/ui/badge'\nimport { IconCookie } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const [val, setVal] = React.useState<string | null>(null)\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconCookie className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Cookie</span>\n        </div>\n        <Badge variant={val ? 'success' : 'outline'} size=\"sm\">\n          {val ? 'Set' : 'Empty'}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex flex-col gap-3 rounded-[0.875rem] bg-background p-3\">\n        <div className=\"rounded-lg bg-muted p-2.5\">\n          <span className=\"block text-[.6875rem] font-semibold text-muted-foreground\">space_token</span>\n          <span className=\"mt-0.5 block font-mono text-sm font-semibold text-foreground\">{val ?? 'undefined'}</span>\n        </div>\n        <Button\n          size=\"sm\"\n          onClick={() => {\n            setCookie('space_token', 'session_verified', 1)\n            setVal(getCookie('space_token'))\n          }}\n          className=\"w-full\"\n        >\n          Set & read\n        </Button>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/cookie.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "utils",
+    "cookie"
+  ],
+  "type": "registry:hook"
+}

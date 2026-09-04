@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-select-03",
+  "title": "Select 3",
+  "description": "Disabled select",
+  "registryDependencies": [
+    "@usespaceui/primitives-select"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/select/p-select-03/index.tsx",
+      "content": "import { Select, SelectItem, SelectPopup, SelectTrigger, SelectValue } from '@/components/ui/select'\n\nconst items = [\n  { label: 'Next.js', value: 'next' },\n  { label: 'Vite', value: 'vite' },\n  { label: 'Astro', value: 'astro' },\n]\n\nexport default function Particle() {\n  return (\n    <Select aria-label=\"Select framework\" items={items}>\n      <SelectTrigger disabled>\n        <SelectValue placeholder=\"Select framework\" />\n      </SelectTrigger>\n      <SelectPopup>\n        {items.map(({ label, value }) => (\n          <SelectItem key={value} value={value}>\n            {label}\n          </SelectItem>\n        ))}\n      </SelectPopup>\n    </Select>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/select.tsx"
+    }
+  ],
+  "categories": [
+    "select"
+  ],
+  "type": "registry:ui"
+}

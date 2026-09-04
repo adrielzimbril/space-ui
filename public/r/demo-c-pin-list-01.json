@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-pin-list-01",
+  "title": "Pin List",
+  "description": "Demo showing a pin list.",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-pin-list"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/pin-list/c-pin-list-01/index.tsx",
+      "content": "'use client'\n\nimport { IconGitCommit, IconBug, IconBrandNpm, IconLock, IconSparkles } from '@tabler/icons-react'\nimport { PinList } from '@/components/spaceui/pin-list'\n\nconst ITEMS = [\n  {\n    id: 1,\n    name: 'Commit Zone',\n    info: 'Code updates · Closes 9:00 PM',\n    icon: IconGitCommit,\n    pinned: true,\n  },\n  {\n    id: 2,\n    name: '404 Room',\n    info: 'Fixing errors · Open 24 hours',\n    icon: IconBug,\n    pinned: true,\n  },\n  {\n    id: 3,\n    name: 'NPM Stop',\n    info: 'Install dependencies · Closes 8:00 PM',\n    icon: IconBrandNpm,\n    pinned: false,\n  },\n  {\n    id: 4,\n    name: 'Token Lock',\n    info: 'Auth & security · Open 24 hours',\n    icon: IconLock,\n    pinned: false,\n  },\n  {\n    id: 5,\n    name: 'AI Studio',\n    info: 'Generative models · Active now',\n    icon: IconSparkles,\n    pinned: false,\n  },\n]\n\nexport default function PinListDemo() {\n  return (\n    <div className=\"w-full max-w-sm p-4\">\n      <PinList items={ITEMS} />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/pin-list.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "pin-list"
+  ],
+  "type": "registry:component"
+}

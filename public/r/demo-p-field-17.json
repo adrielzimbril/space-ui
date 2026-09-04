@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-field-17",
+  "title": "Field 17",
+  "description": "Field with number field",
+  "registryDependencies": [
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-number-field"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/field/p-field-17/index.tsx",
+      "content": "import { Field, FieldDescription } from '@/components/ui/field'\nimport {\n  NumberField,\n  NumberFieldDecrement,\n  NumberFieldGroup,\n  NumberFieldIncrement,\n  NumberFieldInput,\n  NumberFieldScrubArea,\n} from '@/components/ui/number-field'\n\nexport default function Particle() {\n  return (\n    <Field>\n      <NumberField defaultValue={1} max={100} min={1}>\n        <NumberFieldScrubArea label=\"Quantity\" />\n        <NumberFieldGroup>\n          <NumberFieldDecrement />\n          <NumberFieldInput />\n          <NumberFieldIncrement />\n        </NumberFieldGroup>\n      </NumberField>\n      <FieldDescription>Choose a value between 1 and 100.</FieldDescription>\n    </Field>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/field.tsx"
+    }
+  ],
+  "categories": [
+    "field",
+    "input",
+    "label",
+    "number field"
+  ],
+  "type": "registry:ui"
+}

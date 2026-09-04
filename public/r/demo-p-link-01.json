@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-link-01",
+  "title": "Link 1",
+  "description": "Text link variants",
+  "registryDependencies": [
+    "@usespaceui/primitives-link"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/link/p-link-01/index.tsx",
+      "content": "import { Link } from '@/components/ui/link'\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-6 text-sm\">\n      <Link href=\"#\" variant=\"default\">\n        Default\n      </Link>\n      <Link href=\"#\" variant=\"secondary\">\n        Secondary\n      </Link>\n      <Link href=\"#\" variant=\"outline\" className=\"rounded-md px-3 py-1\">\n        Outline\n      </Link>\n      <Link href=\"#\" variant=\"ghost\">\n        Ghost\n      </Link>\n      <Link href=\"#\" variant=\"destructive\">\n        Destructive\n      </Link>\n      <Link href=\"#\" variant=\"destructive-outline\" className=\"rounded-md px-3 py-1\">\n        Destructive Outline\n      </Link>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/link.tsx"
+    }
+  ],
+  "categories": [
+    "link"
+  ],
+  "type": "registry:ui"
+}

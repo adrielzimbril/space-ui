@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-resizable-10",
+  "title": "State-tracked resizable layout.",
+  "description": "State-tracked resizable layout.",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-resizable"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/resizable/c-resizable-10/index.tsx",
+      "content": "'use client'\n\nimport { useState } from 'react'\n\nimport { ResizableHandle, ResizablePanel, ResizablePanelGroup } from '@/components/spaceui/resizable'\n\nexport default function Pattern() {\n  const [sizes, setSizes] = useState<Record<string, number>>({\n    left: 30,\n    right: 70,\n  })\n\n  return (\n    <div className=\"mx-auto w-full max-w-lg\">\n      <ResizablePanelGroup\n        orientation=\"horizontal\"\n        className=\"rounded-2xl min-h-[200px] border\"\n        onLayoutChange={(layout) => {\n          setSizes(layout)\n        }}\n      >\n        <ResizablePanel id=\"left\" defaultSize={30} minSize={20}>\n          <div className=\"flex h-full flex-col items-center justify-center gap-2 p-6\">\n            <span className=\"text-sm font-semibold\">{Math.round(sizes.left ?? 30)}%</span>\n          </div>\n        </ResizablePanel>\n        <ResizableHandle withHandle />\n        <ResizablePanel id=\"right\" defaultSize={70} minSize={30}>\n          <div className=\"flex h-full flex-col items-center justify-center gap-2 p-6\">\n            <span className=\"text-sm font-semibold\">{Math.round(sizes.right ?? 70)}%</span>\n          </div>\n        </ResizablePanel>\n      </ResizablePanelGroup>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/resizable.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "resizable"
+  ],
+  "type": "registry:component"
+}

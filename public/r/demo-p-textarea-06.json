@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-textarea-06",
+  "title": "Textarea 6",
+  "description": "Textarea with label and required indicator",
+  "registryDependencies": [
+    "@usespaceui/primitives-label",
+    "@usespaceui/primitives-textarea"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/textarea/p-textarea-06/index.tsx",
+      "content": "'use client'\n\nimport { useId } from 'react'\nimport { Label } from '@/components/ui/label'\nimport { Textarea } from '@/components/ui/textarea'\n\nexport default function Particle() {\n  const id = useId()\n  return (\n    <div className=\"flex flex-col gap-2\">\n      <Label htmlFor={id}>\n        Message <span className=\"text-destructive\">*</span>\n      </Label>\n      <Textarea id={id} placeholder=\"Type your message here\" required />\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/textarea.tsx"
+    }
+  ],
+  "categories": [
+    "label",
+    "textarea"
+  ],
+  "type": "registry:ui"
+}

@@ -183,10 +183,10 @@
     ],
     "createdAt": "2026-08-31",
     "updatedAt": "2026-08-31",
-    "size": "12.3 KB",
-    "rawSize": 12637,
-    "directSize": "3.1 KB",
-    "fileCount": 4,
+    "size": "38.6 KB",
+    "rawSize": 39485,
+    "directSize": "29.3 KB",
+    "fileCount": 5,
     "dependencies": [],
     "registryDependencies": [
       "@usespaceui/lib-utils",
@@ -5337,12 +5337,7 @@
       "@usespaceui/lib-utils",
       "@usespaceui/primitives-avatar"
     ],
-    "dependents": [
-      "liquid-metal-avatar-custom",
-      "liquid-metal-avatar-default",
-      "liquid-metal-avatar-fallback",
-      "liquid-metal-avatar-sizes"
-    ],
+    "dependents": [],
     "related": [
       {
         "name": "avatar",
@@ -5352,26 +5347,6 @@
         "category": "Avatar",
         "categories": [
           "avatar"
-        ]
-      },
-      {
-        "name": "liquid-metal-avatar-custom",
-        "title": "Liquid Metal Avatar Custom",
-        "description": "Interactive demo showcasing the Liquid Metal Avatar Custom component.",
-        "url": "/ui-kit/primitives/liquid-metal-avatar-custom",
-        "category": "Liquid-metal-avatar-custom",
-        "categories": [
-          "liquid-metal-avatar-custom"
-        ]
-      },
-      {
-        "name": "liquid-metal-avatar-default",
-        "title": "Liquid Metal Avatar Default",
-        "description": "Interactive demo showcasing the Liquid Metal Avatar Default component.",
-        "url": "/ui-kit/primitives/liquid-metal-avatar-default",
-        "category": "Liquid-metal-avatar-default",
-        "categories": [
-          "liquid-metal-avatar-default"
         ]
       }
     ]
@@ -5401,12 +5376,7 @@
       "@usespaceui/lib-utils",
       "@usespaceui/primitives-avatar"
     ],
-    "dependents": [
-      "liquid-metal-avatar-custom",
-      "liquid-metal-avatar-default",
-      "liquid-metal-avatar-fallback",
-      "liquid-metal-avatar-sizes"
-    ],
+    "dependents": [],
     "related": [
       {
         "name": "avatar",
@@ -5416,26 +5386,6 @@
         "category": "Avatar",
         "categories": [
           "avatar"
-        ]
-      },
-      {
-        "name": "liquid-metal-avatar-custom",
-        "title": "Liquid Metal Avatar Custom",
-        "description": "Interactive demo showcasing the Liquid Metal Avatar Custom component.",
-        "url": "/ui-kit/primitives/liquid-metal-avatar-custom",
-        "category": "Liquid-metal-avatar-custom",
-        "categories": [
-          "liquid-metal-avatar-custom"
-        ]
-      },
-      {
-        "name": "liquid-metal-avatar-default",
-        "title": "Liquid Metal Avatar Default",
-        "description": "Interactive demo showcasing the Liquid Metal Avatar Default component.",
-        "url": "/ui-kit/primitives/liquid-metal-avatar-default",
-        "category": "Liquid-metal-avatar-default",
-        "categories": [
-          "liquid-metal-avatar-default"
         ]
       }
     ]
@@ -5465,11 +5415,7 @@
       "@usespaceui/lib-utils",
       "@usespaceui/primitives-button"
     ],
-    "dependents": [
-      "liquid-metal-button-custom",
-      "liquid-metal-button-default",
-      "liquid-metal-button-sizes"
-    ],
+    "dependents": [],
     "related": [
       {
         "name": "button",
@@ -5479,26 +5425,6 @@
         "category": "Button",
         "categories": [
           "button"
-        ]
-      },
-      {
-        "name": "liquid-metal-button-custom",
-        "title": "Liquid Metal Button Custom",
-        "description": "Interactive demo showcasing the Liquid Metal Button Custom component.",
-        "url": "/ui-kit/primitives/liquid-metal-button-custom",
-        "category": "Liquid-metal-button-custom",
-        "categories": [
-          "liquid-metal-button-custom"
-        ]
-      },
-      {
-        "name": "liquid-metal-button-default",
-        "title": "Liquid Metal Button Default",
-        "description": "Interactive demo showcasing the Liquid Metal Button Default component.",
-        "url": "/ui-kit/primitives/liquid-metal-button-default",
-        "category": "Liquid-metal-button-default",
-        "categories": [
-          "liquid-metal-button-default"
         ]
       }
     ]
@@ -5528,11 +5454,7 @@
       "@usespaceui/lib-utils",
       "@usespaceui/primitives-button"
     ],
-    "dependents": [
-      "liquid-metal-button-custom",
-      "liquid-metal-button-default",
-      "liquid-metal-button-sizes"
-    ],
+    "dependents": [],
     "related": [
       {
         "name": "button",
@@ -5542,26 +5464,6 @@
         "category": "Button",
         "categories": [
           "button"
-        ]
-      },
-      {
-        "name": "liquid-metal-button-custom",
-        "title": "Liquid Metal Button Custom",
-        "description": "Interactive demo showcasing the Liquid Metal Button Custom component.",
-        "url": "/ui-kit/primitives/liquid-metal-button-custom",
-        "category": "Liquid-metal-button-custom",
-        "categories": [
-          "liquid-metal-button-custom"
-        ]
-      },
-      {
-        "name": "liquid-metal-button-default",
-        "title": "Liquid Metal Button Default",
-        "description": "Interactive demo showcasing the Liquid Metal Button Default component.",
-        "url": "/ui-kit/primitives/liquid-metal-button-default",
-        "category": "Liquid-metal-button-default",
-        "categories": [
-          "liquid-metal-button-default"
         ]
       }
     ]
@@ -5590,12 +5492,7 @@
       "@usespaceui/lib-utils",
       "@usespaceui/primitives-card"
     ],
-    "dependents": [
-      "liquid-metal-card-custom",
-      "liquid-metal-card-default",
-      "liquid-metal-card-login",
-      "liquid-metal-card-player"
-    ],
+    "dependents": [],
     "related": [
       {
         "name": "card",
@@ -5605,26 +5502,6 @@
         "category": "Card",
         "categories": [
           "card"
-        ]
-      },
-      {
-        "name": "liquid-metal-card-custom",
-        "title": "Liquid Metal Card Custom",
-        "description": "Interactive demo showcasing the Liquid Metal Card Custom component.",
-        "url": "/ui-kit/primitives/liquid-metal-card-custom",
-        "category": "Liquid-metal-card-custom",
-        "categories": [
-          "liquid-metal-card-custom"
-        ]
-      },
-      {
-        "name": "liquid-metal-card-default",
-        "title": "Liquid Metal Card Default",
-        "description": "Interactive demo showcasing the Liquid Metal Card Default component.",
-        "url": "/ui-kit/primitives/liquid-metal-card-default",
-        "category": "Liquid-metal-card-default",
-        "categories": [
-          "liquid-metal-card-default"
         ]
       }
     ]
@@ -5653,12 +5530,7 @@
       "@usespaceui/lib-utils",
       "@usespaceui/primitives-card"
     ],
-    "dependents": [
-      "liquid-metal-card-custom",
-      "liquid-metal-card-default",
-      "liquid-metal-card-login",
-      "liquid-metal-card-player"
-    ],
+    "dependents": [],
     "related": [
       {
         "name": "card",
@@ -5668,26 +5540,6 @@
         "category": "Card",
         "categories": [
           "card"
-        ]
-      },
-      {
-        "name": "liquid-metal-card-custom",
-        "title": "Liquid Metal Card Custom",
-        "description": "Interactive demo showcasing the Liquid Metal Card Custom component.",
-        "url": "/ui-kit/primitives/liquid-metal-card-custom",
-        "category": "Liquid-metal-card-custom",
-        "categories": [
-          "liquid-metal-card-custom"
-        ]
-      },
-      {
-        "name": "liquid-metal-card-default",
-        "title": "Liquid Metal Card Default",
-        "description": "Interactive demo showcasing the Liquid Metal Card Default component.",
-        "url": "/ui-kit/primitives/liquid-metal-card-default",
-        "category": "Liquid-metal-card-default",
-        "categories": [
-          "liquid-metal-card-default"
         ]
       }
     ]
@@ -5978,14 +5830,14 @@
       "pin-list"
     ],
     "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
-    "size": "5.6 KB",
-    "rawSize": 5772,
-    "directSize": "5.6 KB",
+    "updatedAt": "2026-09-04",
+    "size": "11.4 KB",
+    "rawSize": 11648,
+    "directSize": "11.3 KB",
     "fileCount": 2,
     "dependencies": [
-      "lucide-react",
-      "motion"
+      "motion",
+      "@tabler/icons-react"
     ],
     "registryDependencies": [
       "@usespaceui/lib-utils"
@@ -6005,14 +5857,14 @@
       "pin-list"
     ],
     "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
-    "size": "5.6 KB",
-    "rawSize": 5772,
-    "directSize": "5.6 KB",
+    "updatedAt": "2026-09-04",
+    "size": "11.4 KB",
+    "rawSize": 11648,
+    "directSize": "11.3 KB",
     "fileCount": 2,
     "dependencies": [
-      "lucide-react",
-      "motion"
+      "motion",
+      "@tabler/icons-react"
     ],
     "registryDependencies": [
       "@usespaceui/lib-utils"
@@ -6791,461 +6643,6 @@
     ],
     "dependents": [],
     "related": []
-  },
-  "liquid-metal-avatar-custom": {
-    "name": "liquid-metal-avatar-custom",
-    "shortName": "liquid-metal-avatar-custom",
-    "title": "Liquid Metal Avatar Custom",
-    "description": "Interactive demo showcasing the Liquid Metal Avatar Custom component.",
-    "type": "registry:component",
-    "url": "/ui-kit/primitives/liquid-metal-avatar-custom",
-    "category": "Liquid-metal-avatar-custom",
-    "categories": [
-      "liquid-metal-avatar-custom"
-    ],
-    "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
-    "size": "3.5 KB",
-    "rawSize": 3620,
-    "directSize": "462 B",
-    "fileCount": 4,
-    "dependencies": [],
-    "registryDependencies": [
-      "@usespaceui/components-spaceui-liquid-metal-avatar"
-    ],
-    "dependents": [],
-    "related": [
-      {
-        "name": "liquid-metal-avatar",
-        "title": "Liquid Metal Avatar",
-        "description": "Liquid Metal Avatar component for Space UI.",
-        "url": "/ui-kit/components/spaceui/liquid-metal-avatar",
-        "category": "Liquid-metal-avatar",
-        "categories": [
-          "liquid-metal-avatar"
-        ]
-      }
-    ]
-  },
-  "liquid-metal-avatar-default": {
-    "name": "liquid-metal-avatar-default",
-    "shortName": "liquid-metal-avatar-default",
-    "title": "Liquid Metal Avatar Default",
-    "description": "Interactive demo showcasing the Liquid Metal Avatar Default component.",
-    "type": "registry:component",
-    "url": "/ui-kit/primitives/liquid-metal-avatar-default",
-    "category": "Liquid-metal-avatar-default",
-    "categories": [
-      "liquid-metal-avatar-default"
-    ],
-    "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
-    "size": "3.5 KB",
-    "rawSize": 3535,
-    "directSize": "377 B",
-    "fileCount": 4,
-    "dependencies": [],
-    "registryDependencies": [
-      "@usespaceui/components-spaceui-liquid-metal-avatar"
-    ],
-    "dependents": [],
-    "related": [
-      {
-        "name": "liquid-metal-avatar",
-        "title": "Liquid Metal Avatar",
-        "description": "Liquid Metal Avatar component for Space UI.",
-        "url": "/ui-kit/components/spaceui/liquid-metal-avatar",
-        "category": "Liquid-metal-avatar",
-        "categories": [
-          "liquid-metal-avatar"
-        ]
-      }
-    ]
-  },
-  "liquid-metal-avatar-fallback": {
-    "name": "liquid-metal-avatar-fallback",
-    "shortName": "liquid-metal-avatar-fallback",
-    "title": "Liquid Metal Avatar Fallback",
-    "description": "Interactive demo showcasing the Liquid Metal Avatar Fallback component.",
-    "type": "registry:component",
-    "url": "/ui-kit/primitives/liquid-metal-avatar-fallback",
-    "category": "Liquid-metal-avatar-fallback",
-    "categories": [
-      "liquid-metal-avatar-fallback"
-    ],
-    "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
-    "size": "3.3 KB",
-    "rawSize": 3415,
-    "directSize": "257 B",
-    "fileCount": 4,
-    "dependencies": [],
-    "registryDependencies": [
-      "@usespaceui/components-spaceui-liquid-metal-avatar"
-    ],
-    "dependents": [],
-    "related": [
-      {
-        "name": "liquid-metal-avatar",
-        "title": "Liquid Metal Avatar",
-        "description": "Liquid Metal Avatar component for Space UI.",
-        "url": "/ui-kit/components/spaceui/liquid-metal-avatar",
-        "category": "Liquid-metal-avatar",
-        "categories": [
-          "liquid-metal-avatar"
-        ]
-      }
-    ]
-  },
-  "liquid-metal-avatar-sizes": {
-    "name": "liquid-metal-avatar-sizes",
-    "shortName": "liquid-metal-avatar-sizes",
-    "title": "Liquid Metal Avatar Sizes",
-    "description": "Interactive demo showcasing the Liquid Metal Avatar Sizes component.",
-    "type": "registry:component",
-    "url": "/ui-kit/primitives/liquid-metal-avatar-sizes",
-    "category": "Liquid-metal-avatar-sizes",
-    "categories": [
-      "liquid-metal-avatar-sizes"
-    ],
-    "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
-    "size": "3.9 KB",
-    "rawSize": 4027,
-    "directSize": "869 B",
-    "fileCount": 4,
-    "dependencies": [],
-    "registryDependencies": [
-      "@usespaceui/components-spaceui-liquid-metal-avatar"
-    ],
-    "dependents": [],
-    "related": [
-      {
-        "name": "liquid-metal-avatar",
-        "title": "Liquid Metal Avatar",
-        "description": "Liquid Metal Avatar component for Space UI.",
-        "url": "/ui-kit/components/spaceui/liquid-metal-avatar",
-        "category": "Liquid-metal-avatar",
-        "categories": [
-          "liquid-metal-avatar"
-        ]
-      }
-    ]
-  },
-  "liquid-metal-button-custom": {
-    "name": "liquid-metal-button-custom",
-    "shortName": "liquid-metal-button-custom",
-    "title": "Liquid Metal Button Custom",
-    "description": "Interactive demo showcasing the Liquid Metal Button Custom component.",
-    "type": "registry:component",
-    "url": "/ui-kit/primitives/liquid-metal-button-custom",
-    "category": "Liquid-metal-button-custom",
-    "categories": [
-      "liquid-metal-button-custom"
-    ],
-    "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
-    "size": "7.8 KB",
-    "rawSize": 7936,
-    "directSize": "290 B",
-    "fileCount": 5,
-    "dependencies": [],
-    "registryDependencies": [
-      "@usespaceui/components-spaceui-liquid-metal-button"
-    ],
-    "dependents": [],
-    "related": [
-      {
-        "name": "liquid-metal-button",
-        "title": "Liquid Metal Button",
-        "description": "Liquid Metal Button component for Space UI.",
-        "url": "/ui-kit/components/spaceui/liquid-metal-button",
-        "category": "Liquid-metal-button",
-        "categories": [
-          "liquid-metal-button"
-        ]
-      }
-    ]
-  },
-  "liquid-metal-button-default": {
-    "name": "liquid-metal-button-default",
-    "shortName": "liquid-metal-button-default",
-    "title": "Liquid Metal Button Default",
-    "description": "Interactive demo showcasing the Liquid Metal Button Default component.",
-    "type": "registry:component",
-    "url": "/ui-kit/primitives/liquid-metal-button-default",
-    "category": "Liquid-metal-button-default",
-    "categories": [
-      "liquid-metal-button-default"
-    ],
-    "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
-    "size": "7.7 KB",
-    "rawSize": 7837,
-    "directSize": "191 B",
-    "fileCount": 5,
-    "dependencies": [],
-    "registryDependencies": [
-      "@usespaceui/components-spaceui-liquid-metal-button"
-    ],
-    "dependents": [],
-    "related": [
-      {
-        "name": "liquid-metal-button",
-        "title": "Liquid Metal Button",
-        "description": "Liquid Metal Button component for Space UI.",
-        "url": "/ui-kit/components/spaceui/liquid-metal-button",
-        "category": "Liquid-metal-button",
-        "categories": [
-          "liquid-metal-button"
-        ]
-      }
-    ]
-  },
-  "liquid-metal-button-sizes": {
-    "name": "liquid-metal-button-sizes",
-    "shortName": "liquid-metal-button-sizes",
-    "title": "Liquid Metal Button Sizes",
-    "description": "Interactive demo showcasing the Liquid Metal Button Sizes component.",
-    "type": "registry:component",
-    "url": "/ui-kit/primitives/liquid-metal-button-sizes",
-    "category": "Liquid-metal-button-sizes",
-    "categories": [
-      "liquid-metal-button-sizes"
-    ],
-    "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
-    "size": "7.9 KB",
-    "rawSize": 8044,
-    "directSize": "398 B",
-    "fileCount": 5,
-    "dependencies": [],
-    "registryDependencies": [
-      "@usespaceui/components-spaceui-liquid-metal-button"
-    ],
-    "dependents": [],
-    "related": [
-      {
-        "name": "liquid-metal-button",
-        "title": "Liquid Metal Button",
-        "description": "Liquid Metal Button component for Space UI.",
-        "url": "/ui-kit/components/spaceui/liquid-metal-button",
-        "category": "Liquid-metal-button",
-        "categories": [
-          "liquid-metal-button"
-        ]
-      }
-    ]
-  },
-  "liquid-metal-card-custom": {
-    "name": "liquid-metal-card-custom",
-    "shortName": "liquid-metal-card-custom",
-    "title": "Liquid Metal Card Custom",
-    "description": "Interactive demo showcasing the Liquid Metal Card Custom component.",
-    "type": "registry:component",
-    "url": "/ui-kit/primitives/liquid-metal-card-custom",
-    "category": "Liquid-metal-card-custom",
-    "categories": [
-      "liquid-metal-card-custom"
-    ],
-    "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
-    "size": "17.4 KB",
-    "rawSize": 17851,
-    "directSize": "1.1 KB",
-    "fileCount": 7,
-    "dependencies": [],
-    "registryDependencies": [
-      "@usespaceui/components-spaceui-liquid-metal-card",
-      "@usespaceui/primitives-badge",
-      "@usespaceui/primitives-button"
-    ],
-    "dependents": [],
-    "related": [
-      {
-        "name": "liquid-metal-card",
-        "title": "Liquid Metal Card",
-        "description": "Liquid Metal Card component for Space UI.",
-        "url": "/ui-kit/components/spaceui/liquid-metal-card",
-        "category": "Liquid-metal-card",
-        "categories": [
-          "liquid-metal-card"
-        ]
-      },
-      {
-        "name": "badge",
-        "title": "Badge",
-        "description": "Accessible Badge primitive component for Space UI.",
-        "url": "/ui-kit/primitives/badge",
-        "category": "Badge",
-        "categories": [
-          "badge"
-        ]
-      },
-      {
-        "name": "button",
-        "title": "Button",
-        "description": "Accessible Button primitive component for Space UI.",
-        "url": "/ui-kit/primitives/button",
-        "category": "Button",
-        "categories": [
-          "button"
-        ]
-      }
-    ]
-  },
-  "liquid-metal-card-default": {
-    "name": "liquid-metal-card-default",
-    "shortName": "liquid-metal-card-default",
-    "title": "Liquid Metal Card Default",
-    "description": "Interactive demo showcasing the Liquid Metal Card Default component.",
-    "type": "registry:component",
-    "url": "/ui-kit/primitives/liquid-metal-card-default",
-    "category": "Liquid-metal-card-default",
-    "categories": [
-      "liquid-metal-card-default"
-    ],
-    "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
-    "size": "14.6 KB",
-    "rawSize": 14914,
-    "directSize": "908 B",
-    "fileCount": 6,
-    "dependencies": [],
-    "registryDependencies": [
-      "@usespaceui/components-spaceui-liquid-metal-card",
-      "@usespaceui/primitives-button"
-    ],
-    "dependents": [],
-    "related": [
-      {
-        "name": "liquid-metal-card",
-        "title": "Liquid Metal Card",
-        "description": "Liquid Metal Card component for Space UI.",
-        "url": "/ui-kit/components/spaceui/liquid-metal-card",
-        "category": "Liquid-metal-card",
-        "categories": [
-          "liquid-metal-card"
-        ]
-      },
-      {
-        "name": "button",
-        "title": "Button",
-        "description": "Accessible Button primitive component for Space UI.",
-        "url": "/ui-kit/primitives/button",
-        "category": "Button",
-        "categories": [
-          "button"
-        ]
-      }
-    ]
-  },
-  "liquid-metal-card-login": {
-    "name": "liquid-metal-card-login",
-    "shortName": "liquid-metal-card-login",
-    "title": "Liquid Metal Card Login",
-    "description": "Interactive demo showcasing the Liquid Metal Card Login component.",
-    "type": "registry:component",
-    "url": "/ui-kit/primitives/liquid-metal-card-login",
-    "category": "Liquid-metal-card-login",
-    "categories": [
-      "liquid-metal-card-login"
-    ],
-    "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
-    "size": "17.9 KB",
-    "rawSize": 18293,
-    "directSize": "1.7 KB",
-    "fileCount": 7,
-    "dependencies": [
-      "@tabler/icons-react"
-    ],
-    "registryDependencies": [
-      "@usespaceui/components-spaceui-liquid-metal-card",
-      "@usespaceui/primitives-button",
-      "@usespaceui/primitives-input"
-    ],
-    "dependents": [],
-    "related": [
-      {
-        "name": "liquid-metal-card",
-        "title": "Liquid Metal Card",
-        "description": "Liquid Metal Card component for Space UI.",
-        "url": "/ui-kit/components/spaceui/liquid-metal-card",
-        "category": "Liquid-metal-card",
-        "categories": [
-          "liquid-metal-card"
-        ]
-      },
-      {
-        "name": "button",
-        "title": "Button",
-        "description": "Accessible Button primitive component for Space UI.",
-        "url": "/ui-kit/primitives/button",
-        "category": "Button",
-        "categories": [
-          "button"
-        ]
-      },
-      {
-        "name": "input",
-        "title": "Input",
-        "description": "Accessible Input primitive component for Space UI.",
-        "url": "/ui-kit/primitives/input",
-        "category": "Input",
-        "categories": [
-          "input"
-        ]
-      }
-    ]
-  },
-  "liquid-metal-card-player": {
-    "name": "liquid-metal-card-player",
-    "shortName": "liquid-metal-card-player",
-    "title": "Liquid Metal Card Player",
-    "description": "Interactive demo showcasing the Liquid Metal Card Player component.",
-    "type": "registry:component",
-    "url": "/ui-kit/primitives/liquid-metal-card-player",
-    "category": "Liquid-metal-card-player",
-    "categories": [
-      "liquid-metal-card-player"
-    ],
-    "createdAt": "2026-08-21",
-    "updatedAt": "2026-08-21",
-    "size": "15.3 KB",
-    "rawSize": 15657,
-    "directSize": "1.6 KB",
-    "fileCount": 6,
-    "dependencies": [
-      "@tabler/icons-react"
-    ],
-    "registryDependencies": [
-      "@usespaceui/components-spaceui-liquid-metal-card",
-      "@usespaceui/primitives-button"
-    ],
-    "dependents": [],
-    "related": [
-      {
-        "name": "liquid-metal-card",
-        "title": "Liquid Metal Card",
-        "description": "Liquid Metal Card component for Space UI.",
-        "url": "/ui-kit/components/spaceui/liquid-metal-card",
-        "category": "Liquid-metal-card",
-        "categories": [
-          "liquid-metal-card"
-        ]
-      },
-      {
-        "name": "button",
-        "title": "Button",
-        "description": "Accessible Button primitive component for Space UI.",
-        "url": "/ui-kit/primitives/button",
-        "category": "Button",
-        "categories": [
-          "button"
-        ]
-      }
-    ]
   },
   "use-auto-height": {
     "name": "hooks-animation-use-auto-height",
@@ -19868,8 +19265,7 @@
       "block-interactive-fun-facts",
       "avatar-extended",
       "data-grid-column-filter",
-      "status-badge",
-      "liquid-metal-card-custom"
+      "status-badge"
     ],
     "related": [
       {
@@ -19934,8 +19330,7 @@
       "block-interactive-fun-facts",
       "avatar-extended",
       "data-grid-column-filter",
-      "status-badge",
-      "liquid-metal-card-custom"
+      "status-badge"
     ],
     "related": [
       {
@@ -20064,10 +19459,6 @@
       "liquid-metal-button",
       "phone-input",
       "theme-toggle",
-      "liquid-metal-card-custom",
-      "liquid-metal-card-default",
-      "liquid-metal-card-login",
-      "liquid-metal-card-player",
       "pagination",
       "dialog",
       "drawer",
@@ -20150,10 +19541,6 @@
       "liquid-metal-button",
       "phone-input",
       "theme-toggle",
-      "liquid-metal-card-custom",
-      "liquid-metal-card-default",
-      "liquid-metal-card-login",
-      "liquid-metal-card-player",
       "pagination",
       "dialog",
       "drawer",
@@ -21571,7 +20958,6 @@
       "date-selector",
       "filters",
       "phone-input",
-      "liquid-metal-card-login",
       "autocomplete",
       "combobox",
       "input-group",
@@ -21641,7 +21027,6 @@
       "date-selector",
       "filters",
       "phone-input",
-      "liquid-metal-card-login",
       "autocomplete",
       "combobox",
       "input-group",

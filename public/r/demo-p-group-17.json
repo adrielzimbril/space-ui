@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-group-17",
+  "title": "Group 17",
+  "description": "Group with input and currency text",
+  "registryDependencies": [
+    "@usespaceui/primitives-group",
+    "@usespaceui/primitives-input",
+    "@usespaceui/primitives-label"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/group/p-group-17/index.tsx",
+      "content": "import { Group, GroupSeparator, GroupText } from '@/components/ui/group'\nimport { Input } from '@/components/ui/input'\nimport { Label } from '@/components/ui/label'\n\nexport default function Particle() {\n  return (\n    <Group aria-label=\"Price input\">\n      <Input aria-label=\"Enter the amount\" className=\"text-right\" defaultValue=\"100\" id=\"amount\" type=\"text\" />\n      <GroupSeparator />\n      <GroupText render={<Label aria-label=\"Currency\" htmlFor=\"amount\" />}>USD</GroupText>\n    </Group>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/group.tsx"
+    }
+  ],
+  "categories": [
+    "group",
+    "input"
+  ],
+  "type": "registry:ui"
+}

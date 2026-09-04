@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-preview-card-01",
+  "title": "Preview Card 1",
+  "description": "Preview card with popup",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-preview-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/preview-card/p-preview-card-01/index.tsx",
+      "content": "import { IconArrowBackUp, IconStar } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { PreviewCard, PreviewCardPopup, PreviewCardTrigger } from '@/components/ui/preview-card'\n\nexport default function Particle() {\n  return (\n    <PreviewCard>\n      <PreviewCardTrigger render={<Button variant=\"ghost\" />}>spaceui.one/ui</PreviewCardTrigger>\n      <PreviewCardPopup>\n        <div className=\"flex flex-col gap-4\">\n          <div className=\"flex flex-col gap-1\">\n            <h4 className=\"font-medium text-sm\">spaceui.one/ui</h4>\n            <p className=\"text-muted-foreground text-sm\">\n              Beautifully designed components that you can copy and paste into your apps.\n            </p>\n          </div>\n          <div className=\"flex items-center gap-4 text-muted-foreground text-xs\">\n            <div className=\"flex items-center gap-1\">\n              <span aria-hidden=\"true\" className=\"size-2 rounded-full bg-blue-500\" />\n              <span>TypeScript</span>\n            </div>\n            <div className=\"flex items-center gap-1\">\n              <IconStar className=\"size-3\" />\n              <span>58.2k</span>\n            </div>\n            <div className=\"flex items-center gap-1\">\n              <IconArrowBackUp className=\"size-3\" />\n              <span>5.1k</span>\n            </div>\n          </div>\n        </div>\n      </PreviewCardPopup>\n    </PreviewCard>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/preview-card.tsx"
+    }
+  ],
+  "categories": [
+    "preview card"
+  ],
+  "type": "registry:ui"
+}

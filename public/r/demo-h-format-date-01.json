@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-format-date-01",
+  "title": "formatDate",
+  "description": "Localized date formatting",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-utils-format-date",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/utils/format-date/h-format-date-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { getHumanDate, getIsToday, formatCount } from '@/utils/format-date'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Badge } from '@/components/ui/badge'\nimport { IconCalendar } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const dateStr = new Date().toISOString()\n  const pastDate = '2020-06-15'\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconCalendar className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Date</span>\n        </div>\n        <Badge variant=\"outline\" size=\"sm\">\n          Active\n        </Badge>\n      </div>\n      <CardPanel className=\"flex flex-col gap-2 rounded-[0.875rem] bg-background p-3\">\n        <div className=\"rounded-lg bg-muted p-2.5\">\n          <span className=\"block text-[.6875rem] font-semibold text-muted-foreground\">Today</span>\n          <span className=\"mt-0.5 block font-mono text-sm font-semibold text-foreground\">{getHumanDate(dateStr)}</span>\n        </div>\n        <div className=\"flex items-center justify-between rounded-lg bg-muted p-2.5\">\n          <span className=\"text-[.6875rem] font-semibold text-muted-foreground\">Is today</span>\n          <Badge variant=\"secondary\" size=\"sm\">\n            {getIsToday(dateStr) ? 'Yes' : 'No'}\n          </Badge>\n        </div>\n        <div className=\"rounded-lg bg-muted p-2.5\">\n          <span className=\"block text-[.6875rem] font-semibold text-muted-foreground\">{pastDate}</span>\n          <span className=\"mt-0.5 block font-mono text-sm font-semibold text-foreground\">{getHumanDate(pastDate)}</span>\n        </div>\n        <div className=\"rounded-lg bg-muted p-2.5\">\n          <span className=\"block text-[.6875rem] font-semibold text-muted-foreground\">Count 12500</span>\n          <span className=\"mt-0.5 block font-mono text-sm font-semibold tabular-nums text-foreground\">\n            {formatCount(12500)}\n          </span>\n        </div>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/format-date.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "utils",
+    "format-date",
+    "calendar"
+  ],
+  "type": "registry:hook"
+}

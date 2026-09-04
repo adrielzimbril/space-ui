@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-input-05",
+  "title": "Input 6",
+  "description": "Input with label",
+  "registryDependencies": [
+    "@usespaceui/primitives-input",
+    "@usespaceui/primitives-label"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/input/p-input-05/index.tsx",
+      "content": "'use client'\n\nimport { useId } from 'react'\nimport { Input } from '@/components/ui/input'\nimport { Label } from '@/components/ui/label'\n\nexport default function Particle() {\n  const id = useId()\n  return (\n    <div className=\"flex flex-col items-start gap-2\">\n      <Label htmlFor={id}>Email</Label>\n      <Input aria-label=\"Email\" id={id} placeholder=\"you@example.com\" type=\"email\" />\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/input.tsx"
+    }
+  ],
+  "categories": [
+    "input",
+    "label"
+  ],
+  "type": "registry:ui"
+}

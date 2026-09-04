@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-checkbox-04",
+  "title": "Checkbox 4",
+  "description": "Checkbox form",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-checkbox",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-form"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/checkbox/p-checkbox-04/index.tsx",
+      "content": "'use client'\n\nimport type { FormEvent } from 'react'\nimport { useState } from 'react'\nimport { Button } from '@/components/ui/button'\nimport { Checkbox } from '@/components/ui/checkbox'\nimport { Field, FieldLabel } from '@/components/ui/field'\nimport { Form } from '@/components/ui/form'\n\nexport default function Particle() {\n  const [loading, setLoading] = useState(false)\n  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {\n    e.preventDefault()\n    const formData = new FormData(e.currentTarget)\n    setLoading(true)\n    await new Promise((r) => setTimeout(r, 800))\n    setLoading(false)\n    const accepted = formData.get('terms')\n    alert(`Terms: ${accepted}`)\n  }\n  return (\n    <Form className=\"flex w-auto flex-col gap-4\" onSubmit={onSubmit}>\n      <Field name=\"terms\">\n        <FieldLabel>\n          <Checkbox defaultChecked value=\"yes\" />\n          Accept terms and conditions\n        </FieldLabel>\n      </Field>\n      <Button loading={loading} type=\"submit\">\n        Submit\n      </Button>\n    </Form>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/checkbox.tsx"
+    }
+  ],
+  "categories": [
+    "checkbox",
+    "form"
+  ],
+  "type": "registry:ui"
+}

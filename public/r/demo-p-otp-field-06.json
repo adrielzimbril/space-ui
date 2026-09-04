@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-otp-field-06",
+  "title": "Otp Field 6",
+  "description": "OTP field with auto validation",
+  "registryDependencies": [
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-otp-field"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/otp-field/p-otp-field-06/index.tsx",
+      "content": "'use client'\n\nimport { useState } from 'react'\nimport { Field, FieldDescription, FieldError, FieldLabel } from '@/components/ui/field'\nimport { OTPField, OTPFieldInput } from '@/components/ui/otp-field'\n\nconst OTP_LENGTH = 6\n\nconst OTP_SLOT_KEYS = Array.from({ length: OTP_LENGTH }, (_, i) => `otp-slot-${i}`)\n\nexport default function Particle() {\n  const [value, setValue] = useState('')\n  const [invalid, setInvalid] = useState(false)\n  const valid = value.length === OTP_LENGTH && value === '123456'\n\n  return (\n    <Field className=\"items-center\">\n      <FieldLabel>Verification code</FieldLabel>\n      <OTPField\n        length={OTP_LENGTH}\n        onValueChange={(nextValue) => {\n          setValue(nextValue)\n          setInvalid(nextValue.length === OTP_LENGTH ? nextValue !== '123456' : false)\n        }}\n        value={value}\n      >\n        {OTP_SLOT_KEYS.map((slotKey, index) => (\n          <OTPFieldInput\n            key={slotKey}\n            aria-invalid={invalid || undefined}\n            aria-label={`Character ${index + 1} of ${OTP_LENGTH}`}\n          />\n        ))}\n      </OTPField>\n      {!valid && !invalid && <FieldDescription>Enter `123456` to pass validation.</FieldDescription>}\n      {invalid && <FieldError>Code must be 123456.</FieldError>}\n      {valid && <FieldDescription>Code verified.</FieldDescription>}\n    </Field>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/otp-field.tsx"
+    }
+  ],
+  "categories": [
+    "otp field",
+    "input",
+    "validation"
+  ],
+  "type": "registry:ui"
+}

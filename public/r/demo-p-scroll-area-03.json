@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-scroll-area-03",
+  "title": "Scroll Area 3",
+  "description": "Scroll area with both directions",
+  "registryDependencies": [
+    "@usespaceui/primitives-scroll-area"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/scroll-area/p-scroll-area-03/index.tsx",
+      "content": "import { ScrollArea } from '@/components/ui/scroll-area'\n\nexport default function Particle() {\n  return (\n    <ScrollArea className=\"h-80 max-w-80 rounded-lg border\">\n      <div className=\"min-w-100 p-4 text-sm leading-relaxed\">\n        <h4 className=\"mb-3 font-semibold\">Space UI v2.0 — Release Notes</h4>\n        <p className=\"mb-3 text-muted-foreground\">\n          This release introduces 40+ new primitives built on Base UI, a complete migration from Radix to Base UI\n          internals, and first-class support for Tailwind CSS v4. Every component has been redesigned with OKLCH color\n          tokens, fluid spacing, and container queries.\n        </p>\n        <h5 className=\"mb-2 font-medium\">Highlights</h5>\n        <ul className=\"mb-3 list-inside list-disc space-y-1 text-muted-foreground\">\n          <li>New Drawer, Toast, and Menubar primitives</li>\n          <li>Segmented Control pattern across Radio, Tabs, and Navigation</li>\n          <li>Preview Link Card with live URL thumbnails</li>\n          <li>Number Field with spin buttons and keyboard stepping</li>\n          <li>OTP Field with automatic focus progression</li>\n          <li>Autocomplete with async data fetching</li>\n        </ul>\n        <h5 className=\"mb-2 font-medium\">Breaking Changes</h5>\n        <ul className=\"mb-3 list-inside list-disc space-y-1 text-muted-foreground\">\n          <li>Minimum React version bumped to 19</li>\n          <li>All color tokens now use OKLCH format</li>\n          <li>Removed deprecated Dialog.Close in favor of Dialog.Dismiss</li>\n          <li>Select now requires explicit item mapping via the items prop</li>\n        </ul>\n        <p className=\"text-muted-foreground\">\n          See the full migration guide at spaceui.one/docs/migration for step-by-step upgrade instructions.\n        </p>\n      </div>\n    </ScrollArea>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/scroll-area.tsx"
+    }
+  ],
+  "categories": [
+    "scroll area"
+  ],
+  "type": "registry:ui"
+}

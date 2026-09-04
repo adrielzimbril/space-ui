@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-combobox-16",
+  "title": "Combobox 16",
+  "description": "Timezone combobox with search input",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-combobox",
+    "@usespaceui/primitives-select"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/combobox/p-combobox-16/index.tsx",
+      "content": "'use client'\n\nimport { IconSearch } from '@tabler/icons-react'\nimport { useMemo } from 'react'\nimport {\n  Combobox,\n  ComboboxEmpty,\n  ComboboxInput,\n  ComboboxItem,\n  ComboboxList,\n  ComboboxPopup,\n  ComboboxTrigger,\n  ComboboxValue,\n} from '@/components/ui/combobox'\nimport { SelectButton } from '@/components/ui/select'\n\nexport default function Particle() {\n  const timezones = Intl.supportedValuesOf('timeZone')\n\n  const formattedTimezones = useMemo(() => {\n    return timezones\n      .map((timezone) => {\n        const formatter = new Intl.DateTimeFormat('en', {\n          timeZone: timezone,\n          timeZoneName: 'shortOffset',\n        })\n        const parts = formatter.formatToParts(new Date())\n        const offset = parts.find((part) => part.type === 'timeZoneName')?.value || ''\n        const modifiedOffset = offset === 'GMT' ? 'GMT+0' : offset\n\n        const offsetMatch = offset.match(/GMT([+-]?)(\\d+)(?::(\\d+))?/)\n        const sign = offsetMatch?.[1] === '-' ? -1 : 1\n        const hours = Number.parseInt(offsetMatch?.[2] || '0', 10)\n        const minutes = Number.parseInt(offsetMatch?.[3] || '0', 10)\n        const totalMinutes = sign * (hours * 60 + minutes)\n\n        return {\n          label: `(${modifiedOffset}) ${timezone.replace(/_/g, ' ')}`,\n          numericOffset: totalMinutes,\n          value: timezone,\n        }\n      })\n      .sort((a, b) => a.numericOffset - b.numericOffset)\n  }, [timezones])\n\n  const _defaultTimezone = formattedTimezones.find((tz) => tz.value === 'Europe/London')\n\n  return (\n    <Combobox autoHighlight items={formattedTimezones}>\n      <ComboboxTrigger render={<SelectButton />}>\n        <ComboboxValue placeholder=\"Select timezone\" />\n      </ComboboxTrigger>\n      <ComboboxPopup aria-label=\"Select timezone\">\n        <div className=\"border-b p-2\">\n          <ComboboxInput\n            className=\"rounded-md before:rounded-[calc(var(--radius-md)-1px)]\"\n            placeholder=\"e.g. Europe/London\"\n            showTrigger={false}\n            startAddon={<IconSearch />}\n          />\n        </div>\n        <ComboboxEmpty>No timezones found.</ComboboxEmpty>\n        <ComboboxList>\n          {(item) => (\n            <ComboboxItem key={item.value} value={item}>\n              {item.label}\n            </ComboboxItem>\n          )}\n        </ComboboxList>\n      </ComboboxPopup>\n    </Combobox>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/combobox.tsx"
+    }
+  ],
+  "categories": [
+    "combobox",
+    "input",
+    "timezone"
+  ],
+  "type": "registry:ui"
+}

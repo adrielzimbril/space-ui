@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-alert-03",
+  "title": "Alert 3",
+  "description": "Alert with icon and action buttons",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-alert",
+    "@usespaceui/primitives-button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/alert/p-alert-03/index.tsx",
+      "content": "import { IconInfoCircle } from '@tabler/icons-react'\nimport { Alert, AlertAction, AlertDescription, AlertTitle } from '@/components/ui/alert'\nimport { Button } from '@/components/ui/button'\n\nexport default function Particle() {\n  return (\n    <Alert>\n      <IconInfoCircle />\n      <AlertTitle>Your Alert Title Goes Here</AlertTitle>\n      <AlertDescription>\n        This is where your alert description will appear. You can customize this text with any message.\n      </AlertDescription>\n      <AlertAction>\n        <Button size=\"xs\" variant=\"ghost\">\n          Dismiss\n        </Button>\n        <Button size=\"xs\">Ok</Button>\n      </AlertAction>\n    </Alert>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/alert.tsx"
+    }
+  ],
+  "categories": [
+    "alert"
+  ],
+  "type": "registry:ui"
+}

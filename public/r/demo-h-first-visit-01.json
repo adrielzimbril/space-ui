@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-first-visit-01",
+  "title": "useFirstVisit",
+  "description": "First user session identifier",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-lifecycle-use-first-visit",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/lifecycle/first-visit/h-first-visit-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { useFirstVisit } from '@/hooks/use-first-visit'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Badge } from '@/components/ui/badge'\nimport { IconUserCheck } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const isFirst = useFirstVisit('space_visit_demo')\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconUserCheck className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Visit</span>\n        </div>\n        <Badge variant={isFirst ? 'default' : 'outline'} size=\"sm\">\n          {isFirst ? 'First' : 'Returning'}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex items-center justify-between rounded-[0.875rem] bg-background p-3\">\n        <span className=\"text-sm text-muted-foreground\">space_visit_demo</span>\n        <span className=\"text-sm font-semibold text-foreground\">{isFirst ? 'New' : 'Seen'}</span>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/first-visit.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "first-visit"
+  ],
+  "type": "registry:hook"
+}

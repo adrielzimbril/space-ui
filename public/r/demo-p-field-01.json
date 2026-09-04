@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-field-01",
+  "title": "Field 1",
+  "description": "Field with description",
+  "registryDependencies": [
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/field/p-field-01/index.tsx",
+      "content": "import { Field, FieldDescription, FieldLabel } from '@/components/ui/field'\nimport { Input } from '@/components/ui/input'\n\nexport default function Particle() {\n  return (\n    <Field>\n      <FieldLabel>Name</FieldLabel>\n      <Input placeholder=\"Enter your name\" type=\"text\" />\n      <FieldDescription>Visible on your profile</FieldDescription>\n    </Field>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/field.tsx"
+    }
+  ],
+  "categories": [
+    "field",
+    "input",
+    "label"
+  ],
+  "type": "registry:ui"
+}

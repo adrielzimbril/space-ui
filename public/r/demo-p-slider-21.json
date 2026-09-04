@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-slider-21",
+  "title": "Slider 21",
+  "description": "Object position sliders with reset",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-fieldset",
+    "@usespaceui/primitives-label",
+    "@usespaceui/primitives-number-field",
+    "@usespaceui/primitives-slider"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/slider/p-slider-21/index.tsx",
+      "content": "'use client'\n\nimport { IconRefresh } from '@tabler/icons-react'\nimport { useState } from 'react'\nimport { Button } from '@/components/ui/button'\nimport { Fieldset, FieldsetLegend } from '@/components/ui/fieldset'\nimport { Label } from '@/components/ui/label'\nimport { NumberField, NumberFieldGroup, NumberFieldInput } from '@/components/ui/number-field'\nimport { Slider } from '@/components/ui/slider'\n\nconst min = -10\nconst max = 10\nconst defaultValues = { x: 0, y: 0, z: 0 }\nconst initialValues = { x: -2, y: 4, z: 2 }\n\nexport default function Particle() {\n  const [values, setValues] = useState(initialValues)\n\n  const updateValue = (axis: keyof typeof values, v: number | null) => {\n    setValues((prev) => ({ ...prev, [axis]: v ?? 0 }))\n  }\n\n  return (\n    <Fieldset className=\"flex w-full flex-col gap-4\">\n      <FieldsetLegend>Object position</FieldsetLegend>\n      <div className=\"flex flex-col gap-2\">\n        {(['x', 'y', 'z'] as const).map((axis) => (\n          <div className=\"flex items-center gap-2\" key={axis}>\n            <Label className=\"w-3 text-muted-foreground text-xs\">{axis.toUpperCase()}</Label>\n            <Slider\n              aria-label={`${axis.toUpperCase()} position`}\n              className=\"flex-1\"\n              max={max}\n              min={min}\n              onValueChange={(v) => updateValue(axis, Array.isArray(v) ? v[0] : v)}\n              value={values[axis]}\n            />\n            <NumberField\n              aria-label={`Enter ${axis.toUpperCase()} value`}\n              className=\"w-16\"\n              max={max}\n              min={min}\n              onValueChange={(v) => updateValue(axis, v)}\n              render={<NumberFieldGroup />}\n              size=\"sm\"\n              value={values[axis]}\n            >\n              <NumberFieldInput />\n            </NumberField>\n          </div>\n        ))}\n      </div>\n      <Button className=\"w-full\" onClick={() => setValues(defaultValues)} variant=\"outline\">\n        <IconRefresh aria-hidden=\"true\" className=\"-ms-1 opacity-60\" />\n        Reset\n      </Button>\n    </Fieldset>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/slider.tsx"
+    }
+  ],
+  "categories": [
+    "slider",
+    "number field",
+    "button"
+  ],
+  "type": "registry:ui"
+}

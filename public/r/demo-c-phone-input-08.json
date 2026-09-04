@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-phone-input-08",
+  "title": "Read-only phone input",
+  "description": "Read-only phone input",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-phone-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/phone-input/c-phone-input-08/index.tsx",
+      "content": "import { PhoneInput } from '@/components/spaceui/phone-input'\n\nexport default function Pattern() {\n  return <PhoneInput readOnly value=\"+12125551234\" placeholder=\"Enter phone number\" />\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/phone-input.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "phone-input"
+  ],
+  "type": "registry:component"
+}

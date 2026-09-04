@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-badge-06",
+  "title": "Badge 6",
+  "description": "Badge with count",
+  "registryDependencies": [
+    "@usespaceui/primitives-badge"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/badge/p-badge-06/index.tsx",
+      "content": "import { Badge } from '@/components/ui/badge'\n\nexport default function Particle() {\n  return <Badge className=\"rounded-full\">7</Badge>\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/badge.tsx"
+    }
+  ],
+  "categories": [
+    "badge"
+  ],
+  "type": "registry:ui"
+}

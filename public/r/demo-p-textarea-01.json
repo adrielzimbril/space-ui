@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-textarea-01",
+  "title": "Textarea 1",
+  "description": "Basic textarea",
+  "registryDependencies": [
+    "@usespaceui/primitives-textarea"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/textarea/p-textarea-01/index.tsx",
+      "content": "import { Textarea } from '@/components/ui/textarea'\n\nexport default function Particle() {\n  return <Textarea placeholder=\"Type your message here\" />\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/textarea.tsx"
+    }
+  ],
+  "categories": [
+    "textarea"
+  ],
+  "type": "registry:ui"
+}

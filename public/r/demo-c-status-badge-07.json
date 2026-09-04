@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-status-badge-07",
+  "title": "Status Badge Mission Quota",
+  "description": "Availability status badge with mission quota and booking details.",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-status-badge"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/status-badge/c-status-badge-07/index.tsx",
+      "content": "import Link from 'next/link'\nimport { IconArrowUpRight } from '@tabler/icons-react'\nimport { StatusBadge } from '@/components/spaceui/status-badge'\n\nexport default function StatusBadgeQuotaDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4 p-4\">\n      <StatusBadge mode=\"inline\" status=\"available\" primaryText=\"Missions ouvertes\" size=\"default\">\n        <Link href=\"#calendar\" className=\"inline-flex items-center gap-1 hover:text-foreground transition-colors\">\n          <span>4 créneaux max • Réservations Q4 ouvertes</span>\n          <IconArrowUpRight className=\"size-3.5\" />\n        </Link>\n      </StatusBadge>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/status-badge.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "status-badge"
+  ],
+  "type": "registry:component"
+}

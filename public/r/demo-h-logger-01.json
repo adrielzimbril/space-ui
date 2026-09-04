@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-logger-01",
+  "title": "logger",
+  "description": "Scoped development logger",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-utils-logger",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/utils/logger/h-logger-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { logger } from '@/utils/logger'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Button } from '@/components/ui/button'\nimport { Badge } from '@/components/ui/badge'\nimport { IconTerminal } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const [logged, setLogged] = React.useState(0)\n\n  const handleLog = () => {\n    logger.info('Space UI Log Entry @', new Date().toLocaleTimeString())\n    setLogged((c) => c + 1)\n  }\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconTerminal className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Log</span>\n        </div>\n        <Badge variant={logged > 0 ? 'default' : 'outline'} size=\"sm\" className=\"font-mono tabular-nums\">\n          {logged}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex items-center justify-between rounded-[0.875rem] bg-background p-3\">\n        <span className=\"text-xs text-muted-foreground\">DevTools console</span>\n        <Button size=\"sm\" onClick={handleLog}>\n          Log info\n        </Button>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/logger.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "utils",
+    "logger"
+  ],
+  "type": "registry:hook"
+}

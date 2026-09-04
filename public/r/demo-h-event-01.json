@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-event-01",
+  "title": "event & bindEvent",
+  "description": "Safe cross-browser event listener binder",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-utils-event",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/utils/event/h-event-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { bindEvent, unbindEvent } from '@/utils/event'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Badge } from '@/components/ui/badge'\nimport { IconPointer } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const [clicks, setClicks] = React.useState(0)\n\n  React.useEffect(() => {\n    const handler = () => setClicks((c) => c + 1)\n    bindEvent(window, 'click', handler)\n    return () => unbindEvent(window, 'click', handler)\n  }, [])\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconPointer className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Bind</span>\n        </div>\n        <Badge variant=\"outline\" size=\"sm\" className=\"font-mono tabular-nums\">\n          {clicks}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex items-center justify-between rounded-[0.875rem] bg-background p-3\">\n        <span className=\"text-xs text-muted-foreground\">Window clicks</span>\n        <span className=\"font-mono text-sm font-semibold tabular-nums text-foreground\">{clicks}</span>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/event.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "utils",
+    "event"
+  ],
+  "type": "registry:hook"
+}

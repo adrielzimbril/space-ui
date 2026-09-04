@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-field-18",
+  "title": "Field 18",
+  "description": "Complete form built with field",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-checkbox",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-form",
+    "@usespaceui/primitives-input",
+    "@usespaceui/primitives-select"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/field/p-field-18/index.tsx",
+      "content": "'use client'\n\nimport type { FormEvent } from 'react'\nimport { useState } from 'react'\nimport { Button } from '@/components/ui/button'\nimport { Checkbox } from '@/components/ui/checkbox'\nimport { Field, FieldDescription, FieldError, FieldLabel } from '@/components/ui/field'\nimport { Form } from '@/components/ui/form'\nimport { Input } from '@/components/ui/input'\nimport { Select, SelectItem, SelectPopup, SelectTrigger, SelectValue } from '@/components/ui/select'\n\nexport default function Particle() {\n  const [loading, setLoading] = useState(false)\n  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {\n    e.preventDefault()\n    const formData = new FormData(e.currentTarget)\n    setLoading(true)\n    await new Promise((r) => setTimeout(r, 800))\n    setLoading(false)\n    const data = {\n      email: formData.get('email'),\n      fullName: formData.get('fullName'),\n      newsletter: formData.get('newsletter'),\n      role: formData.get('role'),\n    }\n    alert(\n      `Full name: ${data.fullName || ''}\\nEmail: ${data.email || ''}\\nRole: ${\n        data.role || ''\n      }\\nNewsletter: ${data.newsletter}`,\n    )\n  }\n  return (\n    <Form className=\"flex w-full flex-col gap-4\" onSubmit={onSubmit}>\n      <Field name=\"fullName\">\n        <FieldLabel>\n          Full Name <span className=\"text-destructive\">*</span>\n        </FieldLabel>\n        <Input placeholder=\"John Doe\" required type=\"text\" />\n        <FieldError>Please enter a valid name.</FieldError>\n      </Field>\n\n      <Field name=\"email\">\n        <FieldLabel>\n          Email <span className=\"text-destructive\">*</span>\n        </FieldLabel>\n        <Input placeholder=\"john@example.com\" required type=\"email\" />\n        <FieldError>Please enter a valid email.</FieldError>\n      </Field>\n\n      <Field name=\"role\">\n        <FieldLabel>Role</FieldLabel>\n        <Select\n          items={[\n            { label: 'Select your role', value: null },\n            { label: 'Developer', value: 'developer' },\n            { label: 'Designer', value: 'designer' },\n            { label: 'Product Manager', value: 'manager' },\n            { label: 'Other', value: 'other' },\n          ]}\n        >\n          <SelectTrigger>\n            <SelectValue />\n          </SelectTrigger>\n          <SelectPopup>\n            <SelectItem value=\"developer\">Developer</SelectItem>\n            <SelectItem value=\"designer\">Designer</SelectItem>\n            <SelectItem value=\"manager\">Product Manager</SelectItem>\n            <SelectItem value=\"other\">Other</SelectItem>\n          </SelectPopup>\n        </Select>\n        <FieldDescription>This is an optional field</FieldDescription>\n      </Field>\n\n      <Field name=\"newsletter\">\n        <div className=\"flex items-center gap-2\">\n          <Checkbox />\n          <FieldLabel className=\"cursor-pointer\">Subscribe to newsletter</FieldLabel>\n        </div>\n      </Field>\n\n      <Button loading={loading} type=\"submit\">\n        Submit\n      </Button>\n    </Form>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/field.tsx"
+    }
+  ],
+  "categories": [
+    "button",
+    "checkbox",
+    "field",
+    "form",
+    "input",
+    "label",
+    "select"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-cache-01",
+  "title": "cache",
+  "description": "Memory memoization cache map",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-utils-cache",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/utils/cache/h-cache-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { MemoryCache } from '@/utils/cache'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Button } from '@/components/ui/button'\nimport { Badge } from '@/components/ui/badge'\nimport { IconDatabase } from '@tabler/icons-react'\n\nconst memo = new MemoryCache<number>()\n\nexport default function Demo() {\n  const [hits, setHits] = React.useState(0)\n  const [result, setResult] = React.useState<number | null>(null)\n\n  const compute = (x: number) => {\n    const cached = memo.get(String(x))\n    if (cached !== undefined) {\n      setResult(cached)\n      return\n    }\n    setHits((h) => h + 1)\n    const res = x * 42\n    memo.set(String(x), res)\n    setResult(res)\n  }\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconDatabase className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Cache</span>\n        </div>\n        <Badge variant=\"outline\" size=\"sm\" className=\"font-mono tabular-nums\">\n          {hits}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex flex-col gap-3 rounded-[0.875rem] bg-background p-3\">\n        <div className=\"rounded-lg bg-muted p-2.5\">\n          <span className=\"block text-[.6875rem] font-semibold text-muted-foreground\">fn(5)</span>\n          <span className=\"mt-0.5 block font-mono text-sm font-semibold tabular-nums text-foreground\">\n            {result !== null ? result : '—'}\n          </span>\n        </div>\n        <Button size=\"sm\" onClick={() => compute(5)} className=\"w-full\">\n          Compute\n        </Button>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/cache.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "utils",
+    "cache"
+  ],
+  "type": "registry:hook"
+}

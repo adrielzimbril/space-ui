@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-badge-04",
+  "title": "Badge 4",
+  "description": "Badge with icon",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-badge"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/badge/p-badge-04/index.tsx",
+      "content": "import { IconCheck } from '@tabler/icons-react'\nimport { Badge } from '@/components/ui/badge'\n\nexport default function Particle() {\n  return (\n    <Badge variant=\"outline\">\n      <IconCheck aria-hidden=\"true\" />\n      Verified\n    </Badge>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/badge.tsx"
+    }
+  ],
+  "categories": [
+    "badge"
+  ],
+  "type": "registry:ui"
+}

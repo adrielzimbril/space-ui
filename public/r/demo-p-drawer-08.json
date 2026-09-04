@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-drawer-08",
+  "title": "Drawer 8",
+  "description": "Nested right drawers with inset variant",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-drawer",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/drawer/p-drawer-08/index.tsx",
+      "content": "import { Button } from '@/components/ui/button'\nimport {\n  Drawer,\n  DrawerClose,\n  DrawerDescription,\n  DrawerFooter,\n  DrawerHeader,\n  DrawerPanel,\n  DrawerPopup,\n  DrawerTitle,\n  DrawerTrigger,\n} from '@/components/ui/drawer'\nimport { Field, FieldLabel } from '@/components/ui/field'\nimport { Input } from '@/components/ui/input'\n\nexport default function Particle() {\n  return (\n    <Drawer position=\"right\">\n      <DrawerTrigger render={<Button variant=\"outline\" />}>Nested inset drawers</DrawerTrigger>\n      <DrawerPopup variant=\"inset\">\n        <DrawerHeader>\n          <DrawerTitle>Manage team member</DrawerTitle>\n          <DrawerDescription>View and manage a user in your team.</DrawerDescription>\n        </DrawerHeader>\n        <DrawerPanel className=\"grid gap-4\">\n          <div className=\"grid gap-1\">\n            <p className=\"text-muted-foreground text-sm\">Name</p>\n            <p className=\"font-medium text-sm\">Bora Baloglu</p>\n          </div>\n          <div className=\"grid gap-1\">\n            <p className=\"text-muted-foreground text-sm\">Email</p>\n            <p className=\"font-medium text-sm\">bora@example.com</p>\n          </div>\n        </DrawerPanel>\n        <DrawerFooter>\n          <Drawer position=\"right\">\n            <DrawerTrigger render={<Button variant=\"outline\" />}>Edit details</DrawerTrigger>\n            <DrawerPopup variant=\"inset\">\n              <DrawerHeader>\n                <DrawerTitle>Edit details</DrawerTitle>\n                <DrawerDescription>Make changes to the member&apos;s information.</DrawerDescription>\n              </DrawerHeader>\n              <DrawerPanel className=\"grid gap-4\">\n                <Field>\n                  <FieldLabel>Name</FieldLabel>\n                  <Input defaultValue=\"Bora Baloglu\" type=\"text\" />\n                </Field>\n                <Field>\n                  <FieldLabel>Email</FieldLabel>\n                  <Input defaultValue=\"bora@example.com\" type=\"email\" />\n                </Field>\n              </DrawerPanel>\n              <DrawerFooter>\n                <DrawerClose render={<Button variant=\"ghost\" />}>Cancel</DrawerClose>\n                <Button type=\"submit\">Save changes</Button>\n              </DrawerFooter>\n            </DrawerPopup>\n          </Drawer>\n        </DrawerFooter>\n      </DrawerPopup>\n    </Drawer>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/drawer.tsx"
+    }
+  ],
+  "categories": [
+    "drawer"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-paper-shader-01",
+  "title": "Paper Shader Demo",
+  "description": "Paper WebGL fragment shader canvas.",
+  "registryDependencies": [
+    "@usespaceui/components-shader-paper-shader"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/shader/paper-shader/c-paper-shader-01/index.tsx",
+      "content": "'use client'\n\nimport PaperShader from '@/components/shader/paper-shader'\nimport { ORIGINAL_FRAGMENT_SHADER } from './shader-source'\n\nexport default function CShaderDemo() {\n  return (\n    <div className=\"size-full overflow-hidden\">\n      <PaperShader\n        fragmentShader={ORIGINAL_FRAGMENT_SHADER}\n        uniforms={{\n          u_colorBack: [0.1, 0.1, 0.1, 1],\n          u_colorTint: [1, 1, 1, 1],\n          u_contour: 0.5,\n          u_distortion: 0.1,\n          u_softness: 0.05,\n          u_repetition: 1.5,\n          u_shiftRed: 0.5,\n          u_shiftBlue: 0.5,\n          u_angle: 0,\n          u_isImage: false,\n          u_shape: 0,\n          u_fit: 0,\n          u_scale: 1,\n          u_rotation: 0,\n          u_offsetX: 0,\n          u_offsetY: 0,\n          u_originX: 0.5,\n          u_originY: 0.5,\n          u_worldWidth: 0,\n          u_worldHeight: 0,\n        }}\n        webGlContextAttributes={{ alpha: true, antialias: true }}\n        speed={1}\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/shader/paper-shader.tsx"
+    },
+    {
+      "path": "src/registry/demo/components/shader/paper-shader/c-paper-shader-01/index.tsx",
+      "content": "'use client'\n\nimport PaperShader from '@/components/shader/paper-shader'\nimport { ORIGINAL_FRAGMENT_SHADER } from './shader-source'\n\nexport default function CShaderDemo() {\n  return (\n    <div className=\"size-full overflow-hidden\">\n      <PaperShader\n        fragmentShader={ORIGINAL_FRAGMENT_SHADER}\n        uniforms={{\n          u_colorBack: [0.1, 0.1, 0.1, 1],\n          u_colorTint: [1, 1, 1, 1],\n          u_contour: 0.5,\n          u_distortion: 0.1,\n          u_softness: 0.05,\n          u_repetition: 1.5,\n          u_shiftRed: 0.5,\n          u_shiftBlue: 0.5,\n          u_angle: 0,\n          u_isImage: false,\n          u_shape: 0,\n          u_fit: 0,\n          u_scale: 1,\n          u_rotation: 0,\n          u_offsetX: 0,\n          u_offsetY: 0,\n          u_originX: 0.5,\n          u_originY: 0.5,\n          u_worldWidth: 0,\n          u_worldHeight: 0,\n        }}\n        webGlContextAttributes={{ alpha: true, antialias: true }}\n        speed={1}\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/shader/paper-shader.tsx"
+    }
+  ],
+  "categories": [
+    "shader",
+    "webgl"
+  ],
+  "type": "registry:component"
+}

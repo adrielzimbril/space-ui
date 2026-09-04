@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-mutation-01",
+  "title": "useMutation",
+  "description": "Async action runner with loading and error state",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-form-use-mutation",
+    "@usespaceui/hooks-utils-sleep",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/form/mutation/h-mutation-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { sleep } from '@/utils/sleep'\nimport { useMutation } from '@/hooks/use-mutation'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Button } from '@/components/ui/button'\nimport { Badge } from '@/components/ui/badge'\nimport { IconLoader2, IconCheck, IconAlertCircle, IconDatabase } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const { mutate, loading, data, isSuccess, isError } = useMutation(async (recordName: string) => {\n    await sleep(750)\n    if (recordName.includes('Error')) {\n      throw new Error('Simulated database mutation failure!')\n    }\n    return { id: Math.floor(Math.random() * 9000) + 1000, name: recordName, timestamp: new Date().toLocaleTimeString() }\n  })\n\n  const status = loading ? 'Executing' : isSuccess ? 'Success' : isError ? 'Error' : 'Idle'\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconDatabase className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Mutate</span>\n        </div>\n        <Badge variant={isSuccess ? 'success' : isError ? 'destructive' : 'outline'} size=\"sm\">\n          {status}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex flex-col gap-3 rounded-[0.875rem] bg-background p-3\">\n        <div className=\"rounded-lg bg-muted p-2.5\">\n          {loading && (\n            <div className=\"flex items-center gap-2 text-sm text-muted-foreground\">\n              <IconLoader2 className=\"size-4 animate-spin\" />\n              <span>Processing</span>\n            </div>\n          )}\n          {isSuccess && data && (\n            <div className=\"flex items-start gap-2\">\n              <IconCheck className=\"mt-0.5 size-4 shrink-0 text-muted-foreground\" />\n              <div className=\"min-w-0\">\n                <span className=\"block text-[.6875rem] font-semibold text-muted-foreground\">Record #{data.id}</span>\n                <span className=\"mt-0.5 block truncate font-mono text-sm font-semibold text-foreground\">\n                  {data.name} @ {data.timestamp}\n                </span>\n              </div>\n            </div>\n          )}\n          {isError && (\n            <div className=\"flex items-center gap-2 text-sm text-destructive\">\n              <IconAlertCircle className=\"size-4 shrink-0\" />\n              <span>Mutation failed</span>\n            </div>\n          )}\n          {!loading && !isSuccess && !isError && <span className=\"text-sm text-muted-foreground\">Ready to mutate</span>}\n        </div>\n        <div className=\"flex gap-2\">\n          <Button size=\"sm\" onClick={() => mutate('New User Project')} disabled={loading} className=\"flex-1\">\n            Create\n          </Button>\n          <Button\n            size=\"sm\"\n            variant=\"outline\"\n            onClick={() => mutate('Simulated Error')}\n            disabled={loading}\n            className=\"flex-1\"\n          >\n            Error\n          </Button>\n        </div>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/mutation.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "form",
+    "mutation"
+  ],
+  "type": "registry:hook"
+}

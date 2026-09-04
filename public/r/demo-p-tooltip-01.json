@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-tooltip-01",
+  "title": "Tooltip 1",
+  "description": "Basic tooltip",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-tooltip"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/tooltip/p-tooltip-01/index.tsx",
+      "content": "import { Button } from '@/components/ui/button'\nimport { Tooltip, TooltipPopup, TooltipTrigger } from '@/components/ui/tooltip'\n\nexport default function Particle() {\n  return (\n    <Tooltip>\n      <TooltipTrigger render={<Button variant=\"outline\" />}>Hover me</TooltipTrigger>\n      <TooltipPopup>Helpful hint</TooltipPopup>\n    </Tooltip>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/tooltip.tsx"
+    }
+  ],
+  "categories": [
+    "tooltip"
+  ],
+  "type": "registry:ui"
+}

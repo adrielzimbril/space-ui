@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-tabs-02",
+  "title": "Tabs Sizes",
+  "description": "Tabs list in sm, default, and lg sizes",
+  "registryDependencies": [
+    "@usespaceui/primitives-tabs"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/tabs/p-tabs-02/index.tsx",
+      "content": "import { Tabs, TabsList, TabsTab } from '@/components/ui/tabs'\n\nexport default function Particle() {\n  return (\n    <div className=\"flex w-full flex-col gap-4\">\n      <Tabs defaultValue=\"1\">\n        <TabsList size=\"sm\">\n          <TabsTab value=\"1\">Small</TabsTab>\n          <TabsTab value=\"2\">Tab</TabsTab>\n        </TabsList>\n      </Tabs>\n\n      <Tabs defaultValue=\"1\">\n        <TabsList size=\"default\">\n          <TabsTab value=\"1\">Default</TabsTab>\n          <TabsTab value=\"2\">Tab</TabsTab>\n        </TabsList>\n      </Tabs>\n\n      <Tabs defaultValue=\"1\">\n        <TabsList size=\"lg\">\n          <TabsTab value=\"1\">Large</TabsTab>\n          <TabsTab value=\"2\">Tab</TabsTab>\n        </TabsList>\n      </Tabs>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/tabs.tsx"
+    }
+  ],
+  "categories": [
+    "tabs"
+  ],
+  "type": "registry:ui"
+}

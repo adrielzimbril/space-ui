@@ -1,0 +1,36 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-date-picker-03",
+  "title": "Date Picker 3",
+  "description": "Date picker with field and dropdown navigation",
+  "dependencies": [
+    "@daypicker/react",
+    "@tabler/icons-react",
+    "date-fns",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-calendar",
+    "@usespaceui/primitives-combobox",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-popover"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/date-picker/p-date-picker-03/index.tsx",
+      "content": "'use client'\n\nimport type { DropdownProps } from '@daypicker/react'\nimport { format } from 'date-fns'\nimport { IconCalendar } from '@tabler/icons-react'\nimport * as React from 'react'\nimport { Button } from '@/components/ui/button'\nimport { Calendar } from '@/components/ui/calendar'\nimport {\n  Combobox,\n  ComboboxEmpty,\n  ComboboxInput,\n  ComboboxItem,\n  ComboboxList,\n  ComboboxPopup,\n} from '@/components/ui/combobox'\nimport { Field, FieldLabel } from '@/components/ui/field'\nimport { Popover, PopoverPopup, PopoverTrigger } from '@/components/ui/popover'\n\ninterface DropdownItem {\n  disabled?: boolean\n  label: string\n  value: string\n}\n\nfunction CalendarDropdown(props: DropdownProps) {\n  const { options, value, onChange, 'aria-label': ariaLabel } = props\n\n  const items: DropdownItem[] =\n    options?.map((option) => ({\n      disabled: option.disabled,\n      label: option.label,\n      value: option.value.toString(),\n    })) ?? []\n\n  const selectedItem = items.find((item) => item.value === value?.toString())\n\n  const handleValueChange = (newValue: DropdownItem | null) => {\n    if (onChange && newValue) {\n      const syntheticEvent = {\n        target: { value: newValue.value },\n      } as React.ChangeEvent<HTMLSelectElement>\n      onChange(syntheticEvent)\n    }\n  }\n\n  return (\n    <Combobox aria-label={ariaLabel} autoHighlight items={items} onValueChange={handleValueChange} value={selectedItem}>\n      <ComboboxInput className=\"**:[input]:w-0 **:[input]:flex-1\" onFocus={(e) => e.currentTarget.select()} />\n      <ComboboxPopup aria-label={ariaLabel}>\n        <ComboboxEmpty>No items found.</ComboboxEmpty>\n        <ComboboxList>\n          {(item: DropdownItem) => (\n            <ComboboxItem disabled={item.disabled} key={item.value} value={item}>\n              {item.label}\n            </ComboboxItem>\n          )}\n        </ComboboxList>\n      </ComboboxPopup>\n    </Combobox>\n  )\n}\n\nexport default function Particle() {\n  const [date, setDate] = React.useState<Date | undefined>()\n  const id = React.useId()\n  return (\n    <Field>\n      <FieldLabel htmlFor={id}>Start date</FieldLabel>\n      <Popover>\n        <PopoverTrigger id={id} render={<Button className=\"w-full justify-start\" variant=\"outline\" />}>\n          <IconCalendar aria-hidden=\"true\" />\n          {date ? format(date, 'PPP') : 'Pick a date'}\n        </PopoverTrigger>\n        <PopoverPopup>\n          <Calendar\n            captionLayout=\"dropdown\"\n            components={{ Dropdown: CalendarDropdown }}\n            defaultMonth={date}\n            endMonth={new Date()}\n            mode=\"single\"\n            onSelect={setDate}\n            selected={date}\n            startMonth={new Date(1900, 0)}\n          />\n        </PopoverPopup>\n      </Popover>\n    </Field>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/date-picker.tsx"
+    }
+  ],
+  "categories": [
+    "date picker",
+    "calendar",
+    "popover",
+    "button",
+    "field",
+    "combobox"
+  ],
+  "type": "registry:ui"
+}

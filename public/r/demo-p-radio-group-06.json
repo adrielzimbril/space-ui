@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-radio-group-06",
+  "title": "Radio Group 6",
+  "description": "Small segmented radio group",
+  "registryDependencies": [
+    "@usespaceui/lib-segmented-control",
+    "@usespaceui/primitives-radio-group"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/radio-group/p-radio-group-06/index.tsx",
+      "content": "'use client'\n\nimport { segmentedControlItemVariants, segmentedControlRootClassName } from '@/lib/segmented-control'\nimport { RadioGroupPrimitive, RadioPrimitive } from '@/components/ui/radio-group'\n\nconst smClassName = segmentedControlItemVariants({ className: 'grow', size: 'sm', state: 'checked' })\nconst defaultClassName = segmentedControlItemVariants({ className: 'grow', state: 'checked' })\nconst lgClassName = segmentedControlItemVariants({ className: 'grow', size: 'lg', state: 'checked' })\n\nexport default function Particle() {\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-4\">\n      <RadioGroupPrimitive aria-label=\"Plan\" className={segmentedControlRootClassName} defaultValue=\"pro\">\n        <RadioPrimitive.Root className={smClassName} value=\"free\">\n          Free\n        </RadioPrimitive.Root>\n        <RadioPrimitive.Root className={smClassName} value=\"pro\">\n          Pro\n        </RadioPrimitive.Root>\n        <RadioPrimitive.Root className={smClassName} value=\"enterprise\">\n          Enterprise\n        </RadioPrimitive.Root>\n      </RadioGroupPrimitive>\n\n      <RadioGroupPrimitive aria-label=\"Plan\" className={segmentedControlRootClassName} defaultValue=\"pro\">\n        <RadioPrimitive.Root className={defaultClassName} value=\"free\">\n          Free\n        </RadioPrimitive.Root>\n        <RadioPrimitive.Root className={defaultClassName} value=\"pro\">\n          Pro\n        </RadioPrimitive.Root>\n        <RadioPrimitive.Root className={defaultClassName} value=\"enterprise\">\n          Enterprise\n        </RadioPrimitive.Root>\n      </RadioGroupPrimitive>\n\n      <RadioGroupPrimitive aria-label=\"Plan\" className={segmentedControlRootClassName} defaultValue=\"pro\">\n        <RadioPrimitive.Root className={lgClassName} value=\"free\">\n          Free\n        </RadioPrimitive.Root>\n        <RadioPrimitive.Root className={lgClassName} value=\"pro\">\n          Pro\n        </RadioPrimitive.Root>\n        <RadioPrimitive.Root className={lgClassName} value=\"enterprise\">\n          Enterprise\n        </RadioPrimitive.Root>\n      </RadioGroupPrimitive>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/radio-group.tsx"
+    }
+  ],
+  "categories": [
+    "radio-group",
+    "segmented-control"
+  ],
+  "type": "registry:ui"
+}

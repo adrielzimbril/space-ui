@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-group-02",
+  "title": "Group 2",
+  "description": "Group with input",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-browser-use-clipboard",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-group",
+    "@usespaceui/primitives-input",
+    "@usespaceui/primitives-tooltip"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/group/p-group-02/index.tsx",
+      "content": "'use client'\n\nimport { IconCheck, IconCopy } from '@tabler/icons-react'\nimport { useRef } from 'react'\nimport { useCopyToClipboard } from '@/hooks/use-clipboard'\nimport { Button } from '@/components/ui/button'\nimport { Group, GroupSeparator } from '@/components/ui/group'\nimport { Input } from '@/components/ui/input'\nimport { Tooltip, TooltipPopup, TooltipTrigger } from '@/components/ui/tooltip'\n\nexport default function Particle() {\n  const { copyToClipboard, isCopied } = useCopyToClipboard()\n  const inputRef = useRef<HTMLInputElement>(null)\n\n  return (\n    <Group aria-label=\"Url input\">\n      <Input aria-label=\"Url\" defaultValue=\"https://spaceui.one\" ref={inputRef} type=\"text\" />\n      <GroupSeparator />\n      <Tooltip>\n        <TooltipTrigger\n          render={\n            <Button\n              aria-label=\"Copy\"\n              onClick={() => {\n                if (inputRef.current) {\n                  copyToClipboard(inputRef.current.value)\n                }\n              }}\n              size=\"icon\"\n              variant=\"outline\"\n            />\n          }\n        >\n          {isCopied ? <IconCheck /> : <IconCopy />}\n        </TooltipTrigger>\n        <TooltipPopup>\n          <p>Copy to clipboard</p>\n        </TooltipPopup>\n      </Tooltip>\n    </Group>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/group.tsx"
+    }
+  ],
+  "categories": [
+    "group",
+    "input"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-calendar-08",
+  "title": "Calendar 8",
+  "description": "Calendar with multiple date selection",
+  "dependencies": [
+    "date-fns"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/calendar/p-calendar-08/index.tsx",
+      "content": "'use client'\n\nimport { addDays, subDays } from 'date-fns'\nimport { useState } from 'react'\nimport { Calendar } from '@/components/ui/calendar'\n\nexport default function Particle() {\n  const today = new Date()\n  const [date, setDate] = useState<Date[] | undefined>([\n    subDays(today, 17),\n    addDays(today, 2),\n    addDays(today, 6),\n    addDays(today, 8),\n  ])\n\n  return <Calendar mode=\"multiple\" onSelect={setDate} selected={date} />\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/calendar.tsx"
+    }
+  ],
+  "categories": [
+    "calendar"
+  ],
+  "type": "registry:ui"
+}

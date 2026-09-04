@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-switch-01",
+  "title": "Switch",
+  "description": "Pattern matching branches with Case and Default",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-components-switch",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/components/switch/h-switch-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { Switch, Case, Default } from '@/components/ui/switch'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Button } from '@/components/ui/button'\nimport { Badge } from '@/components/ui/badge'\nimport { IconSwitchHorizontal } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const [tab, setTab] = React.useState<'home' | 'profile' | 'settings'>('home')\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconSwitchHorizontal className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Switch</span>\n        </div>\n        <Badge variant=\"outline\" size=\"sm\" className=\"capitalize\">\n          {tab}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex flex-col gap-3 rounded-[0.875rem] bg-background p-3\">\n        <div className=\"flex gap-1.5\">\n          <Button\n            size=\"sm\"\n            variant={tab === 'home' ? 'default' : 'outline'}\n            onClick={() => setTab('home')}\n            className=\"flex-1\"\n          >\n            Home\n          </Button>\n          <Button\n            size=\"sm\"\n            variant={tab === 'profile' ? 'default' : 'outline'}\n            onClick={() => setTab('profile')}\n            className=\"flex-1\"\n          >\n            Profile\n          </Button>\n          <Button\n            size=\"sm\"\n            variant={tab === 'settings' ? 'default' : 'outline'}\n            onClick={() => setTab('settings')}\n            className=\"flex-1\"\n          >\n            Settings\n          </Button>\n        </div>\n        <div className=\"rounded-lg bg-muted p-2.5 text-center\">\n          <Switch>\n            <Case condition={tab === 'home'}>\n              <p className=\"text-sm font-semibold text-foreground\">Dashboard overview</p>\n            </Case>\n            <Case condition={tab === 'profile'}>\n              <p className=\"text-sm font-semibold text-foreground\">Profile details</p>\n            </Case>\n            <Default>\n              <p className=\"text-sm font-semibold text-foreground\">Preferences</p>\n            </Default>\n          </Switch>\n        </div>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/switch.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "components",
+    "switch"
+  ],
+  "type": "registry:hook"
+}

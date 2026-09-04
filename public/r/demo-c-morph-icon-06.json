@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-morph-icon-06",
+  "title": "Accordion & Visibility Toggles",
+  "description": "Password reveal and accordion expand/collapse transitions using MorphIcon.",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-morph-icon",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/morph-icon/c-morph-icon-06/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { Button } from '@/components/ui/button'\nimport { Input } from '@/components/ui/input'\nimport { MorphIcon } from '@/components/spaceui/morph-icon'\nimport { IconChevronDown, IconChevronUp, IconEye, IconEyeOff, IconPlus, IconMinus } from '@tabler/icons-react'\n\nexport default function AccordionVisibilityDemo() {\n  const [expanded, setExpanded] = React.useState(false)\n  const [showPassword, setShowPassword] = React.useState(false)\n  const [openSection, setOpenSection] = React.useState(false)\n\n  return (\n    <div className=\"flex flex-col items-center gap-6 p-8 max-w-sm w-full mx-auto\">\n      {/* Password visibility input */}\n      <div className=\"relative w-full\">\n        <Input\n          type={showPassword ? 'text' : 'password'}\n          defaultValue=\"super-secret-passphrase\"\n          placeholder=\"Password\"\n          className=\"pr-10\"\n        />\n        <Button\n          type=\"button\"\n          variant=\"ghost\"\n          size=\"icon\"\n          className=\"absolute right-1 top-1/2 -translate-y-1/2 size-7 text-muted-foreground hover:text-foreground cursor-pointer\"\n          onClick={() => setShowPassword((p) => !p)}\n        >\n          <MorphIcon activeKey={showPassword ? 'visible' : 'hidden'} variant=\"blur-scale\">\n            {showPassword ? <IconEyeOff className=\"size-4\" /> : <IconEye className=\"size-4\" />}\n          </MorphIcon>\n        </Button>\n      </div>\n\n      {/* Accordion / Plus-Minus Button */}\n      <div className=\"flex items-center gap-3 w-full justify-between p-3 rounded-xl border border-border bg-card\">\n        <span className=\"text-xs font-medium text-foreground\">Expand Details</span>\n        <Button\n          variant=\"outline\"\n          size=\"icon\"\n          className=\"size-8 rounded-lg cursor-pointer\"\n          onClick={() => setOpenSection((o) => !o)}\n        >\n          <MorphIcon activeKey={openSection ? 'minus' : 'plus'} variant=\"rotate-scale\">\n            {openSection ? <IconMinus className=\"size-4\" /> : <IconPlus className=\"size-4\" />}\n          </MorphIcon>\n        </Button>\n      </div>\n\n      {/* Dropdown / Chevron indicator */}\n      <div className=\"flex items-center gap-3 w-full justify-between p-3 rounded-xl border border-border bg-card\">\n        <span className=\"text-xs font-medium text-foreground\">Menu Trigger</span>\n        <Button\n          variant=\"ghost\"\n          size=\"icon\"\n          className=\"size-8 rounded-lg cursor-pointer\"\n          onClick={() => setExpanded((e) => !e)}\n        >\n          <MorphIcon activeKey={expanded ? 'up' : 'down'} variant=\"flip\">\n            {expanded ? <IconChevronUp className=\"size-4\" /> : <IconChevronDown className=\"size-4\" />}\n          </MorphIcon>\n        </Button>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/morph-icon.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "morph-icon"
+  ],
+  "type": "registry:component"
+}

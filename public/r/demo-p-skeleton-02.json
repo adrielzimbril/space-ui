@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-skeleton-02",
+  "title": "Skeleton 2",
+  "description": "Skeleton only",
+  "registryDependencies": [
+    "@usespaceui/primitives-skeleton"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/skeleton/p-skeleton-02/index.tsx",
+      "content": "import { Skeleton } from '@/components/ui/skeleton'\n\nexport default function Particle() {\n  return (\n    <div className=\"flex w-full max-w-92 items-center gap-4\">\n      <Skeleton className=\"size-10 rounded-full\" />\n      <div className=\"flex flex-1 flex-col\">\n        <Skeleton className=\"my-0.5 h-4 max-w-54\" />\n        <div className=\"flex max-w-54 items-center gap-1\">\n          <Skeleton className=\"my-0.5 h-4 w-1/2\" />\n          <Skeleton className=\"my-0.5 h-4 w-1/2\" />\n        </div>\n      </div>\n      <Skeleton className=\"h-6 w-17\" />\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/skeleton.tsx"
+    }
+  ],
+  "categories": [
+    "skeleton"
+  ],
+  "type": "registry:ui"
+}

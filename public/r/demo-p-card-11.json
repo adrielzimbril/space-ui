@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-card-11",
+  "title": "Card 11",
+  "description": "CardFrame with header action",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-empty"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/card/p-card-11/index.tsx",
+      "content": "import { IconFolder, IconPlus } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport {\n  Card,\n  CardFrame,\n  CardFrameAction,\n  CardFrameDescription,\n  CardFrameHeader,\n  CardFrameTitle,\n  CardPanel,\n} from '@/components/ui/card'\nimport { Empty, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/ui/empty'\n\nexport default function Particle() {\n  return (\n    <CardFrame className=\"w-full\">\n      <CardFrameHeader>\n        <CardFrameTitle>Project</CardFrameTitle>\n        <CardFrameDescription>Manage your projects</CardFrameDescription>\n        <CardFrameAction>\n          <Button variant=\"outline\">\n            <IconPlus />\n            Add\n          </Button>\n        </CardFrameAction>\n      </CardFrameHeader>\n      <Card>\n        <CardPanel>\n          <Empty>\n            <EmptyHeader>\n              <EmptyMedia variant=\"icon\">\n                <IconFolder />\n              </EmptyMedia>\n              <EmptyTitle>No projects yet</EmptyTitle>\n              <EmptyDescription>Get started by adding your first project.</EmptyDescription>\n            </EmptyHeader>\n          </Empty>\n        </CardPanel>\n      </Card>\n    </CardFrame>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/card.tsx"
+    }
+  ],
+  "categories": [
+    "card",
+    "frame"
+  ],
+  "type": "registry:ui"
+}

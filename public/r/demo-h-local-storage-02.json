@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-local-storage-02",
+  "title": "useLocalStorage (Form Settings)",
+  "description": "Persist form object in storage",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-browser-use-local-storage",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/browser/local-storage/h-local-storage-02/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { useLocalStorage } from '@/hooks/use-local-storage'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Badge } from '@/components/ui/badge'\nimport { Input } from '@/components/ui/input'\nimport { IconUser } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const [user, setUser] = useLocalStorage('space_demo_user', { username: 'alex', role: 'developer' })\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconUser className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Profile</span>\n        </div>\n        <Badge variant=\"outline\" size=\"sm\">\n          Synced\n        </Badge>\n      </div>\n      <CardPanel className=\"flex flex-col gap-3 rounded-[0.875rem] bg-background p-3\">\n        <div>\n          <span className=\"mb-1 block text-[.6875rem] font-semibold text-muted-foreground\">Username</span>\n          <Input\n            value={user.username}\n            onChange={(e) => setUser({ ...user, username: e.target.value })}\n            placeholder=\"alex\"\n            aria-label=\"Username\"\n            className=\"text-base sm:text-sm\"\n          />\n        </div>\n        <div>\n          <span className=\"mb-1 block text-[.6875rem] font-semibold text-muted-foreground\">Role</span>\n          <Input\n            value={user.role}\n            onChange={(e) => setUser({ ...user, role: e.target.value })}\n            placeholder=\"developer\"\n            aria-label=\"Role\"\n            className=\"text-base sm:text-sm\"\n          />\n        </div>\n        <div className=\"rounded-lg bg-muted p-2.5\">\n          <span className=\"block text-[.6875rem] font-semibold text-muted-foreground\">Stored</span>\n          <pre className=\"mt-0.5 overflow-x-auto font-mono text-sm font-semibold text-foreground\">\n            {JSON.stringify(user, null, 2)}\n          </pre>\n        </div>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/local-storage.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "local-storage"
+  ],
+  "type": "registry:hook"
+}

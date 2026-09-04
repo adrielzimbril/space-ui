@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-clipboard-03",
+  "title": "useClipboard (API Keys List)",
+  "description": "Multi-credential copy list",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-browser-use-clipboard",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/browser/clipboard/h-clipboard-03/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { useClipboard } from '@/hooks/use-clipboard'\nimport { Button } from '@/components/ui/button'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Badge } from '@/components/ui/badge'\nimport { IconCheck, IconCopy, IconKey, IconShieldLock } from '@tabler/icons-react'\n\nfunction CredentialRow({ icon: Icon, label, value }: { icon: typeof IconKey; label: string; value: string }) {\n  const { copy, copied } = useClipboard({ timeout: 1500 })\n\n  return (\n    <div className=\"flex items-center justify-between gap-3 rounded-lg bg-muted p-2.5\">\n      <div className=\"flex min-w-0 items-center gap-2.5\">\n        <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-background shrink-0\">\n          <Icon className=\"size-3.5 text-muted-foreground\" />\n        </Badge>\n        <div className=\"flex min-w-0 flex-col\">\n          <span className=\"text-xs font-semibold text-foreground\">{label}</span>\n          <span className=\"truncate font-mono text-[.6875rem] text-muted-foreground\">{value}</span>\n        </div>\n      </div>\n      <Button\n        size=\"sm\"\n        variant=\"ghost\"\n        onClick={() => copy(value)}\n        className=\"shrink-0 bg-background text-muted-foreground hover:bg-background hover:text-foreground\"\n        aria-label={copied ? `${label} copied` : `Copy ${label}`}\n      >\n        {copied ? <IconCheck className=\"size-3.5\" /> : <IconCopy className=\"size-3.5\" />}\n      </Button>\n    </div>\n  )\n}\n\nexport default function Demo() {\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconKey className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Credentials</span>\n        </div>\n        <Badge variant=\"outline\" size=\"sm\">\n          Sensitive\n        </Badge>\n      </div>\n      <CardPanel className=\"flex flex-col gap-2 rounded-[0.875rem] bg-background p-3\">\n        <CredentialRow icon={IconKey} label=\"Public key\" value=\"pk_live_9482934823\" />\n        <CredentialRow icon={IconShieldLock} label=\"Webhook secret\" value=\"whsec_8847291240\" />\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/clipboard.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "clipboard"
+  ],
+  "type": "registry:hook"
+}

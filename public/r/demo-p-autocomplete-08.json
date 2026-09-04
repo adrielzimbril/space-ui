@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-autocomplete-08",
+  "title": "Autocomplete 8",
+  "description": "Autocomplete with trigger and clear buttons",
+  "registryDependencies": [
+    "@usespaceui/primitives-autocomplete"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/autocomplete/p-autocomplete-08/index.tsx",
+      "content": "'use client'\n\nimport {\n  Autocomplete,\n  AutocompleteEmpty,\n  AutocompleteInput,\n  AutocompleteItem,\n  AutocompleteList,\n  AutocompletePopup,\n} from '@/components/ui/autocomplete'\n\nconst items = [\n  { label: 'Apple', value: 'apple' },\n  { label: 'Banana', value: 'banana' },\n  { label: 'Orange', value: 'orange' },\n  { label: 'Grape', value: 'grape' },\n  { label: 'Strawberry', value: 'strawberry' },\n  { label: 'Mango', value: 'mango' },\n  { label: 'Pineapple', value: 'pineapple' },\n  { label: 'Kiwi', value: 'kiwi' },\n  { label: 'Peach', value: 'peach' },\n  { label: 'Pear', value: 'pear' },\n]\n\nexport default function Particle() {\n  return (\n    <Autocomplete items={items}>\n      <AutocompleteInput aria-label=\"Search items\" placeholder=\"Search items…\" showClear showTrigger />\n      <AutocompletePopup>\n        <AutocompleteEmpty>No items found.</AutocompleteEmpty>\n        <AutocompleteList>\n          {(item) => (\n            <AutocompleteItem key={item.value} value={item}>\n              {item.label}\n            </AutocompleteItem>\n          )}\n        </AutocompleteList>\n      </AutocompletePopup>\n    </Autocomplete>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/autocomplete.tsx"
+    }
+  ],
+  "categories": [
+    "autocomplete",
+    "input"
+  ],
+  "type": "registry:ui"
+}

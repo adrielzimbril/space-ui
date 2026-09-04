@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-switch-03",
+  "title": "Switch 3",
+  "description": "Switch card",
+  "registryDependencies": [
+    "@usespaceui/primitives-label",
+    "@usespaceui/primitives-switch"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/switch/p-switch-03/index.tsx",
+      "content": "'use client'\n\nimport { useId } from 'react'\nimport { Label } from '@/components/ui/label'\nimport { Switch } from '@/components/ui/switch'\n\nexport default function Particle() {\n  const id = useId()\n\n  return (\n    <Label\n      className=\"flex items-center gap-6 rounded-xl border p-3 hover:bg-accent/50 has-data-checked:border-primary/25 has-data-checked:bg-accent/50\"\n      htmlFor={id}\n    >\n      <div className=\"flex flex-col gap-1\">\n        <p>Enable notifications</p>\n        <p className=\"text-muted-foreground text-xs\">You can enable or disable notifications at any time.</p>\n      </div>\n      <Switch className=\"[--thumb-size:--spacing(4)] sm:[--thumb-size:--spacing(3)]\" defaultChecked id={id} />\n    </Label>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/switch.tsx"
+    }
+  ],
+  "categories": [
+    "switch"
+  ],
+  "type": "registry:ui"
+}

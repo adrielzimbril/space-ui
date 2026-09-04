@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-group-28",
+  "title": "Team activity and collaboration group",
+  "description": "Team activity and collaboration group",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-avatar-group",
+    "@usespaceui/primitives-avatar",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-group",
+    "@usespaceui/primitives-menu"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/group/p-group-28/index.tsx",
+      "content": "import { IconUsers, IconPlus, IconClock, IconDots, IconUser, IconSettings, IconExternalLink } from '@tabler/icons-react'\nimport { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'\nimport { AvatarGroup } from '@/components/spaceui/avatar-group'\nimport { Button } from '@/components/ui/button'\nimport { Group, GroupText } from '@/components/ui/group'\nimport {\n  Menu,\n  MenuPopup,\n  MenuGroup,\n  MenuItem,\n  MenuGroupLabel,\n  MenuSeparator,\n  MenuTrigger,\n} from '@/components/ui/menu'\nconst team = [\n  { name: 'Shadcn', src: 'https://avatars.spaceui.one/v1?name=shadcn&variant=lumina', fallback: 'SH' },\n  { name: 'Max', src: 'https://avatars.spaceui.one/v1?name=max&variant=shaula', fallback: 'MA' },\n  {\n    name: 'Evil Rabbit',\n    src: 'https://avatars.spaceui.one/v1?name=evilrabbit&variant=singularity',\n    fallback: 'ER',\n  },\n]\n\nexport default function Pattern() {\n  return (\n    <Group>\n      {/* Team Context */}\n      <Button variant=\"outline\">\n        <IconUsers aria-hidden=\"true\" />\n        <span>Team</span>\n      </Button>\n\n      {/* Active Members - Inspired by Avatar Patterns */}\n      <GroupText className=\"gap-0 bg-transparent\">\n        <AvatarGroup>\n          {team.map((member) => (\n            <Avatar key={member.name} className=\"size-5\">\n              <AvatarImage src={member.src} alt={member.name} />\n              <AvatarFallback>{member.fallback}</AvatarFallback>\n            </Avatar>\n          ))}\n        </AvatarGroup>\n        <div className=\"ml-2 flex items-center gap-1\">\n          <span className=\"size-1.5 rounded-full bg-green-500\" />\n          <span className=\"text-muted-foreground text-xs font-medium\">3 Live</span>\n        </div>\n      </GroupText>\n\n      {/* Collaboration Actions */}\n      <Button variant=\"outline\" size=\"icon\">\n        <IconPlus aria-hidden=\"true\" />\n      </Button>\n      <Button variant=\"outline\" size=\"icon\">\n        <IconClock aria-hidden=\"true\" />\n      </Button>\n\n      {/* Options Dropdown */}\n      <Menu>\n        <MenuTrigger\n          render={\n            <Button variant=\"outline\" size=\"icon\">\n              <IconDots aria-hidden=\"true\" />\n            </Button>\n          }\n        />\n        <MenuPopup align=\"end\" className=\"w-48\">\n          <MenuGroup>\n            <MenuGroupLabel>Team Settings</MenuGroupLabel>\n            <MenuSeparator />\n            <MenuItem>\n              <IconUser aria-hidden=\"true\" />\n              <span>Manage members</span>\n            </MenuItem>\n            <MenuItem>\n              <IconSettings aria-hidden=\"true\" />\n              <span>Team preferences</span>\n            </MenuItem>\n          </MenuGroup>\n          <MenuSeparator />\n          <MenuItem>\n            <IconExternalLink aria-hidden=\"true\" />\n            <span>Open dashboard</span>\n          </MenuItem>\n        </MenuPopup>\n      </Menu>\n    </Group>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/group.tsx"
+    }
+  ],
+  "categories": [
+    "button-group"
+  ],
+  "type": "registry:ui"
+}

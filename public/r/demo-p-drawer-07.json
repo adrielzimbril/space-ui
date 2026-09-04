@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-drawer-07",
+  "title": "Drawer 7",
+  "description": "Nested bottom drawers with centered content",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-drawer"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/drawer/p-drawer-07/index.tsx",
+      "content": "import { Button } from '@/components/ui/button'\nimport {\n  Drawer,\n  DrawerClose,\n  DrawerDescription,\n  DrawerFooter,\n  DrawerHeader,\n  DrawerPanel,\n  DrawerPopup,\n  DrawerTitle,\n  DrawerTrigger,\n} from '@/components/ui/drawer'\n\nexport default function Particle() {\n  return (\n    <Drawer>\n      <DrawerTrigger render={<Button variant=\"outline\" />}>Nested drawers</DrawerTrigger>\n      <DrawerPopup showBar>\n        <DrawerHeader className=\"text-center\">\n          <DrawerTitle>First step</DrawerTitle>\n          <DrawerDescription>\n            This is the first step. Tap the button below to continue to the next screen.\n          </DrawerDescription>\n        </DrawerHeader>\n        <DrawerFooter className=\"justify-center sm:justify-center\" variant=\"bare\">\n          <DrawerClose render={<Button variant=\"ghost\" />}>Cancel</DrawerClose>\n          <Drawer>\n            <DrawerTrigger render={<Button variant=\"outline\" />}>Continue</DrawerTrigger>\n            <DrawerPopup showBar>\n              <DrawerHeader className=\"text-center\">\n                <DrawerTitle>Second step</DrawerTitle>\n                <DrawerDescription>\n                  You&apos;ve reached the second step. Tap the button below to continue to the next screen.\n                </DrawerDescription>\n              </DrawerHeader>\n              <DrawerPanel>\n                <div className=\"flex justify-center\">\n                  <div className=\"size-48 shrink-0 rounded-xl border bg-muted\" />\n                </div>\n              </DrawerPanel>\n              <DrawerFooter className=\"justify-center sm:justify-center\" variant=\"bare\">\n                <DrawerClose render={<Button variant=\"ghost\" />}>Back</DrawerClose>\n                <Drawer>\n                  <DrawerTrigger render={<Button variant=\"outline\" />}>Continue</DrawerTrigger>\n                  <DrawerPopup showBar>\n                    <DrawerHeader className=\"text-center\">\n                      <DrawerTitle>Third step</DrawerTitle>\n                      <DrawerDescription>\n                        You&apos;ve reached the final step. You can close this drawer or go back.\n                      </DrawerDescription>\n                    </DrawerHeader>\n                    <DrawerPanel>\n                      <div className=\"flex justify-center\">\n                        <div className=\"size-32 shrink-0 rounded-full border bg-muted\" />\n                      </div>\n                    </DrawerPanel>\n                  </DrawerPopup>\n                </Drawer>\n              </DrawerFooter>\n            </DrawerPopup>\n          </Drawer>\n        </DrawerFooter>\n      </DrawerPopup>\n    </Drawer>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/drawer.tsx"
+    }
+  ],
+  "categories": [
+    "drawer"
+  ],
+  "type": "registry:ui"
+}

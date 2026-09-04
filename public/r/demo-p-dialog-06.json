@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-dialog-06",
+  "title": "Dialog 6",
+  "description": "Dialog with bare footer",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-dialog",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-form",
+    "@usespaceui/primitives-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/dialog/p-dialog-06/index.tsx",
+      "content": "import { Button } from '@/components/ui/button'\nimport {\n  Dialog,\n  DialogClose,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogPanel,\n  DialogPopup,\n  DialogTitle,\n  DialogTrigger,\n} from '@/components/ui/dialog'\nimport { Field, FieldLabel } from '@/components/ui/field'\nimport { Form } from '@/components/ui/form'\nimport { Input } from '@/components/ui/input'\n\nexport default function Particle() {\n  return (\n    <Dialog>\n      <DialogTrigger render={<Button variant=\"outline\" />}>Open Dialog</DialogTrigger>\n      <DialogPopup className=\"sm:max-w-sm\">\n        <DialogHeader>\n          <DialogTitle>Edit profile</DialogTitle>\n          <DialogDescription>Make changes to your profile here. Click save when you&apos;re done.</DialogDescription>\n        </DialogHeader>\n        <Form className=\"contents\">\n          <DialogPanel className=\"grid gap-4\">\n            <Field>\n              <FieldLabel>Name</FieldLabel>\n              <Input defaultValue=\"Margaret Welsh\" type=\"text\" />\n            </Field>\n            <Field>\n              <FieldLabel>Username</FieldLabel>\n              <Input defaultValue=\"@maggie.welsh\" type=\"text\" />\n            </Field>\n          </DialogPanel>\n          <DialogFooter variant=\"bare\">\n            <DialogClose render={<Button variant=\"ghost\" />}>Cancel</DialogClose>\n            <Button type=\"submit\">Save</Button>\n          </DialogFooter>\n        </Form>\n      </DialogPopup>\n    </Dialog>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/dialog.tsx"
+    }
+  ],
+  "categories": [
+    "dialog"
+  ],
+  "type": "registry:ui"
+}

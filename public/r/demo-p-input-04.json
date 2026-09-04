@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-input-04",
+  "title": "Input 5",
+  "description": "File input",
+  "registryDependencies": [
+    "@usespaceui/primitives-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/input/p-input-04/index.tsx",
+      "content": "import { Input } from '@/components/ui/input'\n\nexport default function Particle() {\n  return <Input aria-label=\"File\" type=\"file\" />\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/input.tsx"
+    }
+  ],
+  "categories": [
+    "input"
+  ],
+  "type": "registry:ui"
+}

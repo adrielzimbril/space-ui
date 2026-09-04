@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-table-02",
+  "title": "Table 2",
+  "description": "Frame with card-style table",
+  "registryDependencies": [
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-frame",
+    "@usespaceui/primitives-table"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/table/p-table-02/index.tsx",
+      "content": "import { Badge } from '@/components/ui/badge'\nimport { Frame } from '@/components/ui/frame'\nimport { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow } from '@/components/ui/table'\n\nexport default function Particle() {\n  return (\n    <Frame className=\"w-full\">\n      <Table variant=\"card\">\n        <TableHeader>\n          <TableRow>\n            <TableHead>Project</TableHead>\n            <TableHead>Status</TableHead>\n            <TableHead>Team</TableHead>\n            <TableHead className=\"text-right\">Budget</TableHead>\n          </TableRow>\n        </TableHeader>\n        <TableBody>\n          <TableRow>\n            <TableCell className=\"font-medium\">Website Redesign</TableCell>\n            <TableCell>\n              <Badge variant=\"outline\">\n                <span aria-hidden=\"true\" className=\"size-1.5 rounded-full bg-emerald-500\" />\n                Paid\n              </Badge>\n            </TableCell>\n            <TableCell>Frontend Team</TableCell>\n            <TableCell className=\"text-right\">$12,500</TableCell>\n          </TableRow>\n          <TableRow>\n            <TableCell className=\"font-medium\">Mobile App</TableCell>\n            <TableCell>\n              <Badge variant=\"outline\">\n                <span aria-hidden=\"true\" className=\"size-1.5 rounded-full bg-muted-foreground/64\" />\n                Unpaid\n              </Badge>\n            </TableCell>\n            <TableCell>Mobile Team</TableCell>\n            <TableCell className=\"text-right\">$8,750</TableCell>\n          </TableRow>\n          <TableRow>\n            <TableCell className=\"font-medium\">API Integration</TableCell>\n            <TableCell>\n              <Badge variant=\"outline\">\n                <span aria-hidden=\"true\" className=\"size-1.5 rounded-full bg-amber-500\" />\n                Pending\n              </Badge>\n            </TableCell>\n            <TableCell>Backend Team</TableCell>\n            <TableCell className=\"text-right\">$5,200</TableCell>\n          </TableRow>\n          <TableRow>\n            <TableCell className=\"font-medium\">Database Migration</TableCell>\n            <TableCell>\n              <Badge variant=\"outline\">\n                <span aria-hidden=\"true\" className=\"size-1.5 rounded-full bg-emerald-500\" />\n                Paid\n              </Badge>\n            </TableCell>\n            <TableCell>DevOps Team</TableCell>\n            <TableCell className=\"text-right\">$3,800</TableCell>\n          </TableRow>\n          <TableRow>\n            <TableCell className=\"font-medium\">User Dashboard</TableCell>\n            <TableCell>\n              <Badge variant=\"outline\">\n                <span aria-hidden=\"true\" className=\"size-1.5 rounded-full bg-emerald-500\" />\n                Paid\n              </Badge>\n            </TableCell>\n            <TableCell>UX Team</TableCell>\n            <TableCell className=\"text-right\">$7,200</TableCell>\n          </TableRow>\n          <TableRow>\n            <TableCell className=\"font-medium\">Security Audit</TableCell>\n            <TableCell>\n              <Badge variant=\"outline\">\n                <span aria-hidden=\"true\" className=\"size-1.5 rounded-full bg-red-500\" />\n                Failed\n              </Badge>\n            </TableCell>\n            <TableCell>Security Team</TableCell>\n            <TableCell className=\"text-right\">$2,100</TableCell>\n          </TableRow>\n        </TableBody>\n        <TableFooter>\n          <TableRow>\n            <TableCell colSpan={3}>Total Budget</TableCell>\n            <TableCell className=\"text-right\">$39,550</TableCell>\n          </TableRow>\n        </TableFooter>\n      </Table>\n    </Frame>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/table.tsx"
+    }
+  ],
+  "categories": [
+    "frame",
+    "table"
+  ],
+  "type": "registry:ui"
+}

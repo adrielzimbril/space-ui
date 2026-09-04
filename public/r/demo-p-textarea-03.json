@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-textarea-03",
+  "title": "Textarea 3",
+  "description": "Disabled textarea",
+  "registryDependencies": [
+    "@usespaceui/primitives-textarea"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/textarea/p-textarea-03/index.tsx",
+      "content": "import { Textarea } from '@/components/ui/textarea'\n\nexport default function Particle() {\n  return <Textarea disabled placeholder=\"Can't type here\" />\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/textarea.tsx"
+    }
+  ],
+  "categories": [
+    "textarea"
+  ],
+  "type": "registry:ui"
+}

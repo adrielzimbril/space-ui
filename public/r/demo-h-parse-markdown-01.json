@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-parse-markdown-01",
+  "title": "useParseMarkdown",
+  "description": "Fast client-side markdown compiler",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-form-use-parse-markdown",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-textarea"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/form/parse-markdown/h-parse-markdown-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { useParseMarkdown } from '@/hooks/use-parse-markdown'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Badge } from '@/components/ui/badge'\nimport { Textarea } from '@/components/ui/textarea'\nimport { IconMarkdown } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const [md, setMd] = React.useState('## Space UI\\n- High performance\\n- Type-safe')\n  const html = useParseMarkdown(md)\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconMarkdown className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Markdown</span>\n        </div>\n        <Badge variant=\"outline\" size=\"sm\">\n          Active\n        </Badge>\n      </div>\n      <CardPanel className=\"flex flex-col gap-3 rounded-[0.875rem] bg-background p-3\">\n        <Textarea\n          value={md}\n          onChange={(e) => setMd(e.target.value)}\n          rows={2}\n          className=\"font-mono text-base sm:text-sm resize-none\"\n          placeholder=\"Type markdown...\"\n          aria-label=\"Markdown source\"\n        />\n        <div className=\"rounded-lg bg-muted p-2.5\">\n          <span className=\"block text-[.6875rem] font-semibold text-muted-foreground\">HTML</span>\n          <span className=\"mt-0.5 block break-all font-mono text-sm font-semibold text-foreground\">{html}</span>\n        </div>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/parse-markdown.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "form",
+    "parse-markdown"
+  ],
+  "type": "registry:hook"
+}

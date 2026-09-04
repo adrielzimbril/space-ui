@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-input-group-10",
+  "title": "Input Group 10",
+  "description": "Input group with badge",
+  "registryDependencies": [
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-input-group"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/input-group/p-input-group-10/index.tsx",
+      "content": "import { Badge } from '@/components/ui/badge'\nimport { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput placeholder=\"Type to search…\" type=\"search\" />\n      <InputGroupAddon align=\"inline-end\">\n        <Badge variant=\"info\">Badge</Badge>\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/input-group.tsx"
+    }
+  ],
+  "categories": [
+    "badge",
+    "input group"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-context-menu-08",
+  "title": "Context Menu 8",
+  "description": "Context menu with switch checkbox items",
+  "registryDependencies": [
+    "@usespaceui/primitives-context-menu"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/context-menu/p-context-menu-08/index.tsx",
+      "content": "import {\n  ContextMenu,\n  ContextMenuCheckboxItem,\n  ContextMenuPopup,\n  ContextMenuTrigger,\n} from '@/components/ui/context-menu'\n\nexport default function Particle() {\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className=\"flex h-32 w-full max-w-sm items-center justify-center rounded-lg border border-dashed text-muted-foreground text-sm\">\n        Right click here\n      </ContextMenuTrigger>\n      <ContextMenuPopup>\n        <ContextMenuCheckboxItem defaultChecked variant=\"switch\">\n          Auto save\n        </ContextMenuCheckboxItem>\n        <ContextMenuCheckboxItem variant=\"switch\">Show preview</ContextMenuCheckboxItem>\n      </ContextMenuPopup>\n    </ContextMenu>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/context-menu.tsx"
+    }
+  ],
+  "categories": [
+    "context menu",
+    "menu",
+    "switch"
+  ],
+  "type": "registry:ui"
+}

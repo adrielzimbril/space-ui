@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-calendar-02",
+  "title": "Calendar 2",
+  "description": "Calendar with custom cell size",
+  "registryDependencies": [
+    "@usespaceui/primitives-calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/calendar/p-calendar-02/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { Calendar } from '@/components/ui/calendar'\n\nexport default function Particle() {\n  const [date, setDate] = React.useState<Date | undefined>(new Date())\n  return (\n    <Calendar\n      className=\"[--cell-size:--spacing(11)] sm:[--cell-size:--spacing(10)]\"\n      mode=\"single\"\n      onSelect={setDate}\n      selected={date}\n    />\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/calendar.tsx"
+    }
+  ],
+  "categories": [
+    "calendar"
+  ],
+  "type": "registry:ui"
+}

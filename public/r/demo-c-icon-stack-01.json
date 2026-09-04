@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-icon-stack-01",
+  "title": "Isometric icon stack",
+  "description": "Layered isometric icon",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-icon-stack"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/icon-stack/c-icon-stack-01/index.tsx",
+      "content": "import { IconStack2 } from '@tabler/icons-react'\nimport { IconStack } from '@/components/spaceui/icon-stack'\n\nexport default function Pattern() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <IconStack aria-hidden=\"true\">\n        <IconStack2 className=\"size-4\" />\n      </IconStack>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/icon-stack.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "icon-stack"
+  ],
+  "type": "registry:component"
+}

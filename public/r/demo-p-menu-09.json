@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-menu-09",
+  "title": "Menu 9",
+  "description": "Menu with checkbox items as switches",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-menu"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/menu/p-menu-09/index.tsx",
+      "content": "import { Button } from '@/components/ui/button'\nimport { Menu, MenuCheckboxItem, MenuPopup, MenuTrigger } from '@/components/ui/menu'\n\nexport default function Particle() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\n      <MenuPopup>\n        <MenuCheckboxItem defaultChecked variant=\"switch\">\n          Auto save\n        </MenuCheckboxItem>\n        <MenuCheckboxItem variant=\"switch\">Notifications</MenuCheckboxItem>\n        <MenuCheckboxItem defaultChecked variant=\"switch\">\n          Dark mode\n        </MenuCheckboxItem>\n      </MenuPopup>\n    </Menu>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/menu.tsx"
+    }
+  ],
+  "categories": [
+    "dropdown",
+    "menu",
+    "switch"
+  ],
+  "type": "registry:ui"
+}

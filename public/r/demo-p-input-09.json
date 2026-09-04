@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-input-09",
+  "title": "Input 10",
+  "description": "Input group mimicking a URL bar",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-input-group",
+    "@usespaceui/primitives-popover"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/input/p-input-09/index.tsx",
+      "content": "'use client'\n\nimport { IconMail, IconStar } from '@tabler/icons-react'\nimport { useState } from 'react'\nimport { Button } from '@/components/ui/button'\nimport { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'\nimport { Popover, PopoverDescription, PopoverPopup, PopoverTitle, PopoverTrigger } from '@/components/ui/popover'\n\nexport default function Particle() {\n  const [isFavorite, setIsFavorite] = useState(false)\n\n  return (\n    <InputGroup>\n      <Popover>\n        <InputGroupAddon>\n          <PopoverTrigger render={<Button size=\"icon-xs\" variant=\"secondary\" />}>\n            <IconMail />\n          </PopoverTrigger>\n        </InputGroupAddon>\n        <PopoverPopup align=\"start\" alignOffset={-5} className=\"w-64\" sideOffset={6}>\n          <PopoverTitle className=\"text-sm\">Your connection is not secure.</PopoverTitle>\n          <PopoverDescription>You should not enter any sensitive information on this site.</PopoverDescription>\n        </PopoverPopup>\n      </Popover>\n      <InputGroupAddon className=\"pl-1.5 text-muted-foreground\">https://</InputGroupAddon>\n      <InputGroupInput aria-label=\"Url\" className=\"*:[input]:ps-1!\" type=\"text\" />\n      <InputGroupAddon align=\"inline-end\">\n        <Button onClick={() => setIsFavorite(!isFavorite)} size=\"icon-xs\" variant=\"ghost\">\n          <IconStar\n            className=\"data-[favorite=true]:fill-primary data-[favorite=true]:stroke-primary\"\n            data-favorite={isFavorite}\n          />\n        </Button>\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/input.tsx"
+    }
+  ],
+  "categories": [
+    "button",
+    "input",
+    "input group",
+    "popover"
+  ],
+  "type": "registry:ui"
+}

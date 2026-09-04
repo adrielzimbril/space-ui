@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-drawer-03",
+  "title": "Drawer 3",
+  "description": "Drawer with close button",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-drawer"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/drawer/p-drawer-03/index.tsx",
+      "content": "import { Button } from '@/components/ui/button'\nimport {\n  Drawer,\n  DrawerDescription,\n  DrawerHeader,\n  DrawerPanel,\n  DrawerPopup,\n  DrawerTitle,\n  DrawerTrigger,\n} from '@/components/ui/drawer'\n\nexport default function Particle() {\n  return (\n    <Drawer position=\"right\">\n      <DrawerTrigger render={<Button variant=\"outline\" />}>Open drawer</DrawerTrigger>\n      <DrawerPopup showCloseButton variant=\"straight\">\n        <DrawerHeader>\n          <DrawerTitle>Notifications</DrawerTitle>\n          <DrawerDescription>This is the description of the drawer.</DrawerDescription>\n        </DrawerHeader>\n        <DrawerPanel>\n          <p className=\"text-muted-foreground text-sm\">\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et\n            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.\n          </p>\n        </DrawerPanel>\n      </DrawerPopup>\n    </Drawer>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/drawer.tsx"
+    }
+  ],
+  "categories": [
+    "drawer"
+  ],
+  "type": "registry:ui"
+}

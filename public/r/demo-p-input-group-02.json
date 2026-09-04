@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-input-group-02",
+  "title": "Input Group 2",
+  "description": "Input group with end icon",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-input-group"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/input-group/p-input-group-02/index.tsx",
+      "content": "import { IconMail } from '@tabler/icons-react'\nimport { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput aria-label=\"Email\" placeholder=\"Email\" type=\"email\" />\n      <InputGroupAddon align=\"inline-end\">\n        <IconMail aria-hidden=\"true\" />\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/input-group.tsx"
+    }
+  ],
+  "categories": [
+    "input group"
+  ],
+  "type": "registry:ui"
+}

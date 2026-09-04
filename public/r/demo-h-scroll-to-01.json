@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-scroll-to-01",
+  "title": "useScrollTo",
+  "description": "Smooth programmatic scrolling",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-dom-use-scroll-to",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/dom/scroll-to/h-scroll-to-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { useScrollTo } from '@/hooks/use-scroll-to'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Button } from '@/components/ui/button'\nimport { Badge } from '@/components/ui/badge'\nimport { IconArrowUp, IconChevronDown, IconArrowDown } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const containerRef = React.useRef<HTMLDivElement>(null)\n  const scrollTo = useScrollTo(containerRef)\n  const [activeItem, setActiveItem] = React.useState<number | null>(null)\n\n  const handleScrollTo = (index: number) => {\n    setActiveItem(index)\n    scrollTo(`#scroll-item-${index}`, { block: 'center' })\n  }\n\n  const items = Array.from({ length: 10 }, (_, i) => i + 1)\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconArrowDown className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Scroll To</span>\n        </div>\n        <Badge variant=\"outline\" size=\"sm\" className=\"font-mono tabular-nums\">\n          {activeItem ? `#${activeItem}` : 'Idle'}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex flex-col gap-3 rounded-[0.875rem] bg-background p-3\">\n        <div className=\"flex flex-wrap gap-1.5\">\n          <Button size=\"sm\" variant=\"outline\" onClick={() => scrollTo.scrollToTop()}>\n            <IconArrowUp className=\"size-3.5\" />\n            Scroll top\n          </Button>\n          <Button size=\"sm\" variant=\"outline\" onClick={() => handleScrollTo(5)}>\n            Jump to 5\n          </Button>\n          <Button size=\"sm\" variant=\"outline\" onClick={() => handleScrollTo(9)}>\n            Jump to 9\n          </Button>\n          <Button size=\"sm\" variant=\"outline\" onClick={() => scrollTo.scrollToBottom()}>\n            <IconChevronDown className=\"size-3.5\" />\n            Scroll bottom\n          </Button>\n        </div>\n        <div ref={containerRef} className=\"h-44 space-y-2 overflow-y-auto rounded-lg bg-muted p-2 scroll-smooth\">\n          {items.map((num) => {\n            const isSelected = activeItem === num\n            return (\n              <div\n                id={`scroll-item-${num}`}\n                key={num}\n                onClick={() => setActiveItem(num)}\n                className={`flex cursor-pointer items-center justify-between rounded-lg p-2.5 text-xs ${\n                  isSelected ? 'bg-background font-semibold text-foreground' : 'text-muted-foreground'\n                }`}\n              >\n                <span>Section {num}</span>\n                <span className=\"font-mono tabular-nums\">#{num}</span>\n              </div>\n            )\n          })}\n        </div>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/scroll-to.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "dom",
+    "scroll-to"
+  ],
+  "type": "registry:hook"
+}

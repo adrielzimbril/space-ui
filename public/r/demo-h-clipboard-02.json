@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-clipboard-02",
+  "title": "useClipboard (Code Snippet)",
+  "description": "Code block with quick copy button",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-browser-use-clipboard",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/browser/clipboard/h-clipboard-02/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Badge } from '@/components/ui/badge'\nimport { Button } from '@/components/ui/button'\nimport { useClipboard } from '@/hooks/use-clipboard'\nimport { IconCheck, IconCopy, IconFileCode2 } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const code = `import { useClipboard } from '@/hooks/use-clipboard'\n\nexport function Example() {\n  const { copy, copied } = useClipboard({ timeout: 1500 })\n  return <button onClick={() => copy('Hello')}>{copied ? 'Copied' : 'Copy'}</button>\n}`\n  const { copy, copied } = useClipboard({ timeout: 1500 })\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconFileCode2 className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span className=\"font-mono text-xs\">example.tsx</span>\n        </div>\n        <Button\n          size=\"sm\"\n          variant=\"ghost\"\n          onClick={() => copy(code)}\n          className=\"bg-background hover:bg-background text-muted-foreground hover:text-foreground\"\n          aria-label={copied ? 'Copied' : 'Copy code'}\n        >\n          {copied ? <IconCheck className=\"size-3.5\" /> : <IconCopy className=\"size-3.5\" />}\n          {copied ? 'Copied' : 'Copy'}\n        </Button>\n      </div>\n      <CardPanel className=\"rounded-[0.875rem] bg-background p-3\">\n        <pre className=\"overflow-x-auto font-mono text-[.8125rem] leading-relaxed text-foreground\">{code}</pre>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/clipboard.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "clipboard"
+  ],
+  "type": "registry:hook"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-kbd-01",
+  "title": "Kbd 1",
+  "description": "Keyboard shortcuts display",
+  "registryDependencies": [
+    "@usespaceui/primitives-kbd"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/kbd/p-kbd-01/index.tsx",
+      "content": "import { Kbd, KbdGroup } from '@/components/ui/kbd'\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <div>\n        <p className=\"mb-2 text-muted-foreground text-sm\">Single keys:</p>\n        <div className=\"flex gap-2\">\n          <Kbd>K</Kbd>\n          <Kbd>⌘</Kbd>\n          <Kbd>⌃</Kbd>\n          <Kbd>⇧</Kbd>\n        </div>\n      </div>\n      <div>\n        <p className=\"mb-2 text-muted-foreground text-sm\">Key combinations:</p>\n        <div className=\"flex gap-2\">\n          <KbdGroup className=\"bg-muted p-0.5 rounded-lg\">\n            <Kbd className=\"bg-background\">⌘</Kbd>\n            <Kbd className=\"bg-background\">K</Kbd>\n          </KbdGroup>\n          <KbdGroup className=\"bg-muted p-0.5 rounded-lg\">\n            <Kbd className=\"bg-background\">⌘</Kbd>\n            <Kbd className=\"bg-background\">Shift</Kbd>\n            <Kbd className=\"bg-background\">P</Kbd>\n          </KbdGroup>\n          <KbdGroup className=\"bg-muted p-0.5 rounded-lg\">\n            <Kbd className=\"bg-background\">Ctrl</Kbd>\n            <Kbd className=\"bg-background\">Alt</Kbd>\n            <Kbd className=\"bg-background\">Delete</Kbd>\n          </KbdGroup>\n        </div>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/kbd.tsx"
+    }
+  ],
+  "categories": [
+    "kbd"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-select-10",
+  "title": "Select 10",
+  "description": "Select in form",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-form",
+    "@usespaceui/primitives-select"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/select/p-select-10/index.tsx",
+      "content": "'use client'\n\nimport type { FormEvent } from 'react'\nimport { useState } from 'react'\nimport { Button } from '@/components/ui/button'\nimport { Field, FieldDescription, FieldError, FieldLabel } from '@/components/ui/field'\nimport { Form } from '@/components/ui/form'\nimport { Select, SelectItem, SelectPopup, SelectTrigger, SelectValue } from '@/components/ui/select'\n\nconst items = [\n  { label: 'Next.js', value: 'next' },\n  { label: 'Vite', value: 'vite' },\n  { label: 'Astro', value: 'astro' },\n]\n\nexport default function Particle() {\n  const [loading, setLoading] = useState(false)\n  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {\n    e.preventDefault()\n    const formData = new FormData(e.currentTarget)\n    setLoading(true)\n    await new Promise((r) => setTimeout(r, 800))\n    setLoading(false)\n    alert(`Framework: ${formData.get('framework') || ''}`)\n  }\n\n  return (\n    <Form className=\"flex w-full flex-col gap-4\" onSubmit={onSubmit}>\n      <Field>\n        <FieldLabel>Framework</FieldLabel>\n        <Select aria-label=\"Select framework\" items={items} name=\"framework\" required>\n          <SelectTrigger>\n            <SelectValue placeholder=\"Select a framework\" />\n          </SelectTrigger>\n          <SelectPopup>\n            {items.map(({ label, value }) => (\n              <SelectItem key={value} value={value}>\n                {label}\n              </SelectItem>\n            ))}\n          </SelectPopup>\n        </Select>\n        <FieldDescription>Pick your favorite.</FieldDescription>\n        <FieldError>Please select a value.</FieldError>\n      </Field>\n\n      <Button loading={loading} type=\"submit\">\n        Submit\n      </Button>\n    </Form>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/select.tsx"
+    }
+  ],
+  "categories": [
+    "select"
+  ],
+  "type": "registry:ui"
+}

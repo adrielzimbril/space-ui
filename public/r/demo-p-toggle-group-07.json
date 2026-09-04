@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-toggle-group-07",
+  "title": "Toggle Group 7",
+  "description": "Toggle group with tooltips",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-toggle-group",
+    "@usespaceui/primitives-tooltip"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/toggle-group/p-toggle-group-07/index.tsx",
+      "content": "import { IconBold, IconItalic, IconUnderline } from '@tabler/icons-react'\nimport { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'\nimport { Tooltip, TooltipPopup, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'\n\nexport default function Particle() {\n  return (\n    <TooltipProvider>\n      <ToggleGroup defaultValue={['bold']} multiple>\n        <Tooltip>\n          <TooltipTrigger render={<ToggleGroupItem aria-label=\"Toggle bold\" value=\"bold\" />}>\n            <IconBold />\n          </TooltipTrigger>\n          <TooltipPopup>Bold</TooltipPopup>\n        </Tooltip>\n        <Tooltip>\n          <TooltipTrigger render={<ToggleGroupItem aria-label=\"Toggle italic\" value=\"italic\" />}>\n            <IconItalic />\n          </TooltipTrigger>\n          <TooltipPopup>Italic</TooltipPopup>\n        </Tooltip>\n        <Tooltip>\n          <TooltipTrigger render={<ToggleGroupItem aria-label=\"Toggle underline\" value=\"underline\" />}>\n            <IconUnderline />\n          </TooltipTrigger>\n          <TooltipPopup>Underline</TooltipPopup>\n        </Tooltip>\n      </ToggleGroup>\n    </TooltipProvider>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/toggle-group.tsx"
+    }
+  ],
+  "categories": [
+    "toggle",
+    "toggle group"
+  ],
+  "type": "registry:ui"
+}

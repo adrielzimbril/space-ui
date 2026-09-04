@@ -1,0 +1,58 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-dirt-carousel-01",
+  "title": "Dirt Carousel Demo",
+  "description": "3D carousel with official Tweakpane controls.",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-dirt-carousel"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/dirt-carousel/c-dirt-carousel-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { DirtCarousel, type DirtCarouselItem, type Direction } from '@/components/spaceui/dirt-carousel'\n\nconst DEMO_ITEMS: DirtCarouselItem[] = [\n  {\n    name: 'Dirt Brand',\n    mediaType: 'video',\n    videoLink:\n      'https://pub-48241b63717b4fb8a39ec6bd2d9bdca4.r2.dev/Studio%20Dirt_Brand%20assets_World%201%20Dirt%20Logo_01%20(1).webm',\n    thumbnail: 'https://framerusercontent.com/assets/UWtIR6AbAq00SZSnNEjivgNa63Y.png',\n  },\n  {\n    name: 'Organic Flower',\n    mediaType: 'video',\n    videoLink:\n      'https://pub-48241b63717b4fb8a39ec6bd2d9bdca4.r2.dev/Studio%20Dirt_Brand%20assets_World%204%20Organic%20Flower_01%20(1).webm',\n    thumbnail: 'https://framerusercontent.com/assets/Xtp7s80JrDWbAL3MgaM0C2XDAE.png',\n  },\n  {\n    name: 'Liquid Gradient',\n    mediaType: 'video',\n    videoLink:\n      'https://pub-48241b63717b4fb8a39ec6bd2d9bdca4.r2.dev/Studio%20Dirt_Brand%20assets_World%202%20Liquid%20Gradient_01%20(1)%20(1).webm',\n    thumbnail: 'https://framerusercontent.com/assets/xLTQCFfEGd2cu1L1fUqqraoEYig.png',\n  },\n  {\n    name: 'Plant Lilac',\n    mediaType: 'video',\n    videoLink:\n      'https://pub-48241b63717b4fb8a39ec6bd2d9bdca4.r2.dev/Studio%20Dirt_Brand%20assets_World%205%203D%20Plant_Lilac_01%20(1).webm',\n    thumbnail: 'https://framerusercontent.com/assets/8n6Pce7uGKr0QnCFkcACaqNOgM.png',\n  },\n  {\n    name: 'Microorganism',\n    mediaType: 'video',\n    videoLink:\n      'https://pub-48241b63717b4fb8a39ec6bd2d9bdca4.r2.dev/Studio%20Dirt_Brand%20assets_World%203%20Microorganism_01%20(1).webm',\n    thumbnail: 'https://framerusercontent.com/assets/gPLyNjohvfQMkxxufswXghqDg.png',\n  },\n  {\n    name: '[Center] Dirt Brand',\n    mediaType: 'video',\n    videoLink:\n      'https://pub-48241b63717b4fb8a39ec6bd2d9bdca4.r2.dev/Studio%20Dirt_Brand%20assets_World%201%20Dirt%20Logo_01%20(1).webm',\n    thumbnail: 'https://framerusercontent.com/assets/UWtIR6AbAq00SZSnNEjivgNa63Y.png',\n  },\n  {\n    name: 'Organic Flower',\n    mediaType: 'video',\n    videoLink:\n      'https://pub-48241b63717b4fb8a39ec6bd2d9bdca4.r2.dev/Studio%20Dirt_Brand%20assets_World%204%20Organic%20Flower_01%20(1).webm',\n    thumbnail: 'https://framerusercontent.com/assets/Xtp7s80JrDWbAL3MgaM0C2XDAE.png',\n  },\n  {\n    name: 'Liquid Gradient',\n    mediaType: 'video',\n    videoLink:\n      'https://pub-48241b63717b4fb8a39ec6bd2d9bdca4.r2.dev/Studio%20Dirt_Brand%20assets_World%202%20Liquid%20Gradient_01%20(1)%20(1).webm',\n    thumbnail: 'https://framerusercontent.com/assets/xLTQCFfEGd2cu1L1fUqqraoEYig.png',\n  },\n  {\n    name: 'Plant Lilac',\n    mediaType: 'video',\n    videoLink:\n      'https://pub-48241b63717b4fb8a39ec6bd2d9bdca4.r2.dev/Studio%20Dirt_Brand%20assets_World%205%203D%20Plant_Lilac_01%20(1).webm',\n    thumbnail: 'https://framerusercontent.com/assets/8n6Pce7uGKr0QnCFkcACaqNOgM.png',\n  },\n  {\n    name: 'Microorganism',\n    mediaType: 'video',\n    videoLink:\n      'https://pub-48241b63717b4fb8a39ec6bd2d9bdca4.r2.dev/Studio%20Dirt_Brand%20assets_World%203%20Microorganism_01%20(1).webm',\n    thumbnail: 'https://framerusercontent.com/assets/gPLyNjohvfQMkxxufswXghqDg.png',\n  },\n]\n\nexport interface DirtCarouselDemoProps {\n  direction?: Direction\n  radius?: number\n  ballSize?: number\n  bounce?: boolean\n  mouseTilt?: boolean\n  snap?: boolean\n  autoRotate?: boolean\n}\n\nexport default function DirtCarouselDemo({\n  direction = 'flat',\n  radius = 800,\n  ballSize = 800,\n  bounce = false,\n  mouseTilt = false,\n  snap = true,\n  autoRotate = false,\n}: DirtCarouselDemoProps) {\n  return (\n    <div className=\"relative flex size-full min-h-[640px] flex-col overflow-hidden rounded-2xl bg-background\">\n      <DirtCarousel\n        items={DEMO_ITEMS}\n        direction={direction}\n        radius={radius}\n        ballSize={ballSize}\n        bounce={bounce}\n        mouseTilt={mouseTilt}\n        tiltIntensity={mouseTilt ? 1.0 : 0}\n        snap={snap}\n        autoRotate={autoRotate}\n        className=\"size-full\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/dirt-carousel.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "direction": {
+        "value": "flat",
+        "options": {
+          "Flat": "flat",
+          "Up": "up",
+          "Down": "down"
+        }
+      },
+      "radius": {
+        "value": 800,
+        "min": 300,
+        "max": 1200,
+        "step": 20
+      },
+      "ballSize": {
+        "value": 800,
+        "min": 300,
+        "max": 1200,
+        "step": 20
+      },
+      "bounce": {
+        "value": false
+      },
+      "mouseTilt": {
+        "value": false
+      },
+      "snap": {
+        "value": true
+      },
+      "autoRotate": {
+        "value": false
+      }
+    }
+  },
+  "categories": [
+    "component",
+    "dirt-carousel"
+  ],
+  "type": "registry:component"
+}

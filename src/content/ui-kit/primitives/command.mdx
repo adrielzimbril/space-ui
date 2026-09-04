@@ -34,17 +34,15 @@ import {
 import { Button } from '@/components/ui/button'
 
 const items = [
-  { value: "linear", label: "Linear" },
-  { value: "figma", label: "Figma" },
-  { value: "slack", label: "Slack" },
+  { value: 'linear', label: 'Linear' },
+  { value: 'figma', label: 'Figma' },
+  { value: 'slack', label: 'Slack' },
 ]
 
 export default function SpaceUI() {
   return (
     <CommandDialog>
-      <CommandDialogTrigger render={<Button variant="outline" />}>
-        Open Command Palette
-      </CommandDialogTrigger>
+      <CommandDialogTrigger render={<Button variant="outline" />}>Open Command Palette</CommandDialogTrigger>
 
       <CommandDialogPopup>
         <Command items={items}>

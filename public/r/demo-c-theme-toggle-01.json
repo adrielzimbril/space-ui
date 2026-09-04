@@ -1,0 +1,113 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-theme-toggle-01",
+  "title": "Theme Toggle Demo",
+  "description": "Theme toggle with variant, origin, and blur controls.",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-theme-toggle",
+    "@usespaceui/primitives-button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/theme-toggle/c-theme-toggle-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport {\n  ThemeToggleButton,\n  THEME_TOGGLE_CONFIG,\n  type StartPos,\n  type Variant,\n  type ThemeToggleSize,\n} from '@/components/spaceui/theme-toggle'\nimport type { ButtonProps } from '@/components/ui/button'\n\ninterface ThemeToggleDemoProps {\n  variant?: Variant\n  startCircle?: StartPos\n  startRectangle?: StartPos\n  startPolygon?: StartPos\n  blur?: boolean\n  buttonVariant?: ButtonProps['variant']\n  size?: ThemeToggleSize\n}\n\nexport default function ThemeToggleDemo({\n  variant = 'circle',\n  startCircle = 'center',\n  startRectangle = 'bottom-up',\n  startPolygon = 'top-left',\n  blur = false,\n  buttonVariant = 'outline',\n  size = 'lg',\n}: ThemeToggleDemoProps) {\n  const effectiveStart = React.useMemo(() => {\n    switch (variant) {\n      case 'circle':\n      case 'circle-blur':\n        return startCircle\n      case 'rectangle':\n        return startRectangle\n      case 'polygon':\n        return startPolygon\n      default:\n        return THEME_TOGGLE_CONFIG[variant]?.defaultDirection ?? 'center'\n    }\n  }, [variant, startCircle, startRectangle, startPolygon])\n\n  return (\n    <div className=\"flex w-full flex-col items-center gap-4 py-6\">\n      <ThemeToggleButton\n        variant={variant}\n        start={effectiveStart}\n        blur={blur}\n        size={size}\n        buttonVariant={buttonVariant}\n        className=\"rounded-full text-foreground\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/theme-toggle.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "variant": {
+        "value": "circle",
+        "options": {
+          "Circle": "circle",
+          "Circle Blur": "circle-blur",
+          "Rectangle": "rectangle",
+          "Polygon": "polygon"
+        }
+      },
+      "startCircle": {
+        "value": "center",
+        "label": "Direction",
+        "options": {
+          "Center": "center",
+          "Top Left": "top-left",
+          "Top Right": "top-right",
+          "Bottom Left": "bottom-left",
+          "Bottom Right": "bottom-right",
+          "Top Center": "top-center",
+          "Bottom Center": "bottom-center"
+        },
+        "dependsOn": {
+          "variant": [
+            "circle",
+            "circle-blur"
+          ]
+        }
+      },
+      "startRectangle": {
+        "value": "bottom-up",
+        "label": "Direction",
+        "options": {
+          "Bottom Up": "bottom-up",
+          "Top Down": "top-down",
+          "Left Right": "left-right",
+          "Right Left": "right-left",
+          "Top Left": "top-left",
+          "Top Right": "top-right",
+          "Bottom Left": "bottom-left",
+          "Bottom Right": "bottom-right"
+        },
+        "dependsOn": {
+          "variant": "rectangle"
+        }
+      },
+      "startPolygon": {
+        "value": "top-left",
+        "label": "Direction",
+        "options": {
+          "Top Left": "top-left",
+          "Top Right": "top-right"
+        },
+        "dependsOn": {
+          "variant": "polygon"
+        }
+      },
+      "blur": {
+        "value": false,
+        "dependsOn": {
+          "variant": [
+            "circle",
+            "rectangle",
+            "polygon"
+          ]
+        }
+      },
+      "buttonVariant": {
+        "value": "outline",
+        "options": {
+          "Outline": "outline",
+          "Secondary": "secondary",
+          "Default": "default",
+          "Ghost": "ghost"
+        }
+      },
+      "size": {
+        "value": "lg",
+        "options": {
+          "XS": "xs",
+          "SM": "sm",
+          "MD": "md",
+          "LG": "lg",
+          "XL": "xl"
+        }
+      }
+    }
+  },
+  "categories": [
+    "component",
+    "theme",
+    "theme-toggle"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-form-02",
+  "title": "Form 2",
+  "description": "Form with zod validation",
+  "dependencies": [
+    "zod",
+    "zod-v4"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-form",
+    "@usespaceui/primitives-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/form/p-form-02/index.tsx",
+      "content": "'use client'\n\nimport type { FormEvent } from 'react'\nimport { useState } from 'react'\nimport { z } from 'zod-v4'\nimport { Button } from '@/components/ui/button'\nimport { Field, FieldError, FieldLabel } from '@/components/ui/field'\nimport { Form } from '@/components/ui/form'\nimport { Input } from '@/components/ui/input'\n\nconst schema = z.object({\n  age: z.coerce.number({ message: 'Please enter a number.' }).positive({ message: 'Number must be positive.' }),\n  name: z.string().min(1, { message: 'Please enter a name.' }),\n})\n\ntype Errors = Record<string, string | string[]>\n\nasync function submitForm(event: FormEvent<HTMLFormElement>) {\n  event.preventDefault()\n\n  const formData = new FormData(event.currentTarget)\n  const result = schema.safeParse(Object.fromEntries(formData))\n\n  if (!result.success) {\n    const { fieldErrors } = z.flattenError(result.error)\n    return { errors: fieldErrors as Errors }\n  }\n\n  return {\n    errors: {} as Errors,\n  }\n}\n\nexport default function Particle() {\n  const [loading, setLoading] = useState(false)\n  const [errors, setErrors] = useState<Errors>({})\n\n  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {\n    event.preventDefault()\n    const formData = new FormData(event.currentTarget)\n    setLoading(true)\n    const response = await submitForm(event)\n    await new Promise((r) => setTimeout(r, 800))\n    setErrors(response.errors)\n    setLoading(false)\n    if (Object.keys(response.errors).length === 0) {\n      alert(`Name: ${String(formData.get('name') || '')}\\nAge: ${String(formData.get('age') || '')}`)\n    }\n  }\n\n  return (\n    <Form className=\"flex w-full flex-col gap-4\" errors={errors} onSubmit={onSubmit}>\n      <Field name=\"name\">\n        <FieldLabel>Name</FieldLabel>\n        <Input placeholder=\"Enter name\" />\n        <FieldError />\n      </Field>\n      <Field name=\"age\">\n        <FieldLabel>Age</FieldLabel>\n        <Input placeholder=\"Enter age\" />\n        <FieldError />\n      </Field>\n      <Button loading={loading} type=\"submit\">\n        Submit\n      </Button>\n    </Form>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/form.tsx"
+    }
+  ],
+  "categories": [
+    "button",
+    "field",
+    "form",
+    "label",
+    "validation",
+    "zod"
+  ],
+  "type": "registry:ui"
+}

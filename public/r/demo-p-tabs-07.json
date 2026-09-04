@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-tabs-07",
+  "title": "Tabs 7",
+  "description": "Tabs with underline and icon on top",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-tabs"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/tabs/p-tabs-07/index.tsx",
+      "content": "import { IconPackage, IconLayoutDashboard, IconFolder } from '@tabler/icons-react'\nimport { Tabs, TabsList, TabsPanel, TabsTab } from '@/components/ui/tabs'\n\nexport default function Particle() {\n  return (\n    <Tabs className=\"items-center\" defaultValue=\"tab-1\">\n      <div className=\"border-b\">\n        <TabsList variant=\"underline\">\n          <TabsTab className=\"h-auto! flex-col gap-1.5 py-[calc(--spacing(2)-1px)]\" value=\"tab-1\">\n            <IconLayoutDashboard aria-hidden=\"true\" className=\"opacity-60\" size={16} />\n            Overview\n          </TabsTab>\n          <TabsTab className=\"h-auto! flex-col gap-1.5 py-[calc(--spacing(2)-1px)]\" value=\"tab-2\">\n            <IconFolder aria-hidden=\"true\" className=\"opacity-60\" size={16} />\n            Projects\n          </TabsTab>\n          <TabsTab className=\"h-auto! flex-col gap-1.5 py-[calc(--spacing(2.5)-1px)]\" value=\"tab-3\">\n            <IconPackage aria-hidden=\"true\" className=\"opacity-60\" size={16} />\n            Packages\n          </TabsTab>\n        </TabsList>\n      </div>\n      <TabsPanel value=\"tab-1\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">Overview content</p>\n      </TabsPanel>\n      <TabsPanel value=\"tab-2\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">Projects content</p>\n      </TabsPanel>\n      <TabsPanel value=\"tab-3\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">Packages content</p>\n      </TabsPanel>\n    </Tabs>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/tabs.tsx"
+    }
+  ],
+  "categories": [
+    "tabs"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-input-group-27",
+  "title": "Input Group 27",
+  "description": "Message composer with attachment buttons",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-input-group",
+    "@usespaceui/primitives-tooltip"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/input-group/p-input-group-27/index.tsx",
+      "content": "'use client'\n\nimport { IconPaperclip, IconPhoto } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { InputGroup, InputGroupAddon, InputGroupTextarea } from '@/components/ui/input-group'\nimport { Tooltip, TooltipPopup, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupTextarea placeholder=\"Compose your message…\" rows={4} />\n      <InputGroupAddon align=\"block-end\" className=\"justify-between\">\n        <TooltipProvider>\n          <div className=\"flex gap-1\">\n            <Tooltip>\n              <TooltipTrigger render={<Button aria-label=\"Attach file\" size=\"icon-sm\" variant=\"ghost\" />}>\n                <IconPaperclip />\n              </TooltipTrigger>\n              <TooltipPopup>Attach file</TooltipPopup>\n            </Tooltip>\n            <Tooltip>\n              <TooltipTrigger render={<Button aria-label=\"Insert image\" size=\"icon-sm\" variant=\"ghost\" />}>\n                <IconPhoto />\n              </TooltipTrigger>\n              <TooltipPopup>Insert image</TooltipPopup>\n            </Tooltip>\n          </div>\n        </TooltipProvider>\n        <Button size=\"sm\">Send</Button>\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/input-group.tsx"
+    }
+  ],
+  "categories": [
+    "button",
+    "input group",
+    "textarea",
+    "tooltip"
+  ],
+  "type": "registry:ui"
+}

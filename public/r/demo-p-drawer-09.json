@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-drawer-09",
+  "title": "Drawer 9",
+  "description": "Bottom drawer with snap points",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-drawer"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/drawer/p-drawer-09/index.tsx",
+      "content": "'use client'\n\nimport { useState } from 'react'\nimport { Button } from '@/components/ui/button'\nimport {\n  Drawer,\n  DrawerDescription,\n  DrawerHeader,\n  DrawerPanel,\n  DrawerPopup,\n  DrawerTitle,\n  DrawerTrigger,\n} from '@/components/ui/drawer'\n\nexport default function Particle() {\n  const snapPoints = ['300px', 1] as const\n  const [snapPoint, setSnapPoint] = useState<(typeof snapPoints)[number] | null>(snapPoints[0])\n\n  return (\n    <Drawer\n      onSnapPointChange={(point) => setSnapPoint(point as (typeof snapPoints)[number] | null)}\n      position=\"bottom\"\n      snapPoint={snapPoint}\n      snapPoints={[...snapPoints]}\n      snapToSequentialPoints\n    >\n      <DrawerTrigger render={<Button variant=\"outline\" />}>With snap points</DrawerTrigger>\n      <DrawerPopup showBar>\n        <DrawerHeader>\n          <DrawerTitle>Snap Points</DrawerTitle>\n          <DrawerDescription>Drag the drawer to snap between a compact peek and full-height view.</DrawerDescription>\n        </DrawerHeader>\n        <DrawerPanel>\n          <div className=\"flex flex-col gap-2\">\n            {Array.from({ length: 48 }, (_, i) => `box-${i}`).map((key) => (\n              <div className=\"h-12 shrink-0 rounded-xl border bg-muted\" key={key} />\n            ))}\n          </div>\n        </DrawerPanel>\n      </DrawerPopup>\n    </Drawer>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/drawer.tsx"
+    }
+  ],
+  "categories": [
+    "drawer"
+  ],
+  "type": "registry:ui"
+}

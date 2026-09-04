@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-local-storage-03",
+  "title": "useLocalStorage (Persistent Todos)",
+  "description": "Todo list saved in storage",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-browser-use-local-storage",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-checkbox",
+    "@usespaceui/primitives-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/browser/local-storage/h-local-storage-03/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { useLocalStorage } from '@/hooks/use-local-storage'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Badge } from '@/components/ui/badge'\nimport { Input } from '@/components/ui/input'\nimport { Button } from '@/components/ui/button'\nimport { Checkbox } from '@/components/ui/checkbox'\nimport { IconPlus, IconTrash, IconListCheck } from '@tabler/icons-react'\n\ninterface Todo {\n  id: number\n  text: string\n  done: boolean\n}\n\nexport default function Demo() {\n  const [todos, setTodos] = useLocalStorage<Todo[]>('space_demo_todos', [\n    { id: 1, text: 'Try the Space UI hooks registry', done: true },\n    { id: 2, text: 'Build interactive UI demos', done: false },\n  ])\n  const [input, setInput] = React.useState('')\n\n  const add = () => {\n    if (!input.trim()) return\n    setTodos([...todos, { id: Date.now(), text: input.trim(), done: false }])\n    setInput('')\n  }\n\n  const toggle = (id: number) => {\n    setTodos(todos.map((t) => (t.id === id ? { ...t, done: !t.done } : t)))\n  }\n\n  const remove = (id: number) => {\n    setTodos(todos.filter((t) => t.id !== id))\n  }\n\n  const completedCount = todos.filter((t) => t.done).length\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconListCheck className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Todos</span>\n        </div>\n        <Badge variant=\"outline\" size=\"sm\" className=\"font-mono tabular-nums\">\n          {completedCount}/{todos.length}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex flex-col gap-3 rounded-[0.875rem] bg-background p-3\">\n        <div className=\"flex gap-2\">\n          <Input\n            value={input}\n            onChange={(e) => setInput(e.target.value)}\n            onKeyDown={(e) => e.key === 'Enter' && add()}\n            placeholder=\"Ship the docs\"\n            aria-label=\"New task\"\n            className=\"text-base sm:text-sm\"\n          />\n          <Button size=\"sm\" onClick={add} className=\"shrink-0\">\n            <IconPlus className=\"size-3.5\" />\n            Add\n          </Button>\n        </div>\n        <div className=\"flex max-h-48 flex-col gap-2 overflow-y-auto\">\n          {todos.map((t) => (\n            <div key={t.id} className=\"flex items-center justify-between gap-2 rounded-lg bg-muted p-2.5\">\n              <div className=\"flex min-w-0 flex-1 items-center gap-2.5\">\n                <Checkbox checked={t.done} onCheckedChange={() => toggle(t.id)} aria-label={t.text} />\n                <span\n                  className={`truncate text-sm ${t.done ? 'text-muted-foreground line-through' : 'font-medium text-foreground'}`}\n                >\n                  {t.text}\n                </span>\n              </div>\n              <Button\n                variant=\"ghost\"\n                size=\"sm\"\n                onClick={() => remove(t.id)}\n                aria-label=\"Remove\"\n                className=\"shrink-0 text-muted-foreground hover:text-destructive\"\n              >\n                <IconTrash className=\"size-3.5\" />\n              </Button>\n            </div>\n          ))}\n        </div>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/local-storage.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "local-storage"
+  ],
+  "type": "registry:hook"
+}

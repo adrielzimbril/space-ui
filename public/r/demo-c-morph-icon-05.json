@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-morph-icon-05",
+  "title": "Multi-State Status Indicator",
+  "description": "Morphing through multi-stage lifecycle states: pending, loading, completed, and failed.",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-morph-icon",
+    "@usespaceui/primitives-button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/morph-icon/c-morph-icon-05/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { Button } from '@/components/ui/button'\nimport { MorphIcon } from '@/components/spaceui/morph-icon'\nimport { IconClock, IconLoader2, IconCheck, IconAlertTriangle } from '@tabler/icons-react'\n\ntype StepStatus = 'idle' | 'loading' | 'success' | 'error'\n\nconst STATUS_CONFIG: Record<\n  StepStatus,\n  { label: string; desc: string; icon: React.ComponentType<{ className?: string }> }\n> = {\n  idle: { label: 'Pending', desc: 'Awaiting user action', icon: IconClock },\n  loading: { label: 'Processing', desc: 'Task currently running', icon: IconLoader2 },\n  success: { label: 'Completed', desc: 'Operation succeeded', icon: IconCheck },\n  error: { label: 'Failed', desc: 'An error occurred', icon: IconAlertTriangle },\n}\n\nexport default function MultiStateDemo() {\n  const [status, setStatus] = React.useState<StepStatus>('idle')\n\n  const cycleStatus = () => {\n    setStatus((prev) => {\n      if (prev === 'idle') return 'loading'\n      if (prev === 'loading') return 'success'\n      if (prev === 'success') return 'error'\n      return 'idle'\n    })\n  }\n\n  const { label, desc, icon: CurrentIcon } = STATUS_CONFIG[status]\n\n  return (\n    <div className=\"flex flex-col items-center gap-5 p-8\">\n      <div className=\"flex items-center gap-4 p-4 rounded-2xl border border-border bg-card shadow-xs min-w-72\">\n        <div className=\"flex items-center justify-center size-12 rounded-xl bg-muted\">\n          <MorphIcon activeKey={status} variant=\"blur-scale\" duration={0.25}>\n            <CurrentIcon className={`size-5 ${status === 'loading' ? 'animate-spin' : ''}`} />\n          </MorphIcon>\n        </div>\n\n        <div className=\"flex-1 min-w-0\">\n          <p className=\"text-sm font-semibold text-foreground\">{label}</p>\n          <p className=\"text-xs text-muted-foreground truncate\">{desc}</p>\n        </div>\n      </div>\n\n      <Button variant=\"outline\" size=\"sm\" onClick={cycleStatus} className=\"rounded-lg text-xs cursor-pointer\">\n        Next State (Cycle)\n      </Button>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/morph-icon.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "morph-icon"
+  ],
+  "type": "registry:component"
+}

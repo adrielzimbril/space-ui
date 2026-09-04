@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-slider-04",
+  "title": "Slider 4",
+  "description": "Slider with reference labels",
+  "registryDependencies": [
+    "@usespaceui/primitives-slider"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/slider/p-slider-04/index.tsx",
+      "content": "import { Slider } from '@/components/ui/slider'\n\nexport default function Particle() {\n  return (\n    <div>\n      <Slider aria-label=\"Storage size in GB\" defaultValue={15} max={35} min={5} />\n      <div\n        aria-label=\"Storage size reference values\"\n        className=\"mt-4 flex w-full items-center justify-between gap-1 font-medium text-muted-foreground text-xs\"\n        role=\"group\"\n      >\n        <span>5 GB</span>\n        <span>20 GB</span>\n        <span>35 GB</span>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/slider.tsx"
+    }
+  ],
+  "categories": [
+    "slider"
+  ],
+  "type": "registry:ui"
+}

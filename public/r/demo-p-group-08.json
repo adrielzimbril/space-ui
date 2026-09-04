@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-group-08",
+  "title": "Group 8",
+  "description": "Group with end text",
+  "registryDependencies": [
+    "@usespaceui/primitives-group",
+    "@usespaceui/primitives-input",
+    "@usespaceui/primitives-label"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/group/p-group-08/index.tsx",
+      "content": "import { Group, GroupSeparator, GroupText } from '@/components/ui/group'\nimport { Input } from '@/components/ui/input'\nimport { Label } from '@/components/ui/label'\n\nexport default function Particle() {\n  return (\n    <Group aria-label=\"Domain input\">\n      <Input aria-label=\"Domain\" defaultValue=\"spaceui\" id=\"domain-suffix\" type=\"text\" />\n      <GroupSeparator />\n      <GroupText render={<Label aria-label=\"Domain suffix\" htmlFor=\"domain-suffix\" />}>.one</GroupText>\n    </Group>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/group.tsx"
+    }
+  ],
+  "categories": [
+    "group"
+  ],
+  "type": "registry:ui"
+}

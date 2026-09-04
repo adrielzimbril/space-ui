@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-date-picker-05",
+  "title": "Date Picker 5",
+  "description": "Date picker with input",
+  "dependencies": [
+    "@tabler/icons-react",
+    "date-fns",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-calendar",
+    "@usespaceui/primitives-input-group",
+    "@usespaceui/primitives-popover"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/date-picker/p-date-picker-05/index.tsx",
+      "content": "'use client'\n\nimport { format, isValid, parse } from 'date-fns'\nimport { IconCalendar } from '@tabler/icons-react'\nimport { useState } from 'react'\nimport { Button } from '@/components/ui/button'\nimport { Calendar } from '@/components/ui/calendar'\nimport { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'\nimport { Popover, PopoverPopup, PopoverTrigger } from '@/components/ui/popover'\n\nexport default function Particle() {\n  const [date, setDate] = useState<Date | undefined>()\n  const [inputValue, setInputValue] = useState('')\n  const [month, setMonth] = useState<Date>(() => new Date())\n\n  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {\n    const value = e.target.value\n    setInputValue(value)\n\n    if (value) {\n      const parsedDate = parse(value, 'yyyy-MM-dd', new Date())\n      if (isValid(parsedDate)) {\n        setDate(parsedDate)\n        setMonth(parsedDate)\n      }\n    } else {\n      setDate(undefined)\n    }\n  }\n\n  const handleSelect = (selectedDate: Date | undefined) => {\n    setDate(selectedDate)\n    if (selectedDate) {\n      setInputValue(format(selectedDate, 'yyyy-MM-dd'))\n      setMonth(selectedDate)\n    } else {\n      setInputValue('')\n    }\n  }\n\n  return (\n    <Popover>\n      <InputGroup>\n        <InputGroupInput\n          aria-label=\"Select date\"\n          className=\"*:[input]:[&::-webkit-calendar-picker-indicator]:hidden *:[input]:[&::-webkit-calendar-picker-indicator]:appearance-none\"\n          onChange={handleInputChange}\n          onClick={(e) => e.stopPropagation()}\n          type=\"date\"\n          value={inputValue}\n        />\n        <InputGroupAddon>\n          <PopoverTrigger\n            aria-label=\"Select date\"\n            render={<Button aria-label=\"Select date\" size=\"icon-xs\" variant=\"ghost\" />}\n          >\n            <IconCalendar aria-hidden=\"true\" />\n          </PopoverTrigger>\n        </InputGroupAddon>\n      </InputGroup>\n      <PopoverPopup align=\"start\" alignOffset={-4} sideOffset={8}>\n        <Calendar mode=\"single\" month={month} onMonthChange={setMonth} onSelect={handleSelect} selected={date} />\n      </PopoverPopup>\n    </Popover>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/date-picker.tsx"
+    }
+  ],
+  "categories": [
+    "date picker",
+    "calendar",
+    "popover",
+    "button",
+    "input"
+  ],
+  "type": "registry:ui"
+}

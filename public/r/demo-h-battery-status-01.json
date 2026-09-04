@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-battery-status-01",
+  "title": "useBatteryStatus",
+  "description": "Battery percentage and charging state",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-browser-use-battery-status",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-progress"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/browser/battery-status/h-battery-status-01/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { useBatteryStatus } from '@/hooks/use-battery-status'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Badge } from '@/components/ui/badge'\nimport { Progress } from '@/components/ui/progress'\nimport { IconBattery, IconBatteryCharging } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const battery = useBatteryStatus()\n  const levelPercent = Math.round((battery.level ?? 1) * 100)\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            {battery.charging ? (\n              <IconBatteryCharging className=\"size-4 text-muted-foreground\" />\n            ) : (\n              <IconBattery className=\"size-4 text-muted-foreground\" />\n            )}\n          </Badge>\n          <span>Battery</span>\n        </div>\n        <Badge variant={battery.charging ? 'warning' : 'outline'} size=\"sm\">\n          {battery.charging ? 'Charging' : `${levelPercent}%`}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex flex-col gap-3 rounded-[0.875rem] bg-background p-3\">\n        <div className=\"rounded-lg bg-muted p-2.5\">\n          <span className=\"block text-[.6875rem] font-semibold text-muted-foreground\">Level</span>\n          <span className=\"mt-0.5 block font-mono text-sm font-semibold tabular-nums text-foreground\">\n            {battery.supported ? `${levelPercent}%` : '100%'}\n          </span>\n          <Progress value={battery.supported ? levelPercent : 100} className=\"mt-2\" />\n        </div>\n        <div className=\"grid grid-cols-2 gap-2\">\n          <div className=\"rounded-lg bg-muted p-2.5\">\n            <span className=\"block text-[.6875rem] font-semibold text-muted-foreground\">Discharge</span>\n            <span className=\"mt-0.5 block font-mono text-sm font-semibold tabular-nums text-foreground\">\n              {battery.dischargingTime === Infinity || !battery.dischargingTime\n                ? '—'\n                : `${Math.round(battery.dischargingTime / 60)} min`}\n            </span>\n          </div>\n          <div className=\"rounded-lg bg-muted p-2.5\">\n            <span className=\"block text-[.6875rem] font-semibold text-muted-foreground\">API</span>\n            <span className=\"mt-0.5 block font-mono text-sm font-semibold text-foreground\">\n              {battery.supported ? 'Native' : 'Fallback'}\n            </span>\n          </div>\n        </div>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/battery-status.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "battery-status"
+  ],
+  "type": "registry:hook"
+}

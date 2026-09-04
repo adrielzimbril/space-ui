@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-button-26",
+  "title": "Button 26",
+  "description": "Social login buttons (Google, X, GitHub)",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/button/p-button-26/index.tsx",
+      "content": "import { IconBrandGithub, IconBrandGoogle, IconBrandX } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-col gap-2\">\n      <Button variant=\"outline\">\n        <IconBrandGoogle aria-hidden=\"true\" />\n        <span className=\"flex-1\">Login with Google</span>\n      </Button>\n      <Button variant=\"outline\">\n        <IconBrandX aria-hidden=\"true\" />\n        <span className=\"flex-1\">Login with X</span>\n      </Button>\n      <Button variant=\"outline\">\n        <IconBrandGithub aria-hidden=\"true\" />\n        <span className=\"flex-1\">Login with GitHub</span>\n      </Button>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/button.tsx"
+    }
+  ],
+  "categories": [
+    "button"
+  ],
+  "type": "registry:ui"
+}
