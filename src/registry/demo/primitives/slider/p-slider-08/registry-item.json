@@ -5,7 +5,7 @@
   "title": "Slider 8",
   "description": "Slider with 3 thumbs",
   "registryDependencies": [
-    "@usespaceui/primitives-slider"
+    "https://www.spaceui.one/r/primitives-slider.json"
   ],
   "categories": [
     "slider"

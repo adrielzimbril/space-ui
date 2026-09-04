@@ -7,13 +7,13 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-group"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-group.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/group/p-group-09/index.tsx",
-      "content": "import { IconZoomIn, IconZoomOut } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { Group, GroupSeparator } from '@/components/ui/group'\n\nexport default function Particle() {\n  return (\n    <Group aria-label=\"Zoom controls\" orientation=\"vertical\">\n      <Button aria-label=\"Zoom in\" size=\"icon\" variant=\"outline\">\n        <IconZoomIn />\n      </Button>\n      <GroupSeparator orientation=\"horizontal\" />\n      <Button aria-label=\"Zoom Out\" size=\"icon\" variant=\"outline\">\n        <IconZoomOut />\n      </Button>\n    </Group>\n  )\n}\n",
+      "content": "import { IconZoomIn, IconZoomOut } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { Group, GroupSeparator } from '@/components/ui/group'\n\nexport default function Demo() {\n  return (\n    <Group aria-label=\"Zoom controls\" orientation=\"vertical\">\n      <Button aria-label=\"Zoom in\" size=\"icon\" variant=\"outline\">\n        <IconZoomIn />\n      </Button>\n      <GroupSeparator orientation=\"horizontal\" />\n      <Button aria-label=\"Zoom Out\" size=\"icon\" variant=\"outline\">\n        <IconZoomOut />\n      </Button>\n    </Group>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/group.tsx"
     }

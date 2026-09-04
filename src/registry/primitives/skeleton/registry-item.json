@@ -5,7 +5,7 @@
   "title": "Skeleton",
   "description": "Accessible Skeleton primitive component for Space UI.",
   "registryDependencies": [
-    "@usespaceui/lib-utils"
+    "https://www.spaceui.one/r/lib-utils.json"
   ],
   "categories": [
     "skeleton"

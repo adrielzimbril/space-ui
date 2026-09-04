@@ -7,9 +7,9 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/hooks-browser-use-orientation",
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-card"
+    "https://www.spaceui.one/r/hooks-browser-use-orientation.json",
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-card.json"
   ],
   "files": [
     {

@@ -4,12 +4,12 @@
   "title": "Badge 6",
   "description": "Badge with count",
   "registryDependencies": [
-    "@usespaceui/primitives-badge"
+    "https://www.spaceui.one/r/primitives-badge.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/badge/p-badge-06/index.tsx",
-      "content": "import { Badge } from '@/components/ui/badge'\n\nexport default function Particle() {\n  return <Badge className=\"rounded-full\">7</Badge>\n}\n",
+      "content": "import { Badge } from '@/components/ui/badge'\n\nexport default function Demo() {\n  return <Badge className=\"rounded-full\">7</Badge>\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/badge.tsx"
     }

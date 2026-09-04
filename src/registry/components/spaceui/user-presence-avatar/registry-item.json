@@ -8,10 +8,10 @@
     "motion"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-avatar-extended",
-    "@usespaceui/lib-utils",
-    "@usespaceui/primitives-avatar",
-    "@usespaceui/primitives-tooltip"
+    "https://www.spaceui.one/r/components-spaceui-avatar-extended.json",
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-avatar.json",
+    "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
   "categories": [
     "component",

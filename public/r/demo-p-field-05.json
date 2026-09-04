@@ -4,13 +4,13 @@
   "title": "Field 5",
   "description": "Show field validity state",
   "registryDependencies": [
-    "@usespaceui/primitives-field",
-    "@usespaceui/primitives-input"
+    "https://www.spaceui.one/r/primitives-field.json",
+    "https://www.spaceui.one/r/primitives-input.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/field/p-field-05/index.tsx",
-      "content": "'use client'\n\nimport { Field, FieldLabel, FieldValidity } from '@/components/ui/field'\nimport { Input } from '@/components/ui/input'\n\nexport default function FieldWithValidityDemo() {\n  return (\n    <Field>\n      <FieldLabel>Email</FieldLabel>\n      <Input placeholder=\"Enter your email\" required type=\"email\" />\n      <FieldValidity>\n        {(validity) => (\n          <div className=\"flex w-full flex-col gap-2\">\n            {validity.error && <p className=\"text-destructive-foreground text-xs\">{validity.error}</p>}\n            <div className=\"w-full rounded-md bg-muted p-2\">\n              <pre className=\"max-h-60 overflow-y-auto font-mono text-xs [scrollbar-width:none]\">\n                {JSON.stringify(validity, null, 2)}\n              </pre>\n            </div>\n          </div>\n        )}\n      </FieldValidity>\n    </Field>\n  )\n}\n",
+      "content": "'use client'\n\nimport { Field, FieldLabel, FieldValidity } from '@/components/ui/field'\nimport { Input } from '@/components/ui/input'\n\nexport default function Demo() {\n  return (\n    <Field>\n      <FieldLabel>Email</FieldLabel>\n      <Input placeholder=\"Enter your email\" required type=\"email\" />\n      <FieldValidity>\n        {(validity) => (\n          <div className=\"flex w-full flex-col gap-2\">\n            {validity.error && <p className=\"text-destructive-foreground text-xs\">{validity.error}</p>}\n            <div className=\"w-full rounded-md bg-muted p-2\">\n              <pre className=\"max-h-60 overflow-y-auto font-mono text-xs [scrollbar-width:none]\">\n                {JSON.stringify(validity, null, 2)}\n              </pre>\n            </div>\n          </div>\n        )}\n      </FieldValidity>\n    </Field>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/field.tsx"
     }

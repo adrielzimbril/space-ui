@@ -5,7 +5,7 @@
   "title": "Autoscale Input Demo",
   "description": "Amount field that scales to fit its container.",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-autoscale-input"
+    "https://www.spaceui.one/r/components-spaceui-autoscale-input.json"
   ],
   "categories": [
     "component",

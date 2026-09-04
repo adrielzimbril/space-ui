@@ -5,8 +5,8 @@
   "title": "Field 12",
   "description": "Field with checkbox",
   "registryDependencies": [
-    "@usespaceui/primitives-checkbox",
-    "@usespaceui/primitives-field"
+    "https://www.spaceui.one/r/primitives-checkbox.json",
+    "https://www.spaceui.one/r/primitives-field.json"
   ],
   "categories": [
     "checkbox",

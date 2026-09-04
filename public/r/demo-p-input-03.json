@@ -4,12 +4,12 @@
   "title": "Input 4",
   "description": "Disabled input",
   "registryDependencies": [
-    "@usespaceui/primitives-input"
+    "https://www.spaceui.one/r/primitives-input.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/input/p-input-03/index.tsx",
-      "content": "import { Input } from '@/components/ui/input'\n\nexport default function Particle() {\n  return <Input aria-label=\"Disabled\" disabled placeholder=\"Disabled\" type=\"text\" />\n}\n",
+      "content": "import { Input } from '@/components/ui/input'\n\nexport default function Demo() {\n  return <Input aria-label=\"Disabled\" disabled placeholder=\"Disabled\" type=\"text\" />\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/input.tsx"
     }

@@ -8,8 +8,8 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-alert",
-    "@usespaceui/primitives-button"
+    "https://www.spaceui.one/r/primitives-alert.json",
+    "https://www.spaceui.one/r/primitives-button.json"
   ],
   "categories": [
     "alert"

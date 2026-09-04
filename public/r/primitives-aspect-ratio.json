@@ -4,7 +4,7 @@
   "title": "Aspect Ratio",
   "description": "Accessible Aspect Ratio primitive component for Space UI.",
   "registryDependencies": [
-    "@usespaceui/lib-utils"
+    "https://www.spaceui.one/r/lib-utils.json"
   ],
   "files": [
     {

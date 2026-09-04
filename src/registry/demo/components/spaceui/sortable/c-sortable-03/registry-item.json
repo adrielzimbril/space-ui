@@ -9,8 +9,8 @@
     "sonner"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-sortable",
-    "@usespaceui/primitives-card"
+    "https://www.spaceui.one/r/components-spaceui-sortable.json",
+    "https://www.spaceui.one/r/primitives-card.json"
   ],
   "categories": [
     "component",

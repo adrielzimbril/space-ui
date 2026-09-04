@@ -4,13 +4,13 @@
   "title": "Radio Group 8",
   "description": "Large segmented radio group",
   "registryDependencies": [
-    "@usespaceui/lib-segmented-control",
-    "@usespaceui/primitives-radio-group"
+    "https://www.spaceui.one/r/lib-segmented-control.json",
+    "https://www.spaceui.one/r/primitives-radio-group.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/radio-group/p-radio-group-08/index.tsx",
-      "content": "'use client'\n\nimport { segmentedControlItemVariants, segmentedControlRootClassName } from '@/lib/segmented-control'\nimport { RadioGroupPrimitive, RadioPrimitive } from '@/components/ui/radio-group'\n\nconst itemClassName = segmentedControlItemVariants({\n  className: 'grow',\n  size: 'lg',\n  state: 'checked',\n})\n\nexport default function Particle() {\n  return (\n    <RadioGroupPrimitive aria-label=\"Billing period\" className={segmentedControlRootClassName} defaultValue=\"monthly\">\n      <RadioPrimitive.Root className={itemClassName} value=\"monthly\">\n        Monthly\n      </RadioPrimitive.Root>\n      <RadioPrimitive.Root className={itemClassName} value=\"yearly\">\n        Yearly\n      </RadioPrimitive.Root>\n    </RadioGroupPrimitive>\n  )\n}\n",
+      "content": "'use client'\n\nimport { segmentedControlItemVariants, segmentedControlRootClassName } from '@/lib/segmented-control'\nimport { RadioGroupPrimitive, RadioPrimitive } from '@/components/ui/radio-group'\n\nconst itemClassName = segmentedControlItemVariants({\n  className: 'grow',\n  size: 'lg',\n  state: 'checked',\n})\n\nexport default function Demo() {\n  return (\n    <RadioGroupPrimitive aria-label=\"Billing period\" className={segmentedControlRootClassName} defaultValue=\"monthly\">\n      <RadioPrimitive.Root className={itemClassName} value=\"monthly\">\n        Monthly\n      </RadioPrimitive.Root>\n      <RadioPrimitive.Root className={itemClassName} value=\"yearly\">\n        Yearly\n      </RadioPrimitive.Root>\n    </RadioGroupPrimitive>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/radio-group.tsx"
     }

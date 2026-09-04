@@ -5,7 +5,7 @@
   "title": "Skeleton 2",
   "description": "Skeleton only",
   "registryDependencies": [
-    "@usespaceui/primitives-skeleton"
+    "https://www.spaceui.one/r/primitives-skeleton.json"
   ],
   "categories": [
     "skeleton"

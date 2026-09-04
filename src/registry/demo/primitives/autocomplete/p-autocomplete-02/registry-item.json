@@ -5,7 +5,7 @@
   "title": "Autocomplete Sizes",
   "description": "Autocomplete inputs in sm, default, and lg sizes",
   "registryDependencies": [
-    "@usespaceui/primitives-autocomplete"
+    "https://www.spaceui.one/r/primitives-autocomplete.json"
   ],
   "categories": [
     "autocomplete"

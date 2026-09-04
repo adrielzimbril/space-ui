@@ -4,13 +4,13 @@
   "title": "Textarea 13",
   "description": "Textarea with button aligned right",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-textarea"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-textarea.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/textarea/p-textarea-13/index.tsx",
-      "content": "import { Button } from '@/components/ui/button'\nimport { Textarea } from '@/components/ui/textarea'\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-col gap-2\">\n      <Textarea placeholder=\"Type your message here\" />\n      <Button className=\"self-end\">Send</Button>\n    </div>\n  )\n}\n",
+      "content": "import { Button } from '@/components/ui/button'\nimport { Textarea } from '@/components/ui/textarea'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-col gap-2\">\n      <Textarea placeholder=\"Type your message here\" />\n      <Button className=\"self-end\">Send</Button>\n    </div>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/textarea.tsx"
     }

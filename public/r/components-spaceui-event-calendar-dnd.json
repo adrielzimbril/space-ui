@@ -7,9 +7,9 @@
     "date-fns"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-event-calendar",
-    "@usespaceui/components-spaceui-event-calendar-lib",
-    "@usespaceui/components-spaceui-event-calendar-types"
+    "https://www.spaceui.one/r/components-spaceui-event-calendar.json",
+    "https://www.spaceui.one/r/components-spaceui-event-calendar-lib.json",
+    "https://www.spaceui.one/r/components-spaceui-event-calendar-types.json"
   ],
   "files": [
     {

@@ -4,13 +4,13 @@
   "title": "Frame 4",
   "description": "Frame with multiple stacked panels",
   "registryDependencies": [
-    "@usespaceui/primitives-frame",
-    "@usespaceui/primitives-separator"
+    "https://www.spaceui.one/r/primitives-frame.json",
+    "https://www.spaceui.one/r/primitives-separator.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/frame/p-frame-04/index.tsx",
-      "content": "import { Frame, FrameDescription, FrameHeader, FramePanel, FrameTitle } from '@/components/ui/frame'\nimport { Separator } from '@/components/ui/separator'\n\nexport default function Particle() {\n  return (\n    <Frame className=\"w-full\">\n      <FrameHeader>\n        <FrameTitle>Section header</FrameTitle>\n        <FrameDescription>Brief description about the section</FrameDescription>\n      </FrameHeader>\n      <FramePanel className=\"p-0\">\n        <div className=\"p-5\">\n          <h2 className=\"font-semibold text-sm\">Stacked panel</h2>\n          <p className=\"text-muted-foreground text-sm\">Section description</p>\n        </div>\n        <Separator />\n        <div className=\"p-5\">\n          <h2 className=\"font-semibold text-sm\">Stacked panel</h2>\n          <p className=\"text-muted-foreground text-sm\">Section description</p>\n        </div>\n      </FramePanel>\n    </Frame>\n  )\n}\n",
+      "content": "import { Frame, FrameDescription, FrameHeader, FramePanel, FrameTitle } from '@/components/ui/frame'\nimport { Separator } from '@/components/ui/separator'\n\nexport default function Demo() {\n  return (\n    <Frame className=\"w-full\">\n      <FrameHeader>\n        <FrameTitle>Section header</FrameTitle>\n        <FrameDescription>Brief description about the section</FrameDescription>\n      </FrameHeader>\n      <FramePanel className=\"p-0\">\n        <div className=\"p-5\">\n          <h2 className=\"font-semibold text-sm\">Stacked panel</h2>\n          <p className=\"text-muted-foreground text-sm\">Section description</p>\n        </div>\n        <Separator />\n        <div className=\"p-5\">\n          <h2 className=\"font-semibold text-sm\">Stacked panel</h2>\n          <p className=\"text-muted-foreground text-sm\">Section description</p>\n        </div>\n      </FramePanel>\n    </Frame>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/frame.tsx"
     }

@@ -7,12 +7,12 @@
     "date-fns"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-calendar"
+    "https://www.spaceui.one/r/primitives-calendar.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/calendar/p-calendar-07/index.tsx",
-      "content": "'use client'\n\nimport { addDays } from 'date-fns'\nimport { Calendar } from '@/components/ui/calendar'\n\nexport default function Particle() {\n  const today = new Date()\n\n  return (\n    <Calendar\n      disabled={[\n        { before: new Date() },\n        new Date(),\n        { dayOfWeek: [0, 6] },\n        {\n          from: addDays(today, 14),\n          to: addDays(today, 16),\n        },\n        {\n          from: addDays(today, 23),\n          to: addDays(today, 24),\n        },\n      ]}\n      excludeDisabled\n      mode=\"range\"\n    />\n  )\n}\n",
+      "content": "'use client'\n\nimport { addDays } from 'date-fns'\nimport { Calendar } from '@/components/ui/calendar'\n\nexport default function Demo() {\n  const today = new Date()\n\n  return (\n    <Calendar\n      disabled={[\n        { before: new Date() },\n        new Date(),\n        { dayOfWeek: [0, 6] },\n        {\n          from: addDays(today, 14),\n          to: addDays(today, 16),\n        },\n        {\n          from: addDays(today, 23),\n          to: addDays(today, 24),\n        },\n      ]}\n      excludeDisabled\n      mode=\"range\"\n    />\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/calendar.tsx"
     }

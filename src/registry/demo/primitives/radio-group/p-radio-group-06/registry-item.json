@@ -5,8 +5,8 @@
   "title": "Radio Group 6",
   "description": "Small segmented radio group",
   "registryDependencies": [
-    "@usespaceui/lib-segmented-control",
-    "@usespaceui/primitives-radio-group"
+    "https://www.spaceui.one/r/lib-segmented-control.json",
+    "https://www.spaceui.one/r/primitives-radio-group.json"
   ],
   "categories": [
     "radio-group",

@@ -7,10 +7,10 @@
     "class-variance-authority"
   ],
   "registryDependencies": [
-    "@usespaceui/lib-utils",
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-input",
-    "@usespaceui/primitives-textarea"
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-input.json",
+    "https://www.spaceui.one/r/primitives-textarea.json"
   ],
   "files": [
     {

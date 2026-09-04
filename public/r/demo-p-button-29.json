@@ -4,13 +4,13 @@
   "title": "Button 29",
   "description": "Button using the built-in loading prop",
   "registryDependencies": [
-    "@usespaceui/hooks-utils-sleep",
-    "@usespaceui/primitives-button"
+    "https://www.spaceui.one/r/hooks-utils-sleep.json",
+    "https://www.spaceui.one/r/primitives-button.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/button/p-button-29/index.tsx",
-      "content": "'use client'\n\nimport { useState } from 'react'\nimport { Button } from '@/components/ui/button'\nimport { sleep } from '@/utils/sleep'\n\nexport default function Particle() {\n  const [isLoading, setIsLoading] = useState(false)\n\n  const handleClick = async () => {\n    setIsLoading(true)\n    await sleep(1500)\n    setIsLoading(false)\n  }\n\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button loading>Always Loading</Button>\n      <Button loading={isLoading} onClick={handleClick}>\n        {isLoading ? 'Saving...' : 'Click to Load'}\n      </Button>\n    </div>\n  )\n}\n",
+      "content": "'use client'\n\nimport { useState } from 'react'\nimport { Button } from '@/components/ui/button'\nimport { sleep } from '@/utils/sleep'\n\nexport default function Demo() {\n  const [isLoading, setIsLoading] = useState(false)\n\n  const handleClick = async () => {\n    setIsLoading(true)\n    await sleep(1500)\n    setIsLoading(false)\n  }\n\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button loading>Always Loading</Button>\n      <Button loading={isLoading} onClick={handleClick}>\n        {isLoading ? 'Saving...' : 'Click to Load'}\n      </Button>\n    </div>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/button.tsx"
     }

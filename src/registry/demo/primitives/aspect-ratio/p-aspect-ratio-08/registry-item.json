@@ -5,7 +5,7 @@
   "title": "16:10 computer monitor aspect ratio",
   "description": "16:10 computer monitor aspect ratio",
   "registryDependencies": [
-    "@usespaceui/primitives-aspect-ratio"
+    "https://www.spaceui.one/r/primitives-aspect-ratio.json"
   ],
   "categories": [
     "aspect-ratio"

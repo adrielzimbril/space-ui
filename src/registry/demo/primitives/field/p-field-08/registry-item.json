@@ -5,8 +5,8 @@
   "title": "Field 8",
   "description": "Field with combobox",
   "registryDependencies": [
-    "@usespaceui/primitives-combobox",
-    "@usespaceui/primitives-field"
+    "https://www.spaceui.one/r/primitives-combobox.json",
+    "https://www.spaceui.one/r/primitives-field.json"
   ],
   "categories": [
     "combobox",

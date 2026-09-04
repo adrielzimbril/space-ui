@@ -4,10 +4,10 @@
   "title": "useFavicon",
   "description": "Dynamic browser favicon switcher",
   "registryDependencies": [
-    "@usespaceui/hooks-browser-use-favicon",
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-card"
+    "https://www.spaceui.one/r/hooks-browser-use-favicon.json",
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-card.json"
   ],
   "files": [
     {

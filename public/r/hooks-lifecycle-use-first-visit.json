@@ -4,7 +4,7 @@
   "title": "useFirstVisit",
   "description": "useFirstVisit hook.",
   "registryDependencies": [
-    "@usespaceui/hooks-browser-use-local-storage"
+    "https://www.spaceui.one/r/hooks-browser-use-local-storage.json"
   ],
   "files": [
     {

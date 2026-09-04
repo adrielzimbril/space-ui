@@ -8,8 +8,8 @@
     "date-fns"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-event-calendar-recurrence",
-    "@usespaceui/components-spaceui-event-calendar-types"
+    "https://www.spaceui.one/r/components-spaceui-event-calendar-recurrence.json",
+    "https://www.spaceui.one/r/components-spaceui-event-calendar-types.json"
   ],
   "files": [
     {

@@ -5,8 +5,8 @@
   "title": "Words Preloader Demo",
   "description": "Replayable greeting preloader.",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-words-preloader",
-    "@usespaceui/primitives-button"
+    "https://www.spaceui.one/r/components-spaceui-words-preloader.json",
+    "https://www.spaceui.one/r/primitives-button.json"
   ],
   "categories": [
     "component",

@@ -4,9 +4,17 @@
   "type": "registry:component",
   "title": "Cloud",
   "description": "Interactive volumetric cloud material rendered as a full-bleed shader surface.",
-  "dependencies": ["vgpu"],
-  "registryDependencies": ["@usespaceui/lib-utils"],
-  "categories": ["shader", "cloud", "background"],
+  "dependencies": [
+    "vgpu"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "categories": [
+    "shader",
+    "cloud",
+    "background"
+  ],
   "files": [
     {
       "path": "src/registry/components/shader/cloud/index.tsx",

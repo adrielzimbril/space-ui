@@ -5,7 +5,7 @@
   "title": "State-tracked resizable layout.",
   "description": "State-tracked resizable layout.",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-resizable"
+    "https://www.spaceui.one/r/components-spaceui-resizable.json"
   ],
   "categories": [
     "component",

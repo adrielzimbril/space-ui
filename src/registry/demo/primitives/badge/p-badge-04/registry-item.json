@@ -9,7 +9,7 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-badge"
+    "https://www.spaceui.one/r/primitives-badge.json"
   ],
   "categories": [
     "badge"

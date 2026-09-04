@@ -4,7 +4,7 @@
   "title": "useCookieListener",
   "description": "useCookieListener hook.",
   "registryDependencies": [
-    "@usespaceui/hooks-utils-cookie"
+    "https://www.spaceui.one/r/hooks-utils-cookie.json"
   ],
   "files": [
     {

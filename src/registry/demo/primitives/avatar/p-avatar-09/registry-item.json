@@ -8,8 +8,8 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-avatar-group",
-    "@usespaceui/primitives-avatar"
+    "https://www.spaceui.one/r/components-spaceui-avatar-group.json",
+    "https://www.spaceui.one/r/primitives-avatar.json"
   ],
   "files": [
     {

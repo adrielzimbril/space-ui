@@ -4,13 +4,13 @@
   "title": "Switch 1",
   "description": "Basic switch",
   "registryDependencies": [
-    "@usespaceui/primitives-label",
-    "@usespaceui/primitives-switch"
+    "https://www.spaceui.one/r/primitives-label.json",
+    "https://www.spaceui.one/r/primitives-switch.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/switch/p-switch-01/index.tsx",
-      "content": "import { Label } from '@/components/ui/label'\nimport { Switch } from '@/components/ui/switch'\n\nexport default function Particle() {\n  return (\n    <Label>\n      <Switch />\n      Marketing emails\n    </Label>\n  )\n}\n",
+      "content": "import { Label } from '@/components/ui/label'\nimport { Switch } from '@/components/ui/switch'\n\nexport default function Demo() {\n  return (\n    <Label>\n      <Switch />\n      Marketing emails\n    </Label>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/switch.tsx"
     }

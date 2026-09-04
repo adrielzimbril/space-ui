@@ -5,7 +5,7 @@
   "title": "Link 7",
   "description": "Link with NextLink render prop",
   "registryDependencies": [
-    "@usespaceui/primitives-link"
+    "https://www.spaceui.one/r/primitives-link.json"
   ],
   "categories": [
     "link"

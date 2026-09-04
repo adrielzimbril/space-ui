@@ -5,9 +5,9 @@
   "title": "Liquid Metal Card Custom",
   "description": "Interactive demo showcasing the Liquid Metal Card Custom component.",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-liquid-metal-card",
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-button"
+    "https://www.spaceui.one/r/components-spaceui-liquid-metal-card.json",
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-button.json"
   ],
   "categories": [
     "liquid-metal-card-custom"

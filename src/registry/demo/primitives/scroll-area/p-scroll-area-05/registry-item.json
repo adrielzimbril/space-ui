@@ -5,7 +5,7 @@
   "title": "Scroll Area 5",
   "description": "Horizontal scroll area with scrollbar gutter",
   "registryDependencies": [
-    "@usespaceui/primitives-scroll-area"
+    "https://www.spaceui.one/r/primitives-scroll-area.json"
   ],
   "categories": [
     "scroll area"

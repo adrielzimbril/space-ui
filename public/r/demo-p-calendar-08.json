@@ -7,12 +7,12 @@
     "date-fns"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-calendar"
+    "https://www.spaceui.one/r/primitives-calendar.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/calendar/p-calendar-08/index.tsx",
-      "content": "'use client'\n\nimport { addDays, subDays } from 'date-fns'\nimport { useState } from 'react'\nimport { Calendar } from '@/components/ui/calendar'\n\nexport default function Particle() {\n  const today = new Date()\n  const [date, setDate] = useState<Date[] | undefined>([\n    subDays(today, 17),\n    addDays(today, 2),\n    addDays(today, 6),\n    addDays(today, 8),\n  ])\n\n  return <Calendar mode=\"multiple\" onSelect={setDate} selected={date} />\n}\n",
+      "content": "'use client'\n\nimport { addDays, subDays } from 'date-fns'\nimport { useState } from 'react'\nimport { Calendar } from '@/components/ui/calendar'\n\nexport default function Demo() {\n  const today = new Date()\n  const [date, setDate] = useState<Date[] | undefined>([\n    subDays(today, 17),\n    addDays(today, 2),\n    addDays(today, 6),\n    addDays(today, 8),\n  ])\n\n  return <Calendar mode=\"multiple\" onSelect={setDate} selected={date} />\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/calendar.tsx"
     }

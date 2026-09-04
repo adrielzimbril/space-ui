@@ -7,12 +7,12 @@
     "@daypicker/react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-calendar"
+    "https://www.spaceui.one/r/primitives-calendar.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/calendar/p-calendar-03/index.tsx",
-      "content": "'use client'\n\nimport type { DateRange } from '@daypicker/react'\nimport * as React from 'react'\nimport { Calendar } from '@/components/ui/calendar'\n\nexport default function Particle() {\n  const [range, setRange] = React.useState<DateRange | undefined>({\n    from: new Date(),\n    to: new Date(new Date().setDate(new Date().getDate() + 7)),\n  })\n\n  return <Calendar mode=\"range\" onSelect={setRange} selected={range} />\n}\n",
+      "content": "'use client'\n\nimport type { DateRange } from '@daypicker/react'\nimport * as React from 'react'\nimport { Calendar } from '@/components/ui/calendar'\n\nexport default function Demo() {\n  const [range, setRange] = React.useState<DateRange | undefined>({\n    from: new Date(),\n    to: new Date(new Date().setDate(new Date().getDate() + 7)),\n  })\n\n  return <Calendar mode=\"range\" onSelect={setRange} selected={range} />\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/calendar.tsx"
     }

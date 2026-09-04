@@ -4,12 +4,12 @@
   "title": "Input 16",
   "description": "Read-only input",
   "registryDependencies": [
-    "@usespaceui/primitives-input"
+    "https://www.spaceui.one/r/primitives-input.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/input/p-input-16/index.tsx",
-      "content": "'use client'\n\nimport { useId } from 'react'\nimport { Input } from '@/components/ui/input'\n\nexport default function Particle() {\n  const id = useId()\n  return <Input className=\"read-only:bg-muted\" defaultValue=\"This is a read-only input\" id={id} readOnly type=\"text\" />\n}\n",
+      "content": "'use client'\n\nimport { useId } from 'react'\nimport { Input } from '@/components/ui/input'\n\nexport default function Demo() {\n  const id = useId()\n  return <Input className=\"read-only:bg-muted\" defaultValue=\"This is a read-only input\" id={id} readOnly type=\"text\" />\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/input.tsx"
     }

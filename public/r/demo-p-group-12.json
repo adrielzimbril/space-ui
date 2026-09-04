@@ -7,15 +7,15 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-group",
-    "@usespaceui/primitives-input-group",
-    "@usespaceui/primitives-tooltip"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-group.json",
+    "https://www.spaceui.one/r/primitives-input-group.json",
+    "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/group/p-group-12/index.tsx",
-      "content": "import { IconPaperclip, IconMicrophone } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { Group } from '@/components/ui/group'\nimport { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'\nimport { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'\n\nexport default function Particle() {\n  return (\n    <Group aria-label=\"Message composer\" className=\"[--radius-lg:9999px] [--radius:9999rem]\">\n      <Group aria-label=\"Attachments\">\n        <Button aria-label=\"Attach file\" size=\"icon\" variant=\"outline\">\n          <IconPaperclip aria-hidden=\"true\" />\n        </Button>\n      </Group>\n      <Group aria-label=\"Message input\">\n        <InputGroup>\n          <InputGroupInput placeholder=\"Send a message\" />\n          <InputGroupAddon align=\"inline-end\">\n            <Tooltip>\n              <TooltipTrigger render={<Button aria-label=\"Voice Mode\" size=\"icon-xs\" variant=\"ghost\" />}>\n                <IconMicrophone aria-hidden=\"true\" />\n              </TooltipTrigger>\n              <TooltipContent>Voice Mode</TooltipContent>\n            </Tooltip>\n          </InputGroupAddon>\n        </InputGroup>\n      </Group>\n    </Group>\n  )\n}\n",
+      "content": "import { IconPaperclip, IconMicrophone } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { Group } from '@/components/ui/group'\nimport { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'\nimport { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'\n\nexport default function Demo() {\n  return (\n    <Group aria-label=\"Message composer\" className=\"[--radius-lg:9999px] [--radius:9999rem]\">\n      <Group aria-label=\"Attachments\">\n        <Button aria-label=\"Attach file\" size=\"icon\" variant=\"outline\">\n          <IconPaperclip aria-hidden=\"true\" />\n        </Button>\n      </Group>\n      <Group aria-label=\"Message input\">\n        <InputGroup>\n          <InputGroupInput placeholder=\"Send a message\" />\n          <InputGroupAddon align=\"inline-end\">\n            <Tooltip>\n              <TooltipTrigger render={<Button aria-label=\"Voice Mode\" size=\"icon-xs\" variant=\"ghost\" />}>\n                <IconMicrophone aria-hidden=\"true\" />\n              </TooltipTrigger>\n              <TooltipContent>Voice Mode</TooltipContent>\n            </Tooltip>\n          </InputGroupAddon>\n        </InputGroup>\n      </Group>\n    </Group>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/group.tsx"
     }

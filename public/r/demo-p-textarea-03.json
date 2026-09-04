@@ -4,12 +4,12 @@
   "title": "Textarea 3",
   "description": "Disabled textarea",
   "registryDependencies": [
-    "@usespaceui/primitives-textarea"
+    "https://www.spaceui.one/r/primitives-textarea.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/textarea/p-textarea-03/index.tsx",
-      "content": "import { Textarea } from '@/components/ui/textarea'\n\nexport default function Particle() {\n  return <Textarea disabled placeholder=\"Can't type here\" />\n}\n",
+      "content": "import { Textarea } from '@/components/ui/textarea'\n\nexport default function Demo() {\n  return <Textarea disabled placeholder=\"Can't type here\" />\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/textarea.tsx"
     }

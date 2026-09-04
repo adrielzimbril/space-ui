@@ -8,15 +8,15 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-input-group",
-    "@usespaceui/primitives-menu"
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-input-group.json",
+    "https://www.spaceui.one/r/primitives-menu.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/input-group/p-input-group-18/index.tsx",
-      "content": "import { IconSearch } from '@tabler/icons-react'\nimport { Badge } from '@/components/ui/badge'\nimport { Button } from '@/components/ui/button'\nimport { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'\nimport { Menu, MenuItem, MenuPopup, MenuTrigger } from '@/components/ui/menu'\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput defaultValue=\"hello@spaceui.one\" placeholder=\"Enter email\" type=\"email\" />\n      <InputGroupAddon align=\"inline-end\">\n        <Badge variant=\"info\">Primary</Badge>\n        <Menu>\n          <MenuTrigger render={<Button aria-label=\"Open menu\" size=\"icon-xs\" variant=\"ghost\" />}>\n            <IconSearch />\n          </MenuTrigger>\n          <MenuPopup align=\"end\" alignOffset={-4} sideOffset={8}>\n            <MenuItem disabled>Make Primary</MenuItem>\n            <MenuItem variant=\"destructive\">Delete</MenuItem>\n          </MenuPopup>\n        </Menu>\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
+      "content": "import { IconSearch } from '@tabler/icons-react'\nimport { Badge } from '@/components/ui/badge'\nimport { Button } from '@/components/ui/button'\nimport { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'\nimport { Menu, MenuItem, MenuPopup, MenuTrigger } from '@/components/ui/menu'\n\nexport default function Demo() {\n  return (\n    <InputGroup>\n      <InputGroupInput defaultValue=\"hello@spaceui.one\" placeholder=\"Enter email\" type=\"email\" />\n      <InputGroupAddon align=\"inline-end\">\n        <Badge variant=\"info\">Primary</Badge>\n        <Menu>\n          <MenuTrigger render={<Button aria-label=\"Open menu\" size=\"icon-xs\" variant=\"ghost\" />}>\n            <IconSearch />\n          </MenuTrigger>\n          <MenuPopup align=\"end\" alignOffset={-4} sideOffset={8}>\n            <MenuItem disabled>Make Primary</MenuItem>\n            <MenuItem variant=\"destructive\">Delete</MenuItem>\n          </MenuPopup>\n        </Menu>\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/input-group.tsx"
     }

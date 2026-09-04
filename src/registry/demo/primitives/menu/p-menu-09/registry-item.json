@@ -5,8 +5,8 @@
   "title": "Menu 9",
   "description": "Menu with checkbox items as switches",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-menu"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-menu.json"
   ],
   "categories": [
     "dropdown",

@@ -5,10 +5,10 @@
   "title": "Switch 4",
   "description": "Switch in form",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-field",
-    "@usespaceui/primitives-form",
-    "@usespaceui/primitives-switch"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-field.json",
+    "https://www.spaceui.one/r/primitives-form.json",
+    "https://www.spaceui.one/r/primitives-switch.json"
   ],
   "categories": [
     "switch"

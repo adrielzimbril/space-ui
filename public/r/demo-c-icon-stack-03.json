@@ -7,12 +7,12 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-icon-stack"
+    "https://www.spaceui.one/r/components-spaceui-icon-stack.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/icon-stack/c-icon-stack-03/index.tsx",
-      "content": "import { IconSparkles } from '@tabler/icons-react'\nimport { IconStack } from '@/components/spaceui/icon-stack'\n\nconst stacks = [\n  {\n    label: 'Neutral',\n    className: 'text-foreground',\n    iconClassName: 'text-muted-foreground',\n  },\n  {\n    label: 'Primary',\n    className: 'text-primary',\n    iconClassName: 'text-primary',\n  },\n  {\n    label: 'Success',\n    className: 'text-success',\n    iconClassName: 'text-success',\n  },\n  {\n    label: 'Warning',\n    className: 'text-warning',\n    iconClassName: 'text-warning',\n  },\n]\n\nexport default function Pattern() {\n  return (\n    <div className=\"flex flex-wrap items-end justify-center gap-7\">\n      {stacks.map((item) => (\n        <div key={item.label} className=\"flex flex-col items-center gap-2\">\n          <IconStack aria-hidden=\"true\" className={item.className}>\n            <IconSparkles className={`size-4 ${item.iconClassName}`} />\n          </IconStack>\n          <span className=\"text-muted-foreground text-sm\">{item.label}</span>\n        </div>\n      ))}\n    </div>\n  )\n}\n",
+      "content": "import { IconSparkles } from '@tabler/icons-react'\nimport { IconStack } from '@/components/spaceui/icon-stack'\n\nconst stacks = [\n  {\n    label: 'Neutral',\n    className: 'text-foreground',\n    iconClassName: 'text-muted-foreground',\n  },\n  {\n    label: 'Primary',\n    className: 'text-primary',\n    iconClassName: 'text-primary',\n  },\n  {\n    label: 'Success',\n    className: 'text-success',\n    iconClassName: 'text-success',\n  },\n  {\n    label: 'Warning',\n    className: 'text-warning',\n    iconClassName: 'text-warning',\n  },\n]\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-end justify-center gap-7\">\n      {stacks.map((item) => (\n        <div key={item.label} className=\"flex flex-col items-center gap-2\">\n          <IconStack aria-hidden=\"true\" className={item.className}>\n            <IconSparkles className={`size-4 ${item.iconClassName}`} />\n          </IconStack>\n          <span className=\"text-muted-foreground text-sm\">{item.label}</span>\n        </div>\n      ))}\n    </div>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/spaceui/icon-stack.tsx"
     }

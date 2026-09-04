@@ -5,7 +5,7 @@
   "title": "Phone input with preset value",
   "description": "Phone input with preset value",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-phone-input"
+    "https://www.spaceui.one/r/components-spaceui-phone-input.json"
   ],
   "categories": [
     "component",

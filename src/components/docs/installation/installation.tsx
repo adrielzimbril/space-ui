@@ -11,21 +11,34 @@ export interface ComponentInstallationProps {
   className?: string
 }
 
+function getAppRoot(): string {
+  if (path.basename(process.cwd()) === 'www') {
+    return process.cwd()
+  }
+  try {
+    const candidate = path.join(process.cwd(), 'apps', 'www')
+    if (require('node:fs').existsSync(candidate)) {
+      return candidate
+    }
+  } catch {}
+  return process.cwd()
+}
+
 export async function ComponentInstallation({ name, className }: ComponentInstallationProps) {
   const cleanName = name.replace(/^@[^/]+\//, '').replace(/\.json$/, '')
-  const packageName = `@usespaceui/${cleanName.replace(/^primitives-/, '').replace(/^components-spaceui-/, '')}`
+  const appRoot = getAppRoot()
 
   // Try to load registry json to find dependencies and css
   let parsed: any = null
   try {
-    const jsonPath = path.join(process.cwd(), 'public', 'r', `${cleanName}.json`)
+    const jsonPath = path.join(appRoot, 'public', 'r', `${cleanName}.json`)
     const fileData = await fs.readFile(jsonPath, 'utf8')
     parsed = JSON.parse(fileData)
   } catch {
     // Continue with fallback lookup
     try {
       const directName = cleanName.replace(/^primitives-/, '').replace(/^components-spaceui-/, '')
-      const candidate = path.join(process.cwd(), 'src', 'registry', 'primitives', directName, 'registry-item.json')
+      const candidate = path.join(appRoot, 'src', 'registry', 'primitives', directName, 'registry-item.json')
       const fileData = await fs.readFile(candidate, 'utf8')
       parsed = JSON.parse(fileData)
     } catch {
@@ -44,7 +57,7 @@ export async function ComponentInstallation({ name, className }: ComponentInstal
       </TabsList>
 
       <TabsPanel value="cli">
-        <InstallCommandBlock isShadcn packages={packageName} />
+        <InstallCommandBlock isShadcn packages={cleanName} />
       </TabsPanel>
 
       <TabsPanel value="manual">

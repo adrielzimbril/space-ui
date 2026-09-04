@@ -8,12 +8,12 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-collapsible"
+    "https://www.spaceui.one/r/primitives-collapsible.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/collapsible/p-collapsible-01/index.tsx",
-      "content": "import { IconChevronDown } from '@tabler/icons-react'\nimport { Collapsible, CollapsiblePanel, CollapsibleTrigger } from '@/components/ui/collapsible'\n\nexport default function Particle() {\n  return (\n    <Collapsible>\n      <CollapsibleTrigger className=\"inline-flex items-center gap-2 font-medium text-sm data-panel-open:[&_svg]:rotate-180\">\n        Show recovery keys\n        <IconChevronDown className=\"size-4\" />\n      </CollapsibleTrigger>\n      <CollapsiblePanel>\n        <ul className=\"flex flex-col gap-1 py-2 text-muted-foreground text-sm\">\n          <li className=\"rounded-sm bg-muted px-2 py-1 font-mono\">8A9B-2C4E-7F1D</li>\n          <li className=\"rounded-sm bg-muted px-2 py-1 font-mono\">3D5F-9E1A-4C2B</li>\n          <li className=\"rounded-sm bg-muted px-2 py-1 font-mono\">6F8A-1B3C-9D7E</li>\n        </ul>\n      </CollapsiblePanel>\n    </Collapsible>\n  )\n}\n",
+      "content": "import { IconChevronDown } from '@tabler/icons-react'\nimport { Collapsible, CollapsiblePanel, CollapsibleTrigger } from '@/components/ui/collapsible'\n\nexport default function Demo() {\n  return (\n    <Collapsible>\n      <CollapsibleTrigger className=\"inline-flex items-center gap-2 font-medium text-sm data-panel-open:[&_svg]:rotate-180\">\n        Show recovery keys\n        <IconChevronDown className=\"size-4\" />\n      </CollapsibleTrigger>\n      <CollapsiblePanel>\n        <ul className=\"flex flex-col gap-1 py-2 text-muted-foreground text-sm\">\n          <li className=\"rounded-sm bg-muted px-2 py-1 font-mono\">8A9B-2C4E-7F1D</li>\n          <li className=\"rounded-sm bg-muted px-2 py-1 font-mono\">3D5F-9E1A-4C2B</li>\n          <li className=\"rounded-sm bg-muted px-2 py-1 font-mono\">6F8A-1B3C-9D7E</li>\n        </ul>\n      </CollapsiblePanel>\n    </Collapsible>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/collapsible.tsx"
     }

@@ -10,7 +10,7 @@
     "motion"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-navigation-menu"
+    "https://www.spaceui.one/r/primitives-navigation-menu.json"
   ],
   "files": [
     {

@@ -8,8 +8,8 @@
     "@paper-design/shaders-react"
   ],
   "registryDependencies": [
-    "@usespaceui/lib-utils",
-    "@usespaceui/primitives-card"
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-card.json"
   ],
   "categories": [
     "liquid-metal-card"

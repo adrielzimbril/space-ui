@@ -5,7 +5,7 @@
   "title": "Autocomplete 7",
   "description": "Autocomplete with clear button",
   "registryDependencies": [
-    "@usespaceui/primitives-autocomplete"
+    "https://www.spaceui.one/r/primitives-autocomplete.json"
   ],
   "categories": [
     "autocomplete",

@@ -5,8 +5,8 @@
   "title": "Radio Group 3",
   "description": "Radio group card",
   "registryDependencies": [
-    "@usespaceui/primitives-label",
-    "@usespaceui/primitives-radio-group"
+    "https://www.spaceui.one/r/primitives-label.json",
+    "https://www.spaceui.one/r/primitives-radio-group.json"
   ],
   "categories": [
     "radio group"

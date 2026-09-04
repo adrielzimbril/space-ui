@@ -4,13 +4,13 @@
   "title": "Drawer 1",
   "description": "Simple bottom drawer with close button",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-drawer"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-drawer.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/drawer/p-drawer-01/index.tsx",
-      "content": "import { Button } from '@/components/ui/button'\nimport {\n  Drawer,\n  DrawerClose,\n  DrawerDescription,\n  DrawerFooter,\n  DrawerHeader,\n  DrawerPopup,\n  DrawerTitle,\n  DrawerTrigger,\n} from '@/components/ui/drawer'\n\nexport default function Particle() {\n  return (\n    <Drawer>\n      <DrawerTrigger render={<Button variant=\"outline\" />}>Open drawer</DrawerTrigger>\n      <DrawerPopup showBar>\n        <DrawerHeader className=\"text-center\">\n          <DrawerTitle>Notifications</DrawerTitle>\n          <DrawerDescription>This is the description of the drawer.</DrawerDescription>\n        </DrawerHeader>\n        <DrawerFooter className=\"justify-center sm:justify-center\" variant=\"bare\">\n          <DrawerClose render={<Button variant=\"outline\" />}>Close</DrawerClose>\n        </DrawerFooter>\n      </DrawerPopup>\n    </Drawer>\n  )\n}\n",
+      "content": "import { Button } from '@/components/ui/button'\nimport {\n  Drawer,\n  DrawerClose,\n  DrawerDescription,\n  DrawerFooter,\n  DrawerHeader,\n  DrawerPopup,\n  DrawerTitle,\n  DrawerTrigger,\n} from '@/components/ui/drawer'\n\nexport default function Demo() {\n  return (\n    <Drawer>\n      <DrawerTrigger render={<Button variant=\"outline\" />}>Open drawer</DrawerTrigger>\n      <DrawerPopup showBar>\n        <DrawerHeader className=\"text-center\">\n          <DrawerTitle>Notifications</DrawerTitle>\n          <DrawerDescription>This is the description of the drawer.</DrawerDescription>\n        </DrawerHeader>\n        <DrawerFooter className=\"justify-center sm:justify-center\" variant=\"bare\">\n          <DrawerClose render={<Button variant=\"outline\" />}>Close</DrawerClose>\n        </DrawerFooter>\n      </DrawerPopup>\n    </Drawer>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/drawer.tsx"
     }

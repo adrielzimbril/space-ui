@@ -8,7 +8,7 @@
     "sonner"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-rating"
+    "https://www.spaceui.one/r/components-spaceui-rating.json"
   ],
   "categories": [
     "component",

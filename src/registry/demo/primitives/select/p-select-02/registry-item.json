@@ -5,7 +5,7 @@
   "title": "Select Sizes",
   "description": "Select triggers in sm, default, and lg sizes",
   "registryDependencies": [
-    "@usespaceui/primitives-select"
+    "https://www.spaceui.one/r/primitives-select.json"
   ],
   "categories": [
     "select"

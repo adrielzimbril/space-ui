@@ -5,7 +5,7 @@
   "title": "Input 18",
   "description": "Pill-shaped input",
   "registryDependencies": [
-    "@usespaceui/primitives-input"
+    "https://www.spaceui.one/r/primitives-input.json"
   ],
   "categories": [
     "input"

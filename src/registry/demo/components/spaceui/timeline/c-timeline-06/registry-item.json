@@ -8,13 +8,13 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-timeline",
-    "@usespaceui/lib-utils",
-    "@usespaceui/primitives-avatar",
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-collapsible",
-    "@usespaceui/primitives-frame",
-    "@usespaceui/primitives-spinner"
+    "https://www.spaceui.one/r/components-spaceui-timeline.json",
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-avatar.json",
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-collapsible.json",
+    "https://www.spaceui.one/r/primitives-frame.json",
+    "https://www.spaceui.one/r/primitives-spinner.json"
   ],
   "categories": [
     "component",

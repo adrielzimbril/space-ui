@@ -7,12 +7,12 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/hooks-browser-use-local-storage",
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-card",
-    "@usespaceui/primitives-checkbox",
-    "@usespaceui/primitives-input"
+    "https://www.spaceui.one/r/hooks-browser-use-local-storage.json",
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-card.json",
+    "https://www.spaceui.one/r/primitives-checkbox.json",
+    "https://www.spaceui.one/r/primitives-input.json"
   ],
   "files": [
     {

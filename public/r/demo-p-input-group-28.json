@@ -8,14 +8,14 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-input-group",
-    "@usespaceui/primitives-tooltip"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-input-group.json",
+    "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/input-group/p-input-group-28/index.tsx",
-      "content": "'use client'\n\nimport { IconArrowRight, IconInfoCircle } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { InputGroup, InputGroupAddon, InputGroupText, InputGroupTextarea } from '@/components/ui/input-group'\nimport { Tooltip, TooltipPopup, TooltipTrigger } from '@/components/ui/tooltip'\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupTextarea placeholder=\"Type a message…\" />\n      <InputGroupAddon align=\"block-end\">\n        <Tooltip>\n          <TooltipTrigger\n            render={<Button aria-label=\"Voice message\" className=\"rounded-full\" size=\"icon-sm\" variant=\"ghost\" />}\n          >\n            <IconInfoCircle />\n          </TooltipTrigger>\n          <TooltipPopup>Record voice message</TooltipPopup>\n        </Tooltip>\n        <InputGroupText className=\"ml-auto text-muted-foreground text-xs\">Press Enter to send</InputGroupText>\n        <Tooltip>\n          <TooltipTrigger render={<Button aria-label=\"Send message\" className=\"rounded-full\" size=\"icon-sm\" />}>\n            <IconArrowRight />\n          </TooltipTrigger>\n          <TooltipPopup>Send</TooltipPopup>\n        </Tooltip>\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
+      "content": "'use client'\n\nimport { IconArrowRight, IconInfoCircle } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { InputGroup, InputGroupAddon, InputGroupText, InputGroupTextarea } from '@/components/ui/input-group'\nimport { Tooltip, TooltipPopup, TooltipTrigger } from '@/components/ui/tooltip'\n\nexport default function Demo() {\n  return (\n    <InputGroup>\n      <InputGroupTextarea placeholder=\"Type a message…\" />\n      <InputGroupAddon align=\"block-end\">\n        <Tooltip>\n          <TooltipTrigger\n            render={<Button aria-label=\"Voice message\" className=\"rounded-full\" size=\"icon-sm\" variant=\"ghost\" />}\n          >\n            <IconInfoCircle />\n          </TooltipTrigger>\n          <TooltipPopup>Record voice message</TooltipPopup>\n        </Tooltip>\n        <InputGroupText className=\"ml-auto text-muted-foreground text-xs\">Press Enter to send</InputGroupText>\n        <Tooltip>\n          <TooltipTrigger render={<Button aria-label=\"Send message\" className=\"rounded-full\" size=\"icon-sm\" />}>\n            <IconArrowRight />\n          </TooltipTrigger>\n          <TooltipPopup>Send</TooltipPopup>\n        </Tooltip>\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/input-group.tsx"
     }

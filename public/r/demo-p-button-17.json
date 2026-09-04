@@ -4,12 +4,12 @@
   "title": "Button 17",
   "description": "Pill-shaped button with rounded-full styling",
   "registryDependencies": [
-    "@usespaceui/primitives-button"
+    "https://www.spaceui.one/r/primitives-button.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/button/p-button-17/index.tsx",
-      "content": "import { Button } from '@/components/ui/button'\n\nexport default function Particle() {\n  return <Button className=\"rounded-full\">Pill Button</Button>\n}\n",
+      "content": "import { Button } from '@/components/ui/button'\n\nexport default function Demo() {\n  return <Button className=\"rounded-full\">Pill Button</Button>\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/button.tsx"
     }

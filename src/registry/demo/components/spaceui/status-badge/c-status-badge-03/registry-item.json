@@ -5,7 +5,7 @@
   "title": "Status Badge Radar Ping",
   "description": "Animated ping wave and pulsing indicators for live system states.",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-status-badge"
+    "https://www.spaceui.one/r/components-spaceui-status-badge.json"
   ],
   "categories": [
     "component",

@@ -4,12 +4,12 @@
   "title": "Badge 5",
   "description": "Badge with link",
   "registryDependencies": [
-    "@usespaceui/primitives-badge"
+    "https://www.spaceui.one/r/primitives-badge.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/badge/p-badge-05/index.tsx",
-      "content": "import Link from 'next/link'\nimport { Badge } from '@/components/ui/badge'\n\nexport default function Particle() {\n  return <Badge render={<Link href=\"/\" />}>Badge</Badge>\n}\n",
+      "content": "import Link from 'next/link'\nimport { Badge } from '@/components/ui/badge'\n\nexport default function Demo() {\n  return <Badge render={<Link href=\"/\" />}>Badge</Badge>\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/badge.tsx"
     }

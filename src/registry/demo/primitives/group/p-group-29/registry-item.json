@@ -8,9 +8,9 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-group"
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-group.json"
   ],
   "categories": [
     "button-group"

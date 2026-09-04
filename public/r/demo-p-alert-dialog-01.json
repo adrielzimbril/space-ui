@@ -4,13 +4,13 @@
   "title": "Alert Dialog 1",
   "description": "Alert dialog",
   "registryDependencies": [
-    "@usespaceui/primitives-alert-dialog",
-    "@usespaceui/primitives-button"
+    "https://www.spaceui.one/r/primitives-alert-dialog.json",
+    "https://www.spaceui.one/r/primitives-button.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/alert-dialog/p-alert-dialog-01/index.tsx",
-      "content": "import {\n  AlertDialog,\n  AlertDialogClose,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogPopup,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from '@/components/ui/alert-dialog'\nimport { Button } from '@/components/ui/button'\n\nexport default function Particle() {\n  return (\n    <AlertDialog>\n      <AlertDialogTrigger render={<Button variant=\"destructive-outline\" />}>Delete Account</AlertDialogTrigger>\n      <AlertDialogPopup>\n        <AlertDialogHeader>\n          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>\n          <AlertDialogDescription>\n            This action cannot be undone. This will permanently delete your account and remove your data from our\n            servers.\n          </AlertDialogDescription>\n        </AlertDialogHeader>\n        <AlertDialogFooter>\n          <AlertDialogClose render={<Button variant=\"ghost\" />}>Cancel</AlertDialogClose>\n          <AlertDialogClose render={<Button variant=\"destructive\" />}>Delete Account</AlertDialogClose>\n        </AlertDialogFooter>\n      </AlertDialogPopup>\n    </AlertDialog>\n  )\n}\n",
+      "content": "import {\n  AlertDialog,\n  AlertDialogClose,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogPopup,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from '@/components/ui/alert-dialog'\nimport { Button } from '@/components/ui/button'\n\nexport default function Demo() {\n  return (\n    <AlertDialog>\n      <AlertDialogTrigger render={<Button variant=\"destructive-outline\" />}>Delete Account</AlertDialogTrigger>\n      <AlertDialogPopup>\n        <AlertDialogHeader>\n          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>\n          <AlertDialogDescription>\n            This action cannot be undone. This will permanently delete your account and remove your data from our\n            servers.\n          </AlertDialogDescription>\n        </AlertDialogHeader>\n        <AlertDialogFooter>\n          <AlertDialogClose render={<Button variant=\"ghost\" />}>Cancel</AlertDialogClose>\n          <AlertDialogClose render={<Button variant=\"destructive\" />}>Delete Account</AlertDialogClose>\n        </AlertDialogFooter>\n      </AlertDialogPopup>\n    </AlertDialog>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/alert-dialog.tsx"
     }

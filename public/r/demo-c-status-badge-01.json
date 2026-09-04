@@ -4,12 +4,12 @@
   "title": "Status Badge Variants",
   "description": "All status indicators from online and available to busy, away, and error states.",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-status-badge"
+    "https://www.spaceui.one/r/components-spaceui-status-badge.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/status-badge/c-status-badge-01/index.tsx",
-      "content": "import { StatusBadge } from '@/components/spaceui/status-badge'\n\nexport default function StatusBadgeDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-3 p-4\">\n      <StatusBadge status=\"online\" primaryText=\"Online\" animated>\n        Operational\n      </StatusBadge>\n      <StatusBadge status=\"busy\" primaryText=\"Busy\">\n        In a meeting\n      </StatusBadge>\n      <StatusBadge status=\"away\" primaryText=\"Away\">\n        AFK\n      </StatusBadge>\n      <StatusBadge status=\"warning\" primaryText=\"Warning\">\n        High latency\n      </StatusBadge>\n      <StatusBadge status=\"error\" primaryText=\"Error\">\n        Service outage\n      </StatusBadge>\n      <StatusBadge status=\"info\" primaryText=\"Info\">\n        Maintenance\n      </StatusBadge>\n      <StatusBadge status=\"offline\" primaryText=\"Offline\">\n        Disconnected\n      </StatusBadge>\n    </div>\n  )\n}\n",
+      "content": "import { StatusBadge } from '@/components/spaceui/status-badge'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-3 p-4\">\n      <StatusBadge status=\"online\" primaryText=\"Online\" animated>\n        Operational\n      </StatusBadge>\n      <StatusBadge status=\"busy\" primaryText=\"Busy\">\n        In a meeting\n      </StatusBadge>\n      <StatusBadge status=\"away\" primaryText=\"Away\">\n        AFK\n      </StatusBadge>\n      <StatusBadge status=\"warning\" primaryText=\"Warning\">\n        High latency\n      </StatusBadge>\n      <StatusBadge status=\"error\" primaryText=\"Error\">\n        Service outage\n      </StatusBadge>\n      <StatusBadge status=\"info\" primaryText=\"Info\">\n        Maintenance\n      </StatusBadge>\n      <StatusBadge status=\"offline\" primaryText=\"Offline\">\n        Disconnected\n      </StatusBadge>\n    </div>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/spaceui/status-badge.tsx"
     }

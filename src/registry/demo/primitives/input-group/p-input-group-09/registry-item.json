@@ -5,8 +5,8 @@
   "title": "Input Group 9",
   "description": "Input group with button",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-input-group"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-input-group.json"
   ],
   "categories": [
     "button",

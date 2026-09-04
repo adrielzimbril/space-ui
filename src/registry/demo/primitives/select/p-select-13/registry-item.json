@@ -5,7 +5,7 @@
   "title": "Select 13",
   "description": "Status select with colored dot",
   "registryDependencies": [
-    "@usespaceui/primitives-select"
+    "https://www.spaceui.one/r/primitives-select.json"
   ],
   "categories": [
     "select"

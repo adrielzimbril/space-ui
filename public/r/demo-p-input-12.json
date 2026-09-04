@@ -4,13 +4,13 @@
   "title": "Input 12",
   "description": "Input with label and required indicator",
   "registryDependencies": [
-    "@usespaceui/primitives-input",
-    "@usespaceui/primitives-label"
+    "https://www.spaceui.one/r/primitives-input.json",
+    "https://www.spaceui.one/r/primitives-label.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/input/p-input-12/index.tsx",
-      "content": "'use client'\n\nimport { useId } from 'react'\nimport { Input } from '@/components/ui/input'\nimport { Label } from '@/components/ui/label'\n\nexport default function Particle() {\n  const id = useId()\n  return (\n    <div className=\"flex flex-col gap-2\">\n      <Label htmlFor={id}>\n        Email <span className=\"text-destructive\">*</span>\n      </Label>\n      <Input id={id} placeholder=\"Email\" required type=\"email\" />\n    </div>\n  )\n}\n",
+      "content": "'use client'\n\nimport { useId } from 'react'\nimport { Input } from '@/components/ui/input'\nimport { Label } from '@/components/ui/label'\n\nexport default function Demo() {\n  const id = useId()\n  return (\n    <div className=\"flex flex-col gap-2\">\n      <Label htmlFor={id}>\n        Email <span className=\"text-destructive\">*</span>\n      </Label>\n      <Input id={id} placeholder=\"Email\" required type=\"email\" />\n    </div>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/input.tsx"
     }

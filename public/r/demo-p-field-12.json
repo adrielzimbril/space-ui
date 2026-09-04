@@ -4,13 +4,13 @@
   "title": "Field 12",
   "description": "Field with checkbox",
   "registryDependencies": [
-    "@usespaceui/primitives-checkbox",
-    "@usespaceui/primitives-field"
+    "https://www.spaceui.one/r/primitives-checkbox.json",
+    "https://www.spaceui.one/r/primitives-field.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/field/p-field-12/index.tsx",
-      "content": "import { Checkbox } from '@/components/ui/checkbox'\nimport { Field, FieldLabel } from '@/components/ui/field'\n\nexport default function Particle() {\n  return (\n    <Field>\n      <FieldLabel>\n        <Checkbox />\n        Accept terms and conditions\n      </FieldLabel>\n    </Field>\n  )\n}\n",
+      "content": "import { Checkbox } from '@/components/ui/checkbox'\nimport { Field, FieldLabel } from '@/components/ui/field'\n\nexport default function Demo() {\n  return (\n    <Field>\n      <FieldLabel>\n        <Checkbox />\n        Accept terms and conditions\n      </FieldLabel>\n    </Field>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/field.tsx"
     }

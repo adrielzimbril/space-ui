@@ -4,12 +4,12 @@
   "title": "Radio Sizes",
   "description": "Radio controls in sm, default, and lg sizes",
   "registryDependencies": [
-    "@usespaceui/primitives-radio-group"
+    "https://www.spaceui.one/r/primitives-radio-group.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/radio-group/p-radio-group-02/index.tsx",
-      "content": "'use client'\n\nimport { Radio, RadioGroup } from '@/components/ui/radio-group'\n\nexport default function Particle() {\n  return (\n    <RadioGroup defaultValue=\"small\" className=\"flex items-center gap-4\">\n      <Radio value=\"small\" className=\"size-3.5\" />\n      <Radio value=\"medium\" className=\"size-4\" />\n      <Radio value=\"large\" className=\"size-5\" />\n    </RadioGroup>\n  )\n}\n",
+      "content": "'use client'\n\nimport { Radio, RadioGroup } from '@/components/ui/radio-group'\n\nexport default function Demo() {\n  return (\n    <RadioGroup defaultValue=\"small\" className=\"flex items-center gap-4\">\n      <Radio value=\"small\" className=\"size-3.5\" />\n      <Radio value=\"medium\" className=\"size-4\" />\n      <Radio value=\"large\" className=\"size-5\" />\n    </RadioGroup>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/radio-group.tsx"
     }

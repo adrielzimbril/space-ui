@@ -4,9 +4,9 @@
   "title": "useCookie",
   "description": "useCookie hook.",
   "registryDependencies": [
-    "@usespaceui/hooks-lifecycle-use-event-callback",
-    "@usespaceui/hooks-lifecycle-use-single-effect",
-    "@usespaceui/hooks-utils-cookie"
+    "https://www.spaceui.one/r/hooks-lifecycle-use-event-callback.json",
+    "https://www.spaceui.one/r/hooks-lifecycle-use-single-effect.json",
+    "https://www.spaceui.one/r/hooks-utils-cookie.json"
   ],
   "files": [
     {

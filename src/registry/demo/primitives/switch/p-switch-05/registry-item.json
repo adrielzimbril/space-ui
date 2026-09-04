@@ -5,7 +5,7 @@
   "title": "Switch 5",
   "description": "Custom size switch",
   "registryDependencies": [
-    "@usespaceui/primitives-switch"
+    "https://www.spaceui.one/r/primitives-switch.json"
   ],
   "categories": [
     "switch"

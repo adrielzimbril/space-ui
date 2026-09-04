@@ -9,8 +9,8 @@
     "@headless-tree/react"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-tree",
-    "@usespaceui/primitives-checkbox"
+    "https://www.spaceui.one/r/components-spaceui-tree.json",
+    "https://www.spaceui.one/r/primitives-checkbox.json"
   ],
   "categories": [
     "component",

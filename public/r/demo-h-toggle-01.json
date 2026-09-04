@@ -7,10 +7,10 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/hooks-lifecycle-use-toggle",
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-card",
-    "@usespaceui/primitives-switch"
+    "https://www.spaceui.one/r/hooks-lifecycle-use-toggle.json",
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-card.json",
+    "https://www.spaceui.one/r/primitives-switch.json"
   ],
   "files": [
     {

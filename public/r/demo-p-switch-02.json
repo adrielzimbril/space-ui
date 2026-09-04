@@ -4,12 +4,12 @@
   "title": "Switch Sizes",
   "description": "Switch controls in sm, default, and lg sizes",
   "registryDependencies": [
-    "@usespaceui/primitives-switch"
+    "https://www.spaceui.one/r/primitives-switch.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/switch/p-switch-02/index.tsx",
-      "content": "import { Switch } from '@/components/ui/switch'\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Switch defaultChecked className=\"scale-90\" />\n      <Switch defaultChecked />\n      <Switch defaultChecked className=\"scale-110\" />\n    </div>\n  )\n}\n",
+      "content": "import { Switch } from '@/components/ui/switch'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Switch defaultChecked className=\"scale-90\" />\n      <Switch defaultChecked />\n      <Switch defaultChecked className=\"scale-110\" />\n    </div>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/switch.tsx"
     }

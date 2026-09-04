@@ -4,12 +4,12 @@
   "title": "Button 6",
   "description": "Link rendered as button",
   "registryDependencies": [
-    "@usespaceui/primitives-button"
+    "https://www.spaceui.one/r/primitives-button.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/button/p-button-06/index.tsx",
-      "content": "import Link from 'next/link'\nimport { Button } from '@/components/ui/button'\n\nexport default function Particle() {\n  return <Button render={<Link href=\"/\" />}>Link</Button>\n}\n",
+      "content": "import Link from 'next/link'\nimport { Button } from '@/components/ui/button'\n\nexport default function Demo() {\n  return <Button render={<Link href=\"/\" />}>Link</Button>\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/button.tsx"
     }

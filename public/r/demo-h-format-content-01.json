@@ -7,10 +7,10 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/hooks-utils-format-content",
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-card",
-    "@usespaceui/primitives-input"
+    "https://www.spaceui.one/r/hooks-utils-format-content.json",
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-card.json",
+    "https://www.spaceui.one/r/primitives-input.json"
   ],
   "files": [
     {

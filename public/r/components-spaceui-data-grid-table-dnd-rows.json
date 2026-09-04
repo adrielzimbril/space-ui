@@ -12,10 +12,10 @@
     "@tanstack/react-table"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-data-grid",
-    "@usespaceui/components-spaceui-data-grid-table",
-    "@usespaceui/lib-utils",
-    "@usespaceui/primitives-button"
+    "https://www.spaceui.one/r/components-spaceui-data-grid.json",
+    "https://www.spaceui.one/r/components-spaceui-data-grid-table.json",
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-button.json"
   ],
   "files": [
     {

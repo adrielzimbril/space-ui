@@ -5,7 +5,7 @@
   "title": "Navigation 2",
   "description": "Segmented navigation links",
   "registryDependencies": [
-    "@usespaceui/lib-segmented-control"
+    "https://www.spaceui.one/r/lib-segmented-control.json"
   ],
   "categories": [
     "link",

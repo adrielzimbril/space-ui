@@ -8,10 +8,10 @@
     "@tanstack/react-table"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-card",
-    "@usespaceui/primitives-checkbox",
-    "@usespaceui/primitives-table"
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-card.json",
+    "https://www.spaceui.one/r/primitives-checkbox.json",
+    "https://www.spaceui.one/r/primitives-table.json"
   ],
   "categories": [
     "card",

@@ -5,7 +5,7 @@
   "title": "Breadcrumb 2",
   "description": "Breadcrumb with custom separator",
   "registryDependencies": [
-    "@usespaceui/primitives-breadcrumb"
+    "https://www.spaceui.one/r/primitives-breadcrumb.json"
   ],
   "categories": [
     "breadcrumb"

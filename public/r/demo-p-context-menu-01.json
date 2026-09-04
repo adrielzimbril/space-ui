@@ -4,12 +4,12 @@
   "title": "Context Menu 1",
   "description": "Basic context menu",
   "registryDependencies": [
-    "@usespaceui/primitives-context-menu"
+    "https://www.spaceui.one/r/primitives-context-menu.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/context-menu/p-context-menu-01/index.tsx",
-      "content": "import {\n  ContextMenu,\n  ContextMenuItem,\n  ContextMenuPopup,\n  ContextMenuSeparator,\n  ContextMenuTrigger,\n} from '@/components/ui/context-menu'\n\nexport default function Particle() {\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className=\"flex h-32 w-full max-w-sm items-center justify-center rounded-lg border border-dashed text-muted-foreground text-sm\">\n        Right click here\n      </ContextMenuTrigger>\n      <ContextMenuPopup>\n        <ContextMenuItem>Back</ContextMenuItem>\n        <ContextMenuItem>Forward</ContextMenuItem>\n        <ContextMenuSeparator />\n        <ContextMenuItem>Reload</ContextMenuItem>\n      </ContextMenuPopup>\n    </ContextMenu>\n  )\n}\n",
+      "content": "import {\n  ContextMenu,\n  ContextMenuItem,\n  ContextMenuPopup,\n  ContextMenuSeparator,\n  ContextMenuTrigger,\n} from '@/components/ui/context-menu'\n\nexport default function Demo() {\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className=\"flex h-32 w-full max-w-sm items-center justify-center rounded-lg border border-dashed text-muted-foreground text-sm\">\n        Right click here\n      </ContextMenuTrigger>\n      <ContextMenuPopup>\n        <ContextMenuItem>Back</ContextMenuItem>\n        <ContextMenuItem>Forward</ContextMenuItem>\n        <ContextMenuSeparator />\n        <ContextMenuItem>Reload</ContextMenuItem>\n      </ContextMenuPopup>\n    </ContextMenu>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/context-menu.tsx"
     }

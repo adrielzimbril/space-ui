@@ -5,8 +5,8 @@
   "title": "Checkbox 3",
   "description": "Card-style checkbox",
   "registryDependencies": [
-    "@usespaceui/primitives-checkbox",
-    "@usespaceui/primitives-label"
+    "https://www.spaceui.one/r/primitives-checkbox.json",
+    "https://www.spaceui.one/r/primitives-label.json"
   ],
   "categories": [
     "checkbox"

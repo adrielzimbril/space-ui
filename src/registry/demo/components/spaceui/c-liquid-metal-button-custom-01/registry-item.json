@@ -5,7 +5,7 @@
   "title": "Liquid Metal Button Custom",
   "description": "Interactive demo showcasing the Liquid Metal Button Custom component.",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-liquid-metal-button"
+    "https://www.spaceui.one/r/components-spaceui-liquid-metal-button.json"
   ],
   "categories": [
     "liquid-metal-button-custom"

@@ -5,8 +5,8 @@
   "title": "Liquid Metal Card Default",
   "description": "Interactive demo showcasing the Liquid Metal Card Default component.",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-liquid-metal-card",
-    "@usespaceui/primitives-button"
+    "https://www.spaceui.one/r/components-spaceui-liquid-metal-card.json",
+    "https://www.spaceui.one/r/primitives-button.json"
   ],
   "categories": [
     "liquid-metal-card-default"

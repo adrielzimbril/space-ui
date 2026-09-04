@@ -9,7 +9,7 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-breadcrumb"
+    "https://www.spaceui.one/r/primitives-breadcrumb.json"
   ],
   "categories": [
     "breadcrumb"

@@ -9,16 +9,16 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/hooks-browser-use-media-query",
-    "@usespaceui/hooks-dom-use-event-listener",
-    "@usespaceui/lib-utils",
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-input",
-    "@usespaceui/primitives-scroll-area",
-    "@usespaceui/primitives-separator",
-    "@usespaceui/primitives-sheet",
-    "@usespaceui/primitives-skeleton",
-    "@usespaceui/primitives-tooltip"
+    "https://www.spaceui.one/r/hooks-browser-use-media-query.json",
+    "https://www.spaceui.one/r/hooks-dom-use-event-listener.json",
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-input.json",
+    "https://www.spaceui.one/r/primitives-scroll-area.json",
+    "https://www.spaceui.one/r/primitives-separator.json",
+    "https://www.spaceui.one/r/primitives-sheet.json",
+    "https://www.spaceui.one/r/primitives-skeleton.json",
+    "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
   "files": [
     {

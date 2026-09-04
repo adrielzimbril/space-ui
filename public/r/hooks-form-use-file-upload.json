@@ -4,7 +4,7 @@
   "title": "useFileUpload",
   "description": "useFileUpload hook.",
   "registryDependencies": [
-    "@usespaceui/hooks-utils-format-bytes"
+    "https://www.spaceui.one/r/hooks-utils-format-bytes.json"
   ],
   "files": [
     {

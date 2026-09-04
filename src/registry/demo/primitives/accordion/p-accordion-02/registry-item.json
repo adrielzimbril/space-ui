@@ -5,7 +5,7 @@
   "title": "Accordion 2",
   "description": "Accordion allowing multiple panels open",
   "registryDependencies": [
-    "@usespaceui/primitives-accordion"
+    "https://www.spaceui.one/r/primitives-accordion.json"
   ],
   "categories": [
     "accordion"

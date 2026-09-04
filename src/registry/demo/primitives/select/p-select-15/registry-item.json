@@ -5,7 +5,7 @@
   "title": "Select 15",
   "description": "Select with left text label",
   "registryDependencies": [
-    "@usespaceui/primitives-select"
+    "https://www.spaceui.one/r/primitives-select.json"
   ],
   "categories": [
     "select"

@@ -8,8 +8,8 @@
     "motion"
   ],
   "registryDependencies": [
-    "@usespaceui/hooks-dom-use-event-listener",
-    "@usespaceui/lib-utils"
+    "https://www.spaceui.one/r/hooks-dom-use-event-listener.json",
+    "https://www.spaceui.one/r/lib-utils.json"
   ],
   "categories": [
     "background",

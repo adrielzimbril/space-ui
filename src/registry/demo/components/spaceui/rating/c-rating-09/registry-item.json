@@ -5,11 +5,11 @@
   "title": "Rating with review text input",
   "description": "Rating with review text input",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-rating",
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-card",
-    "@usespaceui/primitives-label",
-    "@usespaceui/primitives-textarea"
+    "https://www.spaceui.one/r/components-spaceui-rating.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-card.json",
+    "https://www.spaceui.one/r/primitives-label.json",
+    "https://www.spaceui.one/r/primitives-textarea.json"
   ],
   "categories": [
     "component",

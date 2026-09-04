@@ -8,9 +8,9 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-breadcrumb",
-    "@usespaceui/primitives-separator",
-    "@usespaceui/primitives-sidebar"
+    "https://www.spaceui.one/r/primitives-breadcrumb.json",
+    "https://www.spaceui.one/r/primitives-separator.json",
+    "https://www.spaceui.one/r/primitives-sidebar.json"
   ],
   "categories": [
     "sidebar"

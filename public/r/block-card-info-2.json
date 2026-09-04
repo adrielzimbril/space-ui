@@ -4,9 +4,9 @@
   "title": "Philosophy & Principles Cards",
   "description": "Interactive showcase of core philosophy and value cards with custom gradient icons.",
   "registryDependencies": [
-    "@usespaceui/lib-utils",
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-card"
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-card.json"
   ],
   "files": [
     {

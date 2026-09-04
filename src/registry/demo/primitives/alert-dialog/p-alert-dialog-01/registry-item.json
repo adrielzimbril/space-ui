@@ -5,8 +5,8 @@
   "title": "Alert Dialog 1",
   "description": "Alert dialog",
   "registryDependencies": [
-    "@usespaceui/primitives-alert-dialog",
-    "@usespaceui/primitives-button"
+    "https://www.spaceui.one/r/primitives-alert-dialog.json",
+    "https://www.spaceui.one/r/primitives-button.json"
   ],
   "categories": [
     "alert dialog",

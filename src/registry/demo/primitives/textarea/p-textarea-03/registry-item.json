@@ -5,7 +5,7 @@
   "title": "Textarea 3",
   "description": "Disabled textarea",
   "registryDependencies": [
-    "@usespaceui/primitives-textarea"
+    "https://www.spaceui.one/r/primitives-textarea.json"
   ],
   "categories": [
     "textarea"

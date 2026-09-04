@@ -9,10 +9,10 @@
     "date-fns"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-event-calendar-i18n",
-    "@usespaceui/components-spaceui-event-calendar-lib",
-    "@usespaceui/components-spaceui-event-calendar-types",
-    "@usespaceui/lib-utils"
+    "https://www.spaceui.one/r/components-spaceui-event-calendar-i18n.json",
+    "https://www.spaceui.one/r/components-spaceui-event-calendar-lib.json",
+    "https://www.spaceui.one/r/components-spaceui-event-calendar-types.json",
+    "https://www.spaceui.one/r/lib-utils.json"
   ],
   "categories": [
     "component",

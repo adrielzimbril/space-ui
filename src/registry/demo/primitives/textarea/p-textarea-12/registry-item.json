@@ -5,7 +5,7 @@
   "title": "Textarea 12",
   "description": "Shorter textarea with fixed height",
   "registryDependencies": [
-    "@usespaceui/primitives-textarea"
+    "https://www.spaceui.one/r/primitives-textarea.json"
   ],
   "categories": [
     "textarea"

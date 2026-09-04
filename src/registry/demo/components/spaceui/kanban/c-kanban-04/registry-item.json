@@ -5,11 +5,11 @@
   "title": "Minimal kanban with stacked frame",
   "description": "Minimal kanban with stacked frame",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-kanban",
-    "@usespaceui/primitives-avatar",
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-frame",
-    "@usespaceui/primitives-progress"
+    "https://www.spaceui.one/r/components-spaceui-kanban.json",
+    "https://www.spaceui.one/r/primitives-avatar.json",
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-frame.json",
+    "https://www.spaceui.one/r/primitives-progress.json"
   ],
   "categories": [
     "component",

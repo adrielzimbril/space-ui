@@ -5,8 +5,8 @@
   "title": "Input Group 10",
   "description": "Input group with badge",
   "registryDependencies": [
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-input-group"
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-input-group.json"
   ],
   "categories": [
     "badge",

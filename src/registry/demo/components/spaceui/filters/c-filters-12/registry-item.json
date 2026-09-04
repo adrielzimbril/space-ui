@@ -8,7 +8,7 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-filters"
+    "https://www.spaceui.one/r/components-spaceui-filters.json"
   ],
   "categories": [
     "component",

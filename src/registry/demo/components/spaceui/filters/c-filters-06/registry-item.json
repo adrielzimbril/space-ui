@@ -10,15 +10,15 @@
     "react-day-picker"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-date-selector",
-    "@usespaceui/components-spaceui-filters",
-    "@usespaceui/lib-utils",
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-calendar",
-    "@usespaceui/primitives-dialog",
-    "@usespaceui/primitives-popover",
-    "@usespaceui/primitives-scroll-area",
-    "@usespaceui/primitives-slider"
+    "https://www.spaceui.one/r/components-spaceui-date-selector.json",
+    "https://www.spaceui.one/r/components-spaceui-filters.json",
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-calendar.json",
+    "https://www.spaceui.one/r/primitives-dialog.json",
+    "https://www.spaceui.one/r/primitives-popover.json",
+    "https://www.spaceui.one/r/primitives-scroll-area.json",
+    "https://www.spaceui.one/r/primitives-slider.json"
   ],
   "categories": [
     "component",

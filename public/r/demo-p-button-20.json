@@ -4,13 +4,13 @@
   "title": "Button 20",
   "description": "Button with notification badge",
   "registryDependencies": [
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-button"
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-button.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/button/p-button-20/index.tsx",
-      "content": "import { Badge } from '@/components/ui/badge'\nimport { Button } from '@/components/ui/button'\n\nexport default function Particle() {\n  return (\n    <Button variant=\"outline\">\n      Messages\n      <Badge className=\"-me-1\" variant=\"outline\">\n        18\n      </Badge>\n    </Button>\n  )\n}\n",
+      "content": "import { Badge } from '@/components/ui/badge'\nimport { Button } from '@/components/ui/button'\n\nexport default function Demo() {\n  return (\n    <Button variant=\"outline\">\n      Messages\n      <Badge className=\"-me-1\" variant=\"outline\">\n        18\n      </Badge>\n    </Button>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/button.tsx"
     }

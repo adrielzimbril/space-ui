@@ -5,7 +5,7 @@
   "title": "rangeMap & mapRange (Interpolation)",
   "description": "Linear range interpolation",
   "registryDependencies": [
-    "@usespaceui/hooks-utils-range-map"
+    "https://www.spaceui.one/r/hooks-utils-range-map.json"
   ],
   "categories": [
     "hooks",

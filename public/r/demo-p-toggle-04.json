@@ -4,12 +4,12 @@
   "title": "Toggle 4",
   "description": "Disabled toggle",
   "registryDependencies": [
-    "@usespaceui/primitives-toggle"
+    "https://www.spaceui.one/r/primitives-toggle.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/toggle/p-toggle-04/index.tsx",
-      "content": "import { Toggle } from '@/components/ui/toggle'\n\nexport default function Particle() {\n  return (\n    <Toggle disabled variant=\"outline\">\n      Disabled\n    </Toggle>\n  )\n}\n",
+      "content": "import { Toggle } from '@/components/ui/toggle'\n\nexport default function Demo() {\n  return (\n    <Toggle disabled variant=\"outline\">\n      Disabled\n    </Toggle>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/toggle.tsx"
     }

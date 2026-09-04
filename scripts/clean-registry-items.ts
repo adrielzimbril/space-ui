@@ -8,6 +8,8 @@ const DIRS_TO_REMOVE = [
   path.join(appDir, 'src', '__registry__'),
   path.join(appDir, 'public', 'r'),
   path.join(appDir, 'src', 'app', 'examples', 'generated'),
+  path.join(appDir, 'src', 'app', 'registry', 'view'),
+  path.join(appDir, 'registry.json'),
 ]
 
 for (const dir of DIRS_TO_REMOVE) {

@@ -8,9 +8,9 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-kanban",
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-frame"
+    "https://www.spaceui.one/r/components-spaceui-kanban.json",
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-frame.json"
   ],
   "categories": [
     "component",

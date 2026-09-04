@@ -4,12 +4,12 @@
   "title": "Calendar 4",
   "description": "Calendar with month/year dropdown navigation",
   "registryDependencies": [
-    "@usespaceui/primitives-calendar"
+    "https://www.spaceui.one/r/primitives-calendar.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/calendar/p-calendar-04/index.tsx",
-      "content": "'use client'\n\nimport * as React from 'react'\nimport { Calendar } from '@/components/ui/calendar'\n\nexport default function Particle() {\n  const [date, setDate] = React.useState<Date | undefined>(new Date())\n  return (\n    <Calendar\n      captionLayout=\"dropdown\"\n      endMonth={new Date(2030, 11)}\n      mode=\"single\"\n      onSelect={setDate}\n      selected={date}\n      startMonth={new Date(1930, 0)}\n    />\n  )\n}\n",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { Calendar } from '@/components/ui/calendar'\n\nexport default function Demo() {\n  const [date, setDate] = React.useState<Date | undefined>(new Date())\n  return (\n    <Calendar\n      captionLayout=\"dropdown\"\n      endMonth={new Date(2030, 11)}\n      mode=\"single\"\n      onSelect={setDate}\n      selected={date}\n      startMonth={new Date(1930, 0)}\n    />\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/calendar.tsx"
     }

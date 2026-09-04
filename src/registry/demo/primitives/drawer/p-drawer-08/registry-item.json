@@ -5,10 +5,10 @@
   "title": "Drawer 8",
   "description": "Nested right drawers with inset variant",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-drawer",
-    "@usespaceui/primitives-field",
-    "@usespaceui/primitives-input"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-drawer.json",
+    "https://www.spaceui.one/r/primitives-field.json",
+    "https://www.spaceui.one/r/primitives-input.json"
   ],
   "categories": [
     "drawer"

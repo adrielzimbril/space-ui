@@ -5,9 +5,9 @@
   "title": "Breadcrumb 1",
   "description": "Breadcrumb with menu example",
   "registryDependencies": [
-    "@usespaceui/primitives-breadcrumb",
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-menu"
+    "https://www.spaceui.one/r/primitives-breadcrumb.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-menu.json"
   ],
   "categories": [
     "breadcrumb",

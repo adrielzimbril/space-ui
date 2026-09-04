@@ -5,8 +5,8 @@
   "title": "Textarea 4",
   "description": "Textarea with label",
   "registryDependencies": [
-    "@usespaceui/primitives-label",
-    "@usespaceui/primitives-textarea"
+    "https://www.spaceui.one/r/primitives-label.json",
+    "https://www.spaceui.one/r/primitives-textarea.json"
   ],
   "categories": [
     "textarea"

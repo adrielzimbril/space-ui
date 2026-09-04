@@ -5,8 +5,8 @@
   "title": "Sheet 3",
   "description": "Sheet position",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-sheet"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-sheet.json"
   ],
   "categories": [
     "sheet"

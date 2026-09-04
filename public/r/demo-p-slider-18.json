@@ -4,12 +4,12 @@
   "title": "Slider 18",
   "description": "Vertical range slider",
   "registryDependencies": [
-    "@usespaceui/primitives-slider"
+    "https://www.spaceui.one/r/primitives-slider.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/slider/p-slider-18/index.tsx",
-      "content": "import { Slider } from '@/components/ui/slider'\n\nexport default function Particle() {\n  return (\n    <div className=\"flex h-40 items-center justify-center\">\n      <Slider defaultValue={[25, 75]} orientation=\"vertical\" />\n    </div>\n  )\n}\n",
+      "content": "import { Slider } from '@/components/ui/slider'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex h-40 items-center justify-center\">\n      <Slider defaultValue={[25, 75]} orientation=\"vertical\" />\n    </div>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/slider.tsx"
     }

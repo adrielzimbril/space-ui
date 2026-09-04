@@ -5,7 +5,7 @@
   "title": "Frame 3",
   "description": "Frame with multiple separated panels",
   "registryDependencies": [
-    "@usespaceui/primitives-frame"
+    "https://www.spaceui.one/r/primitives-frame.json"
   ],
   "categories": [
     "frame"

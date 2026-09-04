@@ -7,12 +7,12 @@
     "@daypicker/react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-calendar"
+    "https://www.spaceui.one/r/primitives-calendar.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/calendar/p-calendar-12/index.tsx",
-      "content": "'use client'\n\nimport type { WeekNumberProps } from '@daypicker/react'\nimport { useState } from 'react'\nimport { Calendar } from '@/components/ui/calendar'\n\nexport default function Particle() {\n  const [date, setDate] = useState<Date | undefined>(new Date())\n\n  return (\n    <Calendar\n      components={{\n        WeekNumber: ({ week, ...props }: WeekNumberProps) => {\n          return (\n            <th {...props}>\n              <span className=\"inline-flex size-(--cell-size) items-center justify-center\">{week.weekNumber}</span>\n            </th>\n          )\n        },\n      }}\n      fixedWeeks\n      mode=\"single\"\n      onSelect={setDate}\n      selected={date}\n      showWeekNumber\n    />\n  )\n}\n",
+      "content": "'use client'\n\nimport type { WeekNumberProps } from '@daypicker/react'\nimport { useState } from 'react'\nimport { Calendar } from '@/components/ui/calendar'\n\nexport default function Demo() {\n  const [date, setDate] = useState<Date | undefined>(new Date())\n\n  return (\n    <Calendar\n      components={{\n        WeekNumber: ({ week, ...props }: WeekNumberProps) => {\n          return (\n            <th {...props}>\n              <span className=\"inline-flex size-(--cell-size) items-center justify-center\">{week.weekNumber}</span>\n            </th>\n          )\n        },\n      }}\n      fixedWeeks\n      mode=\"single\"\n      onSelect={setDate}\n      selected={date}\n      showWeekNumber\n    />\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/calendar.tsx"
     }

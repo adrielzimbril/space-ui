@@ -5,7 +5,7 @@
   "title": "4:5 social media portrait aspect ratio",
   "description": "4:5 social media portrait aspect ratio",
   "registryDependencies": [
-    "@usespaceui/primitives-aspect-ratio"
+    "https://www.spaceui.one/r/primitives-aspect-ratio.json"
   ],
   "categories": [
     "aspect-ratio"

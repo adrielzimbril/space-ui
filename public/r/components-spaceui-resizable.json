@@ -7,7 +7,7 @@
     "react-resizable-panels"
   ],
   "registryDependencies": [
-    "@usespaceui/lib-utils"
+    "https://www.spaceui.one/r/lib-utils.json"
   ],
   "files": [
     {

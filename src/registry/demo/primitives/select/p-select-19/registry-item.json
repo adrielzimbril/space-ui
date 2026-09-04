@@ -5,8 +5,8 @@
   "title": "Select 19",
   "description": "Rich select with avatars and usernames",
   "registryDependencies": [
-    "@usespaceui/primitives-avatar",
-    "@usespaceui/primitives-select"
+    "https://www.spaceui.one/r/primitives-avatar.json",
+    "https://www.spaceui.one/r/primitives-select.json"
   ],
   "categories": [
     "select",

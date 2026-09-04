@@ -5,7 +5,7 @@
   "title": "useNetwork",
   "description": "useNetwork hook.",
   "registryDependencies": [
-    "@usespaceui/hooks-dom-use-event-listener"
+    "https://www.spaceui.one/r/hooks-dom-use-event-listener.json"
   ],
   "categories": [
     "hooks",

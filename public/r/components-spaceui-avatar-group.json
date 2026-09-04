@@ -4,7 +4,7 @@
   "title": "Avatar Group",
   "description": "Avatar group stacking and overlapping system.",
   "registryDependencies": [
-    "@usespaceui/lib-utils"
+    "https://www.spaceui.one/r/lib-utils.json"
   ],
   "files": [
     {

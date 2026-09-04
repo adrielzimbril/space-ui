@@ -9,15 +9,15 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-calendar",
-    "@usespaceui/primitives-popover"
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-calendar.json",
+    "https://www.spaceui.one/r/primitives-popover.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/date-picker/p-date-picker-07/index.tsx",
-      "content": "'use client'\n\nimport { format } from 'date-fns'\nimport { IconCalendar } from '@tabler/icons-react'\nimport { useState } from 'react'\nimport { Badge } from '@/components/ui/badge'\nimport { Button } from '@/components/ui/button'\nimport { Calendar } from '@/components/ui/calendar'\nimport { Popover, PopoverPopup, PopoverTrigger } from '@/components/ui/popover'\n\nexport default function Particle() {\n  const [dates, setDates] = useState<Date[] | undefined>()\n\n  return (\n    <Popover>\n      <PopoverTrigger render={<Button className=\"w-full justify-start\" variant=\"outline\" />}>\n        <IconCalendar className=\"shrink-0\" />\n        <span className=\"flex flex-wrap gap-1\">\n          {dates && dates.length > 0 ? (\n            <>\n              {dates.slice(0, 3).map((date) => (\n                <Badge key={date.toISOString()} variant=\"secondary\">\n                  {format(date, 'MMM d')}\n                </Badge>\n              ))}\n              {dates.length > 3 && <Badge variant=\"secondary\">+{dates.length - 3}</Badge>}\n            </>\n          ) : (\n            <span>Pick dates</span>\n          )}\n        </span>\n      </PopoverTrigger>\n      <PopoverPopup>\n        <Calendar mode=\"multiple\" onSelect={setDates} selected={dates} />\n      </PopoverPopup>\n    </Popover>\n  )\n}\n",
+      "content": "'use client'\n\nimport { format } from 'date-fns'\nimport { IconCalendar } from '@tabler/icons-react'\nimport { useState } from 'react'\nimport { Badge } from '@/components/ui/badge'\nimport { Button } from '@/components/ui/button'\nimport { Calendar } from '@/components/ui/calendar'\nimport { Popover, PopoverPopup, PopoverTrigger } from '@/components/ui/popover'\n\nexport default function Demo() {\n  const [dates, setDates] = useState<Date[] | undefined>()\n\n  return (\n    <Popover>\n      <PopoverTrigger render={<Button className=\"w-full justify-start\" variant=\"outline\" />}>\n        <IconCalendar className=\"shrink-0\" />\n        <span className=\"flex flex-wrap gap-1\">\n          {dates && dates.length > 0 ? (\n            <>\n              {dates.slice(0, 3).map((date) => (\n                <Badge key={date.toISOString()} variant=\"secondary\">\n                  {format(date, 'MMM d')}\n                </Badge>\n              ))}\n              {dates.length > 3 && <Badge variant=\"secondary\">+{dates.length - 3}</Badge>}\n            </>\n          ) : (\n            <span>Pick dates</span>\n          )}\n        </span>\n      </PopoverTrigger>\n      <PopoverPopup>\n        <Calendar mode=\"multiple\" onSelect={setDates} selected={dates} />\n      </PopoverPopup>\n    </Popover>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/date-picker.tsx"
     }

@@ -8,10 +8,10 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/hooks-form-use-reading-time",
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-card",
-    "@usespaceui/primitives-textarea"
+    "https://www.spaceui.one/r/hooks-form-use-reading-time.json",
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-card.json",
+    "https://www.spaceui.one/r/primitives-textarea.json"
   ],
   "categories": [
     "hooks",

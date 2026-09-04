@@ -10,7 +10,7 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-tree"
+    "https://www.spaceui.one/r/components-spaceui-tree.json"
   ],
   "categories": [
     "component",

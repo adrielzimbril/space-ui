@@ -4,12 +4,12 @@
   "title": "Tabs 12",
   "description": "Small tabs with size='sm'",
   "registryDependencies": [
-    "@usespaceui/primitives-tabs"
+    "https://www.spaceui.one/r/primitives-tabs.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/tabs/p-tabs-12/index.tsx",
-      "content": "import { Tabs, TabsList, TabsPanel, TabsTab } from '@/components/ui/tabs'\n\nexport default function Particle() {\n  return (\n    <Tabs defaultValue=\"tab-1\">\n      <TabsList size=\"sm\">\n        <TabsTab value=\"tab-1\">Tab 1</TabsTab>\n        <TabsTab value=\"tab-2\">Tab 2</TabsTab>\n        <TabsTab value=\"tab-3\">Tab 3</TabsTab>\n      </TabsList>\n      <TabsPanel value=\"tab-1\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">Tab 1 content</p>\n      </TabsPanel>\n      <TabsPanel value=\"tab-2\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">Tab 2 content</p>\n      </TabsPanel>\n      <TabsPanel value=\"tab-3\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">Tab 3 content</p>\n      </TabsPanel>\n    </Tabs>\n  )\n}\n",
+      "content": "import { Tabs, TabsList, TabsPanel, TabsTab } from '@/components/ui/tabs'\n\nexport default function Demo() {\n  return (\n    <Tabs defaultValue=\"tab-1\">\n      <TabsList size=\"sm\">\n        <TabsTab value=\"tab-1\">Tab 1</TabsTab>\n        <TabsTab value=\"tab-2\">Tab 2</TabsTab>\n        <TabsTab value=\"tab-3\">Tab 3</TabsTab>\n      </TabsList>\n      <TabsPanel value=\"tab-1\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">Tab 1 content</p>\n      </TabsPanel>\n      <TabsPanel value=\"tab-2\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">Tab 2 content</p>\n      </TabsPanel>\n      <TabsPanel value=\"tab-3\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">Tab 3 content</p>\n      </TabsPanel>\n    </Tabs>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/tabs.tsx"
     }

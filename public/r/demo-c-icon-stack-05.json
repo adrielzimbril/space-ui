@@ -7,14 +7,14 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-icon-stack",
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-empty"
+    "https://www.spaceui.one/r/components-spaceui-icon-stack.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-empty.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/icon-stack/c-icon-stack-05/index.tsx",
-      "content": "import { IconInbox, IconUserPlus, IconDatabase } from '@tabler/icons-react'\nimport { IconStack } from '@/components/spaceui/icon-stack'\n\nimport { Button } from '@/components/ui/button'\nimport { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/ui/empty'\nexport default function Pattern() {\n  return (\n    <div className=\"flex items-center justify-center p-4\">\n      <Empty className=\"max-w-md py-10\">\n        <EmptyHeader>\n          <EmptyMedia>\n            <IconStack aria-hidden=\"true\" className=\"text-primary h-24 w-22\">\n              <IconInbox className=\"text-primary size-5\" />\n            </IconStack>\n          </EmptyMedia>\n          <EmptyTitle>Workspace is ready</EmptyTitle>\n          <EmptyDescription>Invite teammates or connect a data source to start filling this view.</EmptyDescription>\n        </EmptyHeader>\n\n        <EmptyContent className=\"flex-row justify-center gap-2\">\n          <Button size=\"sm\">\n            <IconUserPlus data-icon=\"inline-start\" />\n            Invite team\n          </Button>\n          <Button variant=\"outline\" size=\"sm\">\n            <IconDatabase data-icon=\"inline-start\" />\n            Connect source\n          </Button>\n        </EmptyContent>\n      </Empty>\n    </div>\n  )\n}\n",
+      "content": "import { IconInbox, IconUserPlus, IconDatabase } from '@tabler/icons-react'\nimport { IconStack } from '@/components/spaceui/icon-stack'\n\nimport { Button } from '@/components/ui/button'\nimport { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/ui/empty'\nexport default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center p-4\">\n      <Empty className=\"max-w-md py-10\">\n        <EmptyHeader>\n          <EmptyMedia>\n            <IconStack aria-hidden=\"true\" className=\"text-primary h-24 w-22\">\n              <IconInbox className=\"text-primary size-5\" />\n            </IconStack>\n          </EmptyMedia>\n          <EmptyTitle>Workspace is ready</EmptyTitle>\n          <EmptyDescription>Invite teammates or connect a data source to start filling this view.</EmptyDescription>\n        </EmptyHeader>\n\n        <EmptyContent className=\"flex-row justify-center gap-2\">\n          <Button size=\"sm\">\n            <IconUserPlus data-icon=\"inline-start\" />\n            Invite team\n          </Button>\n          <Button variant=\"outline\" size=\"sm\">\n            <IconDatabase data-icon=\"inline-start\" />\n            Connect source\n          </Button>\n        </EmptyContent>\n      </Empty>\n    </div>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/spaceui/icon-stack.tsx"
     }

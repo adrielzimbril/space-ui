@@ -4,12 +4,12 @@
   "title": "Badge 1",
   "description": "Basic badge",
   "registryDependencies": [
-    "@usespaceui/primitives-badge"
+    "https://www.spaceui.one/r/primitives-badge.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/badge/p-badge-01/index.tsx",
-      "content": "import { Badge } from '@/components/ui/badge'\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-2\">\n      <Badge variant=\"default\">Default</Badge>\n      <Badge variant=\"secondary\">Secondary</Badge>\n      <Badge variant=\"outline\">Outline</Badge>\n      <Badge variant=\"destructive\">Destructive</Badge>\n      <Badge variant=\"info\">Info</Badge>\n      <Badge variant=\"success\">Success</Badge>\n      <Badge variant=\"warning\">Warning</Badge>\n      <Badge variant=\"error\">Error</Badge>\n    </div>\n  )\n}\n",
+      "content": "import { Badge } from '@/components/ui/badge'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-2\">\n      <Badge variant=\"default\">Default</Badge>\n      <Badge variant=\"secondary\">Secondary</Badge>\n      <Badge variant=\"outline\">Outline</Badge>\n      <Badge variant=\"destructive\">Destructive</Badge>\n      <Badge variant=\"info\">Info</Badge>\n      <Badge variant=\"success\">Success</Badge>\n      <Badge variant=\"warning\">Warning</Badge>\n      <Badge variant=\"error\">Error</Badge>\n    </div>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/badge.tsx"
     }

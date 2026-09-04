@@ -5,7 +5,7 @@
   "title": "Combobox 5",
   "description": "Combobox auto highlighting the first option",
   "registryDependencies": [
-    "@usespaceui/primitives-combobox"
+    "https://www.spaceui.one/r/primitives-combobox.json"
   ],
   "categories": [
     "combobox",

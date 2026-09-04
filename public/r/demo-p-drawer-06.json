@@ -4,13 +4,13 @@
   "title": "Drawer 6",
   "description": "Scrollable content with terms and conditions",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-drawer"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-drawer.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/drawer/p-drawer-06/index.tsx",
-      "content": "import { Button } from '@/components/ui/button'\nimport {\n  Drawer,\n  DrawerClose,\n  DrawerFooter,\n  DrawerHeader,\n  DrawerPanel,\n  DrawerPopup,\n  DrawerTitle,\n  DrawerTrigger,\n} from '@/components/ui/drawer'\n\nexport default function Particle() {\n  return (\n    <Drawer>\n      <DrawerTrigger render={<Button variant=\"outline\" />}>Scrollable content</DrawerTrigger>\n      <DrawerPopup showBar>\n        <DrawerHeader>\n          <DrawerTitle>Scrollable content</DrawerTitle>\n        </DrawerHeader>\n        <DrawerPanel>\n          <div className=\"flex flex-col gap-2\">\n            {Array.from({ length: 48 }, (_, i) => `box-${i}`).map((key) => (\n              <div className=\"h-12 shrink-0 rounded-xl border bg-muted\" key={key} />\n            ))}\n          </div>\n        </DrawerPanel>\n        <DrawerFooter>\n          <DrawerClose render={<Button variant=\"outline\" />}>Close</DrawerClose>\n        </DrawerFooter>\n      </DrawerPopup>\n    </Drawer>\n  )\n}\n",
+      "content": "import { Button } from '@/components/ui/button'\nimport {\n  Drawer,\n  DrawerClose,\n  DrawerFooter,\n  DrawerHeader,\n  DrawerPanel,\n  DrawerPopup,\n  DrawerTitle,\n  DrawerTrigger,\n} from '@/components/ui/drawer'\n\nexport default function Demo() {\n  return (\n    <Drawer>\n      <DrawerTrigger render={<Button variant=\"outline\" />}>Scrollable content</DrawerTrigger>\n      <DrawerPopup showBar>\n        <DrawerHeader>\n          <DrawerTitle>Scrollable content</DrawerTitle>\n        </DrawerHeader>\n        <DrawerPanel>\n          <div className=\"flex flex-col gap-2\">\n            {Array.from({ length: 48 }, (_, i) => `box-${i}`).map((key) => (\n              <div className=\"h-12 shrink-0 rounded-xl border bg-muted\" key={key} />\n            ))}\n          </div>\n        </DrawerPanel>\n        <DrawerFooter>\n          <DrawerClose render={<Button variant=\"outline\" />}>Close</DrawerClose>\n        </DrawerFooter>\n      </DrawerPopup>\n    </Drawer>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/drawer.tsx"
     }

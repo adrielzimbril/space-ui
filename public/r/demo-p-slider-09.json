@@ -4,12 +4,12 @@
   "title": "Slider 9",
   "description": "Range slider with collision behavior none",
   "registryDependencies": [
-    "@usespaceui/primitives-slider"
+    "https://www.spaceui.one/r/primitives-slider.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/slider/p-slider-09/index.tsx",
-      "content": "import { Slider } from '@/components/ui/slider'\n\nexport default function Particle() {\n  return (\n    <Slider\n      aria-label=\"Dual thumb slider with collision behavior none\"\n      defaultValue={[25, 75]}\n      thumbCollisionBehavior=\"none\"\n    />\n  )\n}\n",
+      "content": "import { Slider } from '@/components/ui/slider'\n\nexport default function Demo() {\n  return (\n    <Slider\n      aria-label=\"Dual thumb slider with collision behavior none\"\n      defaultValue={[25, 75]}\n      thumbCollisionBehavior=\"none\"\n    />\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/slider.tsx"
     }

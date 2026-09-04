@@ -8,12 +8,12 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-tabs"
+    "https://www.spaceui.one/r/primitives-tabs.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/tabs/p-tabs-06/index.tsx",
-      "content": "import { IconSettings, IconLayoutDashboard, IconFolder } from '@tabler/icons-react'\nimport { Tabs, TabsList, TabsPanel, TabsTab } from '@/components/ui/tabs'\n\nexport default function Particle() {\n  return (\n    <Tabs className=\"items-center\" defaultValue=\"tab-1\">\n      <TabsList>\n        <TabsTab aria-label=\"Overview\" value=\"tab-1\">\n          <IconLayoutDashboard aria-hidden=\"true\" />\n        </TabsTab>\n        <TabsTab aria-label=\"Projects\" value=\"tab-2\">\n          <IconFolder aria-hidden=\"true\" />\n        </TabsTab>\n        <TabsTab aria-label=\"Settings\" value=\"tab-3\">\n          <IconSettings aria-hidden=\"true\" />\n        </TabsTab>\n      </TabsList>\n      <TabsPanel value=\"tab-1\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">Overview content</p>\n      </TabsPanel>\n      <TabsPanel value=\"tab-2\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">Projects content</p>\n      </TabsPanel>\n      <TabsPanel value=\"tab-3\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">Settings content</p>\n      </TabsPanel>\n    </Tabs>\n  )\n}\n",
+      "content": "import { IconSettings, IconLayoutDashboard, IconFolder } from '@tabler/icons-react'\nimport { Tabs, TabsList, TabsPanel, TabsTab } from '@/components/ui/tabs'\n\nexport default function Demo() {\n  return (\n    <Tabs className=\"items-center\" defaultValue=\"tab-1\">\n      <TabsList>\n        <TabsTab aria-label=\"Overview\" value=\"tab-1\">\n          <IconLayoutDashboard aria-hidden=\"true\" />\n        </TabsTab>\n        <TabsTab aria-label=\"Projects\" value=\"tab-2\">\n          <IconFolder aria-hidden=\"true\" />\n        </TabsTab>\n        <TabsTab aria-label=\"Settings\" value=\"tab-3\">\n          <IconSettings aria-hidden=\"true\" />\n        </TabsTab>\n      </TabsList>\n      <TabsPanel value=\"tab-1\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">Overview content</p>\n      </TabsPanel>\n      <TabsPanel value=\"tab-2\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">Projects content</p>\n      </TabsPanel>\n      <TabsPanel value=\"tab-3\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">Settings content</p>\n      </TabsPanel>\n    </Tabs>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/tabs.tsx"
     }

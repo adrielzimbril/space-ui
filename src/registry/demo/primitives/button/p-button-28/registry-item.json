@@ -9,11 +9,11 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-group",
-    "@usespaceui/primitives-spinner",
-    "@usespaceui/primitives-toast",
-    "@usespaceui/primitives-tooltip"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-group.json",
+    "https://www.spaceui.one/r/primitives-spinner.json",
+    "https://www.spaceui.one/r/primitives-toast.json",
+    "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
   "categories": [
     "button",

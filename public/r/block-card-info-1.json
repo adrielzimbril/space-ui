@@ -4,9 +4,9 @@
   "title": "Craft & Audience Cards",
   "description": "Interactive showcase of service and audience craft cards with custom gradient icons.",
   "registryDependencies": [
-    "@usespaceui/lib-utils",
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-card"
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-card.json"
   ],
   "files": [
     {

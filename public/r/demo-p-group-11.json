@@ -7,15 +7,15 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-group",
-    "@usespaceui/primitives-popover"
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-group.json",
+    "https://www.spaceui.one/r/primitives-popover.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/group/p-group-11/index.tsx",
-      "content": "import { IconChevronDown, IconGitFork } from '@tabler/icons-react'\nimport { Badge } from '@/components/ui/badge'\nimport { Button } from '@/components/ui/button'\nimport { Group, GroupSeparator } from '@/components/ui/group'\nimport { Popover, PopoverDescription, PopoverPopup, PopoverTitle, PopoverTrigger } from '@/components/ui/popover'\n\nexport default function Particle() {\n  return (\n    <Group aria-label=\"Repository actions\">\n      <Button variant=\"outline\">\n        <IconGitFork aria-hidden=\"true\" />\n        Fork\n        <Badge variant=\"secondary\">48</Badge>\n      </Button>\n      <GroupSeparator />\n      <Popover>\n        <PopoverTrigger render={<Button aria-label=\"Send options\" size=\"icon\" variant=\"outline\" />}>\n          <IconChevronDown aria-hidden=\"true\" />\n        </PopoverTrigger>\n        <PopoverPopup align=\"end\" className=\"w-64\">\n          <PopoverTitle className=\"text-base\">Existing forks</PopoverTitle>\n          <PopoverDescription>You don't have any forks of this repository.</PopoverDescription>\n        </PopoverPopup>\n      </Popover>\n    </Group>\n  )\n}\n",
+      "content": "import { IconChevronDown, IconGitFork } from '@tabler/icons-react'\nimport { Badge } from '@/components/ui/badge'\nimport { Button } from '@/components/ui/button'\nimport { Group, GroupSeparator } from '@/components/ui/group'\nimport { Popover, PopoverDescription, PopoverPopup, PopoverTitle, PopoverTrigger } from '@/components/ui/popover'\n\nexport default function Demo() {\n  return (\n    <Group aria-label=\"Repository actions\">\n      <Button variant=\"outline\">\n        <IconGitFork aria-hidden=\"true\" />\n        Fork\n        <Badge variant=\"secondary\">48</Badge>\n      </Button>\n      <GroupSeparator />\n      <Popover>\n        <PopoverTrigger render={<Button aria-label=\"Send options\" size=\"icon\" variant=\"outline\" />}>\n          <IconChevronDown aria-hidden=\"true\" />\n        </PopoverTrigger>\n        <PopoverPopup align=\"end\" className=\"w-64\">\n          <PopoverTitle className=\"text-base\">Existing forks</PopoverTitle>\n          <PopoverDescription>You don't have any forks of this repository.</PopoverDescription>\n        </PopoverPopup>\n      </Popover>\n    </Group>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/group.tsx"
     }

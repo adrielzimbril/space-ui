@@ -5,9 +5,9 @@
   "title": "Toast 4",
   "description": "Anchored error toast after async failure",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-spinner",
-    "@usespaceui/primitives-toast"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-spinner.json",
+    "https://www.spaceui.one/r/primitives-toast.json"
   ],
   "categories": [
     "toast"

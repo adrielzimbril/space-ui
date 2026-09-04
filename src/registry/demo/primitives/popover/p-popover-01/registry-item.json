@@ -5,11 +5,11 @@
   "title": "Popover 1",
   "description": "Popover with a form",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-field",
-    "@usespaceui/primitives-form",
-    "@usespaceui/primitives-popover",
-    "@usespaceui/primitives-textarea"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-field.json",
+    "https://www.spaceui.one/r/primitives-form.json",
+    "https://www.spaceui.one/r/primitives-popover.json",
+    "https://www.spaceui.one/r/primitives-textarea.json"
   ],
   "categories": [
     "button",

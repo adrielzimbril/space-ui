@@ -5,7 +5,7 @@
   "title": "Kbd 1",
   "description": "Keyboard shortcuts display",
   "registryDependencies": [
-    "@usespaceui/primitives-kbd"
+    "https://www.spaceui.one/r/primitives-kbd.json"
   ],
   "categories": [
     "kbd"

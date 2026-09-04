@@ -5,7 +5,7 @@
   "title": "Button 3",
   "description": "Disabled button",
   "registryDependencies": [
-    "@usespaceui/primitives-button"
+    "https://www.spaceui.one/r/primitives-button.json"
   ],
   "categories": [
     "button",

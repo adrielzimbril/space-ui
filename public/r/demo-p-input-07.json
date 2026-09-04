@@ -7,14 +7,14 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-input-group",
-    "@usespaceui/primitives-popover"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-input-group.json",
+    "https://www.spaceui.one/r/primitives-popover.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/input/p-input-07/index.tsx",
-      "content": "import { IconSearch } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'\nimport { Popover, PopoverPopup, PopoverTrigger } from '@/components/ui/popover'\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput aria-label=\"Set your URL\" className=\"*:[input]:ps-0!\" placeholder=\"spaceui.one\" type=\"text\" />\n      <InputGroupAddon>https://</InputGroupAddon>\n      <InputGroupAddon align=\"inline-end\">\n        <Popover>\n          <PopoverTrigger openOnHover render={<Button aria-label=\"More info\" size=\"icon-xs\" variant=\"ghost\" />}>\n            <IconSearch />\n          </PopoverTrigger>\n          <PopoverPopup side=\"top\" tooltipStyle>\n            <p>The URL of your website</p>\n          </PopoverPopup>\n        </Popover>\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
+      "content": "import { IconSearch } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'\nimport { Popover, PopoverPopup, PopoverTrigger } from '@/components/ui/popover'\n\nexport default function Demo() {\n  return (\n    <InputGroup>\n      <InputGroupInput aria-label=\"Set your URL\" className=\"*:[input]:ps-0!\" placeholder=\"spaceui.one\" type=\"text\" />\n      <InputGroupAddon>https://</InputGroupAddon>\n      <InputGroupAddon align=\"inline-end\">\n        <Popover>\n          <PopoverTrigger openOnHover render={<Button aria-label=\"More info\" size=\"icon-xs\" variant=\"ghost\" />}>\n            <IconSearch />\n          </PopoverTrigger>\n          <PopoverPopup side=\"top\" tooltipStyle>\n            <p>The URL of your website</p>\n          </PopoverPopup>\n        </Popover>\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/input.tsx"
     }

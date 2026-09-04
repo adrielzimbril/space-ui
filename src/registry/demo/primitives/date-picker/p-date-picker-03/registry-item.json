@@ -11,11 +11,11 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-calendar",
-    "@usespaceui/primitives-combobox",
-    "@usespaceui/primitives-field",
-    "@usespaceui/primitives-popover"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-calendar.json",
+    "https://www.spaceui.one/r/primitives-combobox.json",
+    "https://www.spaceui.one/r/primitives-field.json",
+    "https://www.spaceui.one/r/primitives-popover.json"
   ],
   "categories": [
     "date picker",

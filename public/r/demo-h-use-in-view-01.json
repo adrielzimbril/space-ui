@@ -7,9 +7,9 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/hooks-animation-use-in-view",
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-card"
+    "https://www.spaceui.one/r/hooks-animation-use-in-view.json",
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-card.json"
   ],
   "files": [
     {

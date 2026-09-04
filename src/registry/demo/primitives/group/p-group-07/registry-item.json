@@ -5,9 +5,9 @@
   "title": "Group 7",
   "description": "Group with start text",
   "registryDependencies": [
-    "@usespaceui/primitives-group",
-    "@usespaceui/primitives-input",
-    "@usespaceui/primitives-label"
+    "https://www.spaceui.one/r/primitives-group.json",
+    "https://www.spaceui.one/r/primitives-input.json",
+    "https://www.spaceui.one/r/primitives-label.json"
   ],
   "categories": [
     "group"

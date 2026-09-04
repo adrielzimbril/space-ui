@@ -5,8 +5,8 @@
   "title": "Bouncy Accordion Demo",
   "description": "Spring accordion with icons and badge copy.",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-bouncy-accordion",
-    "@usespaceui/primitives-badge"
+    "https://www.spaceui.one/r/components-spaceui-bouncy-accordion.json",
+    "https://www.spaceui.one/r/primitives-badge.json"
   ],
   "categories": [
     "component",

@@ -5,8 +5,8 @@
   "title": "Slider 15",
   "description": "Price range slider",
   "registryDependencies": [
-    "@usespaceui/primitives-fieldset",
-    "@usespaceui/primitives-slider"
+    "https://www.spaceui.one/r/primitives-fieldset.json",
+    "https://www.spaceui.one/r/primitives-slider.json"
   ],
   "categories": [
     "slider"

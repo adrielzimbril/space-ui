@@ -5,7 +5,7 @@
   "title": "Number Field 9",
   "description": "Number field with step",
   "registryDependencies": [
-    "@usespaceui/primitives-number-field"
+    "https://www.spaceui.one/r/primitives-number-field.json"
   ],
   "categories": [
     "number field",

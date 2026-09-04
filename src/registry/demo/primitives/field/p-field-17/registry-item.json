@@ -5,8 +5,8 @@
   "title": "Field 17",
   "description": "Field with number field",
   "registryDependencies": [
-    "@usespaceui/primitives-field",
-    "@usespaceui/primitives-number-field"
+    "https://www.spaceui.one/r/primitives-field.json",
+    "https://www.spaceui.one/r/primitives-number-field.json"
   ],
   "categories": [
     "field",

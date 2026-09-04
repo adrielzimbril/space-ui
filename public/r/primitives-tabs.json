@@ -7,8 +7,8 @@
     "@base-ui/react"
   ],
   "registryDependencies": [
-    "@usespaceui/lib-segmented-control",
-    "@usespaceui/lib-utils"
+    "https://www.spaceui.one/r/lib-segmented-control.json",
+    "https://www.spaceui.one/r/lib-utils.json"
   ],
   "files": [
     {

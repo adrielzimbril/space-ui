@@ -5,10 +5,10 @@
   "title": "Checkbox 4",
   "description": "Checkbox form",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-checkbox",
-    "@usespaceui/primitives-field",
-    "@usespaceui/primitives-form"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-checkbox.json",
+    "https://www.spaceui.one/r/primitives-field.json",
+    "https://www.spaceui.one/r/primitives-form.json"
   ],
   "categories": [
     "checkbox",

@@ -4,9 +4,16 @@
   "type": "registry:component",
   "title": "Tournament Bracket",
   "description": "Animated knockout bracket with round navigation and live match states.",
-  "dependencies": ["motion"],
-  "registryDependencies": ["@usespaceui/lib-utils"],
-  "categories": ["component", "tournament-bracket"],
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json"
+  ],
+  "categories": [
+    "component",
+    "tournament-bracket"
+  ],
   "files": [
     {
       "path": "src/registry/components/spaceui/tournament-bracket/index.tsx",

@@ -4,13 +4,13 @@
   "title": "Words Preloader Demo",
   "description": "Replayable greeting preloader.",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-words-preloader",
-    "@usespaceui/primitives-button"
+    "https://www.spaceui.one/r/components-spaceui-words-preloader.json",
+    "https://www.spaceui.one/r/primitives-button.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/words-preloader/c-words-preloader-01/index.tsx",
-      "content": "'use client'\n\nimport * as React from 'react'\nimport { WordsPreloader } from '@/components/spaceui/words-preloader'\nimport { Button } from '@/components/ui/button'\n\nexport default function WordsPreloaderDemo() {\n  const [key, setKey] = React.useState(0)\n\n  return (\n    <div className=\"relative w-full overflow-hidden rounded-[0.875rem] bg-muted\">\n      <WordsPreloader key={key} className=\"min-h-80\">\n        <p className=\"text-sm font-semibold text-muted-foreground\">Landing page</p>\n      </WordsPreloader>\n      <div className=\"absolute bottom-3 left-1/2 z-30 -translate-x-1/2\">\n        <Button size=\"sm\" onClick={() => setKey((value) => value + 1)}>\n          Replay\n        </Button>\n      </div>\n    </div>\n  )\n}\n",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { WordsPreloader } from '@/components/spaceui/words-preloader'\nimport { Button } from '@/components/ui/button'\n\nexport default function Demo() {\n  const [key, setKey] = React.useState(0)\n\n  return (\n    <div className=\"relative w-full overflow-hidden rounded-[0.875rem] bg-muted\">\n      <WordsPreloader key={key} className=\"min-h-80\">\n        <p className=\"text-sm font-semibold text-muted-foreground\">Landing page</p>\n      </WordsPreloader>\n      <div className=\"absolute bottom-3 left-1/2 z-30 -translate-x-1/2\">\n        <Button size=\"sm\" onClick={() => setKey((value) => value + 1)}>\n          Replay\n        </Button>\n      </div>\n    </div>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/spaceui/words-preloader.tsx"
     }

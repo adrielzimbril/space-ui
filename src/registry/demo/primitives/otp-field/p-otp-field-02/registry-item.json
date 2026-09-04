@@ -5,7 +5,7 @@
   "title": "Otp Field 2",
   "description": "Large OTP field",
   "registryDependencies": [
-    "@usespaceui/primitives-otp-field"
+    "https://www.spaceui.one/r/primitives-otp-field.json"
   ],
   "categories": [
     "otp field",

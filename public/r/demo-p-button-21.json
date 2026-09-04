@@ -4,12 +4,12 @@
   "title": "Button 21",
   "description": "Paired buttons (Cancel/Save)",
   "registryDependencies": [
-    "@usespaceui/primitives-button"
+    "https://www.spaceui.one/r/primitives-button.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/button/p-button-21/index.tsx",
-      "content": "import { Button } from '@/components/ui/button'\n\nexport default function Particle() {\n  return (\n    <div className=\"inline-flex items-center gap-2\">\n      <Button variant=\"ghost\">Cancel</Button>\n      <Button>Save</Button>\n    </div>\n  )\n}\n",
+      "content": "import { Button } from '@/components/ui/button'\n\nexport default function Demo() {\n  return (\n    <div className=\"inline-flex items-center gap-2\">\n      <Button variant=\"ghost\">Cancel</Button>\n      <Button>Save</Button>\n    </div>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/button.tsx"
     }

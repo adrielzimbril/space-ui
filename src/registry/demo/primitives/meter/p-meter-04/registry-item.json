@@ -5,7 +5,7 @@
   "title": "Meter 4",
   "description": "Meter with range",
   "registryDependencies": [
-    "@usespaceui/primitives-meter"
+    "https://www.spaceui.one/r/primitives-meter.json"
   ],
   "categories": [
     "meter"

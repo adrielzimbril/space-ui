@@ -4,12 +4,12 @@
   "title": "Select 22",
   "description": "Select with label",
   "registryDependencies": [
-    "@usespaceui/primitives-select"
+    "https://www.spaceui.one/r/primitives-select.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/select/p-select-22/index.tsx",
-      "content": "import { Select, SelectItem, SelectLabel, SelectPopup, SelectTrigger, SelectValue } from '@/components/ui/select'\n\nconst items = [\n  { label: 'Apple', value: 'apple' },\n  { label: 'Banana', value: 'banana' },\n  { label: 'Orange', value: 'orange' },\n]\n\nexport default function Particle() {\n  return (\n    <Select aria-label=\"Select fruit\" defaultValue={items[0]} items={items}>\n      <SelectLabel>Fruits</SelectLabel>\n      <SelectTrigger>\n        <SelectValue />\n      </SelectTrigger>\n      <SelectPopup>\n        {items.map((item) => (\n          <SelectItem key={item.value} value={item}>\n            {item.label}\n          </SelectItem>\n        ))}\n      </SelectPopup>\n    </Select>\n  )\n}\n",
+      "content": "import { Select, SelectItem, SelectLabel, SelectPopup, SelectTrigger, SelectValue } from '@/components/ui/select'\n\nconst items = [\n  { label: 'Apple', value: 'apple' },\n  { label: 'Banana', value: 'banana' },\n  { label: 'Orange', value: 'orange' },\n]\n\nexport default function Demo() {\n  return (\n    <Select aria-label=\"Select fruit\" defaultValue={items[0]} items={items}>\n      <SelectLabel>Fruits</SelectLabel>\n      <SelectTrigger>\n        <SelectValue />\n      </SelectTrigger>\n      <SelectPopup>\n        {items.map((item) => (\n          <SelectItem key={item.value} value={item}>\n            {item.label}\n          </SelectItem>\n        ))}\n      </SelectPopup>\n    </Select>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/select.tsx"
     }

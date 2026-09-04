@@ -4,13 +4,13 @@
   "title": "Input 10",
   "description": "Input group with keyboard shortcut",
   "registryDependencies": [
-    "@usespaceui/primitives-input-group",
-    "@usespaceui/primitives-kbd"
+    "https://www.spaceui.one/r/primitives-input-group.json",
+    "https://www.spaceui.one/r/primitives-kbd.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/input/p-input-10/index.tsx",
-      "content": "import { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'\nimport { Kbd } from '@/components/ui/kbd'\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput aria-label=\"Search\" placeholder=\"Search…\" type=\"search\" />\n      <InputGroupAddon align=\"inline-end\">\n        <Kbd>/</Kbd>\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
+      "content": "import { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'\nimport { Kbd } from '@/components/ui/kbd'\n\nexport default function Demo() {\n  return (\n    <InputGroup>\n      <InputGroupInput aria-label=\"Search\" placeholder=\"Search…\" type=\"search\" />\n      <InputGroupAddon align=\"inline-end\">\n        <Kbd>/</Kbd>\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/input.tsx"
     }

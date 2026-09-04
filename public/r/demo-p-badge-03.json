@@ -4,12 +4,12 @@
   "title": "Badge 3",
   "description": "Secondary badge",
   "registryDependencies": [
-    "@usespaceui/primitives-badge"
+    "https://www.spaceui.one/r/primitives-badge.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/badge/p-badge-03/index.tsx",
-      "content": "import { Badge } from '@/components/ui/badge'\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-2\">\n      <Badge size=\"sm\" square>\n        8\n      </Badge>\n      <Badge size=\"default\" square>\n        8\n      </Badge>\n      <Badge size=\"lg\" square>\n        8\n      </Badge>\n    </div>\n  )\n}\n",
+      "content": "import { Badge } from '@/components/ui/badge'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-2\">\n      <Badge size=\"sm\" square>\n        8\n      </Badge>\n      <Badge size=\"default\" square>\n        8\n      </Badge>\n      <Badge size=\"lg\" square>\n        8\n      </Badge>\n    </div>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/badge.tsx"
     }

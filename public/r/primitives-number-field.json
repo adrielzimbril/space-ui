@@ -8,8 +8,8 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/lib-utils",
-    "@usespaceui/primitives-label"
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-label.json"
   ],
   "files": [
     {

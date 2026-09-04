@@ -19,7 +19,7 @@ export function Cta() {
               <IconArrowRight />
             </Button>
           </div>
-          <InstallCommandBlock className="my-0" title="Install" isShadcn packages="@usespaceui/primitives-button" />
+          <InstallCommandBlock className="my-0" title="Install" isShadcn packages="primitives-button" />
         </Surface>
       </div>
     </section>

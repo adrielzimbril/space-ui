@@ -5,7 +5,7 @@
   "title": "Input 5",
   "description": "File input",
   "registryDependencies": [
-    "@usespaceui/primitives-input"
+    "https://www.spaceui.one/r/primitives-input.json"
   ],
   "categories": [
     "input"

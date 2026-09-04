@@ -5,7 +5,7 @@
   "title": "Checkbox Sizes",
   "description": "Checkboxes in sm, default, and lg sizes",
   "registryDependencies": [
-    "@usespaceui/primitives-checkbox"
+    "https://www.spaceui.one/r/primitives-checkbox.json"
   ],
   "categories": [
     "checkbox"

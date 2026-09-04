@@ -8,10 +8,10 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/hooks-browser-use-battery-status",
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-card",
-    "@usespaceui/primitives-progress"
+    "https://www.spaceui.one/r/hooks-browser-use-battery-status.json",
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-card.json",
+    "https://www.spaceui.one/r/primitives-progress.json"
   ],
   "categories": [
     "hooks",

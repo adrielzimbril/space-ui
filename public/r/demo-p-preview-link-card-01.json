@@ -4,7 +4,7 @@
   "title": "Base Preview Link Card Demo",
   "description": "Demo showing an animated base preview link card.",
   "registryDependencies": [
-    "@usespaceui/primitives-preview-link-card"
+    "https://www.spaceui.one/r/primitives-preview-link-card.json"
   ],
   "files": [
     {

@@ -4,12 +4,12 @@
   "title": "Textarea 12",
   "description": "Shorter textarea with fixed height",
   "registryDependencies": [
-    "@usespaceui/primitives-textarea"
+    "https://www.spaceui.one/r/primitives-textarea.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/textarea/p-textarea-12/index.tsx",
-      "content": "import { Textarea } from '@/components/ui/textarea'\n\nexport default function Particle() {\n  return <Textarea className=\"*:field-sizing-fixed *:min-h-0\" placeholder=\"Type your message here\" rows={2} />\n}\n",
+      "content": "import { Textarea } from '@/components/ui/textarea'\n\nexport default function Demo() {\n  return <Textarea className=\"*:field-sizing-fixed *:min-h-0\" placeholder=\"Type your message here\" rows={2} />\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/textarea.tsx"
     }

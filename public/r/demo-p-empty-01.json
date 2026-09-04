@@ -8,13 +8,13 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-empty"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-empty.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/empty/p-empty-01/index.tsx",
-      "content": "import { IconSparkles } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/ui/empty'\n\nexport default function Particle() {\n  return (\n    <Empty>\n      <EmptyHeader>\n        <EmptyMedia variant=\"icon\">\n          <IconSparkles />\n        </EmptyMedia>\n        <EmptyTitle>No upcoming meetings</EmptyTitle>\n        <EmptyDescription>Create a meeting to get started.</EmptyDescription>\n      </EmptyHeader>\n      <EmptyContent>\n        <div className=\"flex gap-2\">\n          <Button size=\"sm\">Create meeting</Button>\n          <Button size=\"sm\" variant=\"outline\">\n            <IconSparkles />\n            View docs\n          </Button>\n        </div>\n      </EmptyContent>\n    </Empty>\n  )\n}\n",
+      "content": "import { IconSparkles } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/ui/empty'\n\nexport default function Demo() {\n  return (\n    <Empty>\n      <EmptyHeader>\n        <EmptyMedia variant=\"icon\">\n          <IconSparkles />\n        </EmptyMedia>\n        <EmptyTitle>No upcoming meetings</EmptyTitle>\n        <EmptyDescription>Create a meeting to get started.</EmptyDescription>\n      </EmptyHeader>\n      <EmptyContent>\n        <div className=\"flex gap-2\">\n          <Button size=\"sm\">Create meeting</Button>\n          <Button size=\"sm\" variant=\"outline\">\n            <IconSparkles />\n            View docs\n          </Button>\n        </div>\n      </EmptyContent>\n    </Empty>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/empty.tsx"
     }

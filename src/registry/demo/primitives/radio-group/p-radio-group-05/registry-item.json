@@ -8,9 +8,9 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-field",
-    "@usespaceui/primitives-fieldset",
-    "@usespaceui/primitives-radio-group"
+    "https://www.spaceui.one/r/primitives-field.json",
+    "https://www.spaceui.one/r/primitives-fieldset.json",
+    "https://www.spaceui.one/r/primitives-radio-group.json"
   ],
   "categories": [
     "radio group",

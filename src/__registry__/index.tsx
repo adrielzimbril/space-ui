@@ -24,7 +24,11 @@ export const index: Record<string, any> = {
     type: 'registry:block',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils', '@usespaceui/primitives-badge', '@usespaceui/primitives-card'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+    ],
     files: [
       {
         path: 'src/registry/blocks/card-info/card-info-1/index.tsx',
@@ -61,7 +65,11 @@ export const index: Record<string, any> = {
     type: 'registry:block',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils', '@usespaceui/primitives-badge', '@usespaceui/primitives-card'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+    ],
     files: [
       {
         path: 'src/registry/blocks/card-info/card-info-2/index.tsx',
@@ -98,7 +106,10 @@ export const index: Record<string, any> = {
     type: 'registry:block',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils', '@usespaceui/components-orb-smooth'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/components-orb-smooth.json',
+    ],
     files: [
       {
         path: 'src/registry/blocks/eleven-labs/eleven-labs-1/index.tsx',
@@ -201,12 +212,12 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-dialog',
-      '@usespaceui/primitives-toast',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-dialog.json',
+      'https://www.spaceui.one/r/primitives-toast.json',
     ],
     files: [
       {
@@ -255,12 +266,12 @@ export const index: Record<string, any> = {
     dependencies: ['lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-checkbox',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-label',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-checkbox.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-label.json',
     ],
     files: [
       {
@@ -314,7 +325,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['motion'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/hooks-dom-use-event-listener', '@usespaceui/lib-utils'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/hooks-dom-use-event-listener.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+    ],
     files: [
       {
         path: 'src/registry/components/backgrounds/bubble/index.tsx',
@@ -347,7 +361,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['motion'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/components/backgrounds/gradient/index.tsx',
@@ -493,7 +507,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['vgpu'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/components/shader/cloud/index.tsx',
@@ -562,7 +576,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/components/spaceui/autoscale-input/index.tsx',
@@ -594,7 +608,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils', '@usespaceui/primitives-badge'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+    ],
     files: [
       {
         path: 'src/registry/components/spaceui/avatar-extended/index.tsx',
@@ -626,7 +643,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/components/spaceui/avatar-group/index.tsx',
@@ -658,7 +675,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['motion', '@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/components/spaceui/bouncy-accordion/index.tsx',
@@ -691,11 +708,11 @@ export const index: Record<string, any> = {
     dependencies: ['class-variance-authority', 'lucide-react', 'motion'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-morph-icon',
-      '@usespaceui/hooks-animation-use-controlled-state',
-      '@usespaceui/hooks-browser-use-clipboard',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-button',
+      'https://www.spaceui.one/r/components-spaceui-morph-icon.json',
+      'https://www.spaceui.one/r/hooks-animation-use-controlled-state.json',
+      'https://www.spaceui.one/r/hooks-browser-use-clipboard.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-button.json',
     ],
     files: [
       {
@@ -728,7 +745,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tanstack/react-table'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/components/spaceui/data-grid/data-grid/index.tsx',
@@ -761,12 +778,12 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', '@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-popover',
-      '@usespaceui/primitives-separator',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
+      'https://www.spaceui.one/r/primitives-separator.json',
     ],
     files: [
       {
@@ -800,10 +817,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', '@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-menu',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
     ],
     files: [
       {
@@ -836,7 +853,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tanstack/react-table'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-data-grid', '@usespaceui/primitives-menu'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
+    ],
     files: [
       {
         path: 'src/registry/components/spaceui/data-grid/data-grid-column-visibility/index.tsx',
@@ -869,11 +889,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-select',
-      '@usespaceui/primitives-skeleton',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-select.json',
+      'https://www.spaceui.one/r/primitives-skeleton.json',
     ],
     files: [
       {
@@ -906,7 +926,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-data-grid', '@usespaceui/lib-utils'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+    ],
     files: [
       {
         path: 'src/registry/components/spaceui/data-grid/data-grid-scroll-area/index.tsx',
@@ -939,10 +962,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-checkbox',
-      '@usespaceui/primitives-spinner',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-checkbox.json',
+      'https://www.spaceui.one/r/primitives-spinner.json',
     ],
     files: [
       {
@@ -982,9 +1005,9 @@ export const index: Record<string, any> = {
     ],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/primitives-button',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/primitives-button.json',
     ],
     files: [
       {
@@ -1025,10 +1048,10 @@ export const index: Record<string, any> = {
     ],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-button',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-button.json',
     ],
     files: [
       {
@@ -1062,10 +1085,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tanstack/react-table', '@tanstack/react-virtual'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-spinner',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-spinner.json',
     ],
     files: [
       {
@@ -1099,13 +1122,13 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'date-fns', 'react-day-picker'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-media-query',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-calendar',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-scroll-area',
-      '@usespaceui/primitives-tabs',
+      'https://www.spaceui.one/r/hooks-browser-use-media-query.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-calendar.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-scroll-area.json',
+      'https://www.spaceui.one/r/primitives-tabs.json',
     ],
     files: [
       {
@@ -1171,10 +1194,10 @@ export const index: Record<string, any> = {
     dependencies: ['@base-ui/react', 'date-fns'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-event-calendar-i18n',
-      '@usespaceui/components-spaceui-event-calendar-lib',
-      '@usespaceui/components-spaceui-event-calendar-types',
-      '@usespaceui/lib-utils',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-i18n.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-lib.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-types.json',
+      'https://www.spaceui.one/r/lib-utils.json',
     ],
     files: [
       {
@@ -1208,13 +1231,13 @@ export const index: Record<string, any> = {
     dependencies: ['@base-ui/react', '@tabler/icons-react', 'date-fns'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-event-calendar',
-      '@usespaceui/components-spaceui-event-calendar-event',
-      '@usespaceui/components-spaceui-event-calendar-lib',
-      '@usespaceui/components-spaceui-event-calendar-types',
-      '@usespaceui/components-spaceui-icon-stack',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-scroll-area',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-event.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-lib.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-types.json',
+      'https://www.spaceui.one/r/components-spaceui-icon-stack.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-scroll-area.json',
     ],
     files: [
       {
@@ -1248,13 +1271,13 @@ export const index: Record<string, any> = {
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-event-calendar',
-      '@usespaceui/components-spaceui-event-calendar-agenda-view',
-      '@usespaceui/components-spaceui-event-calendar-month-view',
-      '@usespaceui/components-spaceui-event-calendar-resource-view',
-      '@usespaceui/components-spaceui-event-calendar-time-grid',
-      '@usespaceui/components-spaceui-event-calendar-types',
-      '@usespaceui/lib-utils',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-agenda-view.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-month-view.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-resource-view.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-time-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-types.json',
+      'https://www.spaceui.one/r/lib-utils.json',
     ],
     files: [
       {
@@ -1288,9 +1311,9 @@ export const index: Record<string, any> = {
     dependencies: ['date-fns'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-event-calendar',
-      '@usespaceui/components-spaceui-event-calendar-lib',
-      '@usespaceui/components-spaceui-event-calendar-types',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-lib.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-types.json',
     ],
     files: [
       {
@@ -1324,12 +1347,12 @@ export const index: Record<string, any> = {
     dependencies: ['@base-ui/react', '@tabler/icons-react', 'date-fns'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-event-calendar',
-      '@usespaceui/components-spaceui-event-calendar-dnd',
-      '@usespaceui/components-spaceui-event-calendar-lib',
-      '@usespaceui/components-spaceui-event-calendar-types',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-dnd.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-lib.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-types.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -1362,7 +1385,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['date-fns'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-event-calendar-types'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-event-calendar-types.json'],
     files: [
       {
         path: 'src/registry/components/spaceui/event-calendar/event-calendar-i18n/index.tsx',
@@ -1395,8 +1418,8 @@ export const index: Record<string, any> = {
     dependencies: ['@date-fns/tz', 'date-fns'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-event-calendar-recurrence',
-      '@usespaceui/components-spaceui-event-calendar-types',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-recurrence.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-types.json',
     ],
     files: [
       {
@@ -1430,14 +1453,14 @@ export const index: Record<string, any> = {
     dependencies: ['@base-ui/react', '@tabler/icons-react', 'date-fns'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-event-calendar',
-      '@usespaceui/components-spaceui-event-calendar-dnd',
-      '@usespaceui/components-spaceui-event-calendar-event',
-      '@usespaceui/components-spaceui-event-calendar-lib',
-      '@usespaceui/components-spaceui-event-calendar-types',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-popover',
-      '@usespaceui/primitives-scroll-area',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-dnd.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-event.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-lib.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-types.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
+      'https://www.spaceui.one/r/primitives-scroll-area.json',
     ],
     files: [
       {
@@ -1471,15 +1494,15 @@ export const index: Record<string, any> = {
     dependencies: ['@base-ui/react', '@tabler/icons-react', 'date-fns'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-event-calendar',
-      '@usespaceui/components-spaceui-event-calendar-lib',
-      '@usespaceui/components-spaceui-event-calendar-types',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-calendar',
-      '@usespaceui/primitives-menu',
-      '@usespaceui/primitives-popover',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-lib.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-types.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-calendar.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -1512,7 +1535,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@date-fns/tz', 'date-fns'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-event-calendar-types'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-event-calendar-types.json'],
     files: [
       {
         path: 'src/registry/components/spaceui/event-calendar/event-calendar-recurrence/index.tsx',
@@ -1545,14 +1568,14 @@ export const index: Record<string, any> = {
     dependencies: ['@base-ui/react', 'date-fns'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-event-calendar',
-      '@usespaceui/components-spaceui-event-calendar-dnd',
-      '@usespaceui/components-spaceui-event-calendar-event',
-      '@usespaceui/components-spaceui-event-calendar-lib',
-      '@usespaceui/components-spaceui-event-calendar-time-grid',
-      '@usespaceui/components-spaceui-event-calendar-types',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-scroll-area',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-dnd.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-event.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-lib.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-time-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-types.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-scroll-area.json',
     ],
     files: [
       {
@@ -1586,14 +1609,14 @@ export const index: Record<string, any> = {
     dependencies: ['@base-ui/react', 'date-fns'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-event-calendar',
-      '@usespaceui/components-spaceui-event-calendar-dnd',
-      '@usespaceui/components-spaceui-event-calendar-event',
-      '@usespaceui/components-spaceui-event-calendar-lib',
-      '@usespaceui/components-spaceui-event-calendar-types',
-      '@usespaceui/hooks-dom-use-event-listener',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-scroll-area',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-dnd.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-event.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-lib.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-types.json',
+      'https://www.spaceui.one/r/hooks-dom-use-event-listener.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-scroll-area.json',
     ],
     files: [
       {
@@ -1659,16 +1682,16 @@ export const index: Record<string, any> = {
     dependencies: ['@base-ui/react', '@tabler/icons-react', 'class-variance-authority'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-dom-use-event-listener',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-input-group',
-      '@usespaceui/primitives-kbd',
-      '@usespaceui/primitives-menu',
-      '@usespaceui/primitives-scroll-area',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/hooks-dom-use-event-listener.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-kbd.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
+      'https://www.spaceui.one/r/primitives-scroll-area.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -1701,7 +1724,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/components/spaceui/icon-stack/index.tsx',
@@ -1734,7 +1757,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/components/spaceui/image-dark/index.tsx',
@@ -1766,7 +1789,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@base-ui/react', '@dnd-kit/core', '@dnd-kit/sortable', '@dnd-kit/utilities'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/components/spaceui/kanban/index.tsx',
@@ -1798,7 +1821,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@paper-design/shaders-react', 'class-variance-authority'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils', '@usespaceui/primitives-avatar'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+    ],
     files: [
       {
         path: 'src/registry/components/spaceui/liquid-metal-avatar/index.tsx',
@@ -1830,7 +1856,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@paper-design/shaders-react', 'class-variance-authority'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/components/spaceui/liquid-metal-button/index.tsx',
@@ -1862,7 +1891,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@paper-design/shaders-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils', '@usespaceui/primitives-card'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+    ],
     files: [
       {
         path: 'src/registry/components/spaceui/liquid-metal-card/index.tsx',
@@ -1895,7 +1927,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['motion'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/components/spaceui/morph-icon/index.tsx',
@@ -1960,11 +1992,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'react-phone-number-input'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-combobox',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-scroll-area',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-combobox.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-scroll-area.json',
     ],
     files: [
       {
@@ -1998,7 +2030,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['motion', '@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/components/spaceui/pin-list/index.tsx',
@@ -2030,7 +2062,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react', 'class-variance-authority'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/components/spaceui/rating/index.tsx',
@@ -2062,7 +2094,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['react-resizable-panels'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/components/spaceui/resizable/index.tsx',
@@ -2126,7 +2158,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['motion'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/components/spaceui/section-scrollspy/index.tsx',
@@ -2158,7 +2190,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@base-ui/react', '@dnd-kit/core', '@dnd-kit/sortable', '@dnd-kit/utilities'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/components/spaceui/sortable/index.tsx',
@@ -2191,7 +2223,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['class-variance-authority'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils', '@usespaceui/primitives-badge'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+    ],
     files: [
       {
         path: 'src/registry/components/spaceui/status-badge/index.tsx',
@@ -2224,9 +2259,9 @@ export const index: Record<string, any> = {
     dependencies: ['motion', 'next-themes', '@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-button',
-      '@usespaceui/components-spaceui-morph-icon',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/components-spaceui-morph-icon.json',
     ],
     files: [
       {
@@ -2259,7 +2294,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/components/spaceui/timeline/index.tsx',
@@ -2291,7 +2326,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['motion'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/components/spaceui/tournament-bracket/index.tsx',
@@ -2323,7 +2358,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@base-ui/react', '@headless-tree/core', '@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/components/spaceui/tree/index.tsx',
@@ -2357,10 +2392,10 @@ export const index: Record<string, any> = {
     dependencies: ['motion'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-avatar-extended',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/components-spaceui-avatar-extended.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -2393,7 +2428,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['motion'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/components/spaceui/words-preloader/index.tsx',
@@ -2425,7 +2460,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-backgrounds-bubble'],
+    registryDependencies: ['https://www.spaceui.one/r/components-backgrounds-bubble.json'],
     files: [
       {
         path: 'src/registry/demo/components/backgrounds/c-backgrounds-bubble-01/index.tsx',
@@ -2457,7 +2492,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-backgrounds-gradient'],
+    registryDependencies: ['https://www.spaceui.one/r/components-backgrounds-gradient.json'],
     files: [
       {
         path: 'src/registry/demo/components/backgrounds/c-backgrounds-gradient-01/index.tsx',
@@ -2489,7 +2524,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-orb-bloop'],
+    registryDependencies: ['https://www.spaceui.one/r/components-orb-bloop.json'],
     files: [
       {
         path: 'src/registry/demo/components/orb/bloop/c-orb-bloop-01/index.tsx',
@@ -2559,7 +2594,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-orb-smooth'],
+    registryDependencies: ['https://www.spaceui.one/r/components-orb-smooth.json'],
     files: [
       {
         path: 'src/registry/demo/components/orb/smooth/c-orb-smooth-01/index.tsx',
@@ -2620,7 +2655,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-shader-cloud'],
+    registryDependencies: ['https://www.spaceui.one/r/components-shader-cloud.json'],
     files: [
       {
         path: 'src/registry/demo/components/shader/cloud/c-cloud-01/index.tsx',
@@ -2661,7 +2696,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-shader-paper-shader'],
+    registryDependencies: ['https://www.spaceui.one/r/components-shader-paper-shader.json'],
     files: [
       {
         path: 'src/registry/demo/components/shader/paper-shader/c-paper-shader-01/index.tsx',
@@ -2698,7 +2733,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-autoscale-input'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-autoscale-input.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/autoscale-input/c-autoscale-input-01/index.tsx',
@@ -2730,7 +2765,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-bouncy-accordion', '@usespaceui/primitives-badge'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-bouncy-accordion.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/bouncy-accordion/c-bouncy-accordion-01/index.tsx',
@@ -2762,7 +2800,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-liquid-metal-avatar'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-liquid-metal-avatar.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/c-liquid-metal-avatar-custom-01/index.tsx',
@@ -2794,7 +2832,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-liquid-metal-avatar'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-liquid-metal-avatar.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/c-liquid-metal-avatar-default-01/index.tsx',
@@ -2826,7 +2864,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-liquid-metal-avatar'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-liquid-metal-avatar.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/c-liquid-metal-avatar-fallback-01/index.tsx',
@@ -2858,7 +2896,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-liquid-metal-avatar'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-liquid-metal-avatar.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/c-liquid-metal-avatar-sizes-01/index.tsx',
@@ -2890,7 +2928,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-liquid-metal-button'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-liquid-metal-button.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/c-liquid-metal-button-custom-01/index.tsx',
@@ -2922,7 +2960,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-liquid-metal-button'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-liquid-metal-button.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/c-liquid-metal-button-default-01/index.tsx',
@@ -2954,7 +2992,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-liquid-metal-button'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-liquid-metal-button.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/c-liquid-metal-button-sizes-01/index.tsx',
@@ -2987,9 +3025,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-liquid-metal-card',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
+      'https://www.spaceui.one/r/components-spaceui-liquid-metal-card.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
     ],
     files: [
       {
@@ -3022,7 +3060,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-liquid-metal-card', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-liquid-metal-card.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/c-liquid-metal-card-default-01/index.tsx',
@@ -3055,9 +3096,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-liquid-metal-card',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/components-spaceui-liquid-metal-card.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -3090,7 +3131,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-liquid-metal-card', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-liquid-metal-card.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/c-liquid-metal-card-player-01/index.tsx',
@@ -3123,10 +3167,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
     ],
     files: [
       {
@@ -3160,12 +3204,12 @@ export const index: Record<string, any> = {
     dependencies: ['@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -3199,11 +3243,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/primitives-avatar',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
     ],
     files: [
       {
@@ -3237,14 +3281,14 @@ export const index: Record<string, any> = {
     dependencies: ['@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-avatar-extended',
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
+      'https://www.spaceui.one/r/components-spaceui-avatar-extended.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
     ],
     files: [
       {
@@ -3278,11 +3322,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/primitives-avatar',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
     ],
     files: [
       {
@@ -3316,11 +3360,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/primitives-avatar',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
     ],
     files: [
       {
@@ -3354,13 +3398,13 @@ export const index: Record<string, any> = {
     dependencies: ['@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-avatar-extended',
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-avatar',
+      'https://www.spaceui.one/r/components-spaceui-avatar-extended.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
     ],
     files: [
       {
@@ -3394,13 +3438,13 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', '@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
     ],
     files: [
       {
@@ -3434,15 +3478,15 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', '@tanstack/react-table', 'class-variance-authority'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-column-header',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-column-header.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -3476,12 +3520,12 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', '@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-column-header',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/primitives-avatar',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-column-header.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
     ],
     files: [
       {
@@ -3515,12 +3559,12 @@ export const index: Record<string, any> = {
     dependencies: ['@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-column-header',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/primitives-avatar',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-column-header.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
     ],
     files: [
       {
@@ -3554,13 +3598,13 @@ export const index: Record<string, any> = {
     dependencies: ['@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-column-header',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-column-header.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
     ],
     files: [
       {
@@ -3594,12 +3638,12 @@ export const index: Record<string, any> = {
     dependencies: ['@dnd-kit/core', '@dnd-kit/sortable', '@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table-dnd',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table-dnd.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
     ],
     files: [
       {
@@ -3633,11 +3677,11 @@ export const index: Record<string, any> = {
     dependencies: ['@dnd-kit/core', '@dnd-kit/sortable', '@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table-dnd-rows',
-      '@usespaceui/primitives-avatar',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table-dnd-rows.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
     ],
     files: [
       {
@@ -3671,14 +3715,14 @@ export const index: Record<string, any> = {
     dependencies: ['@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-column-header',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-column-header.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -3712,14 +3756,14 @@ export const index: Record<string, any> = {
     dependencies: ['@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-column-header',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-column-header.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -3753,14 +3797,14 @@ export const index: Record<string, any> = {
     dependencies: ['@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-avatar-extended',
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
+      'https://www.spaceui.one/r/components-spaceui-avatar-extended.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
     ],
     files: [
       {
@@ -3794,14 +3838,14 @@ export const index: Record<string, any> = {
     dependencies: ['@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-column-header',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-column-header.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -3835,15 +3879,15 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', '@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-column-header',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-column-header.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -3877,16 +3921,16 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', '@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-column-header',
-      '@usespaceui/components-spaceui-data-grid-column-visibility',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-column-header.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-column-visibility.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -3920,16 +3964,16 @@ export const index: Record<string, any> = {
     dependencies: ['@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-column-header',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-skeleton',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-column-header.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-skeleton.json',
     ],
     files: [
       {
@@ -3963,21 +4007,21 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', '@tanstack/react-table', 'sonner'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-column-header',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/hooks-browser-use-clipboard',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-checkbox',
-      '@usespaceui/primitives-input-group',
-      '@usespaceui/primitives-label',
-      '@usespaceui/primitives-menu',
-      '@usespaceui/primitives-popover',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-column-header.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/hooks-browser-use-clipboard.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-checkbox.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-label.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
     ],
     files: [
       {
@@ -4011,21 +4055,21 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', '@tanstack/react-table', 'sonner'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-column-header',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/hooks-browser-use-clipboard',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-checkbox',
-      '@usespaceui/primitives-frame',
-      '@usespaceui/primitives-input-group',
-      '@usespaceui/primitives-label',
-      '@usespaceui/primitives-menu',
-      '@usespaceui/primitives-popover',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-column-header.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/hooks-browser-use-clipboard.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-checkbox.json',
+      'https://www.spaceui.one/r/primitives-frame.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-label.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
     ],
     files: [
       {
@@ -4059,18 +4103,18 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', '@tanstack/react-table', 'sonner'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-column-header',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/hooks-browser-use-clipboard',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-menu',
-      '@usespaceui/primitives-separator',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-column-header.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/hooks-browser-use-clipboard.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
+      'https://www.spaceui.one/r/primitives-separator.json',
     ],
     files: [
       {
@@ -4104,15 +4148,15 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', '@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-column-header',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-column-header.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -4146,15 +4190,15 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', '@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-column-header',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-column-header.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -4188,14 +4232,14 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', '@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-column-header',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table-virtual',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-column-header.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table-virtual.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -4229,14 +4273,14 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', '@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-column-header',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table-virtual',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-column-header.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table-virtual.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -4270,17 +4314,17 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', '@tanstack/react-table', 'sonner'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-column-header',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-scroll-area',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/hooks-browser-use-clipboard',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-menu',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-column-header.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-scroll-area.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/hooks-browser-use-clipboard.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
     ],
     files: [
       {
@@ -4313,7 +4357,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['date-fns'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-date-selector', '@usespaceui/primitives-card'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-date-selector.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/date-selector/c-date-selector-01/index.tsx',
@@ -4346,10 +4393,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-date-selector',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-popover',
-      '@usespaceui/primitives-separator',
+      'https://www.spaceui.one/r/components-spaceui-date-selector.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
+      'https://www.spaceui.one/r/primitives-separator.json',
     ],
     files: [
       {
@@ -4383,9 +4430,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-date-selector',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-dialog',
+      'https://www.spaceui.one/r/components-spaceui-date-selector.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-dialog.json',
     ],
     files: [
       {
@@ -4419,10 +4466,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-date-selector',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-dialog',
-      '@usespaceui/primitives-menu',
+      'https://www.spaceui.one/r/components-spaceui-date-selector.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-dialog.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
     ],
     files: [
       {
@@ -4455,7 +4502,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-dirt-carousel'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-dirt-carousel.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/dirt-carousel/c-dirt-carousel-01/index.tsx',
@@ -4496,19 +4543,19 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'date-fns'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-event-calendar',
-      '@usespaceui/components-spaceui-event-calendar-content',
-      '@usespaceui/components-spaceui-event-calendar-i18n',
-      '@usespaceui/components-spaceui-event-calendar-nav',
-      '@usespaceui/components-spaceui-event-calendar-types',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-label',
-      '@usespaceui/primitives-popover',
-      '@usespaceui/primitives-select',
-      '@usespaceui/primitives-switch',
-      '@usespaceui/primitives-tabs',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-content.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-i18n.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-nav.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-types.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-label.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
+      'https://www.spaceui.one/r/primitives-select.json',
+      'https://www.spaceui.one/r/primitives-switch.json',
+      'https://www.spaceui.one/r/primitives-tabs.json',
     ],
     files: [
       {
@@ -4542,12 +4589,12 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'date-fns'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-event-calendar',
-      '@usespaceui/components-spaceui-event-calendar-content',
-      '@usespaceui/components-spaceui-event-calendar-nav',
-      '@usespaceui/components-spaceui-event-calendar-types',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-content.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-nav.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-types.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -4582,18 +4629,18 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'date-fns'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-event-calendar',
-      '@usespaceui/components-spaceui-event-calendar-content',
-      '@usespaceui/components-spaceui-event-calendar-nav',
-      '@usespaceui/components-spaceui-event-calendar-types',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-dialog',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-select',
-      '@usespaceui/primitives-switch',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-content.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-nav.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-types.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-dialog.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-select.json',
+      'https://www.spaceui.one/r/primitives-switch.json',
     ],
     files: [
       {
@@ -4627,12 +4674,12 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'date-fns'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-event-calendar',
-      '@usespaceui/components-spaceui-event-calendar-content',
-      '@usespaceui/components-spaceui-event-calendar-nav',
-      '@usespaceui/components-spaceui-event-calendar-types',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-content.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-nav.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-types.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -4666,13 +4713,13 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'date-fns'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-event-calendar',
-      '@usespaceui/components-spaceui-event-calendar-content',
-      '@usespaceui/components-spaceui-event-calendar-nav',
-      '@usespaceui/components-spaceui-event-calendar-types',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-content.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-nav.json',
+      'https://www.spaceui.one/r/components-spaceui-event-calendar-types.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -4705,7 +4752,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/hooks-form-use-file-upload', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/hooks-form-use-file-upload.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/file-upload/c-file-upload-01/index.tsx',
@@ -4738,11 +4788,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-form-use-file-upload',
-      '@usespaceui/hooks-utils-format-bytes',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-alert',
-      '@usespaceui/primitives-button',
+      'https://www.spaceui.one/r/hooks-form-use-file-upload.json',
+      'https://www.spaceui.one/r/hooks-utils-format-bytes.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-alert.json',
+      'https://www.spaceui.one/r/primitives-button.json',
     ],
     files: [
       {
@@ -4776,11 +4826,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-form-use-file-upload',
-      '@usespaceui/hooks-utils-format-bytes',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-alert',
-      '@usespaceui/primitives-button',
+      'https://www.spaceui.one/r/hooks-form-use-file-upload.json',
+      'https://www.spaceui.one/r/hooks-utils-format-bytes.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-alert.json',
+      'https://www.spaceui.one/r/primitives-button.json',
     ],
     files: [
       {
@@ -4814,13 +4864,13 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-form-use-file-upload',
-      '@usespaceui/hooks-utils-format-bytes',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-alert',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-dialog',
-      '@usespaceui/primitives-spinner',
+      'https://www.spaceui.one/r/hooks-form-use-file-upload.json',
+      'https://www.spaceui.one/r/hooks-utils-format-bytes.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-alert.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-dialog.json',
+      'https://www.spaceui.one/r/primitives-spinner.json',
     ],
     files: [
       {
@@ -4854,13 +4904,13 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-form-use-file-upload',
-      '@usespaceui/hooks-utils-format-bytes',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-alert',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-progress',
+      'https://www.spaceui.one/r/hooks-form-use-file-upload.json',
+      'https://www.spaceui.one/r/hooks-utils-format-bytes.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-alert.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-progress.json',
     ],
     files: [
       {
@@ -4894,13 +4944,13 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-form-use-file-upload',
-      '@usespaceui/hooks-utils-format-bytes',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-alert',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-table',
+      'https://www.spaceui.one/r/hooks-form-use-file-upload.json',
+      'https://www.spaceui.one/r/hooks-utils-format-bytes.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-alert.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-table.json',
     ],
     files: [
       {
@@ -4934,11 +4984,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-alert',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-progress',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-alert.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-progress.json',
     ],
     files: [
       {
@@ -4972,12 +5022,12 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'sonner'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-sortable',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-alert',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-progress',
+      'https://www.spaceui.one/r/components-spaceui-sortable.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-alert.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-progress.json',
     ],
     files: [
       {
@@ -5011,12 +5061,12 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-form-use-file-upload',
-      '@usespaceui/hooks-utils-format-bytes',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-alert',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/hooks-form-use-file-upload.json',
+      'https://www.spaceui.one/r/hooks-utils-format-bytes.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-alert.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -5050,10 +5100,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-form-use-file-upload',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-alert',
-      '@usespaceui/primitives-button',
+      'https://www.spaceui.one/r/hooks-form-use-file-upload.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-alert.json',
+      'https://www.spaceui.one/r/primitives-button.json',
     ],
     files: [
       {
@@ -5087,10 +5137,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-filters',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-button',
+      'https://www.spaceui.one/r/components-spaceui-filters.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-button.json',
     ],
     files: [
       {
@@ -5123,7 +5173,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react', 'zod-v4'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-filters', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-filters.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/filters/c-filters-02/index.tsx',
@@ -5156,9 +5209,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-filters',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-button',
+      'https://www.spaceui.one/r/components-spaceui-filters.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-button.json',
     ],
     files: [
       {
@@ -5191,7 +5244,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-filters', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-filters.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/filters/c-filters-04/index.tsx',
@@ -5223,7 +5279,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-filters', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-filters.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/filters/c-filters-05/index.tsx',
@@ -5256,15 +5315,15 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'date-fns', 'react-day-picker'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-date-selector',
-      '@usespaceui/components-spaceui-filters',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-calendar',
-      '@usespaceui/primitives-dialog',
-      '@usespaceui/primitives-popover',
-      '@usespaceui/primitives-scroll-area',
-      '@usespaceui/primitives-slider',
+      'https://www.spaceui.one/r/components-spaceui-date-selector.json',
+      'https://www.spaceui.one/r/components-spaceui-filters.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-calendar.json',
+      'https://www.spaceui.one/r/primitives-dialog.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
+      'https://www.spaceui.one/r/primitives-scroll-area.json',
+      'https://www.spaceui.one/r/primitives-slider.json',
     ],
     files: [
       {
@@ -5298,17 +5357,17 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', '@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-column-header',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/components-spaceui-filters',
-      '@usespaceui/primitives-alert',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-scroll-area',
-      '@usespaceui/primitives-skeleton',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-column-header.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/components-spaceui-filters.json',
+      'https://www.spaceui.one/r/primitives-alert.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-scroll-area.json',
+      'https://www.spaceui.one/r/primitives-skeleton.json',
     ],
     files: [
       {
@@ -5342,17 +5401,17 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', '@tanstack/react-table', 'nuqs'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-data-grid',
-      '@usespaceui/components-spaceui-data-grid-column-header',
-      '@usespaceui/components-spaceui-data-grid-pagination',
-      '@usespaceui/components-spaceui-data-grid-table',
-      '@usespaceui/components-spaceui-filters',
-      '@usespaceui/primitives-alert',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-scroll-area',
-      '@usespaceui/primitives-skeleton',
+      'https://www.spaceui.one/r/components-spaceui-data-grid.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-column-header.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-pagination.json',
+      'https://www.spaceui.one/r/components-spaceui-data-grid-table.json',
+      'https://www.spaceui.one/r/components-spaceui-filters.json',
+      'https://www.spaceui.one/r/primitives-alert.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-scroll-area.json',
+      'https://www.spaceui.one/r/primitives-skeleton.json',
     ],
     files: [
       {
@@ -5386,9 +5445,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-filters',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-menu',
+      'https://www.spaceui.one/r/components-spaceui-filters.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
     ],
     files: [
       {
@@ -5421,7 +5480,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react', '@tanstack/react-virtual'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-filters'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-filters.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/filters/c-filters-10/index.tsx',
@@ -5453,7 +5512,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-filters'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-filters.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/filters/c-filters-11/index.tsx',
@@ -5485,7 +5544,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-filters'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-filters.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/filters/c-filters-12/index.tsx',
@@ -5517,7 +5576,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-icon-stack'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-icon-stack.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/icon-stack/c-icon-stack-01/index.tsx',
@@ -5549,7 +5608,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-icon-stack'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-icon-stack.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/icon-stack/c-icon-stack-02/index.tsx',
@@ -5581,7 +5640,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-icon-stack'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-icon-stack.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/icon-stack/c-icon-stack-03/index.tsx',
@@ -5613,7 +5672,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-icon-stack'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-icon-stack.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/icon-stack/c-icon-stack-04/index.tsx',
@@ -5646,9 +5705,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-icon-stack',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-empty',
+      'https://www.spaceui.one/r/components-spaceui-icon-stack.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-empty.json',
     ],
     files: [
       {
@@ -5681,7 +5740,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-icon-stack'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-icon-stack.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/icon-stack/c-icon-stack-06/index.tsx',
@@ -5715,9 +5774,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-image-dark',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-separator',
+      'https://www.spaceui.one/r/components-spaceui-image-dark.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-separator.json',
     ],
     files: [
       {
@@ -5751,10 +5810,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-image-dark',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/components-spaceui-image-dark.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -5788,11 +5847,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-kanban',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/components-spaceui-kanban.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -5826,11 +5885,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-kanban',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/components-spaceui-kanban.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -5864,9 +5923,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-kanban',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-frame',
+      'https://www.spaceui.one/r/components-spaceui-kanban.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-frame.json',
     ],
     files: [
       {
@@ -5900,11 +5959,11 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-kanban',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-frame',
-      '@usespaceui/primitives-progress',
+      'https://www.spaceui.one/r/components-spaceui-kanban.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-frame.json',
+      'https://www.spaceui.one/r/primitives-progress.json',
     ],
     files: [
       {
@@ -5938,11 +5997,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-kanban',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-frame',
-      '@usespaceui/primitives-progress',
+      'https://www.spaceui.one/r/components-spaceui-kanban.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-frame.json',
+      'https://www.spaceui.one/r/primitives-progress.json',
     ],
     files: [
       {
@@ -5976,10 +6035,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'sonner'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-kanban',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/components-spaceui-kanban.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -6012,7 +6071,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-morph-icon', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-morph-icon.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/morph-icon/c-morph-icon-01/index.tsx',
@@ -6044,7 +6106,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-morph-icon', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-morph-icon.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/morph-icon/c-morph-icon-02/index.tsx',
@@ -6076,7 +6141,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-morph-icon', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-morph-icon.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/morph-icon/c-morph-icon-03/index.tsx',
@@ -6108,7 +6176,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react', 'motion'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-morph-icon', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-morph-icon.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/morph-icon/c-morph-icon-04/index.tsx',
@@ -6140,7 +6211,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-morph-icon', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-morph-icon.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/morph-icon/c-morph-icon-05/index.tsx',
@@ -6173,9 +6247,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-morph-icon',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/components-spaceui-morph-icon.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -6208,7 +6282,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-notification-list'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-notification-list.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/notification-list/c-notification-list-01/index.tsx',
@@ -6241,7 +6315,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-phone-input'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-phone-input.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/phone-input/c-phone-input-01/index.tsx',
@@ -6273,7 +6347,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-phone-input'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-phone-input.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/phone-input/c-phone-input-02/index.tsx',
@@ -6305,7 +6379,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-phone-input'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-phone-input.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/phone-input/c-phone-input-03/index.tsx',
@@ -6337,7 +6411,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-phone-input'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-phone-input.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/phone-input/c-phone-input-04/index.tsx',
@@ -6369,7 +6443,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-phone-input'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-phone-input.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/phone-input/c-phone-input-05/index.tsx',
@@ -6401,7 +6475,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-phone-input'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-phone-input.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/phone-input/c-phone-input-06/index.tsx',
@@ -6433,7 +6507,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-phone-input'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-phone-input.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/phone-input/c-phone-input-07/index.tsx',
@@ -6465,7 +6539,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-phone-input'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-phone-input.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/phone-input/c-phone-input-08/index.tsx',
@@ -6497,7 +6571,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-pin-list'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-pin-list.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/pin-list/c-pin-list-01/index.tsx',
@@ -6529,7 +6603,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-rating'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-rating.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/rating/c-rating-01/index.tsx',
@@ -6561,7 +6635,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-rating'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-rating.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/rating/c-rating-02/index.tsx',
@@ -6593,7 +6667,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-rating'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-rating.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/rating/c-rating-03/index.tsx',
@@ -6625,7 +6699,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['sonner'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-rating'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-rating.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/rating/c-rating-04/index.tsx',
@@ -6657,7 +6731,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-rating'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-rating.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/rating/c-rating-05/index.tsx',
@@ -6690,9 +6764,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-rating',
-      '@usespaceui/primitives-progress',
-      '@usespaceui/primitives-separator',
+      'https://www.spaceui.one/r/components-spaceui-rating.json',
+      'https://www.spaceui.one/r/primitives-progress.json',
+      'https://www.spaceui.one/r/primitives-separator.json',
     ],
     files: [
       {
@@ -6725,7 +6799,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-rating'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-rating.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/rating/c-rating-07/index.tsx',
@@ -6757,7 +6831,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/rating/c-rating-08/index.tsx',
@@ -6790,11 +6864,11 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-rating',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-label',
-      '@usespaceui/primitives-textarea',
+      'https://www.spaceui.one/r/components-spaceui-rating.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-label.json',
+      'https://www.spaceui.one/r/primitives-textarea.json',
     ],
     files: [
       {
@@ -6827,7 +6901,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-resizable'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-resizable.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/resizable/c-resizable-01/index.tsx',
@@ -6859,7 +6933,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-resizable'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-resizable.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/resizable/c-resizable-02/index.tsx',
@@ -6891,7 +6965,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-resizable'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-resizable.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/resizable/c-resizable-03/index.tsx',
@@ -6923,7 +6997,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-resizable'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-resizable.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/resizable/c-resizable-04/index.tsx',
@@ -6955,7 +7029,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-resizable'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-resizable.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/resizable/c-resizable-05/index.tsx',
@@ -6987,7 +7061,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-resizable'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-resizable.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/resizable/c-resizable-06/index.tsx',
@@ -7019,7 +7093,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-resizable'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-resizable.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/resizable/c-resizable-07/index.tsx',
@@ -7051,7 +7125,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-resizable'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-resizable.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/resizable/c-resizable-08/index.tsx',
@@ -7083,7 +7157,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-resizable'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-resizable.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/resizable/c-resizable-09/index.tsx',
@@ -7115,7 +7189,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-resizable'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-resizable.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/resizable/c-resizable-10/index.tsx',
@@ -7148,9 +7222,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-scrollspy',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-scroll-area',
+      'https://www.spaceui.one/r/components-spaceui-scrollspy.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-scroll-area.json',
     ],
     files: [
       {
@@ -7184,9 +7258,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-scrollspy',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-scroll-area',
+      'https://www.spaceui.one/r/components-spaceui-scrollspy.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-scroll-area.json',
     ],
     files: [
       {
@@ -7219,7 +7293,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-section-scrollspy', '@usespaceui/primitives-badge'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-section-scrollspy.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/section-scrollspy/c-section-scrollspy-01/index.tsx',
@@ -7252,7 +7329,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react', 'sonner'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-sortable', '@usespaceui/primitives-badge'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-sortable.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/sortable/c-sortable-01/index.tsx',
@@ -7285,9 +7365,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'sonner'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-sortable',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-badge',
+      'https://www.spaceui.one/r/components-spaceui-sortable.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
     ],
     files: [
       {
@@ -7320,7 +7400,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react', 'sonner'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-sortable', '@usespaceui/primitives-card'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-sortable.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/sortable/c-sortable-03/index.tsx',
@@ -7353,9 +7436,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-sortable',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-frame',
+      'https://www.spaceui.one/r/components-spaceui-sortable.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-frame.json',
     ],
     files: [
       {
@@ -7389,9 +7472,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-sortable',
-      '@usespaceui/primitives-frame',
-      '@usespaceui/primitives-switch',
+      'https://www.spaceui.one/r/components-spaceui-sortable.json',
+      'https://www.spaceui.one/r/primitives-frame.json',
+      'https://www.spaceui.one/r/primitives-switch.json',
     ],
     files: [
       {
@@ -7425,9 +7508,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-sortable',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-frame',
+      'https://www.spaceui.one/r/components-spaceui-sortable.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-frame.json',
     ],
     files: [
       {
@@ -7460,7 +7543,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-sortable', '@usespaceui/primitives-frame'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-sortable.json',
+      'https://www.spaceui.one/r/primitives-frame.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/sortable/c-sortable-07/index.tsx',
@@ -7492,7 +7578,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react', 'sonner'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-sortable', '@usespaceui/primitives-badge'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-sortable.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/sortable/c-sortable-08/index.tsx',
@@ -7556,7 +7645,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-status-badge'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-status-badge.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/status-badge/c-status-badge-01/index.tsx',
@@ -7588,7 +7677,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-status-badge'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-status-badge.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/status-badge/c-status-badge-02/index.tsx',
@@ -7620,7 +7709,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-status-badge'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-status-badge.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/status-badge/c-status-badge-03/index.tsx',
@@ -7652,7 +7741,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-status-badge'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-status-badge.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/status-badge/c-status-badge-04/index.tsx',
@@ -7684,7 +7773,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-status-badge'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-status-badge.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/status-badge/c-status-badge-05/index.tsx',
@@ -7716,7 +7805,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-status-badge'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-status-badge.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/status-badge/c-status-badge-06/index.tsx',
@@ -7748,7 +7837,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-status-badge'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-status-badge.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/status-badge/c-status-badge-07/index.tsx',
@@ -7780,7 +7869,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-status-badge'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-status-badge.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/status-badge/c-status-badge-08/index.tsx',
@@ -7812,7 +7901,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-theme-toggle', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-theme-toggle.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/theme-toggle/c-theme-toggle-01/index.tsx',
@@ -7890,7 +7982,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-timeline'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-timeline.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/timeline/c-timeline-01/index.tsx',
@@ -7922,7 +8014,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-timeline'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-timeline.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/timeline/c-timeline-02/index.tsx',
@@ -7954,7 +8046,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-timeline'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-timeline.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/timeline/c-timeline-03/index.tsx',
@@ -7986,7 +8078,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-timeline'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-timeline.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/timeline/c-timeline-04/index.tsx',
@@ -8018,7 +8110,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-timeline', '@usespaceui/lib-utils'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-timeline.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/timeline/c-timeline-05/index.tsx',
@@ -8051,13 +8146,13 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-timeline',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-collapsible',
-      '@usespaceui/primitives-frame',
-      '@usespaceui/primitives-spinner',
+      'https://www.spaceui.one/r/components-spaceui-timeline.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-collapsible.json',
+      'https://www.spaceui.one/r/primitives-frame.json',
+      'https://www.spaceui.one/r/primitives-spinner.json',
     ],
     files: [
       {
@@ -8090,7 +8185,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-timeline', '@usespaceui/lib-utils'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-timeline.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/timeline/c-timeline-07/index.tsx',
@@ -8122,7 +8220,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-timeline'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-timeline.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/timeline/c-timeline-08/index.tsx',
@@ -8154,7 +8252,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-timeline'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-timeline.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/timeline/c-timeline-09/index.tsx',
@@ -8187,9 +8285,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-timeline',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-badge',
+      'https://www.spaceui.one/r/components-spaceui-timeline.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
     ],
     files: [
       {
@@ -8222,7 +8320,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-timeline', '@usespaceui/primitives-avatar'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-timeline.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/timeline/c-timeline-11/index.tsx',
@@ -8255,9 +8356,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-timeline',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-badge',
+      'https://www.spaceui.one/r/components-spaceui-timeline.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
     ],
     files: [
       {
@@ -8290,7 +8391,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-tournament-bracket'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-tournament-bracket.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/tournament-bracket/c-tournament-bracket-01/index.tsx',
@@ -8323,7 +8424,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@headless-tree/core', '@headless-tree/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-tree'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-tree.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/tree/c-tree-01/index.tsx',
@@ -8355,7 +8456,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@headless-tree/core', '@headless-tree/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-tree'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-tree.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/tree/c-tree-02/index.tsx',
@@ -8387,7 +8488,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@headless-tree/core', '@headless-tree/react', '@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-tree'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-tree.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/tree/c-tree-03/index.tsx',
@@ -8419,7 +8520,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@headless-tree/core', '@headless-tree/react', '@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-tree'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-tree.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/tree/c-tree-04/index.tsx',
@@ -8451,7 +8552,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@headless-tree/core', '@headless-tree/react', '@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-tree'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-tree.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/tree/c-tree-05/index.tsx',
@@ -8483,7 +8584,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@headless-tree/core', '@headless-tree/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-tree', '@usespaceui/primitives-avatar'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-tree.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/tree/c-tree-06/index.tsx',
@@ -8515,7 +8619,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: ['@headless-tree/core', '@headless-tree/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-tree', '@usespaceui/primitives-checkbox'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-tree.json',
+      'https://www.spaceui.one/r/primitives-checkbox.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/tree/c-tree-07/index.tsx',
@@ -8547,7 +8654,7 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-user-presence-avatar'],
+    registryDependencies: ['https://www.spaceui.one/r/components-spaceui-user-presence-avatar.json'],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/user-presence-avatar/c-user-presence-avatar-01/index.tsx',
@@ -8580,7 +8687,10 @@ export const index: Record<string, any> = {
     type: 'registry:component',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-words-preloader', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-words-preloader.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/components/spaceui/words-preloader/c-words-preloader-01/index.tsx',
@@ -8613,10 +8723,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-animation-use-auto-height',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-animation-use-auto-height.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -8650,9 +8760,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-animation-use-auto-height',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-animation-use-auto-height.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -8686,11 +8796,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-animation-use-controlled-state',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-switch',
+      'https://www.spaceui.one/r/hooks-animation-use-controlled-state.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-switch.json',
     ],
     files: [
       {
@@ -8724,10 +8834,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-animation-use-data-state',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-animation-use-data-state.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -8761,9 +8871,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-animation-use-in-view',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-animation-use-in-view.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -8797,9 +8907,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -8833,10 +8943,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-battery-status',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-progress',
+      'https://www.spaceui.one/r/hooks-browser-use-battery-status.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-progress.json',
     ],
     files: [
       {
@@ -8870,11 +8980,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-clipboard',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/hooks-browser-use-clipboard.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -8908,9 +9018,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-clipboard',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-browser-use-clipboard.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -8944,10 +9054,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-clipboard',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-browser-use-clipboard.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -8981,11 +9091,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-cookie',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/hooks-browser-use-cookie.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -9019,9 +9129,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-cookie-listener',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-browser-use-cookie-listener.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -9055,9 +9165,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-device-os',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-browser-use-device-os.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -9091,10 +9201,10 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-favicon',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-browser-use-favicon.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -9128,10 +9238,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-fullscreen',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-browser-use-fullscreen.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -9165,10 +9275,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-is-mac',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-kbd',
+      'https://www.spaceui.one/r/hooks-browser-use-is-mac.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-kbd.json',
     ],
     files: [
       {
@@ -9202,10 +9312,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-local-storage',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-browser-use-local-storage.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -9239,10 +9349,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-local-storage',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/hooks-browser-use-local-storage.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -9276,12 +9386,12 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-local-storage',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-checkbox',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/hooks-browser-use-local-storage.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-checkbox.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -9315,9 +9425,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-media-query',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-browser-use-media-query.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -9351,9 +9461,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-network',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-browser-use-network.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -9387,9 +9497,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-orientation',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-browser-use-orientation.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -9423,9 +9533,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-prefers-theme',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-browser-use-prefers-theme.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -9459,9 +9569,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-script',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-browser-use-script.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -9495,10 +9605,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-session-storage',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-browser-use-session-storage.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -9532,10 +9642,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-share',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-browser-use-share.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -9569,10 +9679,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-tab-notification',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-browser-use-tab-notification.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -9606,10 +9716,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-title',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/hooks-browser-use-title.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -9643,10 +9753,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-components-class',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-components-class.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -9680,10 +9790,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-components-for',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-components-for.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -9717,10 +9827,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-components-for',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/hooks-components-for.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -9754,10 +9864,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-components-if',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-components-if.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -9791,9 +9901,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-components-image',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-components-image.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -9826,7 +9936,7 @@ export const index: Record<string, any> = {
     type: 'registry:hook',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/hooks-components-in-view'],
+    registryDependencies: ['https://www.spaceui.one/r/hooks-components-in-view.json'],
     files: [
       {
         path: 'src/registry/demo/hooks/components/in-view/h-in-view-01/index.tsx',
@@ -9859,9 +9969,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-components-render-after',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-components-render-after.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -9895,10 +10005,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-components-show',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-components-show.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -9932,10 +10042,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-components-switch',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-components-switch.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -9969,10 +10079,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-components-switch',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-components-switch.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -10006,10 +10116,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-dom-use-click-outside',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-dom-use-click-outside.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -10043,10 +10153,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-dom-use-event-listener',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-kbd',
+      'https://www.spaceui.one/r/hooks-dom-use-event-listener.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-kbd.json',
     ],
     files: [
       {
@@ -10080,9 +10190,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-dom-use-hover',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-dom-use-hover.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -10116,10 +10226,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-dom-use-hover',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-dom-use-hover.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -10153,9 +10263,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-dom-use-intersection-observer',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-dom-use-intersection-observer.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -10189,10 +10299,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-dom-use-key-press',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-kbd',
+      'https://www.spaceui.one/r/hooks-dom-use-key-press.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-kbd.json',
     ],
     files: [
       {
@@ -10226,10 +10336,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-dom-use-lock-body-scroll',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-switch',
+      'https://www.spaceui.one/r/hooks-dom-use-lock-body-scroll.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-switch.json',
     ],
     files: [
       {
@@ -10263,9 +10373,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-dom-use-mouse-position',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-dom-use-mouse-position.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -10299,9 +10409,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-dom-use-scroll-device',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-dom-use-scroll-device.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -10335,9 +10445,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-dom-use-scroll-position',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-dom-use-scroll-position.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -10371,10 +10481,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-dom-use-scroll-to',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-dom-use-scroll-to.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -10408,9 +10518,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-dom-use-size',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-dom-use-size.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -10444,9 +10554,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-dom-use-window-size',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-dom-use-window-size.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -10480,11 +10590,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-form-use-character-limit',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-progress',
-      '@usespaceui/primitives-textarea',
+      'https://www.spaceui.one/r/hooks-form-use-character-limit.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-progress.json',
+      'https://www.spaceui.one/r/primitives-textarea.json',
     ],
     files: [
       {
@@ -10518,12 +10628,12 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-form-use-character-limit',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-progress',
-      '@usespaceui/primitives-textarea',
+      'https://www.spaceui.one/r/hooks-form-use-character-limit.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-progress.json',
+      'https://www.spaceui.one/r/primitives-textarea.json',
     ],
     files: [
       {
@@ -10557,11 +10667,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-form-use-file-upload',
-      '@usespaceui/hooks-utils-format-bytes',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-form-use-file-upload.json',
+      'https://www.spaceui.one/r/hooks-utils-format-bytes.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -10595,9 +10705,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-form-use-file-upload',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-form-use-file-upload.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -10631,10 +10741,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-form-use-file-upload',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-form-use-file-upload.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -10668,11 +10778,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-form-use-input-value',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/hooks-form-use-input-value.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -10706,11 +10816,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-form-use-load-more',
-      '@usespaceui/hooks-utils-sleep',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-form-use-load-more.json',
+      'https://www.spaceui.one/r/hooks-utils-sleep.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -10744,10 +10854,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-form-use-map',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-form-use-map.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -10781,11 +10891,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-form-use-mutation',
-      '@usespaceui/hooks-utils-sleep',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-form-use-mutation.json',
+      'https://www.spaceui.one/r/hooks-utils-sleep.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -10819,10 +10929,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-form-use-pagination',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-form-use-pagination.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -10856,10 +10966,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-form-use-parse-markdown',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-textarea',
+      'https://www.spaceui.one/r/hooks-form-use-parse-markdown.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-textarea.json',
     ],
     files: [
       {
@@ -10893,10 +11003,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-form-use-reading-time',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-textarea',
+      'https://www.spaceui.one/r/hooks-form-use-reading-time.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-textarea.json',
     ],
     files: [
       {
@@ -10930,10 +11040,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-form-use-sanitize-content',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-textarea',
+      'https://www.spaceui.one/r/hooks-form-use-sanitize-content.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-textarea.json',
     ],
     files: [
       {
@@ -10967,10 +11077,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-lifecycle-use-confirm-exit',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-lifecycle-use-confirm-exit.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -11004,10 +11114,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-lifecycle-use-debounce',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/hooks-lifecycle-use-debounce.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -11041,10 +11151,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-lifecycle-use-debounce',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/hooks-lifecycle-use-debounce.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -11078,11 +11188,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-lifecycle-use-event-callback',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/hooks-lifecycle-use-event-callback.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -11116,10 +11226,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-lifecycle-use-first-render',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-lifecycle-use-first-render.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -11153,9 +11263,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-lifecycle-use-first-visit',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-lifecycle-use-first-visit.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -11189,10 +11299,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-lifecycle-use-hold',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-lifecycle-use-hold.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -11226,9 +11336,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-lifecycle-use-idle',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-lifecycle-use-idle.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -11262,10 +11372,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-lifecycle-use-interval',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-lifecycle-use-interval.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -11299,10 +11409,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-lifecycle-use-interval',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-lifecycle-use-interval.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -11336,9 +11446,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-lifecycle-use-is-mounted',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-lifecycle-use-is-mounted.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -11372,9 +11482,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-lifecycle-use-isomorphic-layout-effect',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-lifecycle-use-isomorphic-layout-effect.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -11409,10 +11519,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-lifecycle-use-leave-detection',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-lifecycle-use-leave-detection.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -11446,9 +11556,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-lifecycle-use-performance-mode',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-lifecycle-use-performance-mode.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -11482,9 +11592,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-lifecycle-use-single-effect',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-lifecycle-use-single-effect.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -11518,10 +11628,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-lifecycle-use-toggle',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-switch',
+      'https://www.spaceui.one/r/hooks-lifecycle-use-toggle.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-switch.json',
     ],
     files: [
       {
@@ -11555,10 +11665,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-lifecycle-use-update-effect',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-lifecycle-use-update-effect.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -11592,10 +11702,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-lifecycle-use-urgent-update',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-lifecycle-use-urgent-update.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -11629,10 +11739,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-utils-cache',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-utils-cache.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -11666,10 +11776,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-utils-cookie',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-utils-cookie.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -11703,9 +11813,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-utils-event',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-utils-event.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -11739,10 +11849,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-utils-format-bytes',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/hooks-utils-format-bytes.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -11775,7 +11885,7 @@ export const index: Record<string, any> = {
     type: 'registry:hook',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/hooks-utils-format-bytes'],
+    registryDependencies: ['https://www.spaceui.one/r/hooks-utils-format-bytes.json'],
     files: [
       {
         path: 'src/registry/demo/hooks/utils/format-bytes/h-format-bytes-02/index.tsx',
@@ -11808,10 +11918,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-utils-format-content',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/hooks-utils-format-content.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -11845,9 +11955,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-utils-format-date',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-utils-format-date.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -11881,10 +11991,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-utils-format-text',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/hooks-utils-format-text.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -11918,10 +12028,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-utils-is-negative',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/hooks-utils-is-negative.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -11955,10 +12065,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-utils-logger',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-utils-logger.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -11992,9 +12102,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-utils-range-map',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-utils-range-map.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -12027,7 +12137,7 @@ export const index: Record<string, any> = {
     type: 'registry:hook',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/hooks-utils-range-map'],
+    registryDependencies: ['https://www.spaceui.one/r/hooks-utils-range-map.json'],
     files: [
       {
         path: 'src/registry/demo/hooks/utils/range-map/h-range-map-02/index.tsx',
@@ -12060,10 +12170,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-utils-sleep',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
+      'https://www.spaceui.one/r/hooks-utils-sleep.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
     ],
     files: [
       {
@@ -12096,7 +12206,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-accordion'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-accordion.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/accordion/p-accordion-01/index.tsx',
@@ -12128,7 +12238,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-accordion'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-accordion.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/accordion/p-accordion-02/index.tsx',
@@ -12160,7 +12270,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-accordion'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-accordion.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/accordion/p-accordion-03/index.tsx',
@@ -12192,7 +12302,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-alert'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-alert.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/alert/p-alert-01/index.tsx',
@@ -12224,7 +12334,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-alert'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-alert.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/alert/p-alert-02/index.tsx',
@@ -12256,7 +12366,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-alert', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-alert.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/alert/p-alert-03/index.tsx',
@@ -12288,7 +12401,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-alert', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-alert.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/alert/p-alert-04/index.tsx',
@@ -12320,7 +12436,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-alert-dialog', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-alert-dialog.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/alert-dialog/p-alert-dialog-01/index.tsx',
@@ -12352,7 +12471,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-alert-dialog', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-alert-dialog.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/alert-dialog/p-alert-dialog-02/index.tsx',
@@ -12384,7 +12506,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-aspect-ratio'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-aspect-ratio.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/aspect-ratio/p-aspect-ratio-01/index.tsx',
@@ -12416,7 +12538,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-aspect-ratio'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-aspect-ratio.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/aspect-ratio/p-aspect-ratio-02/index.tsx',
@@ -12448,7 +12570,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-aspect-ratio'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-aspect-ratio.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/aspect-ratio/p-aspect-ratio-03/index.tsx',
@@ -12480,7 +12602,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-aspect-ratio'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-aspect-ratio.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/aspect-ratio/p-aspect-ratio-04/index.tsx',
@@ -12512,7 +12634,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-aspect-ratio'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-aspect-ratio.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/aspect-ratio/p-aspect-ratio-05/index.tsx',
@@ -12544,7 +12666,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-aspect-ratio'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-aspect-ratio.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/aspect-ratio/p-aspect-ratio-06/index.tsx',
@@ -12576,7 +12698,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-aspect-ratio'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-aspect-ratio.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/aspect-ratio/p-aspect-ratio-07/index.tsx',
@@ -12608,7 +12730,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-aspect-ratio'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-aspect-ratio.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/aspect-ratio/p-aspect-ratio-08/index.tsx',
@@ -12640,7 +12762,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-autocomplete'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-autocomplete.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/autocomplete/p-autocomplete-01/index.tsx',
@@ -12672,7 +12794,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-autocomplete'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-autocomplete.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/autocomplete/p-autocomplete-02/index.tsx',
@@ -12704,7 +12826,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-autocomplete'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-autocomplete.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/autocomplete/p-autocomplete-03/index.tsx',
@@ -12736,7 +12858,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-autocomplete', '@usespaceui/primitives-label'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-autocomplete.json',
+      'https://www.spaceui.one/r/primitives-label.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/autocomplete/p-autocomplete-04/index.tsx',
@@ -12768,7 +12893,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-autocomplete'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-autocomplete.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/autocomplete/p-autocomplete-05/index.tsx',
@@ -12800,7 +12925,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-autocomplete'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-autocomplete.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/autocomplete/p-autocomplete-06/index.tsx',
@@ -12832,7 +12957,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-autocomplete'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-autocomplete.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/autocomplete/p-autocomplete-07/index.tsx',
@@ -12864,7 +12989,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-autocomplete'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-autocomplete.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/autocomplete/p-autocomplete-08/index.tsx',
@@ -12896,7 +13021,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-autocomplete'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-autocomplete.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/autocomplete/p-autocomplete-09/index.tsx',
@@ -12928,7 +13053,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-autocomplete'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-autocomplete.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/autocomplete/p-autocomplete-10/index.tsx',
@@ -12960,7 +13085,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-autocomplete', '@usespaceui/primitives-spinner'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-autocomplete.json',
+      'https://www.spaceui.one/r/primitives-spinner.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/autocomplete/p-autocomplete-11/index.tsx',
@@ -12993,10 +13121,10 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-autocomplete',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
+      'https://www.spaceui.one/r/primitives-autocomplete.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
     ],
     files: [
       {
@@ -13029,7 +13157,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-autocomplete'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-autocomplete.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/autocomplete/p-autocomplete-13/index.tsx',
@@ -13061,7 +13189,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-autocomplete'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-autocomplete.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/autocomplete/p-autocomplete-14/index.tsx',
@@ -13093,7 +13221,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-autocomplete', '@usespaceui/primitives-spinner'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-autocomplete.json',
+      'https://www.spaceui.one/r/primitives-spinner.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/autocomplete/p-autocomplete-15/index.tsx',
@@ -13125,7 +13256,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-avatar'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-avatar.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/avatar/p-avatar-01/index.tsx',
@@ -13157,7 +13288,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-avatar'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-avatar.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/avatar/p-avatar-02/index.tsx',
@@ -13189,7 +13320,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-avatar-extended', '@usespaceui/primitives-avatar'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-avatar-extended.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/avatar/p-avatar-03/index.tsx',
@@ -13221,7 +13355,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-avatar'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-avatar.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/avatar/p-avatar-04/index.tsx',
@@ -13253,7 +13387,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-avatar-extended', '@usespaceui/primitives-avatar'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-avatar-extended.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/avatar/p-avatar-05/index.tsx',
@@ -13285,7 +13422,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-avatar-extended', '@usespaceui/primitives-avatar'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-avatar-extended.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/avatar/p-avatar-06/index.tsx',
@@ -13317,7 +13457,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-avatar-group', '@usespaceui/primitives-avatar'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-avatar-group.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/avatar/p-avatar-07/index.tsx',
@@ -13349,7 +13492,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-avatar-extended', '@usespaceui/primitives-avatar'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-avatar-extended.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/avatar/p-avatar-08/index.tsx',
@@ -13381,7 +13527,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-avatar-group', '@usespaceui/primitives-avatar'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/components-spaceui-avatar-group.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/avatar/p-avatar-09/index.tsx',
@@ -13413,7 +13562,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-badge'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-badge.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/badge/p-badge-01/index.tsx',
@@ -13445,7 +13594,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-badge'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-badge.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/badge/p-badge-02/index.tsx',
@@ -13477,7 +13626,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-badge'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-badge.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/badge/p-badge-03/index.tsx',
@@ -13509,7 +13658,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-badge'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-badge.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/badge/p-badge-04/index.tsx',
@@ -13541,7 +13690,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-badge'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-badge.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/badge/p-badge-05/index.tsx',
@@ -13573,7 +13722,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-badge'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-badge.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/badge/p-badge-06/index.tsx',
@@ -13605,7 +13754,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-badge'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-badge.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/badge/p-badge-07/index.tsx',
@@ -13637,7 +13786,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-badge'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-badge.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/badge/p-badge-08/index.tsx',
@@ -13669,7 +13818,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-badge'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-badge.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/badge/p-badge-09/index.tsx',
@@ -13702,9 +13851,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-breadcrumb',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-menu',
+      'https://www.spaceui.one/r/primitives-breadcrumb.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
     ],
     files: [
       {
@@ -13737,7 +13886,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-breadcrumb'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-breadcrumb.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/breadcrumb/p-breadcrumb-02/index.tsx',
@@ -13769,7 +13918,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-breadcrumb'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-breadcrumb.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/breadcrumb/p-breadcrumb-03/index.tsx',
@@ -13802,9 +13951,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-breadcrumb',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-menu',
+      'https://www.spaceui.one/r/primitives-breadcrumb.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
     ],
     files: [
       {
@@ -13837,7 +13986,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-breadcrumb'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-breadcrumb.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/breadcrumb/p-breadcrumb-05/index.tsx',
@@ -13869,7 +14018,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-breadcrumb'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-breadcrumb.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/breadcrumb/p-breadcrumb-06/index.tsx',
@@ -13901,7 +14050,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-breadcrumb', '@usespaceui/primitives-select'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-breadcrumb.json',
+      'https://www.spaceui.one/r/primitives-select.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/breadcrumb/p-breadcrumb-07/index.tsx',
@@ -13933,7 +14085,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-button.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-01/index.tsx',
@@ -13965,7 +14117,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-button.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-02/index.tsx',
@@ -13997,7 +14149,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-button.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-03/index.tsx',
@@ -14029,7 +14181,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-button.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-04/index.tsx',
@@ -14061,7 +14213,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-button.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-05/index.tsx',
@@ -14093,7 +14245,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-button.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-06/index.tsx',
@@ -14125,7 +14277,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-spinner'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-spinner.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-07/index.tsx',
@@ -14157,7 +14312,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-button.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-08/index.tsx',
@@ -14189,7 +14344,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-button.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-09/index.tsx',
@@ -14221,7 +14376,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-button.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-10/index.tsx',
@@ -14253,7 +14408,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-button.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-11/index.tsx',
@@ -14285,7 +14440,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-button.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-12/index.tsx',
@@ -14317,7 +14472,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-button.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-13/index.tsx',
@@ -14349,7 +14504,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-button.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-14/index.tsx',
@@ -14381,7 +14536,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-group'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-15/index.tsx',
@@ -14413,7 +14571,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-avatar', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-16/index.tsx',
@@ -14445,7 +14606,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-button.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-17/index.tsx',
@@ -14477,7 +14638,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-button.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-18/index.tsx',
@@ -14509,7 +14670,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-kbd'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-kbd.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-19/index.tsx',
@@ -14541,7 +14705,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-badge', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-20/index.tsx',
@@ -14573,7 +14740,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-button.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-21/index.tsx',
@@ -14605,7 +14772,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-button.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-22/index.tsx',
@@ -14637,7 +14804,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/hooks-browser-use-clipboard', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/hooks-browser-use-clipboard.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-23/index.tsx',
@@ -14669,7 +14839,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/hooks-browser-use-clipboard', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/hooks-browser-use-clipboard.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-24/index.tsx',
@@ -14701,7 +14874,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-button.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-25/index.tsx',
@@ -14733,7 +14906,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-button.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-26/index.tsx',
@@ -14765,7 +14938,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-button.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-27/index.tsx',
@@ -14798,11 +14971,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-spinner',
-      '@usespaceui/primitives-toast',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-spinner.json',
+      'https://www.spaceui.one/r/primitives-toast.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -14835,7 +15008,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/hooks-utils-sleep', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/hooks-utils-sleep.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/button/p-button-29/index.tsx',
@@ -14867,7 +15043,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-calendar'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-calendar.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/calendar/p-calendar-01/index.tsx',
@@ -14899,7 +15075,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-calendar'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-calendar.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/calendar/p-calendar-02/index.tsx',
@@ -14931,7 +15107,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@daypicker/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-calendar'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-calendar.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/calendar/p-calendar-03/index.tsx',
@@ -14963,7 +15139,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-calendar'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-calendar.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/calendar/p-calendar-04/index.tsx',
@@ -14995,7 +15171,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@daypicker/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-calendar', '@usespaceui/primitives-select'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-calendar.json',
+      'https://www.spaceui.one/r/primitives-select.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/calendar/p-calendar-05/index.tsx',
@@ -15027,7 +15206,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@daypicker/react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-calendar', '@usespaceui/primitives-combobox'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-calendar.json',
+      'https://www.spaceui.one/r/primitives-combobox.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/calendar/p-calendar-06/index.tsx',
@@ -15059,7 +15241,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['date-fns'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-calendar'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-calendar.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/calendar/p-calendar-07/index.tsx',
@@ -15091,7 +15273,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['date-fns'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-calendar'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-calendar.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/calendar/p-calendar-08/index.tsx',
@@ -15123,7 +15305,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-calendar'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-calendar.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/calendar/p-calendar-09/index.tsx',
@@ -15155,7 +15337,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@daypicker/react', 'date-fns'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-calendar'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-calendar.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/calendar/p-calendar-10/index.tsx',
@@ -15187,7 +15369,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-calendar'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-calendar.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/calendar/p-calendar-11/index.tsx',
@@ -15219,7 +15401,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@daypicker/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-calendar'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-calendar.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/calendar/p-calendar-12/index.tsx',
@@ -15251,7 +15433,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@daypicker/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-calendar', '@usespaceui/primitives-combobox'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-calendar.json',
+      'https://www.spaceui.one/r/primitives-combobox.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/calendar/p-calendar-13/index.tsx',
@@ -15283,7 +15468,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@daypicker/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-calendar', '@usespaceui/primitives-select'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-calendar.json',
+      'https://www.spaceui.one/r/primitives-select.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/calendar/p-calendar-14/index.tsx',
@@ -15315,7 +15503,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['date-fns'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-calendar'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-calendar.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/calendar/p-calendar-15/index.tsx',
@@ -15347,7 +15538,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['date-fns'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-calendar'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-calendar.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/calendar/p-calendar-16/index.tsx',
@@ -15380,9 +15574,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'date-fns', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-calendar',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-input-group',
+      'https://www.spaceui.one/r/primitives-calendar.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
     ],
     files: [
       {
@@ -15416,9 +15610,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-calendar',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-input-group',
+      'https://www.spaceui.one/r/primitives-calendar.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
     ],
     files: [
       {
@@ -15452,10 +15646,10 @@ export const index: Record<string, any> = {
     dependencies: ['date-fns'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-calendar',
-      '@usespaceui/primitives-scroll-area',
-      '@usespaceui/primitives-toggle',
-      '@usespaceui/primitives-toggle-group',
+      'https://www.spaceui.one/r/primitives-calendar.json',
+      'https://www.spaceui.one/r/primitives-scroll-area.json',
+      'https://www.spaceui.one/r/primitives-toggle.json',
+      'https://www.spaceui.one/r/primitives-toggle-group.json',
     ],
     files: [
       {
@@ -15488,7 +15682,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['date-fns'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-calendar'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-calendar.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/calendar/p-calendar-20/index.tsx',
@@ -15520,7 +15717,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@daypicker/react', 'date-fns'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-calendar'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-calendar.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/calendar/p-calendar-21/index.tsx',
@@ -15552,7 +15752,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@daypicker/react', 'date-fns'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-calendar'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-calendar.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/calendar/p-calendar-22/index.tsx',
@@ -15584,7 +15784,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@daypicker/react', 'date-fns'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-calendar'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-calendar.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/calendar/p-calendar-23/index.tsx',
@@ -15616,7 +15816,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@daypicker/react', 'date-fns'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils', '@usespaceui/primitives-calendar'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-calendar.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/calendar/p-calendar-24/index.tsx',
@@ -15649,9 +15852,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'date-fns', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-autocomplete',
-      '@usespaceui/primitives-calendar',
-      '@usespaceui/primitives-field',
+      'https://www.spaceui.one/r/primitives-autocomplete.json',
+      'https://www.spaceui.one/r/primitives-calendar.json',
+      'https://www.spaceui.one/r/primitives-field.json',
     ],
     files: [
       {
@@ -15685,12 +15888,12 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-select',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-select.json',
     ],
     files: [
       {
@@ -15724,11 +15927,11 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -15762,11 +15965,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -15800,12 +16003,12 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-select',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-select.json',
     ],
     files: [
       {
@@ -15839,12 +16042,12 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-select',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-select.json',
     ],
     files: [
       {
@@ -15878,12 +16081,12 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-select',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-select.json',
     ],
     files: [
       {
@@ -15917,12 +16120,12 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-select',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-select.json',
     ],
     files: [
       {
@@ -15956,13 +16159,13 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-frame',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-select',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-frame.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-select.json',
     ],
     files: [
       {
@@ -15996,13 +16199,13 @@ export const index: Record<string, any> = {
     dependencies: ['lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-frame',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-select',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-frame.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-select.json',
     ],
     files: [
       {
@@ -16036,13 +16239,13 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-frame',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-select',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-frame.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-select.json',
     ],
     files: [
       {
@@ -16076,9 +16279,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-empty',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-empty.json',
     ],
     files: [
       {
@@ -16111,7 +16314,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-checkbox', '@usespaceui/primitives-label'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-checkbox.json',
+      'https://www.spaceui.one/r/primitives-label.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/checkbox/p-checkbox-01/index.tsx',
@@ -16143,7 +16349,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-checkbox'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-checkbox.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/checkbox/p-checkbox-02/index.tsx',
@@ -16175,7 +16381,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-checkbox', '@usespaceui/primitives-label'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-checkbox.json',
+      'https://www.spaceui.one/r/primitives-label.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/checkbox/p-checkbox-03/index.tsx',
@@ -16208,10 +16417,10 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-checkbox',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-checkbox.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
     ],
     files: [
       {
@@ -16245,9 +16454,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-checkbox',
-      '@usespaceui/primitives-checkbox-group',
-      '@usespaceui/primitives-label',
+      'https://www.spaceui.one/r/primitives-checkbox.json',
+      'https://www.spaceui.one/r/primitives-checkbox-group.json',
+      'https://www.spaceui.one/r/primitives-label.json',
     ],
     files: [
       {
@@ -16281,9 +16490,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-checkbox',
-      '@usespaceui/primitives-checkbox-group',
-      '@usespaceui/primitives-label',
+      'https://www.spaceui.one/r/primitives-checkbox.json',
+      'https://www.spaceui.one/r/primitives-checkbox-group.json',
+      'https://www.spaceui.one/r/primitives-label.json',
     ],
     files: [
       {
@@ -16317,9 +16526,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-checkbox',
-      '@usespaceui/primitives-checkbox-group',
-      '@usespaceui/primitives-label',
+      'https://www.spaceui.one/r/primitives-checkbox.json',
+      'https://www.spaceui.one/r/primitives-checkbox-group.json',
+      'https://www.spaceui.one/r/primitives-label.json',
     ],
     files: [
       {
@@ -16353,9 +16562,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-checkbox',
-      '@usespaceui/primitives-checkbox-group',
-      '@usespaceui/primitives-label',
+      'https://www.spaceui.one/r/primitives-checkbox.json',
+      'https://www.spaceui.one/r/primitives-checkbox-group.json',
+      'https://www.spaceui.one/r/primitives-label.json',
     ],
     files: [
       {
@@ -16389,12 +16598,12 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-checkbox',
-      '@usespaceui/primitives-checkbox-group',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-fieldset',
-      '@usespaceui/primitives-form',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-checkbox.json',
+      'https://www.spaceui.one/r/primitives-checkbox-group.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-fieldset.json',
+      'https://www.spaceui.one/r/primitives-form.json',
     ],
     files: [
       {
@@ -16427,7 +16636,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-collapsible'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-collapsible.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/collapsible/p-collapsible-01/index.tsx',
@@ -16459,7 +16668,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-combobox'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-combobox.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/combobox/p-combobox-01/index.tsx',
@@ -16491,7 +16700,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-combobox'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-combobox.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/combobox/p-combobox-02/index.tsx',
@@ -16523,7 +16732,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-combobox'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-combobox.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/combobox/p-combobox-03/index.tsx',
@@ -16555,7 +16764,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-combobox', '@usespaceui/primitives-label'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-combobox.json',
+      'https://www.spaceui.one/r/primitives-label.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/combobox/p-combobox-04/index.tsx',
@@ -16587,7 +16799,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-combobox'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-combobox.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/combobox/p-combobox-05/index.tsx',
@@ -16619,7 +16831,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-combobox'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-combobox.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/combobox/p-combobox-06/index.tsx',
@@ -16651,7 +16863,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-combobox'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-combobox.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/combobox/p-combobox-07/index.tsx',
@@ -16683,7 +16895,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-combobox'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-combobox.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/combobox/p-combobox-08/index.tsx',
@@ -16715,7 +16927,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-combobox'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-combobox.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/combobox/p-combobox-09/index.tsx',
@@ -16748,10 +16963,10 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-combobox',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-combobox.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
     ],
     files: [
       {
@@ -16785,10 +17000,10 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-combobox',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-combobox.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
     ],
     files: [
       {
@@ -16821,7 +17036,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-combobox'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-combobox.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/combobox/p-combobox-12/index.tsx',
@@ -16853,7 +17068,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-combobox'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-combobox.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/combobox/p-combobox-13/index.tsx',
@@ -16885,7 +17100,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-combobox'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-combobox.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/combobox/p-combobox-14/index.tsx',
@@ -16917,7 +17132,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-combobox'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-combobox.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/combobox/p-combobox-15/index.tsx',
@@ -16949,7 +17164,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-combobox', '@usespaceui/primitives-select'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-combobox.json',
+      'https://www.spaceui.one/r/primitives-select.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/combobox/p-combobox-16/index.tsx',
@@ -16981,7 +17199,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-combobox', '@usespaceui/primitives-select'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-combobox.json',
+      'https://www.spaceui.one/r/primitives-select.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/combobox/p-combobox-17/index.tsx',
@@ -17014,10 +17235,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-combobox',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-combobox.json',
     ],
     files: [
       {
@@ -17051,10 +17272,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-combobox',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-combobox.json',
     ],
     files: [
       {
@@ -17088,10 +17309,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-dom-use-event-listener',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-command',
-      '@usespaceui/primitives-kbd',
+      'https://www.spaceui.one/r/hooks-dom-use-event-listener.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-command.json',
+      'https://www.spaceui.one/r/primitives-kbd.json',
     ],
     files: [
       {
@@ -17125,15 +17346,15 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-autocomplete',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-command',
-      '@usespaceui/primitives-empty',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-kbd',
-      '@usespaceui/primitives-scroll-area',
-      '@usespaceui/primitives-skeleton',
-      '@usespaceui/primitives-spinner',
+      'https://www.spaceui.one/r/primitives-autocomplete.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-command.json',
+      'https://www.spaceui.one/r/primitives-empty.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-kbd.json',
+      'https://www.spaceui.one/r/primitives-scroll-area.json',
+      'https://www.spaceui.one/r/primitives-skeleton.json',
+      'https://www.spaceui.one/r/primitives-spinner.json',
     ],
     files: [
       {
@@ -17166,7 +17387,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-context-menu'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-context-menu.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/context-menu/p-context-menu-01/index.tsx',
@@ -17198,7 +17419,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-context-menu'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-context-menu.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/context-menu/p-context-menu-02/index.tsx',
@@ -17230,7 +17451,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-context-menu'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-context-menu.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/context-menu/p-context-menu-03/index.tsx',
@@ -17262,7 +17483,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-context-menu'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-context-menu.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/context-menu/p-context-menu-04/index.tsx',
@@ -17294,7 +17515,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-context-menu'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-context-menu.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/context-menu/p-context-menu-05/index.tsx',
@@ -17326,7 +17547,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-context-menu'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-context-menu.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/context-menu/p-context-menu-06/index.tsx',
@@ -17358,7 +17579,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-context-menu'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-context-menu.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/context-menu/p-context-menu-07/index.tsx',
@@ -17390,7 +17611,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-context-menu'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-context-menu.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/context-menu/p-context-menu-08/index.tsx',
@@ -17423,9 +17644,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'date-fns', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-calendar',
-      '@usespaceui/primitives-popover',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-calendar.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
     ],
     files: [
       {
@@ -17459,9 +17680,9 @@ export const index: Record<string, any> = {
     dependencies: ['@daypicker/react', '@tabler/icons-react', 'date-fns', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-calendar',
-      '@usespaceui/primitives-popover',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-calendar.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
     ],
     files: [
       {
@@ -17495,11 +17716,11 @@ export const index: Record<string, any> = {
     dependencies: ['@daypicker/react', '@tabler/icons-react', 'date-fns', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-calendar',
-      '@usespaceui/primitives-combobox',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-popover',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-calendar.json',
+      'https://www.spaceui.one/r/primitives-combobox.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
     ],
     files: [
       {
@@ -17533,9 +17754,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'date-fns', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-calendar',
-      '@usespaceui/primitives-popover',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-calendar.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
     ],
     files: [
       {
@@ -17569,10 +17790,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'date-fns', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-calendar',
-      '@usespaceui/primitives-input-group',
-      '@usespaceui/primitives-popover',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-calendar.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
     ],
     files: [
       {
@@ -17606,9 +17827,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'date-fns', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-calendar',
-      '@usespaceui/primitives-popover',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-calendar.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
     ],
     files: [
       {
@@ -17642,10 +17863,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'date-fns', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-calendar',
-      '@usespaceui/primitives-popover',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-calendar.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
     ],
     files: [
       {
@@ -17679,9 +17900,9 @@ export const index: Record<string, any> = {
     dependencies: ['date-fns', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-calendar',
-      '@usespaceui/primitives-popover',
-      '@usespaceui/primitives-select',
+      'https://www.spaceui.one/r/primitives-calendar.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
+      'https://www.spaceui.one/r/primitives-select.json',
     ],
     files: [
       {
@@ -17715,9 +17936,9 @@ export const index: Record<string, any> = {
     dependencies: ['@daypicker/react', '@tabler/icons-react', 'date-fns', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-calendar',
-      '@usespaceui/primitives-popover',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-calendar.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
     ],
     files: [
       {
@@ -17751,11 +17972,11 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-dialog',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-dialog.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -17789,9 +18010,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-dialog',
-      '@usespaceui/primitives-menu',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-dialog.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
     ],
     files: [
       {
@@ -17825,10 +18046,10 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-dialog',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-dialog.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -17862,12 +18083,12 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-alert-dialog',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-dialog',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-textarea',
+      'https://www.spaceui.one/r/primitives-alert-dialog.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-dialog.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-textarea.json',
     ],
     files: [
       {
@@ -17900,7 +18121,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-dialog'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-dialog.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/dialog/p-dialog-05/index.tsx',
@@ -17933,11 +18157,11 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-dialog',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-dialog.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -17970,7 +18194,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-drawer'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-drawer.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/drawer/p-drawer-01/index.tsx',
@@ -18002,7 +18229,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-drawer'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-drawer.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/drawer/p-drawer-02/index.tsx',
@@ -18034,7 +18264,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-drawer'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-drawer.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/drawer/p-drawer-03/index.tsx',
@@ -18066,7 +18299,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-drawer'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-drawer.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/drawer/p-drawer-04/index.tsx',
@@ -18098,7 +18334,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-drawer'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-drawer.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/drawer/p-drawer-05/index.tsx',
@@ -18130,7 +18369,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-drawer'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-drawer.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/drawer/p-drawer-06/index.tsx',
@@ -18162,7 +18404,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-drawer'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-drawer.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/drawer/p-drawer-07/index.tsx',
@@ -18195,10 +18440,10 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-drawer',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-drawer.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -18231,7 +18476,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-drawer'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-drawer.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/drawer/p-drawer-09/index.tsx',
@@ -18264,11 +18512,11 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-drawer',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-drawer.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -18301,7 +18549,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-drawer'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-drawer.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/drawer/p-drawer-11/index.tsx',
@@ -18334,13 +18585,13 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-media-query',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-dialog',
-      '@usespaceui/primitives-drawer',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/hooks-browser-use-media-query.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-dialog.json',
+      'https://www.spaceui.one/r/primitives-drawer.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -18374,10 +18625,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-media-query',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-drawer',
-      '@usespaceui/primitives-menu',
+      'https://www.spaceui.one/r/hooks-browser-use-media-query.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-drawer.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
     ],
     files: [
       {
@@ -18410,7 +18661,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-drawer'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-drawer.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/drawer/p-drawer-14/index.tsx',
@@ -18442,7 +18696,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-empty'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-empty.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/empty/p-empty-01/index.tsx',
@@ -18474,7 +18731,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-field', '@usespaceui/primitives-input'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/field/p-field-01/index.tsx',
@@ -18506,7 +18766,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-field', '@usespaceui/primitives-input'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/field/p-field-02/index.tsx',
@@ -18538,7 +18801,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-field', '@usespaceui/primitives-input'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/field/p-field-03/index.tsx',
@@ -18570,7 +18836,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-field', '@usespaceui/primitives-input'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/field/p-field-04/index.tsx',
@@ -18602,7 +18871,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-field', '@usespaceui/primitives-input'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/field/p-field-05/index.tsx',
@@ -18635,9 +18907,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-input-group',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
     ],
     files: [
       {
@@ -18670,7 +18942,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-autocomplete', '@usespaceui/primitives-field'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-autocomplete.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/field/p-field-07/index.tsx',
@@ -18702,7 +18977,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-combobox', '@usespaceui/primitives-field'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-combobox.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/field/p-field-08/index.tsx',
@@ -18734,7 +19012,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-combobox', '@usespaceui/primitives-field'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-combobox.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/field/p-field-09/index.tsx',
@@ -18766,7 +19047,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-field', '@usespaceui/primitives-textarea'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-textarea.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/field/p-field-10/index.tsx',
@@ -18798,7 +19082,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-field', '@usespaceui/primitives-select'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-select.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/field/p-field-11/index.tsx',
@@ -18830,7 +19117,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-checkbox', '@usespaceui/primitives-field'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-checkbox.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/field/p-field-12/index.tsx',
@@ -18863,10 +19153,10 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-checkbox',
-      '@usespaceui/primitives-checkbox-group',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-fieldset',
+      'https://www.spaceui.one/r/primitives-checkbox.json',
+      'https://www.spaceui.one/r/primitives-checkbox-group.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-fieldset.json',
     ],
     files: [
       {
@@ -18900,9 +19190,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-fieldset',
-      '@usespaceui/primitives-radio-group',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-fieldset.json',
+      'https://www.spaceui.one/r/primitives-radio-group.json',
     ],
     files: [
       {
@@ -18935,7 +19225,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-field', '@usespaceui/primitives-switch'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-switch.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/field/p-field-15/index.tsx',
@@ -18967,7 +19260,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-field', '@usespaceui/primitives-slider'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-slider.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/field/p-field-16/index.tsx',
@@ -18999,7 +19295,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-field', '@usespaceui/primitives-number-field'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-number-field.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/field/p-field-17/index.tsx',
@@ -19032,12 +19331,12 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-checkbox',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-select',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-checkbox.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-select.json',
     ],
     files: [
       {
@@ -19071,9 +19370,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-fieldset',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-fieldset.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -19107,10 +19406,10 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -19144,10 +19443,10 @@ export const index: Record<string, any> = {
     dependencies: ['zod', 'zod-v4'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -19180,7 +19479,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-frame'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-frame.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/frame/p-frame-01/index.tsx',
@@ -19213,9 +19512,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-collapsible',
-      '@usespaceui/primitives-frame',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-collapsible.json',
+      'https://www.spaceui.one/r/primitives-frame.json',
     ],
     files: [
       {
@@ -19248,7 +19547,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-frame'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-frame.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/frame/p-frame-03/index.tsx',
@@ -19280,7 +19579,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-frame', '@usespaceui/primitives-separator'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-frame.json',
+      'https://www.spaceui.one/r/primitives-separator.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/frame/p-frame-04/index.tsx',
@@ -19313,9 +19615,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-menu',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
     ],
     files: [
       {
@@ -19349,11 +19651,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-clipboard',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/hooks-browser-use-clipboard.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -19387,9 +19689,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-menu',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
     ],
     files: [
       {
@@ -19423,9 +19725,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-menu',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
     ],
     files: [
       {
@@ -19459,9 +19761,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-menu',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
     ],
     files: [
       {
@@ -19495,9 +19797,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-menu',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
     ],
     files: [
       {
@@ -19531,9 +19833,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-label',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-label.json',
     ],
     files: [
       {
@@ -19567,9 +19869,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-label',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-label.json',
     ],
     files: [
       {
@@ -19602,7 +19904,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-group'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/group/p-group-09/index.tsx',
@@ -19634,7 +19939,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-group'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/group/p-group-10/index.tsx',
@@ -19667,10 +19975,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-popover',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
     ],
     files: [
       {
@@ -19704,10 +20012,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-input-group',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -19741,9 +20049,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-menu',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
     ],
     files: [
       {
@@ -19777,10 +20085,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-number-field',
-      '@usespaceui/primitives-select',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-number-field.json',
+      'https://www.spaceui.one/r/primitives-select.json',
     ],
     files: [
       {
@@ -19814,10 +20122,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-select',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-select.json',
     ],
     files: [
       {
@@ -19851,9 +20159,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -19887,9 +20195,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-label',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-label.json',
     ],
     files: [
       {
@@ -19923,9 +20231,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-select',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-select.json',
     ],
     files: [
       {
@@ -19959,9 +20267,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-select',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-select.json',
     ],
     files: [
       {
@@ -19995,9 +20303,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -20031,9 +20339,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-label',
-      '@usespaceui/primitives-number-field',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-label.json',
+      'https://www.spaceui.one/r/primitives-number-field.json',
     ],
     files: [
       {
@@ -20067,12 +20375,12 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-combobox',
-      '@usespaceui/primitives-group',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-combobox.json',
+      'https://www.spaceui.one/r/primitives-group.json',
     ],
     files: [
       {
@@ -20106,10 +20414,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-select',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-select.json',
     ],
     files: [
       {
@@ -20143,12 +20451,12 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-avatar-group',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-menu',
-      '@usespaceui/primitives-separator',
+      'https://www.spaceui.one/r/components-spaceui-avatar-group.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
+      'https://www.spaceui.one/r/primitives-separator.json',
     ],
     files: [
       {
@@ -20182,11 +20490,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -20220,10 +20528,10 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-select',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-select.json',
     ],
     files: [
       {
@@ -20256,7 +20564,11 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils', '@usespaceui/primitives-button', '@usespaceui/primitives-group'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/group/p-group-27/index.tsx',
@@ -20289,11 +20601,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/components-spaceui-avatar-group',
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-menu',
+      'https://www.spaceui.one/r/components-spaceui-avatar-group.json',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
     ],
     files: [
       {
@@ -20327,9 +20639,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-group',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
     ],
     files: [
       {
@@ -20362,7 +20674,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-input'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-input.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/input/p-input-01/index.tsx',
@@ -20394,7 +20706,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-input'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-input.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/input/p-input-02/index.tsx',
@@ -20426,7 +20738,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-input'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-input.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/input/p-input-03/index.tsx',
@@ -20458,7 +20770,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-input'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-input.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/input/p-input-04/index.tsx',
@@ -20490,7 +20802,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-input', '@usespaceui/primitives-label'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-label.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/input/p-input-05/index.tsx',
@@ -20523,9 +20838,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-input',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-input.json',
     ],
     files: [
       {
@@ -20559,9 +20874,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-input-group',
-      '@usespaceui/primitives-popover',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
     ],
     files: [
       {
@@ -20595,9 +20910,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-input-group',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -20631,9 +20946,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-input-group',
-      '@usespaceui/primitives-popover',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
     ],
     files: [
       {
@@ -20666,7 +20981,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-input-group', '@usespaceui/primitives-kbd'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-kbd.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/input/p-input-10/index.tsx',
@@ -20698,7 +21016,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-input-group', '@usespaceui/primitives-spinner'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-spinner.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/input/p-input-11/index.tsx',
@@ -20730,7 +21051,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-input', '@usespaceui/primitives-label'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-label.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/input/p-input-12/index.tsx',
@@ -20762,7 +21086,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-input', '@usespaceui/primitives-label'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-label.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/input/p-input-13/index.tsx',
@@ -20794,7 +21121,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-input'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-input.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/input/p-input-14/index.tsx',
@@ -20826,7 +21153,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-input-group', '@usespaceui/primitives-spinner'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-spinner.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/input/p-input-15/index.tsx',
@@ -20858,7 +21188,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-input'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-input.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/input/p-input-16/index.tsx',
@@ -20890,7 +21220,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-field', '@usespaceui/primitives-input'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/input/p-input-17/index.tsx',
@@ -20922,7 +21255,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-input'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-input.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/input/p-input-18/index.tsx',
@@ -20954,7 +21287,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-input-group'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-input-group.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/input-group/p-input-group-01/index.tsx',
@@ -20986,7 +21319,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-input-group'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-input-group.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/input-group/p-input-group-02/index.tsx',
@@ -21018,7 +21351,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-input-group'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-input-group.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/input-group/p-input-group-03/index.tsx',
@@ -21050,7 +21383,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-input-group'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-input-group.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/input-group/p-input-group-04/index.tsx',
@@ -21082,7 +21415,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-input-group'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-input-group.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/input-group/p-input-group-05/index.tsx',
@@ -21114,7 +21447,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-input-group', '@usespaceui/primitives-number-field'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-number-field.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/input-group/p-input-group-06/index.tsx',
@@ -21147,9 +21483,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-input-group',
-      '@usespaceui/primitives-popover',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
     ],
     files: [
       {
@@ -21183,10 +21519,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-clipboard',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-input-group',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/hooks-browser-use-clipboard.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -21219,7 +21555,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-input-group'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/input-group/p-input-group-09/index.tsx',
@@ -21251,7 +21590,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-badge', '@usespaceui/primitives-input-group'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/input-group/p-input-group-10/index.tsx',
@@ -21283,7 +21625,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-input-group', '@usespaceui/primitives-kbd'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-kbd.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/input-group/p-input-group-11/index.tsx',
@@ -21316,10 +21661,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-input-group',
-      '@usespaceui/primitives-label',
-      '@usespaceui/primitives-popover',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-label.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
     ],
     files: [
       {
@@ -21352,7 +21697,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-input-group'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-input-group.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/input-group/p-input-group-13/index.tsx',
@@ -21384,7 +21729,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-input-group'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-input-group.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/input-group/p-input-group-14/index.tsx',
@@ -21416,7 +21761,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-input-group'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/input-group/p-input-group-15/index.tsx',
@@ -21448,7 +21796,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-input-group', '@usespaceui/primitives-spinner'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-spinner.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/input-group/p-input-group-16/index.tsx',
@@ -21481,10 +21832,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-input-group',
-      '@usespaceui/primitives-menu',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -21518,10 +21869,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-input-group',
-      '@usespaceui/primitives-menu',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
     ],
     files: [
       {
@@ -21555,9 +21906,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-input-group',
-      '@usespaceui/primitives-toggle',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-toggle.json',
     ],
     files: [
       {
@@ -21590,7 +21941,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-input-group'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-input-group.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/input-group/p-input-group-20/index.tsx',
@@ -21623,9 +21974,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-input-group',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -21658,7 +22009,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-input-group'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/input-group/p-input-group-22/index.tsx',
@@ -21691,9 +22045,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-input-group',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -21726,7 +22080,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-input-group'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-input-group.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/input-group/p-input-group-24/index.tsx',
@@ -21759,9 +22113,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-input-group',
-      '@usespaceui/primitives-label',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-label.json',
     ],
     files: [
       {
@@ -21795,11 +22149,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-clipboard',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-input-group',
-      '@usespaceui/primitives-select',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/hooks-browser-use-clipboard.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-select.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -21833,9 +22187,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-input-group',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -21869,9 +22223,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-input-group',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -21904,7 +22258,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-kbd'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-kbd.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/kbd/p-kbd-01/index.tsx',
@@ -21936,7 +22290,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-link'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-link.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/link/p-link-01/index.tsx',
@@ -21968,7 +22322,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-link'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-link.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/link/p-link-03/index.tsx',
@@ -22000,7 +22354,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-link'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-link.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/link/p-link-05/index.tsx',
@@ -22032,7 +22386,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-link'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-link.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/link/p-link-07/index.tsx',
@@ -22064,7 +22418,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-segmented-control'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-segmented-control.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/link/p-navigation-02/index.tsx',
@@ -22096,7 +22450,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-segmented-control'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-segmented-control.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/link/p-navigation-04/index.tsx',
@@ -22128,7 +22482,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-segmented-control'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-segmented-control.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/link/p-navigation-06/index.tsx',
@@ -22160,7 +22514,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-menu'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/menu/p-menu-01/index.tsx',
@@ -22192,7 +22549,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-menu'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/menu/p-menu-02/index.tsx',
@@ -22224,7 +22584,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-menu'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/menu/p-menu-03/index.tsx',
@@ -22256,7 +22619,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-menu'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/menu/p-menu-04/index.tsx',
@@ -22288,7 +22654,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-menu'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/menu/p-menu-05/index.tsx',
@@ -22320,7 +22689,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-menu'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/menu/p-menu-06/index.tsx',
@@ -22352,7 +22724,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-menu'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/menu/p-menu-07/index.tsx',
@@ -22384,7 +22759,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-menu'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/menu/p-menu-08/index.tsx',
@@ -22416,7 +22794,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-menu'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/menu/p-menu-09/index.tsx',
@@ -22448,7 +22829,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-menubar'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-menubar.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/menubar/p-menubar-01/index.tsx',
@@ -22480,7 +22861,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-meter'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-meter.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/meter/p-meter-01/index.tsx',
@@ -22512,7 +22893,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-meter'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-meter.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/meter/p-meter-02/index.tsx',
@@ -22544,7 +22925,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-meter'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-meter.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/meter/p-meter-03/index.tsx',
@@ -22576,7 +22957,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-meter'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-meter.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/meter/p-meter-04/index.tsx',
@@ -22608,7 +22989,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react', '@tabler/icons-react', 'lucide-react', 'motion'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-navigation-menu'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-navigation-menu.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/navigation-menu/p-navigation-menu-01/index.tsx',
@@ -22640,7 +23021,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-number-field'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-number-field.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/number-field/p-number-field-01/index.tsx',
@@ -22672,7 +23053,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-number-field'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-number-field.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/number-field/p-number-field-02/index.tsx',
@@ -22704,7 +23085,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-number-field'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-number-field.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/number-field/p-number-field-03/index.tsx',
@@ -22736,7 +23117,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-number-field'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-number-field.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/number-field/p-number-field-04/index.tsx',
@@ -22768,7 +23149,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-label', '@usespaceui/primitives-number-field'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-label.json',
+      'https://www.spaceui.one/r/primitives-number-field.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/number-field/p-number-field-05/index.tsx',
@@ -22800,7 +23184,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-number-field'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-number-field.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/number-field/p-number-field-06/index.tsx',
@@ -22832,7 +23216,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-number-field'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-number-field.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/number-field/p-number-field-07/index.tsx',
@@ -22864,7 +23248,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-number-field'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-number-field.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/number-field/p-number-field-08/index.tsx',
@@ -22896,7 +23280,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-number-field'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-number-field.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/number-field/p-number-field-09/index.tsx',
@@ -22929,10 +23313,10 @@ export const index: Record<string, any> = {
     dependencies: ['zod', 'zod-v4'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-number-field',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-number-field.json',
     ],
     files: [
       {
@@ -22965,7 +23349,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-number-field'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-number-field.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/number-field/p-number-field-11/index.tsx',
@@ -22997,7 +23381,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-otp-field'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-otp-field.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/otp-field/p-otp-field-01/index.tsx',
@@ -23029,7 +23413,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-otp-field'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-otp-field.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/otp-field/p-otp-field-02/index.tsx',
@@ -23061,7 +23445,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-otp-field'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-otp-field.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/otp-field/p-otp-field-03/index.tsx',
@@ -23093,7 +23477,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-field', '@usespaceui/primitives-otp-field'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-otp-field.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/otp-field/p-otp-field-04/index.tsx',
@@ -23125,7 +23512,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-field', '@usespaceui/primitives-otp-field'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-otp-field.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/otp-field/p-otp-field-05/index.tsx',
@@ -23157,7 +23547,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-field', '@usespaceui/primitives-otp-field'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-otp-field.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/otp-field/p-otp-field-06/index.tsx',
@@ -23189,7 +23582,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-field', '@usespaceui/primitives-otp-field'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-otp-field.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/otp-field/p-otp-field-07/index.tsx',
@@ -23221,7 +23617,11 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils', '@usespaceui/primitives-field', '@usespaceui/primitives-otp-field'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-otp-field.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/otp-field/p-otp-field-08/index.tsx',
@@ -23253,7 +23653,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-field', '@usespaceui/primitives-otp-field'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-otp-field.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/otp-field/p-otp-field-09/index.tsx',
@@ -23285,7 +23688,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-preview-link-card'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-preview-link-card.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/p-preview-link-card-01/index.tsx',
@@ -23317,7 +23720,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-pagination'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-pagination.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/pagination/p-pagination-01/index.tsx',
@@ -23349,7 +23752,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-pagination'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-pagination.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/pagination/p-pagination-02/index.tsx',
@@ -23382,9 +23788,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-pagination',
-      '@usespaceui/primitives-select',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-pagination.json',
+      'https://www.spaceui.one/r/primitives-select.json',
     ],
     files: [
       {
@@ -23418,11 +23824,11 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-popover',
-      '@usespaceui/primitives-textarea',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
+      'https://www.spaceui.one/r/primitives-textarea.json',
     ],
     files: [
       {
@@ -23455,7 +23861,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-popover'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/popover/p-popover-02/index.tsx',
@@ -23488,9 +23897,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-popover',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
     ],
     files: [
       {
@@ -23524,13 +23933,13 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-checkbox',
-      '@usespaceui/primitives-checkbox-group',
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-label',
-      '@usespaceui/primitives-popover',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-checkbox.json',
+      'https://www.spaceui.one/r/primitives-checkbox-group.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-label.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
     ],
     files: [
       {
@@ -23563,7 +23972,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-preview-card'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-preview-card.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/preview-card/p-preview-card-01/index.tsx',
@@ -23595,7 +24007,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-progress'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-progress.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/progress/p-progress-01/index.tsx',
@@ -23627,7 +24039,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-progress'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-progress.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/progress/p-progress-02/index.tsx',
@@ -23659,7 +24071,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-progress'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-progress.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/progress/p-progress-03/index.tsx',
@@ -23691,7 +24103,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-label', '@usespaceui/primitives-radio-group'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-label.json',
+      'https://www.spaceui.one/r/primitives-radio-group.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/radio-group/p-radio-group-01/index.tsx',
@@ -23723,7 +24138,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-radio-group'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-radio-group.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/radio-group/p-radio-group-02/index.tsx',
@@ -23755,7 +24170,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-label', '@usespaceui/primitives-radio-group'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-label.json',
+      'https://www.spaceui.one/r/primitives-radio-group.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/radio-group/p-radio-group-03/index.tsx',
@@ -23788,11 +24206,11 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-fieldset',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-radio-group',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-fieldset.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-radio-group.json',
     ],
     files: [
       {
@@ -23826,9 +24244,9 @@ export const index: Record<string, any> = {
     dependencies: ['lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-fieldset',
-      '@usespaceui/primitives-radio-group',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-fieldset.json',
+      'https://www.spaceui.one/r/primitives-radio-group.json',
     ],
     files: [
       {
@@ -23861,7 +24279,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-segmented-control', '@usespaceui/primitives-radio-group'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-segmented-control.json',
+      'https://www.spaceui.one/r/primitives-radio-group.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/radio-group/p-radio-group-06/index.tsx',
@@ -23893,7 +24314,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-segmented-control', '@usespaceui/primitives-radio-group'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-segmented-control.json',
+      'https://www.spaceui.one/r/primitives-radio-group.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/radio-group/p-radio-group-07/index.tsx',
@@ -23925,7 +24349,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-segmented-control', '@usespaceui/primitives-radio-group'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-segmented-control.json',
+      'https://www.spaceui.one/r/primitives-radio-group.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/radio-group/p-radio-group-08/index.tsx',
@@ -23957,7 +24384,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-scroll-area'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-scroll-area.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/scroll-area/p-scroll-area-01/index.tsx',
@@ -23989,7 +24416,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-scroll-area'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-scroll-area.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/scroll-area/p-scroll-area-02/index.tsx',
@@ -24021,7 +24448,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-scroll-area'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-scroll-area.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/scroll-area/p-scroll-area-03/index.tsx',
@@ -24053,7 +24480,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-scroll-area'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-scroll-area.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/scroll-area/p-scroll-area-04/index.tsx',
@@ -24085,7 +24512,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-scroll-area'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-scroll-area.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/scroll-area/p-scroll-area-05/index.tsx',
@@ -24117,7 +24544,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-select'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-select.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/select/p-select-01/index.tsx',
@@ -24149,7 +24576,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-select'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-select.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/select/p-select-02/index.tsx',
@@ -24181,7 +24608,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-select'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-select.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/select/p-select-03/index.tsx',
@@ -24213,7 +24640,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-select'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-select.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/select/p-select-04/index.tsx',
@@ -24245,7 +24672,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-select'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-select.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/select/p-select-05/index.tsx',
@@ -24277,7 +24704,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-select'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-select.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/select/p-select-06/index.tsx',
@@ -24309,7 +24736,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-select'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-select.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/select/p-select-07/index.tsx',
@@ -24341,7 +24768,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-select'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-select.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/select/p-select-08/index.tsx',
@@ -24373,7 +24800,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-select'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-select.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/select/p-select-09/index.tsx',
@@ -24406,10 +24833,10 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-select',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-select.json',
     ],
     files: [
       {
@@ -24442,7 +24869,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-select'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-select.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/select/p-select-11/index.tsx',
@@ -24474,7 +24901,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-select'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-select.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/select/p-select-12/index.tsx',
@@ -24506,7 +24933,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-select'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-select.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/select/p-select-13/index.tsx',
@@ -24538,7 +24965,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-select'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-select.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/select/p-select-14/index.tsx',
@@ -24570,7 +24997,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-select'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-select.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/select/p-select-15/index.tsx',
@@ -24602,7 +25029,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-select'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-select.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/select/p-select-16/index.tsx',
@@ -24634,7 +25061,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-select'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-select.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/select/p-select-17/index.tsx',
@@ -24666,7 +25093,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-avatar', '@usespaceui/primitives-select'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-select.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/select/p-select-18/index.tsx',
@@ -24698,7 +25128,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-avatar', '@usespaceui/primitives-select'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-select.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/select/p-select-19/index.tsx',
@@ -24730,7 +25163,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-select'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-select.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/select/p-select-20/index.tsx',
@@ -24762,7 +25195,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-select'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-select.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/select/p-select-21/index.tsx',
@@ -24794,7 +25227,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-select'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-select.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/select/p-select-22/index.tsx',
@@ -24826,7 +25259,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-separator'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-separator.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/separator/p-separator-01/index.tsx',
@@ -24859,11 +25292,11 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-sheet',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-sheet.json',
     ],
     files: [
       {
@@ -24897,11 +25330,11 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-sheet',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-sheet.json',
     ],
     files: [
       {
@@ -24934,7 +25367,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-sheet'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-sheet.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/sheet/p-sheet-03/index.tsx',
@@ -24967,9 +25403,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-breadcrumb',
-      '@usespaceui/primitives-separator',
-      '@usespaceui/primitives-sidebar',
+      'https://www.spaceui.one/r/primitives-breadcrumb.json',
+      'https://www.spaceui.one/r/primitives-separator.json',
+      'https://www.spaceui.one/r/primitives-sidebar.json',
     ],
     files: [
       {
@@ -25003,9 +25439,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-skeleton',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-skeleton.json',
     ],
     files: [
       {
@@ -25038,7 +25474,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-skeleton'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-skeleton.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/skeleton/p-skeleton-02/index.tsx',
@@ -25070,7 +25506,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-slider'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-slider.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/slider/p-slider-01/index.tsx',
@@ -25102,7 +25538,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-field', '@usespaceui/primitives-slider'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-slider.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/slider/p-slider-02/index.tsx',
@@ -25134,7 +25573,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-slider'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-slider.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/slider/p-slider-03/index.tsx',
@@ -25166,7 +25605,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-slider'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-slider.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/slider/p-slider-04/index.tsx',
@@ -25198,7 +25637,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils', '@usespaceui/primitives-slider'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-slider.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/slider/p-slider-05/index.tsx',
@@ -25230,7 +25672,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-slider'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-slider.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/slider/p-slider-06/index.tsx',
@@ -25262,7 +25704,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-slider'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-slider.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/slider/p-slider-07/index.tsx',
@@ -25294,7 +25736,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-slider'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-slider.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/slider/p-slider-08/index.tsx',
@@ -25326,7 +25768,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-slider'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-slider.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/slider/p-slider-09/index.tsx',
@@ -25358,7 +25800,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-slider'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-slider.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/slider/p-slider-10/index.tsx',
@@ -25390,7 +25832,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-field', '@usespaceui/primitives-slider'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-slider.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/slider/p-slider-11/index.tsx',
@@ -25422,7 +25867,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-number-field', '@usespaceui/primitives-slider'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-number-field.json',
+      'https://www.spaceui.one/r/primitives-slider.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/slider/p-slider-12/index.tsx',
@@ -25454,7 +25902,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-number-field', '@usespaceui/primitives-slider'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-number-field.json',
+      'https://www.spaceui.one/r/primitives-slider.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/slider/p-slider-13/index.tsx',
@@ -25487,9 +25938,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-slider',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-slider.json',
     ],
     files: [
       {
@@ -25522,7 +25973,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-fieldset', '@usespaceui/primitives-slider'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-fieldset.json',
+      'https://www.spaceui.one/r/primitives-slider.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/slider/p-slider-15/index.tsx',
@@ -25554,7 +26008,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-field', '@usespaceui/primitives-slider'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-slider.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/slider/p-slider-16/index.tsx',
@@ -25586,7 +26043,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-slider'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-slider.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/slider/p-slider-17/index.tsx',
@@ -25618,7 +26075,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-slider'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-slider.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/slider/p-slider-18/index.tsx',
@@ -25650,7 +26107,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-number-field', '@usespaceui/primitives-slider'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-number-field.json',
+      'https://www.spaceui.one/r/primitives-slider.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/slider/p-slider-19/index.tsx',
@@ -25682,7 +26142,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-slider'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-slider.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/slider/p-slider-20/index.tsx',
@@ -25715,11 +26175,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-fieldset',
-      '@usespaceui/primitives-label',
-      '@usespaceui/primitives-number-field',
-      '@usespaceui/primitives-slider',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-fieldset.json',
+      'https://www.spaceui.one/r/primitives-label.json',
+      'https://www.spaceui.one/r/primitives-number-field.json',
+      'https://www.spaceui.one/r/primitives-slider.json',
     ],
     files: [
       {
@@ -25753,10 +26213,10 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-input-group',
-      '@usespaceui/primitives-number-field',
-      '@usespaceui/primitives-slider',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-input-group.json',
+      'https://www.spaceui.one/r/primitives-number-field.json',
+      'https://www.spaceui.one/r/primitives-slider.json',
     ],
     files: [
       {
@@ -25790,11 +26250,11 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-fieldset',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-slider',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-fieldset.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-slider.json',
     ],
     files: [
       {
@@ -25827,7 +26287,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-spinner'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-spinner.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/spinner/p-spinner-01/index.tsx',
@@ -25859,7 +26319,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-label', '@usespaceui/primitives-switch'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-label.json',
+      'https://www.spaceui.one/r/primitives-switch.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/switch/p-switch-01/index.tsx',
@@ -25891,7 +26354,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-switch'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-switch.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/switch/p-switch-02/index.tsx',
@@ -25923,7 +26386,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-label', '@usespaceui/primitives-switch'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-label.json',
+      'https://www.spaceui.one/r/primitives-switch.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/switch/p-switch-03/index.tsx',
@@ -25956,10 +26422,10 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-switch',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-switch.json',
     ],
     files: [
       {
@@ -25992,7 +26458,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-switch'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-switch.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/switch/p-switch-05/index.tsx',
@@ -26025,15 +26491,15 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-checkbox',
-      '@usespaceui/primitives-checkbox-group',
-      '@usespaceui/primitives-combobox',
-      '@usespaceui/primitives-label',
-      '@usespaceui/primitives-popover',
-      '@usespaceui/primitives-select',
-      '@usespaceui/primitives-switch',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-checkbox.json',
+      'https://www.spaceui.one/r/primitives-checkbox-group.json',
+      'https://www.spaceui.one/r/primitives-combobox.json',
+      'https://www.spaceui.one/r/primitives-label.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
+      'https://www.spaceui.one/r/primitives-select.json',
+      'https://www.spaceui.one/r/primitives-switch.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -26067,15 +26533,15 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-checkbox',
-      '@usespaceui/primitives-checkbox-group',
-      '@usespaceui/primitives-combobox',
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-label',
-      '@usespaceui/primitives-popover',
-      '@usespaceui/primitives-switch',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-checkbox.json',
+      'https://www.spaceui.one/r/primitives-checkbox-group.json',
+      'https://www.spaceui.one/r/primitives-combobox.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-label.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
+      'https://www.spaceui.one/r/primitives-switch.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -26109,15 +26575,15 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-checkbox',
-      '@usespaceui/primitives-checkbox-group',
-      '@usespaceui/primitives-combobox',
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-label',
-      '@usespaceui/primitives-popover',
-      '@usespaceui/primitives-switch',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-checkbox.json',
+      'https://www.spaceui.one/r/primitives-checkbox-group.json',
+      'https://www.spaceui.one/r/primitives-combobox.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-label.json',
+      'https://www.spaceui.one/r/primitives-popover.json',
+      'https://www.spaceui.one/r/primitives-switch.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -26150,7 +26616,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-badge', '@usespaceui/primitives-table'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-table.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/table/p-table-01/index.tsx',
@@ -26183,9 +26652,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-frame',
-      '@usespaceui/primitives-table',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-frame.json',
+      'https://www.spaceui.one/r/primitives-table.json',
     ],
     files: [
       {
@@ -26219,10 +26688,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-checkbox',
-      '@usespaceui/primitives-frame',
-      '@usespaceui/primitives-table',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-checkbox.json',
+      'https://www.spaceui.one/r/primitives-frame.json',
+      'https://www.spaceui.one/r/primitives-table.json',
     ],
     files: [
       {
@@ -26256,14 +26725,14 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', '@tanstack/react-table', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-checkbox',
-      '@usespaceui/primitives-frame',
-      '@usespaceui/primitives-pagination',
-      '@usespaceui/primitives-select',
-      '@usespaceui/primitives-table',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-checkbox.json',
+      'https://www.spaceui.one/r/primitives-frame.json',
+      'https://www.spaceui.one/r/primitives-pagination.json',
+      'https://www.spaceui.one/r/primitives-select.json',
+      'https://www.spaceui.one/r/primitives-table.json',
     ],
     files: [
       {
@@ -26296,7 +26765,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-badge', '@usespaceui/primitives-table'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-table.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/table/p-table-05/index.tsx',
@@ -26329,10 +26801,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tanstack/react-table'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-checkbox',
-      '@usespaceui/primitives-table',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-checkbox.json',
+      'https://www.spaceui.one/r/primitives-table.json',
     ],
     files: [
       {
@@ -26366,9 +26838,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-table',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-table.json',
     ],
     files: [
       {
@@ -26402,14 +26874,14 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', '@tanstack/react-table', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-checkbox',
-      '@usespaceui/primitives-pagination',
-      '@usespaceui/primitives-select',
-      '@usespaceui/primitives-table',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-checkbox.json',
+      'https://www.spaceui.one/r/primitives-pagination.json',
+      'https://www.spaceui.one/r/primitives-select.json',
+      'https://www.spaceui.one/r/primitives-table.json',
     ],
     files: [
       {
@@ -26443,10 +26915,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', '@tanstack/react-table', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-avatar',
-      '@usespaceui/primitives-badge',
-      '@usespaceui/primitives-card',
-      '@usespaceui/primitives-table',
+      'https://www.spaceui.one/r/primitives-avatar.json',
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-card.json',
+      'https://www.spaceui.one/r/primitives-table.json',
     ],
     files: [
       {
@@ -26479,7 +26951,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-tabs'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-tabs.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/tabs/p-tabs-01/index.tsx',
@@ -26511,7 +26983,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-tabs'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-tabs.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/tabs/p-tabs-02/index.tsx',
@@ -26543,7 +27015,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-tabs'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-tabs.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/tabs/p-tabs-03/index.tsx',
@@ -26575,7 +27047,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-tabs'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-tabs.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/tabs/p-tabs-04/index.tsx',
@@ -26607,7 +27079,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-tabs'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-tabs.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/tabs/p-tabs-05/index.tsx',
@@ -26639,7 +27111,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-tabs'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-tabs.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/tabs/p-tabs-06/index.tsx',
@@ -26671,7 +27143,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-tabs'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-tabs.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/tabs/p-tabs-07/index.tsx',
@@ -26703,7 +27175,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-badge', '@usespaceui/primitives-tabs'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-tabs.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/tabs/p-tabs-08/index.tsx',
@@ -26735,7 +27210,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-tabs'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-tabs.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/tabs/p-tabs-09/index.tsx',
@@ -26767,7 +27242,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-badge', '@usespaceui/primitives-tabs'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-badge.json',
+      'https://www.spaceui.one/r/primitives-tabs.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/tabs/p-tabs-10/index.tsx',
@@ -26799,7 +27277,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-tabs', '@usespaceui/primitives-tooltip'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-tabs.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/tabs/p-tabs-11/index.tsx',
@@ -26831,7 +27312,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-tabs'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-tabs.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/tabs/p-tabs-12/index.tsx',
@@ -26863,7 +27344,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-tabs'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-tabs.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/tabs/p-tabs-13/index.tsx',
@@ -26895,7 +27376,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-textarea'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-textarea.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/textarea/p-textarea-01/index.tsx',
@@ -26927,7 +27408,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-textarea'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-textarea.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/textarea/p-textarea-02/index.tsx',
@@ -26959,7 +27440,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-textarea'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-textarea.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/textarea/p-textarea-03/index.tsx',
@@ -26991,7 +27472,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-label', '@usespaceui/primitives-textarea'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-label.json',
+      'https://www.spaceui.one/r/primitives-textarea.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/textarea/p-textarea-04/index.tsx',
@@ -27024,10 +27508,10 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-field',
-      '@usespaceui/primitives-form',
-      '@usespaceui/primitives-textarea',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-form.json',
+      'https://www.spaceui.one/r/primitives-textarea.json',
     ],
     files: [
       {
@@ -27060,7 +27544,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-label', '@usespaceui/primitives-textarea'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-label.json',
+      'https://www.spaceui.one/r/primitives-textarea.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/textarea/p-textarea-06/index.tsx',
@@ -27092,7 +27579,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-label', '@usespaceui/primitives-textarea'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-label.json',
+      'https://www.spaceui.one/r/primitives-textarea.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/textarea/p-textarea-07/index.tsx',
@@ -27124,7 +27614,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-textarea'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-textarea.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/textarea/p-textarea-08/index.tsx',
@@ -27156,7 +27646,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-textarea'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-textarea.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/textarea/p-textarea-09/index.tsx',
@@ -27188,7 +27678,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-field', '@usespaceui/primitives-textarea'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-textarea.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/textarea/p-textarea-10/index.tsx',
@@ -27220,7 +27713,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-field', '@usespaceui/primitives-textarea'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-field.json',
+      'https://www.spaceui.one/r/primitives-textarea.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/textarea/p-textarea-11/index.tsx',
@@ -27252,7 +27748,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-textarea'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-textarea.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/textarea/p-textarea-12/index.tsx',
@@ -27284,7 +27780,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-textarea'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-textarea.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/textarea/p-textarea-13/index.tsx',
@@ -27316,7 +27815,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-textarea'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-textarea.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/textarea/p-textarea-14/index.tsx',
@@ -27348,7 +27850,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-toast'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-toast.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/toast/p-toast-01/index.tsx',
@@ -27380,7 +27885,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-toast'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-toast.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/toast/p-toast-02/index.tsx',
@@ -27413,10 +27921,10 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-clipboard',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-toast',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/hooks-browser-use-clipboard.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-toast.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -27450,9 +27958,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-spinner',
-      '@usespaceui/primitives-toast',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-spinner.json',
+      'https://www.spaceui.one/r/primitives-toast.json',
     ],
     files: [
       {
@@ -27485,7 +27993,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-toast'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-toast.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/toast/p-toast-05/index.tsx',
@@ -27517,7 +28028,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-toast'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-toast.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/toast/p-toast-06/index.tsx',
@@ -27549,7 +28063,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-toast'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-toast.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/toast/p-toast-07/index.tsx',
@@ -27582,9 +28099,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-toast',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-toast.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -27618,9 +28135,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-toast',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-toast.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -27653,7 +28170,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-toggle'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-toggle.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/toggle/p-toggle-01/index.tsx',
@@ -27685,7 +28202,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-toggle'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-toggle.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/toggle/p-toggle-02/index.tsx',
@@ -27717,7 +28234,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-toggle'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-toggle.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/toggle/p-toggle-03/index.tsx',
@@ -27749,7 +28266,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-toggle'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-toggle.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/toggle/p-toggle-04/index.tsx',
@@ -27781,7 +28298,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-toggle'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-toggle.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/toggle/p-toggle-05/index.tsx',
@@ -27814,9 +28331,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-toast',
-      '@usespaceui/primitives-toggle',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/primitives-toast.json',
+      'https://www.spaceui.one/r/primitives-toggle.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -27849,7 +28366,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-toggle-group'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-toggle-group.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/toggle-group/p-toggle-group-01/index.tsx',
@@ -27881,7 +28398,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-toggle-group'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-toggle-group.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/toggle-group/p-toggle-group-02/index.tsx',
@@ -27913,7 +28430,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-toggle-group'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-toggle-group.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/toggle-group/p-toggle-group-03/index.tsx',
@@ -27945,7 +28462,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-toggle-group'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-toggle-group.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/toggle-group/p-toggle-group-04/index.tsx',
@@ -27977,7 +28494,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-toggle-group'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-toggle-group.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/toggle-group/p-toggle-group-05/index.tsx',
@@ -28009,7 +28526,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-toggle-group'],
+    registryDependencies: ['https://www.spaceui.one/r/primitives-toggle-group.json'],
     files: [
       {
         path: 'src/registry/demo/primitives/toggle-group/p-toggle-group-06/index.tsx',
@@ -28041,7 +28558,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-toggle-group', '@usespaceui/primitives-tooltip'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-toggle-group.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/toggle-group/p-toggle-group-07/index.tsx',
@@ -28074,11 +28594,11 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-select',
-      '@usespaceui/primitives-toggle-group',
-      '@usespaceui/primitives-toolbar',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-select.json',
+      'https://www.spaceui.one/r/primitives-toggle-group.json',
+      'https://www.spaceui.one/r/primitives-toolbar.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -28111,7 +28631,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-button', '@usespaceui/primitives-tooltip'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/tooltip/p-tooltip-01/index.tsx',
@@ -28143,7 +28666,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-toggle-group', '@usespaceui/primitives-tooltip'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-toggle-group.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/tooltip/p-tooltip-02/index.tsx',
@@ -28175,7 +28701,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/primitives-toggle-group', '@usespaceui/primitives-tooltip'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/primitives-toggle-group.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
+    ],
     files: [
       {
         path: 'src/registry/demo/primitives/tooltip/p-tooltip-03/index.tsx',
@@ -28208,9 +28737,9 @@ export const index: Record<string, any> = {
     dependencies: ['@tabler/icons-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-group',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-group.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -28468,9 +28997,9 @@ export const index: Record<string, any> = {
     dependencies: undefined,
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-lifecycle-use-event-callback',
-      '@usespaceui/hooks-lifecycle-use-single-effect',
-      '@usespaceui/hooks-utils-cookie',
+      'https://www.spaceui.one/r/hooks-lifecycle-use-event-callback.json',
+      'https://www.spaceui.one/r/hooks-lifecycle-use-single-effect.json',
+      'https://www.spaceui.one/r/hooks-utils-cookie.json',
     ],
     files: [
       {
@@ -28503,7 +29032,7 @@ export const index: Record<string, any> = {
     type: 'registry:hook',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/hooks-utils-cookie'],
+    registryDependencies: ['https://www.spaceui.one/r/hooks-utils-cookie.json'],
     files: [
       {
         path: 'src/registry/hooks/browser/use-cookie-listener/index.ts',
@@ -28663,7 +29192,7 @@ export const index: Record<string, any> = {
     type: 'registry:hook',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/hooks-dom-use-event-listener'],
+    registryDependencies: ['https://www.spaceui.one/r/hooks-dom-use-event-listener.json'],
     files: [
       {
         path: 'src/registry/hooks/browser/use-local-storage/index.ts',
@@ -28727,7 +29256,7 @@ export const index: Record<string, any> = {
     type: 'registry:hook',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/hooks-dom-use-event-listener'],
+    registryDependencies: ['https://www.spaceui.one/r/hooks-dom-use-event-listener.json'],
     files: [
       {
         path: 'src/registry/hooks/browser/use-network/index.ts',
@@ -28951,7 +29480,7 @@ export const index: Record<string, any> = {
     type: 'registry:hook',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/hooks-lifecycle-use-isomorphic-layout-effect'],
+    registryDependencies: ['https://www.spaceui.one/r/hooks-lifecycle-use-isomorphic-layout-effect.json'],
     files: [
       {
         path: 'src/registry/hooks/browser/use-title/index.ts',
@@ -29111,7 +29640,7 @@ export const index: Record<string, any> = {
     type: 'registry:hook',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/hooks-animation-use-in-view'],
+    registryDependencies: ['https://www.spaceui.one/r/hooks-animation-use-in-view.json'],
     files: [
       {
         path: 'src/registry/hooks/components/in-view/index.tsx',
@@ -29271,7 +29800,7 @@ export const index: Record<string, any> = {
     type: 'registry:hook',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/hooks-lifecycle-use-isomorphic-layout-effect'],
+    registryDependencies: ['https://www.spaceui.one/r/hooks-lifecycle-use-isomorphic-layout-effect.json'],
     files: [
       {
         path: 'src/registry/hooks/dom/use-event-listener/index.ts',
@@ -29495,7 +30024,7 @@ export const index: Record<string, any> = {
     type: 'registry:hook',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/hooks-lifecycle-use-isomorphic-layout-effect'],
+    registryDependencies: ['https://www.spaceui.one/r/hooks-lifecycle-use-isomorphic-layout-effect.json'],
     files: [
       {
         path: 'src/registry/hooks/dom/use-scroll-position/index.ts',
@@ -29559,7 +30088,7 @@ export const index: Record<string, any> = {
     type: 'registry:hook',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/hooks-lifecycle-use-isomorphic-layout-effect'],
+    registryDependencies: ['https://www.spaceui.one/r/hooks-lifecycle-use-isomorphic-layout-effect.json'],
     files: [
       {
         path: 'src/registry/hooks/dom/use-size/index.ts',
@@ -29591,7 +30120,7 @@ export const index: Record<string, any> = {
     type: 'registry:hook',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/hooks-lifecycle-use-isomorphic-layout-effect'],
+    registryDependencies: ['https://www.spaceui.one/r/hooks-lifecycle-use-isomorphic-layout-effect.json'],
     files: [
       {
         path: 'src/registry/hooks/dom/use-window-size/index.ts',
@@ -29655,7 +30184,7 @@ export const index: Record<string, any> = {
     type: 'registry:hook',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/hooks-utils-format-bytes'],
+    registryDependencies: ['https://www.spaceui.one/r/hooks-utils-format-bytes.json'],
     files: [
       {
         path: 'src/registry/hooks/form/use-file-upload/index.ts',
@@ -29719,7 +30248,10 @@ export const index: Record<string, any> = {
     type: 'registry:hook',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/hooks-utils-logger', '@usespaceui/hooks-utils-sleep'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/hooks-utils-logger.json',
+      'https://www.spaceui.one/r/hooks-utils-sleep.json',
+    ],
     files: [
       {
         path: 'src/registry/hooks/form/use-load-more/index.ts',
@@ -29943,7 +30475,7 @@ export const index: Record<string, any> = {
     type: 'registry:hook',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/hooks-utils-event'],
+    registryDependencies: ['https://www.spaceui.one/r/hooks-utils-event.json'],
     files: [
       {
         path: 'src/registry/hooks/lifecycle/use-confirm-exit/index.ts',
@@ -30071,7 +30603,7 @@ export const index: Record<string, any> = {
     type: 'registry:hook',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/hooks-browser-use-local-storage'],
+    registryDependencies: ['https://www.spaceui.one/r/hooks-browser-use-local-storage.json'],
     files: [
       {
         path: 'src/registry/hooks/lifecycle/use-first-visit/index.ts',
@@ -30103,7 +30635,7 @@ export const index: Record<string, any> = {
     type: 'registry:hook',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/hooks-utils-event'],
+    registryDependencies: ['https://www.spaceui.one/r/hooks-utils-event.json'],
     files: [
       {
         path: 'src/registry/hooks/lifecycle/use-hold/index.ts',
@@ -30819,7 +31351,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/accordion/index.tsx',
@@ -30851,7 +31383,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['class-variance-authority'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/alert/index.tsx',
@@ -30883,7 +31415,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/alert-dialog/index.tsx',
@@ -30915,7 +31447,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/aspect-ratio/index.tsx',
@@ -30948,9 +31480,9 @@ export const index: Record<string, any> = {
     dependencies: ['@base-ui/react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-scroll-area',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-scroll-area.json',
     ],
     files: [
       {
@@ -30983,7 +31515,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/avatar/index.tsx',
@@ -31015,7 +31547,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react', 'class-variance-authority'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/badge/index.tsx',
@@ -31047,7 +31579,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/breadcrumb/index.tsx',
@@ -31079,7 +31611,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react', 'class-variance-authority'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils', '@usespaceui/primitives-spinner'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-spinner.json',
+    ],
     files: [
       {
         path: 'src/registry/primitives/button/index.tsx',
@@ -31111,7 +31646,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@daypicker/react', 'lucide-react', 'react-day-picker'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/calendar/index.tsx',
@@ -31143,7 +31678,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/card/index.tsx',
@@ -31175,7 +31710,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/checkbox/index.tsx',
@@ -31207,7 +31742,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/checkbox-group/index.tsx',
@@ -31239,7 +31774,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/collapsible/index.tsx',
@@ -31272,9 +31807,9 @@ export const index: Record<string, any> = {
     dependencies: ['@base-ui/react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-scroll-area',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-scroll-area.json',
     ],
     files: [
       {
@@ -31308,9 +31843,9 @@ export const index: Record<string, any> = {
     dependencies: ['@base-ui/react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-autocomplete',
-      '@usespaceui/primitives-kbd',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-autocomplete.json',
+      'https://www.spaceui.one/r/primitives-kbd.json',
     ],
     files: [
       {
@@ -31343,7 +31878,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/context-menu/index.tsx',
@@ -31376,9 +31911,9 @@ export const index: Record<string, any> = {
     dependencies: ['@base-ui/react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-scroll-area',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-scroll-area.json',
     ],
     files: [
       {
@@ -31444,9 +31979,9 @@ export const index: Record<string, any> = {
     dependencies: ['@base-ui/react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-scroll-area',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-scroll-area.json',
     ],
     files: [
       {
@@ -31479,7 +32014,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['class-variance-authority'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/empty/index.tsx',
@@ -31511,7 +32046,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/field/index.tsx',
@@ -31543,7 +32078,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/fieldset/index.tsx',
@@ -31607,7 +32142,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/frame/index.tsx',
@@ -31639,7 +32174,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react', 'class-variance-authority'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils', '@usespaceui/primitives-separator'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-separator.json',
+    ],
     files: [
       {
         path: 'src/registry/primitives/group/index.tsx',
@@ -31671,7 +32209,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/input/index.tsx',
@@ -31704,10 +32242,10 @@ export const index: Record<string, any> = {
     dependencies: ['class-variance-authority'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-textarea',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-textarea.json',
     ],
     files: [
       {
@@ -31740,7 +32278,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/kbd/index.tsx',
@@ -31772,7 +32310,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/label/index.tsx',
@@ -31804,7 +32342,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react', 'class-variance-authority'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/primitives/link/index.tsx',
@@ -31836,7 +32377,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/menu/index.tsx',
@@ -31868,7 +32409,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils', '@usespaceui/primitives-menu'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-menu.json',
+    ],
     files: [
       {
         path: 'src/registry/primitives/menubar/index.tsx',
@@ -31900,7 +32444,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/meter/index.tsx',
@@ -31932,7 +32476,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react', 'class-variance-authority', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/navigation-menu/index.tsx',
@@ -31964,7 +32508,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils', '@usespaceui/primitives-label'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-label.json',
+    ],
     files: [
       {
         path: 'src/registry/primitives/number-field/index.tsx',
@@ -31996,7 +32543,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils', '@usespaceui/primitives-separator'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-separator.json',
+    ],
     files: [
       {
         path: 'src/registry/primitives/otp-field/index.tsx',
@@ -32028,7 +32578,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/primitives/pagination/index.tsx',
@@ -32060,7 +32613,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/popover/index.tsx',
@@ -32092,7 +32645,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/preview-card/index.tsx',
@@ -32124,7 +32677,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@space-ui-components/react', 'motion'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-get-strict-context', '@usespaceui/primitives-preview-card'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-get-strict-context.json',
+      'https://www.spaceui.one/r/primitives-preview-card.json',
+    ],
     files: [
       {
         path: 'src/registry/primitives/preview-link-card/index.tsx',
@@ -32156,7 +32712,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/progress/index.tsx',
@@ -32188,7 +32744,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/radio-group/index.tsx',
@@ -32220,7 +32776,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/scroll-area/index.tsx',
@@ -32252,7 +32808,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react', 'class-variance-authority', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/select/index.tsx',
@@ -32284,7 +32840,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/separator/index.tsx',
@@ -32317,9 +32873,9 @@ export const index: Record<string, any> = {
     dependencies: ['@base-ui/react', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-scroll-area',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-scroll-area.json',
     ],
     files: [
       {
@@ -32353,16 +32909,16 @@ export const index: Record<string, any> = {
     dependencies: ['@base-ui/react', 'class-variance-authority', 'lucide-react'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/hooks-browser-use-media-query',
-      '@usespaceui/hooks-dom-use-event-listener',
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-button',
-      '@usespaceui/primitives-input',
-      '@usespaceui/primitives-scroll-area',
-      '@usespaceui/primitives-separator',
-      '@usespaceui/primitives-sheet',
-      '@usespaceui/primitives-skeleton',
-      '@usespaceui/primitives-tooltip',
+      'https://www.spaceui.one/r/hooks-browser-use-media-query.json',
+      'https://www.spaceui.one/r/hooks-dom-use-event-listener.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+      'https://www.spaceui.one/r/primitives-input.json',
+      'https://www.spaceui.one/r/primitives-scroll-area.json',
+      'https://www.spaceui.one/r/primitives-separator.json',
+      'https://www.spaceui.one/r/primitives-sheet.json',
+      'https://www.spaceui.one/r/primitives-skeleton.json',
+      'https://www.spaceui.one/r/primitives-tooltip.json',
     ],
     files: [
       {
@@ -32395,7 +32951,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: undefined,
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/skeleton/index.tsx',
@@ -32427,7 +32983,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/slider/index.tsx',
@@ -32459,7 +33015,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/spinner/index.tsx',
@@ -32491,7 +33047,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/switch/index.tsx',
@@ -32523,7 +33079,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils', '@usespaceui/primitives-scroll-area'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-scroll-area.json',
+    ],
     files: [
       {
         path: 'src/registry/primitives/table/index.tsx',
@@ -32555,7 +33114,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-segmented-control', '@usespaceui/lib-utils'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-segmented-control.json',
+      'https://www.spaceui.one/r/lib-utils.json',
+    ],
     files: [
       {
         path: 'src/registry/primitives/tabs/index.tsx',
@@ -32587,7 +33149,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/textarea/index.tsx',
@@ -32619,7 +33181,10 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react', 'lucide-react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils', '@usespaceui/primitives-button'],
+    registryDependencies: [
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-button.json',
+    ],
     files: [
       {
         path: 'src/registry/primitives/toast/index.tsx',
@@ -32651,7 +33216,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react', 'class-variance-authority'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/toggle/index.tsx',
@@ -32684,9 +33249,9 @@ export const index: Record<string, any> = {
     dependencies: ['@base-ui/react', 'class-variance-authority'],
     devDependencies: undefined,
     registryDependencies: [
-      '@usespaceui/lib-utils',
-      '@usespaceui/primitives-separator',
-      '@usespaceui/primitives-toggle',
+      'https://www.spaceui.one/r/lib-utils.json',
+      'https://www.spaceui.one/r/primitives-separator.json',
+      'https://www.spaceui.one/r/primitives-toggle.json',
     ],
     files: [
       {
@@ -32719,7 +33284,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/toolbar/index.tsx',
@@ -32751,7 +33316,7 @@ export const index: Record<string, any> = {
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
     devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
+    registryDependencies: ['https://www.spaceui.one/r/lib-utils.json'],
     files: [
       {
         path: 'src/registry/primitives/tooltip/index.tsx',

@@ -5,7 +5,7 @@
   "title": "Input Group 4",
   "description": "Input group with end text",
   "registryDependencies": [
-    "@usespaceui/primitives-input-group"
+    "https://www.spaceui.one/r/primitives-input-group.json"
   ],
   "categories": [
     "input group"

@@ -5,8 +5,8 @@
   "title": "Slider 2",
   "description": "Slider with label and value",
   "registryDependencies": [
-    "@usespaceui/primitives-field",
-    "@usespaceui/primitives-slider"
+    "https://www.spaceui.one/r/primitives-field.json",
+    "https://www.spaceui.one/r/primitives-slider.json"
   ],
   "categories": [
     "slider"

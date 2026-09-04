@@ -7,13 +7,13 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-group"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-group.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/group/p-group-10/index.tsx",
-      "content": "import { IconArrowLeft, IconArrowRight } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { Group, GroupSeparator } from '@/components/ui/group'\n\nexport default function Particle() {\n  return (\n    <Group aria-label=\"Pagination\">\n      <Group aria-label=\"Page numbers\">\n        <Button className=\"min-w-8\" variant=\"outline\">\n          1\n        </Button>\n        <GroupSeparator />\n        <Button className=\"min-w-8\" variant=\"outline\">\n          2\n        </Button>\n        <GroupSeparator />\n        <Button className=\"min-w-8\" variant=\"outline\">\n          3\n        </Button>\n        <GroupSeparator />\n        <Button className=\"min-w-8\" variant=\"outline\">\n          4\n        </Button>\n        <GroupSeparator />\n        <Button className=\"min-w-8\" variant=\"outline\">\n          5\n        </Button>\n      </Group>\n      <Group aria-label=\"Navigation\">\n        <Button aria-label=\"Previous\" size=\"icon\" variant=\"outline\">\n          <IconArrowLeft aria-hidden=\"true\" />\n        </Button>\n        <GroupSeparator />\n        <Button aria-label=\"Next\" size=\"icon\" variant=\"outline\">\n          <IconArrowRight aria-hidden=\"true\" />\n        </Button>\n      </Group>\n    </Group>\n  )\n}\n",
+      "content": "import { IconArrowLeft, IconArrowRight } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { Group, GroupSeparator } from '@/components/ui/group'\n\nexport default function Demo() {\n  return (\n    <Group aria-label=\"Pagination\">\n      <Group aria-label=\"Page numbers\">\n        <Button className=\"min-w-8\" variant=\"outline\">\n          1\n        </Button>\n        <GroupSeparator />\n        <Button className=\"min-w-8\" variant=\"outline\">\n          2\n        </Button>\n        <GroupSeparator />\n        <Button className=\"min-w-8\" variant=\"outline\">\n          3\n        </Button>\n        <GroupSeparator />\n        <Button className=\"min-w-8\" variant=\"outline\">\n          4\n        </Button>\n        <GroupSeparator />\n        <Button className=\"min-w-8\" variant=\"outline\">\n          5\n        </Button>\n      </Group>\n      <Group aria-label=\"Navigation\">\n        <Button aria-label=\"Previous\" size=\"icon\" variant=\"outline\">\n          <IconArrowLeft aria-hidden=\"true\" />\n        </Button>\n        <GroupSeparator />\n        <Button aria-label=\"Next\" size=\"icon\" variant=\"outline\">\n          <IconArrowRight aria-hidden=\"true\" />\n        </Button>\n      </Group>\n    </Group>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/group.tsx"
     }

@@ -5,7 +5,7 @@
   "title": "Slider 7",
   "description": "Range slider",
   "registryDependencies": [
-    "@usespaceui/primitives-slider"
+    "https://www.spaceui.one/r/primitives-slider.json"
   ],
   "categories": [
     "slider"

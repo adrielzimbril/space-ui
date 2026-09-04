@@ -5,7 +5,7 @@
   "title": "Select 11",
   "description": "Select with disabled items",
   "registryDependencies": [
-    "@usespaceui/primitives-select"
+    "https://www.spaceui.one/r/primitives-select.json"
   ],
   "categories": [
     "select",

@@ -4,12 +4,12 @@
   "title": "Frame 3",
   "description": "Frame with multiple separated panels",
   "registryDependencies": [
-    "@usespaceui/primitives-frame"
+    "https://www.spaceui.one/r/primitives-frame.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/frame/p-frame-03/index.tsx",
-      "content": "import { Frame, FrameDescription, FrameHeader, FramePanel, FrameTitle } from '@/components/ui/frame'\n\nexport default function Particle() {\n  return (\n    <Frame className=\"w-full\">\n      <FrameHeader>\n        <FrameTitle>Section header</FrameTitle>\n        <FrameDescription>Brief description about the section</FrameDescription>\n      </FrameHeader>\n      <FramePanel>\n        <h2 className=\"font-semibold text-sm\">Separated panel</h2>\n        <p className=\"text-muted-foreground text-sm\">Section description</p>\n      </FramePanel>\n      <FramePanel>\n        <h2 className=\"font-semibold text-sm\">Separated panel</h2>\n        <p className=\"text-muted-foreground text-sm\">Section description</p>\n      </FramePanel>\n    </Frame>\n  )\n}\n",
+      "content": "import { Frame, FrameDescription, FrameHeader, FramePanel, FrameTitle } from '@/components/ui/frame'\n\nexport default function Demo() {\n  return (\n    <Frame className=\"w-full\">\n      <FrameHeader>\n        <FrameTitle>Section header</FrameTitle>\n        <FrameDescription>Brief description about the section</FrameDescription>\n      </FrameHeader>\n      <FramePanel>\n        <h2 className=\"font-semibold text-sm\">Separated panel</h2>\n        <p className=\"text-muted-foreground text-sm\">Section description</p>\n      </FramePanel>\n      <FramePanel>\n        <h2 className=\"font-semibold text-sm\">Separated panel</h2>\n        <p className=\"text-muted-foreground text-sm\">Section description</p>\n      </FramePanel>\n    </Frame>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/frame.tsx"
     }

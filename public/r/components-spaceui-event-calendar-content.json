@@ -7,13 +7,13 @@
     "@base-ui/react"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-event-calendar",
-    "@usespaceui/components-spaceui-event-calendar-agenda-view",
-    "@usespaceui/components-spaceui-event-calendar-month-view",
-    "@usespaceui/components-spaceui-event-calendar-resource-view",
-    "@usespaceui/components-spaceui-event-calendar-time-grid",
-    "@usespaceui/components-spaceui-event-calendar-types",
-    "@usespaceui/lib-utils"
+    "https://www.spaceui.one/r/components-spaceui-event-calendar.json",
+    "https://www.spaceui.one/r/components-spaceui-event-calendar-agenda-view.json",
+    "https://www.spaceui.one/r/components-spaceui-event-calendar-month-view.json",
+    "https://www.spaceui.one/r/components-spaceui-event-calendar-resource-view.json",
+    "https://www.spaceui.one/r/components-spaceui-event-calendar-time-grid.json",
+    "https://www.spaceui.one/r/components-spaceui-event-calendar-types.json",
+    "https://www.spaceui.one/r/lib-utils.json"
   ],
   "files": [
     {

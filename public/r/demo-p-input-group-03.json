@@ -4,12 +4,12 @@
   "title": "Input Group 3",
   "description": "Input group with start text",
   "registryDependencies": [
-    "@usespaceui/primitives-input-group"
+    "https://www.spaceui.one/r/primitives-input-group.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/input-group/p-input-group-03/index.tsx",
-      "content": "import { InputGroup, InputGroupAddon, InputGroupInput, InputGroupText } from '@/components/ui/input-group'\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput aria-label=\"Set your URL\" className=\"*:[input]:ps-0!\" placeholder=\"space\" type=\"search\" />\n      <InputGroupAddon>\n        <InputGroupText>i.cal.com/</InputGroupText>\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
+      "content": "import { InputGroup, InputGroupAddon, InputGroupInput, InputGroupText } from '@/components/ui/input-group'\n\nexport default function Demo() {\n  return (\n    <InputGroup>\n      <InputGroupInput aria-label=\"Set your URL\" className=\"*:[input]:ps-0!\" placeholder=\"space\" type=\"search\" />\n      <InputGroupAddon>\n        <InputGroupText>i.cal.com/</InputGroupText>\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/input-group.tsx"
     }

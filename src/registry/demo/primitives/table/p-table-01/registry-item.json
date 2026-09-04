@@ -5,8 +5,8 @@
   "title": "Table 1",
   "description": "Basic table",
   "registryDependencies": [
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-table"
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-table.json"
   ],
   "categories": [
     "table"

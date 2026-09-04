@@ -7,12 +7,12 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-status-badge"
+    "https://www.spaceui.one/r/components-spaceui-status-badge.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/status-badge/c-status-badge-05/index.tsx",
-      "content": "import Link from 'next/link'\nimport { IconArrowUpRight } from '@tabler/icons-react'\nimport { StatusBadge } from '@/components/spaceui/status-badge'\n\nexport default function StatusBadgePlanningDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4 p-4\">\n      <StatusBadge mode=\"inline\" status=\"available\" primaryText=\"Disponible\" size=\"default\">\n        <Link href=\"#contact\" className=\"inline-flex items-center gap-1 hover:text-foreground transition-colors\">\n          <span>1 place restante pour ce mois-ci</span>\n          <IconArrowUpRight className=\"size-3.5\" />\n        </Link>\n      </StatusBadge>\n    </div>\n  )\n}\n",
+      "content": "import Link from 'next/link'\nimport { IconArrowUpRight } from '@tabler/icons-react'\nimport { StatusBadge } from '@/components/spaceui/status-badge'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4 p-4\">\n      <StatusBadge mode=\"inline\" status=\"available\" primaryText=\"Disponible\" size=\"default\">\n        <Link href=\"#contact\" className=\"inline-flex items-center gap-1 hover:text-foreground transition-colors\">\n          <span>1 place restante pour ce mois-ci</span>\n          <IconArrowUpRight className=\"size-3.5\" />\n        </Link>\n      </StatusBadge>\n    </div>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/spaceui/status-badge.tsx"
     }

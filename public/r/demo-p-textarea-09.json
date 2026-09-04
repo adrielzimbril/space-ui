@@ -4,12 +4,12 @@
   "title": "Textarea 9",
   "description": "Read-only textarea",
   "registryDependencies": [
-    "@usespaceui/primitives-textarea"
+    "https://www.spaceui.one/r/primitives-textarea.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/textarea/p-textarea-09/index.tsx",
-      "content": "'use client'\n\nimport { useId } from 'react'\nimport { Textarea } from '@/components/ui/textarea'\n\nexport default function Particle() {\n  const id = useId()\n  return <Textarea className=\"read-only:bg-muted\" defaultValue=\"This is a read-only textarea\" id={id} readOnly />\n}\n",
+      "content": "'use client'\n\nimport { useId } from 'react'\nimport { Textarea } from '@/components/ui/textarea'\n\nexport default function Demo() {\n  const id = useId()\n  return <Textarea className=\"read-only:bg-muted\" defaultValue=\"This is a read-only textarea\" id={id} readOnly />\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/textarea.tsx"
     }

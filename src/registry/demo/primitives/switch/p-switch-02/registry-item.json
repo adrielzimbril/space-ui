@@ -5,7 +5,7 @@
   "title": "Switch Sizes",
   "description": "Switch controls in sm, default, and lg sizes",
   "registryDependencies": [
-    "@usespaceui/primitives-switch"
+    "https://www.spaceui.one/r/primitives-switch.json"
   ],
   "categories": [
     "switch"

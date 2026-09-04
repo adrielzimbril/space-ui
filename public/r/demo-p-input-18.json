@@ -4,12 +4,12 @@
   "title": "Input 18",
   "description": "Pill-shaped input",
   "registryDependencies": [
-    "@usespaceui/primitives-input"
+    "https://www.spaceui.one/r/primitives-input.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/input/p-input-18/index.tsx",
-      "content": "import { Input } from '@/components/ui/input'\n\nexport default function Particle() {\n  return (\n    <Input\n      aria-label=\"Enter text\"\n      className=\"[--radius-lg:9999px] [--radius:9999px]\"\n      placeholder=\"Enter text\"\n      type=\"text\"\n    />\n  )\n}\n",
+      "content": "import { Input } from '@/components/ui/input'\n\nexport default function Demo() {\n  return (\n    <Input\n      aria-label=\"Enter text\"\n      className=\"[--radius-lg:9999px] [--radius:9999px]\"\n      placeholder=\"Enter text\"\n      type=\"text\"\n    />\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/input.tsx"
     }

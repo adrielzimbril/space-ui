@@ -4,13 +4,13 @@
   "title": "Button 7",
   "description": "Custom loading button with manual Spinner",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-spinner"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-spinner.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/button/p-button-07/index.tsx",
-      "content": "import { Button } from '@/components/ui/button'\nimport { Spinner } from '@/components/ui/spinner'\n\nexport default function Particle() {\n  return (\n    <Button disabled>\n      <Spinner />\n      Loading...\n    </Button>\n  )\n}\n",
+      "content": "import { Button } from '@/components/ui/button'\nimport { Spinner } from '@/components/ui/spinner'\n\nexport default function Demo() {\n  return (\n    <Button disabled>\n      <Spinner />\n      Loading...\n    </Button>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/button.tsx"
     }

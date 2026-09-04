@@ -7,11 +7,11 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/hooks-form-use-load-more",
-    "@usespaceui/hooks-utils-sleep",
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-card"
+    "https://www.spaceui.one/r/hooks-form-use-load-more.json",
+    "https://www.spaceui.one/r/hooks-utils-sleep.json",
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-card.json"
   ],
   "files": [
     {

@@ -8,16 +8,16 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-card",
-    "@usespaceui/primitives-field",
-    "@usespaceui/primitives-form",
-    "@usespaceui/primitives-input"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-card.json",
+    "https://www.spaceui.one/r/primitives-field.json",
+    "https://www.spaceui.one/r/primitives-form.json",
+    "https://www.spaceui.one/r/primitives-input.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/card/p-card-03/index.tsx",
-      "content": "import { IconLock } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { Card, CardDescription, CardFooter, CardHeader, CardPanel, CardTitle } from '@/components/ui/card'\nimport { Field, FieldLabel } from '@/components/ui/field'\nimport { Form } from '@/components/ui/form'\nimport { Input } from '@/components/ui/input'\n\nexport default function Particle() {\n  return (\n    <Card className=\"w-full max-w-xs\">\n      <CardHeader className=\"border-b\">\n        <CardTitle>Login to your account</CardTitle>\n        <CardDescription>Enter email and password to login</CardDescription>\n      </CardHeader>\n      <CardPanel>\n        <Form className=\"flex w-full flex-col gap-4\">\n          <Field>\n            <FieldLabel>Email</FieldLabel>\n            <Input placeholder=\"Enter your email\" type=\"email\" />\n          </Field>\n          <Field>\n            <FieldLabel>Password</FieldLabel>\n            <Input placeholder=\"Enter your password\" type=\"password\" />\n          </Field>\n          <Button className=\"w-full\" type=\"submit\">\n            Login\n          </Button>\n        </Form>\n      </CardPanel>\n      <CardFooter className=\"border-t\">\n        <div className=\"flex gap-1 text-muted-foreground text-xs\">\n          <IconLock className=\"size-3 h-lh shrink-0\" />\n          <p>The information you enter is encrypted and stored securely.</p>\n        </div>\n      </CardFooter>\n    </Card>\n  )\n}\n",
+      "content": "import { IconLock } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { Card, CardDescription, CardFooter, CardHeader, CardPanel, CardTitle } from '@/components/ui/card'\nimport { Field, FieldLabel } from '@/components/ui/field'\nimport { Form } from '@/components/ui/form'\nimport { Input } from '@/components/ui/input'\n\nexport default function Demo() {\n  return (\n    <Card className=\"w-full max-w-xs\">\n      <CardHeader className=\"border-b\">\n        <CardTitle>Login to your account</CardTitle>\n        <CardDescription>Enter email and password to login</CardDescription>\n      </CardHeader>\n      <CardPanel>\n        <Form className=\"flex w-full flex-col gap-4\">\n          <Field>\n            <FieldLabel>Email</FieldLabel>\n            <Input placeholder=\"Enter your email\" type=\"email\" />\n          </Field>\n          <Field>\n            <FieldLabel>Password</FieldLabel>\n            <Input placeholder=\"Enter your password\" type=\"password\" />\n          </Field>\n          <Button className=\"w-full\" type=\"submit\">\n            Login\n          </Button>\n        </Form>\n      </CardPanel>\n      <CardFooter className=\"border-t\">\n        <div className=\"flex gap-1 text-muted-foreground text-xs\">\n          <IconLock className=\"size-3 h-lh shrink-0\" />\n          <p>The information you enter is encrypted and stored securely.</p>\n        </div>\n      </CardFooter>\n    </Card>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/card.tsx"
     }

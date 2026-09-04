@@ -4,12 +4,12 @@
   "title": "Input Group 24",
   "description": "Input group with character counter",
   "registryDependencies": [
-    "@usespaceui/primitives-input-group"
+    "https://www.spaceui.one/r/primitives-input-group.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/input-group/p-input-group-24/index.tsx",
-      "content": "'use client'\n\nimport { useState } from 'react'\nimport { InputGroup, InputGroupAddon, InputGroupInput, InputGroupText } from '@/components/ui/input-group'\n\nexport default function Particle() {\n  const maxLength = 14\n  const [value, setValue] = useState('')\n\n  return (\n    <InputGroup>\n      <InputGroupInput\n        aria-label=\"Username\"\n        maxLength={maxLength}\n        onChange={(e) => setValue(e.target.value)}\n        placeholder=\"Enter username\"\n        type=\"text\"\n        value={value}\n      />\n      <InputGroupAddon align=\"inline-end\">\n        <InputGroupText aria-live=\"polite\" className=\"text-xs tabular-nums\" role=\"status\">\n          {value.length}/{maxLength}\n        </InputGroupText>\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
+      "content": "'use client'\n\nimport { useState } from 'react'\nimport { InputGroup, InputGroupAddon, InputGroupInput, InputGroupText } from '@/components/ui/input-group'\n\nexport default function Demo() {\n  const maxLength = 14\n  const [value, setValue] = useState('')\n\n  return (\n    <InputGroup>\n      <InputGroupInput\n        aria-label=\"Username\"\n        maxLength={maxLength}\n        onChange={(e) => setValue(e.target.value)}\n        placeholder=\"Enter username\"\n        type=\"text\"\n        value={value}\n      />\n      <InputGroupAddon align=\"inline-end\">\n        <InputGroupText aria-live=\"polite\" className=\"text-xs tabular-nums\" role=\"status\">\n          {value.length}/{maxLength}\n        </InputGroupText>\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/input-group.tsx"
     }

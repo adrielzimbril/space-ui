@@ -7,7 +7,7 @@
     "@base-ui/react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-menubar"
+    "https://www.spaceui.one/r/primitives-menubar.json"
   ],
   "files": [
     {

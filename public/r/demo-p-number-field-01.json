@@ -4,12 +4,12 @@
   "title": "Number Field 1",
   "description": "Basic number field",
   "registryDependencies": [
-    "@usespaceui/primitives-number-field"
+    "https://www.spaceui.one/r/primitives-number-field.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/number-field/p-number-field-01/index.tsx",
-      "content": "import {\n  NumberField,\n  NumberFieldDecrement,\n  NumberFieldGroup,\n  NumberFieldIncrement,\n  NumberFieldInput,\n} from '@/components/ui/number-field'\n\nexport default function Particle() {\n  return (\n    <NumberField defaultValue={0}>\n      <NumberFieldGroup>\n        <NumberFieldDecrement />\n        <NumberFieldInput />\n        <NumberFieldIncrement />\n      </NumberFieldGroup>\n    </NumberField>\n  )\n}\n",
+      "content": "import {\n  NumberField,\n  NumberFieldDecrement,\n  NumberFieldGroup,\n  NumberFieldIncrement,\n  NumberFieldInput,\n} from '@/components/ui/number-field'\n\nexport default function Demo() {\n  return (\n    <NumberField defaultValue={0}>\n      <NumberFieldGroup>\n        <NumberFieldDecrement />\n        <NumberFieldInput />\n        <NumberFieldIncrement />\n      </NumberFieldGroup>\n    </NumberField>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/number-field.tsx"
     }

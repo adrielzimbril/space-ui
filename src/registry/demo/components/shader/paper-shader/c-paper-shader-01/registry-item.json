@@ -5,7 +5,7 @@
   "title": "Paper Shader Demo",
   "description": "Paper WebGL fragment shader canvas.",
   "registryDependencies": [
-    "@usespaceui/components-shader-paper-shader"
+    "https://www.spaceui.one/r/components-shader-paper-shader.json"
   ],
   "categories": [
     "shader",

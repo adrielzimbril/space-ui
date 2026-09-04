@@ -4,13 +4,13 @@
   "title": "Radio Group 1",
   "description": "Basic radio group",
   "registryDependencies": [
-    "@usespaceui/primitives-label",
-    "@usespaceui/primitives-radio-group"
+    "https://www.spaceui.one/r/primitives-label.json",
+    "https://www.spaceui.one/r/primitives-radio-group.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/radio-group/p-radio-group-01/index.tsx",
-      "content": "import { Label } from '@/components/ui/label'\nimport { Radio, RadioGroup } from '@/components/ui/radio-group'\n\nexport default function Particle() {\n  return (\n    <RadioGroup defaultValue=\"next\">\n      <Label>\n        <Radio value=\"next\" /> Next.js\n      </Label>\n      <Label>\n        <Radio value=\"vite\" /> Vite\n      </Label>\n      <Label>\n        <Radio value=\"astro\" /> Astro\n      </Label>\n    </RadioGroup>\n  )\n}\n",
+      "content": "import { Label } from '@/components/ui/label'\nimport { Radio, RadioGroup } from '@/components/ui/radio-group'\n\nexport default function Demo() {\n  return (\n    <RadioGroup defaultValue=\"next\">\n      <Label>\n        <Radio value=\"next\" /> Next.js\n      </Label>\n      <Label>\n        <Radio value=\"vite\" /> Vite\n      </Label>\n      <Label>\n        <Radio value=\"astro\" /> Astro\n      </Label>\n    </RadioGroup>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/radio-group.tsx"
     }

@@ -5,7 +5,7 @@
   "title": "Status Badge Sizes",
   "description": "Standard sizing scale from extra-small to extra-large.",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-status-badge"
+    "https://www.spaceui.one/r/components-spaceui-status-badge.json"
   ],
   "categories": [
     "component",

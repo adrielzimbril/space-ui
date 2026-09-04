@@ -8,13 +8,13 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-kbd"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-kbd.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/button/p-button-19/index.tsx",
-      "content": "import { IconSparkles } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { Kbd, KbdGroup } from '@/components/ui/kbd'\n\nexport default function Particle() {\n  return (\n    <Button variant=\"outline\">\n      <IconSparkles aria-hidden=\"true\" />\n      Print\n      <KbdGroup className=\"-me-1\">\n        <Kbd>&#8984;</Kbd>\n        <Kbd>P</Kbd>\n      </KbdGroup>\n    </Button>\n  )\n}\n",
+      "content": "import { IconSparkles } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { Kbd, KbdGroup } from '@/components/ui/kbd'\n\nexport default function Demo() {\n  return (\n    <Button variant=\"outline\">\n      <IconSparkles aria-hidden=\"true\" />\n      Print\n      <KbdGroup className=\"-me-1\">\n        <Kbd>&#8984;</Kbd>\n        <Kbd>P</Kbd>\n      </KbdGroup>\n    </Button>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/button.tsx"
     }

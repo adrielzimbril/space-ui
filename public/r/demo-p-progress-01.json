@@ -4,12 +4,12 @@
   "title": "Progress 1",
   "description": "Basic progress bar",
   "registryDependencies": [
-    "@usespaceui/primitives-progress"
+    "https://www.spaceui.one/r/primitives-progress.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/progress/p-progress-01/index.tsx",
-      "content": "'use client'\n\nimport { useEffect, useState } from 'react'\nimport { Progress } from '@/components/ui/progress'\n\nexport default function Particle() {\n  const [value, setValue] = useState(20)\n\n  useEffect(() => {\n    const interval = setInterval(() => {\n      setValue((current) => Math.min(100, Math.round(current + Math.random() * 25)))\n    }, 1000)\n    return () => clearInterval(interval)\n  }, [])\n\n  return <Progress value={value} />\n}\n",
+      "content": "'use client'\n\nimport { useEffect, useState } from 'react'\nimport { Progress } from '@/components/ui/progress'\n\nexport default function Demo() {\n  const [value, setValue] = useState(20)\n\n  useEffect(() => {\n    const interval = setInterval(() => {\n      setValue((current) => Math.min(100, Math.round(current + Math.random() * 25)))\n    }, 1000)\n    return () => clearInterval(interval)\n  }, [])\n\n  return <Progress value={value} />\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/progress.tsx"
     }

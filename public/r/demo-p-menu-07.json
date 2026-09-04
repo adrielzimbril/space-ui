@@ -4,13 +4,13 @@
   "title": "Menu 7",
   "description": "Nested menu",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-menu"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-menu.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/menu/p-menu-07/index.tsx",
-      "content": "import { Button } from '@/components/ui/button'\nimport {\n  Menu,\n  MenuItem,\n  MenuPopup,\n  MenuSub,\n  MenuSubPopup,\n  MenuSubTrigger,\n  MenuTrigger,\n} from '@/components/ui/menu'\n\nexport default function Particle() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\n      <MenuPopup>\n        <MenuItem>Item one</MenuItem>\n        <MenuSub>\n          <MenuSubTrigger>More</MenuSubTrigger>\n          <MenuSubPopup>\n            <MenuItem>Sub item A</MenuItem>\n            <MenuItem>Sub item B</MenuItem>\n          </MenuSubPopup>\n        </MenuSub>\n        <MenuItem>Item two</MenuItem>\n      </MenuPopup>\n    </Menu>\n  )\n}\n",
+      "content": "import { Button } from '@/components/ui/button'\nimport {\n  Menu,\n  MenuItem,\n  MenuPopup,\n  MenuSub,\n  MenuSubPopup,\n  MenuSubTrigger,\n  MenuTrigger,\n} from '@/components/ui/menu'\n\nexport default function Demo() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\n      <MenuPopup>\n        <MenuItem>Item one</MenuItem>\n        <MenuSub>\n          <MenuSubTrigger>More</MenuSubTrigger>\n          <MenuSubPopup>\n            <MenuItem>Sub item A</MenuItem>\n            <MenuItem>Sub item B</MenuItem>\n          </MenuSubPopup>\n        </MenuSub>\n        <MenuItem>Item two</MenuItem>\n      </MenuPopup>\n    </Menu>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/menu.tsx"
     }

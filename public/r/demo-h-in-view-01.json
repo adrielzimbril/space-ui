@@ -4,7 +4,7 @@
   "title": "InView",
   "description": "Viewport trigger component wrapper",
   "registryDependencies": [
-    "@usespaceui/hooks-components-in-view"
+    "https://www.spaceui.one/r/hooks-components-in-view.json"
   ],
   "files": [
     {

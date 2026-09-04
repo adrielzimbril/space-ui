@@ -5,7 +5,7 @@
   "title": "Image Dark",
   "description": "An adaptive image component that dynamically switches between light and dark mode sources using standard img elements.",
   "registryDependencies": [
-    "@usespaceui/lib-utils"
+    "https://www.spaceui.one/r/lib-utils.json"
   ],
   "categories": [
     "component",

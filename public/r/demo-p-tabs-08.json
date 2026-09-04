@@ -4,13 +4,13 @@
   "title": "Tabs 8",
   "description": "Tabs with count badge",
   "registryDependencies": [
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-tabs"
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-tabs.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/tabs/p-tabs-08/index.tsx",
-      "content": "import { Badge } from '@/components/ui/badge'\nimport { Tabs, TabsList, TabsPanel, TabsTab } from '@/components/ui/tabs'\n\nexport default function Particle() {\n  return (\n    <Tabs defaultValue=\"tab-1\">\n      <TabsList>\n        <TabsTab value=\"tab-1\">\n          All\n          <Badge className=\"not-in-data-active:text-muted-foreground\" variant=\"outline\">\n            128\n          </Badge>\n        </TabsTab>\n        <TabsTab value=\"tab-2\">\n          Pending\n          <Badge className=\"not-in-data-active:text-muted-foreground\" variant=\"outline\">\n            8\n          </Badge>\n        </TabsTab>\n        <TabsTab value=\"tab-3\">\n          Completed\n          <Badge className=\"not-in-data-active:text-muted-foreground\" variant=\"outline\">\n            120\n          </Badge>\n        </TabsTab>\n      </TabsList>\n      <TabsPanel value=\"tab-1\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">All items content</p>\n      </TabsPanel>\n      <TabsPanel value=\"tab-2\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">Pending items content</p>\n      </TabsPanel>\n      <TabsPanel value=\"tab-3\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">Completed items content</p>\n      </TabsPanel>\n    </Tabs>\n  )\n}\n",
+      "content": "import { Badge } from '@/components/ui/badge'\nimport { Tabs, TabsList, TabsPanel, TabsTab } from '@/components/ui/tabs'\n\nexport default function Demo() {\n  return (\n    <Tabs defaultValue=\"tab-1\">\n      <TabsList>\n        <TabsTab value=\"tab-1\">\n          All\n          <Badge className=\"not-in-data-active:text-muted-foreground\" variant=\"outline\">\n            128\n          </Badge>\n        </TabsTab>\n        <TabsTab value=\"tab-2\">\n          Pending\n          <Badge className=\"not-in-data-active:text-muted-foreground\" variant=\"outline\">\n            8\n          </Badge>\n        </TabsTab>\n        <TabsTab value=\"tab-3\">\n          Completed\n          <Badge className=\"not-in-data-active:text-muted-foreground\" variant=\"outline\">\n            120\n          </Badge>\n        </TabsTab>\n      </TabsList>\n      <TabsPanel value=\"tab-1\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">All items content</p>\n      </TabsPanel>\n      <TabsPanel value=\"tab-2\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">Pending items content</p>\n      </TabsPanel>\n      <TabsPanel value=\"tab-3\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">Completed items content</p>\n      </TabsPanel>\n    </Tabs>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/tabs.tsx"
     }

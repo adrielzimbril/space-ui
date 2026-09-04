@@ -5,8 +5,8 @@
   "title": "Field 7",
   "description": "Field with autocomplete",
   "registryDependencies": [
-    "@usespaceui/primitives-autocomplete",
-    "@usespaceui/primitives-field"
+    "https://www.spaceui.one/r/primitives-autocomplete.json",
+    "https://www.spaceui.one/r/primitives-field.json"
   ],
   "categories": [
     "autocomplete",

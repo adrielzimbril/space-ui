@@ -5,10 +5,10 @@
   "title": "Button group with select status addon",
   "description": "Button group with select status addon",
   "registryDependencies": [
-    "@usespaceui/lib-utils",
-    "@usespaceui/primitives-group",
-    "@usespaceui/primitives-input",
-    "@usespaceui/primitives-select"
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-group.json",
+    "https://www.spaceui.one/r/primitives-input.json",
+    "https://www.spaceui.one/r/primitives-select.json"
   ],
   "categories": [
     "button-group"

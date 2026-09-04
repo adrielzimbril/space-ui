@@ -7,13 +7,13 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-input-group"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-input-group.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/input-group/p-input-group-15/index.tsx",
-      "content": "import { IconArrowRight } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput aria-label=\"Subscribe to our newsletter\" disabled placeholder=\"Your best email\" type=\"email\" />\n      <InputGroupAddon align=\"inline-end\">\n        <Button aria-label=\"Subscribe\" disabled size=\"icon-xs\" variant=\"ghost\">\n          <IconArrowRight aria-hidden=\"true\" />\n        </Button>\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
+      "content": "import { IconArrowRight } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'\n\nexport default function Demo() {\n  return (\n    <InputGroup>\n      <InputGroupInput aria-label=\"Subscribe to our newsletter\" disabled placeholder=\"Your best email\" type=\"email\" />\n      <InputGroupAddon align=\"inline-end\">\n        <Button aria-label=\"Subscribe\" disabled size=\"icon-xs\" variant=\"ghost\">\n          <IconArrowRight aria-hidden=\"true\" />\n        </Button>\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/input-group.tsx"
     }

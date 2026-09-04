@@ -4,12 +4,12 @@
   "title": "16:9 widescreen aspect ratio",
   "description": "16:9 widescreen aspect ratio",
   "registryDependencies": [
-    "@usespaceui/primitives-aspect-ratio"
+    "https://www.spaceui.one/r/primitives-aspect-ratio.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/aspect-ratio/p-aspect-ratio-01/index.tsx",
-      "content": "import { AspectRatio } from '@/components/ui/aspect-ratio'\n\nexport default function Pattern() {\n  return (\n    <div className=\"w-full max-w-md\">\n      <AspectRatio ratio={16 / 9} className=\"bg-muted rounded-xl overflow-hidden border\">\n        <img\n          src=\"https://picsum.photos/1000/800?grayscale&random=1\"\n          alt=\"16:9\"\n          width={1000}\n          height={800}\n          className=\"h-full w-full object-cover\"\n        />\n      </AspectRatio>\n    </div>\n  )\n}\n",
+      "content": "import { AspectRatio } from '@/components/ui/aspect-ratio'\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full max-w-md\">\n      <AspectRatio ratio={16 / 9} className=\"bg-muted rounded-xl overflow-hidden border\">\n        <img\n          src=\"https://picsum.photos/1000/800?grayscale&random=1\"\n          alt=\"16:9\"\n          width={1000}\n          height={800}\n          className=\"h-full w-full object-cover\"\n        />\n      </AspectRatio>\n    </div>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/aspect-ratio.tsx"
     }

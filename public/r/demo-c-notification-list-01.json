@@ -4,7 +4,7 @@
   "title": "Notification List",
   "description": "Demo showing a notification list.",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-notification-list"
+    "https://www.spaceui.one/r/components-spaceui-notification-list.json"
   ],
   "files": [
     {

@@ -8,14 +8,14 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-group",
-    "@usespaceui/primitives-input"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-group.json",
+    "https://www.spaceui.one/r/primitives-input.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/group/p-group-16/index.tsx",
-      "content": "import { IconPlus } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { Group, GroupSeparator } from '@/components/ui/group'\nimport { Input } from '@/components/ui/input'\n\nexport default function Particle() {\n  return (\n    <Group aria-label=\"Add item\">\n      <Button aria-label=\"Add\" size=\"icon\" variant=\"outline\">\n        <IconPlus aria-hidden=\"true\" />\n      </Button>\n      <GroupSeparator />\n      <Input aria-label=\"Item name\" placeholder=\"Enter item name\" type=\"text\" />\n    </Group>\n  )\n}\n",
+      "content": "import { IconPlus } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { Group, GroupSeparator } from '@/components/ui/group'\nimport { Input } from '@/components/ui/input'\n\nexport default function Demo() {\n  return (\n    <Group aria-label=\"Add item\">\n      <Button aria-label=\"Add\" size=\"icon\" variant=\"outline\">\n        <IconPlus aria-hidden=\"true\" />\n      </Button>\n      <GroupSeparator />\n      <Input aria-label=\"Item name\" placeholder=\"Enter item name\" type=\"text\" />\n    </Group>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/group.tsx"
     }

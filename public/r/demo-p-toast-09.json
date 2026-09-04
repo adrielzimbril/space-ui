@@ -8,14 +8,14 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-toast",
-    "@usespaceui/primitives-tooltip"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-toast.json",
+    "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/toast/p-toast-09/index.tsx",
-      "content": "'use client'\n\nimport { IconSparkles } from '@tabler/icons-react'\nimport { useRef } from 'react'\nimport { Button } from '@/components/ui/button'\nimport { anchoredToastManager } from '@/components/ui/toast'\nimport { Tooltip, TooltipPopup, TooltipTrigger } from '@/components/ui/tooltip'\n\nconst ANCHORED_SAVE_ERROR_TOAST_ID = 'space-demo-anchored-save-error-toast'\n\nexport default function Particle() {\n  const saveButtonRef = useRef<HTMLButtonElement>(null)\n  const toastTimeout = 2000\n\n  function handleSave() {\n    if (!saveButtonRef.current) return\n    anchoredToastManager.add({\n      data: {\n        tooltipStyle: true,\n      },\n      id: ANCHORED_SAVE_ERROR_TOAST_ID,\n      positionerProps: {\n        anchor: saveButtonRef.current,\n        sideOffset: 6,\n      },\n      timeout: toastTimeout,\n      title: \"Couldn't save draft\",\n      type: 'error',\n    })\n  }\n\n  return (\n    <Tooltip>\n      <TooltipTrigger\n        delay={0}\n        render={<Button aria-label=\"Save\" onClick={handleSave} ref={saveButtonRef} size=\"icon\" variant=\"outline\" />}\n      >\n        <IconSparkles aria-hidden=\"true\" />\n      </TooltipTrigger>\n      <TooltipPopup>\n        <p>Save</p>\n      </TooltipPopup>\n    </Tooltip>\n  )\n}\n",
+      "content": "'use client'\n\nimport { IconSparkles } from '@tabler/icons-react'\nimport { useRef } from 'react'\nimport { Button } from '@/components/ui/button'\nimport { anchoredToastManager } from '@/components/ui/toast'\nimport { Tooltip, TooltipPopup, TooltipTrigger } from '@/components/ui/tooltip'\n\nconst ANCHORED_SAVE_ERROR_TOAST_ID = 'space-demo-anchored-save-error-toast'\n\nexport default function Demo() {\n  const saveButtonRef = useRef<HTMLButtonElement>(null)\n  const toastTimeout = 2000\n\n  function handleSave() {\n    if (!saveButtonRef.current) return\n    anchoredToastManager.add({\n      data: {\n        tooltipStyle: true,\n      },\n      id: ANCHORED_SAVE_ERROR_TOAST_ID,\n      positionerProps: {\n        anchor: saveButtonRef.current,\n        sideOffset: 6,\n      },\n      timeout: toastTimeout,\n      title: \"Couldn't save draft\",\n      type: 'error',\n    })\n  }\n\n  return (\n    <Tooltip>\n      <TooltipTrigger\n        delay={0}\n        render={<Button aria-label=\"Save\" onClick={handleSave} ref={saveButtonRef} size=\"icon\" variant=\"outline\" />}\n      >\n        <IconSparkles aria-hidden=\"true\" />\n      </TooltipTrigger>\n      <TooltipPopup>\n        <p>Save</p>\n      </TooltipPopup>\n    </Tooltip>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/toast.tsx"
     }

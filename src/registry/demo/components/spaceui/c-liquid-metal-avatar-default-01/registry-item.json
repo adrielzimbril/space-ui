@@ -5,7 +5,7 @@
   "title": "Liquid Metal Avatar Default",
   "description": "Interactive demo showcasing the Liquid Metal Avatar Default component.",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-liquid-metal-avatar"
+    "https://www.spaceui.one/r/components-spaceui-liquid-metal-avatar.json"
   ],
   "categories": [
     "liquid-metal-avatar-default"

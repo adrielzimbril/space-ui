@@ -5,8 +5,8 @@
   "title": "Slider 5",
   "description": "Slider with ticks",
   "registryDependencies": [
-    "@usespaceui/lib-utils",
-    "@usespaceui/primitives-slider"
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-slider.json"
   ],
   "categories": [
     "slider"

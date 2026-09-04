@@ -4,13 +4,13 @@
   "title": "Textarea 7",
   "description": "Textarea with optional label",
   "registryDependencies": [
-    "@usespaceui/primitives-label",
-    "@usespaceui/primitives-textarea"
+    "https://www.spaceui.one/r/primitives-label.json",
+    "https://www.spaceui.one/r/primitives-textarea.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/textarea/p-textarea-07/index.tsx",
-      "content": "'use client'\n\nimport { useId } from 'react'\nimport { Label } from '@/components/ui/label'\nimport { Textarea } from '@/components/ui/textarea'\n\nexport default function Particle() {\n  const id = useId()\n  return (\n    <div className=\"flex flex-col gap-2\">\n      <div className=\"inline-flex w-full items-center justify-between gap-2\">\n        <Label htmlFor={id}>Message</Label>\n        <Label className=\"font-normal text-muted-foreground\" render={<span />}>\n          Optional\n        </Label>\n      </div>\n      <Textarea id={id} placeholder=\"Type your message here\" />\n    </div>\n  )\n}\n",
+      "content": "'use client'\n\nimport { useId } from 'react'\nimport { Label } from '@/components/ui/label'\nimport { Textarea } from '@/components/ui/textarea'\n\nexport default function Demo() {\n  const id = useId()\n  return (\n    <div className=\"flex flex-col gap-2\">\n      <div className=\"inline-flex w-full items-center justify-between gap-2\">\n        <Label htmlFor={id}>Message</Label>\n        <Label className=\"font-normal text-muted-foreground\" render={<span />}>\n          Optional\n        </Label>\n      </div>\n      <Textarea id={id} placeholder=\"Type your message here\" />\n    </div>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/textarea.tsx"
     }

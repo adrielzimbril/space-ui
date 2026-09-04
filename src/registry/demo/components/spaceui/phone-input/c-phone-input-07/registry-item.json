@@ -5,7 +5,7 @@
   "title": "Phone input with specific default country",
   "description": "Phone input with specific default country",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-phone-input"
+    "https://www.spaceui.one/r/components-spaceui-phone-input.json"
   ],
   "categories": [
     "component",

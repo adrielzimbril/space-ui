@@ -4,12 +4,12 @@
   "title": "Input Sizes",
   "description": "Input fields in sm, default, and lg sizes",
   "registryDependencies": [
-    "@usespaceui/primitives-input"
+    "https://www.spaceui.one/r/primitives-input.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/input/p-input-02/index.tsx",
-      "content": "import { Input } from '@/components/ui/input'\n\nexport default function Particle() {\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-3\">\n      <Input placeholder=\"Small input\" size=\"sm\" />\n      <Input placeholder=\"Default input\" size=\"default\" />\n      <Input placeholder=\"Large input\" size=\"lg\" />\n    </div>\n  )\n}\n",
+      "content": "import { Input } from '@/components/ui/input'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-3\">\n      <Input placeholder=\"Small input\" size=\"sm\" />\n      <Input placeholder=\"Default input\" size=\"default\" />\n      <Input placeholder=\"Large input\" size=\"lg\" />\n    </div>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/input.tsx"
     }

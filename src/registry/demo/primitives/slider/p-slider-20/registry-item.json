@@ -5,7 +5,7 @@
   "title": "Slider 20",
   "description": "Equalizer with vertical sliders",
   "registryDependencies": [
-    "@usespaceui/primitives-slider"
+    "https://www.spaceui.one/r/primitives-slider.json"
   ],
   "categories": [
     "slider"

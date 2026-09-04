@@ -5,7 +5,7 @@
   "title": "Autocomplete 10",
   "description": "Autocomplete with limited number of results",
   "registryDependencies": [
-    "@usespaceui/primitives-autocomplete"
+    "https://www.spaceui.one/r/primitives-autocomplete.json"
   ],
   "categories": [
     "autocomplete",

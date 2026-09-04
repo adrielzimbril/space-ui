@@ -4,12 +4,12 @@
   "title": "Input 14",
   "description": "Input with custom border and background",
   "registryDependencies": [
-    "@usespaceui/primitives-input"
+    "https://www.spaceui.one/r/primitives-input.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/input/p-input-14/index.tsx",
-      "content": "import { Input } from '@/components/ui/input'\n\nexport default function Particle() {\n  return (\n    <Input\n      aria-label=\"Email\"\n      className=\"border-transparent bg-muted shadow-none before:hidden\"\n      placeholder=\"Email\"\n      type=\"email\"\n    />\n  )\n}\n",
+      "content": "import { Input } from '@/components/ui/input'\n\nexport default function Demo() {\n  return (\n    <Input\n      aria-label=\"Email\"\n      className=\"border-transparent bg-muted shadow-none before:hidden\"\n      placeholder=\"Email\"\n      type=\"email\"\n    />\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/input.tsx"
     }

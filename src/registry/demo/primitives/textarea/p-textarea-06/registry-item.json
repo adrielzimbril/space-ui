@@ -5,8 +5,8 @@
   "title": "Textarea 6",
   "description": "Textarea with label and required indicator",
   "registryDependencies": [
-    "@usespaceui/primitives-label",
-    "@usespaceui/primitives-textarea"
+    "https://www.spaceui.one/r/primitives-label.json",
+    "https://www.spaceui.one/r/primitives-textarea.json"
   ],
   "categories": [
     "label",

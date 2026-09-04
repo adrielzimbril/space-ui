@@ -4,12 +4,12 @@
   "title": "Progress 2",
   "description": "Progress with label and value",
   "registryDependencies": [
-    "@usespaceui/primitives-progress"
+    "https://www.spaceui.one/r/primitives-progress.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/progress/p-progress-02/index.tsx",
-      "content": "import {\n  Progress,\n  ProgressIndicator,\n  ProgressLabel,\n  ProgressTrack,\n  ProgressValue,\n} from '@/components/ui/progress'\n\nexport default function Particle() {\n  return (\n    <Progress value={60}>\n      <div className=\"flex items-center justify-between gap-2\">\n        <ProgressLabel>Export data</ProgressLabel>\n        <ProgressValue />\n      </div>\n      <ProgressTrack>\n        <ProgressIndicator />\n      </ProgressTrack>\n    </Progress>\n  )\n}\n",
+      "content": "import {\n  Progress,\n  ProgressIndicator,\n  ProgressLabel,\n  ProgressTrack,\n  ProgressValue,\n} from '@/components/ui/progress'\n\nexport default function Demo() {\n  return (\n    <Progress value={60}>\n      <div className=\"flex items-center justify-between gap-2\">\n        <ProgressLabel>Export data</ProgressLabel>\n        <ProgressValue />\n      </div>\n      <ProgressTrack>\n        <ProgressIndicator />\n      </ProgressTrack>\n    </Progress>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/progress.tsx"
     }

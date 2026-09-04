@@ -5,7 +5,7 @@
   "title": "Emoji reaction rating",
   "description": "Emoji reaction rating",
   "registryDependencies": [
-    "@usespaceui/lib-utils"
+    "https://www.spaceui.one/r/lib-utils.json"
   ],
   "categories": [
     "component",

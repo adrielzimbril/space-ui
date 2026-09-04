@@ -4,12 +4,12 @@
   "title": "Link 3",
   "description": "Button-like link variants",
   "registryDependencies": [
-    "@usespaceui/primitives-link"
+    "https://www.spaceui.one/r/primitives-link.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/link/p-link-03/index.tsx",
-      "content": "import { Link } from '@/components/ui/link'\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Link href=\"#\" asButton variant=\"default\">\n        Default\n      </Link>\n      <Link href=\"#\" asButton variant=\"secondary\">\n        Secondary\n      </Link>\n      <Link href=\"#\" asButton variant=\"outline\">\n        Outline\n      </Link>\n      <Link href=\"#\" asButton variant=\"ghost\">\n        Ghost\n      </Link>\n      <Link href=\"#\" asButton variant=\"destructive\">\n        Destructive\n      </Link>\n      <Link href=\"#\" asButton variant=\"destructive-outline\">\n        Destructive Outline\n      </Link>\n    </div>\n  )\n}\n",
+      "content": "import { Link } from '@/components/ui/link'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Link href=\"#\" asButton variant=\"default\">\n        Default\n      </Link>\n      <Link href=\"#\" asButton variant=\"secondary\">\n        Secondary\n      </Link>\n      <Link href=\"#\" asButton variant=\"outline\">\n        Outline\n      </Link>\n      <Link href=\"#\" asButton variant=\"ghost\">\n        Ghost\n      </Link>\n      <Link href=\"#\" asButton variant=\"destructive\">\n        Destructive\n      </Link>\n      <Link href=\"#\" asButton variant=\"destructive-outline\">\n        Destructive Outline\n      </Link>\n    </div>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/link.tsx"
     }

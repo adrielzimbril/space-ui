@@ -5,9 +5,9 @@
   "title": "Basic scroll area",
   "description": "Basic scroll area",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-scrollspy",
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-scroll-area"
+    "https://www.spaceui.one/r/components-spaceui-scrollspy.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-scroll-area.json"
   ],
   "categories": [
     "component",

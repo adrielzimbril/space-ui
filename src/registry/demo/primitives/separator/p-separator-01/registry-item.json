@@ -5,7 +5,7 @@
   "title": "Separator 1",
   "description": "Separator with horizontal and vertical orientations",
   "registryDependencies": [
-    "@usespaceui/primitives-separator"
+    "https://www.spaceui.one/r/primitives-separator.json"
   ],
   "categories": [
     "separator"

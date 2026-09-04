@@ -8,9 +8,9 @@
     "class-variance-authority"
   ],
   "registryDependencies": [
-    "@usespaceui/lib-utils",
-    "@usespaceui/primitives-separator",
-    "@usespaceui/primitives-toggle"
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-separator.json",
+    "https://www.spaceui.one/r/primitives-toggle.json"
   ],
   "files": [
     {

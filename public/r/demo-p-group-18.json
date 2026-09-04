@@ -4,14 +4,14 @@
   "title": "Group 18",
   "description": "Group with select and input",
   "registryDependencies": [
-    "@usespaceui/primitives-group",
-    "@usespaceui/primitives-input",
-    "@usespaceui/primitives-select"
+    "https://www.spaceui.one/r/primitives-group.json",
+    "https://www.spaceui.one/r/primitives-input.json",
+    "https://www.spaceui.one/r/primitives-select.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/group/p-group-18/index.tsx",
-      "content": "import { Group, GroupSeparator } from '@/components/ui/group'\nimport { Input } from '@/components/ui/input'\nimport { Select, SelectItem, SelectPopup, SelectTrigger, SelectValue } from '@/components/ui/select'\n\nconst protocols = [\n  { label: 'https://', value: 'https' },\n  { label: 'http://', value: 'http' },\n  { label: 'ftp://', value: 'ftp' },\n  { label: 'sftp://', value: 'sftp' },\n]\n\nexport default function Particle() {\n  return (\n    <Group aria-label=\"URL input\">\n      <Select defaultValue=\"https\" items={protocols}>\n        <SelectTrigger className=\"w-fit min-w-none\">\n          <SelectValue />\n        </SelectTrigger>\n        <SelectPopup>\n          {protocols.map(({ label, value }) => (\n            <SelectItem key={value} value={value}>\n              {label}\n            </SelectItem>\n          ))}\n        </SelectPopup>\n      </Select>\n      <GroupSeparator />\n      <Input aria-label=\"IP address\" placeholder=\"192.168.1.1\" type=\"text\" />\n    </Group>\n  )\n}\n",
+      "content": "import { Group, GroupSeparator } from '@/components/ui/group'\nimport { Input } from '@/components/ui/input'\nimport { Select, SelectItem, SelectPopup, SelectTrigger, SelectValue } from '@/components/ui/select'\n\nconst protocols = [\n  { label: 'https://', value: 'https' },\n  { label: 'http://', value: 'http' },\n  { label: 'ftp://', value: 'ftp' },\n  { label: 'sftp://', value: 'sftp' },\n]\n\nexport default function Demo() {\n  return (\n    <Group aria-label=\"URL input\">\n      <Select defaultValue=\"https\" items={protocols}>\n        <SelectTrigger className=\"w-fit min-w-none\">\n          <SelectValue />\n        </SelectTrigger>\n        <SelectPopup>\n          {protocols.map(({ label, value }) => (\n            <SelectItem key={value} value={value}>\n              {label}\n            </SelectItem>\n          ))}\n        </SelectPopup>\n      </Select>\n      <GroupSeparator />\n      <Input aria-label=\"IP address\" placeholder=\"192.168.1.1\" type=\"text\" />\n    </Group>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/group.tsx"
     }

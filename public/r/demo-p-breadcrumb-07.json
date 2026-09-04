@@ -8,13 +8,13 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-breadcrumb",
-    "@usespaceui/primitives-select"
+    "https://www.spaceui.one/r/primitives-breadcrumb.json",
+    "https://www.spaceui.one/r/primitives-select.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/breadcrumb/p-breadcrumb-07/index.tsx",
-      "content": "import { IconDatabase, IconHome } from '@tabler/icons-react'\nimport Link from 'next/link'\nimport {\n  Breadcrumb,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbSeparator,\n} from '@/components/ui/breadcrumb'\nimport { Select, SelectItem, SelectPopup, SelectTrigger, SelectValue } from '@/components/ui/select'\n\nconst items = [\n  { label: 'Space UI', value: 'space-ui' },\n  { label: 'Atom', value: 'atom' },\n  { label: 'Nova', value: 'nova' },\n]\n\nexport default function Particle() {\n  return (\n    <Breadcrumb>\n      <BreadcrumbList>\n        <BreadcrumbItem>\n          <BreadcrumbLink render={<Link href=\"/\" />}>Projects</BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <Select aria-label=\"Select project\" defaultValue=\"space-ui\" items={items}>\n            <SelectTrigger size=\"sm\">\n              <IconDatabase />\n              <SelectValue />\n            </SelectTrigger>\n            <SelectPopup>\n              {items.map(({ label, value }) => (\n                <SelectItem key={value} value={value}>\n                  {label}\n                </SelectItem>\n              ))}\n            </SelectPopup>\n          </Select>\n        </BreadcrumbItem>\n      </BreadcrumbList>\n    </Breadcrumb>\n  )\n}\n",
+      "content": "import { IconDatabase, IconHome } from '@tabler/icons-react'\nimport Link from 'next/link'\nimport {\n  Breadcrumb,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbSeparator,\n} from '@/components/ui/breadcrumb'\nimport { Select, SelectItem, SelectPopup, SelectTrigger, SelectValue } from '@/components/ui/select'\n\nconst items = [\n  { label: 'Space UI', value: 'space-ui' },\n  { label: 'Atom', value: 'atom' },\n  { label: 'Nova', value: 'nova' },\n]\n\nexport default function Demo() {\n  return (\n    <Breadcrumb>\n      <BreadcrumbList>\n        <BreadcrumbItem>\n          <BreadcrumbLink render={<Link href=\"/\" />}>Projects</BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <Select aria-label=\"Select project\" defaultValue=\"space-ui\" items={items}>\n            <SelectTrigger size=\"sm\">\n              <IconDatabase />\n              <SelectValue />\n            </SelectTrigger>\n            <SelectPopup>\n              {items.map(({ label, value }) => (\n                <SelectItem key={value} value={value}>\n                  {label}\n                </SelectItem>\n              ))}\n            </SelectPopup>\n          </Select>\n        </BreadcrumbItem>\n      </BreadcrumbList>\n    </Breadcrumb>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/breadcrumb.tsx"
     }

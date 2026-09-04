@@ -4,13 +4,13 @@
   "title": "Menu 4",
   "description": "Menu with radio group",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-menu"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-menu.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/menu/p-menu-04/index.tsx",
-      "content": "import { Button } from '@/components/ui/button'\nimport { Menu, MenuPopup, MenuRadioGroup, MenuRadioItem, MenuTrigger } from '@/components/ui/menu'\n\nexport default function Particle() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\n      <MenuPopup>\n        <MenuRadioGroup defaultValue=\"system\">\n          <MenuRadioItem value=\"light\">Light</MenuRadioItem>\n          <MenuRadioItem value=\"dark\">Dark</MenuRadioItem>\n          <MenuRadioItem value=\"system\">System</MenuRadioItem>\n        </MenuRadioGroup>\n      </MenuPopup>\n    </Menu>\n  )\n}\n",
+      "content": "import { Button } from '@/components/ui/button'\nimport { Menu, MenuPopup, MenuRadioGroup, MenuRadioItem, MenuTrigger } from '@/components/ui/menu'\n\nexport default function Demo() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\n      <MenuPopup>\n        <MenuRadioGroup defaultValue=\"system\">\n          <MenuRadioItem value=\"light\">Light</MenuRadioItem>\n          <MenuRadioItem value=\"dark\">Dark</MenuRadioItem>\n          <MenuRadioItem value=\"system\">System</MenuRadioItem>\n        </MenuRadioGroup>\n      </MenuPopup>\n    </Menu>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/menu.tsx"
     }

@@ -5,7 +5,7 @@
   "title": "Context Menu 3",
   "description": "Nested context menu",
   "registryDependencies": [
-    "@usespaceui/primitives-context-menu"
+    "https://www.spaceui.one/r/primitives-context-menu.json"
   ],
   "categories": [
     "context menu",

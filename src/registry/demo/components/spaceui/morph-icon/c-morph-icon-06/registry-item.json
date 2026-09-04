@@ -8,9 +8,9 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-morph-icon",
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-input"
+    "https://www.spaceui.one/r/components-spaceui-morph-icon.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-input.json"
   ],
   "categories": [
     "component",

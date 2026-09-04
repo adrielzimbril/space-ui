@@ -8,13 +8,13 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-input-group"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-input-group.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/input-group/p-input-group-22/index.tsx",
-      "content": "'use client'\n\nimport { IconX } from '@tabler/icons-react'\nimport { useState } from 'react'\nimport { Button } from '@/components/ui/button'\nimport { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'\n\nexport default function Particle() {\n  const [value, setValue] = useState('Clear me')\n\n  return (\n    <InputGroup>\n      <InputGroupInput\n        aria-label=\"Text input with clear button\"\n        onChange={(e) => setValue(e.target.value)}\n        placeholder=\"Enter text\"\n        type=\"text\"\n        value={value}\n      />\n      {value && (\n        <InputGroupAddon align=\"inline-end\">\n          <Button aria-label=\"Clear input\" onClick={() => setValue('')} size=\"icon-xs\" variant=\"ghost\">\n            <IconX aria-hidden=\"true\" />\n          </Button>\n        </InputGroupAddon>\n      )}\n    </InputGroup>\n  )\n}\n",
+      "content": "'use client'\n\nimport { IconX } from '@tabler/icons-react'\nimport { useState } from 'react'\nimport { Button } from '@/components/ui/button'\nimport { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'\n\nexport default function Demo() {\n  const [value, setValue] = useState('Clear me')\n\n  return (\n    <InputGroup>\n      <InputGroupInput\n        aria-label=\"Text input with clear button\"\n        onChange={(e) => setValue(e.target.value)}\n        placeholder=\"Enter text\"\n        type=\"text\"\n        value={value}\n      />\n      {value && (\n        <InputGroupAddon align=\"inline-end\">\n          <Button aria-label=\"Clear input\" onClick={() => setValue('')} size=\"icon-xs\" variant=\"ghost\">\n            <IconX aria-hidden=\"true\" />\n          </Button>\n        </InputGroupAddon>\n      )}\n    </InputGroup>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/input-group.tsx"
     }

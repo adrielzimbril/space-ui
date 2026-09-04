@@ -4,7 +4,7 @@
   "title": "useHold",
   "description": "useHold hook.",
   "registryDependencies": [
-    "@usespaceui/hooks-utils-event"
+    "https://www.spaceui.one/r/hooks-utils-event.json"
   ],
   "files": [
     {

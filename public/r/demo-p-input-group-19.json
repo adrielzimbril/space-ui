@@ -8,14 +8,14 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-input-group",
-    "@usespaceui/primitives-toggle"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-input-group.json",
+    "https://www.spaceui.one/r/primitives-toggle.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/input-group/p-input-group-19/index.tsx",
-      "content": "'use client'\n\nimport { IconBold, IconInfoCircle, IconLink } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { InputGroup, InputGroupAddon, InputGroupTextarea } from '@/components/ui/input-group'\nimport { Toggle } from '@/components/ui/toggle'\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupTextarea placeholder=\"Tell us about yourself…\" />\n      <InputGroupAddon align=\"block-start\" className=\"gap-1 rounded-t-lg border-b bg-muted p-2!\">\n        <Toggle aria-label=\"Toggle bold\" size=\"sm\">\n          <IconBold aria-hidden=\"true\" />\n        </Toggle>\n        <Toggle aria-label=\"Toggle italic\" size=\"sm\">\n          <IconInfoCircle aria-hidden=\"true\" />\n        </Toggle>\n        <Button aria-label=\"Link\" size=\"icon-sm\" variant=\"ghost\">\n          <IconLink aria-hidden=\"true\" />\n        </Button>\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
+      "content": "'use client'\n\nimport { IconBold, IconInfoCircle, IconLink } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { InputGroup, InputGroupAddon, InputGroupTextarea } from '@/components/ui/input-group'\nimport { Toggle } from '@/components/ui/toggle'\n\nexport default function Demo() {\n  return (\n    <InputGroup>\n      <InputGroupTextarea placeholder=\"Tell us about yourself…\" />\n      <InputGroupAddon align=\"block-start\" className=\"gap-1 rounded-t-lg border-b bg-muted p-2!\">\n        <Toggle aria-label=\"Toggle bold\" size=\"sm\">\n          <IconBold aria-hidden=\"true\" />\n        </Toggle>\n        <Toggle aria-label=\"Toggle italic\" size=\"sm\">\n          <IconInfoCircle aria-hidden=\"true\" />\n        </Toggle>\n        <Button aria-label=\"Link\" size=\"icon-sm\" variant=\"ghost\">\n          <IconLink aria-hidden=\"true\" />\n        </Button>\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/input-group.tsx"
     }

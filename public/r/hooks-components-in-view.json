@@ -4,7 +4,7 @@
   "title": "InView",
   "description": "InView component.",
   "registryDependencies": [
-    "@usespaceui/hooks-animation-use-in-view"
+    "https://www.spaceui.one/r/hooks-animation-use-in-view.json"
   ],
   "files": [
     {

@@ -8,8 +8,8 @@
     "date-fns"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-calendar"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-calendar.json"
   ],
   "categories": [
     "calendar",

@@ -9,9 +9,9 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/lib-utils",
-    "@usespaceui/primitives-autocomplete",
-    "@usespaceui/primitives-kbd"
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-autocomplete.json",
+    "https://www.spaceui.one/r/primitives-kbd.json"
   ],
   "categories": [
     "command"

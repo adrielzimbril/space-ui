@@ -5,8 +5,8 @@
   "title": "Avatar 6",
   "description": "Avatar with verified badge",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-avatar-extended",
-    "@usespaceui/primitives-avatar"
+    "https://www.spaceui.one/r/components-spaceui-avatar-extended.json",
+    "https://www.spaceui.one/r/primitives-avatar.json"
   ],
   "categories": [
     "avatar"

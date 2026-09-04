@@ -8,12 +8,12 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-avatar"
+    "https://www.spaceui.one/r/primitives-avatar.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/avatar/p-avatar-04/index.tsx",
-      "content": "import { IconUser } from '@tabler/icons-react'\nimport { Avatar, AvatarFallback } from '@/components/ui/avatar'\n\nexport default function Particle() {\n  return (\n    <Avatar>\n      <AvatarFallback>\n        <IconUser className=\"size-4\" />\n      </AvatarFallback>\n    </Avatar>\n  )\n}\n",
+      "content": "import { IconUser } from '@tabler/icons-react'\nimport { Avatar, AvatarFallback } from '@/components/ui/avatar'\n\nexport default function Demo() {\n  return (\n    <Avatar>\n      <AvatarFallback>\n        <IconUser className=\"size-4\" />\n      </AvatarFallback>\n    </Avatar>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/avatar.tsx"
     }

@@ -5,7 +5,7 @@
   "title": "Status Badge Stacked Mode",
   "description": "Multi-line badge with title and description subtitle.",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-status-badge"
+    "https://www.spaceui.one/r/components-spaceui-status-badge.json"
   ],
   "categories": [
     "component",

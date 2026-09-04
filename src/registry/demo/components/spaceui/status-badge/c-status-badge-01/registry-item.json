@@ -5,7 +5,7 @@
   "title": "Status Badge Variants",
   "description": "All status indicators from online and available to busy, away, and error states.",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-status-badge"
+    "https://www.spaceui.one/r/components-spaceui-status-badge.json"
   ],
   "categories": [
     "component",

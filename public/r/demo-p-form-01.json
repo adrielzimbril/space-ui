@@ -4,15 +4,15 @@
   "title": "Form 1",
   "description": "Input in a form",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-field",
-    "@usespaceui/primitives-form",
-    "@usespaceui/primitives-input"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-field.json",
+    "https://www.spaceui.one/r/primitives-form.json",
+    "https://www.spaceui.one/r/primitives-input.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/form/p-form-01/index.tsx",
-      "content": "'use client'\n\nimport type { FormEvent } from 'react'\nimport { useState } from 'react'\nimport { Button } from '@/components/ui/button'\nimport { Field, FieldError, FieldLabel } from '@/components/ui/field'\nimport { Form } from '@/components/ui/form'\nimport { Input } from '@/components/ui/input'\n\nexport default function Particle() {\n  const [loading, setLoading] = useState(false)\n  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {\n    e.preventDefault()\n    const formData = new FormData(e.currentTarget)\n    setLoading(true)\n    await new Promise((r) => setTimeout(r, 800))\n    setLoading(false)\n    alert(`Email: ${formData.get('email') || ''}`)\n  }\n\n  return (\n    <Form className=\"flex w-full flex-col gap-4\" onSubmit={onSubmit}>\n      <Field name=\"email\">\n        <FieldLabel>Email</FieldLabel>\n        <Input placeholder=\"you@example.com\" required type=\"email\" />\n        <FieldError>Please enter a valid email.</FieldError>\n      </Field>\n      <Button loading={loading} type=\"submit\">\n        Submit\n      </Button>\n    </Form>\n  )\n}\n",
+      "content": "'use client'\n\nimport type { FormEvent } from 'react'\nimport { useState } from 'react'\nimport { Button } from '@/components/ui/button'\nimport { Field, FieldError, FieldLabel } from '@/components/ui/field'\nimport { Form } from '@/components/ui/form'\nimport { Input } from '@/components/ui/input'\n\nexport default function Demo() {\n  const [loading, setLoading] = useState(false)\n  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {\n    e.preventDefault()\n    const formData = new FormData(e.currentTarget)\n    setLoading(true)\n    await new Promise((r) => setTimeout(r, 800))\n    setLoading(false)\n    alert(`Email: ${formData.get('email') || ''}`)\n  }\n\n  return (\n    <Form className=\"flex w-full flex-col gap-4\" onSubmit={onSubmit}>\n      <Field name=\"email\">\n        <FieldLabel>Email</FieldLabel>\n        <Input placeholder=\"you@example.com\" required type=\"email\" />\n        <FieldError>Please enter a valid email.</FieldError>\n      </Field>\n      <Button loading={loading} type=\"submit\">\n        Submit\n      </Button>\n    </Form>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/form.tsx"
     }

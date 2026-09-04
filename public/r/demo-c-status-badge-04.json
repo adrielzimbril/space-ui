@@ -4,12 +4,12 @@
   "title": "Status Badge Stacked Mode",
   "description": "Multi-line badge with title and description subtitle.",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-status-badge"
+    "https://www.spaceui.one/r/components-spaceui-status-badge.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/status-badge/c-status-badge-04/index.tsx",
-      "content": "import { StatusBadge } from '@/components/spaceui/status-badge'\n\nexport default function StatusBadgeStackDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4 p-4\">\n      <StatusBadge mode=\"stack\" status=\"online\" primaryText=\"Production API\" animated>\n        Operational • 99.99% uptime\n      </StatusBadge>\n      <StatusBadge mode=\"stack\" status=\"away\" primaryText=\"Database Backup\">\n        Maintenance in progress\n      </StatusBadge>\n      <StatusBadge mode=\"stack\" status=\"error\" primaryText=\"Auth Cluster\" animated>\n        Incident reported\n      </StatusBadge>\n    </div>\n  )\n}\n",
+      "content": "import { StatusBadge } from '@/components/spaceui/status-badge'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4 p-4\">\n      <StatusBadge mode=\"stack\" status=\"online\" primaryText=\"Production API\" animated>\n        Operational • 99.99% uptime\n      </StatusBadge>\n      <StatusBadge mode=\"stack\" status=\"away\" primaryText=\"Database Backup\">\n        Maintenance in progress\n      </StatusBadge>\n      <StatusBadge mode=\"stack\" status=\"error\" primaryText=\"Auth Cluster\" animated>\n        Incident reported\n      </StatusBadge>\n    </div>\n  )\n}\n",
       "type": "registry:component",
       "target": "components/spaceui/status-badge.tsx"
     }

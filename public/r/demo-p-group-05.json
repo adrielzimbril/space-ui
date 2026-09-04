@@ -7,14 +7,14 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-group",
-    "@usespaceui/primitives-menu"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-group.json",
+    "https://www.spaceui.one/r/primitives-menu.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/group/p-group-05/index.tsx",
-      "content": "import { IconSearch, IconFile, IconShare, IconFolder } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { Group, GroupSeparator } from '@/components/ui/group'\nimport { Menu, MenuItem, MenuPopup, MenuTrigger } from '@/components/ui/menu'\n\nexport default function Particle() {\n  return (\n    <Group aria-label=\"File actions\">\n      <Button variant=\"outline\">\n        <IconFile aria-hidden=\"true\" />\n        Files\n      </Button>\n      <GroupSeparator />\n      <Button disabled variant=\"outline\">\n        <IconSearch aria-hidden=\"true\" />\n        Media\n      </Button>\n      <GroupSeparator />\n      <Menu>\n        <MenuTrigger render={<Button aria-label=\"Menu\" size=\"icon\" variant=\"outline\" />}>\n          <IconSearch aria-hidden=\"true\" className=\"size-4\" />\n        </MenuTrigger>\n        <MenuPopup align=\"end\">\n          <MenuItem>\n            <IconSearch aria-hidden=\"true\" />\n            Edit\n          </MenuItem>\n          <MenuItem>\n            <IconSearch aria-hidden=\"true\" />\n            Archive\n          </MenuItem>\n          <MenuItem>\n            <IconShare aria-hidden=\"true\" />\n            Share\n          </MenuItem>\n          <MenuItem variant=\"destructive\">\n            <IconFolder aria-hidden=\"true\" />\n            Delete\n          </MenuItem>\n        </MenuPopup>\n      </Menu>\n    </Group>\n  )\n}\n",
+      "content": "import { IconSearch, IconFile, IconShare, IconFolder } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { Group, GroupSeparator } from '@/components/ui/group'\nimport { Menu, MenuItem, MenuPopup, MenuTrigger } from '@/components/ui/menu'\n\nexport default function Demo() {\n  return (\n    <Group aria-label=\"File actions\">\n      <Button variant=\"outline\">\n        <IconFile aria-hidden=\"true\" />\n        Files\n      </Button>\n      <GroupSeparator />\n      <Button disabled variant=\"outline\">\n        <IconSearch aria-hidden=\"true\" />\n        Media\n      </Button>\n      <GroupSeparator />\n      <Menu>\n        <MenuTrigger render={<Button aria-label=\"Menu\" size=\"icon\" variant=\"outline\" />}>\n          <IconSearch aria-hidden=\"true\" className=\"size-4\" />\n        </MenuTrigger>\n        <MenuPopup align=\"end\">\n          <MenuItem>\n            <IconSearch aria-hidden=\"true\" />\n            Edit\n          </MenuItem>\n          <MenuItem>\n            <IconSearch aria-hidden=\"true\" />\n            Archive\n          </MenuItem>\n          <MenuItem>\n            <IconShare aria-hidden=\"true\" />\n            Share\n          </MenuItem>\n          <MenuItem variant=\"destructive\">\n            <IconFolder aria-hidden=\"true\" />\n            Delete\n          </MenuItem>\n        </MenuPopup>\n      </Menu>\n    </Group>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/group.tsx"
     }

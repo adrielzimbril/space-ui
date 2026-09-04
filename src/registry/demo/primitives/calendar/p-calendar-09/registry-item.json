@@ -5,7 +5,7 @@
   "title": "Calendar 9",
   "description": "Calendar with rounded day buttons",
   "registryDependencies": [
-    "@usespaceui/primitives-calendar"
+    "https://www.spaceui.one/r/primitives-calendar.json"
   ],
   "categories": [
     "calendar"

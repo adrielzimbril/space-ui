@@ -5,8 +5,8 @@
   "title": "Switch 1",
   "description": "Basic switch",
   "registryDependencies": [
-    "@usespaceui/primitives-label",
-    "@usespaceui/primitives-switch"
+    "https://www.spaceui.one/r/primitives-label.json",
+    "https://www.spaceui.one/r/primitives-switch.json"
   ],
   "categories": [
     "switch"

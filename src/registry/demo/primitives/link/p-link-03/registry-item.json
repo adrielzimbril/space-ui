@@ -5,7 +5,7 @@
   "title": "Link 3",
   "description": "Button-like link variants",
   "registryDependencies": [
-    "@usespaceui/primitives-link"
+    "https://www.spaceui.one/r/primitives-link.json"
   ],
   "categories": [
     "link"

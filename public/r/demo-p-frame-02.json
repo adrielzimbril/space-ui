@@ -8,14 +8,14 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-collapsible",
-    "@usespaceui/primitives-frame"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-collapsible.json",
+    "https://www.spaceui.one/r/primitives-frame.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/frame/p-frame-02/index.tsx",
-      "content": "import { IconChevronDown, IconSearch } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { Collapsible, CollapsiblePanel, CollapsibleTrigger } from '@/components/ui/collapsible'\nimport { Frame, FrameHeader, FramePanel } from '@/components/ui/frame'\n\nexport default function Particle() {\n  return (\n    <Frame className=\"w-full\">\n      <Collapsible>\n        <FrameHeader className=\"flex-row items-center justify-between px-2 py-2\">\n          <CollapsibleTrigger className=\"data-panel-open:[&_svg]:rotate-180\" render={<Button variant=\"ghost\" />}>\n            <IconChevronDown className=\"size-4\" />\n            Section header\n          </CollapsibleTrigger>\n          <Button aria-label=\"Delete\" size=\"icon\" variant=\"ghost\">\n            <IconSearch />\n          </Button>\n        </FrameHeader>\n        <CollapsiblePanel>\n          <FramePanel>\n            <h2 className=\"font-semibold text-sm\">Section title</h2>\n            <p className=\"text-muted-foreground text-sm\">Section description</p>\n          </FramePanel>\n        </CollapsiblePanel>\n      </Collapsible>\n    </Frame>\n  )\n}\n",
+      "content": "import { IconChevronDown, IconSearch } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { Collapsible, CollapsiblePanel, CollapsibleTrigger } from '@/components/ui/collapsible'\nimport { Frame, FrameHeader, FramePanel } from '@/components/ui/frame'\n\nexport default function Demo() {\n  return (\n    <Frame className=\"w-full\">\n      <Collapsible>\n        <FrameHeader className=\"flex-row items-center justify-between px-2 py-2\">\n          <CollapsibleTrigger className=\"data-panel-open:[&_svg]:rotate-180\" render={<Button variant=\"ghost\" />}>\n            <IconChevronDown className=\"size-4\" />\n            Section header\n          </CollapsibleTrigger>\n          <Button aria-label=\"Delete\" size=\"icon\" variant=\"ghost\">\n            <IconSearch />\n          </Button>\n        </FrameHeader>\n        <CollapsiblePanel>\n          <FramePanel>\n            <h2 className=\"font-semibold text-sm\">Section title</h2>\n            <p className=\"text-muted-foreground text-sm\">Section description</p>\n          </FramePanel>\n        </CollapsiblePanel>\n      </Collapsible>\n    </Frame>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/frame.tsx"
     }

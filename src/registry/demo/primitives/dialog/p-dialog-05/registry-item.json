@@ -5,8 +5,8 @@
   "title": "Dialog 5",
   "description": "Dialog with long content",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-dialog"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-dialog.json"
   ],
   "categories": [
     "dialog"

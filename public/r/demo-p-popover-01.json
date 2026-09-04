@@ -4,16 +4,16 @@
   "title": "Popover 1",
   "description": "Popover with a form",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-field",
-    "@usespaceui/primitives-form",
-    "@usespaceui/primitives-popover",
-    "@usespaceui/primitives-textarea"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-field.json",
+    "https://www.spaceui.one/r/primitives-form.json",
+    "https://www.spaceui.one/r/primitives-popover.json",
+    "https://www.spaceui.one/r/primitives-textarea.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/popover/p-popover-01/index.tsx",
-      "content": "'use client'\n\nimport { Button } from '@/components/ui/button'\nimport { Field } from '@/components/ui/field'\nimport { Form } from '@/components/ui/form'\nimport { Popover, PopoverDescription, PopoverPopup, PopoverTitle, PopoverTrigger } from '@/components/ui/popover'\nimport { Textarea } from '@/components/ui/textarea'\n\nexport default function Particle() {\n  return (\n    <Popover>\n      <PopoverTrigger render={<Button variant=\"outline\" />}>Open Popover</PopoverTrigger>\n      <PopoverPopup className=\"w-80\">\n        <div className=\"mb-4\">\n          <PopoverTitle className=\"text-base\">Send us feedback</PopoverTitle>\n          <PopoverDescription>Let us know how we can improve.</PopoverDescription>\n        </div>\n        <Form className=\"flex w-full flex-col gap-4\">\n          <Field>\n            <Textarea aria-label=\"Send feedback\" id=\"feedback\" placeholder=\"How can we improve?\" />\n          </Field>\n          <Button type=\"submit\">Send feedback</Button>\n        </Form>\n      </PopoverPopup>\n    </Popover>\n  )\n}\n",
+      "content": "'use client'\n\nimport { Button } from '@/components/ui/button'\nimport { Field } from '@/components/ui/field'\nimport { Form } from '@/components/ui/form'\nimport { Popover, PopoverDescription, PopoverPopup, PopoverTitle, PopoverTrigger } from '@/components/ui/popover'\nimport { Textarea } from '@/components/ui/textarea'\n\nexport default function Demo() {\n  return (\n    <Popover>\n      <PopoverTrigger render={<Button variant=\"outline\" />}>Open Popover</PopoverTrigger>\n      <PopoverPopup className=\"w-80\">\n        <div className=\"mb-4\">\n          <PopoverTitle className=\"text-base\">Send us feedback</PopoverTitle>\n          <PopoverDescription>Let us know how we can improve.</PopoverDescription>\n        </div>\n        <Form className=\"flex w-full flex-col gap-4\">\n          <Field>\n            <Textarea aria-label=\"Send feedback\" id=\"feedback\" placeholder=\"How can we improve?\" />\n          </Field>\n          <Button type=\"submit\">Send feedback</Button>\n        </Form>\n      </PopoverPopup>\n    </Popover>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/popover.tsx"
     }

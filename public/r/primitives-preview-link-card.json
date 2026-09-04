@@ -8,8 +8,8 @@
     "motion"
   ],
   "registryDependencies": [
-    "@usespaceui/lib-get-strict-context",
-    "@usespaceui/primitives-preview-card"
+    "https://www.spaceui.one/r/lib-get-strict-context.json",
+    "https://www.spaceui.one/r/primitives-preview-card.json"
   ],
   "files": [
     {

@@ -4,12 +4,12 @@
   "title": "Slider 8",
   "description": "Slider with 3 thumbs",
   "registryDependencies": [
-    "@usespaceui/primitives-slider"
+    "https://www.spaceui.one/r/primitives-slider.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/slider/p-slider-08/index.tsx",
-      "content": "import { Slider } from '@/components/ui/slider'\n\nexport default function Particle() {\n  return <Slider defaultValue={[20, 50, 80]} />\n}\n",
+      "content": "import { Slider } from '@/components/ui/slider'\n\nexport default function Demo() {\n  return <Slider defaultValue={[20, 50, 80]} />\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/slider.tsx"
     }

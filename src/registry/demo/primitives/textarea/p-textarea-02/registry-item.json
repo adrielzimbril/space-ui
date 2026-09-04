@@ -5,7 +5,7 @@
   "title": "Textarea Sizes",
   "description": "Textarea in sm, default, and lg sizes",
   "registryDependencies": [
-    "@usespaceui/primitives-textarea"
+    "https://www.spaceui.one/r/primitives-textarea.json"
   ],
   "categories": [
     "textarea"

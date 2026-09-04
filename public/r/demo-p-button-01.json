@@ -4,12 +4,12 @@
   "title": "Button 1",
   "description": "Default button",
   "registryDependencies": [
-    "@usespaceui/primitives-button"
+    "https://www.spaceui.one/r/primitives-button.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/button/p-button-01/index.tsx",
-      "content": "import { Button } from '@/components/ui/button'\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-3\">\n      <Button variant=\"default\">Default</Button>\n      <Button variant=\"secondary\">Secondary</Button>\n      <Button variant=\"outline\">Outline</Button>\n      <Button variant=\"ghost\">Ghost</Button>\n      <Button variant=\"destructive\">Destructive</Button>\n      <Button variant=\"destructive-outline\">Destructive Outline</Button>\n      <Button variant=\"link\">Link</Button>\n    </div>\n  )\n}\n",
+      "content": "import { Button } from '@/components/ui/button'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-3\">\n      <Button variant=\"default\">Default</Button>\n      <Button variant=\"secondary\">Secondary</Button>\n      <Button variant=\"outline\">Outline</Button>\n      <Button variant=\"ghost\">Ghost</Button>\n      <Button variant=\"destructive\">Destructive</Button>\n      <Button variant=\"destructive-outline\">Destructive Outline</Button>\n      <Button variant=\"link\">Link</Button>\n    </div>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/button.tsx"
     }

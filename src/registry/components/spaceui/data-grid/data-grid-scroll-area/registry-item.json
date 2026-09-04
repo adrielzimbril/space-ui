@@ -8,8 +8,8 @@
     "@base-ui/react"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-data-grid",
-    "@usespaceui/lib-utils"
+    "https://www.spaceui.one/r/components-spaceui-data-grid.json",
+    "https://www.spaceui.one/r/lib-utils.json"
   ],
   "categories": [
     "component",

@@ -5,7 +5,7 @@
   "title": "Scroll Area 1",
   "description": "Basic scroll area",
   "registryDependencies": [
-    "@usespaceui/primitives-scroll-area"
+    "https://www.spaceui.one/r/primitives-scroll-area.json"
   ],
   "categories": [
     "scroll area"

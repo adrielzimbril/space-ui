@@ -9,10 +9,10 @@
     "@tanstack/react-virtual"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-data-grid",
-    "@usespaceui/components-spaceui-data-grid-table",
-    "@usespaceui/lib-utils",
-    "@usespaceui/primitives-spinner"
+    "https://www.spaceui.one/r/components-spaceui-data-grid.json",
+    "https://www.spaceui.one/r/components-spaceui-data-grid-table.json",
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-spinner.json"
   ],
   "categories": [
     "component",

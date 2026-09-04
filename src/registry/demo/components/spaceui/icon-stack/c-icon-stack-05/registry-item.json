@@ -8,9 +8,9 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-icon-stack",
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-empty"
+    "https://www.spaceui.one/r/components-spaceui-icon-stack.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-empty.json"
   ],
   "categories": [
     "component",

@@ -5,9 +5,9 @@
   "title": "Checkbox Group 4",
   "description": "Nested checkbox group with parent",
   "registryDependencies": [
-    "@usespaceui/primitives-checkbox",
-    "@usespaceui/primitives-checkbox-group",
-    "@usespaceui/primitives-label"
+    "https://www.spaceui.one/r/primitives-checkbox.json",
+    "https://www.spaceui.one/r/primitives-checkbox-group.json",
+    "https://www.spaceui.one/r/primitives-label.json"
   ],
   "categories": [
     "checkbox",

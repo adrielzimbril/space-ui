@@ -9,10 +9,10 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/hooks-dom-use-event-listener",
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-command",
-    "@usespaceui/primitives-kbd"
+    "https://www.spaceui.one/r/hooks-dom-use-event-listener.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-command.json",
+    "https://www.spaceui.one/r/primitives-kbd.json"
   ],
   "categories": [
     "command",

@@ -9,11 +9,11 @@
     "motion"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-morph-icon",
-    "@usespaceui/hooks-animation-use-controlled-state",
-    "@usespaceui/hooks-browser-use-clipboard",
-    "@usespaceui/lib-utils",
-    "@usespaceui/primitives-button"
+    "https://www.spaceui.one/r/components-spaceui-morph-icon.json",
+    "https://www.spaceui.one/r/hooks-animation-use-controlled-state.json",
+    "https://www.spaceui.one/r/hooks-browser-use-clipboard.json",
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-button.json"
   ],
   "files": [
     {

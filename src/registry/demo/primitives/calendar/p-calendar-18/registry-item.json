@@ -9,9 +9,9 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-calendar",
-    "@usespaceui/primitives-field",
-    "@usespaceui/primitives-input-group"
+    "https://www.spaceui.one/r/primitives-calendar.json",
+    "https://www.spaceui.one/r/primitives-field.json",
+    "https://www.spaceui.one/r/primitives-input-group.json"
   ],
   "categories": [
     "calendar",

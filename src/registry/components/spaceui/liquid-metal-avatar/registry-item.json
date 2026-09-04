@@ -9,8 +9,8 @@
     "class-variance-authority"
   ],
   "registryDependencies": [
-    "@usespaceui/lib-utils",
-    "@usespaceui/primitives-avatar"
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-avatar.json"
   ],
   "categories": [
     "liquid-metal-avatar"

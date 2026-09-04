@@ -4,12 +4,12 @@
   "title": "Disabled phone input",
   "description": "Disabled phone input",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-phone-input"
+    "https://www.spaceui.one/r/components-spaceui-phone-input.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/components/spaceui/phone-input/c-phone-input-04/index.tsx",
-      "content": "import { PhoneInput } from '@/components/spaceui/phone-input'\n\nexport default function Pattern() {\n  return <PhoneInput disabled placeholder=\"Enter phone number\" />\n}\n",
+      "content": "import { PhoneInput } from '@/components/spaceui/phone-input'\n\nexport default function Demo() {\n  return <PhoneInput disabled placeholder=\"Enter phone number\" />\n}\n",
       "type": "registry:component",
       "target": "components/spaceui/phone-input.tsx"
     }

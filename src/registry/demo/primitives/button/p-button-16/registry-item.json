@@ -5,8 +5,8 @@
   "title": "Button 16",
   "description": "Button with avatar",
   "registryDependencies": [
-    "@usespaceui/primitives-avatar",
-    "@usespaceui/primitives-button"
+    "https://www.spaceui.one/r/primitives-avatar.json",
+    "https://www.spaceui.one/r/primitives-button.json"
   ],
   "categories": [
     "button",

@@ -7,11 +7,11 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/components-spaceui-data-grid",
-    "@usespaceui/lib-utils",
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-select",
-    "@usespaceui/primitives-skeleton"
+    "https://www.spaceui.one/r/components-spaceui-data-grid.json",
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-select.json",
+    "https://www.spaceui.one/r/primitives-skeleton.json"
   ],
   "files": [
     {

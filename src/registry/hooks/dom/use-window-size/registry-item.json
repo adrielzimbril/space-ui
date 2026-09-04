@@ -5,7 +5,7 @@
   "title": "useWindowSize",
   "description": "useWindowSize hook.",
   "registryDependencies": [
-    "@usespaceui/hooks-lifecycle-use-isomorphic-layout-effect"
+    "https://www.spaceui.one/r/hooks-lifecycle-use-isomorphic-layout-effect.json"
   ],
   "categories": [
     "hooks",

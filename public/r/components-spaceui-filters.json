@@ -9,16 +9,16 @@
     "class-variance-authority"
   ],
   "registryDependencies": [
-    "@usespaceui/hooks-dom-use-event-listener",
-    "@usespaceui/lib-utils",
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-group",
-    "@usespaceui/primitives-input",
-    "@usespaceui/primitives-input-group",
-    "@usespaceui/primitives-kbd",
-    "@usespaceui/primitives-menu",
-    "@usespaceui/primitives-scroll-area",
-    "@usespaceui/primitives-tooltip"
+    "https://www.spaceui.one/r/hooks-dom-use-event-listener.json",
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-group.json",
+    "https://www.spaceui.one/r/primitives-input.json",
+    "https://www.spaceui.one/r/primitives-input-group.json",
+    "https://www.spaceui.one/r/primitives-kbd.json",
+    "https://www.spaceui.one/r/primitives-menu.json",
+    "https://www.spaceui.one/r/primitives-scroll-area.json",
+    "https://www.spaceui.one/r/primitives-tooltip.json"
   ],
   "files": [
     {

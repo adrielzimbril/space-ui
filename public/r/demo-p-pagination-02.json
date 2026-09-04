@@ -4,13 +4,13 @@
   "title": "Pagination 2",
   "description": "Pagination with previous and next buttons only",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-pagination"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-pagination.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/pagination/p-pagination-02/index.tsx",
-      "content": "import Link from 'next/link'\nimport { Button } from '@/components/ui/button'\nimport { Pagination, PaginationContent, PaginationItem } from '@/components/ui/pagination'\n\ntype PaginationProps = {\n  currentPage: number\n  totalPages: number\n}\n\nexport default function Particle({ currentPage, totalPages }: PaginationProps) {\n  return (\n    <Pagination>\n      <PaginationContent className=\"w-full justify-between gap-2\">\n        <PaginationItem>\n          <Button\n            disabled={currentPage === 1}\n            render={currentPage === 1 ? undefined : <Link href={`#/page/${currentPage - 1}`} />}\n            variant=\"outline\"\n          >\n            Previous\n          </Button>\n        </PaginationItem>\n        <PaginationItem>\n          <Button\n            disabled={currentPage === totalPages}\n            render={currentPage === totalPages ? undefined : <Link href={`#/page/${currentPage + 1}`} />}\n            variant=\"outline\"\n          >\n            Next\n          </Button>\n        </PaginationItem>\n      </PaginationContent>\n    </Pagination>\n  )\n}\n",
+      "content": "import Link from 'next/link'\nimport { Button } from '@/components/ui/button'\nimport { Pagination, PaginationContent, PaginationItem } from '@/components/ui/pagination'\n\ntype PaginationProps = {\n  currentPage: number\n  totalPages: number\n}\n\nexport default function Demo({ currentPage, totalPages }: PaginationProps) {\n  return (\n    <Pagination>\n      <PaginationContent className=\"w-full justify-between gap-2\">\n        <PaginationItem>\n          <Button\n            disabled={currentPage === 1}\n            render={currentPage === 1 ? undefined : <Link href={`#/page/${currentPage - 1}`} />}\n            variant=\"outline\"\n          >\n            Previous\n          </Button>\n        </PaginationItem>\n        <PaginationItem>\n          <Button\n            disabled={currentPage === totalPages}\n            render={currentPage === totalPages ? undefined : <Link href={`#/page/${currentPage + 1}`} />}\n            variant=\"outline\"\n          >\n            Next\n          </Button>\n        </PaginationItem>\n      </PaginationContent>\n    </Pagination>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/pagination.tsx"
     }

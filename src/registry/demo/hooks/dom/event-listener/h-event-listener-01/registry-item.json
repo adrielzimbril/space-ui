@@ -8,10 +8,10 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "@usespaceui/hooks-dom-use-event-listener",
-    "@usespaceui/primitives-badge",
-    "@usespaceui/primitives-card",
-    "@usespaceui/primitives-kbd"
+    "https://www.spaceui.one/r/hooks-dom-use-event-listener.json",
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-card.json",
+    "https://www.spaceui.one/r/primitives-kbd.json"
   ],
   "categories": [
     "hooks",

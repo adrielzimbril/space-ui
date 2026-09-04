@@ -5,8 +5,8 @@
   "title": "Avatar 5",
   "description": "Avatar with emerald status dot",
   "registryDependencies": [
-    "@usespaceui/components-spaceui-avatar-extended",
-    "@usespaceui/primitives-avatar"
+    "https://www.spaceui.one/r/components-spaceui-avatar-extended.json",
+    "https://www.spaceui.one/r/primitives-avatar.json"
   ],
   "categories": [
     "avatar"

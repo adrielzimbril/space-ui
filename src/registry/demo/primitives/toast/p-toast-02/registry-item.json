@@ -5,8 +5,8 @@
   "title": "Toast 2",
   "description": "Stacked toasts with varying content height",
   "registryDependencies": [
-    "@usespaceui/primitives-button",
-    "@usespaceui/primitives-toast"
+    "https://www.spaceui.one/r/primitives-button.json",
+    "https://www.spaceui.one/r/primitives-toast.json"
   ],
   "categories": [
     "toast"

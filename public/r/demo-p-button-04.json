@@ -8,12 +8,12 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@usespaceui/primitives-button"
+    "https://www.spaceui.one/r/primitives-button.json"
   ],
   "files": [
     {
       "path": "src/registry/demo/primitives/button/p-button-04/index.tsx",
-      "content": "import { IconPlus } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-3\">\n      <Button aria-label=\"Add extra small\" size=\"icon-xs\">\n        <IconPlus aria-hidden=\"true\" />\n      </Button>\n      <Button aria-label=\"Add small\" size=\"icon-sm\">\n        <IconPlus aria-hidden=\"true\" />\n      </Button>\n      <Button aria-label=\"Add default\" size=\"icon\">\n        <IconPlus aria-hidden=\"true\" />\n      </Button>\n      <Button aria-label=\"Add large\" size=\"icon-lg\">\n        <IconPlus aria-hidden=\"true\" />\n      </Button>\n      <Button aria-label=\"Add extra large\" size=\"icon-xl\">\n        <IconPlus aria-hidden=\"true\" />\n      </Button>\n    </div>\n  )\n}\n",
+      "content": "import { IconPlus } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\n\nexport default function Demo() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-3\">\n      <Button aria-label=\"Add extra small\" size=\"icon-xs\">\n        <IconPlus aria-hidden=\"true\" />\n      </Button>\n      <Button aria-label=\"Add small\" size=\"icon-sm\">\n        <IconPlus aria-hidden=\"true\" />\n      </Button>\n      <Button aria-label=\"Add default\" size=\"icon\">\n        <IconPlus aria-hidden=\"true\" />\n      </Button>\n      <Button aria-label=\"Add large\" size=\"icon-lg\">\n        <IconPlus aria-hidden=\"true\" />\n      </Button>\n      <Button aria-label=\"Add extra large\" size=\"icon-xl\">\n        <IconPlus aria-hidden=\"true\" />\n      </Button>\n    </div>\n  )\n}\n",
       "type": "registry:ui",
       "target": "components/spaceui/button.tsx"
     }
