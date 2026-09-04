@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-lifecycle-use-interval",
+  "title": "useInterval",
+  "description": "useInterval hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/lifecycle/use-interval/index.ts",
+      "content": "'use client'\n\nimport { useEffect, useRef, useState } from 'react'\n\n/**\n * The useInterval hook takes in two parameters as arguments, first it takes a `callback` function\n * and second is the `initialDelay`.\n * It runs the callback function after every fixed interval of time.\n *\n * ```js\n * function Timer() {\n *   const { start, stop } = useInterval(() => {\n *     console.log('Runs every one second!')\n *   }, 1000)\n *\n *   return <div>useInterval</div>;\n * }\n * ```\n * @param {() => void} callback\n * The callback function does not take any input as argument and returns `void` on execution.\n * @param {number} initialDelay\n * It sets the time period after which the callback gets called.\n *\n *\n * @returns {{start: (delay?: number) => void, stop: () => void}}\n */\nexport function useInterval(callback: () => any, initialDelay: number) {\n  if (typeof callback !== 'function') {\n    throw new Error(`Invalid parameter type. 'callback' should be a function but received ${callback}`)\n  }\n\n  if (typeof initialDelay !== 'number') {\n    throw new Error(`Invalid parameter type. 'initialDelay should be a number but received ${initialDelay}'`)\n  }\n\n  const savedCallback = useRef<(() => any) | undefined>(undefined)\n\n  const [delay, setDelay] = useState<number | null | undefined>(initialDelay)\n\n  // Remember the latest callback.\n  useEffect(() => {\n    savedCallback.current = callback\n  }, [callback])\n\n  // Set up the interval.\n  useEffect(() => {\n    // runs the interval procedure\n    function tick() {\n      if (!savedCallback.current) {\n        return\n      }\n\n      savedCallback.current()\n    }\n\n    // handling interval call\n    if (delay !== null) {\n      let id = setInterval(tick, delay)\n\n      return () => clearInterval(id)\n    }\n  }, [delay])\n\n  // if delay is not set, start it with initialDelay\n  const start = (delay: number) => {\n    setDelay(delay || initialDelay)\n  }\n\n  const stop = () => {\n    setDelay(null)\n  }\n\n  return { start, stop }\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-interval.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "interval"
+  ],
+  "type": "registry:hook"
+}

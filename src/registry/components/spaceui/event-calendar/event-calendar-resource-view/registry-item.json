@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-event-calendar-resource-view",
+  "type": "registry:component",
+  "title": "Event Calendar Resource View",
+  "description": "Event Calendar Resource View component for Space UI.",
+  "dependencies": [
+    "@base-ui/react",
+    "date-fns"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-event-calendar",
+    "@usespaceui/components-spaceui-event-calendar-dnd",
+    "@usespaceui/components-spaceui-event-calendar-event",
+    "@usespaceui/components-spaceui-event-calendar-lib",
+    "@usespaceui/components-spaceui-event-calendar-time-grid",
+    "@usespaceui/components-spaceui-event-calendar-types",
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-scroll-area"
+  ],
+  "categories": [
+    "component",
+    "event-calendar",
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/event-calendar/event-calendar-resource-view/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/event-calendar-resource-view.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

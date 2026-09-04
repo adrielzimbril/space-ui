@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-kanban-1",
+  "type": "registry:component",
+  "title": "Kanban board with placeholder overlay",
+  "description": "Kanban board with placeholder overlay",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-kanban",
+    "@usespaceui/primitives-avatar",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "component",
+    "kanban"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/kanban/c-kanban-1/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-kanban-1.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

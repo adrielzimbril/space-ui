@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-form-use-mutation",
+  "type": "registry:hook",
+  "title": "useMutation",
+  "description": "useMutation hook.",
+  "categories": [
+    "hooks",
+    "form",
+    "mutation"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/form/use-mutation/index.ts",
+      "type": "registry:hook",
+      "target": "hooks/use-mutation.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

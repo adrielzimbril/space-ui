@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-utils-is-negative",
+  "title": "is-negative",
+  "description": "is-negative utility.",
+  "files": [
+    {
+      "path": "src/registry/utils/is-negative/index.ts",
+      "content": "/**\n * Checks if a number is negative (strictly less than zero).\n *\n * @param {number} value - The number to evaluate.\n * @returns {boolean} `true` if the value is strictly less than 0, otherwise `false`.\n *\n * @example\n * isNegative(-5); // => true\n * isNegative(0);  // => false\n * isNegative(42); // => false\n */\nexport function isNegative(value: number): boolean {\n  return value < 0\n}\n",
+      "type": "registry:lib",
+      "target": "utils/is-negative.ts"
+    }
+  ],
+  "categories": [
+    "utils",
+    "is-negative"
+  ],
+  "type": "registry:lib"
+}

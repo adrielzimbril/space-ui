@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-dialog-3",
+  "title": "Dialog 3",
+  "description": "Nested dialogs",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-dialog",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/dialog/p-dialog-3/index.tsx",
+      "content": "import { Button } from '@/components/ui/button'\nimport {\n  Dialog,\n  DialogClose,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogPanel,\n  DialogPopup,\n  DialogTitle,\n  DialogTrigger,\n} from '@/components/ui/dialog'\nimport { Field, FieldLabel } from '@/components/ui/field'\nimport { Input } from '@/components/ui/input'\n\nexport default function Particle() {\n  return (\n    <Dialog>\n      <DialogTrigger render={<Button variant=\"outline\" />}>Open parent</DialogTrigger>\n      <DialogPopup showCloseButton={false}>\n        <DialogHeader>\n          <DialogTitle>Manage team member</DialogTitle>\n          <DialogDescription>View and manage a user in your team.</DialogDescription>\n        </DialogHeader>\n        <DialogPanel className=\"grid gap-4\">\n          <div className=\"grid gap-1\">\n            <p className=\"text-muted-foreground text-sm\">Name</p>\n            <p className=\"font-medium text-sm\">Bora Baloglu</p>\n          </div>\n          <div className=\"grid gap-1\">\n            <p className=\"text-muted-foreground text-sm\">Email</p>\n            <p className=\"font-medium text-sm\">bora@example.com</p>\n          </div>\n        </DialogPanel>\n        <DialogFooter>\n          <Dialog>\n            <DialogTrigger render={<Button variant=\"outline\" />}>Edit details</DialogTrigger>\n            <DialogPopup showCloseButton={false}>\n              <DialogHeader>\n                <DialogTitle>Edit details</DialogTitle>\n                <DialogDescription>Make changes to the member&apos;s information.</DialogDescription>\n              </DialogHeader>\n              <DialogPanel className=\"grid gap-4\">\n                <Field>\n                  <FieldLabel>Name</FieldLabel>\n                  <Input defaultValue=\"Bora Baloglu\" type=\"text\" />\n                </Field>\n                <Field>\n                  <FieldLabel>Email</FieldLabel>\n                  <Input defaultValue=\"bora@example.com\" type=\"text\" />\n                </Field>\n              </DialogPanel>\n              <DialogFooter>\n                <DialogClose render={<Button variant=\"ghost\" />}>Cancel</DialogClose>\n                <Button type=\"submit\">Save changes</Button>\n              </DialogFooter>\n            </DialogPopup>\n          </Dialog>\n        </DialogFooter>\n      </DialogPopup>\n    </Dialog>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-dialog-3.tsx"
+    }
+  ],
+  "categories": [
+    "dialog"
+  ],
+  "type": "registry:ui"
+}

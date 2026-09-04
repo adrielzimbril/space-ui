@@ -1,0 +1,44 @@
+---
+title: useFileUpload
+description: Advanced file upload and dropzone manager with preview generation, size validation, and file type presets.
+preview: demo-hooks-form-file-upload-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-form-use-file-upload" />
+
+## Usage
+
+```tsx
+import { useFileUpload } from '@/hooks/use-file-upload'
+
+const { files, isDragging, errors, getRootProps, getInputProps, removeFile, clearFiles } = useFileUpload({
+  accept: 'image',
+  maxSize: '5MB',
+  maxFiles: 3,
+})
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter          | Type                                   | Default    | Description                                                                   |
+| :----------------- | :------------------------------------- | :--------- | :---------------------------------------------------------------------------- |
+| `options.accept`   | `string \| string[] \| FileTypePreset` | `'*'`      | Accepted file types or presets (`'image'`, `'video'`, `'pdf'`, `'document'`). |
+| `options.maxSize`  | `number \| string`                     | `Infinity` | Maximum file size in bytes or human string (`'5MB'`, `'500KB'`).              |
+| `options.maxFiles` | `number`                               | `Infinity` | Maximum number of allowed uploaded files.                                     |
+| `options.multiple` | `boolean`                              | `false`    | Enable multi-file selection.                                                  |
+
+### Return Value
+
+| Property          | Type                 | Description                                                                    |
+| :---------------- | :------------------- | :----------------------------------------------------------------------------- |
+| `files`           | `UploadedFileItem[]` | Array of uploaded files with `id`, `name`, `size`, `type`, and `preview` url.  |
+| `isDragging`      | `boolean`            | Whether files are currently dragged over the dropzone.                         |
+| `errors`          | `string[]`           | Validation error messages if any.                                              |
+| `getRootProps()`  | `Function`           | Dropzone container props (drag events, click handler, keyboard accessibility). |
+| `getInputProps()` | `Function`           | Hidden `<input type="file" />` props and ref binder.                           |
+| `removeFile(id)`  | `Function`           | Removes a file from the list by ID.                                            |
+| `clearFiles()`    | `Function`           | Clears all uploaded files and revokes preview URLs.                            |

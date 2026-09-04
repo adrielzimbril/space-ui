@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-form-use-character-limit",
+  "title": "useCharacterLimit",
+  "description": "useCharacterLimit hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/form/use-character-limit/index.ts",
+      "content": "'use client'\n\nimport { useState, useCallback, type ChangeEvent } from 'react'\n\nexport interface UseCharacterLimitOptions {\n  /** Maximum number of allowed characters. */\n  maxLength: number\n  /** Initial text value. */\n  initialValue?: string\n}\n\n/**\n * React hook for text inputs with character limit tracking and overflow warnings.\n *\n * @param {UseCharacterLimitOptions} options - Character limit options.\n * @returns {{ value: string, count: number, remaining: number, isExceeded: boolean, handleChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void, setValue: (val: string) => void }} Form control properties.\n *\n * @example\n * const { value, count, remaining, handleChange } = useCharacterLimit({ maxLength: 280 });\n */\nexport function useCharacterLimit({ maxLength, initialValue = '' }: UseCharacterLimitOptions) {\n  const [value, setValue] = useState(initialValue)\n\n  const handleChange = useCallback((e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {\n    setValue(e.target.value)\n  }, [])\n\n  const count = value.length\n  const remaining = maxLength - count\n  const isExceeded = remaining < 0\n\n  return {\n    value,\n    count,\n    remaining,\n    isExceeded,\n    handleChange,\n    setValue,\n  }\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-character-limit.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "form",
+    "character-limit"
+  ],
+  "type": "registry:hook"
+}

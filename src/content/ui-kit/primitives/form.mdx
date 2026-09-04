@@ -1,0 +1,58 @@
+---
+title: Form
+description: Manages form inputs, checks for validation errors, and handles form submission to ensure a smooth data entry experience.
+links:
+  doc: https://base-ui.com/react/components/form#api-reference
+preview: demo-primitives-p-form-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-form" />
+
+## Usage
+
+```tsx
+import { Field, FieldError, FieldLabel } from '@/components/ui/field'
+import { Form } from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
+```
+
+```tsx
+<Form
+  className="flex w-full flex-col gap-4"
+  onSubmit={(e) => {
+    /* handle submit */
+  }}
+>
+  <Field>
+    <FieldLabel>Email</FieldLabel>
+    <Input name="email" type="email" required />
+    <FieldError>Please enter a valid email.</FieldError>
+  </Field>
+</Form>
+```
+
+## Integrations
+
+### Using with Zod
+
+<ComponentPreview name="demo-primitives-p-form-2" />
+
+## Changelog
+
+- [Apr 17, 2026](/docs/changelog#form) — **`Form`** no longer applies default layout classes; pass **`className`** for stacked fields (`flex w-full flex-col gap-4`); for overlays, wrap **panel + footer** in **`Form className="contents"`** with **header** outside.
+
+## API Reference
+
+### Form Props
+
+Thin wrapper around Base UI `Form` with no default layout. Pass **`className`** for spacing and structure (for example `flex w-full flex-col gap-4` for a vertical field stack).
+
+**Dialog, sheet, drawer:** Place **`DialogHeader`** (or sheet/drawer header) **outside** the form. Wrap **`DialogPanel`** and **`DialogFooter`** only in **`<Form className="contents">`** (or **`<form className="contents">`**). The **`contents`** display value keeps panel and footer participating correctly in the popup flex layout without nesting the header inside the `<form>`.
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-form-2" description="Form with zod validation" />
+</ShowcaseGrid>

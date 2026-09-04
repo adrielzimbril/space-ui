@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-card-8",
+  "title": "Card 8",
+  "description": "Card within a frame and footer",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-form",
+    "@usespaceui/primitives-frame",
+    "@usespaceui/primitives-input",
+    "@usespaceui/primitives-select"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/card/p-card-8/index.tsx",
+      "content": "import { IconClock } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { Card, CardDescription, CardHeader, CardPanel, CardTitle } from '@/components/ui/card'\nimport { Field, FieldLabel } from '@/components/ui/field'\nimport { Form } from '@/components/ui/form'\nimport { Frame, FrameFooter } from '@/components/ui/frame'\nimport { Input } from '@/components/ui/input'\nimport { Select, SelectItem, SelectPopup, SelectTrigger, SelectValue } from '@/components/ui/select'\n\nconst frameworkOptions = [\n  { label: 'Next.js', value: 'next' },\n  { label: 'Vite', value: 'vite' },\n  { label: 'Remix', value: 'remix' },\n  { label: 'Astro', value: 'astro' },\n]\n\nexport default function Particle() {\n  return (\n    <Frame className=\"w-full max-w-xs\">\n      <Card>\n        <CardHeader>\n          <CardTitle>Create project</CardTitle>\n          <CardDescription>Deploy your new project in one-click.</CardDescription>\n        </CardHeader>\n        <CardPanel>\n          <Form className=\"flex w-full flex-col gap-4\">\n            <Field>\n              <FieldLabel>Name</FieldLabel>\n              <Input placeholder=\"Name of your project\" type=\"text\" />\n            </Field>\n            <Field>\n              <FieldLabel>Framework</FieldLabel>\n              <Select defaultValue=\"next\" items={frameworkOptions}>\n                <SelectTrigger>\n                  <SelectValue />\n                </SelectTrigger>\n                <SelectPopup>\n                  {frameworkOptions.map(({ label, value }) => (\n                    <SelectItem key={value} value={value}>\n                      {label}\n                    </SelectItem>\n                  ))}\n                </SelectPopup>\n              </Select>\n            </Field>\n            <Button className=\"w-full\" type=\"submit\">\n              Deploy\n            </Button>\n          </Form>\n        </CardPanel>\n      </Card>\n      <FrameFooter>\n        <div className=\"flex gap-1 text-muted-foreground text-xs\">\n          <IconClock className=\"size-3 h-lh shrink-0\" />\n          <p>This will take a few seconds to complete.</p>\n        </div>\n      </FrameFooter>\n    </Frame>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-card-8.tsx"
+    }
+  ],
+  "categories": [
+    "card",
+    "form",
+    "frame"
+  ],
+  "type": "registry:ui"
+}

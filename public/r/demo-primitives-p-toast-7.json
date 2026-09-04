@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-toast-7",
+  "title": "Toast 7",
+  "description": "Deduplicated error toast",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-toast"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/toast/p-toast-7/index.tsx",
+      "content": "'use client'\n\nimport { Button } from '@/components/ui/button'\nimport { toastManager } from '@/components/ui/toast'\n\nconst ERROR_TOAST_ID = 'space-demo-error-upsert'\n\nexport default function Particle() {\n  return (\n    <Button\n      onClick={() => {\n        toastManager.add({\n          description: 'Repeated clicks update this toast; errors use a shake animation.',\n          id: ERROR_TOAST_ID,\n          title: 'Something went wrong',\n          type: 'error',\n        })\n      }}\n      variant=\"outline\"\n    >\n      One Error Toast\n    </Button>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-toast-7.tsx"
+    }
+  ],
+  "categories": [
+    "toast",
+    "button",
+    "error"
+  ],
+  "type": "registry:ui"
+}

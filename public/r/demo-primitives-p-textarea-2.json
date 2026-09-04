@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-textarea-2",
+  "title": "Textarea Sizes",
+  "description": "Textarea in sm, default, and lg sizes",
+  "registryDependencies": [
+    "@usespaceui/primitives-textarea"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/textarea/p-textarea-2/index.tsx",
+      "content": "import { Textarea } from '@/components/ui/textarea'\n\nexport default function Particle() {\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-3\">\n      <Textarea placeholder=\"Small textarea\" size=\"sm\" rows={2} />\n      <Textarea placeholder=\"Default textarea\" size=\"default\" rows={3} />\n      <Textarea placeholder=\"Large textarea\" size=\"lg\" rows={4} />\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-textarea-2.tsx"
+    }
+  ],
+  "categories": [
+    "textarea"
+  ],
+  "type": "registry:ui"
+}

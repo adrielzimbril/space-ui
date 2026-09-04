@@ -1,0 +1,109 @@
+---
+title: Breadcrumb
+description: Displays a horizontal trail of links showing the user’s current location within the page hierarchy, making navigation back to parent pages simple.
+preview:
+  name: demo-primitives-p-breadcrumb-1
+  contained: true
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-breadcrumb" />
+
+## Usage
+
+```tsx
+import {
+  Breadcrumb,
+  BreadcrumbEllipsis,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '@/components/ui/breadcrumb'
+```
+
+```tsx
+<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/">Home</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbEllipsis />
+    </BreadcrumbItem>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/components">Components</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+    </BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>
+```
+
+## Features
+
+### Custom Separator
+
+Customizes the separator element between breadcrumb items using the `BreadcrumbSeparator` component.
+
+<ComponentPreview name="demo-primitives-p-breadcrumb-2" />
+
+### With Icons
+
+Breadcrumb items rendered with leading contextual icons.
+
+<ComponentPreview name="demo-primitives-p-breadcrumb-5" />
+
+## API Reference
+
+This is a custom component, not a Base UI wrapper.
+
+### Breadcrumb
+
+Root navigation container with `aria-label="breadcrumb"`.
+
+### BreadcrumbList
+
+Ordered list container for breadcrumb items.
+
+### BreadcrumbItem
+
+Individual breadcrumb item container.
+
+### BreadcrumbLink
+
+Link element for navigable breadcrumb items. Supports the `render` prop to use custom link components (e.g., Next.js Link).
+
+| Prop     | Type                 | Default | Description                                        |
+| -------- | -------------------- | ------- | -------------------------------------------------- |
+| `render` | `React.ReactElement` | -       | Render as a different element (e.g., Next.js Link) |
+
+### BreadcrumbPage
+
+Non-interactive element representing the current page. Includes `aria-current="page"`.
+
+### BreadcrumbSeparator
+
+Separator between breadcrumb items. Defaults to a chevron icon but accepts custom children.
+
+### BreadcrumbEllipsis
+
+Ellipsis indicator for collapsed breadcrumb items.
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-breadcrumb-3" description="Breadcrumb with home icon for home link only" />
+  <ShowcaseCard name="demo-primitives-p-breadcrumb-4" description="Breadcrumb with folders icon menu" />
+  <ShowcaseCard name="demo-primitives-p-breadcrumb-6" description="Breadcrumb with dot separators" />
+  <ShowcaseCard name="demo-primitives-p-breadcrumb-7" description="Breadcrumb with select dropdown" />
+</ShowcaseGrid>
+
+### With custom separator
+
+<ComponentPreview name="demo-primitives-p-breadcrumb-2" />

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-utils-sleep",
+  "title": "sleep",
+  "description": "sleep utility.",
+  "files": [
+    {
+      "path": "src/registry/utils/sleep/index.ts",
+      "content": "/**\n * Sleep function\n * @param ms - The number of milliseconds to sleep\n * @returns A promise that resolves after the specified number of milliseconds\n *\n * @example\n * await sleep(1000);           // Sleep for 1000ms => 1 second\n * await sleep(\"2000ms\").then(() => { console.log(\"Done\"); });       // Sleep for 2s and then log \"Done\"\n */\nexport const sleep = (ms: number | `${number}ms`): Promise<void> => {\n  let duration: number\n  if (typeof ms === 'string') {\n    duration = Number.parseInt(ms, 10)\n  } else {\n    duration = ms\n  }\n  return new Promise((resolve) => setTimeout(resolve, duration))\n}\n",
+      "type": "registry:lib",
+      "target": "utils/sleep.ts"
+    }
+  ],
+  "categories": [
+    "utils",
+    "sleep"
+  ],
+  "type": "registry:lib"
+}

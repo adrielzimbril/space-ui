@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-group-14",
+  "type": "registry:ui",
+  "title": "Group 14",
+  "description": "Group with select",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-group",
+    "@usespaceui/primitives-number-field",
+    "@usespaceui/primitives-select"
+  ],
+  "categories": [
+    "group",
+    "select",
+    "number field"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/group/p-group-14/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-group-14.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

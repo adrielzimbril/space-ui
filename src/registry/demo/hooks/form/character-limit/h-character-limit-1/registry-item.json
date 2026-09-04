@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-form-character-limit-1",
+  "type": "registry:hook",
+  "title": "useCharacterLimit",
+  "description": "Character limit counter and progress",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-form-use-character-limit",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-progress",
+    "@usespaceui/primitives-textarea"
+  ],
+  "categories": [
+    "hooks",
+    "form",
+    "character-limit"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/form/character-limit/h-character-limit-1/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-character-limit-1.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

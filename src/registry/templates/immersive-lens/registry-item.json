@@ -1,0 +1,89 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "template-immersive-lens",
+  "type": "registry:block",
+  "title": "Immersive Lens Portfolio",
+  "description": "Full-page immersive photography template with Three.js WebGL distortion, inertial dragging, and GSAP lightbox.",
+  "dependencies": ["motion", "gsap", "three"],
+  "devDependencies": ["@types/three"],
+  "categories": ["templates", "portfolios"],
+  "files": [
+    {
+      "path": "src/registry/templates/immersive-lens/index.tsx",
+      "type": "registry:page",
+      "target": "index.tsx"
+    },
+    {
+      "path": "src/registry/templates/immersive-lens/app/page.tsx",
+      "type": "registry:page",
+      "target": "app/portfolio/page.tsx"
+    },
+    {
+      "path": "src/registry/templates/immersive-lens/app/layout.tsx",
+      "type": "registry:page",
+      "target": "app/portfolio/layout.tsx"
+    },
+    {
+      "path": "src/registry/templates/immersive-lens/app/loading.tsx",
+      "type": "registry:page",
+      "target": "app/portfolio/loading.tsx"
+    },
+    {
+      "path": "src/registry/templates/immersive-lens/components/client-page.tsx",
+      "type": "registry:component",
+      "target": "components/immersive-lens/client-page.tsx"
+    },
+    {
+      "path": "src/registry/templates/immersive-lens/components/vertical-gallery.tsx",
+      "type": "registry:component",
+      "target": "components/immersive-lens/vertical-gallery.tsx"
+    },
+    {
+      "path": "src/registry/templates/immersive-lens/components/horizontal-gallery.tsx",
+      "type": "registry:component",
+      "target": "components/immersive-lens/horizontal-gallery.tsx"
+    },
+    {
+      "path": "src/registry/templates/immersive-lens/components/glass-dock.tsx",
+      "type": "registry:component",
+      "target": "components/immersive-lens/glass-dock.tsx"
+    },
+    {
+      "path": "src/registry/templates/immersive-lens/components/lightbox-modal.tsx",
+      "type": "registry:component",
+      "target": "components/immersive-lens/lightbox-modal.tsx"
+    },
+    {
+      "path": "src/registry/templates/immersive-lens/components/custom-cursor.tsx",
+      "type": "registry:component",
+      "target": "components/immersive-lens/custom-cursor.tsx"
+    },
+    {
+      "path": "src/registry/templates/immersive-lens/components/lens-webgl-layer.tsx",
+      "type": "registry:component",
+      "target": "components/immersive-lens/lens-webgl-layer.tsx"
+    },
+    {
+      "path": "src/registry/templates/immersive-lens/hooks/use-custom-cursor.ts",
+      "type": "registry:hook",
+      "target": "hooks/immersive-lens/use-custom-cursor.ts"
+    },
+    {
+      "path": "src/registry/templates/immersive-lens/hooks/use-horizontal-drag.ts",
+      "type": "registry:hook",
+      "target": "hooks/immersive-lens/use-horizontal-drag.ts"
+    },
+    {
+      "path": "src/registry/templates/immersive-lens/hooks/use-lightbox.ts",
+      "type": "registry:hook",
+      "target": "hooks/immersive-lens/use-lightbox.ts"
+    },
+    {
+      "path": "src/registry/templates/immersive-lens/lib/data.ts",
+      "type": "registry:lib",
+      "target": "lib/immersive-lens/data.ts"
+    }
+  ],
+  "createdAt": "2026-09-04",
+  "updatedAt": "2026-09-04"
+}

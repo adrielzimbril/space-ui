@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-dom-hover-1",
+  "title": "useHover",
+  "description": "Mouse hover state detector",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-dom-use-hover",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/dom/hover/h-hover-1/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { useHover } from '@/hooks/use-hover'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Badge } from '@/components/ui/badge'\nimport { IconPointer } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const [ref, isHovered] = useHover<HTMLDivElement>()\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconPointer className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Hover</span>\n        </div>\n        <Badge variant={isHovered ? 'success' : 'outline'} size=\"sm\">\n          {isHovered ? 'Hovered' : 'Idle'}\n        </Badge>\n      </div>\n      <CardPanel className=\"rounded-[0.875rem] bg-background p-3\">\n        <div\n          ref={ref}\n          className=\"flex items-center justify-center rounded-lg bg-muted p-6 text-sm font-semibold text-muted-foreground\"\n        >\n          {isHovered ? 'Hovering' : 'Hover here'}\n        </div>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-hover-1.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "dom",
+    "hover"
+  ],
+  "type": "registry:hook"
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-slider-11",
+  "type": "registry:ui",
+  "title": "Slider 11",
+  "description": "Slider with icons",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-slider"
+  ],
+  "categories": [
+    "slider"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/slider/p-slider-11/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-slider-11.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-table",
+  "type": "registry:ui",
+  "title": "Table",
+  "description": "Accessible Table primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-scroll-area"
+  ],
+  "categories": [
+    "table"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/table/index.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/table.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

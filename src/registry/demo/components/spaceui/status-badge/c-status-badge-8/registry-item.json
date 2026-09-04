@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-status-badge-8",
+  "type": "registry:component",
+  "title": "Status Badge Freelance & Direct Hire",
+  "description": "Friendly freelance presence badge with direct project contact callout.",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-status-badge"
+  ],
+  "categories": [
+    "component",
+    "status-badge"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/status-badge/c-status-badge-8/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-status-badge-8.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-input-4",
+  "type": "registry:ui",
+  "title": "Input 5",
+  "description": "File input",
+  "registryDependencies": [
+    "@usespaceui/primitives-input"
+  ],
+  "categories": [
+    "input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/input/p-input-4/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-input-4.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

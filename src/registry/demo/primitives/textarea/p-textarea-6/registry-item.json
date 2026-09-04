@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-textarea-6",
+  "type": "registry:ui",
+  "title": "Textarea 6",
+  "description": "Textarea with label and required indicator",
+  "registryDependencies": [
+    "@usespaceui/primitives-label",
+    "@usespaceui/primitives-textarea"
+  ],
+  "categories": [
+    "label",
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/textarea/p-textarea-6/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-textarea-6.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

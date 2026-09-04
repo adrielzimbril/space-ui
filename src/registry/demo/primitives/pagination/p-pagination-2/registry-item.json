@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-pagination-2",
+  "type": "registry:ui",
+  "title": "Pagination 2",
+  "description": "Pagination with previous and next buttons only",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-pagination"
+  ],
+  "categories": [
+    "pagination"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/pagination/p-pagination-2/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-pagination-2.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

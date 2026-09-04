@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-card-5",
+  "title": "Card 5",
+  "description": "Framed card with header",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-form",
+    "@usespaceui/primitives-input",
+    "@usespaceui/primitives-select"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/card/p-card-5/index.tsx",
+      "content": "import { Button } from '@/components/ui/button'\nimport {\n  Card,\n  CardFrame,\n  CardFrameDescription,\n  CardFrameHeader,\n  CardFrameTitle,\n  CardPanel,\n} from '@/components/ui/card'\nimport { Field, FieldLabel } from '@/components/ui/field'\nimport { Form } from '@/components/ui/form'\nimport { Input } from '@/components/ui/input'\nimport { Select, SelectItem, SelectPopup, SelectTrigger, SelectValue } from '@/components/ui/select'\n\nconst frameworkOptions = [\n  { label: 'Next.js', value: 'next' },\n  { label: 'Vite', value: 'vite' },\n  { label: 'Remix', value: 'remix' },\n  { label: 'Astro', value: 'astro' },\n]\n\nexport default function Particle() {\n  return (\n    <CardFrame className=\"w-full max-w-xs\">\n      <CardFrameHeader>\n        <CardFrameTitle>Create project</CardFrameTitle>\n        <CardFrameDescription>Deploy your new project in one-click.</CardFrameDescription>\n      </CardFrameHeader>\n      <Card>\n        <CardPanel>\n          <Form className=\"flex w-full flex-col gap-4\">\n            <Field>\n              <FieldLabel>Name</FieldLabel>\n              <Input placeholder=\"Name of your project\" type=\"text\" />\n            </Field>\n            <Field>\n              <FieldLabel>Framework</FieldLabel>\n              <Select defaultValue=\"next\" items={frameworkOptions}>\n                <SelectTrigger>\n                  <SelectValue />\n                </SelectTrigger>\n                <SelectPopup>\n                  {frameworkOptions.map(({ label, value }) => (\n                    <SelectItem key={value} value={value}>\n                      {label}\n                    </SelectItem>\n                  ))}\n                </SelectPopup>\n              </Select>\n            </Field>\n            <Button className=\"w-full\" type=\"submit\">\n              Deploy\n            </Button>\n          </Form>\n        </CardPanel>\n      </Card>\n    </CardFrame>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-card-5.tsx"
+    }
+  ],
+  "categories": [
+    "card",
+    "form"
+  ],
+  "type": "registry:ui"
+}

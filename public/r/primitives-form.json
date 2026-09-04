@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-form",
+  "title": "Form",
+  "description": "Accessible Form primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/form/index.tsx",
+      "content": "'use client'\n\nimport { Form as FormPrimitive } from '@base-ui/react/form'\nimport type React from 'react'\n\nexport function Form({ className, ...props }: FormPrimitive.Props): React.ReactElement {\n  return <FormPrimitive className={className} data-slot=\"form\" {...props} />\n}\n\nexport { FormPrimitive }\n",
+      "type": "registry:ui",
+      "target": "components/ui/form.tsx"
+    }
+  ],
+  "categories": [
+    "form"
+  ],
+  "type": "registry:ui"
+}

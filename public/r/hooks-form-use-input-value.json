@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-form-use-input-value",
+  "title": "useInputValue",
+  "description": "useInputValue hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/form/use-input-value/index.ts",
+      "content": "'use client'\n\nimport { useState, useCallback, type ChangeEvent } from 'react'\n\nexport interface InputBinding {\n  value: string\n  onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void\n}\n\nexport interface InputActions {\n  setValue: (value: string | ((prev: string) => string)) => void\n  reset: () => void\n  clear: () => void\n}\n\nexport type InputTuple = [string, InputBinding, InputActions]\n\nexport type UseInputValueReturn = InputTuple &\n  InputBinding &\n  InputActions & {\n    bind: InputBinding\n  }\n\n/**\n * Versatile React hook to manage controlled input and textarea fields.\n * Supports:\n * - Tuple destructuring: `const [value, bind, { reset }] = useInputValue('Space')`\n * - Object destructuring: `const { value, bind, reset, clear } = useInputValue('Space')`\n * - Direct element spreading: `<input {...useInputValue('')} />`\n *\n * @param {string} [initialValue=''] - Initial field value.\n * @returns {UseInputValueReturn} Input state, bindings and actions.\n *\n * @example\n * // Pattern 1: Tuple binding\n * const [val, bind] = useInputValue('Space UI');\n * return <Input {...bind} />;\n *\n * // Pattern 2: Direct spread\n * const nameInput = useInputValue('');\n * return <input {...nameInput} placeholder=\"Your name\" />;\n */\nexport function useInputValue(initialValue: string = ''): UseInputValueReturn {\n  const [value, setValue] = useState<string>(initialValue)\n\n  const onChange = useCallback((e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {\n    setValue(e.target.value)\n  }, [])\n\n  const reset = useCallback(() => {\n    setValue(initialValue)\n  }, [initialValue])\n\n  const clear = useCallback(() => {\n    setValue('')\n  }, [])\n\n  const bind: InputBinding = {\n    value,\n    onChange,\n  }\n\n  const actions: InputActions = {\n    setValue,\n    reset,\n    clear,\n  }\n\n  const result = [value, bind, actions] as unknown as UseInputValueReturn\n\n  result.value = value\n  result.onChange = onChange\n  result.bind = bind\n  result.setValue = setValue\n  result.reset = reset\n  result.clear = clear\n\n  return result\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-input-value.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "form",
+    "input-value"
+  ],
+  "type": "registry:hook"
+}

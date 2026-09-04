@@ -1,0 +1,57 @@
+---
+title: Toolbar
+description: Arranges formatting tools, action buttons, and dropdown controls into a compact, accessible toolbar for quick editing.
+
+links:
+  doc: https://base-ui.com/react/components/toolbar#api-reference
+preview: demo-primitives-p-toolbar-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-toolbar" />
+
+## Usage
+
+```tsx
+import { Button } from '@/components/ui/button'
+import { Toggle } from '@/components/ui/toggle'
+import { Toolbar, ToolbarButton, ToolbarGroup, ToolbarSeparator } from '@/components/ui/toolbar'
+```
+
+```tsx
+<Toolbar>
+  <ToolbarGroup>
+    <ToolbarButton render={<Toggle />}>Bold</ToolbarButton>
+    <ToolbarButton render={<Toggle />}>Underline</ToolbarButton>
+  </ToolbarGroup>
+  <ToolbarSeparator />
+  <ToolbarButton render={<Button />}>Save</ToolbarButton>
+</Toolbar>
+```
+
+## API Reference
+
+### Toolbar
+
+Root component. Styled wrapper for `Toolbar.Root` from Base UI with flex layout.
+
+### ToolbarGroup
+
+Groups related toolbar items. Styled wrapper for `Toolbar.Group` from Base UI.
+
+### ToolbarButton
+
+Button within the toolbar. Alias for `Toolbar.Button` from Base UI. Use with `render` prop to render as Toggle or Button.
+
+### ToolbarSeparator
+
+Visual separator between toolbar items. Styled wrapper for `Toolbar.Separator` from Base UI.
+
+### ToolbarLink
+
+Link within the toolbar. Alias for `Toolbar.Link` from Base UI.
+
+### ToolbarInput
+
+Input element styled for inclusion inside the toolbar. Alias for `Toolbar.Input` from Base UI.

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-utils-format-content",
+  "title": "format-content",
+  "description": "format-content utility.",
+  "files": [
+    {
+      "path": "src/registry/utils/format-content/index.ts",
+      "content": "/**\n * Navigation or table of contents tree item structure.\n */\nexport type ContentStructureItem = {\n  label: string\n  path: string\n  children: ContentStructureItem[]\n  isPage: boolean\n}\n\n/**\n * Converts a title or headline string into an SEO-friendly URL slug.\n *\n * @param {string} headline - The raw headline text to slugify.\n * @returns {string} The slugified string (e.g. 'getting-started-with-react').\n *\n * @example\n * slugifyHeadline(\"Getting Started with React!\"); // => 'getting-started-with-react'\n * slugifyHeadline(\"Components & Hooks (v2.0)\");  // => 'components-hooks-v20'\n */\nexport function slugifyHeadline(headline: string): string {\n  return headline\n    .toLowerCase()\n    .trim()\n    .replace(/[^\\w\\s-]/g, '')\n    .replace(/[\\s_-]+/g, '-')\n    .replace(/^-+|-+$/g, '')\n}\n",
+      "type": "registry:lib",
+      "target": "utils/format-content.ts"
+    }
+  ],
+  "categories": [
+    "utils",
+    "format-content"
+  ],
+  "type": "registry:lib"
+}

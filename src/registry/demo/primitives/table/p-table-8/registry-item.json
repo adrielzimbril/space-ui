@@ -1,0 +1,39 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-table-8",
+  "type": "registry:ui",
+  "title": "Table 8",
+  "description": "CardFrame with TanStack Table, sorting, and pagination",
+  "dependencies": [
+    "@tabler/icons-react",
+    "@tanstack/react-table",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-checkbox",
+    "@usespaceui/primitives-pagination",
+    "@usespaceui/primitives-select",
+    "@usespaceui/primitives-table"
+  ],
+  "categories": [
+    "card",
+    "checkbox",
+    "pagination",
+    "select",
+    "table",
+    "tanstack"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/table/p-table-8/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-table-8.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

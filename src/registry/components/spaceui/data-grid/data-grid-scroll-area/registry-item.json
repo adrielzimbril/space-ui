@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-data-grid-scroll-area",
+  "type": "registry:component",
+  "title": "Data Grid Scroll Area",
+  "description": "Data Grid Scroll Area component for Space UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-data-grid",
+    "@usespaceui/lib-utils"
+  ],
+  "categories": [
+    "component",
+    "data-grid",
+    "data-grid-data-grid-scroll-area"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/data-grid/data-grid-scroll-area/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/data-grid-scroll-area.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

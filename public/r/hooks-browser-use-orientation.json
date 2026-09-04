@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-browser-use-orientation",
+  "title": "useOrientation",
+  "description": "useOrientation hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/browser/use-orientation/index.ts",
+      "content": "'use client'\n\nimport { useEffect, useState } from 'react'\n\nexport type OrientationType =\n  'portrait-primary' | 'portrait-secondary' | 'landscape-primary' | 'landscape-secondary' | 'undetermined'\n\n/**\n * React hook to observe screen orientation angle and type.\n *\n * @returns {{ angle: number, type: OrientationType }} The current screen orientation.\n *\n * @example\n * const { angle, type } = useOrientation();\n */\nexport function useOrientation() {\n  const [orientation, setOrientation] = useState<{\n    angle: number\n    type: OrientationType\n  }>({\n    angle: 0,\n    type: 'undetermined',\n  })\n\n  useEffect(() => {\n    if (typeof window === 'undefined') return\n\n    const handleOrientationChange = () => {\n      const { angle, type } = window.screen.orientation || {\n        angle: 0,\n        type: 'undetermined',\n      }\n      setOrientation({ angle, type: type as OrientationType })\n    }\n\n    window.addEventListener('orientationchange', handleOrientationChange)\n    handleOrientationChange()\n\n    return () => window.removeEventListener('orientationchange', handleOrientationChange)\n  }, [])\n\n  return orientation\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-orientation.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "orientation"
+  ],
+  "type": "registry:hook"
+}

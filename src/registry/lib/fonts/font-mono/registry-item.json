@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lib-font-mono",
+  "type": "registry:file",
+  "title": "Font Mono",
+  "description": "Utility and configuration helper for Font Mono.",
+  "categories": [
+    "font-mono"
+  ],
+  "files": [],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

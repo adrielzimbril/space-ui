@@ -1,0 +1,37 @@
+---
+title: Section Scrollspy
+description: Floating section scrollbar that tracks the active heading as you scroll.
+preview:
+  name: demo-components-spaceui-c-section-scrollspy-1
+  contained: false
+---
+
+Mark each block with `data-page-section` and an `h2`. The bar reads the heading (and an optional badge) then follows scroll.
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-section-scrollspy" />
+
+## Usage
+
+```tsx
+import { SectionScrollspy } from '@/components/spaceui/section-scrollspy'
+
+;<div ref={scrollRef} className="relative h-[420px] overflow-y-auto">
+  <section data-page-section>
+    <h2>Installation</h2>
+  </section>
+  <SectionScrollspy containerRef={scrollRef} />
+</div>
+```
+
+Pass `portal` to pin it to the viewport. Omit `containerRef` to track `window` scroll.
+
+## API Reference
+
+| Prop           | Type                     | Default               | Description                    |
+| -------------- | ------------------------ | --------------------- | ------------------------------ |
+| `containerRef` | `RefObject<HTMLElement>` | —                     | Scroll root. Window if omitted |
+| `selector`     | `string`                 | `[data-page-section]` | Section query                  |
+| `portal`       | `boolean`                | `false`               | Render into `document.body`    |
+| `className`    | `string`                 | —                     | Root class                     |

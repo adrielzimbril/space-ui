@@ -1,0 +1,120 @@
+---
+title: Frame
+description: Provides a mock browser or device container to showcase components and design previews in context.
+preview: demo-primitives-p-frame-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-frame" />
+
+## Usage
+
+```tsx
+import { Frame, FrameDescription, FrameFooter, FrameHeader, FramePanel, FrameTitle } from '@/components/ui/frame'
+```
+
+```tsx
+<Frame>
+  <FrameHeader>
+    <FrameTitle>Title</FrameTitle>
+    <FrameDescription>Description</FrameDescription>
+  </FrameHeader>
+  <FramePanel>Content</FramePanel>
+  <FrameFooter>Footer</FrameFooter>
+</Frame>
+```
+
+## Features
+
+### Separated Panels
+
+Frame container configured with distinct separated panels and divider styling.
+
+<ComponentPreview name="demo-primitives-p-frame-2" />
+
+## API Reference
+
+### Frame
+
+The main container component for grouping related information.
+
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` |         |
+
+### FramePanel
+
+A panel container for frame content.
+
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` |         |
+
+```tsx
+<FramePanel>Content</FramePanel>
+```
+
+### FrameHeader
+
+Header section for the frame.
+
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` |         |
+
+```tsx
+<FrameHeader>
+  <FrameTitle>Title</FrameTitle>
+  <FrameDescription>Description</FrameDescription>
+</FrameHeader>
+```
+
+### FrameTitle
+
+Title text for the frame header.
+
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` |         |
+
+```tsx
+<FrameTitle>Title</FrameTitle>
+```
+
+### FrameDescription
+
+Description text for the frame header.
+
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` |         |
+
+```tsx
+<FrameDescription>Description</FrameDescription>
+```
+
+### FrameFooter
+
+Footer section for the frame.
+
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` |         |
+
+```tsx
+<FrameFooter>Footer</FrameFooter>
+```
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-frame-3" description="Frame with multiple separated panels" />
+  <ShowcaseCard name="demo-primitives-p-frame-4" description="Frame with multiple stacked panels" />
+</ShowcaseGrid>
+
+### Separated Panels
+
+By default, multiple panels are separated with spacing between them.
+
+<ComponentPreview name="demo-primitives-p-frame-3" />

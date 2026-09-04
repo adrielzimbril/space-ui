@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-link",
+  "title": "Link",
+  "description": "Accessible Link primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/link/index.tsx",
+      "content": "'use client'\n\nimport { mergeProps } from '@base-ui/react/merge-props'\nimport { useRender } from '@base-ui/react/use-render'\nimport { cva, type VariantProps } from 'class-variance-authority'\nimport type * as React from 'react'\nimport { cn } from '@/lib/utils'\nimport { buttonVariants } from '@/components/ui/button'\n\nexport const linkVariants = cva(\n  'relative inline-flex items-center gap-1.5 font-medium text-foreground transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50',\n  {\n    defaultVariants: {\n      variant: 'default',\n    },\n    variants: {\n      variant: {\n        default: 'text-primary',\n        secondary: 'text-muted-foreground hover:text-foreground',\n        underline: 'text-foreground hover:text-primary underline',\n      },\n    },\n  },\n)\n\nexport interface LinkProps extends useRender.ComponentProps<'a'> {\n  asButton?: boolean\n  variant?: VariantProps<typeof linkVariants>['variant']\n  size?: VariantProps<typeof buttonVariants>['size']\n  underline?: boolean\n}\n\nexport function Link({\n  className,\n  variant = 'default',\n  size = 'default',\n  underline = false,\n  asButton = false,\n  render,\n  ...props\n}: LinkProps): React.ReactElement {\n  const classes = asButton\n    ? cn(buttonVariants({ variant: variant as VariantProps<typeof buttonVariants>['variant'], size }), className)\n    : cn(linkVariants({ variant }), underline && 'underline-offset-4 hover:underline', className)\n\n  const defaultProps = {\n    className: classes,\n    'data-slot': 'link',\n  } as React.ComponentPropsWithRef<'a'>\n\n  return useRender({\n    defaultTagName: 'a',\n    props: mergeProps<'a'>(defaultProps, props),\n    render,\n  })\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/link.tsx"
+    }
+  ],
+  "categories": [
+    "link"
+  ],
+  "type": "registry:ui"
+}

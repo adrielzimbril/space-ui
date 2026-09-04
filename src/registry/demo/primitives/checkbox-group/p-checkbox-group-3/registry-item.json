@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-checkbox-group-3",
+  "type": "registry:ui",
+  "title": "Checkbox Group 3",
+  "description": "Checkbox group with parent checkbox",
+  "registryDependencies": [
+    "@usespaceui/primitives-checkbox",
+    "@usespaceui/primitives-checkbox-group",
+    "@usespaceui/primitives-label"
+  ],
+  "categories": [
+    "checkbox",
+    "checkbox group"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/checkbox-group/p-checkbox-group-3/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-checkbox-group-3.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

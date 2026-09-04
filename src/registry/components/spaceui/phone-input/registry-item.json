@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-phone-input",
+  "type": "registry:component",
+  "title": "Phone Input",
+  "description": "Phone Input component for Space UI.",
+  "dependencies": [
+    "@tabler/icons-react",
+    "react-phone-number-input"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-combobox",
+    "@usespaceui/primitives-input",
+    "@usespaceui/primitives-scroll-area"
+  ],
+  "categories": [
+    "component",
+    "phone-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/phone-input/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/phone-input.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

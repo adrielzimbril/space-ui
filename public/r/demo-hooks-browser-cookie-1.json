@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-browser-cookie-1",
+  "title": "useCookie",
+  "description": "Cookie read and write manager",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-browser-use-cookie",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/browser/cookie/h-cookie-1/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { useCookie } from '@/hooks/use-cookie'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Button } from '@/components/ui/button'\nimport { Badge } from '@/components/ui/badge'\nimport { Input } from '@/components/ui/input'\nimport { IconCookie, IconTrash } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const [getPref, setPref, removePref] = useCookie<string>('space_demo_cookie')\n  const [val, setVal] = React.useState('space-theme-dark')\n  const pref = getPref()\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconCookie className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Cookie</span>\n        </div>\n        <Badge variant={pref ? 'success' : 'outline'} size=\"sm\">\n          {pref ? 'Set' : 'Empty'}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex flex-col gap-3 rounded-[0.875rem] bg-background p-3\">\n        <div className=\"rounded-lg bg-muted p-2.5\">\n          <span className=\"block text-[.6875rem] font-semibold text-muted-foreground\">Value</span>\n          <span className=\"mt-0.5 block truncate font-mono text-sm font-semibold text-foreground\">{pref ?? '—'}</span>\n        </div>\n        <div className=\"flex gap-2\">\n          <Input\n            value={val}\n            onChange={(e) => setVal(e.target.value)}\n            placeholder=\"space-theme-dark\"\n            aria-label=\"Cookie value\"\n            className=\"text-base sm:text-sm\"\n          />\n          <Button size=\"sm\" onClick={() => setPref(val)} className=\"shrink-0\">\n            Set\n          </Button>\n          <Button\n            size=\"sm\"\n            variant=\"outline\"\n            onClick={() => removePref()}\n            aria-label=\"Delete\"\n            className=\"shrink-0 text-muted-foreground hover:text-destructive\"\n          >\n            <IconTrash className=\"size-4\" />\n          </Button>\n        </div>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-cookie-1.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "cookie"
+  ],
+  "type": "registry:hook"
+}

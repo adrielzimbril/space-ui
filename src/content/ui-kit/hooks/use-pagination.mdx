@@ -1,0 +1,64 @@
+---
+title: usePagination
+description: Smart pagination calculation with dynamic range arrays, boundary and sibling pages, and navigation controls.
+preview: demo-hooks-form-pagination-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-form-use-pagination" />
+
+## Usage
+
+```tsx
+import { usePagination } from '@/hooks/use-pagination'
+
+const {
+  page,
+  setPage,
+  totalPages,
+  range,
+  startIndex,
+  endIndex,
+  nextPage,
+  prevPage,
+  firstPage,
+  lastPage,
+  hasNext,
+  hasPrev,
+} = usePagination({
+  total: 100,
+  pageSize: 10,
+  initialPage: 1,
+  siblings: 1,
+})
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter             | Type     | Default | Description                                                        |
+| :-------------------- | :------- | :------ | :----------------------------------------------------------------- |
+| `options.total`       | `number` | `0`     | Total number of items in the dataset (alias: `totalItems`).        |
+| `options.pageSize`    | `number` | `10`    | Number of items displayed per page.                                |
+| `options.initialPage` | `number` | `1`     | Initial active page (1-indexed).                                   |
+| `options.siblings`    | `number` | `1`     | Number of sibling buttons visible on each side of the active page. |
+| `options.boundaries`  | `number` | `1`     | Number of boundary page buttons visible at start and end.          |
+
+### Return Value
+
+| Property      | Type                  | Description                                                              |
+| :------------ | :-------------------- | :----------------------------------------------------------------------- |
+| `page`        | `number`              | Current active page (alias: `currentPage`).                              |
+| `totalPages`  | `number`              | Total number of calculated pages.                                        |
+| `range`       | `(number \| '...')[]` | Array of page numbers and ellipsis tokens for rendering pagination bars. |
+| `startIndex`  | `number`              | Zero-based starting index for the current page slice.                    |
+| `endIndex`    | `number`              | Zero-based ending index for the current page slice.                      |
+| `nextPage()`  | `Function`            | Advances to next page (alias: `next`).                                   |
+| `prevPage()`  | `Function`            | Returns to previous page (alias: `prev`).                                |
+| `firstPage()` | `Function`            | Jumps to first page.                                                     |
+| `lastPage()`  | `Function`            | Jumps to last page.                                                      |
+| `setPage(p)`  | `Function`            | Directly sets active page.                                               |
+| `hasNext`     | `boolean`             | Whether a next page exists.                                              |
+| `hasPrev`     | `boolean`             | Whether a previous page exists.                                          |

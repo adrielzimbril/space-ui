@@ -1,0 +1,78 @@
+---
+title: Morph Icon
+description: Transforms one vector icon smoothly into another with fluid shape morphing animations when state changes.
+preview: demo-components-spaceui-c-morph-icon-1
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-morph-icon" />
+
+## Usage
+
+```tsx
+import { MorphIcon } from '@/components/spaceui/morph-icon'
+import { IconSun, IconMoon } from '@tabler/icons-react'
+```
+
+```tsx
+<Button onClick={toggleTheme} size="icon" variant="ghost">
+  <MorphIcon activeKey={isDark ? 'dark' : 'light'} variant="blur-scale">
+    {isDark ? <IconMoon className="size-5" /> : <IconSun className="size-5" />}
+  </MorphIcon>
+</Button>
+```
+
+## API Reference
+
+### MorphIcon Props
+
+| Prop        | Type                                                   | Default        | Description                                                             |
+| ----------- | ------------------------------------------------------ | -------------- | ----------------------------------------------------------------------- |
+| `activeKey` | `React.Key`                                            | **Required**   | Unique key identifying current active icon/state to trigger transitions |
+| `children`  | `React.ReactNode`                                      | **Required**   | The icon element to render                                              |
+| `variant`   | `"blur-scale" \| "rotate-scale" \| "flip" \| "spring"` | `"blur-scale"` | Motion transition preset style                                          |
+| `duration`  | `number`                                               | `0.22`         | Transition duration in seconds                                          |
+| `className` | `string`                                               | `undefined`    | Additional classes applied to the motion wrapper                        |
+
+---
+
+### Theme Switcher Transition
+
+Smooth morphing between sun, moon, and system desktop icons.
+
+<ComponentPreview name="demo-components-spaceui-c-morph-icon-2" />
+
+### Action & Status Toggles
+
+Common UI action buttons (like/heart, volume/mute, play/pause, upvote) with instant morphing transitions.
+
+<ComponentPreview name="demo-components-spaceui-c-morph-icon-3" />
+
+### Animation Presets
+
+Side-by-side comparison of all 4 motion presets: `blur-scale`, `rotate-scale`, `flip`, and `spring`.
+
+<ComponentPreview name="demo-components-spaceui-c-morph-icon-4" />
+
+### Multi-State Status Indicator
+
+Morphing through multi-stage state transitions (pending, loading, success, error).
+
+<ComponentPreview name="demo-components-spaceui-c-morph-icon-5" />
+
+### Accordion & Visibility Toggles
+
+Password reveal and accordion expand/collapse transitions using `MorphIcon`.
+
+<ComponentPreview name="demo-components-spaceui-c-morph-icon-6" />
+
+## Examples
+
+<ShowcaseGrid>
+  <ShowcaseCard name="demo-components-spaceui-c-morph-icon-2" description="Theme switcher transition" />
+  <ShowcaseCard name="demo-components-spaceui-c-morph-icon-3" description="Action and status toggles" />
+  <ShowcaseCard name="demo-components-spaceui-c-morph-icon-4" description="Animation presets showcase" />
+  <ShowcaseCard name="demo-components-spaceui-c-morph-icon-5" description="Multi-state status indicator" />
+  <ShowcaseCard name="demo-components-spaceui-c-morph-icon-6" description="Accordion and visibility toggles" />
+</ShowcaseGrid>

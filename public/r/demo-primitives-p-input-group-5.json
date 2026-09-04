@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-input-group-5",
+  "title": "Input Group 5",
+  "description": "Input group with start and end text",
+  "registryDependencies": [
+    "@usespaceui/primitives-input-group"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/input-group/p-input-group-5/index.tsx",
+      "content": "import { InputGroup, InputGroupAddon, InputGroupInput, InputGroupText } from '@/components/ui/input-group'\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput aria-label=\"Enter your domain\" className=\"*:[input]:px-0!\" placeholder=\"space-ui\" type=\"text\" />\n      <InputGroupAddon>\n        <InputGroupText>https://</InputGroupText>\n      </InputGroupAddon>\n      <InputGroupAddon align=\"inline-end\">\n        <InputGroupText>.one</InputGroupText>\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-input-group-5.tsx"
+    }
+  ],
+  "categories": [
+    "input group"
+  ],
+  "type": "registry:ui"
+}

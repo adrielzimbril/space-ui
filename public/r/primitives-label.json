@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-label",
+  "title": "Label",
+  "description": "Accessible Label primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/label/index.tsx",
+      "content": "'use client'\n\nimport { mergeProps } from '@base-ui/react/merge-props'\nimport { useRender } from '@base-ui/react/use-render'\nimport type React from 'react'\nimport { cn } from '@/lib/utils'\n\nexport function Label({ className, render, ...props }: useRender.ComponentProps<'label'>): React.ReactElement {\n  const defaultProps = {\n    className: cn('inline-flex items-center gap-2 font-medium text-base/4.5 text-foreground sm:text-sm/4', className),\n    'data-slot': 'label',\n  }\n\n  return useRender({\n    defaultTagName: 'label',\n    props: mergeProps<'label'>(defaultProps, props),\n    render,\n  })\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/label.tsx"
+    }
+  ],
+  "categories": [
+    "label"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-dom-use-size",
+  "title": "useSize",
+  "description": "useSize hook.",
+  "registryDependencies": [
+    "@usespaceui/hooks-lifecycle-use-isomorphic-layout-effect"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/dom/use-size/index.ts",
+      "content": "'use client'\n\nimport { useState, type RefObject } from 'react'\nimport { useIsomorphicLayoutEffect } from '@/hooks/use-isomorphic-layout-effect'\n\nexport interface ElementSize {\n  width: number\n  height: number\n}\n\n/**\n * React hook to measure and observe the dynamic pixel dimensions (width & height) of a DOM element using `ResizeObserver`.\n *\n * @template T\n * @param {RefObject<T | null>} targetRef - React ref of the DOM element to measure.\n * @returns {ElementSize} Object with `{ width, height }`.\n *\n * @example\n * const cardRef = useRef<HTMLDivElement>(null);\n * const { width, height } = useSize(cardRef);\n */\nexport function useSize<T extends HTMLElement = HTMLElement>(targetRef: RefObject<T | null>): ElementSize {\n  const [size, setSize] = useState<ElementSize>({ width: 0, height: 0 })\n\n  useIsomorphicLayoutEffect(() => {\n    const target = targetRef.current\n    if (!target || typeof ResizeObserver === 'undefined') return\n\n    const observer = new ResizeObserver(([entry]) => {\n      if (entry) {\n        const { width, height } = entry.contentRect\n        setSize({ width, height })\n      }\n    })\n\n    observer.observe(target)\n    return () => observer.disconnect()\n  }, [targetRef])\n\n  return size\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-size.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "dom",
+    "size"
+  ],
+  "type": "registry:hook"
+}

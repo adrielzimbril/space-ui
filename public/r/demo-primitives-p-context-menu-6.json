@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-context-menu-6",
+  "title": "Context Menu 6",
+  "description": "Context menu with icons",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-context-menu"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/context-menu/p-context-menu-6/index.tsx",
+      "content": "import { IconCopy, IconPencil, IconShare, IconTrash } from '@tabler/icons-react'\nimport {\n  ContextMenu,\n  ContextMenuItem,\n  ContextMenuPopup,\n  ContextMenuSeparator,\n  ContextMenuShortcut,\n  ContextMenuTrigger,\n} from '@/components/ui/context-menu'\n\nexport default function Particle() {\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className=\"flex h-32 w-full max-w-sm items-center justify-center rounded-lg border border-dashed text-muted-foreground text-sm\">\n        Right click here\n      </ContextMenuTrigger>\n      <ContextMenuPopup>\n        <ContextMenuItem>\n          <IconPencil aria-hidden=\"true\" />\n          Edit\n          <ContextMenuShortcut>⌘E</ContextMenuShortcut>\n        </ContextMenuItem>\n        <ContextMenuItem>\n          <IconCopy aria-hidden=\"true\" />\n          Copy\n          <ContextMenuShortcut>⌘C</ContextMenuShortcut>\n        </ContextMenuItem>\n        <ContextMenuItem>\n          <IconShare aria-hidden=\"true\" />\n          Share\n        </ContextMenuItem>\n        <ContextMenuSeparator />\n        <ContextMenuItem variant=\"destructive\">\n          <IconTrash aria-hidden=\"true\" />\n          Delete\n          <ContextMenuShortcut>⌘⌫</ContextMenuShortcut>\n        </ContextMenuItem>\n      </ContextMenuPopup>\n    </ContextMenu>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-context-menu-6.tsx"
+    }
+  ],
+  "categories": [
+    "context menu",
+    "menu"
+  ],
+  "type": "registry:ui"
+}

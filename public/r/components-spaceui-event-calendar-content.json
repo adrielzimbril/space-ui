@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-event-calendar-content",
+  "title": "Event Calendar Content",
+  "description": "Event Calendar Content component for Space UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-event-calendar",
+    "@usespaceui/components-spaceui-event-calendar-agenda-view",
+    "@usespaceui/components-spaceui-event-calendar-month-view",
+    "@usespaceui/components-spaceui-event-calendar-resource-view",
+    "@usespaceui/components-spaceui-event-calendar-time-grid",
+    "@usespaceui/components-spaceui-event-calendar-types",
+    "@usespaceui/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/event-calendar/event-calendar-content/index.tsx",
+      "content": "'use client'\n\n// Title: Event Calendar Content\n// Description: Active-view switchboard rendering month, week, day, N-days, or agenda; swappable per view via the components prop.\nimport { type ComponentType, type ReactNode } from 'react'\nimport {\n  useEventCalendarSelector,\n  useEventCalendarViewConfig,\n} from '@/components/spaceui/event-calendar'\nimport { EventCalendarAgendaView } from '@/components/spaceui/event-calendar-agenda-view'\nimport { EventCalendarMonthView } from '@/components/spaceui/event-calendar-month-view'\nimport { EventCalendarResourceView } from '@/components/spaceui/event-calendar-resource-view'\nimport {\n  EventCalendarDaysView,\n  EventCalendarDayView,\n  EventCalendarWeekView,\n} from '@/components/spaceui/event-calendar-time-grid'\nimport type { CalendarView } from '@/components/spaceui/event-calendar-types'\nimport { mergeProps } from '@base-ui/react/merge-props'\nimport { useRender } from '@base-ui/react/use-render'\n\nimport { cn } from '@/lib/utils'\n\nconst DEFAULT_VIEW_COMPONENTS: Record<CalendarView, ComponentType> = {\n  month: EventCalendarMonthView,\n  week: EventCalendarWeekView,\n  day: EventCalendarDayView,\n  days: EventCalendarDaysView,\n  agenda: EventCalendarAgendaView,\n  resource: EventCalendarResourceView,\n}\n\ninterface EventCalendarContentProps extends Omit<useRender.ComponentProps<'div'>, 'children'> {\n  /** Swap individual view implementations. */\n  components?: Partial<Record<CalendarView, ComponentType>>\n  /** Replaces the switchboard entirely; read useEventCalendarView() inside. */\n  children?: ReactNode\n}\n\nfunction EventCalendarContent({ className, render, components, children, ...props }: EventCalendarContentProps) {\n  const viewConfig = useEventCalendarViewConfig()\n  const view = useEventCalendarSelector((state) => state.view)\n  const loading = useEventCalendarSelector((state) => state.loading)\n\n  const resolved = {\n    ...DEFAULT_VIEW_COMPONENTS,\n    ...viewConfig.components,\n    ...components,\n  }\n  // A spread copies keys that hold `undefined`, so `components={{ month: isPro\n  // ? ProMonth : undefined }}` would erase the default and render <undefined />.\n  const ActiveView = resolved[view] ?? DEFAULT_VIEW_COMPONENTS[view]\n\n  const defaultProps = {\n    'data-slot': 'event-calendar-content',\n    'data-view': view,\n    'data-loading': loading || undefined,\n    className: cn(\n      'relative flex min-h-0 min-w-0 flex-1 flex-col',\n      'data-loading:pointer-events-none data-loading:opacity-60',\n      viewConfig.classNames?.content,\n      className,\n    ),\n    children: children ?? <ActiveView />,\n  }\n\n  return useRender({\n    defaultTagName: 'div',\n    render,\n    props: mergeProps<'div'>(defaultProps, props),\n  })\n}\n\nexport { DEFAULT_VIEW_COMPONENTS, EventCalendarContent }\nexport type { EventCalendarContentProps }\n",
+      "type": "registry:component",
+      "target": "components/spaceui/event-calendar-content.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "event-calendar",
+    "calendar"
+  ],
+  "type": "registry:component"
+}

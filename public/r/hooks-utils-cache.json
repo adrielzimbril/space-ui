@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-utils-cache",
+  "title": "cache",
+  "description": "cache utility.",
+  "files": [
+    {
+      "path": "src/registry/utils/cache/index.ts",
+      "content": "/**\n * A lightweight in-memory cache with optional Time-To-Live (TTL) support.\n */\nexport class MemoryCache<T = any> {\n  private cache = new Map<string, { value: T; expires?: number }>()\n\n  /**\n   * Stores a value in the cache with an optional TTL in milliseconds.\n   *\n   * @param {string} key - Unique cache key.\n   * @param {T} value - Value to cache.\n   * @param {number} [ttlMs] - Time-to-live in milliseconds.\n   *\n   * @example\n   * cache.set('user_123', userData, 60000); // Cached for 1 minute\n   */\n  set(key: string, value: T, ttlMs?: number): void {\n    const expires = ttlMs ? Date.now() + ttlMs : undefined\n    this.cache.set(key, { value, expires })\n  }\n\n  /**\n   * Retrieves a cached value if it exists and has not expired.\n   *\n   * @param {string} key - Unique cache key.\n   * @returns {T | undefined} The cached value or `undefined` if missing/expired.\n   */\n  get(key: string): T | undefined {\n    const item = this.cache.get(key)\n    if (!item) return undefined\n    if (item.expires && Date.now() > item.expires) {\n      this.cache.delete(key)\n      return undefined\n    }\n    return item.value\n  }\n\n  /**\n   * Checks if a key exists in the cache and is still valid.\n   *\n   * @param {string} key - Unique cache key.\n   * @returns {boolean} `true` if key exists and is valid.\n   */\n  has(key: string): boolean {\n    return this.get(key) !== undefined\n  }\n\n  /**\n   * Removes a specific item from the cache.\n   *\n   * @param {string} key - Unique cache key to remove.\n   */\n  delete(key: string): boolean {\n    return this.cache.delete(key)\n  }\n\n  /**\n   * Clears all items from the cache.\n   */\n  clear(): void {\n    this.cache.clear()\n  }\n}\n\n/** Global default memory cache instance */\nexport const memoryCache = new MemoryCache()\n",
+      "type": "registry:lib",
+      "target": "utils/cache.ts"
+    }
+  ],
+  "categories": [
+    "utils",
+    "cache"
+  ],
+  "type": "registry:lib"
+}

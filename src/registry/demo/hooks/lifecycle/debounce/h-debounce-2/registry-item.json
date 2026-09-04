@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-lifecycle-debounce-2",
+  "type": "registry:hook",
+  "title": "useDebounce (Live Search Filter)",
+  "description": "Filter mock items with debounced query",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-lifecycle-use-debounce",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-input"
+  ],
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "debounce"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/lifecycle/debounce/h-debounce-2/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-debounce-2.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

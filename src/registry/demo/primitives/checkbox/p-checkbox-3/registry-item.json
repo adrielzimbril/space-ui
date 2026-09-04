@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-checkbox-3",
+  "type": "registry:ui",
+  "title": "Checkbox 3",
+  "description": "Card-style checkbox",
+  "registryDependencies": [
+    "@usespaceui/primitives-checkbox",
+    "@usespaceui/primitives-label"
+  ],
+  "categories": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/checkbox/p-checkbox-3/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-checkbox-3.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

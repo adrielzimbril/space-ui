@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-badge-3",
+  "title": "Badge 3",
+  "description": "Secondary badge",
+  "registryDependencies": [
+    "@usespaceui/primitives-badge"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/badge/p-badge-3/index.tsx",
+      "content": "import { Badge } from '@/components/ui/badge'\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-2\">\n      <Badge size=\"sm\" square>\n        8\n      </Badge>\n      <Badge size=\"default\" square>\n        8\n      </Badge>\n      <Badge size=\"lg\" square>\n        8\n      </Badge>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-badge-3.tsx"
+    }
+  ],
+  "categories": [
+    "badge"
+  ],
+  "type": "registry:ui"
+}

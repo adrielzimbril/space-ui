@@ -1,0 +1,109 @@
+---
+title: Slider
+description: Allows users to choose a numeric value or range smoothly by sliding a handle along a horizontal track with immediate visual feedback.
+
+links:
+  doc: https://base-ui.com/react/components/slider#api-reference
+preview: demo-primitives-p-slider-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-slider" />
+
+## Usage
+
+```tsx
+import { Slider, SliderValue } from '@/components/ui/slider'
+```
+
+```tsx
+<Slider />
+```
+
+## Anatomy
+
+```tsx
+<Slider>
+  <SliderTrack>
+    <SliderRange />
+  </SliderTrack>
+  <SliderThumb />
+</Slider>
+```
+
+## Features
+
+### Range Slider
+
+Multi-thumb range slider for selecting value intervals.
+
+<ComponentPreview name="demo-primitives-p-slider-7" />
+
+### Vertical Orientation
+
+Vertical slider orientation with `orientation="vertical"`.
+
+<ComponentPreview name="demo-primitives-p-slider-17" />
+
+### Disabled State
+
+Slider rendered in a disabled state.
+
+<ComponentPreview name="demo-primitives-p-slider-3" />
+
+## Accessibility
+
+- Follows the [WAI-ARIA Slider Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/slider/).
+
+### Keyboard Interactions
+
+| Key                                         | Action                                |
+| :------------------------------------------ | :------------------------------------ |
+| <Kbd>ArrowRight</Kbd> / <Kbd>ArrowUp</Kbd>  | Increases the slider value.           |
+| <Kbd>ArrowLeft</Kbd> / <Kbd>ArrowDown</Kbd> | Decreases the slider value.           |
+| <Kbd>Home</Kbd>                             | Sets the slider to the minimum value. |
+| <Kbd>End</Kbd>                              | Sets the slider to the maximum value. |
+
+## API Reference
+
+### Slider
+
+Root component. Styled wrapper for `Slider.Root` from Base UI with default min/max values and edge-aligned thumbs.
+
+| Prop           | Type                          | Default | Description                                             |
+| -------------- | ----------------------------- | ------- | ------------------------------------------------------- |
+| `defaultValue` | `number \| readonly number[]` | -       | The initial uncontrolled value (single number or array) |
+| `value`        | `number \| readonly number[]` | -       | The controlled value (single number or array for range) |
+| `min`          | `number`                      | `0`     | Minimum value of the slider                             |
+| `max`          | `number`                      | `100`   | Maximum value of the slider                             |
+
+Note: The component sets `thumbAlignment="edge"` by default, which aligns thumbs to the edge of the track rather than centering them.
+
+### SliderValue
+
+Displays the current value. Styled wrapper for `Slider.Value` from Base UI.
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-slider-2" description="Slider with label and value" />
+  <ShowcaseCard name="demo-primitives-p-slider-4" description="Slider with reference labels" />
+  <ShowcaseCard name="demo-primitives-p-slider-5" description="Slider with ticks" />
+  <ShowcaseCard name="demo-primitives-p-slider-6" description="Slider with labels above" />
+  <ShowcaseCard name="demo-primitives-p-slider-8" description="Slider with 3 thumbs" />
+  <ShowcaseCard name="demo-primitives-p-slider-9" description="Range slider with collision behavior none" />
+  <ShowcaseCard name="demo-primitives-p-slider-10" description="Range slider with collision behavior swap" />
+  <ShowcaseCard name="demo-primitives-p-slider-11" description="Slider with icons" />
+  <ShowcaseCard name="demo-primitives-p-slider-12" description="Slider with input" />
+  <ShowcaseCard name="demo-primitives-p-slider-13" description="Range slider with inputs" />
+  <ShowcaseCard name="demo-primitives-p-slider-14" description="Slider with increment and decrement buttons" />
+  <ShowcaseCard name="demo-primitives-p-slider-15" description="Price range slider" />
+  <ShowcaseCard name="demo-primitives-p-slider-16" description="Emoji rating slider" />
+  <ShowcaseCard name="demo-primitives-p-slider-18" description="Vertical range slider" />
+  <ShowcaseCard name="demo-primitives-p-slider-19" description="Vertical slider with input" />
+  <ShowcaseCard name="demo-primitives-p-slider-20" description="Equalizer with vertical sliders" />
+  <ShowcaseCard name="demo-primitives-p-slider-21" description="Object position sliders with reset" />
+  <ShowcaseCard name="demo-primitives-p-slider-22" description="Price slider with histogram" />
+  <ShowcaseCard name="demo-primitives-p-slider-23" description="Slider in form" />
+</ShowcaseGrid>

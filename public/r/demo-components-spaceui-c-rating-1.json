@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-rating-1",
+  "title": "Basic rating.",
+  "description": "Basic rating.",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-rating"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/rating/c-rating-1/index.tsx",
+      "content": "import { Rating } from '@/components/spaceui/rating'\n\nexport default function Pattern() {\n  return <Rating rating={4} />\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/c-rating-1.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "rating"
+  ],
+  "type": "registry:component"
+}

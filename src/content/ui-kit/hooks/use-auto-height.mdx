@@ -1,0 +1,39 @@
+---
+title: useAutoHeight
+description: Container height measurement via ResizeObserver and requestAnimationFrame for smooth CSS transitions.
+preview: demo-hooks-animation-auto-height-1
+---
+
+### Example 2: FAQ Accordion Collapse
+
+<ComponentPreview name="demo-hooks-animation-auto-height-2" />
+
+## Installation
+
+<ComponentInstallation name="hooks-animation-use-auto-height" />
+
+## Usage
+
+```tsx
+import { useAutoHeight } from '@/hooks/use-auto-height'
+
+const { ref, height } = useAutoHeight([items])
+<div style={{ height }}>
+  <div ref={ref}>{items}</div>
+</div>
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter | Type             | Default | Description      |
+| :-------- | :--------------- | :------ | :--------------- |
+| `deps`    | `DependencyList` | `[]`    | Dependency list. |
+
+### Return Value
+
+| Property | Type                     | Description              |
+| :------- | :----------------------- | :----------------------- |
+| `ref`    | `RefObject<HTMLElement>` | Inner measurable ref.    |
+| `height` | `number`                 | Calculated height in px. |

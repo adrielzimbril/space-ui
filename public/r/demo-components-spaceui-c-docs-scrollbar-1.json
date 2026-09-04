@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-docs-scrollbar-1",
+  "title": "Docs Scrollbar Demo",
+  "description": "Floating docs index that follows the active section.",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-docs-scrollbar",
+    "@usespaceui/primitives-badge"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/docs-scrollbar/c-docs-scrollbar-1/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { DocsScrollbar } from '@/components/spaceui/docs-scrollbar'\nimport { Badge } from '@/components/ui/badge'\n\nconst SECTIONS = [\n  { title: 'Installation', badge: '01' },\n  { title: 'Usage', badge: '02' },\n  { title: 'Theming', badge: '03' },\n  { title: 'API reference', badge: '04' },\n  { title: 'Examples', badge: '05' },\n]\n\nexport default function DocsScrollbarDemo() {\n  const scrollRef = React.useRef<HTMLDivElement>(null)\n\n  return (\n    <div className=\"relative h-[420px] w-full overflow-hidden rounded-[0.875rem] bg-muted\">\n      <div ref={scrollRef} className=\"h-full overflow-y-auto p-5 pb-28\">\n        {SECTIONS.map((section) => (\n          <section key={section.title} data-page-section className=\"mb-8 space-y-3\">\n            <h2 className=\"flex items-center gap-2 text-base font-semibold text-foreground\">\n              {section.title}\n              <Badge variant=\"secondary\">{section.badge}</Badge>\n            </h2>\n            <div className=\"h-40 rounded-2xl bg-background\" />\n          </section>\n        ))}\n      </div>\n      <DocsScrollbar containerRef={scrollRef} />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/c-docs-scrollbar-1.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "docs-scrollbar"
+  ],
+  "type": "registry:component"
+}

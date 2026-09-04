@@ -1,0 +1,44 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-alert",
+  "title": "Alert",
+  "description": "Accessible Alert primitive component for Space UI.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/alert/index.tsx",
+      "content": "import { cva, type VariantProps } from 'class-variance-authority'\nimport * as React from 'react'\nimport { cn } from '@/lib/utils'\n\nconst alertVariants = cva(\n  'relative grid w-full grid-cols-[auto_1fr_auto] items-start gap-x-3 gap-y-0.5 rounded-xl border bg-transparent dark:bg-input/32 px-3.5 py-3 text-card-foreground text-sm [&>svg]:size-4 [&>svg]:h-lh',\n  {\n    defaultVariants: {\n      variant: 'default',\n    },\n    variants: {\n      variant: {\n        default: '[&>svg]:text-muted-foreground',\n        error: '[&>svg]:text-destructive',\n        info: '[&>svg]:text-info',\n        success: '[&>svg]:text-success',\n        warning: '[&>svg]:text-warning',\n      },\n    },\n  },\n)\n\ntype AlertVariant = NonNullable<VariantProps<typeof alertVariants>['variant']>\n\nconst AlertContext = React.createContext<{ variant?: AlertVariant }>({\n  variant: 'default',\n})\n\nconst iconVariantStyles: Record<AlertVariant, { icon: string; badge: string }> = {\n  default: { icon: 'text-muted-foreground', badge: 'bg-secondary text-secondary-foreground' },\n  error: { icon: 'text-destructive', badge: 'bg-destructive/10 text-destructive' },\n  info: { icon: 'text-info', badge: 'bg-info/10 text-info' },\n  success: { icon: 'text-success', badge: 'bg-success/10 text-success' },\n  warning: { icon: 'text-warning', badge: 'bg-warning/10 text-warning' },\n}\n\nexport interface AlertProps extends React.ComponentProps<'div'>, VariantProps<typeof alertVariants> {}\n\nexport function Alert({ className, variant = 'default', ...props }: AlertProps): React.ReactElement {\n  return (\n    <AlertContext.Provider value={{ variant: variant ?? 'default' }}>\n      <div className={cn(alertVariants({ variant }), className)} data-slot=\"alert\" role=\"alert\" {...props} />\n    </AlertContext.Provider>\n  )\n}\n\nexport interface AlertIconProps extends React.ComponentProps<'div'> {\n  badge?: boolean\n}\n\nexport function AlertIcon({ className, badge = false, ...props }: AlertIconProps): React.ReactElement {\n  const { variant = 'default' } = React.useContext(AlertContext)\n  const styles = iconVariantStyles[variant] ?? iconVariantStyles.default\n\n  return (\n    <div\n      className={cn(\n        'col-start-1 flex shrink-0 items-center justify-center [&>svg]:shrink-0',\n        badge\n          ? cn('size-6 rounded-md row-start-1 row-end-3 self-start [&>svg]:size-4.5', styles.badge)\n          : cn('h-lh w-4 row-start-1 self-start [&>svg]:size-4', styles.icon),\n        className,\n      )}\n      data-slot=\"alert-icon\"\n      {...props}\n    />\n  )\n}\n\nexport function AlertTitle({ className, ...props }: React.ComponentProps<'div'>): React.ReactElement {\n  return <div className={cn('col-start-2 row-start-1 font-medium', className)} data-slot=\"alert-title\" {...props} />\n}\n\nexport function AlertDescription({ className, ...props }: React.ComponentProps<'div'>): React.ReactElement {\n  return (\n    <div\n      className={cn('col-start-2 text-muted-foreground text-sm', className)}\n      data-slot=\"alert-description\"\n      {...props}\n    />\n  )\n}\n\nexport function AlertAction({ className, ...props }: React.ComponentProps<'div'>): React.ReactElement {\n  return (\n    <div\n      className={cn('col-start-3 row-start-1 row-end-3 ms-auto self-center flex items-center gap-2', className)}\n      data-slot=\"alert-action\"\n      {...props}\n    />\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/alert.tsx"
+    }
+  ],
+  "cssVars": {
+    "light": {
+      "destructive-foreground": "var(--color-red-500)",
+      "info": "var(--color-blue-100)",
+      "info-foreground": "var(--color-blue-900)",
+      "success": "var(--color-emerald-100)",
+      "success-foreground": "var(--color-emerald-900)",
+      "warning": "var(--color-amber-100)",
+      "warning-foreground": "var(--color-amber-900)"
+    },
+    "dark": {
+      "destructive-foreground": "var(--color-red-400)",
+      "info": "var(--color-blue-100)",
+      "info-foreground": "var(--color-blue-800)",
+      "success": "var(--color-emerald-100)",
+      "success-foreground": "var(--color-emerald-800)",
+      "warning": "var(--color-amber-100)",
+      "warning-foreground": "var(--color-amber-800)"
+    }
+  },
+  "categories": [
+    "alert"
+  ],
+  "type": "registry:ui"
+}

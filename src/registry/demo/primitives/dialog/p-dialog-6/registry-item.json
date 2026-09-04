@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-dialog-6",
+  "type": "registry:ui",
+  "title": "Dialog 6",
+  "description": "Dialog with bare footer",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-dialog",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-form",
+    "@usespaceui/primitives-input"
+  ],
+  "categories": [
+    "dialog"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/dialog/p-dialog-6/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-dialog-6.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

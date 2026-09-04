@@ -1,0 +1,32 @@
+---
+title: useCookie
+description: Reactive cookie reader and setter.
+preview: demo-hooks-browser-cookie-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-browser-use-cookie" />
+
+## Usage
+
+```tsx
+import { useCookie } from '@/hooks/use-cookie'
+
+const [theme, setTheme, removeTheme] = useCookie('theme', 'dark')
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter      | Type     | Default     | Description      |
+| :------------- | :------- | :---------- | :--------------- |
+| `name`         | `string` | _required_  | Cookie name.     |
+| `initialValue` | `string` | `undefined` | Initial default. |
+
+### Return Value
+
+| Return Type                                           | Description         |
+| :---------------------------------------------------- | :------------------ |
+| `[string \| null, (val: string) => void, () => void]` | Tuple cookie state. |

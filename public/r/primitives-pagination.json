@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-pagination",
+  "title": "Pagination",
+  "description": "Accessible Pagination primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/pagination/index.tsx",
+      "content": "'use client'\n\nimport { mergeProps } from '@base-ui/react/merge-props'\nimport { useRender } from '@base-ui/react/use-render'\nimport { ChevronLeftIcon, ChevronRightIcon, MoreHorizontalIcon } from 'lucide-react'\nimport type * as React from 'react'\nimport { cn } from '@/lib/utils'\nimport { type Button, buttonVariants } from '@/components/ui/button'\n\nexport function Pagination({ className, ...props }: React.ComponentProps<'nav'>): React.ReactElement {\n  return (\n    <nav\n      aria-label=\"pagination\"\n      className={cn('mx-auto flex w-full justify-center', className)}\n      data-slot=\"pagination\"\n      {...props}\n    />\n  )\n}\n\nexport function PaginationContent({ className, ...props }: React.ComponentProps<'ul'>): React.ReactElement {\n  return <ul className={cn('flex flex-row items-center gap-1', className)} data-slot=\"pagination-content\" {...props} />\n}\n\nexport function PaginationItem({ ...props }: React.ComponentProps<'li'>): React.ReactElement {\n  return <li data-slot=\"pagination-item\" {...props} />\n}\n\nexport type PaginationLinkProps = {\n  isActive?: boolean\n  size?: React.ComponentProps<typeof Button>['size']\n} & useRender.ComponentProps<'a'>\n\nexport function PaginationLink({\n  className,\n  isActive,\n  size = 'icon',\n  render,\n  ...props\n}: PaginationLinkProps): React.ReactElement {\n  const defaultProps = {\n    'aria-current': isActive ? ('page' as const) : undefined,\n    className: render\n      ? className\n      : cn(\n          buttonVariants({\n            size,\n            variant: isActive ? 'outline' : 'ghost',\n          }),\n          className,\n        ),\n    'data-active': isActive,\n    'data-slot': 'pagination-link',\n  }\n\n  return useRender({\n    defaultTagName: 'a',\n    props: mergeProps<'a'>(defaultProps, props),\n    render,\n  })\n}\n\nexport function PaginationPrevious({\n  className,\n  ...props\n}: React.ComponentProps<typeof PaginationLink>): React.ReactElement {\n  return (\n    <PaginationLink\n      aria-label=\"Go to previous page\"\n      className={cn('max-sm:aspect-square max-sm:p-0', className)}\n      size=\"default\"\n      {...props}\n    >\n      <ChevronLeftIcon className=\"sm:-ms-1\" />\n      <span className=\"max-sm:hidden\">Previous</span>\n    </PaginationLink>\n  )\n}\n\nexport function PaginationNext({\n  className,\n  ...props\n}: React.ComponentProps<typeof PaginationLink>): React.ReactElement {\n  return (\n    <PaginationLink\n      aria-label=\"Go to next page\"\n      className={cn('max-sm:aspect-square max-sm:p-0', className)}\n      size=\"default\"\n      {...props}\n    >\n      <span className=\"max-sm:hidden\">Next</span>\n      <ChevronRightIcon className=\"sm:-me-1\" />\n    </PaginationLink>\n  )\n}\n\nexport function PaginationEllipsis({ className, ...props }: React.ComponentProps<'span'>): React.ReactElement {\n  return (\n    <span\n      aria-hidden\n      className={cn('flex min-w-7 justify-center', className)}\n      data-slot=\"pagination-ellipsis\"\n      {...props}\n    >\n      <MoreHorizontalIcon className=\"size-5 sm:size-4\" />\n      <span className=\"sr-only\">More pages</span>\n    </span>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/pagination.tsx"
+    }
+  ],
+  "categories": [
+    "pagination"
+  ],
+  "type": "registry:ui"
+}

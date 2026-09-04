@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-badge-5",
+  "type": "registry:ui",
+  "title": "Badge 5",
+  "description": "Badge with link",
+  "registryDependencies": [
+    "@usespaceui/primitives-badge"
+  ],
+  "categories": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/badge/p-badge-5/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-badge-5.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

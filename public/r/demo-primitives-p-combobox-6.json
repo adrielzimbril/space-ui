@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-combobox-6",
+  "title": "Combobox 6",
+  "description": "Combobox with clear button",
+  "registryDependencies": [
+    "@usespaceui/primitives-combobox"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/combobox/p-combobox-6/index.tsx",
+      "content": "'use client'\n\nimport {\n  Combobox,\n  ComboboxEmpty,\n  ComboboxInput,\n  ComboboxItem,\n  ComboboxList,\n  ComboboxPopup,\n} from '@/components/ui/combobox'\n\nconst items = [\n  { label: 'Apple', value: 'apple' },\n  { label: 'Banana', value: 'banana' },\n  { label: 'Orange', value: 'orange' },\n  { label: 'Grape', value: 'grape' },\n  { label: 'Strawberry', value: 'strawberry' },\n  { label: 'Mango', value: 'mango' },\n  { label: 'Pineapple', value: 'pineapple' },\n  { label: 'Kiwi', value: 'kiwi' },\n  { label: 'Peach', value: 'peach' },\n  { label: 'Pear', value: 'pear' },\n]\n\nexport default function Particle() {\n  return (\n    <Combobox items={items}>\n      <ComboboxInput aria-label=\"Select a item\" placeholder=\"Select a item…\" showClear />\n      <ComboboxPopup>\n        <ComboboxEmpty>No items found.</ComboboxEmpty>\n        <ComboboxList>\n          {(item) => (\n            <ComboboxItem key={item.value} value={item}>\n              {item.label}\n            </ComboboxItem>\n          )}\n        </ComboboxList>\n      </ComboboxPopup>\n    </Combobox>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-combobox-6.tsx"
+    }
+  ],
+  "categories": [
+    "combobox",
+    "input"
+  ],
+  "type": "registry:ui"
+}

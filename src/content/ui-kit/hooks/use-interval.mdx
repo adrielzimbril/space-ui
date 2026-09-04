@@ -1,0 +1,37 @@
+---
+title: useInterval
+description: Declarative timer with start, pause, and dynamic delay controls.
+preview: demo-hooks-lifecycle-interval-1
+---
+
+### Example 2: Server Polling Simulator
+
+<ComponentPreview name="demo-hooks-lifecycle-interval-2" />
+
+## Installation
+
+<ComponentInstallation name="hooks-lifecycle-use-interval" />
+
+## Usage
+
+```tsx
+import { useInterval } from '@/hooks/use-interval'
+
+const { start, stop } = useInterval(() => tick(), 1000)
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter  | Type             | Default    | Description    |
+| :--------- | :--------------- | :--------- | :------------- |
+| `callback` | `() => void`     | _required_ | Tick function. |
+| `delay`    | `number \| null` | `null`     | Delay in ms.   |
+
+### Return Value
+
+| Property | Type                       | Description      |
+| :------- | :------------------------- | :--------------- |
+| `start`  | `(delay?: number) => void` | Starts interval. |
+| `stop`   | `() => void`               | Pauses interval. |

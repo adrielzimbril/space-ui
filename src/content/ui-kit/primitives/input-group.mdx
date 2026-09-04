@@ -1,0 +1,125 @@
+---
+title: Input Group
+description: Attaches icons, prefix text, buttons, or dropdowns directly to an input field, creating compact, all-in-one form controls.
+preview: demo-primitives-p-input-group-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-input-group" />
+
+## Usage
+
+```tsx
+import { Input } from '@/components/ui/input'
+import { InputGroup, InputGroupAddon, InputGroupInput, InputGroupText } from '@/components/ui/input-group'
+```
+
+```tsx
+<InputGroup>
+  <InputGroupInput type="email" placeholder="Email" />
+  <InputGroupAddon>
+    <MailIcon />
+  </InputGroupAddon>
+</InputGroup>
+```
+
+## Features
+
+### Disabled State
+
+Input group rendered in a disabled state with disabled addons.
+
+<ComponentPreview name="demo-primitives-p-input-group-15" />
+
+## API Reference
+
+### InputGroup
+
+The main component that wraps inputs and addons.
+
+| Prop        | Type                          | Description                                      |
+| ----------- | ----------------------------- | ------------------------------------------------ |
+| `className` | `string`                      | Additional CSS classes to apply to the component |
+| `...props`  | `React.ComponentProps<'div'>` | All standard div attributes are supported        |
+
+### InputGroupAddon
+
+A container for addons like icons, text, buttons, and other elements. Can be positioned at the start or end (inline), or top or bottom (block) of the input.
+
+| Prop        | Type                                                             | Default          | Description                                                                                                                                    |
+| ----------- | ---------------------------------------------------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `align`     | `'inline-start' \| 'inline-end' \| 'block-start' \| 'block-end'` | `'inline-start'` | The position of the addon relative to the input. Use `inline-start` or `inline-end` for inputs, and `block-start` or `block-end` for textareas |
+| `className` | `string`                                                         |                  | Additional CSS classes to apply to the component                                                                                               |
+| `...props`  | `React.ComponentProps<'div'>`                                    |                  | All standard div attributes are supported                                                                                                      |
+
+<Callout>
+  For proper focus navigation, the `InputGroupAddon` component should be placed after the input in the DOM order.
+</Callout>
+
+### InputGroupText
+
+A text container component for displaying text content within an `InputGroupAddon`. Automatically styles text with muted foreground color and handles icon sizing.
+
+| Prop        | Type                           | Description                                      |
+| ----------- | ------------------------------ | ------------------------------------------------ |
+| `className` | `string`                       | Additional CSS classes to apply to the component |
+| `...props`  | `React.ComponentProps<'span'>` | All standard span attributes are supported       |
+
+### InputGroupInput
+
+A specialized input component for use within InputGroup. It's essentially an unstyled Input component that inherits styling from the parent InputGroup.
+
+| Prop        | Type         | Description                                                                                         |
+| ----------- | ------------ | --------------------------------------------------------------------------------------------------- |
+| `className` | `string`     | Additional CSS classes to apply to the component                                                    |
+| `...props`  | `InputProps` | All props from the Input component are supported, including `type`, `placeholder`, `disabled`, etc. |
+
+### InputGroupTextarea
+
+A specialized textarea component for use within InputGroup. It's essentially an unstyled Textarea component that inherits styling from the parent InputGroup.
+
+| Prop        | Type            | Description                                                                                            |
+| ----------- | --------------- | ------------------------------------------------------------------------------------------------------ |
+| `className` | `string`        | Additional CSS classes to apply to the component                                                       |
+| `...props`  | `TextareaProps` | All props from the Textarea component are supported, including `placeholder`, `disabled`, `rows`, etc. |
+
+### InputGroupButton
+
+A button styled specifically for embedding within an `InputGroupAddon` or `InputGroup`.
+
+| Prop        | Type          | Description                                                  |
+| ----------- | ------------- | ------------------------------------------------------------ |
+| `className` | `string`      | Additional CSS classes to apply to the component             |
+| `...props`  | `ButtonProps` | All standard props from the `Button` primitive are supported |
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-input-group-2" description="Input group with end icon" />
+  <ShowcaseCard name="demo-primitives-p-input-group-3" description="Input group with start text" />
+  <ShowcaseCard name="demo-primitives-p-input-group-4" description="Input group with end text" />
+  <ShowcaseCard name="demo-primitives-p-input-group-5" description="Input group with start and end text" />
+  <ShowcaseCard name="demo-primitives-p-input-group-6" description="Input group with number field" />
+  <ShowcaseCard name="demo-primitives-p-input-group-7" description="Input group with end tooltip" />
+  <ShowcaseCard name="demo-primitives-p-input-group-8" description="Input group with icon button" />
+  <ShowcaseCard name="demo-primitives-p-input-group-9" description="Input group with button" />
+  <ShowcaseCard name="demo-primitives-p-input-group-10" description="Input group with badge" />
+  <ShowcaseCard name="demo-primitives-p-input-group-11" description="Input group with keyboard shortcut" />
+  <ShowcaseCard name="demo-primitives-p-input-group-12" description="Input group with inner label" />
+  <ShowcaseCard name="demo-primitives-p-input-group-13" description="Small input group" />
+  <ShowcaseCard name="demo-primitives-p-input-group-14" description="Large input group" />
+  <ShowcaseCard name="demo-primitives-p-input-group-16" description="Input group with loading spinner" />
+  <ShowcaseCard name="demo-primitives-p-input-group-17" description="Input group with textarea" />
+  <ShowcaseCard name="demo-primitives-p-input-group-18" description="Input group with badge and menu" />
+  <ShowcaseCard name="demo-primitives-p-input-group-19" description="Mini editor built with input group and toggle" />
+  <ShowcaseCard name="demo-primitives-p-input-group-20" description="Input group with search icon" />
+  <ShowcaseCard name="demo-primitives-p-input-group-21" description="Input group with start tooltip" />
+  <ShowcaseCard name="demo-primitives-p-input-group-22" description="Input group with clear button" />
+  <ShowcaseCard name="demo-primitives-p-input-group-23" description="Search input group with loader and voice button" />
+  <ShowcaseCard name="demo-primitives-p-input-group-24" description="Input group with character counter" />
+  <ShowcaseCard name="demo-primitives-p-input-group-25" description="Password input with strength indicator" />
+  <ShowcaseCard name="demo-primitives-p-input-group-26" description="Code snippet input with language selector" />
+  <ShowcaseCard name="demo-primitives-p-input-group-27" description="Message composer with attachment buttons" />
+  <ShowcaseCard name="demo-primitives-p-input-group-28" description="Chat input with voice and send buttons" />
+</ShowcaseGrid>

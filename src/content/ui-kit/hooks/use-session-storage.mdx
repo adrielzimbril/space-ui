@@ -1,0 +1,32 @@
+---
+title: useSessionStorage
+description: Synchronizes reactive state with window.sessionStorage.
+preview: demo-hooks-browser-session-storage-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-browser-use-session-storage" />
+
+## Usage
+
+```tsx
+import { useSessionStorage } from '@/hooks/use-session-storage'
+
+const [views, setViews] = useSessionStorage('views', 1)
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter      | Type     | Default    | Description    |
+| :------------- | :------- | :--------- | :------------- |
+| `key`          | `string` | _required_ | Session key.   |
+| `initialValue` | `T`      | _required_ | Initial value. |
+
+### Return Value
+
+| Return Type                         | Description  |
+| :---------------------------------- | :----------- |
+| `[T, (val: T) => void, () => void]` | Tuple state. |

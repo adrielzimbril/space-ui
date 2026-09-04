@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-lifecycle-use-confirm-exit",
+  "title": "useConfirmExit",
+  "description": "useConfirmExit hook.",
+  "registryDependencies": [
+    "@usespaceui/hooks-utils-event"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/lifecycle/use-confirm-exit/index.ts",
+      "content": "'use client'\n\nimport { bindEvent, unbindEvent } from '@/utils/event'\nimport { useCallback, useEffect } from 'react'\n\nexport function useConfirmExit(enabled: boolean | (() => boolean), message = 'Are you sure you want to exit?') {\n  const handler = useCallback(\n    (e: Event) => {\n      const finalEnabled = typeof enabled === 'function' ? enabled() : true\n\n      if (!finalEnabled) {\n        return\n      }\n\n      e.preventDefault()\n\n      // NOTE: modern browsers no longer support custom messages with .returnValue\n      if (message) {\n        // @ts-ignore\n        e.returnValue = message\n      }\n\n      return message\n    },\n    [enabled, message],\n  )\n\n  useEffect(() => {\n    if (!enabled) {\n      return\n    }\n\n    bindEvent(window, 'beforeunload', handler)\n\n    return () => unbindEvent(window, 'beforeunload', handler)\n  }, [enabled, handler])\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-confirm-exit.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "confirm-exit"
+  ],
+  "type": "registry:hook"
+}

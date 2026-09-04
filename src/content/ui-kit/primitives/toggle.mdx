@@ -1,0 +1,61 @@
+---
+title: Toggle
+description: Provides a two-state button that users can press to turn a specific feature, view, or styling option on and off.
+
+links:
+  doc: https://base-ui.com/react/components/toggle#api-reference
+preview: demo-primitives-p-toggle-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-toggle" />
+
+## Usage
+
+```tsx
+import { Toggle } from '@/components/ui/toggle'
+```
+
+```tsx
+<Toggle>Toggle</Toggle>
+```
+
+## Features
+
+### Variants
+
+Toggle buttons in `default` and `outline` styles.
+
+<ComponentPreview name="demo-primitives-p-toggle-1" />
+
+### Sizes
+
+Toggle buttons in `sm`, `default`, and `lg` sizes.
+
+<ComponentPreview name="demo-primitives-p-toggle-2" />
+
+### Disabled
+
+Toggle button rendered in a disabled state.
+
+<ComponentPreview name="demo-primitives-p-toggle-4" />
+
+## API Reference
+
+### Toggle
+
+Styled wrapper for `Toggle.Root` from Base UI with variant and size options.
+
+| Prop      | Type                        | Default     | Description                 |
+| --------- | --------------------------- | ----------- | --------------------------- |
+| `variant` | `"default" \| "outline"`    | `"default"` | Controls the toggle styling |
+| `size`    | `"default" \| "sm" \| "lg"` | `"default"` | Controls the toggle size    |
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-toggle-3" description="Large toggle" />
+  <ShowcaseCard name="demo-primitives-p-toggle-5" description="Toggle icon group" />
+  <ShowcaseCard name="demo-primitives-p-toggle-6" description="Bookmark toggle with tooltip and success toast" />
+</ShowcaseGrid>

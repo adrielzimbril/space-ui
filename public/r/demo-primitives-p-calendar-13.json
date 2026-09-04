@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-calendar-13",
+  "title": "Calendar 13",
+  "description": "Calendar with year-only combobox dropdown",
+  "dependencies": [
+    "@daypicker/react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-calendar",
+    "@usespaceui/primitives-combobox"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/calendar/p-calendar-13/index.tsx",
+      "content": "'use client'\n\nimport type { DropdownProps } from '@daypicker/react'\nimport * as React from 'react'\nimport { Calendar } from '@/components/ui/calendar'\nimport {\n  Combobox,\n  ComboboxEmpty,\n  ComboboxInput,\n  ComboboxItem,\n  ComboboxList,\n  ComboboxPopup,\n} from '@/components/ui/combobox'\n\ninterface DropdownItem {\n  disabled?: boolean\n  label: string\n  value: string\n}\n\nfunction YearDropdown(props: DropdownProps) {\n  const { options, value, onChange, 'aria-label': ariaLabel } = props\n\n  const items: DropdownItem[] =\n    options?.map((option) => ({\n      disabled: option.disabled,\n      label: option.label,\n      value: option.value.toString(),\n    })) ?? []\n\n  const selectedItem = items.find((item) => item.value === value?.toString())\n\n  const handleValueChange = (newValue: DropdownItem | null) => {\n    if (onChange && newValue) {\n      const syntheticEvent = {\n        target: { value: newValue.value },\n      } as React.ChangeEvent<HTMLSelectElement>\n      onChange(syntheticEvent)\n    }\n  }\n\n  return (\n    <Combobox aria-label={ariaLabel} autoHighlight items={items} onValueChange={handleValueChange} value={selectedItem}>\n      <ComboboxInput className=\"**:[input]:w-0 **:[input]:flex-1\" onFocus={(e) => e.currentTarget.select()} />\n      <ComboboxPopup aria-label={ariaLabel}>\n        <ComboboxEmpty>No items found.</ComboboxEmpty>\n        <ComboboxList>\n          {(item: DropdownItem) => (\n            <ComboboxItem disabled={item.disabled} key={item.value} value={item}>\n              {item.label}\n            </ComboboxItem>\n          )}\n        </ComboboxList>\n      </ComboboxPopup>\n    </Combobox>\n  )\n}\n\nexport default function Particle() {\n  const [date, setDate] = React.useState<Date | undefined>(new Date())\n  return (\n    <Calendar\n      captionLayout=\"dropdown-years\"\n      classNames={{\n        dropdowns: '*:flex-1 *:[span]:text-center',\n      }}\n      components={{ Dropdown: YearDropdown }}\n      endMonth={new Date(2030, 11)}\n      mode=\"single\"\n      onSelect={setDate}\n      selected={date}\n      startMonth={new Date(1930, 0)}\n    />\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-calendar-13.tsx"
+    }
+  ],
+  "categories": [
+    "calendar",
+    "combobox"
+  ],
+  "type": "registry:ui"
+}

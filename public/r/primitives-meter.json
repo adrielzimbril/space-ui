@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-meter",
+  "title": "Meter",
+  "description": "Accessible Meter primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/meter/index.tsx",
+      "content": "'use client'\n\nimport { Meter as MeterPrimitive } from '@base-ui/react/meter'\nimport type React from 'react'\nimport { cn } from '@/lib/utils'\n\nexport function Meter({ className, children, ...props }: MeterPrimitive.Root.Props): React.ReactElement {\n  return (\n    <MeterPrimitive.Root className={cn('flex w-full flex-col gap-2', className)} {...props}>\n      {children ? (\n        children\n      ) : (\n        <MeterTrack>\n          <MeterIndicator />\n        </MeterTrack>\n      )}\n    </MeterPrimitive.Root>\n  )\n}\n\nexport function MeterLabel({ className, ...props }: MeterPrimitive.Label.Props): React.ReactElement {\n  return (\n    <MeterPrimitive.Label\n      className={cn('font-medium text-foreground text-sm', className)}\n      data-slot=\"meter-label\"\n      {...props}\n    />\n  )\n}\n\nexport function MeterTrack({ className, ...props }: MeterPrimitive.Track.Props): React.ReactElement {\n  return (\n    <MeterPrimitive.Track\n      className={cn('block h-2 w-full overflow-hidden bg-input', className)}\n      data-slot=\"meter-track\"\n      {...props}\n    />\n  )\n}\n\nexport function MeterIndicator({ className, ...props }: MeterPrimitive.Indicator.Props): React.ReactElement {\n  return (\n    <MeterPrimitive.Indicator\n      className={cn('bg-primary transition-all duration-500', className)}\n      data-slot=\"meter-indicator\"\n      {...props}\n    />\n  )\n}\n\nexport function MeterValue({ className, ...props }: MeterPrimitive.Value.Props): React.ReactElement {\n  return (\n    <MeterPrimitive.Value\n      className={cn('text-foreground text-sm tabular-nums', className)}\n      data-slot=\"meter-value\"\n      {...props}\n    />\n  )\n}\n\nexport { MeterPrimitive }\n",
+      "type": "registry:ui",
+      "target": "components/ui/meter.tsx"
+    }
+  ],
+  "categories": [
+    "meter"
+  ],
+  "type": "registry:ui"
+}

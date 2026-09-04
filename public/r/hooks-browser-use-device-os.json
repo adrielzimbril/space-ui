@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-browser-use-device-os",
+  "title": "useDeviceOS",
+  "description": "useDeviceOS hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/browser/use-device-os/index.ts",
+      "content": "'use client'\n\nimport { useState, useEffect } from 'react'\n\nexport type DeviceOSType = 'undetermined' | 'macos' | 'ios' | 'windows' | 'android' | 'linux'\n\n/**\n * React hook to detect the operating system of the client device.\n *\n * @returns {DeviceOSType} The detected operating system name ('macos', 'windows', 'ios', 'android', 'linux').\n *\n * @example\n * const os = useDeviceOS();\n */\nexport function useDeviceOS(): DeviceOSType {\n  const [os, setOS] = useState<DeviceOSType>('undetermined')\n\n  useEffect(() => {\n    if (typeof window === 'undefined' || typeof navigator === 'undefined') return\n\n    const userAgent = window.navigator.userAgent.toLowerCase()\n    const macosPlatforms = /(macintosh|macintel|macppc|mac68k|macos)/i\n    const windowsPlatforms = /(win32|win64|windows|wince)/i\n    const iosPlatforms = /(iphone|ipad|ipod)/i\n\n    if (macosPlatforms.test(userAgent)) {\n      setOS('macos')\n    } else if (iosPlatforms.test(userAgent)) {\n      setOS('ios')\n    } else if (windowsPlatforms.test(userAgent)) {\n      setOS('windows')\n    } else if (/android/.test(userAgent)) {\n      setOS('android')\n    } else if (/linux/.test(userAgent)) {\n      setOS('linux')\n    }\n  }, [])\n\n  return os\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-device-os.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "device-os"
+  ],
+  "type": "registry:hook"
+}

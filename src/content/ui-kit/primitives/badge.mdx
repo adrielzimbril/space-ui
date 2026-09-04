@@ -1,0 +1,71 @@
+---
+title: Badge
+description: Displays small colored label tags for status flags, counts, or categories, helping users quickly scan and spot key information.
+preview: demo-primitives-p-badge-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-badge" />
+
+## Usage
+
+```tsx
+import { Badge } from '@/components/ui/badge'
+```
+
+```tsx
+<Badge>Badge</Badge>
+```
+
+## Features
+
+### Variants
+
+All available badge variants in one overview: `default`, `secondary`, `outline`, `destructive`, `info`, `success`, `warning`, `error`.
+
+<ComponentPreview name="demo-primitives-p-badge-1" />
+
+### Sizes
+
+Standard sizing options: `sm`, `default`, `lg`.
+
+<ComponentPreview name="demo-primitives-p-badge-2" />
+
+### Square / Numeric
+
+Badges with equal aspect ratio for counts, indicators, or single characters.
+
+<ComponentPreview name="demo-primitives-p-badge-3" />
+
+### With Icon
+
+<ComponentPreview name="demo-primitives-p-badge-4" />
+
+### Link as Badge
+
+<ComponentPreview name="demo-primitives-p-badge-5" />
+
+## API Reference
+
+This is a custom component using Base UI's `useRender` hook, not a direct Base UI wrapper.
+
+### Badge
+
+A badge component with variant and size options.
+
+| Prop      | Type                                                                                                    | Default     | Description                                         |
+| --------- | ------------------------------------------------------------------------------------------------------- | ----------- | --------------------------------------------------- |
+| `variant` | `"default" \| "destructive" \| "error" \| "info" \| "outline" \| "secondary" \| "success" \| "warning"` | `"default"` | Controls the badge styling and color scheme         |
+| `size`    | `"default" \| "sm" \| "lg"`                                                                             | `"default"` | Controls the badge size                             |
+| `square`  | `boolean`                                                                                               | `false`     | Sets aspect-ratio square for numbers or icon badges |
+| `render`  | `React.ReactElement`                                                                                    | -           | Render as a different element (e.g., Link)          |
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-badge-6" description="Badge with count" />
+  <ShowcaseCard name="demo-primitives-p-badge-7" description="Full rounded badge (pill)" />
+  <ShowcaseCard name="demo-primitives-p-badge-8" description="Badge with number after text" />
+  <ShowcaseCard name="demo-primitives-p-badge-9" description="Status badges with indicator dots" />
+</ShowcaseGrid>

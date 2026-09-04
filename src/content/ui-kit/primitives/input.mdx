@@ -1,0 +1,72 @@
+---
+title: Input
+description: Allows users to type single-line text, emails, passwords, or numbers, with clear focus outlines and validation feedback.
+
+links:
+  doc: https://base-ui.com/react/components/input#api-reference
+preview: demo-primitives-p-input-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-input" />
+
+## Usage
+
+```tsx
+import { Input } from '@/components/ui/input'
+```
+
+```tsx
+<Input />
+```
+
+## Features
+
+### Sizes
+
+Input fields in `sm`, `default`, and `lg` sizes.
+
+<ComponentPreview name="demo-primitives-p-input-2" />
+
+### Disabled
+
+Input rendered in a disabled state via `disabled`.
+
+<ComponentPreview name="demo-primitives-p-input-4" />
+
+### Read Only
+
+Input configured in read-only mode via `readOnly`.
+
+<ComponentPreview name="demo-primitives-p-input-16" />
+
+## API Reference
+
+### Input
+
+Styled wrapper for `Input` from Base UI with custom size options.
+
+| Prop          | Type                                  | Default     | Description                                                                          |
+| ------------- | ------------------------------------- | ----------- | ------------------------------------------------------------------------------------ |
+| `size`        | `"sm" \| "default" \| "lg" \| number` | `"default"` | Controls the input height. Number values are passed to the native `size` attribute   |
+| `unstyled`    | `boolean`                             | `false`     | When true, removes the wrapper styling (border, shadow, etc.)                        |
+| `nativeInput` | `boolean`                             | `false`     | When true, renders directly as a native input element without field control wrappers |
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-input-5" description="File input" />
+  <ShowcaseCard name="demo-primitives-p-input-6" description="Input with label" />
+  <ShowcaseCard name="demo-primitives-p-input-7" description="Input with button using Group" />
+  <ShowcaseCard name="demo-primitives-p-input-8" description="Input with start text and end tooltip" />
+  <ShowcaseCard name="demo-primitives-p-input-9" description="Password input with toggle visibility" />
+  <ShowcaseCard name="demo-primitives-p-input-10" description="Input group with keyboard shortcut" />
+  <ShowcaseCard name="demo-primitives-p-input-11" description="Input group with start loading spinner" />
+  <ShowcaseCard name="demo-primitives-p-input-12" description="Input with label and required indicator" />
+  <ShowcaseCard name="demo-primitives-p-input-13" description="Input with optional label" />
+  <ShowcaseCard name="demo-primitives-p-input-14" description="Input with custom border and background" />
+  <ShowcaseCard name="demo-primitives-p-input-15" description="Input group with end loading spinner" />
+  <ShowcaseCard name="demo-primitives-p-input-17" description="Input with characters remaining counter" />
+  <ShowcaseCard name="demo-primitives-p-input-18" description="Pill-shaped input" />
+</ShowcaseGrid>

@@ -1,0 +1,33 @@
+---
+title: useHold
+description: Long-press hold gesture detector.
+preview: demo-hooks-lifecycle-hold-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-lifecycle-use-hold" />
+
+## Usage
+
+```tsx
+import { useHold } from '@/hooks/use-hold'
+
+const bind = useHold(() => onDelete(), { delay: 600 })
+<button {...bind}>Hold to delete</button>
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter       | Type         | Default    | Description      |
+| :-------------- | :----------- | :--------- | :--------------- |
+| `callback`      | `() => void` | _required_ | Action callback. |
+| `options.delay` | `number`     | `500`      | Hold duration.   |
+
+### Return Value
+
+| Return Type      | Description         |
+| :--------------- | :------------------ |
+| `HTMLAttributes` | DOM event bindings. |

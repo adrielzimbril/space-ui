@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-textarea",
+  "title": "Textarea",
+  "description": "Accessible Textarea primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/textarea/index.tsx",
+      "content": "'use client'\n\nimport { Field as FieldPrimitive } from '@base-ui/react/field'\nimport { mergeProps } from '@base-ui/react/merge-props'\nimport type * as React from 'react'\nimport { cn } from '@/lib/utils'\n\nexport type TextareaProps = React.ComponentPropsWithoutRef<'textarea'> &\n  React.RefAttributes<HTMLTextAreaElement> & {\n    size?: 'sm' | 'default' | 'lg' | number\n    unstyled?: boolean\n  }\n\nexport function Textarea({\n  className,\n  size = 'default',\n  unstyled = false,\n  ref,\n  ...props\n}: TextareaProps): React.ReactElement {\n  return (\n    <span\n      className={\n        cn(\n          !unstyled &&\n            'relative inline-flex w-full rounded-lg border border-input bg-background text-base text-foreground transition-all duration-150 focus-within:border-foreground/20 focus-within:ring-2 focus-within:ring-foreground/10 has-disabled:opacity-50 has-disabled:pointer-events-none has-aria-invalid:border-destructive has-aria-invalid:focus-within:ring-destructive/20 sm:text-sm dark:border-input dark:bg-input/30 dark:focus-within:border-foreground/70 dark:focus-within:ring-foreground/15',\n          className,\n        ) || undefined\n      }\n      data-size={size}\n      data-slot=\"textarea-control\"\n    >\n      <FieldPrimitive.Control\n        ref={ref}\n        value={props.value}\n        defaultValue={props.defaultValue}\n        disabled={props.disabled}\n        id={props.id}\n        name={props.name}\n        render={(defaultProps: React.ComponentProps<'textarea'>) => (\n          <textarea\n            className={cn(\n              'field-sizing-content min-h-17.5 w-full rounded-[inherit] bg-transparent px-[calc(--spacing(3)-1px)] py-[calc(--spacing(1.5)-1px)] placeholder:text-muted-foreground/60 outline-none max-sm:min-h-20.5',\n              size === 'sm' && 'min-h-16.5 px-[calc(--spacing(2.5)-1px)] py-[calc(--spacing(1)-1px)] max-sm:min-h-19.5',\n              size === 'lg' && 'min-h-18.5 py-[calc(--spacing(2)-1px)] max-sm:min-h-21.5',\n            )}\n            data-slot=\"textarea\"\n            {...mergeProps(defaultProps, props)}\n          />\n        )}\n      />\n    </span>\n  )\n}\n\nexport { FieldPrimitive }\n",
+      "type": "registry:ui",
+      "target": "components/ui/textarea.tsx"
+    }
+  ],
+  "categories": [
+    "textarea"
+  ],
+  "type": "registry:ui"
+}

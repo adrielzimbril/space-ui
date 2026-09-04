@@ -1,0 +1,73 @@
+---
+title: Preview Link Card
+description: Displays an interactive card preview of a website with its thumbnail, title, and domain name when shared or hovered.
+links:
+  doc: https://base-ui.com/react/components/preview-card#api-reference
+preview: demo-primitives-preview-link-card
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-preview-link-card" />
+
+## Usage
+
+```tsx
+import {
+  PreviewLinkCard,
+  PreviewLinkCardImage,
+  PreviewLinkCardPopup,
+  PreviewLinkCardPortal,
+  PreviewLinkCardPositioner,
+  PreviewLinkCardTrigger,
+} from '@/components/ui/preview-link-card'
+```
+
+```tsx
+<PreviewLinkCard href="https://www.spaceui.one/docs">
+  <PreviewLinkCardTrigger>Space UI Docs</PreviewLinkCardTrigger>
+  <PreviewLinkCardPortal>
+    <PreviewLinkCardPositioner>
+      <PreviewLinkCardPopup>
+        <PreviewLinkCardImage alt="Preview link card content" />
+      </PreviewLinkCardPopup>
+    </PreviewLinkCardPositioner>
+  </PreviewLinkCardPortal>
+</PreviewLinkCard>
+```
+
+## Credits
+
+- Built with [@base-ui/react](https://base-ui.com/react/components/preview-card)
+- Inspired by [Aceternity UI Link Preview](https://ui.aceternity.com/components/link-preview)
+
+## API Reference
+
+### PreviewLinkCard Props
+
+| Prop                        | Type                    | Default                           | Description                                |
+| :-------------------------- | :---------------------- | :-------------------------------- | :----------------------------------------- |
+| `href`                      | `string`                | _required_                        | Target URL for the link                    |
+| `src`                       | `string`                | -                                 | Preview image source URL                   |
+| `width`                     | `number`                | -                                 | Width of the preview image                 |
+| `height`                    | `number`                | -                                 | Height of the preview image                |
+| `deviceScaleFactor`         | `number`                | `1`                               | Device scale factor for rendering          |
+| `colorScheme`               | `"light" \| "dark"`     | `"light"`                         | Color scheme preference                    |
+| `followCursor`              | `boolean \| "x" \| "y"` | `false`                           | Makes preview popup follow cursor movement |
+| `followCursorSpringOptions` | `SpringOptions`         | `{ stiffness: 200, damping: 17 }` | Physics configuration for cursor following |
+
+### PreviewLinkCardTrigger Props
+
+Triggers the preview link popup when hovered. Renders as native `<a>` tag with standard anchor attributes.
+
+### PreviewLinkCardPopup Props
+
+| Prop         | Type         | Default                                           | Description                               |
+| :----------- | :----------- | :------------------------------------------------ | :---------------------------------------- |
+| `transition` | `Transition` | `{ type: 'spring', stiffness: 300, damping: 25 }` | Animation spring transition for the popup |
+
+### PreviewLinkCardImage Props
+
+| Prop  | Type     | Default           | Description                  |
+| :---- | :------- | :---------------- | :--------------------------- |
+| `alt` | `string` | `"preview image"` | Alternative text for preview |

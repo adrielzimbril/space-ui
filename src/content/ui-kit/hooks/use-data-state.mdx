@@ -1,0 +1,31 @@
+---
+title: useDataState
+description: Data attributes state mapper for CSS styling.
+preview: demo-hooks-animation-data-state-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-animation-use-data-state" />
+
+## Usage
+
+```tsx
+import { useDataState } from '@/hooks/use-data-state'
+
+const state = useDataState(isOpen) // 'open' | 'closed'
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter | Type      | Default    | Description   |
+| :-------- | :-------- | :--------- | :------------ |
+| `isOpen`  | `boolean` | _required_ | Open boolean. |
+
+### Return Value
+
+| Return Type          | Description        |
+| :------------------- | :----------------- |
+| `'open' \| 'closed'` | Data state string. |

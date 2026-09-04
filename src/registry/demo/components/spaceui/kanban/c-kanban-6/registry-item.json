@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-kanban-6",
+  "type": "registry:component",
+  "title": "Kanban board persisted to a backend",
+  "description": "Persist moves with onValueCommit, optimistic updates, and Sonner rollback",
+  "dependencies": [
+    "@tabler/icons-react",
+    "sonner"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-kanban",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "component",
+    "kanban"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/kanban/c-kanban-6/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-kanban-6.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

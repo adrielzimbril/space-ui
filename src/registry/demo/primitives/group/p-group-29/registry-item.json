@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-group-29",
+  "type": "registry:ui",
+  "title": "Button group with buttons and badge",
+  "description": "Button group with buttons and badge",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-group"
+  ],
+  "categories": [
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/group/p-group-29/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-group-29.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

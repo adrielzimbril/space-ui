@@ -1,0 +1,58 @@
+---
+title: Avatar
+description: Displays user profile pictures, avatars, or fallback initials, giving users an easy way to identify people throughout the app.
+
+links:
+  doc: https://base-ui.com/react/components/avatar#api-reference
+preview: demo-primitives-p-avatar-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-avatar" />
+
+## Usage
+
+```tsx
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+```
+
+```tsx
+<Avatar>
+  <AvatarImage src="/avatars/01.png" alt="User avatar" />
+  <AvatarFallback>JD</AvatarFallback>
+</Avatar>
+```
+
+## Features
+
+### Sizes
+
+Avatar in multiple size options from `xs` to `xl`.
+
+<ComponentPreview name="demo-primitives-p-avatar-2" />
+
+## API Reference
+
+### Avatar
+
+Root component. Styled wrapper for `Avatar.Root` from Base UI with default size of 32px (8 units) and rounded-full styling.
+
+### AvatarImage
+
+Image element for the avatar. Styled wrapper for `Avatar.Image` from Base UI.
+
+### AvatarFallback
+
+Fallback content displayed when the image fails to load. Styled wrapper for `Avatar.Fallback` from Base UI with muted background.
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-avatar-3" description="Avatar with customizable offset rings" />
+  <ShowcaseCard name="demo-primitives-p-avatar-4" description="Avatar with user icon fallback" />
+  <ShowcaseCard name="demo-primitives-p-avatar-5" description="Avatar with dot indicators." />
+  <ShowcaseCard name="demo-primitives-p-avatar-6" description="Avatar with verified badge" />
+  <ShowcaseCard name="demo-primitives-p-avatar-7" description="Avatar group with overlapping edge" />
+  <ShowcaseCard name="demo-primitives-p-avatar-8" description="Avatar with notification badge" />
+</ShowcaseGrid>

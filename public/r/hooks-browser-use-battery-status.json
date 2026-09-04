@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-browser-use-battery-status",
+  "title": "useBatteryStatus",
+  "description": "useBatteryStatus hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/browser/use-battery-status/index.ts",
+      "content": "'use client'\n\nimport { useState, useEffect } from 'react'\n\nexport interface BatteryState {\n  supported: boolean\n  loading: boolean\n  level: number | null\n  charging: boolean | null\n  chargingTime: number | null\n  dischargingTime: number | null\n}\n\n/**\n * React hook to observe battery level and charging status via the Battery API.\n *\n * @returns {BatteryState} The current battery state.\n *\n * @example\n * const { level, charging } = useBatteryStatus();\n */\nexport function useBatteryStatus(): BatteryState {\n  const [state, setState] = useState<BatteryState>({\n    supported: true,\n    loading: true,\n    level: null,\n    charging: null,\n    chargingTime: null,\n    dischargingTime: null,\n  })\n\n  useEffect(() => {\n    if (typeof navigator === 'undefined' || !('getBattery' in navigator)) {\n      setState((s) => ({ ...s, supported: false, loading: false }))\n      return\n    }\n\n    let battery: any\n\n    const onChange = () => {\n      setState({\n        supported: true,\n        loading: false,\n        level: battery.level,\n        charging: battery.charging,\n        chargingTime: battery.chargingTime,\n        dischargingTime: battery.dischargingTime,\n      })\n    }\n\n    ;(navigator as any).getBattery().then((b: any) => {\n      battery = b\n      onChange()\n      battery.addEventListener('levelchange', onChange)\n      battery.addEventListener('chargingchange', onChange)\n    })\n\n    return () => {\n      if (battery) {\n        battery.removeEventListener('levelchange', onChange)\n        battery.removeEventListener('chargingchange', onChange)\n      }\n    }\n  }, [])\n\n  return state\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-battery-status.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "battery-status"
+  ],
+  "type": "registry:hook"
+}

@@ -1,0 +1,33 @@
+---
+title: cookie
+description: Imperative cookie helper with get, set, and delete.
+preview: demo-hooks-utils-cookie-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-utils-cookie" />
+
+## Usage
+
+```tsx
+import { setCookie, getCookie, deleteCookie } from '@/utils/cookie'
+
+setCookie('theme', 'dark', 7)
+const val = getCookie('theme')
+deleteCookie('theme')
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Method                   | Parameters                      | Description                    |
+| :----------------------- | :------------------------------ | :----------------------------- |
+| `get(name)`              | `string`                        | Returns cookie string or null. |
+| `set(name, value, opts)` | `string, string, CookieOptions` | Sets cookie.                   |
+| `remove(name)`           | `string`                        | Deletes cookie.                |
+
+### Return Value
+
+_Utility object with methods._

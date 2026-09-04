@@ -1,0 +1,149 @@
+---
+title: Card
+description: Groups related information, images, and action buttons into a bordered container, creating clear visual sections on the page.
+preview: demo-primitives-p-card-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-card" />
+
+## Usage
+
+```tsx
+import { Card, CardDescription, CardFooter, CardHeader, CardPanel, CardTitle } from '@/components/ui/card'
+```
+
+```tsx
+<Card>
+  <CardHeader>
+    <CardTitle>Title</CardTitle>
+    <CardDescription>Description</CardDescription>
+  </CardHeader>
+  <CardPanel>Content</CardPanel>
+  <CardFooter>Footer</CardFooter>
+</Card>
+```
+
+## Anatomy
+
+```tsx
+<Card>
+  <CardHeader>
+    <CardTitle />
+    <CardDescription />
+  </CardHeader>
+  <CardContent />
+  <CardFooter />
+</Card>
+```
+
+## Features
+
+### CardFrame with header action
+
+Use `CardFrame` when you need a framed layout with an action button in the header (e.g. "Add", "Connect"):
+
+```tsx
+import {
+  CardFrame,
+  CardFrameAction,
+  CardFrameDescription,
+  CardFrameHeader,
+  CardFrameTitle,
+  CardPanel,
+} from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { PlusIcon } from 'lucide-react'
+
+export function FramedCardExample() {
+  return (
+    <CardFrame>
+      <CardFrameHeader>
+        <CardFrameTitle>Project</CardFrameTitle>
+        <CardFrameDescription>Manage your project settings and configuration</CardFrameDescription>
+        <CardFrameAction>
+          <Button variant="outline">
+            <PlusIcon />
+            Add
+          </Button>
+        </CardFrameAction>
+      </CardFrameHeader>
+      <Card>
+        <CardPanel>Content</CardPanel>
+      </Card>
+    </CardFrame>
+  )
+}
+```
+
+## API Reference
+
+### Card Props
+
+| Prop     | Type                 | Default | Description                   |
+| :------- | :------------------- | :------ | :---------------------------- |
+| `render` | `React.ReactElement` | -       | Render as a different element |
+
+### CardHeader Props
+
+Header section container. Supports the `render` prop.
+
+### CardTitle Props
+
+Title text for the card. Supports the `render` prop.
+
+### CardDescription Props
+
+Description text for the card. Supports the `render` prop.
+
+### CardAction Props
+
+Container for action buttons in the header. Automatically positions to the right. Supports the `render` prop.
+
+### CardPanel Props
+
+Main content area of the card. Also exported as `CardContent`. Supports the `render` prop.
+
+### CardFooter Props
+
+Footer section for the card. Supports the `render` prop.
+
+### CardFrame Props
+
+Root container for the framed card layout. Supports the `render` prop.
+
+### CardFrameHeader Props
+
+Header section for the frame. Contains title, description, and optionally `CardFrameAction`. Supports the `render` prop.
+
+### CardFrameTitle Props
+
+Title text for the frame. Supports the `render` prop.
+
+### CardFrameDescription Props
+
+Description text for the frame. Supports the `render` prop.
+
+### CardFrameAction Props
+
+Container for action buttons in the header. Positioned in the top-right via CSS grid. Supports the `render` prop.
+
+### CardFrameFooter Props
+
+Footer section for the frame. Supports the `render` prop.
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-card-2" description="Authentication card with actions" />
+  <ShowcaseCard name="demo-primitives-p-card-3" description="Authentication card with separators" />
+  <ShowcaseCard name="demo-primitives-p-card-4" description="Framed card with footer" />
+  <ShowcaseCard name="demo-primitives-p-card-5" description="Framed card with header" />
+  <ShowcaseCard name="demo-primitives-p-card-6" description="Framed card with header and footer" />
+  <ShowcaseCard name="demo-primitives-p-card-7" description="Framed card with no rounded bottom" />
+  <ShowcaseCard name="demo-primitives-p-card-8" description="Card within a frame and footer" />
+  <ShowcaseCard name="demo-primitives-p-card-9" description="Card within a frame and footer" />
+  <ShowcaseCard name="demo-primitives-p-card-10" description="Card within a frame with header and footer" />
+  <ShowcaseCard name="demo-primitives-p-card-11" description="CardFrame with header action" />
+</ShowcaseGrid>

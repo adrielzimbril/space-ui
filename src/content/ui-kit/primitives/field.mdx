@@ -1,0 +1,113 @@
+---
+title: Field
+description: Wraps input fields with clear text labels, helpful hints, and error messages to make filling out forms straightforward and accessible.
+
+links:
+  doc: https://base-ui.com/react/components/field#api-reference
+preview: demo-primitives-p-field-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-field" />
+
+## Usage
+
+```tsx
+import { Field, FieldDescription, FieldError, FieldLabel, FieldValidity } from '@/components/ui/field'
+import { Input } from '@/components/ui/input'
+```
+
+```tsx
+<Field>
+  <FieldLabel>Name</FieldLabel>
+  <Input type="text" placeholder="Enter your name" />
+  <FieldDescription>Visible on your profile</FieldDescription>
+  <FieldError>Please enter a valid name</FieldError>
+  <FieldValidity>
+    {(validity) => (
+      {validity.error && <p>{validity.error}</p>}
+    )}
+  </FieldValidity>
+</Field>
+```
+
+## Anatomy
+
+```tsx
+<Field>
+  <FieldLabel />
+  <FieldControl />
+  <FieldDescription />
+  <FieldError />
+</Field>
+```
+
+## Features
+
+### Disabled State
+
+Field component rendered in a disabled state via the `disabled` prop.
+
+<ComponentPreview name="demo-primitives-p-field-3" />
+
+## API Reference
+
+### Field
+
+Root component. Styled wrapper for `Field.Root` from Base UI with flex column layout.
+
+### FieldLabel
+
+Label for the field. Styled wrapper for `Field.Label` from Base UI.
+
+### FieldItem
+
+Container for field items. Styled wrapper for `Field.Item` from Base UI.
+
+### FieldDescription
+
+Description text for the field. Styled wrapper for `Field.Description` from Base UI with muted foreground color.
+
+### FieldError
+
+Error message for the field. Styled wrapper for `Field.Error` from Base UI with destructive foreground color.
+
+### FieldControl
+
+Alias for `Field.Control` from Base UI. Use this to register a custom or third-party control with the field context so it participates in labelling, validation, and error state.
+
+Note that `Textarea` does not require `FieldControl` — it wraps `Field.Control` internally and integrates with `Field` the same way `Input` and other built-in controls do.
+
+### FieldValidity
+
+Alias for `Field.Validity` from Base UI.
+
+### FieldGroup
+
+Container for grouping multiple field components together with vertical spacing. Renders as a styled `div`.
+
+### FieldSeparator
+
+Visual separator between fields or sections within a field group.
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-field-2" description="Field with required indicator" />
+  <ShowcaseCard name="demo-primitives-p-field-4" description="Field showing validation error" />
+  <ShowcaseCard name="demo-primitives-p-field-5" description="Show field validity state" />
+  <ShowcaseCard name="demo-primitives-p-field-6" description="Input group with field" />
+  <ShowcaseCard name="demo-primitives-p-field-7" description="Field with autocomplete" />
+  <ShowcaseCard name="demo-primitives-p-field-8" description="Field with combobox" />
+  <ShowcaseCard name="demo-primitives-p-field-9" description="Field with multiple selection combobox" />
+  <ShowcaseCard name="demo-primitives-p-field-10" description="Field with textarea" />
+  <ShowcaseCard name="demo-primitives-p-field-11" description="Field with select" />
+  <ShowcaseCard name="demo-primitives-p-field-12" description="Field with checkbox" />
+  <ShowcaseCard name="demo-primitives-p-field-13" description="Field with checkbox group" />
+  <ShowcaseCard name="demo-primitives-p-field-14" description="Field with radio group" />
+  <ShowcaseCard name="demo-primitives-p-field-15" description="Field with toggle switch" />
+  <ShowcaseCard name="demo-primitives-p-field-16" description="Field with slider" />
+  <ShowcaseCard name="demo-primitives-p-field-17" description="Field with number field" />
+  <ShowcaseCard name="demo-primitives-p-field-18" description="Complete form built with field" />
+</ShowcaseGrid>

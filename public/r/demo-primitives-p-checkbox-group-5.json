@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-checkbox-group-5",
+  "title": "Checkbox Group 5",
+  "description": "Checkbox group form",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-checkbox",
+    "@usespaceui/primitives-checkbox-group",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-fieldset",
+    "@usespaceui/primitives-form"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/checkbox-group/p-checkbox-group-5/index.tsx",
+      "content": "'use client'\n\nimport type { FormEvent } from 'react'\nimport { useState } from 'react'\nimport { Button } from '@/components/ui/button'\nimport { Checkbox } from '@/components/ui/checkbox'\nimport { CheckboxGroup } from '@/components/ui/checkbox-group'\nimport { Field, FieldItem, FieldLabel } from '@/components/ui/field'\nimport { Fieldset, FieldsetLegend } from '@/components/ui/fieldset'\nimport { Form } from '@/components/ui/form'\n\nexport default function Particle() {\n  const [loading, setLoading] = useState(false)\n  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {\n    e.preventDefault()\n    const formData = new FormData(e.currentTarget)\n    setLoading(true)\n    await new Promise((r) => setTimeout(r, 800))\n    setLoading(false)\n    const frameworks = formData.getAll('frameworks') as string[]\n    alert(`Selected: ${frameworks.join(', ') || 'none'}`)\n  }\n\n  return (\n    <Form className=\"flex w-full max-w-[160px] flex-col gap-4\" onSubmit={onSubmit}>\n      <Field name=\"frameworks\" render={(props) => <Fieldset {...props} />}>\n        <FieldsetLegend className=\"font-medium text-sm\">Frameworks</FieldsetLegend>\n        <CheckboxGroup defaultValue={['next']}>\n          <FieldItem>\n            <FieldLabel>\n              <Checkbox value=\"next\" />\n              Next.js\n            </FieldLabel>\n          </FieldItem>\n          <FieldItem>\n            <FieldLabel>\n              <Checkbox value=\"vite\" />\n              Vite\n            </FieldLabel>\n          </FieldItem>\n          <FieldItem>\n            <FieldLabel>\n              <Checkbox value=\"astro\" />\n              Astro\n            </FieldLabel>\n          </FieldItem>\n        </CheckboxGroup>\n      </Field>\n      <Button loading={loading} type=\"submit\">\n        Submit\n      </Button>\n    </Form>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-checkbox-group-5.tsx"
+    }
+  ],
+  "categories": [
+    "checkbox",
+    "checkbox group",
+    "form"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-utils-states-catch-error",
+  "type": "registry:lib",
+  "title": "catch-error",
+  "description": "catch-error state utility.",
+  "categories": [
+    "utils",
+    "catch-error"
+  ],
+  "files": [
+    {
+      "path": "src/registry/utils/states/catch-error/index.ts",
+      "type": "registry:lib",
+      "target": "utils/states/catch-error.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

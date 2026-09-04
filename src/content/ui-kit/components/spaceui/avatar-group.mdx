@@ -1,0 +1,46 @@
+---
+title: Avatar Group
+description: A component for rendering a group of avatars, supporting different stacking directions and action buttons.
+preview: demo-primitives-p-avatar-7
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-avatar-group" />
+
+## Usage
+
+```tsx
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { AvatarGroup, AvatarGroupAction } from '@/components/spaceui/avatar-group'
+```
+
+```tsx
+<AvatarGroup stacking="left">
+  <Avatar>
+    <AvatarImage />
+    <AvatarFallback>U1</AvatarFallback>
+  </Avatar>
+  <Avatar>
+    <AvatarImage />
+    <AvatarFallback>U2</AvatarFallback>
+  </Avatar>
+  <AvatarGroupAction>+4</AvatarGroupAction>
+</AvatarGroup>
+```
+
+## Features
+
+### With Actions
+
+Use the `AvatarGroupAction` component to add an interactive trailing element. It can contain text indicating remaining users or an icon for interaction (e.g., a plus button to add members).
+
+<ComponentPreview name="demo-primitives-p-avatar-9" />
+
+## API Reference
+
+### AvatarGroup Props
+
+| Prop       | Type                | Default   | Description                                        |
+| ---------- | ------------------- | --------- | -------------------------------------------------- |
+| `stacking` | `"left" \| "right"` | `"right"` | Controls the visual z-index overlap of the avatars |

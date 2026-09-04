@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-browser-use-favicon",
+  "title": "useFavicon",
+  "description": "useFavicon hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/browser/use-favicon/index.ts",
+      "content": "'use client'\n\nimport { useEffect } from 'react'\n\n/**\n * React hook to dynamically update the document favicon URL.\n *\n * @param {string} href - The URL or path to the favicon image.\n *\n * @example\n * useFavicon(hasUnread ? '/favicon-unread.ico' : '/favicon.ico');\n */\nexport function useFavicon(href: string): void {\n  useEffect(() => {\n    if (typeof document === 'undefined') return\n\n    let link: HTMLLinkElement | null = document.querySelector(\"link[rel*='icon']\")\n\n    if (!link) {\n      link = document.createElement('link')\n      link.type = 'image/x-icon'\n      link.rel = 'shortcut icon'\n      document.getElementsByTagName('head')[0].appendChild(link)\n    }\n\n    link.href = href\n  }, [href])\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-favicon.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "favicon"
+  ],
+  "type": "registry:hook"
+}

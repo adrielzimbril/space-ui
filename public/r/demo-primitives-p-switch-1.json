@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-switch-1",
+  "title": "Switch 1",
+  "description": "Basic switch",
+  "registryDependencies": [
+    "@usespaceui/primitives-label",
+    "@usespaceui/primitives-switch"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/switch/p-switch-1/index.tsx",
+      "content": "import { Label } from '@/components/ui/label'\nimport { Switch } from '@/components/ui/switch'\n\nexport default function Particle() {\n  return (\n    <Label>\n      <Switch />\n      Marketing emails\n    </Label>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-switch-1.tsx"
+    }
+  ],
+  "categories": [
+    "switch"
+  ],
+  "type": "registry:ui"
+}

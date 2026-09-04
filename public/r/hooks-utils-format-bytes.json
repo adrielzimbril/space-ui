@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-utils-format-bytes",
+  "title": "format-bytes",
+  "description": "format-bytes utility.",
+  "files": [
+    {
+      "path": "src/registry/utils/format-bytes/index.ts",
+      "content": "/**\n * Options for formatting byte values into human-readable strings.\n */\nexport interface FormatBytesOptions {\n  /** Number of decimal places to include (default: 2) */\n  decimals?: number\n  /** Format output with binary prefixes (KiB, MiB, etc.) instead of decimal prefixes (KB, MB, etc.) */\n  binary?: boolean\n}\n\n/**\n * Converts a raw number of bytes into a localized, human-readable file size string.\n *\n * @param {number} bytes - The number of bytes to format.\n * @param {FormatBytesOptions} [options={}] - Formatting options (decimals, binary mode).\n * @returns {string} The formatted file size string (e.g. '1.50 MB', '512 KB').\n *\n * @example\n * formatBytes(1024);                   // => '1.02 KB'\n * formatBytes(1048576, { decimals: 0 }); // => '1 MB'\n * formatBytes(1048576, { binary: true });// => '1 MiB'\n */\nexport function formatBytes(bytes: number, options: FormatBytesOptions = {}): string {\n  const { decimals = 2, binary = false } = options\n\n  if (bytes === 0) return '0 B'\n  if (bytes < 0) return '0 B'\n\n  const k = binary ? 1024 : 1000\n  const dm = decimals < 0 ? 0 : decimals\n  const sizes = binary ? ['B', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB'] : ['B', 'KB', 'MB', 'GB', 'TB', 'PB']\n\n  const i = Math.floor(Math.log(bytes) / Math.log(k))\n  const unitIndex = Math.min(i, sizes.length - 1)\n\n  return `${parseFloat((bytes / Math.pow(k, unitIndex)).toFixed(dm))} ${sizes[unitIndex]}`\n}\n\n/**\n * Parses a human-readable file size string (e.g. '10MB', '512KB', '1.5GB') into an exact number of bytes.\n *\n * @param {string | number} input - The input string (e.g. '10MB') or raw number in bytes.\n * @returns {number} The parsed size in raw bytes.\n *\n * @example\n * parseBytes('10MB');   // => 10485760\n * parseBytes('512KB');  // => 524288\n * parseBytes(2048);     // => 2048\n */\nexport function parseBytes(input: string | number): number {\n  if (typeof input === 'number') return input\n  if (!input) return 0\n\n  const units: Record<string, number> = {\n    b: 1,\n    kb: 1024,\n    kib: 1024,\n    mb: 1024 * 1024,\n    mib: 1024 * 1024,\n    gb: 1024 * 1024 * 1024,\n    gib: 1024 * 1024 * 1024,\n    tb: 1024 * 1024 * 1024 * 1024,\n    tib: 1024 * 1024 * 1024 * 1024,\n  }\n\n  const match = input.trim().match(/^([\\d.]+)\\s*([a-zA-Z]+)?$/)\n  if (!match) return 0\n\n  const value = parseFloat(match[1])\n  const unit = (match[2] || 'b').toLowerCase()\n\n  return value * (units[unit] || 1)\n}\n",
+      "type": "registry:lib",
+      "target": "utils/format-bytes.ts"
+    }
+  ],
+  "categories": [
+    "utils",
+    "format-bytes"
+  ],
+  "type": "registry:lib"
+}

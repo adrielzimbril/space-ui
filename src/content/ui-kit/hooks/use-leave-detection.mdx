@@ -1,0 +1,50 @@
+---
+title: useLeaveDetection
+description: Comprehensive exit-intent, viewport boundary exit, split-screen window blur, and tab visibility switch detection.
+preview: demo-hooks-lifecycle-leave-detection-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-lifecycle-use-leave-detection" />
+
+## Usage
+
+```tsx
+import { useLeaveDetection } from '@/hooks/use-leave-detection'
+
+// Pattern 1: Reactive state & options
+const { isOutside, leaveCount, direction, reset } = useLeaveDetection({
+  detectBlur: true,
+  detectVisibility: true,
+  onLeave: (dir) => console.log('User left from:', dir),
+  onEnter: () => console.log('User returned to window'),
+})
+
+// Pattern 2: Direct callback
+useLeaveDetection(() => {
+  openDiscountModal()
+})
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter                  | Type                           | Default     | Description                                                           |
+| :------------------------- | :----------------------------- | :---------- | :-------------------------------------------------------------------- |
+| `options.detectBlur`       | `boolean`                      | `true`      | Detects window blur (e.g. clicking into another app in split screen). |
+| `options.detectVisibility` | `boolean`                      | `true`      | Detects tab switching via Page Visibility API.                        |
+| `options.once`             | `boolean`                      | `false`     | Trigger the exit handler only once.                                   |
+| `options.onLeave`          | `(dir: ExitDirection) => void` | `undefined` | Callback fired when the user leaves.                                  |
+| `options.onEnter`          | `() => void`                   | `undefined` | Callback fired when the user returns.                                 |
+
+### Return Value
+
+| Property     | Type                                                                         | Description                                                       |
+| :----------- | :--------------------------------------------------------------------------- | :---------------------------------------------------------------- |
+| `isOutside`  | `boolean`                                                                    | `true` while the user is outside the window or focused elsewhere. |
+| `hasLeft`    | `boolean`                                                                    | `true` if the user has left at least once.                        |
+| `leaveCount` | `number`                                                                     | Total number of exit events detected.                             |
+| `direction`  | `'top' \| 'bottom' \| 'left' \| 'right' \| 'blur' \| 'visibility' \| 'none'` | Last exit origin.                                                 |
+| `reset()`    | `Function`                                                                   | Resets exit states and triggers.                                  |

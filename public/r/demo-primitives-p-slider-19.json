@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-slider-19",
+  "title": "Slider 19",
+  "description": "Vertical slider with input",
+  "registryDependencies": [
+    "@usespaceui/primitives-number-field",
+    "@usespaceui/primitives-slider"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/slider/p-slider-19/index.tsx",
+      "content": "'use client'\n\nimport { useState } from 'react'\nimport { NumberField, NumberFieldGroup, NumberFieldInput } from '@/components/ui/number-field'\nimport { Slider } from '@/components/ui/slider'\n\nconst min = 0\nconst max = 100\n\nexport default function Particle() {\n  const [value, setValue] = useState(25)\n\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-4\">\n      <Slider\n        aria-label=\"Vertical slider with input\"\n        max={max}\n        min={min}\n        onValueChange={(v) => setValue(Array.isArray(v) ? v[0] : v)}\n        orientation=\"vertical\"\n        value={value}\n      />\n      <NumberField\n        aria-label=\"Enter slider value\"\n        className=\"w-16\"\n        max={max}\n        min={min}\n        onValueChange={(v) => setValue(v ?? min)}\n        render={<NumberFieldGroup />}\n        size=\"sm\"\n        value={value}\n      >\n        <NumberFieldInput />\n      </NumberField>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-slider-19.tsx"
+    }
+  ],
+  "categories": [
+    "slider",
+    "number field"
+  ],
+  "type": "registry:ui"
+}

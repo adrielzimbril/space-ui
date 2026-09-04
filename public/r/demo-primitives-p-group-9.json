@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-group-9",
+  "title": "Group 9",
+  "description": "Vertical group",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-group"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/group/p-group-9/index.tsx",
+      "content": "import { IconZoomIn, IconZoomOut } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { Group, GroupSeparator } from '@/components/ui/group'\n\nexport default function Particle() {\n  return (\n    <Group aria-label=\"Zoom controls\" orientation=\"vertical\">\n      <Button aria-label=\"Zoom in\" size=\"icon\" variant=\"outline\">\n        <IconZoomIn />\n      </Button>\n      <GroupSeparator orientation=\"horizontal\" />\n      <Button aria-label=\"Zoom Out\" size=\"icon\" variant=\"outline\">\n        <IconZoomOut />\n      </Button>\n    </Group>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-group-9.tsx"
+    }
+  ],
+  "categories": [
+    "group"
+  ],
+  "type": "registry:ui"
+}

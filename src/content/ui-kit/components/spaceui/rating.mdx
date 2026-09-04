@@ -1,0 +1,74 @@
+---
+title: Rating
+description: Allows users to submit ratings or view average customer scores using interactive star icons with half-star precision.
+component: true
+base: base
+preview: demo-components-spaceui-c-rating-1
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-rating" />
+
+## Usage
+
+```tsx
+import { Rating } from '@/components/spaceui/rating'
+```
+
+```tsx
+<Rating rating={4.5} showValue editable />
+```
+
+## Examples
+
+### Decimal
+
+<ComponentPreview name="demo-components-spaceui-c-rating-2" />
+
+### Show Value
+
+<ComponentPreview name="demo-components-spaceui-c-rating-3" />
+
+### Editable
+
+<ComponentPreview name="demo-components-spaceui-c-rating-4" />
+
+### Size
+
+<ComponentPreview name="demo-components-spaceui-c-rating-5" />
+
+## API Reference
+
+### Rating
+
+The main component for displaying and editing star ratings.
+
+| Prop             | Type                        | Default | Description                                                                        |
+| :--------------- | :-------------------------- | :------ | :--------------------------------------------------------------------------------- |
+| `rating`         | `number`                    | -       | **Required**. The current rating value. Supports decimal values for partial stars. |
+| `maxRating`      | `number`                    | `5`     | Total number of stars to display.                                                  |
+| `size`           | `"sm" \| "default" \| "lg"` | `"md"`  | The size of the stars and spacing.                                                 |
+| `showValue`      | `boolean`                   | `false` | Whether to show the numeric rating value next to the stars.                        |
+| `editable`       | `boolean`                   | `false` | Whether the rating can be changed by clicking on stars.                            |
+| `onRatingChange` | `(rating: number) => void`  | -       | Callback fired when a star is clicked (if `editable` is true).                     |
+| `starClassName`  | `string`                    | -       | Additional CSS classes for the numeric value container.                            |
+| `className`      | `string`                    | -       | Additional CSS classes for the root container.                                     |
+
+## All 9 variations
+
+### Rating with review summary
+
+<ComponentPreview name="demo-components-spaceui-c-rating-6" />
+
+### Interactive half-star rating
+
+<ComponentPreview name="demo-components-spaceui-c-rating-7" />
+
+### Emoji reaction rating
+
+<ComponentPreview name="demo-components-spaceui-c-rating-8" />
+
+### Rating with review text input
+
+<ComponentPreview name="demo-components-spaceui-c-rating-9" />

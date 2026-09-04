@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-toggle-2",
+  "title": "Toggle Sizes",
+  "description": "Toggle buttons in sm, default, and lg sizes",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-toggle"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/toggle/p-toggle-2/index.tsx",
+      "content": "import { IconBold } from '@tabler/icons-react'\nimport { Toggle } from '@/components/ui/toggle'\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-3\">\n      <Toggle size=\"sm\" defaultPressed>\n        <IconBold />\n        Small\n      </Toggle>\n      <Toggle size=\"default\" defaultPressed>\n        <IconBold />\n        Default\n      </Toggle>\n      <Toggle size=\"lg\" defaultPressed>\n        <IconBold />\n        Large\n      </Toggle>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-toggle-2.tsx"
+    }
+  ],
+  "categories": [
+    "toggle"
+  ],
+  "type": "registry:ui"
+}

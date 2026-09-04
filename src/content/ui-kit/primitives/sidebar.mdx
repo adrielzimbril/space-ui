@@ -1,0 +1,160 @@
+---
+title: Sidebar
+description: Provides a collapsible side navigation bar that organizes app pages into sections, supporting both desktop and mobile layouts.
+preview:
+  name: demo-primitives-p-sidebar-1
+  contained: false
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-sidebar" />
+
+## Usage
+
+```tsx
+import {
+  SidebarProvider,
+  Sidebar,
+  SidebarHeader,
+  SidebarContent,
+  SidebarFooter,
+  SidebarGroup,
+  SidebarGroupLabel,
+  SidebarGroupContent,
+  SidebarMenu,
+  SidebarMenuItem,
+  SidebarMenuButton,
+  SidebarTrigger,
+  SidebarInset,
+} from '@/components/ui/sidebar'
+```
+
+```tsx
+<SidebarProvider>
+  <Sidebar>
+    <SidebarHeader>
+      <h2>Workspace</h2>
+    </SidebarHeader>
+    <SidebarContent>
+      <SidebarGroup>
+        <SidebarGroupLabel>Menu</SidebarGroupLabel>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton asChild>
+                <a href="/home">Home</a>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
+    </SidebarContent>
+    <SidebarFooter>
+      <p>User account</p>
+    </SidebarFooter>
+  </Sidebar>
+  <SidebarInset>
+    <header className="flex h-12 items-center px-4 border-b">
+      <SidebarTrigger />
+    </header>
+    <main className="p-4">
+      <h1>Content</h1>
+    </main>
+  </SidebarInset>
+</SidebarProvider>
+```
+
+## Anatomy
+
+```tsx
+<SidebarProvider>
+  <Sidebar>
+    <SidebarHeader />
+    <SidebarContent>
+      <SidebarGroup>
+        <SidebarGroupLabel />
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton />
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
+    </SidebarContent>
+    <SidebarFooter />
+  </Sidebar>
+</SidebarProvider>
+```
+
+## Structure & Architecture
+
+The `Sidebar` component is built using a composable slot-based architecture:
+
+- **`SidebarProvider`**: Manages responsive open/close state, mobile drawer transition, and cookie persistence.
+- **`Sidebar`**: The main sidebar container supporting collapsible states (`offcanvas`, `icon`, `none`).
+- **`SidebarTrigger`**: Toggle button to collapse or expand the sidebar (with keyboard shortcut `Cmd+B` / `Ctrl+B`).
+- **`SidebarHeader` / `SidebarFooter`**: Pinned top and bottom areas.
+- **`SidebarContent`**: Scrollable body area for navigation items and groups.
+- **`SidebarGroup`**: Groups related links together with optional `SidebarGroupLabel` and `SidebarGroupAction`.
+- **`SidebarMenu`**: Unordered list container for `SidebarMenuItem` and `SidebarMenuButton`.
+- **`SidebarMenuAction` / `SidebarMenuBadge`**: Secondary quick action buttons and badge counters within menu items.
+- **`SidebarMenuSub` / `SidebarMenuSubItem` / `SidebarMenuSubButton`**: Nested sub-level navigation items within menus.
+- **`SidebarMenuSkeleton`**: Skeleton loader state for dynamic menu items.
+- **`SidebarInput` / `SidebarSeparator`**: Input search fields and separators styled specifically for the sidebar.
+- **`SidebarRail`**: Interactive resize/rail edge to toggle collapse on hover/click.
+- **`SidebarInset`**: Main content container that adjusts margins alongside the sidebar.
+
+## API Reference
+
+### SidebarProvider
+
+| Prop           | Type                      | Default | Description                            |
+| -------------- | ------------------------- | ------- | -------------------------------------- |
+| `defaultOpen`  | `boolean`                 | `true`  | Initial open state if no cookie is set |
+| `open`         | `boolean`                 | -       | Controlled open state                  |
+| `onOpenChange` | `(open: boolean) => void` | -       | Callback invoked on open state change  |
+
+### Sidebar
+
+| Prop          | Type                                 | Default       | Description                           |
+| ------------- | ------------------------------------ | ------------- | ------------------------------------- |
+| `side`        | `"left" \| "right"`                  | `"left"`      | Side on which the sidebar is rendered |
+| `variant`     | `"sidebar" \| "floating" \| "inset"` | `"sidebar"`   | Visual appearance variant             |
+| `collapsible` | `"offcanvas" \| "icon" \| "none"`    | `"offcanvas"` | Collapse mode on desktop              |
+
+### SidebarMenuButton
+
+Interactive button within a sidebar menu item.
+
+| Prop       | Type                                             | Default     | Description                                          |
+| ---------- | ------------------------------------------------ | ----------- | ---------------------------------------------------- |
+| `size`     | `"default" \| "sm" \| "lg"`                      | `"default"` | Size dimension variant of the menu button            |
+| `isActive` | `boolean`                                        | `false`     | Visual active/current indicator state                |
+| `tooltip`  | `string \| React.ComponentProps<typeof Tooltip>` | -           | Tooltip displayed when sidebar is collapsed to icons |
+
+### SidebarMenuAction
+
+Secondary action button placed inside a sidebar menu item.
+
+| Prop          | Type      | Default | Description                                                      |
+| ------------- | --------- | ------- | ---------------------------------------------------------------- |
+| `showOnHover` | `boolean` | `false` | When true, only reveals the action button when hovering the item |
+
+### SidebarMenuSkeleton
+
+Loading placeholder for sidebar menu items.
+
+| Prop       | Type      | Default | Description                                            |
+| ---------- | --------- | ------- | ------------------------------------------------------ |
+| `showIcon` | `boolean` | `false` | When true, renders a square skeleton block for an icon |
+
+### SidebarMenuSubButton
+
+Nested sub-level navigation link button within a sidebar submenu.
+
+| Prop       | Type           | Default | Description                             |
+| ---------- | -------------- | ------- | --------------------------------------- |
+| `size`     | `"sm" \| "md"` | `"md"`  | Height and text scale of the sub-button |
+| `isActive` | `boolean`      | `false` | Visual active/current indicator state   |

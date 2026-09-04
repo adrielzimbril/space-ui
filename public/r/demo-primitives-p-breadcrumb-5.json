@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-breadcrumb-5",
+  "title": "Breadcrumb 5",
+  "description": "Breadcrumb with icons before text",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/breadcrumb/p-breadcrumb-5/index.tsx",
+      "content": "import { IconHome, IconFolder } from '@tabler/icons-react'\nimport Link from 'next/link'\nimport {\n  Breadcrumb,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbPage,\n  BreadcrumbSeparator,\n} from '@/components/ui/breadcrumb'\n\nexport default function Particle() {\n  return (\n    <Breadcrumb>\n      <BreadcrumbList>\n        <BreadcrumbItem>\n          <BreadcrumbLink className=\"inline-flex items-center gap-1.5\" render={<Link href=\"/\" />}>\n            <IconHome aria-hidden=\"true\" className=\"size-4\" />\n            Home\n          </BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <BreadcrumbLink className=\"inline-flex items-center gap-1.5\" render={<Link href=\"/docs/\" />}>\n            <IconFolder aria-hidden=\"true\" className=\"size-4\" />\n            Components\n          </BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>\n        </BreadcrumbItem>\n      </BreadcrumbList>\n    </Breadcrumb>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-breadcrumb-5.tsx"
+    }
+  ],
+  "categories": [
+    "breadcrumb"
+  ],
+  "type": "registry:ui"
+}

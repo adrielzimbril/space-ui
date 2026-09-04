@@ -1,0 +1,30 @@
+---
+title: Tournament Bracket
+description: Animated knockout bracket with round navigation, live and finished matches, and elbow connectors.
+author:
+  name: usespaceui
+  url: https://github.com/usespaceui
+preview: demo-components-spaceui-c-tournament-bracket-1
+---
+
+Source: `registry/components/spaceui/tournament-bracket/index.tsx`. Round chevrons shift the visible window; match cards and connectors are `motion` layout.
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-tournament-bracket" />
+
+## Usage
+
+```tsx
+import { TournamentBracket } from '@/components/spaceui/tournament-bracket'
+
+;<TournamentBracket />
+```
+
+## Files
+
+| File                           | Role                                                                      |
+| ------------------------------ | ------------------------------------------------------------------------- |
+| `tournament-bracket/index.tsx` | `TEAMS`, rounds data, `MatchBox`, `BracketContainer`, `TournamentBracket` |
+
+Default data is a World Cup–style knockout. Swap `rounds` in the file to feed your own matches (`status`: `upcoming` \| `live` \| `finished`, optional penalties).

@@ -1,0 +1,30 @@
+---
+title: useShare
+description: Native Web Share API caller.
+preview: demo-hooks-browser-share-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-browser-use-share" />
+
+## Usage
+
+```tsx
+import { useShare } from '@/hooks/use-share'
+
+const { share, isSupported } = useShare()
+```
+
+## API Reference
+
+### Parameters / Props
+
+_None_
+
+### Return Value
+
+| Property      | Type                      | Description            |
+| :------------ | :------------------------ | :--------------------- |
+| `share`       | `(data) => Promise<void>` | Triggers share dialog. |
+| `isSupported` | `boolean`                 | Feature support.       |

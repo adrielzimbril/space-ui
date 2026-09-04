@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-button-19",
+  "type": "registry:ui",
+  "title": "Button 19",
+  "description": "Button with keyboard shortcut indicator",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-kbd"
+  ],
+  "categories": [
+    "button",
+    "kbd"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/button/p-button-19/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-button-19.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

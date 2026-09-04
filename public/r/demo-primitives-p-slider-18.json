@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-slider-18",
+  "title": "Slider 18",
+  "description": "Vertical range slider",
+  "registryDependencies": [
+    "@usespaceui/primitives-slider"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/slider/p-slider-18/index.tsx",
+      "content": "import { Slider } from '@/components/ui/slider'\n\nexport default function Particle() {\n  return (\n    <div className=\"flex h-40 items-center justify-center\">\n      <Slider defaultValue={[25, 75]} orientation=\"vertical\" />\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-slider-18.tsx"
+    }
+  ],
+  "categories": [
+    "slider"
+  ],
+  "type": "registry:ui"
+}

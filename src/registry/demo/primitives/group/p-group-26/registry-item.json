@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-group-26",
+  "type": "registry:ui",
+  "title": "Button group with select status addon",
+  "description": "Button group with select status addon",
+  "registryDependencies": [
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-group",
+    "@usespaceui/primitives-input",
+    "@usespaceui/primitives-select"
+  ],
+  "categories": [
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/group/p-group-26/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-group-26.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

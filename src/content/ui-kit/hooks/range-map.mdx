@@ -1,0 +1,38 @@
+---
+title: rangeMap & mapRange
+description: Generates mapped numeric arrays for iterations and maps numbers across ranges with linear interpolation.
+preview: demo-hooks-utils-range-map-1
+---
+
+### Example 2: Linear Range Interpolation (mapRange)
+
+<ComponentPreview name="demo-hooks-utils-range-map-2" />
+
+## Installation
+
+<ComponentInstallation name="hooks-utils-range-map" />
+
+## Usage
+
+```tsx
+import { rangeMap, range, mapRange } from '@/utils/range-map'
+
+rangeMap(5, (i) => i * 2) // => [0, 2, 4, 6, 8]
+rangeMap({ n: 3, fn: (i) => i + 1 }) // => [1, 2, 3]
+mapRange(0.5, 0, 1, 0, 100) // => 50
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter        | Type                           | Default     | Description                            |
+| :--------------- | :----------------------------- | :---------- | :------------------------------------- |
+| `countOrOptions` | `number \| RangeMapOptions<T>` | _required_  | Total element count or options object. |
+| `mapFn`          | `(index: number) => T`         | `undefined` | Optional transformation function.      |
+
+### Return Value
+
+| Return Type | Description                 |
+| :---------- | :-------------------------- |
+| `T[]`       | Generated and mapped array. |

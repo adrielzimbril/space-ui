@@ -1,0 +1,9 @@
+{
+  "title": "Templates",
+  "description": "Full-page immersive starter templates",
+  "icon": "Layout",
+  "root": true,
+  "pages": [
+    "immersive-lens"
+  ]
+}

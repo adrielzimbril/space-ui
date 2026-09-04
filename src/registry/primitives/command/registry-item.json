@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-command",
+  "type": "registry:ui",
+  "title": "Command",
+  "description": "Accessible Command primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-autocomplete",
+    "@usespaceui/primitives-kbd"
+  ],
+  "categories": [
+    "command"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/command/index.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/command.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

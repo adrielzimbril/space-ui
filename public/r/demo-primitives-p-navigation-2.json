@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-navigation-2",
+  "title": "Navigation 2",
+  "description": "Segmented navigation links",
+  "registryDependencies": [
+    "@usespaceui/lib-segmented-control"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/link/p-navigation-2/index.tsx",
+      "content": "import { segmentedControlItemVariants, segmentedControlRootClassName } from '@/lib/segmented-control'\n\nconst smClassName = segmentedControlItemVariants({ size: 'sm', state: 'current' })\nconst defaultClassName = segmentedControlItemVariants({ state: 'current' })\nconst lgClassName = segmentedControlItemVariants({ size: 'lg', state: 'current' })\n\nexport default function Particle() {\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-4\">\n      <nav aria-label=\"Documentation sections\">\n        <div className={segmentedControlRootClassName}>\n          <a aria-current=\"page\" className={smClassName} href=\"#components\">\n            Components\n          </a>\n          <a className={smClassName} href=\"#hooks\">\n            Hooks\n          </a>\n          <a className={smClassName} href=\"#utilities\">\n            Utilities\n          </a>\n        </div>\n      </nav>\n\n      <nav aria-label=\"Documentation sections\">\n        <div className={segmentedControlRootClassName}>\n          <a aria-current=\"page\" className={defaultClassName} href=\"#components\">\n            Components\n          </a>\n          <a className={defaultClassName} href=\"#hooks\">\n            Hooks\n          </a>\n          <a className={defaultClassName} href=\"#utilities\">\n            Utilities\n          </a>\n        </div>\n      </nav>\n\n      <nav aria-label=\"Documentation sections\">\n        <div className={segmentedControlRootClassName}>\n          <a aria-current=\"page\" className={lgClassName} href=\"#components\">\n            Components\n          </a>\n          <a className={lgClassName} href=\"#hooks\">\n            Hooks\n          </a>\n          <a className={lgClassName} href=\"#utilities\">\n            Utilities\n          </a>\n        </div>\n      </nav>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-navigation-2.tsx"
+    }
+  ],
+  "categories": [
+    "link",
+    "navigation",
+    "segmented-control"
+  ],
+  "type": "registry:ui"
+}

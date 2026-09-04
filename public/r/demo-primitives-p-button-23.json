@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-button-23",
+  "title": "Button 23",
+  "description": "Icon-only copy button with feedback",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-browser-use-clipboard",
+    "@usespaceui/primitives-button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/button/p-button-23/index.tsx",
+      "content": "'use client'\n\nimport { IconCheck, IconCopy } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { useClipboard } from '@/hooks/use-clipboard'\n\nexport default function Particle() {\n  const { copy, copied } = useClipboard({ timeout: 2000 })\n\n  const handleCopy = () => {\n    void copy('Text copied!')\n  }\n\n  return (\n    <Button aria-label={copied ? 'Copied' : 'Copy to clipboard'} onClick={handleCopy} size=\"icon\" variant=\"outline\">\n      {copied ? <IconCheck aria-hidden=\"true\" /> : <IconCopy aria-hidden=\"true\" />}\n    </Button>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-button-23.tsx"
+    }
+  ],
+  "categories": [
+    "button"
+  ],
+  "type": "registry:ui"
+}

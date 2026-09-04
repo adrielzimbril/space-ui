@@ -1,0 +1,30 @@
+---
+title: useIsMounted
+description: Check component mount state.
+preview: demo-hooks-lifecycle-is-mounted-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-lifecycle-use-is-mounted" />
+
+## Usage
+
+```tsx
+import { useIsMounted } from '@/hooks/use-is-mounted'
+
+const isMounted = useIsMounted()
+if (isMounted()) updateState()
+```
+
+## API Reference
+
+### Parameters / Props
+
+_None_
+
+### Return Value
+
+| Return Type     | Description                       |
+| :-------------- | :-------------------------------- |
+| `() => boolean` | Function returning mount boolean. |

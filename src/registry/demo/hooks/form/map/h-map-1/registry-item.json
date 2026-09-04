@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-form-map-1",
+  "type": "registry:hook",
+  "title": "useMap",
+  "description": "Reactive Map collection state manager",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-form-use-map",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "hooks",
+    "form",
+    "map"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/form/map/h-map-1/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-map-1.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

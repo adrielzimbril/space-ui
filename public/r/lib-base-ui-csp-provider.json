@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lib-base-ui-csp-provider",
+  "title": "Csp Provider",
+  "description": "Utility and configuration helper for Csp Provider.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "files": [
+    {
+      "path": "src/registry/lib/base-ui/csp-provider/index.ts",
+      "content": "export { CSPProvider } from '@base-ui/react/csp-provider'\n",
+      "type": "registry:lib",
+      "target": "lib/base-ui/csp-provider.ts"
+    }
+  ],
+  "categories": [
+    "base-ui"
+  ],
+  "type": "registry:lib"
+}

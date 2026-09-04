@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-sortable-6",
+  "title": "Sortable sidebar navigation with frame",
+  "description": "Sortable sidebar navigation with frame",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-sortable",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-frame"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/sortable/c-sortable-6/index.tsx",
+      "content": "'use client'\n\nimport {\n  IconLayoutDashboard,\n  IconInbox,\n  IconFolder,\n  IconCalendarEvent,\n  IconChartBar,\n  IconSettings,\n  IconGripVertical,\n} from '@tabler/icons-react'\nimport { ReactNode, useState } from 'react'\nimport { Badge } from '@/components/ui/badge'\nimport { Frame, FrameHeader, FramePanel, FrameTitle } from '@/components/ui/frame'\nimport { Sortable, SortableItem, SortableItemHandle } from '@/components/spaceui/sortable'\n\ninterface NavItem {\n  id: string\n  label: string\n  icon: ReactNode\n  count?: number\n}\n\nconst defaultItems: NavItem[] = [\n  {\n    id: '1',\n    label: 'Dashboard',\n    icon: <IconLayoutDashboard className=\"text-muted-foreground size-4\" />,\n  },\n  {\n    id: '2',\n    label: 'Inbox',\n    icon: <IconInbox className=\"text-muted-foreground size-4\" />,\n    count: 5,\n  },\n  {\n    id: '3',\n    label: 'Projects',\n    icon: <IconFolder className=\"text-muted-foreground size-4\" />,\n    count: 12,\n  },\n  {\n    id: '4',\n    label: 'Calendar',\n    icon: <IconCalendarEvent className=\"text-muted-foreground size-4\" />,\n  },\n  {\n    id: '5',\n    label: 'Analytics',\n    icon: <IconChartBar className=\"text-muted-foreground size-4\" />,\n  },\n  {\n    id: '6',\n    label: 'Settings',\n    icon: <IconSettings className=\"text-muted-foreground size-4\" />,\n  },\n]\n\nexport default function Pattern() {\n  const [items, setItems] = useState<NavItem[]>(defaultItems)\n\n  return (\n    <div className=\"mx-auto w-full max-w-xs\">\n      <Frame spacing=\"xs\">\n        <FrameHeader>\n          <FrameTitle>Navigation</FrameTitle>\n        </FrameHeader>\n        <FramePanel className=\"p-2!\">\n          <Sortable\n            value={items}\n            onValueChange={setItems}\n            getItemValue={(item) => item.id}\n            strategy=\"vertical\"\n            className=\"space-y-0.5\"\n          >\n            {items.map((item) => (\n              <SortableItem key={item.id} value={item.id}>\n                <div className=\"hover:bg-accent flex items-center gap-1.5 rounded-md px-2 py-1.5 transition-colors\">\n                  <SortableItemHandle className=\"text-muted-foreground hover:text-foreground opacity-0 transition-opacity group-hover:opacity-100 [div:hover>&]:opacity-100\">\n                    <IconGripVertical className=\"size-3.5\" />\n                  </SortableItemHandle>\n                  {item.icon}\n                  <span className=\"flex-1 text-sm\">{item.label}</span>\n                  {item.count && (\n                    <Badge variant=\"outline\" size=\"sm\" className=\"rounded-full\">\n                      {item.count}\n                    </Badge>\n                  )}\n                </div>\n              </SortableItem>\n            ))}\n          </Sortable>\n        </FramePanel>\n      </Frame>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/c-sortable-6.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "sortable"
+  ],
+  "type": "registry:component"
+}

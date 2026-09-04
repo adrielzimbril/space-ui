@@ -1,0 +1,11 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lib-font-heading",
+  "title": "Font Heading",
+  "description": "Utility and configuration helper for Font Heading.",
+  "files": [],
+  "categories": [
+    "font-heading"
+  ],
+  "type": "registry:file"
+}

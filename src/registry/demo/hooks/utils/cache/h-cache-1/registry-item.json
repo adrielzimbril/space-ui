@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-utils-cache-1",
+  "type": "registry:hook",
+  "title": "cache",
+  "description": "Memory memoization cache map",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-utils-cache",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "hooks",
+    "utils",
+    "cache"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/utils/cache/h-cache-1/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-cache-1.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-dom-use-event-listener",
+  "title": "useEventListener",
+  "description": "useEventListener hook.",
+  "registryDependencies": [
+    "@usespaceui/hooks-lifecycle-use-isomorphic-layout-effect"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/dom/use-event-listener/index.ts",
+      "content": "'use client'\n\nimport { useRef, useEffect, type RefObject } from 'react'\nimport { useIsomorphicLayoutEffect } from '@/hooks/use-isomorphic-layout-effect'\n\n/**\n * React hook that binds an event listener to the window, document, or a specific DOM element.\n *\n * @template K, T\n * @param {K} eventName - Standard DOM event name.\n * @param {(event: any) => void} handler - Event handler function.\n * @param {RefObject<T> | T | null} [element] - Optional DOM target element or React ref.\n * @param {boolean | AddEventListenerOptions} [options] - Standard addEventListener options.\n *\n * @example\n * useEventListener('keydown', (e) => {\n *   if (e.key === 'Escape') closeModal();\n * });\n */\nexport function useEventListener<K extends keyof WindowEventMap>(\n  eventName: K,\n  handler: (event: WindowEventMap[K]) => void,\n  element?: undefined,\n  options?: boolean | AddEventListenerOptions,\n): void\n\nexport function useEventListener<K extends keyof HTMLElementEventMap, T extends HTMLElement = HTMLDivElement>(\n  eventName: K,\n  handler: (event: HTMLElementEventMap[K]) => void,\n  element: RefObject<T>,\n  options?: boolean | AddEventListenerOptions,\n): void\n\nexport function useEventListener<K extends keyof DocumentEventMap>(\n  eventName: K,\n  handler: (event: DocumentEventMap[K]) => void,\n  element: Document,\n  options?: boolean | AddEventListenerOptions,\n): void\n\nexport function useEventListener(\n  eventName: string,\n  handler: (event: Event) => void,\n  element?: any,\n  options?: boolean | AddEventListenerOptions,\n) {\n  const savedHandler = useRef(handler)\n\n  useIsomorphicLayoutEffect(() => {\n    savedHandler.current = handler\n  }, [handler])\n\n  useEffect(() => {\n    const targetElement: any = element?.current ?? element ?? (typeof window !== 'undefined' ? window : null)\n\n    if (!targetElement?.addEventListener) return\n\n    const eventListener: typeof handler = (event) => savedHandler.current(event)\n\n    targetElement.addEventListener(eventName, eventListener, options)\n\n    return () => {\n      targetElement.removeEventListener(eventName, eventListener, options)\n    }\n  }, [eventName, element, options])\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-event-listener.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "dom",
+    "event-listener"
+  ],
+  "type": "registry:hook"
+}

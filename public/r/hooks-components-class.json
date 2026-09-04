@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-components-class",
+  "title": "Class",
+  "description": "Class component.",
+  "files": [
+    {
+      "path": "src/registry/hooks/components/class/index.tsx",
+      "content": "import * as React from 'react'\n\n/**\n * Props for the `<Class>` className-injection component.\n */\nexport interface ClassProps {\n  /** The CSS class name(s) to clone and merge onto the child element. */\n  className: string\n  /** Single React child element to receive the className. */\n  children: React.ReactElement<{ className?: string }>\n}\n\n/**\n * Injects or merges classNames directly onto a single child React element.\n *\n * @param {ClassProps} props - Component props.\n * @returns {React.ReactElement} The cloned child element with merged classNames.\n *\n * @example\n * <Class className=\"hover:scale-105 transition-transform\">\n *   <Button variant=\"primary\">Click Me</Button>\n * </Class>\n */\nexport function Class({ className, children }: ClassProps): React.ReactElement {\n  if (!React.isValidElement(children)) {\n    return children\n  }\n\n  const existingClassName = children.props.className || ''\n  const mergedClassName = existingClassName ? `${existingClassName} ${className}` : className\n\n  return React.cloneElement(children, {\n    className: mergedClassName,\n  })\n}\n",
+      "type": "registry:hook",
+      "target": "components/ui/class.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "components",
+    "class"
+  ],
+  "type": "registry:hook"
+}

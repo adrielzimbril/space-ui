@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-field-9",
+  "type": "registry:ui",
+  "title": "Field 9",
+  "description": "Field with multiple selection combobox",
+  "registryDependencies": [
+    "@usespaceui/primitives-combobox",
+    "@usespaceui/primitives-field"
+  ],
+  "categories": [
+    "combobox",
+    "field",
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/field/p-field-9/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-field-9.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

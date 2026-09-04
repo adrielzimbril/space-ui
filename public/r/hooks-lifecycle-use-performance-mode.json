@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-lifecycle-use-performance-mode",
+  "title": "usePerformanceMode",
+  "description": "usePerformanceMode hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/lifecycle/use-performance-mode/index.ts",
+      "content": "'use client'\n\nimport { useState, useEffect } from 'react'\n\nexport interface PerformanceMode {\n  isMobile: boolean\n  prefersReducedMotion: boolean\n  shouldReduceAnimations: boolean\n}\n\nexport function usePerformanceMode(): PerformanceMode {\n  const [mode, setMode] = useState<PerformanceMode>({\n    isMobile: false,\n    prefersReducedMotion: false,\n    shouldReduceAnimations: false,\n  })\n\n  useEffect(() => {\n    const checkPerformanceMode = () => {\n      const isMobile = window.innerWidth < 768\n      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches\n      setMode({\n        isMobile,\n        prefersReducedMotion,\n        shouldReduceAnimations: isMobile || prefersReducedMotion,\n      })\n    }\n\n    checkPerformanceMode()\n    window.addEventListener('resize', checkPerformanceMode)\n\n    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')\n    if (motionQuery.addEventListener) {\n      motionQuery.addEventListener('change', checkPerformanceMode)\n    } else {\n      motionQuery.addListener(checkPerformanceMode)\n    }\n\n    return () => {\n      window.removeEventListener('resize', checkPerformanceMode)\n      if (motionQuery.removeEventListener) {\n        motionQuery.removeEventListener('change', checkPerformanceMode)\n      } else {\n        motionQuery.removeListener(checkPerformanceMode)\n      }\n    }\n  }, [])\n\n  return mode\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-performance-mode.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "performance-mode"
+  ],
+  "type": "registry:hook"
+}

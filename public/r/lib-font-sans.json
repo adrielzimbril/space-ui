@@ -1,0 +1,11 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lib-font-sans",
+  "title": "Font Sans",
+  "description": "Utility and configuration helper for Font Sans.",
+  "files": [],
+  "categories": [
+    "font-sans"
+  ],
+  "type": "registry:file"
+}

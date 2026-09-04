@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-navigation-2",
+  "type": "registry:ui",
+  "title": "Navigation 2",
+  "description": "Segmented navigation links",
+  "registryDependencies": [
+    "@usespaceui/lib-segmented-control"
+  ],
+  "categories": [
+    "link",
+    "navigation",
+    "segmented-control"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/link/p-navigation-2/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-navigation-2.tsx"
+    }
+  ],
+  "createdAt": "2026-08-28",
+  "updatedAt": "2026-08-28"
+}

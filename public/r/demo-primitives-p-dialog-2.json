@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-dialog-2",
+  "title": "Dialog 2",
+  "description": "Dialog opened from menu",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-dialog",
+    "@usespaceui/primitives-menu"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/dialog/p-dialog-2/index.tsx",
+      "content": "'use client'\n\nimport { useState } from 'react'\nimport { Button } from '@/components/ui/button'\nimport {\n  Dialog,\n  DialogClose,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogPopup,\n  DialogTitle,\n} from '@/components/ui/dialog'\nimport { Menu, MenuItem, MenuPopup, MenuTrigger } from '@/components/ui/menu'\n\nexport default function Particle() {\n  const [dialogOpen, setDialogOpen] = useState(false)\n  return (\n    <>\n      <Menu>\n        <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\n        <MenuPopup align=\"start\">\n          <MenuItem onClick={() => setDialogOpen(true)}>Open dialog</MenuItem>\n        </MenuPopup>\n      </Menu>\n      <Dialog onOpenChange={setDialogOpen} open={dialogOpen}>\n        <DialogPopup>\n          <DialogHeader>\n            <DialogTitle>Settings</DialogTitle>\n            <DialogDescription>Change your preferences</DialogDescription>\n          </DialogHeader>\n          <DialogFooter>\n            <DialogClose render={<Button variant=\"ghost\" />}>Close</DialogClose>\n          </DialogFooter>\n        </DialogPopup>\n      </Dialog>\n    </>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-dialog-2.tsx"
+    }
+  ],
+  "categories": [
+    "dialog",
+    "dropdown",
+    "menu"
+  ],
+  "type": "registry:ui"
+}

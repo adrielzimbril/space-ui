@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-form-use-map",
+  "title": "useMap",
+  "description": "useMap hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/form/use-map/index.ts",
+      "content": "'use client'\n\nimport { useCallback, useState } from 'react'\n\ntype MapOrEntries<K, V> = Map<K, V> | [K, V][]\n\ntype UseMapActions<K, V> = {\n  set: (key: K, value: V) => void\n\n  setAll: (entries: MapOrEntries<K, V>) => void\n\n  remove: (key: K) => void\n\n  reset: Map<K, V>['clear']\n}\n\ntype UseMapReturn<K, V> = [Omit<Map<K, V>, 'set' | 'clear' | 'delete'>, UseMapActions<K, V>]\n\nexport function useMap<K, V>(initialState: MapOrEntries<K, V> = new Map()): UseMapReturn<K, V> {\n  const [map, setMap] = useState(new Map(initialState))\n\n  const actions: UseMapActions<K, V> = {\n    set: useCallback((key, value) => {\n      setMap((prev) => {\n        const copy = new Map(prev)\n\n        copy.set(key, value)\n\n        return copy\n      })\n    }, []),\n\n    setAll: useCallback((entries) => {\n      setMap(() => new Map(entries))\n    }, []),\n\n    remove: useCallback((key) => {\n      setMap((prev) => {\n        const copy = new Map(prev)\n\n        copy.delete(key)\n\n        return copy\n      })\n    }, []),\n\n    reset: useCallback(() => {\n      setMap(() => new Map())\n    }, []),\n  }\n\n  return [map, actions]\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-map.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "form",
+    "map"
+  ],
+  "type": "registry:hook"
+}

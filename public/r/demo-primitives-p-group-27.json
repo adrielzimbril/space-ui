@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-group-27",
+  "title": "Rating scale using numerical buttons",
+  "description": "Rating scale using numerical buttons",
+  "registryDependencies": [
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-group"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/group/p-group-27/index.tsx",
+      "content": "'use client'\n\nimport { useState } from 'react'\n\nimport { cn } from '@/lib/utils'\nimport { Button } from '@/components/ui/button'\nimport { Group } from '@/components/ui/group'\n\nexport default function Pattern() {\n  const [rating, setRating] = useState<number | null>(null)\n\n  return (\n    <div className=\"space-y-3\">\n      <p className=\"text-sm font-medium\">How likely are you to recommend us?</p>\n      <Group>\n        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (\n          <Button\n            key={n}\n            variant=\"outline\"\n            size=\"icon-sm\"\n            onClick={() => setRating(n)}\n            className={cn(\n              rating === n &&\n                'bg-primary hover:bg-primary hover:text-primary-foreground hover:border-primary text-primary-foreground border-primary',\n            )}\n          >\n            {n}\n          </Button>\n        ))}\n      </Group>\n      <div className=\"text-muted-foreground flex justify-between text-xs\">\n        <span>Not likely</span>\n        <span>Very likely</span>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-group-27.tsx"
+    }
+  ],
+  "categories": [
+    "button-group"
+  ],
+  "type": "registry:ui"
+}

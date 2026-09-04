@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-slider-15",
+  "title": "Slider 15",
+  "description": "Price range slider",
+  "registryDependencies": [
+    "@usespaceui/primitives-fieldset",
+    "@usespaceui/primitives-slider"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/slider/p-slider-15/index.tsx",
+      "content": "'use client'\n\nimport { useState } from 'react'\nimport { Fieldset, FieldsetLegend } from '@/components/ui/fieldset'\nimport { Slider } from '@/components/ui/slider'\n\nconst min = 5\nconst max = 1240\n\nexport default function Particle() {\n  const [values, setValues] = useState([min, max])\n\n  const formatPrice = (price: number) => (price === max ? `$${price.toLocaleString()}+` : `$${price.toLocaleString()}`)\n\n  return (\n    <Fieldset className=\"flex w-full flex-col gap-3\">\n      <FieldsetLegend className=\"tabular-nums\">\n        From {formatPrice(values[0] ?? min)} to {formatPrice(values[1] ?? max)}\n      </FieldsetLegend>\n      <Slider\n        aria-label=\"Price range\"\n        className=\"flex-1\"\n        max={max}\n        min={min}\n        name=\"price-range\"\n        onValueChange={(v) => setValues(Array.isArray(v) ? [...v] : [v])}\n        value={values}\n      />\n    </Fieldset>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-slider-15.tsx"
+    }
+  ],
+  "categories": [
+    "slider"
+  ],
+  "type": "registry:ui"
+}

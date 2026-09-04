@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-tooltip",
+  "title": "Tooltip",
+  "description": "Accessible Tooltip primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/tooltip/index.tsx",
+      "content": "'use client'\n\nimport { Tooltip as TooltipPrimitive } from '@base-ui/react/tooltip'\nimport type React from 'react'\nimport { cn } from '@/lib/utils'\n\nexport const TooltipCreateHandle: typeof TooltipPrimitive.createHandle = TooltipPrimitive.createHandle\n\nexport const TooltipProvider: typeof TooltipPrimitive.Provider = TooltipPrimitive.Provider\n\nexport const Tooltip: typeof TooltipPrimitive.Root = TooltipPrimitive.Root\n\nexport function TooltipTrigger(props: TooltipPrimitive.Trigger.Props): React.ReactElement {\n  return <TooltipPrimitive.Trigger data-slot=\"tooltip-trigger\" {...props} />\n}\n\nexport function TooltipPopup({\n  className,\n  align = 'center',\n  sideOffset = 4,\n  side = 'top',\n  anchor,\n  children,\n  portalProps,\n  ...props\n}: TooltipPrimitive.Popup.Props & {\n  align?: TooltipPrimitive.Positioner.Props['align']\n  side?: TooltipPrimitive.Positioner.Props['side']\n  sideOffset?: TooltipPrimitive.Positioner.Props['sideOffset']\n  anchor?: TooltipPrimitive.Positioner.Props['anchor']\n  portalProps?: TooltipPrimitive.Portal.Props\n}): React.ReactElement {\n  return (\n    <TooltipPrimitive.Portal {...portalProps}>\n      <TooltipPrimitive.Positioner\n        align={align}\n        anchor={anchor}\n        className=\"z-50 h-(--positioner-height) w-(--positioner-width) max-w-(--available-width) transition-[top,left,right,bottom,transform] data-instant:transition-none\"\n        data-slot=\"tooltip-positioner\"\n        side={side}\n        sideOffset={sideOffset}\n      >\n        <TooltipPrimitive.Popup\n          className={cn(\n            'relative flex h-(--popup-height,auto) w-(--popup-width,auto) origin-(--transform-origin) text-balance rounded-md border bg-popover not-dark:bg-clip-padding text-popover-foreground text-xs transition-[width,height,scale,opacity] before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-md)-1px)] data-ending-style:scale-98 data-starting-style:scale-98 data-ending-style:opacity-0 data-starting-style:opacity-0 data-instant:duration-0 ',\n            className,\n          )}\n          data-slot=\"tooltip-popup\"\n          {...props}\n        >\n          <TooltipPrimitive.Viewport\n            className=\"relative size-full overflow-clip px-(--viewport-inline-padding) py-1 [--viewport-inline-padding:--spacing(2)] data-instant:transition-none **:data-current:data-ending-style:opacity-0 **:data-current:data-starting-style:opacity-0 **:data-previous:data-ending-style:opacity-0 **:data-previous:data-starting-style:opacity-0 **:data-current:w-[calc(var(--popup-width)-2*var(--viewport-inline-padding)-2px)] **:data-previous:w-[calc(var(--popup-width)-2*var(--viewport-inline-padding)-2px)] **:data-previous:truncate **:data-current:opacity-100 **:data-previous:opacity-100 **:data-current:transition-opacity **:data-previous:transition-opacity\"\n            data-slot=\"tooltip-viewport\"\n          >\n            {children}\n          </TooltipPrimitive.Viewport>\n        </TooltipPrimitive.Popup>\n      </TooltipPrimitive.Positioner>\n    </TooltipPrimitive.Portal>\n  )\n}\n\nexport { TooltipPrimitive, TooltipPopup as TooltipContent }\n",
+      "type": "registry:ui",
+      "target": "components/ui/tooltip.tsx"
+    }
+  ],
+  "categories": [
+    "tooltip"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-radio-group-4",
+  "title": "Radio Group 4",
+  "description": "Radio group in form",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-fieldset",
+    "@usespaceui/primitives-form",
+    "@usespaceui/primitives-radio-group"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/radio-group/p-radio-group-4/index.tsx",
+      "content": "'use client'\n\nimport type { FormEvent } from 'react'\nimport { useState } from 'react'\nimport { Button } from '@/components/ui/button'\nimport { Field, FieldItem, FieldLabel } from '@/components/ui/field'\nimport { Fieldset, FieldsetLegend } from '@/components/ui/fieldset'\nimport { Form } from '@/components/ui/form'\nimport { Radio, RadioGroup } from '@/components/ui/radio-group'\n\nexport default function Particle() {\n  const [loading, setLoading] = useState(false)\n\n  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {\n    e.preventDefault()\n    const formData = new FormData(e.currentTarget)\n    setLoading(true)\n    await new Promise((r) => setTimeout(r, 800))\n    setLoading(false)\n    alert(`Selected: ${formData.get('frameworks')}`)\n  }\n\n  return (\n    <Form className=\"flex w-full max-w-[160px] flex-col gap-4\" onSubmit={onSubmit}>\n      <Field className=\"gap-2\" name=\"frameworks\" render={(props) => <Fieldset {...props} />}>\n        <FieldsetLegend className=\"font-medium text-sm\">Frameworks</FieldsetLegend>\n        <RadioGroup defaultValue=\"next\">\n          <FieldItem>\n            <FieldLabel>\n              <Radio value=\"next\" /> Next.js\n            </FieldLabel>\n          </FieldItem>\n          <FieldItem>\n            <FieldLabel>\n              <Radio value=\"vite\" /> Vite\n            </FieldLabel>\n          </FieldItem>\n          <FieldItem>\n            <FieldLabel>\n              <Radio value=\"astro\" /> Astro\n            </FieldLabel>\n          </FieldItem>\n        </RadioGroup>\n      </Field>\n      <Button loading={loading} type=\"submit\">\n        Submit\n      </Button>\n    </Form>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-radio-group-4.tsx"
+    }
+  ],
+  "categories": [
+    "radio group",
+    "form"
+  ],
+  "type": "registry:ui"
+}

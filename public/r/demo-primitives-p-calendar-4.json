@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-calendar-4",
+  "title": "Calendar 4",
+  "description": "Calendar with month/year dropdown navigation",
+  "registryDependencies": [
+    "@usespaceui/primitives-calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/calendar/p-calendar-4/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { Calendar } from '@/components/ui/calendar'\n\nexport default function Particle() {\n  const [date, setDate] = React.useState<Date | undefined>(new Date())\n  return (\n    <Calendar\n      captionLayout=\"dropdown\"\n      endMonth={new Date(2030, 11)}\n      mode=\"single\"\n      onSelect={setDate}\n      selected={date}\n      startMonth={new Date(1930, 0)}\n    />\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-calendar-4.tsx"
+    }
+  ],
+  "categories": [
+    "calendar"
+  ],
+  "type": "registry:ui"
+}

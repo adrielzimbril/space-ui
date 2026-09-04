@@ -1,0 +1,12 @@
+{
+  "title": "Blocks",
+  "description": "Complete UI and Page Blocks",
+  "icon": "Layout",
+  "root": true,
+  "pages": [
+    "sign-in",
+    "card-info",
+    "interactive-fun-facts",
+    "mastermind"
+  ]
+}

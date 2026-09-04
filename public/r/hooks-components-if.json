@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-components-if",
+  "title": "If",
+  "description": "If component.",
+  "files": [
+    {
+      "path": "src/registry/hooks/components/if/index.tsx",
+      "content": "import * as React from 'react'\n\n/**\n * Props for the `<If>` conditional component.\n */\nexport interface IfProps {\n  /** The boolean condition determining which child or fallback to render. */\n  condition: boolean | (() => boolean)\n  /** Optional fallback content rendered when `condition` is false. */\n  fallback?: React.ReactNode\n  /** Primary content rendered when `condition` is true. */\n  children: React.ReactNode | (() => React.ReactNode)\n}\n\n/**\n * Declarative conditional rendering component.\n *\n * @param {IfProps} props - Component props.\n * @returns {React.ReactNode} The rendered element based on the condition.\n *\n * @example\n * <If condition={isLoggedIn} fallback={<LoginButton />}>\n *   <UserProfile />\n * </If>\n *\n * @example\n * <If condition={() => user.role === 'admin'}>\n *   {() => <AdminDashboard data={computeHeavyData()} />}\n * </If>\n */\nexport function If({ condition, fallback = null, children }: IfProps): React.ReactNode {\n  const isTrue = typeof condition === 'function' ? condition() : condition\n\n  if (isTrue) {\n    return typeof children === 'function' ? (children as () => React.ReactNode)() : children\n  }\n\n  return fallback\n}\n",
+      "type": "registry:hook",
+      "target": "components/ui/if.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "components",
+    "if"
+  ],
+  "type": "registry:hook"
+}

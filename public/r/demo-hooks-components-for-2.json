@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-components-for-2",
+  "title": "For (Interactive Product Catalog)",
+  "description": "Rich list mapping with search filter",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-components-for",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/components/for/h-for-2/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { For } from '@/components/ui/for'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Input } from '@/components/ui/input'\nimport { Badge } from '@/components/ui/badge'\nimport { IconShoppingBag, IconSearch } from '@tabler/icons-react'\n\nconst PRODUCTS = [\n  { id: 1, name: 'Aurora UI Kit', price: '$49', badge: 'Pro' },\n  { id: 2, name: 'Space Icons Pack', price: '$29', badge: 'New' },\n  { id: 3, name: 'Motion Components', price: '$39', badge: 'Popular' },\n]\n\nexport default function Demo() {\n  const [filter, setFilter] = React.useState('')\n  const filtered = PRODUCTS.filter((p) => p.name.toLowerCase().includes(filter.toLowerCase()))\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconShoppingBag className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>For</span>\n        </div>\n        <Badge variant=\"outline\" size=\"sm\" className=\"font-mono tabular-nums\">\n          {filtered.length}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex flex-col gap-3 rounded-[0.875rem] bg-background p-3\">\n        <div className=\"relative\">\n          <Input\n            value={filter}\n            onChange={(e) => setFilter(e.target.value)}\n            placeholder=\"Search catalog...\"\n            className=\"pl-8 text-base sm:text-sm\"\n            aria-label=\"Filter products\"\n          />\n          <IconSearch className=\"pointer-events-none absolute left-2.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground\" />\n        </div>\n        <div className=\"flex flex-col gap-2\">\n          <For\n            each={filtered}\n            fallback={\n              <div className=\"rounded-lg bg-muted p-6 text-center\">\n                <p className=\"text-xs font-semibold text-muted-foreground\">No match for &quot;{filter}&quot;</p>\n              </div>\n            }\n          >\n            {(p) => (\n              <div key={p.id} className=\"flex items-center justify-between gap-3 rounded-lg bg-muted p-2.5\">\n                <div className=\"min-w-0\">\n                  <span className=\"block text-xs font-semibold text-foreground\">{p.name}</span>\n                  <span className=\"mt-0.5 block font-mono text-[.6875rem] tabular-nums text-muted-foreground\">\n                    {p.price}\n                  </span>\n                </div>\n                <Badge variant=\"secondary\" size=\"sm\">\n                  {p.badge}\n                </Badge>\n              </div>\n            )}\n          </For>\n        </div>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-for-2.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "components",
+    "for"
+  ],
+  "type": "registry:hook"
+}

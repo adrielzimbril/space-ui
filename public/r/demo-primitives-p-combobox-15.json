@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-combobox-15",
+  "title": "Combobox 15",
+  "description": "Timezone combobox",
+  "registryDependencies": [
+    "@usespaceui/primitives-combobox"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/combobox/p-combobox-15/index.tsx",
+      "content": "'use client'\n\nimport { useMemo } from 'react'\nimport {\n  Combobox,\n  ComboboxEmpty,\n  ComboboxInput,\n  ComboboxItem,\n  ComboboxList,\n  ComboboxPopup,\n} from '@/components/ui/combobox'\n\nexport default function Particle() {\n  const timezones = Intl.supportedValuesOf('timeZone')\n\n  const formattedTimezones = useMemo(() => {\n    return timezones\n      .map((timezone) => {\n        const formatter = new Intl.DateTimeFormat('en', {\n          timeZone: timezone,\n          timeZoneName: 'shortOffset',\n        })\n        const parts = formatter.formatToParts(new Date())\n        const offset = parts.find((part) => part.type === 'timeZoneName')?.value || ''\n        const modifiedOffset = offset === 'GMT' ? 'GMT+0' : offset\n\n        const offsetMatch = offset.match(/GMT([+-]?)(\\d+)(?::(\\d+))?/)\n        const sign = offsetMatch?.[1] === '-' ? -1 : 1\n        const hours = Number.parseInt(offsetMatch?.[2] || '0', 10)\n        const minutes = Number.parseInt(offsetMatch?.[3] || '0', 10)\n        const totalMinutes = sign * (hours * 60 + minutes)\n\n        return {\n          label: `(${modifiedOffset}) ${timezone.replace(/_/g, ' ')}`,\n          numericOffset: totalMinutes,\n          value: timezone,\n        }\n      })\n      .sort((a, b) => a.numericOffset - b.numericOffset)\n  }, [timezones])\n\n  const defaultTimezone = formattedTimezones.find((tz) => tz.value === 'Europe/London')\n\n  return (\n    <Combobox autoHighlight defaultValue={defaultTimezone} items={formattedTimezones}>\n      <ComboboxInput aria-label=\"Select timezone\" placeholder=\"Select timezone...\" />\n      <ComboboxPopup>\n        <ComboboxEmpty>No timezones found.</ComboboxEmpty>\n        <ComboboxList>\n          {(item) => (\n            <ComboboxItem key={item.value} value={item}>\n              {item.label}\n            </ComboboxItem>\n          )}\n        </ComboboxList>\n      </ComboboxPopup>\n    </Combobox>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-combobox-15.tsx"
+    }
+  ],
+  "categories": [
+    "combobox",
+    "input",
+    "timezone"
+  ],
+  "type": "registry:ui"
+}

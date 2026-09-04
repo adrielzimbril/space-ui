@@ -1,0 +1,42 @@
+---
+title: useClipboard
+description: Copies text to the system clipboard with automatic timeout reset and state feedback.
+preview: demo-hooks-browser-clipboard-1
+---
+
+### Example 2: Code Block with Copy Button
+
+<ComponentPreview name="demo-hooks-browser-clipboard-2" />
+
+### Example 3: Multi-Credential API Keys
+
+<ComponentPreview name="demo-hooks-browser-clipboard-3" />
+
+## Installation
+
+<ComponentInstallation name="hooks-browser-use-clipboard" />
+
+## Usage
+
+```tsx
+import { useClipboard } from '@/hooks/use-clipboard'
+
+const { copy, copied } = useClipboard({ timeout: 2000 })
+copy('Text to copy')
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter         | Type     | Default | Description                           |
+| :---------------- | :------- | :------ | :------------------------------------ |
+| `options.timeout` | `number` | `2000`  | Timeout in ms before `copied` resets. |
+
+### Return Value
+
+| Property | Type                                 | Description                       |
+| :------- | :----------------------------------- | :-------------------------------- |
+| `copy`   | `(text: string) => Promise<boolean>` | Triggers clipboard copy.          |
+| `copied` | `boolean`                            | Whether text was recently copied. |
+| `reset`  | `() => void`                         | Resets copied state immediately.  |

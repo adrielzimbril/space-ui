@@ -1,0 +1,58 @@
+---
+title: Collapsible
+description: Hides extra content behind a simple toggle button, allowing users to expand and read details only when they need them.
+
+links:
+  doc: https://base-ui.com/react/components/collapsible#api-reference
+preview: demo-primitives-p-collapsible-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-collapsible" />
+
+## Usage
+
+```tsx
+import { Collapsible, CollapsiblePanel, CollapsibleTrigger } from '@/components/ui/collapsible'
+```
+
+```tsx
+<Collapsible>
+  <CollapsibleTrigger>Can I access the file in the cloud?</CollapsibleTrigger>
+  <CollapsiblePanel>Yes, you can access the file in the cloud.</CollapsiblePanel>
+</Collapsible>
+```
+
+## Anatomy
+
+```tsx
+<Collapsible>
+  <CollapsibleTrigger />
+  <CollapsiblePanel />
+</Collapsible>
+```
+
+## Accessibility
+
+- Adheres to the WAI-ARIA disclosure pattern with `aria-expanded` state updates.
+
+### Keyboard Interactions
+
+| Key                                 | Action                                   |
+| :---------------------------------- | :--------------------------------------- |
+| <Kbd>Space</Kbd> / <Kbd>Enter</Kbd> | Toggles the expanded state of the panel. |
+
+## API Reference
+
+### Collapsible
+
+Root component. Alias for `Collapsible.Root` from Base UI.
+
+### CollapsibleTrigger
+
+Trigger button that toggles the collapsible panel. Styled wrapper for `Collapsible.Trigger` from Base UI.
+
+### CollapsiblePanel
+
+Collapsible content panel. Styled wrapper for `Collapsible.Panel` from Base UI with animated height transitions. Also exported as `CollapsibleContent`.

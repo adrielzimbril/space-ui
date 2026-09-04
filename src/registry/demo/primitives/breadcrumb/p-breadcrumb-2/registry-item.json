@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-breadcrumb-2",
+  "type": "registry:ui",
+  "title": "Breadcrumb 2",
+  "description": "Breadcrumb with custom separator",
+  "registryDependencies": [
+    "@usespaceui/primitives-breadcrumb"
+  ],
+  "categories": [
+    "breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/breadcrumb/p-breadcrumb-2/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-breadcrumb-2.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

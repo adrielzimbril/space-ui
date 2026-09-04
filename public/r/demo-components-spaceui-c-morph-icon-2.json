@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-morph-icon-2",
+  "title": "Theme Switcher Transition",
+  "description": "Smooth icon morphing between sun, moon, and system desktop icons.",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-morph-icon",
+    "@usespaceui/primitives-button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/morph-icon/c-morph-icon-2/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { Button } from '@/components/ui/button'\nimport { MorphIcon } from '@/components/spaceui/morph-icon'\nimport { IconSun, IconMoon, IconDeviceDesktop } from '@tabler/icons-react'\n\nexport default function ThemeMorphDemo() {\n  const [theme, setTheme] = React.useState<'light' | 'dark' | 'system'>('light')\n\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-4 p-8\">\n      <div className=\"flex items-center gap-2\">\n        <Button\n          variant={theme === 'light' ? 'default' : 'outline'}\n          size=\"sm\"\n          onClick={() => setTheme('light')}\n          className=\"rounded-lg text-xs cursor-pointer\"\n        >\n          Light\n        </Button>\n        <Button\n          variant={theme === 'dark' ? 'default' : 'outline'}\n          size=\"sm\"\n          onClick={() => setTheme('dark')}\n          className=\"rounded-lg text-xs cursor-pointer\"\n        >\n          Dark\n        </Button>\n        <Button\n          variant={theme === 'system' ? 'default' : 'outline'}\n          size=\"sm\"\n          onClick={() => setTheme('system')}\n          className=\"rounded-lg text-xs cursor-pointer\"\n        >\n          System\n        </Button>\n      </div>\n\n      <div className=\"flex items-center justify-center size-14 rounded-2xl border border-border bg-muted/30\">\n        <MorphIcon activeKey={theme} variant=\"blur-scale\" duration={0.3}>\n          {theme === 'light' && <IconSun className=\"size-6 text-foreground\" />}\n          {theme === 'dark' && <IconMoon className=\"size-6 text-foreground\" />}\n          {theme === 'system' && <IconDeviceDesktop className=\"size-6 text-foreground\" />}\n        </MorphIcon>\n      </div>\n      <span className=\"text-xs text-muted-foreground font-mono capitalize\">Active: {theme}</span>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/c-morph-icon-2.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "morph-icon"
+  ],
+  "type": "registry:component"
+}

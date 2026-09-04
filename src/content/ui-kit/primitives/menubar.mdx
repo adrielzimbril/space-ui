@@ -1,0 +1,143 @@
+---
+title: Menubar
+description: Provides a horizontal desktop-style menu bar with nested dropdowns and submenus for organizing complex application commands.
+
+links:
+  doc: https://base-ui.com/react/components/menubar
+preview: demo-primitives-p-menubar-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-menubar" />
+
+## Usage
+
+```tsx
+import {
+  Menubar,
+  MenubarMenu,
+  MenubarTrigger,
+  MenubarContent,
+  MenubarItem,
+  MenubarSeparator,
+  MenubarShortcut,
+} from '@/components/ui/menubar'
+```
+
+```tsx
+<Menubar>
+  <MenubarMenu>
+    <MenubarTrigger>File</MenubarTrigger>
+    <MenubarContent>
+      <MenubarItem>
+        New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+      </MenubarItem>
+      <MenubarItem>New Window</MenubarItem>
+      <MenubarSeparator />
+      <MenubarItem>Print...</MenubarItem>
+    </MenubarContent>
+  </MenubarMenu>
+</Menubar>
+```
+
+## Anatomy
+
+```tsx
+<Menubar>
+  <MenubarMenu>
+    <MenubarTrigger />
+    <MenubarPopup>
+      <MenubarItem />
+      <MenubarSeparator />
+    </MenubarPopup>
+  </MenubarMenu>
+</Menubar>
+```
+
+## Accessibility
+
+- Follows the [WAI-ARIA Menubar Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/menubar/).
+
+### Keyboard Interactions
+
+| Key                                          | Action                                          |
+| :------------------------------------------- | :---------------------------------------------- |
+| <Kbd>ArrowRight</Kbd> / <Kbd>ArrowLeft</Kbd> | Moves focus between top-level menu triggers.    |
+| <Kbd>ArrowDown</Kbd> / <Kbd>ArrowUp</Kbd>    | Moves focus through items within the open menu. |
+| <Kbd>Escape</Kbd>                            | Closes the open menu dropdown.                  |
+
+## API Reference
+
+### Menubar
+
+The root container bar for grouping desktop-style menus. Wrapper for `Menubar` from Base UI.
+
+### MenubarMenu
+
+Individual menu dropdown root. Wrapper for `Menu.Root` from Base UI.
+
+### MenubarTrigger
+
+The button inside the menubar that opens the dropdown menu.
+
+### MenubarPortal
+
+Portal component for rendering the menubar content outside the normal DOM tree. Alias for `Menu.Portal` from Base UI.
+
+### MenubarContent
+
+The popup container for menu items, separators, and nested submenus.
+
+| Prop          | Type                                     | Default    | Description                                                         |
+| ------------- | ---------------------------------------- | ---------- | ------------------------------------------------------------------- |
+| `side`        | `"top" \| "bottom" \| "left" \| "right"` | `"bottom"` | Preferred edge to position the popup relative to the trigger        |
+| `sideOffset`  | `number`                                 | `4`        | Distance from the trigger in pixels                                 |
+| `align`       | `"start" \| "center" \| "end"`           | `"start"`  | Alignment relative to the trigger along the cross-axis              |
+| `alignOffset` | `number`                                 | `-4`       | Distance in pixels to shift the popup along the alignment axis      |
+| `portalProps` | `Menu.Portal.Props`                      | -          | Props forwarded to the internal portal (`keepMounted`, `container`) |
+
+### MenubarGroup
+
+Container for grouping related items within a menubar menu.
+
+### MenubarLabel
+
+Label for a group of menubar items.
+
+| Prop    | Type      | Default | Description                                           |
+| ------- | --------- | ------- | ----------------------------------------------------- |
+| `inset` | `boolean` | `false` | Adds left padding to align with items that have icons |
+
+### MenubarItem
+
+An actionable item within the menu popup.
+
+| Prop      | Type                         | Default     | Description                                           |
+| --------- | ---------------------------- | ----------- | ----------------------------------------------------- |
+| `variant` | `"default" \| "destructive"` | `"default"` | Controls styling for normal or destructive actions    |
+| `inset`   | `boolean`                    | `false`     | Adds left padding to align with items that have icons |
+
+### MenubarCheckboxItem
+
+A menu item with checkbox toggle support.
+
+### MenubarRadioGroup / MenubarRadioItem
+
+Radio selection options within a menu group.
+
+### MenubarSeparator
+
+Visual separator between menu items.
+
+### MenubarShortcut
+
+Displays keyboard shortcut key combinations inside menu items.
+
+### MenubarSub / MenubarSubTrigger / MenubarSubContent
+
+Components for creating multi-level nested submenus within menubar dropdowns.
+
+`MenubarSubTrigger` supports `inset?: boolean`.
+
+`MenubarSubContent` accepts `align`, `alignOffset`, and `sideOffset` (defaulting to `0`).

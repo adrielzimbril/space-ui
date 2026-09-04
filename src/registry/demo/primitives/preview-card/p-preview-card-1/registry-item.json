@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-preview-card-1",
+  "type": "registry:ui",
+  "title": "Preview Card 1",
+  "description": "Preview card with popup",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-preview-card"
+  ],
+  "categories": [
+    "preview card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/preview-card/p-preview-card-1/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-preview-card-1.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

@@ -1,0 +1,31 @@
+---
+title: useParseMarkdown
+description: Fast client-side markdown compiler.
+preview: demo-hooks-form-parse-markdown-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-form-use-parse-markdown" />
+
+## Usage
+
+```tsx
+import { useParseMarkdown } from '@/hooks/use-parse-markdown'
+
+const html = useParseMarkdown('# Hello Markdown')
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter  | Type     | Default    | Description      |
+| :--------- | :------- | :--------- | :--------------- |
+| `markdown` | `string` | _required_ | Markdown string. |
+
+### Return Value
+
+| Return Type | Description           |
+| :---------- | :-------------------- |
+| `string`    | Compiled HTML string. |

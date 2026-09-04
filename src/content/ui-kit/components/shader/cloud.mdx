@@ -1,0 +1,47 @@
+---
+title: Cloud
+description: Volumetric cloud material. Color the sky, sun, and shadows, then fly the camera with mouse or touch.
+author:
+  name: usespaceui
+  url: https://github.com/usespaceui
+preview: demo-components-shader-c-cloud-1
+---
+
+Volumetric Vanta CLOUDS math in WGSL (`vgpu`). The canvas renders at `devicePixelRatio / 3` (desktop) like the original Vanta runtime — full retina would raymarch ~115 steps per pixel and stall the page.
+
+## Installation
+
+<ComponentInstallation name="components-shader-cloud" />
+
+Depends on `vgpu`. WebGPU required.
+
+## Files
+
+| File                   | Role                                            |
+| ---------------------- | ----------------------------------------------- |
+| `cloud/index.tsx`      | vgpu surface, mouse ease, low-DPR backing store |
+| `cloud/clouds.wgsl.ts` | Raymarched fbm clouds (map2–map5)               |
+
+## Usage
+
+```tsx
+import { Cloud } from '@/components/shader/cloud'
+
+;<Cloud className="h-96 w-full" sky="#68b8d7" cloudColor="#adc1de" sun="#ff9919" speed={1} />
+```
+
+## API Reference
+
+### Cloud
+
+| Prop         | Type     | Default   | Description      |
+| ------------ | -------- | --------- | ---------------- |
+| `bg`         | `string` | `#ffffff` | Scene background |
+| `sky`        | `string` | `#68b8d7` | Sky tint         |
+| `cloudColor` | `string` | `#adc1de` | Cloud volume     |
+| `shadow`     | `string` | `#183550` | Cloud shadow     |
+| `sun`        | `string` | `#ff9919` | Sun disc         |
+| `glare`      | `string` | `#ff6633` | Sun glare        |
+| `sunlight`   | `string` | `#ff9933` | Direct light     |
+| `speed`      | `number` | `1`       | Drift speed      |
+| `className`  | `string` | —         | Wrapper class    |

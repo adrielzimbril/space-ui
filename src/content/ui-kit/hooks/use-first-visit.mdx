@@ -1,0 +1,31 @@
+---
+title: useFirstVisit
+description: First user session identifier.
+preview: demo-hooks-lifecycle-first-visit-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-lifecycle-use-first-visit" />
+
+## Usage
+
+```tsx
+import { useFirstVisit } from '@/hooks/use-first-visit'
+
+const isFirst = useFirstVisit('welcome_popup')
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter | Type     | Default    | Description |
+| :-------- | :------- | :--------- | :---------- |
+| `key`     | `string` | _required_ | Visit key.  |
+
+### Return Value
+
+| Return Type | Description          |
+| :---------- | :------------------- |
+| `boolean`   | True on first visit. |

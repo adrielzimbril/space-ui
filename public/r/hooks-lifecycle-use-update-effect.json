@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-lifecycle-use-update-effect",
+  "title": "useUpdateEffect",
+  "description": "useUpdateEffect hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/lifecycle/use-update-effect/index.ts",
+      "content": "'use client'\n\nimport { useRef, useEffect, type EffectCallback, type DependencyList } from 'react'\n\n/**\n * React hook that runs an effect only on subsequent component updates, skipping the initial mount render.\n *\n * @param {EffectCallback} effect - The effect callback to execute on updates.\n * @param {DependencyList} [deps] - Dependency array.\n *\n * @example\n * useUpdateEffect(() => {\n *   console.log('Query changed:', query);\n * }, [query]);\n */\nexport function useUpdateEffect(effect: EffectCallback, deps?: DependencyList): void {\n  const isFirstRender = useRef(true)\n\n  useEffect(() => {\n    if (isFirstRender.current) {\n      isFirstRender.current = false\n      return\n    }\n    return effect()\n  }, deps)\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-update-effect.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "update-effect",
+    "calendar"
+  ],
+  "type": "registry:hook"
+}

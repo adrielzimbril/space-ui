@@ -1,0 +1,32 @@
+---
+title: useLockBodyScroll
+description: Locks page scrolling without layout shift.
+preview: demo-hooks-dom-lock-body-scroll-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-dom-use-lock-body-scroll" />
+
+## Usage
+
+```tsx
+import { useLockBodyScroll } from '@/hooks/use-lock-body-scroll'
+
+const { isLocked, toggle } = useLockBodyScroll(false)
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter       | Type      | Default | Description    |
+| :-------------- | :-------- | :------ | :------------- |
+| `initialLocked` | `boolean` | `true`  | Initial state. |
+
+### Return Value
+
+| Property   | Type         | Description   |
+| :--------- | :----------- | :------------ |
+| `isLocked` | `boolean`    | Locked state. |
+| `toggle`   | `() => void` | Toggles lock. |

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-toggle-6",
+  "title": "Toggle 6",
+  "description": "Bookmark toggle with tooltip and success toast",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-toast",
+    "@usespaceui/primitives-toggle",
+    "@usespaceui/primitives-tooltip"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/toggle/p-toggle-6/index.tsx",
+      "content": "'use client'\n\nimport { IconBookmark } from '@tabler/icons-react'\nimport { useRef, useState } from 'react'\nimport { anchoredToastManager } from '@/components/ui/toast'\nimport { Toggle } from '@/components/ui/toggle'\nimport { Tooltip, TooltipPopup, TooltipTrigger } from '@/components/ui/tooltip'\n\nexport default function Particle() {\n  const [bookmarked, setBookmarked] = useState(false)\n  const toggleRef = useRef<HTMLDivElement>(null)\n  const toastIdRef = useRef<string | null>(null)\n  const toastTimeout = 2000\n\n  function handleToggleChange(pressed: boolean) {\n    setBookmarked(pressed)\n\n    if (toastIdRef.current) {\n      anchoredToastManager.close(toastIdRef.current)\n      toastIdRef.current = null\n    }\n\n    if (pressed && toggleRef.current) {\n      toastIdRef.current = anchoredToastManager.add({\n        data: {\n          tooltipStyle: true,\n        },\n        positionerProps: {\n          anchor: toggleRef.current,\n        },\n        timeout: toastTimeout,\n        title: 'Bookmarked!',\n        type: 'success',\n      })\n    }\n  }\n\n  return (\n    <Tooltip>\n      <TooltipTrigger\n        render={\n          <div ref={toggleRef}>\n            <Toggle\n              aria-label={bookmarked ? 'Remove bookmark' : 'Bookmark this'}\n              onPressedChange={handleToggleChange}\n              pressed={bookmarked}\n            >\n              <IconBookmark aria-hidden=\"true\" />\n            </Toggle>\n          </div>\n        }\n      />\n      <TooltipPopup>\n        <p>{bookmarked ? 'Remove bookmark' : 'Bookmark this'}</p>\n      </TooltipPopup>\n    </Tooltip>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-toggle-6.tsx"
+    }
+  ],
+  "categories": [
+    "toggle",
+    "tooltip",
+    "toast"
+  ],
+  "type": "registry:ui"
+}

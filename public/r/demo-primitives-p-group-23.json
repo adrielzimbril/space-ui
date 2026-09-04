@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-group-23",
+  "title": "Button group with user selection select",
+  "description": "Button group with user selection select",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-avatar",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-group",
+    "@usespaceui/primitives-select"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/group/p-group-23/index.tsx",
+      "content": "'use client'\n\nimport { IconPlus, IconAdjustmentsHorizontal } from '@tabler/icons-react'\nimport { useState } from 'react'\n\nimport { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'\nimport { Button } from '@/components/ui/button'\nimport { Group } from '@/components/ui/group'\nimport {\n  Select,\n  SelectContent,\n  SelectGroup,\n  SelectItem,\n  SelectLabel,\n  SelectTrigger,\n  SelectValue,\n} from '@/components/ui/select'\nconst users = [\n  {\n    id: '1',\n    name: 'Alex Johnson',\n    email: 'alex@example.com',\n    avatar: 'https://avatars.spaceui.one/v1?name=mars&variant=glass',\n    initials: 'AJ',\n  },\n  {\n    id: '2',\n    name: 'Sarah Chen',\n    email: 'sarah@example.com',\n    avatar: 'https://avatars.spaceui.one/v1?name=jupiter&variant=pebble',\n    initials: 'SC',\n  },\n  {\n    id: '3',\n    name: 'Michael Rodriguez',\n    email: 'michael@example.com',\n    avatar: 'https://avatars.spaceui.one/v1?name=saturn&variant=invader',\n    initials: 'MR',\n  },\n  {\n    id: '4',\n    name: 'Emma Wilson',\n    email: 'emma@example.com',\n    avatar: 'https://avatars.spaceui.one/v1?name=venus&variant=kendo',\n    initials: 'EW',\n  },\n]\n\nexport default function Pattern() {\n  const mappedUsers = users.map((user) => ({\n    value: user.id,\n    label: user.name,\n    avatar: user.avatar,\n    initials: user.initials,\n  }))\n\n  const [selectedUser, setSelectedUser] = useState<(typeof mappedUsers)[number] | null>(mappedUsers[2])\n\n  return (\n    <Group>\n      <Select value={selectedUser} onValueChange={(val) => setSelectedUser(val)} items={mappedUsers}>\n        <SelectTrigger className=\"w-40\">\n          <SelectValue>\n            {(item: (typeof mappedUsers)[number]) => (\n              <span className=\"flex items-center gap-2\">\n                <Avatar className=\"size-5\">\n                  <AvatarImage src={item?.avatar} alt={item?.label} />\n                  <AvatarFallback className=\"text-[10px]\">{item?.initials}</AvatarFallback>\n                </Avatar>\n                <span className=\"truncate\">{item?.label}</span>\n              </span>\n            )}\n          </SelectValue>\n        </SelectTrigger>\n        <SelectContent showIcon={false} alignItemWithTrigger={false} className=\"min-w-[200px]\">\n          <SelectGroup>\n            <SelectLabel>Team Members</SelectLabel>\n            {mappedUsers.map((user) => (\n              <SelectItem key={user.value} value={user}>\n                <Avatar className=\"size-5 me-2\">\n                  <AvatarImage src={user.avatar} alt={user.label} />\n                  <AvatarFallback className=\"text-[10px]\">{user.initials}</AvatarFallback>\n                </Avatar>\n                <span>{user.label}</span>\n              </SelectItem>\n            ))}\n          </SelectGroup>\n        </SelectContent>\n      </Select>\n      <Button variant=\"outline\" size=\"icon\" aria-label=\"Add Tag\">\n        <IconPlus aria-hidden=\"true\" />\n      </Button>\n      <Button variant=\"outline\" size=\"icon\" aria-label=\"Settings\">\n        <IconAdjustmentsHorizontal aria-hidden=\"true\" />\n      </Button>\n    </Group>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-group-23.tsx"
+    }
+  ],
+  "categories": [
+    "button-group"
+  ],
+  "type": "registry:ui"
+}

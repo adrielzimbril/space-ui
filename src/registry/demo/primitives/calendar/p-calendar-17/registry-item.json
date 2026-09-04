@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-calendar-17",
+  "type": "registry:ui",
+  "title": "Calendar 17",
+  "description": "Calendar with date input",
+  "dependencies": [
+    "@tabler/icons-react",
+    "date-fns",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-calendar",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-input-group"
+  ],
+  "categories": [
+    "calendar",
+    "input",
+    "field"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/calendar/p-calendar-17/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-calendar-17.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

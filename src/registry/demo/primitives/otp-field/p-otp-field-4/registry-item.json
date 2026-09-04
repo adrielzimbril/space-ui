@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-otp-field-4",
+  "type": "registry:ui",
+  "title": "Otp Field 4",
+  "description": "OTP field with label",
+  "registryDependencies": [
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-otp-field"
+  ],
+  "categories": [
+    "otp field",
+    "input",
+    "field"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/otp-field/p-otp-field-4/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-otp-field-4.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

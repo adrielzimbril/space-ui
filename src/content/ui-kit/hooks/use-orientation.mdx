@@ -1,0 +1,30 @@
+---
+title: useOrientation
+description: Screen orientation angles and type.
+preview: demo-hooks-browser-orientation-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-browser-use-orientation" />
+
+## Usage
+
+```tsx
+import { useOrientation } from '@/hooks/use-orientation'
+
+const { angle, type } = useOrientation()
+```
+
+## API Reference
+
+### Parameters / Props
+
+_None_
+
+### Return Value
+
+| Property | Type     | Description              |
+| :------- | :------- | :----------------------- |
+| `angle`  | `number` | Angle in degrees.        |
+| `type`   | `string` | 'portrait-primary', etc. |

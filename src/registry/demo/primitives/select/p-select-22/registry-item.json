@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-select-22",
+  "type": "registry:ui",
+  "title": "Select 22",
+  "description": "Select with label",
+  "registryDependencies": [
+    "@usespaceui/primitives-select"
+  ],
+  "categories": [
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/select/p-select-22/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-select-22.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

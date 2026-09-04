@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-image-dark-2",
+  "type": "registry:component",
+  "title": "Responsive Card with Fill Layout",
+  "description": "Demonstrates ImageDark with fill layout inside an aspect-ratio container.",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-image-dark",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "component",
+    "image-dark"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/image-dark/c-image-dark-2/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-image-dark-2.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

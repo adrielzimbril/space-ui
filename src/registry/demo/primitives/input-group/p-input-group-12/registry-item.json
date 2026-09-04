@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-input-group-12",
+  "type": "registry:ui",
+  "title": "Input Group 12",
+  "description": "Input group with inner label",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-input-group",
+    "@usespaceui/primitives-label",
+    "@usespaceui/primitives-popover"
+  ],
+  "categories": [
+    "input group",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/input-group/p-input-group-12/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-input-group-12.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

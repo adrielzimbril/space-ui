@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-copy",
+  "title": "Copy Button",
+  "description": "A copy-to-clipboard button with animated icon transition.",
+  "dependencies": [
+    "class-variance-authority",
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-morph-icon",
+    "@usespaceui/hooks-animation-use-controlled-state",
+    "@usespaceui/hooks-browser-use-clipboard",
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/copy/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { CheckIcon, CopyIcon } from 'lucide-react'\n\nimport { Button, buttonVariants, type ButtonProps } from '@/components/ui/button'\nimport { cn } from '@/lib/utils'\nimport { useClipboard } from '@/hooks/use-clipboard'\nimport { useControlledState } from '@/hooks/use-controlled-state'\nimport { MorphIcon } from '@/components/spaceui/morph-icon'\n\nconst sizeMap: Record<string, NonNullable<ButtonProps['size']>> = {\n  xs: 'icon-xs',\n  sm: 'icon-sm',\n  default: 'icon',\n  lg: 'icon-lg',\n  xl: 'icon-xl',\n}\n\nexport interface CopyButtonProps extends Omit<ButtonProps, 'children'> {\n  content: string\n  copied?: boolean\n  onCopiedChange?: (copied: boolean, content?: string) => void\n  delay?: number\n}\n\nfunction CopyButton({\n  className,\n  content,\n  copied: controlledCopied,\n  onCopiedChange,\n  onClick,\n  variant = 'default',\n  size,\n  delay = 3000,\n  ...props\n}: CopyButtonProps) {\n  const { copy, copied: internalCopied } = useClipboard({\n    timeout: delay,\n    onSuccess: (text) => onCopiedChange?.(true, text),\n  })\n\n  const [isCopied, setIsCopied] = useControlledState({\n    value: controlledCopied,\n    defaultValue: internalCopied,\n    onChange: (val) => onCopiedChange?.(val, content),\n  })\n\n  // Sync internalCopied to isCopied state if not controlled\n  React.useEffect(() => {\n    if (controlledCopied === undefined) {\n      setIsCopied(internalCopied)\n    }\n  }, [internalCopied, controlledCopied, setIsCopied])\n\n  const handleCopy = React.useCallback(\n    (e: React.MouseEvent<HTMLButtonElement>) => {\n      onClick?.(e)\n      if (controlledCopied) return\n      if (content) {\n        void copy(content)\n      }\n    },\n    [onClick, controlledCopied, content, copy],\n  )\n\n  const buttonSize = size ? (sizeMap[size] ?? size) : 'icon'\n  const Icon = isCopied ? CheckIcon : CopyIcon\n\n  return (\n    <Button\n      data-slot=\"copy-button\"\n      variant={variant}\n      size={buttonSize}\n      className={cn('shrink-0', className)}\n      onClick={handleCopy}\n      {...props}\n    >\n      <MorphIcon activeKey={isCopied ? 'check' : 'copy'} data-slot=\"copy-button-icon\">\n        <Icon />\n      </MorphIcon>\n    </Button>\n  )\n}\n\nexport { CopyButton, buttonVariants as copyButtonVariants }\n",
+      "type": "registry:component",
+      "target": "components/spaceui/copy.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "copy"
+  ],
+  "type": "registry:component"
+}

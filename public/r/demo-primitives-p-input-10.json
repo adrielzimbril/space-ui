@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-input-10",
+  "title": "Input 10",
+  "description": "Input group with keyboard shortcut",
+  "registryDependencies": [
+    "@usespaceui/primitives-input-group",
+    "@usespaceui/primitives-kbd"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/input/p-input-10/index.tsx",
+      "content": "import { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'\nimport { Kbd } from '@/components/ui/kbd'\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput aria-label=\"Search\" placeholder=\"Search…\" type=\"search\" />\n      <InputGroupAddon align=\"inline-end\">\n        <Kbd>/</Kbd>\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-input-10.tsx"
+    }
+  ],
+  "categories": [
+    "input",
+    "input group",
+    "kbd",
+    "search"
+  ],
+  "type": "registry:ui"
+}

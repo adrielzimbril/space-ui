@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-phone-input-3",
+  "title": "Large phone input",
+  "description": "Large phone input",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-phone-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/phone-input/c-phone-input-3/index.tsx",
+      "content": "import { PhoneInput } from '@/components/spaceui/phone-input'\n\nexport default function Pattern() {\n  return <PhoneInput variant=\"lg\" placeholder=\"Enter phone number\" defaultCountry=\"US\" value=\"+12125551234\" />\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/c-phone-input-3.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "phone-input"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,29 @@
+---
+title: useIsomorphicLayoutEffect
+description: SSR-safe layout effect using useEffect on server and useLayoutEffect on client.
+preview: demo-hooks-lifecycle-isomorphic-layout-effect-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-lifecycle-use-isomorphic-layout-effect" />
+
+## Usage
+
+```tsx
+import { useIsomorphicLayoutEffect } from '@/hooks/use-isomorphic-layout-effect'
+
+useIsomorphicLayoutEffect(() => {
+  /* measurement */
+}, [])
+```
+
+## API Reference
+
+### Parameters / Props
+
+Standard useEffect signature.
+
+### Return Value
+
+_Returns void._

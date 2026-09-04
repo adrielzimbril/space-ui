@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-dom-use-intersection-observer",
+  "type": "registry:hook",
+  "title": "useIntersectionObserver",
+  "description": "useIntersectionObserver hook.",
+  "categories": [
+    "hooks",
+    "dom",
+    "intersection-observer"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/dom/use-intersection-observer/index.ts",
+      "type": "registry:hook",
+      "target": "hooks/use-intersection-observer.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

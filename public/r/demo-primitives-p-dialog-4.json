@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-dialog-4",
+  "title": "Dialog 4",
+  "description": "Dialog with close confirmation",
+  "registryDependencies": [
+    "@usespaceui/primitives-alert-dialog",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-dialog",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-form",
+    "@usespaceui/primitives-textarea"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/dialog/p-dialog-4/index.tsx",
+      "content": "'use client'\n\nimport { useState } from 'react'\nimport {\n  AlertDialog,\n  AlertDialogClose,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogPopup,\n  AlertDialogTitle,\n} from '@/components/ui/alert-dialog'\nimport { Button } from '@/components/ui/button'\nimport {\n  Dialog,\n  DialogClose,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogPanel,\n  DialogPopup,\n  DialogTitle,\n  DialogTrigger,\n} from '@/components/ui/dialog'\nimport { Field } from '@/components/ui/field'\nimport { Form } from '@/components/ui/form'\nimport { Textarea } from '@/components/ui/textarea'\n\nexport default function Particle() {\n  const [dialogOpen, setDialogOpen] = useState(false)\n  const [confirmOpen, setConfirmOpen] = useState(false)\n  const [value, setValue] = useState('')\n\n  return (\n    <Dialog\n      onOpenChange={(o) => {\n        if (!o && value) {\n          setConfirmOpen(true)\n        } else {\n          setDialogOpen(o)\n        }\n      }}\n      open={dialogOpen}\n    >\n      <DialogTrigger render={<Button variant=\"outline\" />}>Compose</DialogTrigger>\n      <DialogPopup showCloseButton={false}>\n        <DialogHeader>\n          <DialogTitle>New message</DialogTitle>\n          <DialogDescription>Type something and try closing.</DialogDescription>\n        </DialogHeader>\n        <Form\n          className=\"contents\"\n          onSubmit={(event) => {\n            event.preventDefault()\n            // Close the dialog when submitting\n            setDialogOpen(false)\n          }}\n        >\n          <DialogPanel>\n            <Field>\n              <Textarea onChange={(e) => setValue(e.target.value)} value={value} />\n            </Field>\n          </DialogPanel>\n          <DialogFooter>\n            <DialogClose render={<Button variant=\"ghost\" />}>Cancel</DialogClose>\n            <Button\n              onClick={() => {\n                setValue('')\n                setDialogOpen(false)\n              }}\n            >\n              Send\n            </Button>\n          </DialogFooter>\n        </Form>\n      </DialogPopup>\n\n      {/* Confirmation dialog */}\n      <AlertDialog onOpenChange={setConfirmOpen} open={confirmOpen}>\n        <AlertDialogPopup>\n          <AlertDialogHeader>\n            <AlertDialogTitle>Discard changes?</AlertDialogTitle>\n            <AlertDialogDescription>Your message will be lost.</AlertDialogDescription>\n          </AlertDialogHeader>\n          <AlertDialogFooter>\n            <AlertDialogClose render={<Button variant=\"ghost\" />}>Go back</AlertDialogClose>\n            <Button\n              onClick={() => {\n                setConfirmOpen(false)\n                setValue('')\n                setDialogOpen(false)\n              }}\n            >\n              Discard\n            </Button>\n          </AlertDialogFooter>\n        </AlertDialogPopup>\n      </AlertDialog>\n    </Dialog>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-dialog-4.tsx"
+    }
+  ],
+  "categories": [
+    "alert dialog",
+    "dialog"
+  ],
+  "type": "registry:ui"
+}

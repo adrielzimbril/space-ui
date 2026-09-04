@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-image-dark-1",
+  "title": "Adaptive Brand Logo",
+  "description": "Demonstrates ImageDark automatically switching between light and dark logo assets with zero layout shift.",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-image-dark",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-separator"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/image-dark/c-image-dark-1/index.tsx",
+      "content": "'use client'\n\nimport { ImageDark } from '@/components/spaceui/image-dark'\nimport { Badge } from '@/components/ui/badge'\nimport { Separator } from '@/components/ui/separator'\n\nexport default function ImageDarkDemo1() {\n  return (\n    <div className=\"w-full overflow-hidden\">\n      <div className=\"flex items-center justify-center\">\n        <div className=\"flex flex-col items-center justify-center gap-4 bg-white border-2 border-muted p-8 text-zinc-950\">\n          <Badge variant=\"outline\" size=\"sm\" className=\"border-zinc-200 bg-zinc-100 font-medium text-zinc-800\">\n            Light Mode\n          </Badge>\n\n          <div className=\"relative flex size-24 items-center justify-center rounded-2xl border-2 border-zinc-200 p-3\">\n            <ImageDark\n              src=\"/logo.svg\"\n              darkSrc=\"/logo-dark.svg\"\n              alt=\"Light theme logo\"\n              width={72}\n              height={72}\n              className=\"size-full object-contain\"\n            />\n          </div>\n\n          <p className=\"text-center text-xs font-medium text-zinc-500\">Rendered with light theme</p>\n        </div>\n\n        <Separator orientation=\"vertical\" className=\"hidden md:block\" />\n        <Separator orientation=\"horizontal\" className=\"block md:hidden\" />\n\n        <div className=\"dark flex flex-col items-center justify-center gap-4 bg-background border-2 border-zinc-500 p-8 text-zinc-50\">\n          <Badge variant=\"outline\" size=\"sm\" className=\"border-zinc-800 bg-zinc-900 font-medium text-zinc-200\">\n            Dark Mode\n          </Badge>\n\n          <div className=\"relative flex size-24 items-center justify-center rounded-2xl border-2 border-zinc-800 p-3\">\n            <ImageDark\n              src=\"/logo.svg\"\n              darkSrc=\"/logo-dark.svg\"\n              alt=\"Dark theme logo\"\n              width={72}\n              height={72}\n              className=\"size-full object-contain\"\n            />\n          </div>\n\n          <p className=\"text-center text-xs font-medium text-zinc-400\">\n            Rendered with <code className=\"text-zinc-200\">.dark</code> class\n          </p>\n        </div>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/c-image-dark-1.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "image-dark"
+  ],
+  "type": "registry:component"
+}

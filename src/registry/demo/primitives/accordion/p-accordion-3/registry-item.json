@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-accordion-3",
+  "type": "registry:ui",
+  "title": "Accordion 3",
+  "description": "Controlled accordion",
+  "registryDependencies": [
+    "@usespaceui/primitives-accordion"
+  ],
+  "categories": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/accordion/p-accordion-3/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-accordion-3.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

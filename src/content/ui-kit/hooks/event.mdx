@@ -1,0 +1,33 @@
+---
+title: event & bindEvent
+description: Safe cross-browser event listener binder with automatic unbind return.
+preview: demo-hooks-utils-event-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-utils-event" />
+
+## Usage
+
+```tsx
+import { bindEvent } from '@/utils/event'
+
+const unbind = bindEvent(window, 'resize', () => onResize())
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter  | Type            | Default    | Description     |
+| :--------- | :-------------- | :--------- | :-------------- |
+| `target`   | `EventTarget`   | _required_ | DOM target.     |
+| `type`     | `string`        | _required_ | Event name.     |
+| `listener` | `EventListener` | _required_ | Event callback. |
+
+### Return Value
+
+| Return Type  | Description       |
+| :----------- | :---------------- |
+| `() => void` | Cleanup function. |

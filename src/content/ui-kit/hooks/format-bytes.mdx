@@ -1,0 +1,37 @@
+---
+title: formatBytes & parseBytes
+description: Converts raw byte counts into localized human-readable file sizes and parses strings back into bytes.
+preview: demo-hooks-utils-format-bytes-1
+---
+
+### Example 2: Cloud Storage Usage Meter
+
+<ComponentPreview name="demo-hooks-utils-format-bytes-2" />
+
+## Installation
+
+<ComponentInstallation name="hooks-utils-format-bytes" />
+
+## Usage
+
+```tsx
+import { formatBytes, parseBytes } from '@/utils/format-bytes'
+
+formatBytes(15728640) // => "15.00 MB"
+parseBytes('15MB') // => 15728640
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter          | Type     | Default    | Description     |
+| :----------------- | :------- | :--------- | :-------------- |
+| `bytes`            | `number` | _required_ | Numeric bytes.  |
+| `options.decimals` | `number` | `2`        | Decimal digits. |
+
+### Return Value
+
+| Return Type | Description                 |
+| :---------- | :-------------------------- |
+| `string`    | Formatted file size string. |

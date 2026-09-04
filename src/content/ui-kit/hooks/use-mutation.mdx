@@ -1,0 +1,53 @@
+---
+title: useMutation
+description: Robust async mutation runner with loading, success, error tracking, and lifecycle callbacks.
+preview: demo-hooks-form-mutation-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-form-use-mutation" />
+
+## Usage
+
+```tsx
+import { useMutation } from '@/hooks/use-mutation'
+
+const { mutate, mutateAsync, loading, data, error, isSuccess, isError, reset } = useMutation(
+  async (payload) => {
+    return await api.createRecord(payload)
+  },
+  {
+    onSuccess: (data) => console.log('Saved:', data),
+    onError: (err) => console.error('Failed:', err),
+  },
+)
+
+// Trigger mutation
+mutate({ name: 'New Item' })
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter           | Type                                                | Default     | Description                                  |
+| :------------------ | :-------------------------------------------------- | :---------- | :------------------------------------------- |
+| `mutationFn`        | `(variables: TVariables) => Promise<TData>`         | _required_  | Async operation to execute.                  |
+| `options.onSuccess` | `(data: TData, variables: TVariables) => void`      | `undefined` | Success callback.                            |
+| `options.onError`   | `(error: any, variables: TVariables) => void`       | `undefined` | Error callback.                              |
+| `options.onSettled` | `(data: TData \| null, error: any \| null) => void` | `undefined` | Settled callback (runs on success or error). |
+
+### Return Value
+
+| Property                 | Type            | Description                                                          |
+| :----------------------- | :-------------- | :------------------------------------------------------------------- |
+| `mutate(variables)`      | `Function`      | Triggers the mutation safely without throwing unhandled exceptions.  |
+| `mutateAsync(variables)` | `Function`      | Triggers the mutation and returns a Promise that rejects on error.   |
+| `loading`                | `boolean`       | Whether mutation is currently executing (alias: `isLoading`).        |
+| `data`                   | `TData \| null` | Resolved data from the last successful mutation (alias: `response`). |
+| `error`                  | `any \| null`   | Error object if mutation rejected.                                   |
+| `isSuccess`              | `boolean`       | `true` if last mutation succeeded.                                   |
+| `isError`                | `boolean`       | `true` if last mutation threw an error.                              |
+| `isIdle`                 | `boolean`       | `true` before any mutation has executed.                             |
+| `reset()`                | `Function`      | Resets all mutation state back to idle.                              |

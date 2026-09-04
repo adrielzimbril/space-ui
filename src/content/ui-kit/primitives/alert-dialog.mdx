@@ -1,0 +1,163 @@
+---
+title: Alert Dialog
+description: Displays a modal window that asks users to confirm important actions before proceeding, helping prevent accidental deletions or irreversible mistakes.
+
+links:
+  doc: https://base-ui.com/react/components/alert-dialog#api-reference
+preview: demo-primitives-p-alert-dialog-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-alert-dialog" />
+
+## Usage
+
+```tsx
+import {
+  AlertDialog,
+  AlertDialogClose,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogPopup,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from '@/components/ui/alert-dialog'
+```
+
+```tsx
+<AlertDialog>
+  <AlertDialogTrigger>Delete Account</AlertDialogTrigger>
+  <AlertDialogPopup>
+    <AlertDialogHeader>
+      <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+      <AlertDialogDescription>
+        This action cannot be undone. This will permanently delete your account and remove your data from our servers.
+      </AlertDialogDescription>
+    </AlertDialogHeader>
+    <AlertDialogFooter>
+      <AlertDialogClose>Cancel</AlertDialogClose>
+      <AlertDialogClose>Delete Account</AlertDialogClose>
+    </AlertDialogFooter>
+  </AlertDialogPopup>
+</AlertDialog>
+```
+
+## Anatomy
+
+```tsx
+<AlertDialog>
+  <AlertDialogTrigger />
+  <AlertDialogBackdrop />
+  <AlertDialogPopup>
+    <AlertDialogHeader>
+      <AlertDialogTitle />
+      <AlertDialogDescription />
+    </AlertDialogHeader>
+    <AlertDialogFooter>
+      <AlertDialogClose />
+    </AlertDialogFooter>
+  </AlertDialogPopup>
+</AlertDialog>
+```
+
+## Features
+
+### Bare Footer
+
+An alert dialog with a bare footer (`variant="bare"`), removing the default border and background styling.
+
+<ComponentPreview name="demo-primitives-p-alert-dialog-2" />
+
+## Accessibility
+
+- Follows the [WAI-ARIA Alert and Message Dialog Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/alertdialog/).
+- Traps keyboard focus within the dialog and locks background body scrolling while open.
+
+### Keyboard Interactions
+
+| Key                    | Action                                                           |
+| :--------------------- | :--------------------------------------------------------------- |
+| <Kbd>Tab</Kbd>         | Moves focus to the next focusable element within the dialog.     |
+| <Kbd>Shift + Tab</Kbd> | Moves focus to the previous focusable element within the dialog. |
+| <Kbd>Escape</Kbd>      | Closes the alert dialog and returns focus to the trigger.        |
+
+## API Reference
+
+### AlertDialog
+
+Root component. Alias for `AlertDialog.Root` from Base UI.
+
+### AlertDialogTrigger
+
+Trigger button that opens the alert dialog. Alias for `AlertDialog.Trigger` from Base UI.
+
+### AlertDialogPopup
+
+Popup container that displays the alert dialog content. Also exported as `AlertDialogContent`.
+
+| Prop                  | Type                       | Default | Description                                                                                                    |
+| --------------------- | -------------------------- | ------- | -------------------------------------------------------------------------------------------------------------- |
+| `bottomStickOnMobile` | `boolean`                  | `true`  | When true, sticks to the bottom of the screen on mobile devices                                                |
+| `portalProps`         | `AlertDialog.Portal.Props` | -       | Props forwarded to the internal portal (`keepMounted`, `container`, etc.); see Base UI Alert Dialog portal API |
+
+### AlertDialogHeader
+
+Container for the alert dialog title and description.
+
+### AlertDialogFooter
+
+Footer section for action buttons.
+
+Unlike [Dialog](/ui-kit/primitives/dialog), alert dialog has no `AlertDialogPanel`. Put title and description in `AlertDialogHeader`, actions in `AlertDialogFooter`, and use a plain element with `className` if you need extra body content between them.
+
+| Prop      | Type                  | Default     | Description                                                                                |
+| --------- | --------------------- | ----------- | ------------------------------------------------------------------------------------------ |
+| `variant` | `"default" \| "bare"` | `"default"` | Controls the footer styling. `default` includes border and background, `bare` removes them |
+
+**Example:**
+
+```tsx
+// Default variant (with border and background)
+<AlertDialogFooter>
+  <AlertDialogClose>Cancel</AlertDialogClose>
+  <AlertDialogClose>Delete</AlertDialogClose>
+</AlertDialogFooter>
+
+// Bare variant (no border or background)
+<AlertDialogFooter variant="bare">
+  <AlertDialogClose>Cancel</AlertDialogClose>
+  <AlertDialogClose>Delete</AlertDialogClose>
+</AlertDialogFooter>
+```
+
+### AlertDialogTitle
+
+Title component. Alias for `AlertDialog.Title` from Base UI.
+
+### AlertDialogDescription
+
+Description component. Alias for `AlertDialog.Description` from Base UI.
+
+### AlertDialogClose
+
+Close button component. Alias for `AlertDialog.Close` from Base UI.
+
+### AlertDialogPortal
+
+Portal component for rendering outside the DOM hierarchy. Alias for `AlertDialog.Portal` from Base UI.
+
+### AlertDialogBackdrop
+
+Backdrop/overlay component. Also exported as `AlertDialogOverlay`. Alias for `AlertDialog.Backdrop` from Base UI.
+
+### AlertDialogViewport
+
+Viewport component for positioning. Alias for `AlertDialog.Viewport` from Base UI.
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-dialog-4" description="Alert dialog with close confirmation" />
+</ShowcaseGrid>

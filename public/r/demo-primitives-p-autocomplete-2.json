@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-autocomplete-2",
+  "title": "Autocomplete Sizes",
+  "description": "Autocomplete inputs in sm, default, and lg sizes",
+  "registryDependencies": [
+    "@usespaceui/primitives-autocomplete"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/autocomplete/p-autocomplete-2/index.tsx",
+      "content": "import {\n  Autocomplete,\n  AutocompleteInput,\n  AutocompleteItem,\n  AutocompleteList,\n  AutocompletePopup,\n} from '@/components/ui/autocomplete'\n\nconst items = ['Apple', 'Banana', 'Blueberry', 'Grapes', 'Pineapple']\n\nexport default function Particle() {\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-3\">\n      <Autocomplete items={items}>\n        <AutocompleteInput placeholder=\"Autocomplete (sm)\" size=\"sm\" />\n        <AutocompletePopup>\n          <AutocompleteList>\n            {items.map((item) => (\n              <AutocompleteItem key={item} value={item}>\n                {item}\n              </AutocompleteItem>\n            ))}\n          </AutocompleteList>\n        </AutocompletePopup>\n      </Autocomplete>\n\n      <Autocomplete items={items}>\n        <AutocompleteInput placeholder=\"Autocomplete (default)\" size=\"default\" />\n        <AutocompletePopup>\n          <AutocompleteList>\n            {items.map((item) => (\n              <AutocompleteItem key={item} value={item}>\n                {item}\n              </AutocompleteItem>\n            ))}\n          </AutocompleteList>\n        </AutocompletePopup>\n      </Autocomplete>\n\n      <Autocomplete items={items}>\n        <AutocompleteInput placeholder=\"Autocomplete (lg)\" size=\"lg\" />\n        <AutocompletePopup>\n          <AutocompleteList>\n            {items.map((item) => (\n              <AutocompleteItem key={item} value={item}>\n                {item}\n              </AutocompleteItem>\n            ))}\n          </AutocompleteList>\n        </AutocompletePopup>\n      </Autocomplete>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-autocomplete-2.tsx"
+    }
+  ],
+  "categories": [
+    "autocomplete"
+  ],
+  "type": "registry:ui"
+}

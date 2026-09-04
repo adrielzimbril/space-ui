@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-dom-use-window-size",
+  "title": "useWindowSize",
+  "description": "useWindowSize hook.",
+  "registryDependencies": [
+    "@usespaceui/hooks-lifecycle-use-isomorphic-layout-effect"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/dom/use-window-size/index.ts",
+      "content": "'use client'\n\nimport { useState } from 'react'\nimport { useEventListener } from '@/hooks/use-event-listener'\nimport { useIsomorphicLayoutEffect } from '@/hooks/use-isomorphic-layout-effect'\n\nexport interface WindowSize {\n  width: number\n  height: number\n}\n\n/**\n * React hook to observe the current inner dimensions (width & height) of the browser window.\n *\n * @returns {WindowSize} Object with current `{ width, height }` in pixels.\n *\n * @example\n * const { width, height } = useWindowSize();\n */\nexport function useWindowSize(): WindowSize {\n  const [windowSize, setWindowSize] = useState<WindowSize>({\n    width: 0,\n    height: 0,\n  })\n\n  useIsomorphicLayoutEffect(() => {\n    if (typeof window !== 'undefined') {\n      setWindowSize({\n        width: window.innerWidth,\n        height: window.innerHeight,\n      })\n    }\n  }, [])\n\n  useEventListener('resize', () => {\n    if (typeof window !== 'undefined') {\n      setWindowSize({\n        width: window.innerWidth,\n        height: window.innerHeight,\n      })\n    }\n  })\n\n  return windowSize\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-window-size.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "dom",
+    "window-size"
+  ],
+  "type": "registry:hook"
+}

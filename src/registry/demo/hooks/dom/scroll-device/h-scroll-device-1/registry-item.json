@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-dom-scroll-device-1",
+  "type": "registry:hook",
+  "title": "useScrollDevice",
+  "description": "Wheel and touchpad gesture detection",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-dom-use-scroll-device",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "hooks",
+    "dom",
+    "scroll-device"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/dom/scroll-device/h-scroll-device-1/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-scroll-device-1.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

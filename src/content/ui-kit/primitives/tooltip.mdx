@@ -1,0 +1,83 @@
+---
+title: Tooltip
+description: Displays a small floating text bubble when users hover over or focus on an element, explaining what that button or icon does.
+
+links:
+  doc: https://base-ui.com/react/components/tooltip#api-reference
+preview: demo-primitives-p-tooltip-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-tooltip" />
+
+## Usage
+
+```tsx
+import { Tooltip, TooltipCreateHandle, TooltipPopup, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
+```
+
+```tsx
+<Tooltip>
+  <TooltipTrigger render={<Button variant="outline" />}>Hover me</TooltipTrigger>
+  <TooltipPopup>Helpful hint</TooltipPopup>
+</Tooltip>
+```
+
+## Anatomy
+
+```tsx
+<Tooltip>
+  <TooltipTrigger />
+  <TooltipPopup />
+</Tooltip>
+```
+
+## Accessibility
+
+- Follows the [WAI-ARIA Tooltip Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/).
+- Appears on hover and focus without stealing focus from the trigger.
+
+### Keyboard Interactions
+
+| Key               | Action                                     |
+| :---------------- | :----------------------------------------- |
+| <Kbd>Escape</Kbd> | Immediately dismisses the visible tooltip. |
+
+## API Reference
+
+### Tooltip
+
+Root component. Alias for `Tooltip.Root` from Base UI.
+
+### TooltipTrigger
+
+Trigger element that shows the tooltip on hover/focus. Alias for `Tooltip.Trigger` from Base UI.
+
+### TooltipPopup
+
+Popup container that displays the tooltip content. Also exported as `TooltipContent`.
+
+| Prop          | Type                                          | Default    | Description                                                                                               |
+| ------------- | --------------------------------------------- | ---------- | --------------------------------------------------------------------------------------------------------- |
+| `side`        | `"top" \| "bottom" \| "left" \| "right"`      | `"top"`    | Side of the trigger to position the tooltip                                                               |
+| `align`       | `"start" \| "center" \| "end"`                | `"center"` | Alignment relative to the trigger                                                                         |
+| `sideOffset`  | `number`                                      | `4`        | Distance from the trigger in pixels                                                                       |
+| `anchor`      | `Element \| null \| React.RefObject<Element>` | -          | Custom anchor element or ref to anchor the tooltip against                                                |
+| `portalProps` | `Tooltip.Portal.Props`                        | -          | Props forwarded to the internal portal (`keepMounted`, `container`, etc.); see Base UI Tooltip portal API |
+
+### TooltipProvider
+
+Provider for grouping tooltips. Alias for `Tooltip.Provider` from Base UI.
+
+### TooltipCreateHandle
+
+Creates a handle for detached tooltip triggers. Returns a handle object to attach to multiple triggers for animated transitions.
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-tooltip-2" description="Grouped tooltips" />
+  <ShowcaseCard name="demo-primitives-p-tooltip-3" description="Toggle group animated tooltip" />
+  <ShowcaseCard name="demo-primitives-p-tooltip-4" description="Vertical group with animated tooltip" />
+</ShowcaseGrid>

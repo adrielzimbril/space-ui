@@ -1,0 +1,50 @@
+---
+title: Switch
+description: Pattern-matching conditional container supporting Case and Default branches.
+preview: demo-hooks-components-switch-1
+---
+
+### Example 2: Order Status Badge Renderer
+
+<ComponentPreview name="demo-hooks-components-switch-2" />
+
+## Installation
+
+<ComponentInstallation name="hooks-components-switch" />
+
+## Usage
+
+````tsx
+import { Switch, Case, Default } from '@/components/switch'
+
+import { Switch, Case, Default } from '@/components/switch'```
+
+```tsx
+<Switch>
+  <Case condition={tab === 'home'}>
+    <Home />
+  </Case>
+  <Case condition={tab === 'profile'}>
+    <Profile />
+  </Case>
+  <Default>
+    <Settings />
+  </Default>
+</Switch>
+````
+
+## API Reference
+
+### Parameters / Props
+
+| Component     | Prop        | Description                  |
+| :------------ | :---------- | :--------------------------- |
+| `<Switch />`  | `children`  | Container for Case elements. |
+| `<Case />`    | `condition` | Branch condition.            |
+| `<Default />` | `children`  | Fallback branch.             |
+
+### Return Value
+
+| Return Type | Description     |
+| :---------- | :-------------- |
+| `ReactNode` | Matched branch. |

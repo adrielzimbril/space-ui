@@ -1,0 +1,33 @@
+---
+title: formatDate & timeAgo
+description: Localized date and relative time formatting.
+preview: demo-hooks-utils-format-date-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-utils-format-date" />
+
+## Usage
+
+```tsx
+import { getHumanDate, formatDateDiff } from '@/utils/format-date'
+
+getHumanDate(new Date(), 'short')
+formatDateDiff(new Date(Date.now() - 3600000)) // => "1 hour ago"
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter | Type                       | Default        | Description   |
+| :-------- | :------------------------- | :------------- | :------------ |
+| `date`    | `Date \| number \| string` | _required_     | Target date.  |
+| `format`  | `string`                   | `'yyyy-MM-dd'` | Date pattern. |
+
+### Return Value
+
+| Return Type | Description            |
+| :---------- | :--------------------- |
+| `string`    | Formatted date string. |

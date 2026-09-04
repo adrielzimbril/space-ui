@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-phone-input-5",
+  "title": "Phone input with preset value",
+  "description": "Phone input with preset value",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-phone-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/phone-input/c-phone-input-5/index.tsx",
+      "content": "import { PhoneInput } from '@/components/spaceui/phone-input'\n\nexport default function Pattern() {\n  return <PhoneInput value=\"+12125551234\" placeholder=\"Enter phone number\" />\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/c-phone-input-5.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "phone-input"
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,94 @@
+---
+title: Pagination
+description: Splits long lists or tables across multiple pages, letting users browse content page by page using numbered buttons.
+preview: demo-primitives-p-pagination-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-pagination" />
+
+## Usage
+
+```tsx
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from '@/components/ui/pagination'
+```
+
+```tsx
+<Pagination>
+  <PaginationContent>
+    <PaginationItem>
+      <PaginationPrevious href="#" />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink href="#">1</PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationEllipsis />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationNext href="#" />
+    </PaginationItem>
+  </PaginationContent>
+</Pagination>
+```
+
+## Features
+
+### Sibling Count
+
+Pagination controlling the number of page siblings rendered next to the active page.
+
+<ComponentPreview name="demo-primitives-p-pagination-2" />
+
+### Compact Layout
+
+Compact icon-only pagination without textual prev/next labels.
+
+<ComponentPreview name="demo-primitives-p-pagination-3" />
+
+## API Reference
+
+This is a custom component, not a Base UI wrapper.
+
+### Pagination
+
+Root navigation container with `role="navigation"` and `aria-label="pagination"`.
+
+### PaginationContent
+
+Unordered list container for pagination items.
+
+### PaginationItem
+
+Individual list item container.
+
+### PaginationLink
+
+Link element for page numbers. Supports the `render` prop.
+
+| Prop       | Type                  | Default  | Description                                        |
+| ---------- | --------------------- | -------- | -------------------------------------------------- |
+| `isActive` | `boolean`             | -        | Highlights the link as the current page            |
+| `size`     | `"default" \| "icon"` | `"icon"` | Controls the link size                             |
+| `render`   | `React.ReactElement`  | -        | Render as a different element (e.g., Next.js Link) |
+
+### PaginationPrevious
+
+Link to the previous page. Includes a chevron left icon and "Previous" text.
+
+### PaginationNext
+
+Link to the next page. Includes "Next" text and a chevron right icon.
+
+### PaginationEllipsis
+
+Ellipsis indicator for skipped pages. Displays "..." with screen reader text "More pages".

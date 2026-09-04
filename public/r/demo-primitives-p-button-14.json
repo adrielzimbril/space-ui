@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-button-14",
+  "title": "Button 14",
+  "description": "Star button with count badge",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/button/p-button-14/index.tsx",
+      "content": "'use client'\n\nimport { IconStar } from '@tabler/icons-react'\nimport { useState } from 'react'\nimport { Button } from '@/components/ui/button'\n\nexport default function Particle() {\n  const [isStarred, setIsStarred] = useState(false)\n  const count = isStarred ? 730 : 729\n\n  return (\n    <Button onClick={() => setIsStarred(!isStarred)}>\n      <IconStar aria-hidden=\"true\" className={`${isStarred ? 'fill-yellow-500 text-yellow-500' : undefined}`} />\n      <span className=\"flex items-baseline gap-2\">\n        {isStarred ? 'Starred' : 'Star'}\n        <span className=\"text-primary-foreground/60 text-xs\">{count}</span>\n      </span>\n    </Button>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-button-14.tsx"
+    }
+  ],
+  "categories": [
+    "button"
+  ],
+  "type": "registry:ui"
+}

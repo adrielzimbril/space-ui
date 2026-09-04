@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-button-18",
+  "title": "Button 18",
+  "description": "Button with animated arrow on hover",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/button/p-button-18/index.tsx",
+      "content": "import { IconArrowRight } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\n\nexport default function Particle() {\n  return (\n    <Button>\n      Get Started\n      <IconArrowRight\n        aria-hidden=\"true\"\n        className=\"in-[[data-slot=button]:hover]:translate-x-0.5 transition-transform\"\n      />\n    </Button>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-button-18.tsx"
+    }
+  ],
+  "categories": [
+    "button"
+  ],
+  "type": "registry:ui"
+}

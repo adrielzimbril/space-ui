@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-data-grid-column-visibility",
+  "type": "registry:component",
+  "title": "Data Grid Column Visibility",
+  "description": "Data Grid Column Visibility component for Space UI.",
+  "dependencies": [
+    "@tanstack/react-table"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-data-grid",
+    "@usespaceui/primitives-menu"
+  ],
+  "categories": [
+    "component",
+    "data-grid",
+    "data-grid-data-grid-column-visibility"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/data-grid/data-grid-column-visibility/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/data-grid-column-visibility.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

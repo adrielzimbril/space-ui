@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-calendar-9",
+  "title": "Calendar 9",
+  "description": "Calendar with rounded day buttons",
+  "registryDependencies": [
+    "@usespaceui/primitives-calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/calendar/p-calendar-9/index.tsx",
+      "content": "'use client'\n\nimport { useState } from 'react'\nimport { Calendar } from '@/components/ui/calendar'\n\nexport default function Particle() {\n  const [date, setDate] = useState<Date | undefined>(new Date())\n\n  return (\n    <Calendar\n      classNames={{\n        day_button: 'rounded-full',\n      }}\n      mode=\"single\"\n      onSelect={setDate}\n      selected={date}\n    />\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-calendar-9.tsx"
+    }
+  ],
+  "categories": [
+    "calendar"
+  ],
+  "type": "registry:ui"
+}

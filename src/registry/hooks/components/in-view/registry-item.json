@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-components-in-view",
+  "type": "registry:hook",
+  "title": "InView",
+  "description": "InView component.",
+  "registryDependencies": [
+    "@usespaceui/hooks-animation-use-in-view"
+  ],
+  "categories": [
+    "hooks",
+    "components",
+    "in-view"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/components/in-view/index.tsx",
+      "type": "registry:hook",
+      "target": "components/ui/in-view.tsx"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

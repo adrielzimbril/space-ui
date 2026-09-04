@@ -1,0 +1,101 @@
+---
+title: Calendar
+description: Displays an interactive month grid that lets users browse dates, select individual days, or choose date ranges for scheduling.
+
+links:
+  doc: https://daypicker.dev/
+preview: demo-primitives-p-calendar-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-calendar" />
+
+## Usage
+
+```tsx
+import { Calendar } from '@/components/ui/calendar'
+```
+
+```tsx
+<Calendar />
+```
+
+## Features
+
+### Disabled Dates
+
+Calendar configured with specific disabled dates and range constraints.
+
+<ComponentPreview name="demo-primitives-p-calendar-7" />
+
+## API Reference
+
+This component wraps [@daypicker/react](https://daypicker.dev/) with custom styling.
+
+### Calendar
+
+A calendar component for date selection.
+
+| Prop              | Type                                                             | Default    | Description                                                |
+| ----------------- | ---------------------------------------------------------------- | ---------- | ---------------------------------------------------------- |
+| `mode`            | `"single" \| "multiple" \| "range"`                              | `"single"` | Selection mode for the calendar                            |
+| `captionLayout`   | `"label" \| "dropdown" \| "dropdown-months" \| "dropdown-years"` | `"label"`  | Caption layout - use `"dropdown"` for month/year dropdowns |
+| `selected`        | `Date \| Date[] \| DateRange`                                    | -          | The selected date(s)                                       |
+| `onSelect`        | `(date: Date \| Date[] \| DateRange) => void`                    | -          | Callback when date selection changes                       |
+| `showOutsideDays` | `boolean`                                                        | `true`     | Show days from adjacent months                             |
+| `startMonth`      | `Date`                                                           | -          | First month to show in dropdown navigation                 |
+| `endMonth`        | `Date`                                                           | -          | Last month to show in dropdown navigation                  |
+| `buttonVariant`   | `"ghost" \| "outline" \| ...`                                    | `"ghost"`  | Button variant for navigation buttons                      |
+| `classNames`      | `object`                                                         | -          | Custom class names for calendar parts                      |
+| `components`      | `object`                                                         | -          | Custom components to override defaults                     |
+
+For the full list of props, see the [@daypicker/react documentation](https://daypicker.dev/).
+
+### Customizing Cell Size
+
+The calendar uses CSS custom properties for cell sizing. By default, the cell size is `--spacing(9)` on mobile and `--spacing(8)` on larger screens:
+
+```css
+[--cell-size:--spacing(10)] sm:[--cell-size:--spacing(9)]
+```
+
+You can customize the cell size by passing a custom `className`:
+
+```tsx
+<Calendar className="[--cell-size:--spacing(11)]" />
+```
+
+Or use responsive values:
+
+```tsx
+<Calendar className="[--cell-size:--spacing(11)] sm:[--cell-size:--spacing(10)]" />
+```
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-calendar-2" description="Calendar with custom cell size" />
+  <ShowcaseCard name="demo-primitives-p-calendar-3" description="Calendar with date range selection" />
+  <ShowcaseCard name="demo-primitives-p-calendar-4" description="Calendar with month/year dropdown navigation" />
+  <ShowcaseCard name="demo-primitives-p-calendar-5" description="Calendar with custom Select dropdown for month/year" />
+  <ShowcaseCard name="demo-primitives-p-calendar-6" description="Calendar with Combobox dropdown for month/year" />
+  <ShowcaseCard name="demo-primitives-p-calendar-8" description="Calendar with multiple date selection" />
+  <ShowcaseCard name="demo-primitives-p-calendar-9" description="Calendar with rounded day buttons" />
+  <ShowcaseCard name="demo-primitives-p-calendar-10" description="Calendar with rounded range selection style" />
+  <ShowcaseCard name="demo-primitives-p-calendar-11" description="Calendar with right-aligned navigation" />
+  <ShowcaseCard name="demo-primitives-p-calendar-12" description="Calendar with week numbers" />
+  <ShowcaseCard name="demo-primitives-p-calendar-13" description="Calendar with year-only combobox dropdown" />
+  <ShowcaseCard name="demo-primitives-p-calendar-14" description="Calendar without arrow navigation (dropdown only)" />
+  <ShowcaseCard name="demo-primitives-p-calendar-15" description="Calendar with current month button" />
+  <ShowcaseCard name="demo-primitives-p-calendar-16" description="Calendar with today button" />
+  <ShowcaseCard name="demo-primitives-p-calendar-17" description="Calendar with date input" />
+  <ShowcaseCard name="demo-primitives-p-calendar-18" description="Calendar with time input" />
+  <ShowcaseCard name="demo-primitives-p-calendar-19" description="Calendar with time slots (appointment picker)" />
+  <ShowcaseCard name="demo-primitives-p-calendar-20" description="Calendar with date presets" />
+  <ShowcaseCard name="demo-primitives-p-calendar-21" description="Range calendar with date presets" />
+  <ShowcaseCard name="demo-primitives-p-calendar-22" description="Two months calendar" />
+  <ShowcaseCard name="demo-primitives-p-calendar-23" description="Three months calendar" />
+  <ShowcaseCard name="demo-primitives-p-calendar-24" description="Pricing calendar with custom day buttons" />
+  <ShowcaseCard name="demo-primitives-p-calendar-25" description="Calendar with 24-hour autocomplete time input" />
+</ShowcaseGrid>

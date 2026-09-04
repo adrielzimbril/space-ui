@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-components-for",
+  "title": "For",
+  "description": "For component.",
+  "files": [
+    {
+      "path": "src/registry/hooks/components/for/index.tsx",
+      "content": "import * as React from 'react'\n\n/**\n * Props for the `<For>` list-rendering component.\n *\n * @template T\n */\nexport interface ForProps<T> {\n  /** The array of items to iterate over. */\n  each: readonly T[] | T[] | null | undefined\n  /** Fallback content rendered when the array is empty or null. */\n  fallback?: React.ReactNode\n  /** Render function for each item in the array. */\n  children: (item: T, index: number) => React.ReactNode\n}\n\n/**\n * Declarative list rendering component with built-in empty fallback support.\n *\n * @template T\n * @param {ForProps<T>} props - Component props.\n * @returns {React.ReactNode} The mapped items or empty fallback.\n *\n * @example\n * <For each={items} fallback={<EmptyState message=\"No items found.\" />}>\n *   {(item, index) => (\n *     <ItemCard key={item.id} title={item.title} index={index} />\n *   )}\n * </For>\n */\nexport function For<T>({ each, fallback = null, children }: ForProps<T>): React.ReactNode {\n  if (!each || each.length === 0) {\n    return fallback\n  }\n\n  return <>{each.map((item, index) => children(item, index))}</>\n}\n",
+      "type": "registry:hook",
+      "target": "components/ui/for.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "components",
+    "for"
+  ],
+  "type": "registry:hook"
+}

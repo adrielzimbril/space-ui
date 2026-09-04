@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-button-6",
+  "type": "registry:ui",
+  "title": "Button 6",
+  "description": "Link rendered as button",
+  "registryDependencies": [
+    "@usespaceui/primitives-button"
+  ],
+  "categories": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/button/p-button-6/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-button-6.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

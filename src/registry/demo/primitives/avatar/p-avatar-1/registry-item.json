@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-avatar-1",
+  "type": "registry:ui",
+  "title": "Avatar 1",
+  "description": "Avatar with image and fallback",
+  "registryDependencies": [
+    "@usespaceui/primitives-avatar"
+  ],
+  "categories": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/avatar/p-avatar-1/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-avatar-1.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

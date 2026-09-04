@@ -1,0 +1,30 @@
+---
+title: useBatteryStatus
+description: Battery percentage and charging status.
+preview: demo-hooks-browser-battery-status-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-browser-use-battery-status" />
+
+## Usage
+
+```tsx
+import { useBatteryStatus } from '@/hooks/use-battery-status'
+
+const { level, charging } = useBatteryStatus()
+```
+
+## API Reference
+
+### Parameters / Props
+
+_None_
+
+### Return Value
+
+| Property   | Type      | Description            |
+| :--------- | :-------- | :--------------------- |
+| `level`    | `number`  | Battery charge 0 to 1. |
+| `charging` | `boolean` | Connected to power.    |

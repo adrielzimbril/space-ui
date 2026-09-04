@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-table-3",
+  "type": "registry:ui",
+  "title": "Table 3",
+  "description": "Table with TanStack Table and checkboxes",
+  "dependencies": [
+    "@tanstack/react-table"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-checkbox",
+    "@usespaceui/primitives-frame",
+    "@usespaceui/primitives-table"
+  ],
+  "categories": [
+    "checkbox",
+    "table",
+    "tanstack"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/table/p-table-3/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-table-3.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

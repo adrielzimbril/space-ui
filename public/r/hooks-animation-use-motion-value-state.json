@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-animation-use-motion-value-state",
+  "title": "useMotionValueState",
+  "description": "useMotionValueState hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/animation/use-motion-value-state/index.ts",
+      "content": "'use client'\n\nimport * as React from 'react'\n\n/**\n * React hook that subscribes to a MotionValue and triggers a component re-render on value changes.\n *\n * @template T\n * @param {{ get: () => T, on: (event: string, cb: (v: T) => void) => () => void }} motionValue - MotionValue object.\n * @returns {T} The current value.\n *\n * @example\n * const scale = useMotionValue(1);\n * const currentScale = useMotionValueState(scale);\n */\nexport function useMotionValueState<T>(motionValue: {\n  get: () => T\n  on: (event: string, callback: (v: T) => void) => () => void\n}): T {\n  const [value, setValue] = React.useState<T>(() => motionValue.get())\n\n  React.useEffect(() => {\n    setValue(motionValue.get())\n    const unsubscribe = motionValue.on('change', (latest) => setValue(latest))\n    return () => unsubscribe()\n  }, [motionValue])\n\n  return value\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-motion-value-state.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "animation",
+    "motion-value-state"
+  ],
+  "type": "registry:hook"
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-alert-1",
+  "title": "Alert 1",
+  "description": "Basic alert",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-alert"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/alert/p-alert-1/index.tsx",
+      "content": "import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'\nimport { IconAlertCircle, IconAlertTriangle, IconCircleCheck, IconInfoCircle, IconStar } from '@tabler/icons-react'\n\nconst alerts = [\n  {\n    icon: <IconStar className=\"text-muted-foreground\" />,\n    title: 'Your Alert Title Goes Here',\n    variant: 'default' as const,\n  },\n  {\n    icon: <IconInfoCircle />,\n    title: 'Your Alert Title Goes Here',\n    variant: 'info' as const,\n  },\n  {\n    icon: <IconAlertTriangle />,\n    title: 'Your Alert Title Goes Here',\n    variant: 'warning' as const,\n  },\n  {\n    icon: <IconAlertCircle />,\n    title: 'Your Alert Title Goes Here',\n    variant: 'error' as const,\n  },\n  {\n    icon: <IconCircleCheck />,\n    title: 'Your Alert Title Goes Here',\n    variant: 'success' as const,\n  },\n]\n\nexport default function Particle() {\n  return (\n    <div className=\"flex w-full flex-col gap-3\">\n      {alerts.map((item, index) => (\n        <Alert key={index} variant={item.variant}>\n          {item.icon}\n          <AlertTitle className=\"font-normal\">{item.title}</AlertTitle>\n          <AlertDescription>\n            This is where your alert description will appear. You can customize this text with any message.\n          </AlertDescription>\n        </Alert>\n      ))}\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-alert-1.tsx"
+    }
+  ],
+  "categories": [
+    "alert"
+  ],
+  "type": "registry:ui"
+}

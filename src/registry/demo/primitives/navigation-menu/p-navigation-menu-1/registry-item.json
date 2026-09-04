@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-navigation-menu-1",
+  "type": "registry:ui",
+  "title": "Navigation Menu Basic",
+  "description": "Interactive demo showcasing the Navigation Menu Basic component.",
+  "dependencies": [
+    "@base-ui/react",
+    "@tabler/icons-react",
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-navigation-menu"
+  ],
+  "categories": [
+    "navigation-menu"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/navigation-menu/p-navigation-menu-1/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-navigation-menu-1.tsx"
+    }
+  ],
+  "createdAt": "2026-08-25",
+  "updatedAt": "2026-08-25"
+}

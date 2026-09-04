@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-scroll-area-1",
+  "type": "registry:ui",
+  "title": "Scroll Area 1",
+  "description": "Basic scroll area",
+  "registryDependencies": [
+    "@usespaceui/primitives-scroll-area"
+  ],
+  "categories": [
+    "scroll area"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/scroll-area/p-scroll-area-1/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-scroll-area-1.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

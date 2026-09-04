@@ -1,0 +1,26 @@
+---
+title: Mastermind
+description: Product landing block with a live Smooth Orb hero, product families, and voice cards.
+preview: block-mastermind
+---
+
+## Installation
+
+<ComponentInstallation name="block-mastermind" />
+
+## Files
+
+| File                                                        | Role                                       |
+| ----------------------------------------------------------- | ------------------------------------------ |
+| `components/blocks/mastermind/index.tsx`                    | Main landing page & hero orb carousel      |
+| `components/blocks/mastermind/data/flags.ts`                | Language codes, flag mappings & SVG assets |
+| `components/blocks/mastermind/data/index.ts`                | Voices, products, agents & initial data    |
+| `components/blocks/mastermind/components/shared.tsx`        | Shared icons, buttons & layout primitives  |
+| `components/blocks/mastermind/components/speech-select.tsx` | Accessible portal-based dropdown select    |
+| `components/blocks/mastermind/components/code-controls.tsx` | All-in-one AI editor code controls         |
+| `components/blocks/mastermind/sections/creative-platform/`  | ElevenCreative section & feature cards     |
+| `components/blocks/mastermind/sections/product-tabs/`       | Product tabs (Agents, API, Creative)       |
+| `components/orb/smooth`                                     | Hero orb (registry dependency)             |
+| `public/mastermind/`                                        | Product and voice artwork                  |
+
+The orb in the hero uses ambient audio. Point `textureUrl` at another image if you replace the creative stills.

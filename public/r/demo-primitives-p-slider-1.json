@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-slider-1",
+  "title": "Slider 1",
+  "description": "Basic slider",
+  "registryDependencies": [
+    "@usespaceui/primitives-slider"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/slider/p-slider-1/index.tsx",
+      "content": "import { Slider } from '@/components/ui/slider'\n\nexport default function Particle() {\n  return <Slider defaultValue={50} />\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-slider-1.tsx"
+    }
+  ],
+  "categories": [
+    "slider"
+  ],
+  "type": "registry:ui"
+}

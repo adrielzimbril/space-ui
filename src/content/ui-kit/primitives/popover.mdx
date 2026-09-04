@@ -1,0 +1,114 @@
+---
+title: Popover
+description: Opens a floating content box anchored to a button or icon, showing interactive settings, tools, or details right next to the trigger.
+
+links:
+  doc: https://base-ui.com/react/components/popover#api-reference
+preview: demo-primitives-p-popover-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-popover" />
+
+## Usage
+
+```tsx
+import {
+  Popover,
+  PopoverClose,
+  PopoverDescription,
+  PopoverPopup,
+  PopoverTitle,
+  PopoverTrigger,
+} from '@/components/ui/popover'
+```
+
+```tsx
+<Popover>
+  <PopoverTrigger>Open Popover</PopoverTrigger>
+  <PopoverPopup>
+    <PopoverTitle>Popover Title</PopoverTitle>
+    <PopoverDescription>Popover Description</PopoverDescription>
+    <PopoverClose>Close</PopoverClose>
+  </PopoverPopup>
+</Popover>
+```
+
+## Anatomy
+
+```tsx
+<Popover>
+  <PopoverTrigger />
+  <PopoverPopup>
+    <PopoverHeader>
+      <PopoverTitle />
+      <PopoverDescription />
+    </PopoverHeader>
+    <PopoverClose />
+  </PopoverPopup>
+</Popover>
+```
+
+## Accessibility
+
+- Adheres to the [WAI-ARIA Dialog Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/).
+- Focus stays contained or accessible within the floating panel.
+
+### Keyboard Interactions
+
+| Key                                 | Action                          |
+| :---------------------------------- | :------------------------------ |
+| <Kbd>Space</Kbd> / <Kbd>Enter</Kbd> | Toggles the popover open state. |
+| <Kbd>Escape</Kbd>                   | Dismisses the popover.          |
+
+## API Reference
+
+### Popover
+
+Root component. Alias for `Popover.Root` from Base UI.
+
+### PopoverTrigger
+
+Trigger button that opens the popover. Alias for `Popover.Trigger` from Base UI.
+
+### PopoverPopup
+
+Popup container that displays the popover content. Also exported as `PopoverContent`.
+
+| Prop           | Type                                          | Default    | Description                                                                                               |
+| -------------- | --------------------------------------------- | ---------- | --------------------------------------------------------------------------------------------------------- |
+| `tooltipStyle` | `boolean`                                     | `false`    | When true, applies tooltip-like styling (smaller padding, arrow)                                          |
+| `side`         | `"top" \| "bottom" \| "left" \| "right"`      | `"bottom"` | Side of the trigger to position the popup                                                                 |
+| `align`        | `"start" \| "center" \| "end"`                | `"center"` | Alignment relative to the trigger                                                                         |
+| `sideOffset`   | `number`                                      | `4`        | Distance from the trigger in pixels                                                                       |
+| `alignOffset`  | `number`                                      | `0`        | Offset along the alignment axis                                                                           |
+| `anchor`       | `Element \| null \| React.RefObject<Element>` | -          | Custom anchor element or ref to anchor the popup against                                                  |
+| `portalProps`  | `Popover.Portal.Props`                        | -          | Props forwarded to the internal portal (`keepMounted`, `container`, etc.); see Base UI Popover portal API |
+
+### PopoverTitle
+
+Title text for the popover. Styled wrapper for `Popover.Title` from Base UI.
+
+### PopoverDescription
+
+Description text for the popover. Styled wrapper for `Popover.Description` from Base UI.
+
+### PopoverClose
+
+Close button for the popover. Alias for `Popover.Close` from Base UI.
+
+### PopoverCreateHandle
+
+Creates a handle for detached popover triggers. Returns a handle object to attach to multiple triggers.
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-popover-2" description="Popover with close button" />
+  <ShowcaseCard name="demo-primitives-p-popover-3" description="Animated popovers" />
+  <ShowcaseCard
+    name="demo-primitives-p-popover-4"
+    description="Split button with popover to confirm multiple occurrences"
+  />
+</ShowcaseGrid>

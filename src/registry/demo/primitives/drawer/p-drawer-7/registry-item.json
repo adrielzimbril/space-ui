@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-drawer-7",
+  "type": "registry:ui",
+  "title": "Drawer 7",
+  "description": "Nested bottom drawers with centered content",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-drawer"
+  ],
+  "categories": [
+    "drawer"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/drawer/p-drawer-7/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-drawer-7.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

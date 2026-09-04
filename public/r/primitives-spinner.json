@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-spinner",
+  "title": "Spinner",
+  "description": "Accessible Spinner primitive component for Space UI.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/spinner/index.tsx",
+      "content": "import * as React from 'react'\nimport { Loader2 } from 'lucide-react'\nimport { cn } from '@/lib/utils'\n\nexport function Spinner({ className, ...props }: React.ComponentProps<typeof Loader2>): React.ReactElement {\n  return (\n    <Loader2\n      aria-label=\"Loading\"\n      className={cn('animate-spin', className)}\n      role=\"status\"\n      data-slot=\"spinner\"\n      {...props}\n    />\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/spinner.tsx"
+    }
+  ],
+  "categories": [
+    "spinner"
+  ],
+  "type": "registry:ui"
+}

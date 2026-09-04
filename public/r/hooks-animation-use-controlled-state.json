@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-animation-use-controlled-state",
+  "title": "useControlledState",
+  "description": "useControlledState hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/animation/use-controlled-state/index.ts",
+      "content": "'use client'\n\nimport { useState, useCallback } from 'react'\n\nexport interface UseControlledStateOptions<T> {\n  prop?: T\n  value?: T\n  defaultProp?: T\n  defaultValue?: T\n  onChange?: (value: T) => void\n}\n\n/**\n * React hook supporting both controlled and uncontrolled component state patterns seamlessly.\n * Supports both object options `{ prop, defaultProp, onChange }` and positional parameters `(prop, defaultProp, onChange)`.\n *\n * @template T\n * @param {UseControlledStateOptions<T> | T | undefined} optionsOrProp - Options object or controlled prop.\n * @param {T} [defaultValue] - Default value if using positional parameters.\n * @param {(value: T) => void} [onChange] - Change callback if using positional parameters.\n * @returns {[T, (value: T | ((prev: T) => T)) => void]} Tuple of [currentValue, setValue].\n *\n * @example\n * // Object pattern:\n * const [val, setVal] = useControlledState({ prop: props.value, defaultProp: 'Off', onChange: props.onChange });\n *\n * // Positional pattern:\n * const [val, setVal] = useControlledState(props.value, 'Off', props.onChange);\n */\nexport function useControlledState<T>(\n  optionsOrProp?: UseControlledStateOptions<T> | T,\n  defaultValue?: T,\n  onChange?: (value: T) => void,\n): [T, (value: T | ((prev: T) => T)) => void] {\n  const isObjectCall =\n    optionsOrProp !== null &&\n    typeof optionsOrProp === 'object' &&\n    ('prop' in optionsOrProp ||\n      'defaultProp' in optionsOrProp ||\n      'value' in optionsOrProp ||\n      'defaultValue' in optionsOrProp ||\n      'onChange' in optionsOrProp)\n\n  const controlledValue = isObjectCall\n    ? ((optionsOrProp as UseControlledStateOptions<T>).prop ?? (optionsOrProp as UseControlledStateOptions<T>).value)\n    : (optionsOrProp as T | undefined)\n\n  const fallbackValue = isObjectCall\n    ? ((optionsOrProp as UseControlledStateOptions<T>).defaultProp ??\n      (optionsOrProp as UseControlledStateOptions<T>).defaultValue ??\n      ('' as unknown as T))\n    : (defaultValue ?? ('' as unknown as T))\n\n  const changeHandler = isObjectCall ? (optionsOrProp as UseControlledStateOptions<T>).onChange : onChange\n\n  const [internalValue, setInternalValue] = useState<T>(fallbackValue)\n  const isControlled = controlledValue !== undefined\n  const value = isControlled ? controlledValue : internalValue\n\n  const setValue = useCallback(\n    (next: T | ((prev: T) => T)) => {\n      const nextValue = typeof next === 'function' ? (next as (prev: T) => T)(value) : next\n      if (!isControlled) {\n        setInternalValue(nextValue)\n      }\n      changeHandler?.(nextValue)\n    },\n    [isControlled, changeHandler, value],\n  )\n\n  return [value, setValue]\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-controlled-state.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "animation",
+    "controlled-state"
+  ],
+  "type": "registry:hook"
+}

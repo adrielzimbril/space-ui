@@ -1,0 +1,45 @@
+---
+title: useInputValue
+description: Unified form input and textarea value binder supporting tuple destructuring, object spreading, and reset/clear actions.
+preview: demo-hooks-form-input-value-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-form-use-input-value" />
+
+## Usage
+
+```tsx
+import { useInputValue } from '@/hooks/use-input-value'
+
+// Pattern 1: Tuple destructuring with binder
+const [value, bind, { reset, clear }] = useInputValue('Space UI')
+return <input {...bind} />
+
+// Pattern 2: Direct spread
+const nameInput = useInputValue('')
+return <input {...nameInput} placeholder="Enter your name" />
+
+// Pattern 3: Object destructuring
+const { value, onChange, reset, clear } = useInputValue('Default')
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter      | Type     | Default | Description                       |
+| :------------- | :------- | :------ | :-------------------------------- |
+| `initialValue` | `string` | `''`    | Initial text value for the input. |
+
+### Return Value
+
+| Property           | Type                         | Description                                                     |
+| :----------------- | :--------------------------- | :-------------------------------------------------------------- |
+| `[0]` (or `value`) | `string`                     | Current string value.                                           |
+| `[1]` (or `bind`)  | `{ value, onChange }`        | Ready-to-spread props object for `<input />` or `<textarea />`. |
+| `[2]`              | `{ setValue, reset, clear }` | Action helpers object.                                          |
+| `onChange`         | `Function`                   | React change event handler.                                     |
+| `reset()`          | `Function`                   | Resets field to `initialValue`.                                 |
+| `clear()`          | `Function`                   | Clears field to empty string.                                   |

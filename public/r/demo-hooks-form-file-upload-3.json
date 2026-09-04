@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-form-file-upload-3",
+  "title": "useFileUpload (Avatar Photo)",
+  "description": "Profile picture drag and drop uploader",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-form-use-file-upload",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/form/file-upload/h-file-upload-3/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { Button } from '@/components/ui/button'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Badge } from '@/components/ui/badge'\nimport { useFileUpload } from '@/hooks/use-file-upload'\nimport { IconUser, IconCamera, IconTrash } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const { files, getRootProps, getInputProps, clearFiles } = useFileUpload({\n    accept: 'image',\n    maxFiles: 1,\n    maxSize: '2MB',\n  })\n  const avatar = files[0]\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconUser className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Avatar</span>\n        </div>\n        <Badge variant={avatar ? 'success' : 'outline'} size=\"sm\">\n          {avatar ? 'Selected' : 'Empty'}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex flex-col items-center gap-3 rounded-[0.875rem] bg-background p-3\">\n        <div\n          {...getRootProps()}\n          className=\"group relative flex size-24 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-muted\"\n        >\n          <input {...getInputProps()} />\n          {avatar?.preview ? (\n            <img src={avatar.preview} alt=\"Avatar\" className=\"size-full object-cover\" />\n          ) : (\n            <IconUser className=\"size-10 text-muted-foreground\" />\n          )}\n          <div className=\"absolute inset-0 flex items-center justify-center bg-background/60 opacity-0 transition-opacity group-hover:opacity-100\">\n            <IconCamera className=\"size-5 text-foreground\" />\n          </div>\n        </div>\n        <div className=\"flex flex-col items-center text-center\">\n          <span className=\"text-xs font-medium text-foreground\">{avatar ? avatar.name : 'Upload picture'}</span>\n          <span className=\"text-[.6875rem] text-muted-foreground\">PNG, JPG, WebP up to 2MB</span>\n        </div>\n        {avatar && (\n          <Button variant=\"outline\" size=\"sm\" onClick={clearFiles}>\n            <IconTrash className=\"size-3.5\" />\n            Remove\n          </Button>\n        )}\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-file-upload-3.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "form",
+    "file-upload"
+  ],
+  "type": "registry:hook"
+}

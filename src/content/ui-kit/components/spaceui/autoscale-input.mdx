@@ -1,0 +1,42 @@
+---
+title: Autoscale Input
+description: Input that binary-searches a font size so the value always fills the available width, with locale number formats.
+author:
+  name: usespaceui
+  url: https://github.com/usespaceui
+preview: demo-components-spaceui-c-autoscale-input-1
+---
+
+Implementation: `registry/components/spaceui/autoscale-input/index.tsx`. A `ResizeObserver` on the parent plus prefix/suffix widths drive `useAutoscale`.
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-autoscale-input" />
+
+## Usage
+
+```tsx
+import { AutoscaleInput } from '@/components/spaceui/autoscale-input'
+
+;<AutoscaleInput defaultValue="1234567.89" prefix="$" numberFormat="us" aria-label="Amount" />
+```
+
+## Files
+
+| File                        | Role                                             |
+| --------------------------- | ------------------------------------------------ |
+| `autoscale-input/index.tsx` | Format helpers, `useAutoscale`, `AutoscaleInput` |
+
+## API Reference
+
+| Prop                 | Type                                                            | Default | Description                             |
+| -------------------- | --------------------------------------------------------------- | ------- | --------------------------------------- |
+| `numberFormat`       | `'us' \| 'eu' \| 'space' \| 'ch' \| 'in' \| 'none' \| 'string'` | `'us'`  | Grouping / decimal style                |
+| `prefix`             | `string`                                                        | `'$'`   | Leading glyph, scales with the value    |
+| `suffix`             | `string`                                                        | `''`    | Trailing glyph                          |
+| `minSize`            | `number`                                                        | `18`    | Minimum font size in px                 |
+| `maxSize`            | `number`                                                        | `100`   | Maximum font size in px                 |
+| `containerClassName` | `string`                                                        | —       | Outer width wrapper                     |
+| `wrapperClassName`   | `string`                                                        | —       | Flex row around prefix / input / suffix |
+
+All native `<input>` props are forwarded. Mobile text stays `text-base`.

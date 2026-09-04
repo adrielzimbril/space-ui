@@ -1,0 +1,68 @@
+---
+title: Progress
+description: Displays an animated progress bar indicating how much of a task or file upload has completed so users know how long to wait.
+
+links:
+  doc: https://base-ui.com/react/components/progress#api-reference
+preview: demo-primitives-p-progress-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-progress" />
+
+## Usage
+
+```tsx
+import { Progress, ProgressLabel, ProgressValue } from '@/components/ui/progress'
+```
+
+```tsx
+<Progress value={40} />
+```
+
+Note: If you render children inside `Progress`, you must also include `ProgressTrack` and `ProgressIndicator` inside it. Without them, the bar will not display. When no children are provided, a default track and indicator are rendered for you.
+
+## Features
+
+### Indeterminate State
+
+Progress indicator displaying an indeterminate animated loading bar (`value={null}`).
+
+<ComponentPreview name="demo-primitives-p-progress-3" />
+
+## API Reference
+
+### Progress
+
+Root component. Styled wrapper for `Progress.Root` from Base UI. When no children are provided, automatically renders a track and indicator.
+
+### ProgressTrack
+
+Track container for the progress indicator. Styled wrapper for `Progress.Track` from Base UI.
+
+### ProgressIndicator
+
+Visual indicator showing the current progress. Styled wrapper for `Progress.Indicator` from Base UI.
+
+### ProgressLabel
+
+Label text for the progress bar. Styled wrapper for `Progress.Label` from Base UI.
+
+### ProgressValue
+
+Displays the current value. Styled wrapper for `Progress.Value` from Base UI.
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-progress-2" description="Progress with label and value" />
+</ShowcaseGrid>
+
+### With Label and Value
+
+<ComponentPreview name="demo-primitives-p-progress-2" />
+
+### With Formatted Value
+
+<ComponentPreview name="demo-primitives-p-progress-3" />

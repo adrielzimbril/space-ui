@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-badge-8",
+  "title": "Badge 8",
+  "description": "Badge with number after text",
+  "registryDependencies": [
+    "@usespaceui/primitives-badge"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/badge/p-badge-8/index.tsx",
+      "content": "import { Badge } from '@/components/ui/badge'\n\nexport default function Particle() {\n  return (\n    <Badge variant=\"outline\">\n      Notifications\n      <span className=\"ms-1 font-semibold text-primary\">5</span>\n    </Badge>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-badge-8.tsx"
+    }
+  ],
+  "categories": [
+    "badge"
+  ],
+  "type": "registry:ui"
+}

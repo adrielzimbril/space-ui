@@ -1,0 +1,321 @@
+---
+title: Command
+description: Provides a searchable command menu that lets users navigate pages, find resources, and trigger shortcuts directly from their keyboard.
+
+links:
+  doc: https://base-ui.com/react/components/autocomplete#api-reference
+preview: demo-primitives-p-command-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-command" />
+
+## Usage
+
+```tsx
+import {
+  Command,
+  CommandCollection,
+  CommandDialog,
+  CommandDialogPopup,
+  CommandDialogTrigger,
+  CommandEmpty,
+  CommandFooter,
+  CommandGroup,
+  CommandGroupLabel,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandPanel,
+  CommandSeparator,
+  CommandShortcut,
+} from '@/components/ui/command'
+import { Button } from '@/components/ui/button'
+
+const items = [
+  { value: "linear", label: "Linear" },
+  { value: "figma", label: "Figma" },
+  { value: "slack", label: "Slack" },
+]
+
+<CommandDialog>
+  <CommandDialogTrigger render={<Button variant="outline" />}>
+    Open Command Palette
+  </CommandDialogTrigger>
+
+  <CommandDialogPopup>
+    <Command items={items}>
+      <CommandInput placeholder="Search..." />
+      <CommandEmpty>No results found.</CommandEmpty>
+      <CommandList>
+        {(item) => (
+          <CommandItem key={item.value} value={item.value}>
+            {item.label}
+          </CommandItem>
+        )}
+      </CommandList>
+    </Command>
+  </CommandDialogPopup>
+</CommandDialog>
+```
+
+## Anatomy
+
+```tsx
+<Command>
+  <CommandInput />
+  <CommandList>
+    <CommandEmpty />
+    <CommandGroup>
+      <CommandItem>
+        <CommandShortcut />
+      </CommandItem>
+    </CommandGroup>
+  </CommandList>
+</Command>
+```
+
+## Accessibility
+
+- Keyboard-first navigation with live search announcement.
+- Selection updates seamlessly using `aria-selected` attributes.
+
+### Keyboard Interactions
+
+| Key                  | Action                                        |
+| :------------------- | :-------------------------------------------- |
+| <Kbd>ArrowDown</Kbd> | Moves highlight to the next command item.     |
+| <Kbd>ArrowUp</Kbd>   | Moves highlight to the previous command item. |
+| <Kbd>Enter</Kbd>     | Executes the highlighted action.              |
+| <Kbd>Escape</Kbd>    | Closes the command palette.                   |
+
+## API Reference
+
+### Command
+
+The root component that wraps the autocomplete functionality. It's an alias for `Autocomplete.Root` with sensible defaults for command palette behavior: `autoHighlight="always"`, `keepHighlight={true}`, and `open={true}`.
+
+| Prop            | Type                                   | Default    | Description                                  |
+| --------------- | -------------------------------------- | ---------- | -------------------------------------------- |
+| `items`         | `readonly unknown[]`                   | -          | The array of items to display in the command |
+| `open`          | `boolean`                              | `true`     | Controls whether the command is open         |
+| `autoHighlight` | `boolean \| "always"`                  | `"always"` | Controls automatic highlighting of items     |
+| `keepHighlight` | `boolean`                              | `true`     | Whether to maintain highlight state          |
+| `...props`      | `React.ComponentProps<typeof Command>` | -          | All Base UI Autocomplete props are supported |
+
+### CommandDialog
+
+A wrapper component that provides the dialog root functionality. It's an alias for `Dialog.Root` from Base UI.
+
+| Prop           | Type                 | Description                                  |
+| -------------- | -------------------- | -------------------------------------------- |
+| `open`         | `boolean`            | Controls whether the dialog is open          |
+| `onOpenChange` | `function`           | Callback fired when the open state changes   |
+| `...props`     | Base UI Dialog props | All standard dialog attributes are supported |
+
+### CommandDialogTrigger
+
+The trigger button that opens the command dialog. Renders as a button by default.
+
+| Prop        | Type                         | Description                                          |
+| ----------- | ---------------------------- | ---------------------------------------------------- |
+| `render`    | `React.ReactElement`         | Element to render as the trigger                     |
+| `className` | `string`                     | Additional CSS classes to apply to the component     |
+| `...props`  | Base UI Dialog Trigger props | All standard dialog trigger attributes are supported |
+
+### CommandDialogPopup
+
+The popup content container that displays the command palette inside a dialog.
+
+| Prop          | Type                       | Description                                                                                              |
+| ------------- | -------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `className`   | `string`                   | Additional CSS classes to apply to the component                                                         |
+| `portalProps` | `Dialog.Portal.Props`      | Props forwarded to the internal portal (`keepMounted`, `container`, etc.); see Base UI Dialog portal API |
+| `...props`    | Base UI Dialog Popup props | All standard dialog popup attributes are supported                                                       |
+
+### CommandInput
+
+The search input field with an integrated search icon. Automatically includes a search icon via `startAddon` and is sized to `lg` by default.
+
+| Prop          | Type                             | Description                                              |
+| ------------- | -------------------------------- | -------------------------------------------------------- |
+| `placeholder` | `string`                         | The placeholder text for the input                       |
+| `className`   | `string`                         | Additional CSS classes to apply to the component         |
+| `...props`    | Base UI Autocomplete Input props | All standard autocomplete input attributes are supported |
+
+### CommandList
+
+A scrollable container for command items. It wraps `AutocompleteList` with scroll functionality.
+
+| Prop        | Type                            | Description                                             |
+| ----------- | ------------------------------- | ------------------------------------------------------- |
+| `className` | `string`                        | Additional CSS classes to apply to the component        |
+| `...props`  | Base UI Autocomplete List props | All standard autocomplete list attributes are supported |
+
+### CommandPanel
+
+A container component that provides styling for command content outside of dialogs. Useful when building standalone command interfaces with a bordered, elevated appearance.
+
+| Prop        | Type                          | Description                                      |
+| ----------- | ----------------------------- | ------------------------------------------------ |
+| `className` | `string`                      | Additional CSS classes to apply to the component |
+| `...props`  | `React.ComponentProps<'div'>` | All standard div attributes are supported        |
+
+### CommandEmpty
+
+Displays a message when no results are found.
+
+| Prop        | Type                             | Description                                              |
+| ----------- | -------------------------------- | -------------------------------------------------------- |
+| `className` | `string`                         | Additional CSS classes to apply to the component         |
+| `...props`  | Base UI Autocomplete Empty props | All standard autocomplete empty attributes are supported |
+
+### CommandGroup
+
+Groups related command items together. Wraps `AutocompleteGroup`.
+
+| Prop        | Type                             | Description                                              |
+| ----------- | -------------------------------- | -------------------------------------------------------- |
+| `items`     | `readonly unknown[]`             | The array of items in this group                         |
+| `className` | `string`                         | Additional CSS classes to apply to the component         |
+| `...props`  | Base UI Autocomplete Group props | All standard autocomplete group attributes are supported |
+
+### CommandGroupLabel
+
+Displays a label for a command group.
+
+| Prop        | Type                                   | Description                                                    |
+| ----------- | -------------------------------------- | -------------------------------------------------------------- |
+| `className` | `string`                               | Additional CSS classes to apply to the component               |
+| `...props`  | Base UI Autocomplete Group Label props | All standard autocomplete group label attributes are supported |
+
+### CommandItem
+
+An individual selectable command item. Extends `AutocompleteItem`.
+
+| Prop        | Type                            | Description                                             |
+| ----------- | ------------------------------- | ------------------------------------------------------- |
+| `value`     | `unknown`                       | The value of the item                                   |
+| `className` | `string`                        | Additional CSS classes to apply to the component        |
+| `...props`  | Base UI Autocomplete Item props | All standard autocomplete item attributes are supported |
+
+### CommandSeparator
+
+A visual separator between command groups or items. Includes default vertical spacing with `my-2` className.
+
+| Prop        | Type                                 | Description                                                                |
+| ----------- | ------------------------------------ | -------------------------------------------------------------------------- |
+| `className` | `string`                             | Additional CSS classes to apply to the component (default includes `my-2`) |
+| `...props`  | Base UI Autocomplete Separator props | All standard autocomplete separator attributes are supported               |
+
+### CommandShortcut
+
+Displays keyboard shortcuts in a styled span element.
+
+| Prop        | Type                           | Description                                      |
+| ----------- | ------------------------------ | ------------------------------------------------ |
+| `className` | `string`                       | Additional CSS classes to apply to the component |
+| `...props`  | `React.ComponentProps<'span'>` | All standard span attributes are supported       |
+
+### CommandFooter
+
+A footer section for displaying hints or additional keyboard shortcuts. Renders as a styled `div` with padding and border.
+
+| Prop        | Type                          | Description                                      |
+| ----------- | ----------------------------- | ------------------------------------------------ |
+| `className` | `string`                      | Additional CSS classes to apply to the component |
+| `...props`  | `React.ComponentProps<'div'>` | All standard div attributes are supported        |
+
+### CommandCollection
+
+Used within `CommandGroup` to wrap items when using grouped data. It's an alias for `AutocompleteCollection` from the Autocomplete component.
+
+| Prop       | Type                                  | Description                                                   |
+| ---------- | ------------------------------------- | ------------------------------------------------------------- |
+| `...props` | Base UI Autocomplete Collection props | All standard autocomplete collection attributes are supported |
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-command-2" description="Command palette with AI assistant" />
+</ShowcaseGrid>
+
+### With Keyboard Shortcut
+
+You can add a keyboard shortcut to open the command palette:
+
+```tsx
+React.useEffect(() => {
+  const down = (e: KeyboardEvent) => {
+    if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+      e.preventDefault()
+      setOpen((open) => !open)
+    }
+  }
+
+  document.addEventListener('keydown', down)
+  return () => document.removeEventListener('keydown', down)
+}, [])
+```
+
+### With Grouped Items
+
+```tsx
+const groupedItems = [
+  {
+    value: "Suggestions",
+    items: [
+      { value: "linear", label: "Linear" },
+      { value: "figma", label: "Figma" },
+    ]
+  },
+  {
+    value: "Commands",
+    items: [
+      { value: "clipboard", label: "Clipboard History" },
+      { value: "settings", label: "System Preferences" },
+    ]
+  },
+]
+
+<Command items={groupedItems}>
+  <CommandInput placeholder="Search..." />
+  <CommandEmpty>No results found.</CommandEmpty>
+  <CommandList>
+    {(group, index) => (
+      <React.Fragment key={group.value}>
+        <CommandGroup items={group.items}>
+          <CommandGroupLabel>{group.value}</CommandGroupLabel>
+          <CommandCollection>
+            {(item) => (
+              <CommandItem key={item.value} value={item.value}>
+                {item.label}
+              </CommandItem>
+            )}
+          </CommandCollection>
+        </CommandGroup>
+        {index < groupedItems.length - 1 && <CommandSeparator />}
+      </React.Fragment>
+    )}
+  </CommandList>
+</Command>
+```
+
+### Standalone Command (Without Dialog)
+
+You can use the Command component without a dialog wrapper:
+
+```tsx
+<Command open items={items}>
+  <CommandInput placeholder="Type a command..." />
+  <CommandEmpty>No results found.</CommandEmpty>
+  <CommandList>
+    {(item) => (
+      <CommandItem key={item.value} value={item.value}>
+        {item.label}
+      </CommandItem>
+    )}
+  </CommandList>
+</Command>
+```

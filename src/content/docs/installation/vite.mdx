@@ -1,0 +1,218 @@
+---
+title: Vite + React
+description: Setup Space UI in a modern Vite React SPA with Tailwind CSS v4 and TypeScript path aliases.
+---
+
+This guide walks you through setting up Space UI in a **Vite + React 19** Single Page Application using **Tailwind CSS v4** and the official `@tailwindcss/vite` plugin.
+
+<Callout>
+  **Path Aliases:** Vite requires configuring path resolution in `vite.config.ts` and `tsconfig.json` so that the
+  `@/components` aliases work seamlessly with the `shadcn` CLI.
+</Callout>
+
+<Steps>
+
+<Step>
+
+### Create a Vite Project
+
+Scaffold a new Vite React application with TypeScript:
+
+<InstallCommandBlock
+  commands={{
+    pnpm: 'pnpm create vite my-app --template react-ts',
+    npm: 'npm create vite@latest my-app -- --template react-ts',
+    yarn: 'yarn create vite my-app --template react-ts',
+    bun: 'bun create vite my-app --template react-ts',
+  }}
+/>
+
+</Step>
+
+<Step>
+
+### Install Tailwind CSS v4 & Core Dependencies
+
+Install `@tailwindcss/vite`, Tailwind CSS v4, Base UI, Motion, and utility libraries:
+
+<InstallCommandBlock
+  commands={{
+    pnpm: 'pnpm add -D @tailwindcss/vite tailwindcss @types/node && pnpm add @base-ui/react motion cn class-variance-authority lucide-react @tabler/icons-react',
+    npm: 'npm install -D @tailwindcss/vite tailwindcss @types/node && npm install @base-ui/react motion cn class-variance-authority lucide-react @tabler/icons-react',
+    yarn: 'yarn add -D @tailwindcss/vite tailwindcss @types/node && yarn add @base-ui/react motion cn class-variance-authority lucide-react @tabler/icons-react',
+    bun: 'bun add -d @tailwindcss/vite tailwindcss @types/node && bun add @base-ui/react motion cn class-variance-authority lucide-react @tabler/icons-react',
+  }}
+/>
+
+</Step>
+
+<Step>
+
+### Configure Path Aliases in `vite.config.ts`
+
+Update `vite.config.ts` to add the `@` path alias and load the Tailwind CSS plugin:
+
+```ts title="vite.config.ts"
+import path from 'path'
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
+})
+```
+
+</Step>
+
+<Step>
+
+### Update `tsconfig.json` and `tsconfig.app.json`
+
+Add path mappings to `tsconfig.app.json` (or `tsconfig.json`):
+
+```json title="tsconfig.app.json"
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
+```
+
+</Step>
+
+<Step>
+
+### Configure `src/index.css`
+
+Import Tailwind CSS and declare the theme variables in `src/index.css`:
+
+```css title="src/index.css"
+@import 'tailwindcss';
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+```
+
+</Step>
+
+<Step>
+
+### Initialize Space UI Preset
+
+Run the preset initializer to create `components.json`:
+
+<InstallCommandBlock
+  commands={{
+    pnpm: 'pnpm dlx shadcn@latest init @usespaceui/lib-style',
+    npm: 'npx shadcn@latest init @usespaceui/lib-style',
+    yarn: 'yarn dlx shadcn@latest init @usespaceui/lib-style',
+    bun: 'bunx --bun shadcn@latest init @usespaceui/lib-style',
+  }}
+/>
+
+</Step>
+
+<Step>
+
+### Add Components
+
+Install components into your Vite project:
+
+<InstallCommandBlock isShadcn packages="@usespaceui/button @usespaceui/dialog" />
+
+</Step>
+
+<Step>
+
+### Test in `src/App.tsx`
+
+Import and test your component:
+
+```tsx title="src/App.tsx"
+import { Dialog, DialogTrigger, DialogPopup, DialogTitle, DialogDescription, DialogClose } from '@/components/ui/dialog'
+import { Button } from '@/components/ui/button'
+
+export default function App() {
+  return (
+    <div className="flex min-h-screen flex-col items-center justify-center p-8 bg-background text-foreground">
+      <div className="flex flex-col items-center gap-4 text-center max-w-md">
+        <h1 className="text-3xl font-bold tracking-tight">Space UI + Vite</h1>
+        <p className="text-muted-foreground text-sm">
+          Ultra-fast development with React 19, Tailwind v4, and Motion primitives.
+        </p>
+
+        <Dialog>
+          <DialogTrigger render={<Button variant="primary">Open Dialog</Button>} />
+          <DialogPopup>
+            <DialogTitle>Vite Integration Active</DialogTitle>
+            <DialogDescription>
+              Space UI components are rendered with native physics and Base UI accessibility.
+            </DialogDescription>
+            <div className="flex justify-end gap-2 mt-4">
+              <DialogClose render={<Button variant="secondary">Close</Button>} />
+              <Button variant="primary">Great!</Button>
+            </div>
+          </DialogPopup>
+        </Dialog>
+      </div>
+    </div>
+  )
+}
+```
+
+</Step>
+
+</Steps>

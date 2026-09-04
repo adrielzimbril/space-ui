@@ -1,0 +1,52 @@
+---
+title: Date Picker
+description: Combines a date input box with a popup calendar, letting users pick dates or ranges without navigating away from the form.
+preview: demo-primitives-p-date-picker-1
+---
+
+## Installation
+
+The Date Picker is a composition pattern combining Calendar, Popover, and Button primitives. Install each component:
+
+<ComponentInstallation name="primitives-date-picker" />
+<ComponentInstallation name="primitives-date-picker" />
+<ComponentInstallation name="primitives-date-picker" />
+
+## Usage
+
+```tsx
+import { format } from 'date-fns'
+import { CalendarIcon } from 'lucide-react'
+import { useState } from 'react'
+
+import { Button } from '@/components/ui/button'
+import { Calendar } from '@/components/ui/calendar'
+import { Popover, PopoverPopup, PopoverTrigger } from '@/components/ui/popover'
+
+const [date, setDate] = useState<Date>()
+
+return (
+  <Popover>
+    <PopoverTrigger render={<Button className="w-[280px] justify-start text-left font-normal" variant="outline" />}>
+      <CalendarIcon />
+      {date ? format(date, 'PPP') : <span>Pick a date</span>}
+    </PopoverTrigger>
+    <PopoverPopup align="start" className="w-auto p-0">
+      <Calendar mode="single" selected={date} onSelect={setDate} />
+    </PopoverPopup>
+  </Popover>
+)
+```
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-date-picker-2" description="Date range picker" />
+  <ShowcaseCard name="demo-primitives-p-date-picker-3" description="Date picker with field and dropdown navigation" />
+  <ShowcaseCard name="demo-primitives-p-date-picker-4" description="Date picker with presets" />
+  <ShowcaseCard name="demo-primitives-p-date-picker-5" description="Date picker with input" />
+  <ShowcaseCard name="demo-primitives-p-date-picker-6" description="Date picker that closes on select" />
+  <ShowcaseCard name="demo-primitives-p-date-picker-7" description="Multiple dates picker" />
+  <ShowcaseCard name="demo-primitives-p-date-picker-8" description="Date picker with select-like trigger" />
+  <ShowcaseCard name="demo-primitives-p-date-picker-9" description="Two months calendar with range date" />
+</ShowcaseGrid>

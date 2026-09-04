@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-input-group-7",
+  "title": "Input Group 7",
+  "description": "Input group with end tooltip",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-input-group",
+    "@usespaceui/primitives-popover"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/input-group/p-input-group-7/index.tsx",
+      "content": "'use client'\n\nimport { IconInfoCircle } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'\nimport { Popover, PopoverPopup, PopoverTrigger } from '@/components/ui/popover'\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupInput aria-label=\"Password\" placeholder=\"Password\" type=\"password\" />\n      <InputGroupAddon align=\"inline-end\">\n        <Popover>\n          <PopoverTrigger\n            openOnHover\n            render={<Button aria-label=\"Password requirements\" size=\"icon-xs\" variant=\"ghost\" />}\n          >\n            <IconInfoCircle />\n          </PopoverTrigger>\n          <PopoverPopup side=\"top\" tooltipStyle>\n            <p>Min. 8 characters</p>\n          </PopoverPopup>\n        </Popover>\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-input-group-7.tsx"
+    }
+  ],
+  "categories": [
+    "input group",
+    "tooltip"
+  ],
+  "type": "registry:ui"
+}

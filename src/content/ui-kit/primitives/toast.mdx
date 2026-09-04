@@ -1,0 +1,140 @@
+---
+title: Toast
+description: Displays temporary popup notifications at the corner of the screen to confirm user actions, show progress, or report background updates.
+
+links:
+  doc: https://base-ui.com/react/components/toast#api-reference
+preview: demo-primitives-p-toast-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-toast" />
+
+## Usage
+
+### Stacked Toasts
+
+```tsx
+import { toastManager } from '@/components/ui/toast'
+
+toastManager.add({
+  title: 'Event has been created',
+  description: 'Monday, January 3rd at 6:00pm',
+})
+```
+
+By default, toasts appear in the **bottom-right** corner. You can change this by setting the `position` prop on the `ToastProvider`.
+
+Allowed values: `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right`. For example:
+
+```tsx
+<ToastProvider position="top-center">{children}</ToastProvider>
+```
+
+### Deduplicated toasts (upsert)
+
+Pass a stable `id` when calling `toastManager.add`. If a toast with that `id` already exists, Base UI updates it in place, refreshes the auto-dismiss timer, and increments `updateKey`. The styled toast replays a short re-notify animation on each update.
+
+```tsx
+toastManager.add({
+  id: 'save-status',
+  title: 'Saved',
+  description: 'Your draft was updated.',
+})
+```
+
+<ComponentPreview name="demo-primitives-p-toast-6" />
+
+### Anchored Toasts
+
+For toasts positioned relative to a specific element, use `anchoredToastManager`. The `AnchoredToastProvider` is typically added to your app layout (alongside `ToastProvider`), so you can use `anchoredToastManager` directly in your components:
+
+```tsx
+anchoredToastManager.add({
+  title: 'Copied!',
+  positionerProps: {
+    anchor: buttonRef.current,
+  },
+})
+```
+
+You can also style anchored toasts like tooltips by passing `data: { tooltipStyle: true }`. When using tooltip style, only the `title` is displayed (description and other content are ignored):
+
+```tsx
+anchoredToastManager.add({
+  title: 'Copied!',
+  positionerProps: {
+    anchor: buttonRef.current,
+  },
+  data: {
+    tooltipStyle: true,
+  },
+})
+```
+
+<ComponentPreview name="demo-primitives-p-toast-8" />
+
+## API Reference
+
+### ToastProvider
+
+Provider component for stacked toasts. Wraps `Toast.Provider` from Base UI.
+
+| Prop          | Type                                                                                              | Default          | Description                                                                              |
+| ------------- | ------------------------------------------------------------------------------------------------- | ---------------- | ---------------------------------------------------------------------------------------- |
+| `position`    | `"top-left" \| "top-center" \| "top-right" \| "bottom-left" \| "bottom-center" \| "bottom-right"` | `"bottom-right"` | Position of the toast viewport                                                           |
+| `portalProps` | `Toast.Portal.Props`                                                                              | -                | Props forwarded to the internal portal (`container`, etc.); see Base UI Toast portal API |
+
+### AnchoredToastProvider
+
+Provider component for toasts anchored to specific elements. Use with `anchoredToastManager`.
+
+| Prop          | Type                 | Default | Description                                                                              |
+| ------------- | -------------------- | ------- | ---------------------------------------------------------------------------------------- |
+| `portalProps` | `Toast.Portal.Props` | -       | Props forwarded to the internal portal (`container`, etc.); see Base UI Toast portal API |
+
+### toastManager
+
+Manager object for creating stacked toasts. Use `toastManager.add()` to show a toast. Pass the same `id` on a later `add` to update that toast in place (dedupe) instead of stacking a duplicate.
+
+### anchoredToastManager
+
+Manager object for creating anchored toasts. Use `anchoredToastManager.add()` with `positionerProps.anchor` to show a toast anchored to an element. Repeated `add` calls with the same `id` update in place, same as stacked toasts.
+
+### ToastViewport
+
+Viewport container for toasts. Styled wrapper for `Toast.Viewport` from Base UI.
+
+### Toast
+
+Individual toast container. Styled wrapper for `Toast.Root` from Base UI.
+
+### ToastTitle
+
+Title text for the toast. Styled wrapper for `Toast.Title` from Base UI.
+
+### ToastDescription
+
+Description text for the toast. Styled wrapper for `Toast.Description` from Base UI.
+
+### ToastAction
+
+Action button for the toast. Styled wrapper for `Toast.Action` from Base UI.
+
+### ToastClose
+
+Close button for the toast. Styled wrapper for `Toast.Close` from Base UI.
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-toast-2" description="Stacked toasts with varying content height" />
+  <ShowcaseCard name="demo-primitives-p-toast-3" description="Anchored tooltip-style toast after copy" />
+  <ShowcaseCard name="demo-primitives-p-toast-4" description="Anchored error toast after async failure" />
+  <ShowcaseCard name="demo-primitives-p-toast-5" description="Long-running promise toast with cancel" />
+  <ShowcaseCard name="demo-primitives-p-toast-6" description="Deduplicated success toast" />
+  <ShowcaseCard name="demo-primitives-p-toast-7" description="Deduplicated error toast" />
+  <ShowcaseCard name="demo-primitives-p-toast-8" description="Anchored deduplicated success toast" />
+  <ShowcaseCard name="demo-primitives-p-toast-9" description="Anchored deduplicated error toast" />
+</ShowcaseGrid>

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-event-calendar-nav",
+  "type": "registry:component",
+  "title": "Event Calendar Nav",
+  "description": "Event Calendar Nav component for Space UI.",
+  "dependencies": [
+    "@base-ui/react",
+    "@tabler/icons-react",
+    "date-fns"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-event-calendar",
+    "@usespaceui/components-spaceui-event-calendar-lib",
+    "@usespaceui/components-spaceui-event-calendar-types",
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-calendar",
+    "@usespaceui/primitives-menu",
+    "@usespaceui/primitives-popover",
+    "@usespaceui/primitives-tooltip"
+  ],
+  "categories": [
+    "component",
+    "event-calendar",
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/event-calendar/event-calendar-nav/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/event-calendar-nav.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

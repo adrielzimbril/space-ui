@@ -1,0 +1,29 @@
+---
+title: usePerformanceMode
+description: Battery/CPU low-power mode optimizer.
+preview: demo-hooks-lifecycle-performance-mode-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-lifecycle-use-performance-mode" />
+
+## Usage
+
+```tsx
+import { usePerformanceMode } from '@/hooks/use-performance-mode'
+
+const isEco = usePerformanceMode()
+```
+
+## API Reference
+
+### Parameters / Props
+
+_None_
+
+### Return Value
+
+| Return Type | Description                    |
+| :---------- | :----------------------------- |
+| `boolean`   | True if in eco/low-power mode. |

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-utils-range-map",
+  "title": "range-map",
+  "description": "range-map utility.",
+  "files": [
+    {
+      "path": "src/registry/utils/range-map/index.ts",
+      "content": "export interface RangeMapOptions<T = number> {\n  /** The total number of elements to generate */\n  n: number\n  /** Optional mapping function applied to each index */\n  fn?: (index: number) => T\n}\n\n/**\n * Generates an array of elements by mapping over a range of numbers.\n * Supports both object options `rangeMap({ n: 5, fn: ... })` and direct arguments `rangeMap(5, (i) => ...)`.\n *\n * @template T\n * @param {number | RangeMapOptions<T>} countOrOptions - Number of elements or options object.\n * @param {(index: number) => T} [mapFn] - Optional transformer function for direct argument usage.\n * @returns {T[]} An array of generated elements.\n *\n * @example\n * // Direct usage without typing 'fn:'\n * rangeMap(5);               // => [0, 1, 2, 3, 4]\n * rangeMap(5, (i) => i * 2);  // => [0, 2, 4, 6, 8]\n *\n * // Object option format (original backwards-compatible)\n * rangeMap({ n: 5 });                     // => [0, 1, 2, 3, 4]\n * rangeMap({ n: 5, fn: (i) => 'Item ' + i }); // => ['Item 0', 'Item 1', 'Item 2', 'Item 3', 'Item 4']\n */\nexport function rangeMap<T = number>(countOrOptions: number | RangeMapOptions<T>, mapFn?: (index: number) => T): T[] {\n  let count = 0\n  let transform: ((i: number) => T) | undefined = mapFn\n\n  if (typeof countOrOptions === 'number') {\n    count = countOrOptions\n  } else if (countOrOptions && typeof countOrOptions === 'object') {\n    count = countOrOptions.n\n    transform = countOrOptions.fn\n  }\n\n  const result: T[] = []\n  for (let i = 0; i < count; i++) {\n    result.push(transform ? transform(i) : (i as unknown as T))\n  }\n  return result\n}\n\n/**\n * Convenient alias for generating ranges of arrays.\n *\n * @example\n * range(5);             // => [0, 1, 2, 3, 4]\n * range(5, (i) => i+1); // => [1, 2, 3, 4, 5]\n */\nexport const range = rangeMap\n\n/**\n * Maps a numeric value from an input range [inMin, inMax] to an output range [outMin, outMax].\n *\n * @param {number} value - The input value.\n * @param {number} inMin - The lower bound of the input range.\n * @param {number} inMax - The upper bound of the input range.\n * @param {number} outMin - The lower bound of the output range.\n * @param {number} outMax - The upper bound of the output range.\n * @param {boolean} [clamp=false] - Whether to clamp the output to [outMin, outMax].\n * @returns {number} The interpolated numeric value.\n *\n * @example\n * mapRange(0.5, 0, 1, 0, 100);       // => 50\n * mapRange(150, 0, 100, 0, 1, true); // => 1 (clamped)\n */\nexport function mapRange(\n  value: number,\n  inMin: number,\n  inMax: number,\n  outMin: number,\n  outMax: number,\n  clamp = false,\n): number {\n  if (inMin === inMax) return outMin\n  let result = ((value - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin\n  if (clamp) {\n    const min = Math.min(outMin, outMax)\n    const max = Math.max(outMin, outMax)\n    result = Math.max(min, Math.min(max, result))\n  }\n  return result\n}\n",
+      "type": "registry:lib",
+      "target": "utils/range-map.ts"
+    }
+  ],
+  "categories": [
+    "utils",
+    "range-map"
+  ],
+  "type": "registry:lib"
+}

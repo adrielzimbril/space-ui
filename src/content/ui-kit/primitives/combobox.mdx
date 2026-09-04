@@ -1,0 +1,287 @@
+---
+title: Combobox
+description: Combines a text search input with a dropdown menu, allowing users to filter and select options from large lists easily.
+
+links:
+  doc: https://base-ui.com/react/components/combobox#api-reference
+preview: demo-primitives-p-combobox-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-combobox" />
+
+## Usage
+
+### Single Selection
+
+```tsx
+import {
+  Combobox,
+  ComboboxEmpty,
+  ComboboxInput,
+  ComboboxItem,
+  ComboboxList,
+  ComboboxPopup,
+} from '@/components/ui/combobox'
+
+const items = [
+  { value: "apple", label: "Apple" },
+  { value: "banana", label: "Banana" },
+  { value: "orange", label: "Orange" },
+  { value: "grape", label: "Grape" },
+]
+
+<Combobox items={items}>
+  <ComboboxInput placeholder="Select an item..." />
+  <ComboboxPopup>
+    <ComboboxEmpty>No results found.</ComboboxEmpty>
+    <ComboboxList>
+      {(item) => <ComboboxItem key={item.value} value={item}>{item.label}</ComboboxItem>}
+    </ComboboxList>
+  </ComboboxPopup>
+</Combobox>
+```
+
+## Anatomy
+
+```tsx
+<Combobox>
+  <ComboboxInput />
+  <ComboboxPopup>
+    <ComboboxList>
+      <ComboboxItem />
+      <ComboboxEmpty />
+    </ComboboxList>
+  </ComboboxPopup>
+</Combobox>
+```
+
+### Multiple Selection
+
+```tsx
+import {
+  Combobox,
+  ComboboxChip,
+  ComboboxChips,
+  ComboboxChipsInput,
+  ComboboxEmpty,
+  ComboboxItem,
+  ComboboxList,
+  ComboboxPopup,
+  ComboboxValue,
+} from '@/components/ui/combobox'
+
+const items = [
+  { value: "apple", label: "Apple" },
+  { value: "banana", label: "Banana" },
+  { value: "orange", label: "Orange" },
+  { value: "grape", label: "Grape" },
+]
+
+<Combobox items={items} multiple>
+  <ComboboxChips>
+    <ComboboxValue>
+      {(value: { value: string; label: string }[]) => (
+        <>
+          {value?.map((item) => (
+            <ComboboxChip key={item.value} aria-label={item.value}>
+              {item.label}
+            </ComboboxChip>
+          ))}
+          <ComboboxChipsInput
+            placeholder={value.length > 0 ? undefined : "Select an item..."}
+            aria-label="Select an item"
+          />
+        </>
+      )}
+    </ComboboxValue>
+  </ComboboxChips>
+  <ComboboxPopup>
+    <ComboboxEmpty>No results found.</ComboboxEmpty>
+    <ComboboxList>
+      {(item) => <ComboboxItem value={item}>{item.label}</ComboboxItem>}
+    </ComboboxList>
+  </ComboboxPopup>
+</Combobox>
+```
+
+## Features
+
+### Sizes
+
+Combobox inputs in `sm`, `default`, and `lg` sizes.
+
+<ComponentPreview name="demo-primitives-p-combobox-2" />
+
+## Accessibility
+
+- Follows the [WAI-ARIA Combobox Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/).
+- Search input controls list focus via `aria-activedescendant`.
+
+### Keyboard Interactions
+
+| Key                  | Action                                           |
+| :------------------- | :----------------------------------------------- |
+| <Kbd>ArrowDown</Kbd> | Moves focus to the next matching suggestion.     |
+| <Kbd>ArrowUp</Kbd>   | Moves focus to the previous matching suggestion. |
+| <Kbd>Enter</Kbd>     | Confirms the currently highlighted suggestion.   |
+| <Kbd>Escape</Kbd>    | Closes the suggestion list popup.                |
+
+## API Reference
+
+### Combobox
+
+The root combobox component. Manages the combobox state and provides context to child components.
+
+| Prop       | Type                                    | Description                                   |
+| ---------- | --------------------------------------- | --------------------------------------------- |
+| `items`    | `readonly unknown[]`                    | The array of items to display in the combobox |
+| `multiple` | `boolean`                               | Whether to allow multiple selection           |
+| `open`     | `boolean`                               | Controls whether the popup is open            |
+| `...props` | `React.ComponentProps<typeof Combobox>` | All Base UI Combobox props are supported      |
+
+### ComboboxInput
+
+The input field component for single selection mode with extended features for size variants and addon support.
+
+| Prop           | Type                         | Default     | Description                                                                                     |
+| -------------- | ---------------------------- | ----------- | ----------------------------------------------------------------------------------------------- |
+| `size`         | `"sm" \| "default" \| "lg"`  | `"default"` | The size variant of the input field                                                             |
+| `startAddon`   | `React.ReactNode`            | -           | Element to display at the start (left side) of the input, such as an icon                       |
+| `showTrigger`  | `boolean`                    | `true`      | Whether to display a trigger button (chevron icon) on the right side of the input               |
+| `showClear`    | `boolean`                    | `false`     | Whether to display a clear button (X icon) on the right side of the input when there is a value |
+| `triggerProps` | `Combobox.Trigger.Props`     | -           | Props forwarded to the internal trigger button, useful for overriding `aria-label`              |
+| `clearProps`   | `Combobox.Clear.Props`       | -           | Props forwarded to the internal clear button, useful for overriding `aria-label`                |
+| `className`    | `string`                     | -           | Additional CSS classes to apply to the component                                                |
+| `...props`     | Base UI Combobox Input props | -           | All standard combobox input attributes are supported                                            |
+
+### ComboboxPopup
+
+The popup container that displays the combobox options.
+
+| Prop          | Type                                          | Default    | Description                                                                                                |
+| ------------- | --------------------------------------------- | ---------- | ---------------------------------------------------------------------------------------------------------- |
+| `side`        | `"top" \| "bottom" \| "left" \| "right"`      | `"bottom"` | Preferred edge to position the popup relative to the trigger/input                                         |
+| `sideOffset`  | `number`                                      | `4`        | Distance from the trigger in pixels                                                                        |
+| `align`       | `"start" \| "center" \| "end"`                | `"center"` | Alignment relative to the trigger along the cross-axis                                                     |
+| `alignOffset` | `number`                                      | `0`        | Distance in pixels to shift the popup along the alignment axis                                             |
+| `anchor`      | `Element \| null \| React.RefObject<Element>` | -          | Custom anchor element or ref to anchor the popup against                                                   |
+| `portalProps` | `Combobox.Portal.Props`                       | -          | Props forwarded to the internal portal (`keepMounted`, `container`, etc.); see Base UI Combobox portal API |
+| `className`   | `string`                                      | -          | Additional CSS classes to apply to the component                                                           |
+| `...props`    | Base UI Combobox Popup props                  | -          | All standard combobox popup attributes are supported                                                       |
+
+### ComboboxList
+
+A scrollable container for combobox items.
+
+| Prop        | Type                        | Description                                         |
+| ----------- | --------------------------- | --------------------------------------------------- |
+| `className` | `string`                    | Additional CSS classes to apply to the component    |
+| `...props`  | Base UI Combobox List props | All standard combobox list attributes are supported |
+
+### ComboboxItem
+
+An individual selectable combobox item.
+
+| Prop        | Type                        | Description                                         |
+| ----------- | --------------------------- | --------------------------------------------------- |
+| `value`     | `unknown`                   | The value of the item                               |
+| `className` | `string`                    | Additional CSS classes to apply to the component    |
+| `...props`  | Base UI Combobox Item props | All standard combobox item attributes are supported |
+
+### ComboboxEmpty
+
+Displays a message when no results are found.
+
+| Prop        | Type                         | Description                                          |
+| ----------- | ---------------------------- | ---------------------------------------------------- |
+| `className` | `string`                     | Additional CSS classes to apply to the component     |
+| `...props`  | Base UI Combobox Empty props | All standard combobox empty attributes are supported |
+
+### ComboboxGroup
+
+Groups related combobox items together.
+
+| Prop        | Type                         | Description                                          |
+| ----------- | ---------------------------- | ---------------------------------------------------- |
+| `items`     | `readonly unknown[]`         | The array of items in this group                     |
+| `className` | `string`                     | Additional CSS classes to apply to the component     |
+| `...props`  | Base UI Combobox Group props | All standard combobox group attributes are supported |
+
+### ComboboxGroupLabel
+
+Displays a label for a combobox group.
+
+| Prop        | Type                               | Description                                                |
+| ----------- | ---------------------------------- | ---------------------------------------------------------- |
+| `className` | `string`                           | Additional CSS classes to apply to the component           |
+| `...props`  | Base UI Combobox Group Label props | All standard combobox group label attributes are supported |
+
+### ComboboxCollection
+
+Used to wrap items within a group for rendering.
+
+| Prop       | Type                              | Description                                               |
+| ---------- | --------------------------------- | --------------------------------------------------------- |
+| `...props` | Base UI Combobox Collection props | All standard combobox collection attributes are supported |
+
+### ComboboxChips
+
+Container for displaying selected chips in multiple selection mode.
+
+| Prop         | Type                          | Description                                                   |
+| ------------ | ----------------------------- | ------------------------------------------------------------- |
+| `startAddon` | `React.ReactNode`             | Element to display at the start (left side) of the chips area |
+| `className`  | `string`                      | Additional CSS classes to apply to the component              |
+| `...props`   | `React.ComponentProps<'div'>` | All standard div attributes are supported                     |
+
+### ComboboxChipsInput
+
+The input field component for use inside `ComboboxChips` in multiple selection mode. This is a minimal input without the wrapper, trigger, or clear button.
+
+| Prop        | Type                         | Default     | Description                                          |
+| ----------- | ---------------------------- | ----------- | ---------------------------------------------------- |
+| `size`      | `"sm" \| "default" \| "lg"`  | `"default"` | The size variant of the input field                  |
+| `className` | `string`                     | -           | Additional CSS classes to apply to the component     |
+| `...props`  | Base UI Combobox Input props | -           | All standard combobox input attributes are supported |
+
+### ComboboxChip
+
+An individual chip representing a selected item in multiple selection mode.
+
+| Prop          | Type                        | Description                                                                       |
+| ------------- | --------------------------- | --------------------------------------------------------------------------------- |
+| `removeProps` | `Combobox.ChipRemove.Props` | Props forwarded to the internal remove button, useful for overriding `aria-label` |
+| `className`   | `string`                    | Additional CSS classes to apply to the component                                  |
+| `...props`    | Base UI Combobox Chip props | All standard combobox chip attributes are supported                               |
+
+### ComboboxValue
+
+Provides access to the current value for custom rendering.
+
+| Prop       | Type                         | Description                                          |
+| ---------- | ---------------------------- | ---------------------------------------------------- |
+| `...props` | Base UI Combobox Value props | All standard combobox value attributes are supported |
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-combobox-3" description="Large combobox" />
+  <ShowcaseCard name="demo-primitives-p-combobox-4" description="Combobox with label" />
+  <ShowcaseCard name="demo-primitives-p-combobox-5" description="Combobox auto highlighting the first option" />
+  <ShowcaseCard name="demo-primitives-p-combobox-6" description="Combobox with clear button" />
+  <ShowcaseCard name="demo-primitives-p-combobox-7" description="Combobox with grouped items" />
+  <ShowcaseCard name="demo-primitives-p-combobox-8" description="Combobox with multiple selection" />
+  <ShowcaseCard name="demo-primitives-p-combobox-9" description="Combobox with input inside popup" />
+  <ShowcaseCard name="demo-primitives-p-combobox-10" description="Combobox form" />
+  <ShowcaseCard name="demo-primitives-p-combobox-11" description="Combobox multiple form" />
+  <ShowcaseCard name="demo-primitives-p-combobox-12" description="Combobox with start addon" />
+  <ShowcaseCard name="demo-primitives-p-combobox-13" description="Combobox multiple with start addon" />
+  <ShowcaseCard name="demo-primitives-p-combobox-14" description="Pill-shaped combobox" />
+  <ShowcaseCard name="demo-primitives-p-combobox-15" description="Timezone combobox" />
+  <ShowcaseCard name="demo-primitives-p-combobox-16" description="Timezone combobox with search input" />
+  <ShowcaseCard name="demo-primitives-p-combobox-17" description="Combobox with select trigger" />
+  <ShowcaseCard name="demo-primitives-p-combobox-18" description="Combobox multiple with stacked chips" />
+  <ShowcaseCard name="demo-primitives-p-combobox-19" description="Combobox multiple with stacked divided chips" />
+</ShowcaseGrid>

@@ -1,0 +1,31 @@
+---
+title: useIntersectionObserver
+description: Advanced IntersectionObserver hook.
+preview: demo-hooks-dom-intersection-observer-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-dom-use-intersection-observer" />
+
+## Usage
+
+```tsx
+import { useIntersectionObserver } from '@/hooks/use-intersection-observer'
+
+const [ref, entry] = useIntersectionObserver({ threshold: 0.5 })
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter | Type                       | Default        | Description              |
+| :-------- | :------------------------- | :------------- | :----------------------- |
+| `options` | `IntersectionObserverInit` | `&#123;&#125;` | Native observer options. |
+
+### Return Value
+
+| Return Type                                              | Description    |
+| :------------------------------------------------------- | :------------- |
+| `[RefObject<T>, IntersectionObserverEntry \| undefined]` | Ref and entry. |

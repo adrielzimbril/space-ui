@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-scrollspy",
+  "type": "registry:component",
+  "title": "Scrollspy",
+  "description": "Scrollspy component for Space UI.",
+  "categories": [
+    "component",
+    "scrollspy"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/scrollspy/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/scrollspy.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

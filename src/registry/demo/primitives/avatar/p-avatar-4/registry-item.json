@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-avatar-4",
+  "type": "registry:ui",
+  "title": "Avatar 4",
+  "description": "Avatar with user icon fallback",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-avatar"
+  ],
+  "categories": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/avatar/p-avatar-4/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-avatar-4.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

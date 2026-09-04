@@ -1,0 +1,32 @@
+---
+title: isNegative
+description: Negative numeric verification.
+preview: demo-hooks-utils-is-negative-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-utils-is-negative" />
+
+## Usage
+
+```tsx
+import { isNegative } from '@/utils/is-negative'
+
+isNegative(-5) // true
+isNegative(0) // false
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter | Type     | Default    | Description      |
+| :-------- | :------- | :--------- | :--------------- |
+| `num`     | `number` | _required_ | Number to check. |
+
+### Return Value
+
+| Return Type | Description                |
+| :---------- | :------------------------- |
+| `boolean`   | True if strictly negative. |

@@ -1,0 +1,89 @@
+---
+title: Scroll Area
+description: Replaces standard browser scrollbars with custom, theme-styled scrollbars that appear smoothly when scrolling.
+
+links:
+  doc: https://base-ui.com/react/components/scroll-area#api-reference
+preview: demo-primitives-p-scroll-area-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-scroll-area" />
+
+## Usage
+
+```tsx
+import { ScrollArea } from '@/components/ui/scroll-area'
+```
+
+```tsx
+<ScrollArea className="h-64 rounded-md border">
+  <div className="p-4">
+    Just as suddenly as it had begun, the sensation stopped, leaving Alice feeling slightly disoriented. She looked
+    around and realized that the room hadn't changed at all - it was she who had grown smaller, shrinking down to a
+    fraction of her previous size. Alice felt herself growing larger and larger, filling up the entire room until she
+    feared she might burst. The sensation was both thrilling and terrifying, as if she were expanding beyond the
+    confines of her own body. She wondered if this was what it felt like to be a balloon, swelling with air until it
+    could hold no more.
+  </div>
+</ScrollArea>
+```
+
+## Anatomy
+
+```tsx
+<ScrollArea>
+  <ScrollAreaViewport />
+  <ScrollAreaScrollbar>
+    <ScrollAreaThumb />
+  </ScrollAreaScrollbar>
+</ScrollArea>
+```
+
+## API Reference
+
+### ScrollArea
+
+Root component. Styled wrapper for `ScrollArea.Root` from Base UI with custom scrollbar styling.
+
+| Prop                   | Type      | Default | Description                                                                                                                  |
+| ---------------------- | --------- | ------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `scrollFade`           | `boolean` | `false` | Masks viewport edges so content fades in/out as you scroll                                                                   |
+| `scrollbarGutter`      | `boolean` | `false` | Reserves space for the scrollbar to prevent layout shifts                                                                    |
+| `fill`                 | `boolean` | `false` | Applies `size-full` to the scroll area content wrapper so flex layouts (e.g. `mt-auto` footers) can fill the viewport height |
+| `clampContentMinWidth` | `boolean` | `true`  | Sets `minWidth: 0` on the content wrapper to avoid spurious horizontal scrollbars in vertical layouts                        |
+| `overscrollContain`    | `boolean` | `false` | Prevents scroll chaining into parent scrollers when the viewport overflows                                                   |
+
+### ScrollAreaViewport
+
+Scrollable viewport container. Styled wrapper for `ScrollArea.Viewport` from Base UI.
+
+### ScrollBar
+
+Scrollbar track and thumb wrapper with automatic vertical/horizontal layout. Styled wrapper for `ScrollArea.Scrollbar` from Base UI.
+
+| Prop          | Type                         | Default      | Description                                |
+| ------------- | ---------------------------- | ------------ | ------------------------------------------ |
+| `orientation` | `"vertical" \| "horizontal"` | `"vertical"` | Direction and layout axis of the scrollbar |
+
+### ScrollAreaScrollbar
+
+Scrollbar track. Styled wrapper for `ScrollArea.Scrollbar` from Base UI.
+
+### ScrollAreaThumb
+
+Scrollbar thumb. Styled wrapper for `ScrollArea.Thumb` from Base UI.
+
+### ScrollAreaCorner
+
+Corner element when both scrollbars are visible. Alias for `ScrollArea.Corner` from Base UI.
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-scroll-area-2" description="Horizontal scroll area" />
+  <ShowcaseCard name="demo-primitives-p-scroll-area-3" description="Scroll area with both directions" />
+  <ShowcaseCard name="demo-primitives-p-scroll-area-4" description="Scroll area with fading edges" />
+  <ShowcaseCard name="demo-primitives-p-scroll-area-5" description="Horizontal scroll area with scrollbar gutter" />
+</ShowcaseGrid>

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-lifecycle-use-hold",
+  "title": "useHold",
+  "description": "useHold hook.",
+  "registryDependencies": [
+    "@usespaceui/hooks-utils-event"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/lifecycle/use-hold/index.ts",
+      "content": "'use client'\n\nimport { bindEvent, unbindEvent } from '@/utils/event'\nimport { useCallback, useRef, type MouseEvent, type TouchEvent } from 'react'\n\ntype EventType = MouseEvent | TouchEvent\nconst isTouchEvent = (e: EventType): e is TouchEvent => 'touches' in e\n\nconst preventDefault = (e: EventType) => {\n  if (!isTouchEvent(e)) {\n    return\n  }\n\n  if (e.touches.length < 2 && e.preventDefault) {\n    e.preventDefault()\n  }\n}\n\nexport const useHold = (callback: (e: EventType) => any, { doPreventDefault = true, delay = 1000 } = {}) => {\n  const timeout = useRef<number | undefined>(undefined)\n  const target = useRef<EventTarget | undefined>(undefined)\n\n  const start = useCallback(\n    (event: EventType) => {\n      if (doPreventDefault && event.target) {\n        bindEvent(event.target, 'touchend', preventDefault, { passive: false })\n        target.current = event.target\n      }\n\n      timeout.current = setTimeout(() => callback(event), delay) as unknown as number\n    },\n    [callback, delay, doPreventDefault],\n  )\n\n  const clear = useCallback(() => {\n    timeout.current && clearTimeout(timeout.current)\n\n    if (doPreventDefault && target.current) {\n      unbindEvent(target.current, 'touchend', preventDefault)\n    }\n  }, [doPreventDefault])\n\n  return {\n    onMouseDown: (e: MouseEvent) => start(e),\n    onTouchStart: (e: TouchEvent) => start(e),\n    onMouseUp: clear,\n    onMouseLeave: clear,\n    onTouchEnd: clear,\n  }\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-hold.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "hold"
+  ],
+  "type": "registry:hook"
+}

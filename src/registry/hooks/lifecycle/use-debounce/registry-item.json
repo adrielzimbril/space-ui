@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-lifecycle-use-debounce",
+  "type": "registry:hook",
+  "title": "useDebounce",
+  "description": "useDebounce hook.",
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "debounce"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/lifecycle/use-debounce/index.ts",
+      "type": "registry:hook",
+      "target": "hooks/use-debounce.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

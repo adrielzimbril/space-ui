@@ -1,0 +1,189 @@
+---
+title: Select
+description: Allows users to pick one or more options from a collapsible dropdown menu, keeping forms compact and easy to navigate.
+
+links:
+  doc: https://base-ui.com/react/components/select#api-reference
+preview: demo-primitives-p-select-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-select" />
+
+## Usage
+
+```tsx
+import { Select, SelectItem, SelectPopup, SelectLabel, SelectTrigger, SelectValue } from '@/components/ui/select'
+
+const items = [
+  { label: "Select framework", value: null },
+  { label: "Next.js", value: "next" },
+  { label: "Vite", value: "vite" },
+  { label: "Astro", value: "astro" },
+]
+
+<Select items={items}>
+  <SelectTrigger>
+    <SelectValue />
+  </SelectTrigger>
+  <SelectPopup>
+    <SelectLabel>Frameworks</SelectLabel>
+    {items.map((item) => (
+      <SelectItem key={item.value} value={item}>
+        {item.label}
+      </SelectItem>
+    ))}
+  </SelectPopup>
+  </Select>
+```
+
+## Anatomy
+
+```tsx
+<Select>
+  <SelectTrigger>
+    <SelectValue />
+  </SelectTrigger>
+  <SelectPopup>
+    <SelectList>
+      <SelectGroup>
+        <SelectGroupLabel />
+        <SelectItem />
+      </SelectGroup>
+    </SelectList>
+  </SelectPopup>
+</Select>
+```
+
+## Features
+
+### Sizes
+
+Select triggers in `sm`, `default`, and `lg` sizes.
+
+<ComponentPreview name="demo-primitives-p-select-2" />
+
+## Accessibility
+
+- Adheres to the [WAI-ARIA Combobox / Select Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/).
+- Supports quick typeahead navigation to jump directly to options by typing.
+
+### Keyboard Interactions
+
+| Key                                 | Action                                                  |
+| :---------------------------------- | :------------------------------------------------------ |
+| <Kbd>Space</Kbd> / <Kbd>Enter</Kbd> | Opens the select dropdown or selects the active option. |
+| <Kbd>ArrowDown</Kbd>                | Moves highlight to the next item.                       |
+| <Kbd>ArrowUp</Kbd>                  | Moves highlight to the previous item.                   |
+| <Kbd>Escape</Kbd>                   | Closes the dropdown without making a selection.         |
+
+### Disabled State
+
+Select component rendered in a disabled state via `disabled`.
+
+<ComponentPreview name="demo-primitives-p-select-3" />
+
+### Disabled Items
+
+Select containing individual disabled option items.
+
+<ComponentPreview name="demo-primitives-p-select-11" />
+
+## API Reference
+
+### Select
+
+Root component. Alias for `Select.Root` from Base UI.
+
+### SelectTrigger
+
+Trigger button that opens the select dropdown. Styled wrapper for `Select.Trigger` from Base UI.
+
+| Prop   | Type                        | Default     | Description                      |
+| ------ | --------------------------- | ----------- | -------------------------------- |
+| `size` | `"sm" \| "default" \| "lg"` | `"default"` | Controls the size of the trigger |
+
+### SelectValue
+
+Displays the selected value. Styled wrapper for `Select.Value` from Base UI.
+
+### SelectPopup
+
+Popup container for select options. Also exported as `SelectContent`.
+
+| Prop                   | Type                                          | Default    | Description                                                                                              |
+| ---------------------- | --------------------------------------------- | ---------- | -------------------------------------------------------------------------------------------------------- |
+| `showIcon`             | `boolean`                                     | `true`     | Controls whether checkmark indicators are displayed next to items                                        |
+| `side`                 | `"top" \| "bottom" \| "left" \| "right"`      | `"bottom"` | Preferred edge to position the popup relative to the trigger                                             |
+| `sideOffset`           | `number`                                      | `4`        | Distance from the trigger in pixels                                                                      |
+| `align`                | `"start" \| "center" \| "end"`                | `"start"`  | Alignment relative to the trigger along the cross-axis                                                   |
+| `alignOffset`          | `number`                                      | `0`        | Distance in pixels to shift the popup along the alignment axis                                           |
+| `alignItemWithTrigger` | `boolean`                                     | `true`     | Aligns the selected item with the trigger                                                                |
+| `anchor`               | `Element \| null \| React.RefObject<Element>` | -          | Custom anchor element or ref to anchor the popup against                                                 |
+| `portalProps`          | `Select.Portal.Props`                         | -          | Props forwarded to the internal portal (`keepMounted`, `container`, etc.); see Base UI Select portal API |
+
+### SelectItem
+
+Individual select option. Styled wrapper for `Select.Item` from Base UI with built-in indicator.
+
+| Prop       | Type      | Default | Description                                               |
+| ---------- | --------- | ------- | --------------------------------------------------------- |
+| `showIcon` | `boolean` | `true`  | Overrides popup showIcon setting for this individual item |
+
+### SelectGroup
+
+Groups related select items. Alias for `Select.Group` from Base UI.
+
+### SelectLabel
+
+Label for all options in the popup. Styled wrapper for `Select.Label` from Base UI. Clicking it focuses the select trigger without opening the popup.
+
+### SelectGroupLabel
+
+Label for a select group. Styled wrapper for `Select.GroupLabel` from Base UI.
+
+### SelectSeparator
+
+Visual separator between items. Styled wrapper for `Select.Separator` from Base UI.
+
+### SelectButton
+
+A standalone button styled like a `SelectTrigger`. Use it as a `render` prop on other trigger components (e.g., `ComboboxTrigger`, `MenuTrigger`) to give them select-like appearance.
+
+| Prop   | Type                        | Default     | Description                     |
+| ------ | --------------------------- | ----------- | ------------------------------- |
+| `size` | `"sm" \| "default" \| "lg"` | `"default"` | Controls the size of the button |
+
+```tsx
+import { SelectButton } from '@/components/ui/select'
+```
+
+```tsx
+<ComboboxTrigger render={<SelectButton />}>
+  <ComboboxValue placeholder="Select a fruit" />
+</ComboboxTrigger>
+```
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-select-4" description="Select without item alignment" />
+  <ShowcaseCard name="demo-primitives-p-select-5" description="Select with groups" />
+  <ShowcaseCard name="demo-primitives-p-select-6" description="Multiple select" />
+  <ShowcaseCard name="demo-primitives-p-select-7" description="Select with icon" />
+  <ShowcaseCard name="demo-primitives-p-select-8" description="Select options with icon" />
+  <ShowcaseCard name="demo-primitives-p-select-9" description="Select with object values" />
+  <ShowcaseCard name="demo-primitives-p-select-10" description="Select in form" />
+  <ShowcaseCard name="demo-primitives-p-select-12" description="Timezone select" />
+  <ShowcaseCard name="demo-primitives-p-select-13" description="Status select with colored dot" />
+  <ShowcaseCard name="demo-primitives-p-select-14" description="Pill-shaped select trigger" />
+  <ShowcaseCard name="demo-primitives-p-select-15" description="Select with left text label" />
+  <ShowcaseCard name="demo-primitives-p-select-16" description="Select with country flags" />
+  <ShowcaseCard name="demo-primitives-p-select-17" description="Select with description in options only" />
+  <ShowcaseCard name="demo-primitives-p-select-18" description="Select with avatars" />
+  <ShowcaseCard name="demo-primitives-p-select-19" description="Rich select with avatars and usernames" />
+  <ShowcaseCard name="demo-primitives-p-select-20" description="Auto width select" />
+  <ShowcaseCard name="demo-primitives-p-select-21" description="Select with custom border and background" />
+  <ShowcaseCard name="demo-primitives-p-select-22" description="Select with label" />
+</ShowcaseGrid>

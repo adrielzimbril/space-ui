@@ -1,0 +1,122 @@
+---
+title: Button
+description: Allows users to trigger actions, submit forms, or navigate with a single click, providing clear visual feedback and hover effects.
+links:
+  doc: https://base-ui.com/react/components/button#api-reference
+preview:
+  name: demo-primitives-p-button-1
+  contained: false
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-button" />
+
+## Usage
+
+```tsx
+import { Button } from '@/components/ui/button'
+```
+
+```tsx
+<Button>Button</Button>
+```
+
+## Link
+
+You can use the [`render`](https://base-ui.com/react/utils/use-render#migrating-from-radix-ui) prop to render another element (like Next.js `Link` or React Router) with button styles.
+
+```tsx
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+
+export function LinkAsButton() {
+  return <Button render={<Link href="/login" />}>Login</Button>
+}
+```
+
+## Features
+
+### Variants
+
+All available button variants in one overview: `default`, `secondary`, `outline`, `ghost`, `destructive`, `destructive-outline`, `link`.
+
+<ComponentPreview name="demo-primitives-p-button-1" />
+
+### Sizes
+
+Standard sizing options: `xs`, `sm`, `default`, `lg`, `xl`.
+
+<ComponentPreview name="demo-primitives-p-button-2" />
+
+### Icon Sizes
+
+Square button sizes designed specifically for single icons: `icon-xs`, `icon-sm`, `icon`, `icon-lg`, `icon-xl`.
+
+<ComponentPreview name="demo-primitives-p-button-4" />
+
+### Loading State
+
+Support for native loading spinners via the `loading` prop.
+
+<ComponentPreview name="demo-primitives-p-button-29" />
+
+### Disabled
+
+Button rendered in a disabled state via the `disabled` prop.
+
+<ComponentPreview name="demo-primitives-p-button-3" />
+
+### With Icon
+
+<ComponentPreview name="demo-primitives-p-button-5" />
+
+### Link as Button
+
+<ComponentPreview name="demo-primitives-p-button-6" />
+
+## API Reference
+
+### Button Props
+
+| Prop       | Type                                                                                                      | Default     | Description                                           |
+| :--------- | :-------------------------------------------------------------------------------------------------------- | :---------- | :---------------------------------------------------- |
+| `variant`  | `"default" \| "destructive" \| "destructive-outline" \| "ghost" \| "link" \| "outline" \| "secondary"`    | `"default"` | Controls the button visual style                      |
+| `size`     | `"default" \| "icon" \| "icon-lg" \| "icon-sm" \| "icon-xl" \| "icon-xs" \| "lg" \| "sm" \| "xl" \| "xs"` | `"default"` | Controls the button size                              |
+| `loading`  | `boolean`                                                                                                 | `false`     | Shows a spinner and disables the button while loading |
+| `disabled` | `boolean`                                                                                                 | `false`     | Disables pointer interactions and dims appearance     |
+| `render`   | `React.ReactElement`                                                                                      | -           | Polymorphic render prop (e.g. Next.js Link)           |
+
+When `loading` is `true`, the component:
+
+- Renders a spinner (`data-slot="button-loading-indicator"`)
+- Adds `data-loading` on the button root
+- Disables interaction and sets `aria-disabled="true"`
+- Preserves button layout without jumping
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-button-7" description="Custom loading button with manual Spinner" />
+  <ShowcaseCard name="demo-primitives-p-button-8" description="Expandable show more/less toggle button" />
+  <ShowcaseCard name="demo-primitives-p-button-9" description="Back link button with chevron" />
+  <ShowcaseCard name="demo-primitives-p-button-10" description="Card-style button with heading and description" />
+  <ShowcaseCard name="demo-primitives-p-button-11" description="Directional pad control buttons" />
+  <ShowcaseCard name="demo-primitives-p-button-12" description="Outline like button with count" />
+  <ShowcaseCard name="demo-primitives-p-button-13" description="Social login icon buttons" />
+  <ShowcaseCard name="demo-primitives-p-button-14" description="Star button with count badge" />
+  <ShowcaseCard name="demo-primitives-p-button-15" description="Button group with QR code icon and sign in" />
+  <ShowcaseCard name="demo-primitives-p-button-16" description="Button with avatar" />
+  <ShowcaseCard name="demo-primitives-p-button-17" description="Pill-shaped button with rounded-full styling" />
+  <ShowcaseCard name="demo-primitives-p-button-18" description="Button with animated arrow on hover" />
+  <ShowcaseCard name="demo-primitives-p-button-19" description="Button with keyboard shortcut indicator" />
+  <ShowcaseCard name="demo-primitives-p-button-20" description="Button with notification badge" />
+  <ShowcaseCard name="demo-primitives-p-button-21" description="Paired buttons (Cancel/Save)" />
+  <ShowcaseCard name="demo-primitives-p-button-22" description="Button with animated status dot" />
+  <ShowcaseCard name="demo-primitives-p-button-23" description="Icon-only copy button with feedback" />
+  <ShowcaseCard name="demo-primitives-p-button-24" description="Copy button with feedback" />
+  <ShowcaseCard name="demo-primitives-p-button-25" description="Rotating icon button (FAB-style toggle)" />
+  <ShowcaseCard name="demo-primitives-p-button-26" description="Social login buttons (Google, X, GitHub)" />
+  <ShowcaseCard name="demo-primitives-p-button-27" description="Hamburger menu button with animated icon" />
+  <ShowcaseCard name="demo-primitives-p-button-28" description="Download button with progress and cancel action" />
+</ShowcaseGrid>

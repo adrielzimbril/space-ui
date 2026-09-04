@@ -1,0 +1,44 @@
+---
+title: Bouncy Accordion
+description: Spring accordion that splits rounded rows when a panel opens.
+preview:
+  name: demo-components-spaceui-c-bouncy-accordion-1
+  contained: false
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-bouncy-accordion" />
+
+## Usage
+
+```tsx
+import { BouncyAccordion } from '@/components/spaceui/bouncy-accordion'
+
+;<BouncyAccordion
+  items={[
+    { title: 'Families', description: 'Pick a variant.' },
+    { title: 'Capabilities', description: 'Inspect supported effects.' },
+  ]}
+/>
+```
+
+## API Reference
+
+### BouncyAccordion
+
+| Prop            | Type                      | Default | Description            |
+| --------------- | ------------------------- | ------- | ---------------------- |
+| `items`         | `BouncyAccordionItem[]`   | —       | Rows to render         |
+| `defaultValue`  | `number \| null`          | `0`     | Initially open index   |
+| `value`         | `number \| null`          | —       | Controlled open index  |
+| `onValueChange` | `(index: number \| null)` | —       | Fired when a row opens |
+| `className`     | `string`                  | —       | Root class             |
+
+### BouncyAccordionItem
+
+| Prop          | Type        | Default | Description      |
+| ------------- | ----------- | ------- | ---------------- |
+| `icon`        | `ReactNode` | —       | Optional leading |
+| `title`       | `string`    | —       | Trigger label    |
+| `description` | `ReactNode` | —       | Open panel body  |

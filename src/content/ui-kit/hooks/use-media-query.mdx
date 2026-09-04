@@ -1,0 +1,31 @@
+---
+title: useMediaQuery
+description: Evaluates CSS media queries with useSyncExternalStore for zero layout shift.
+preview: demo-hooks-browser-media-query-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-browser-use-media-query" />
+
+## Usage
+
+```tsx
+import { useMediaQuery } from '@/hooks/use-media-query'
+
+const isMobile = useMediaQuery('(max-width: 640px)')
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter | Type     | Default    | Description             |
+| :-------- | :------- | :--------- | :---------------------- |
+| `query`   | `string` | _required_ | CSS media query string. |
+
+### Return Value
+
+| Return Type | Description            |
+| :---------- | :--------------------- |
+| `boolean`   | True if query matches. |

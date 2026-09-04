@@ -1,0 +1,119 @@
+---
+title: Navigation Menu
+description: Organizes primary website navigation into top-level links with rich dropdown preview cards for exploring main sections.
+
+links:
+  doc: https://base-ui.com/react/components/navigation-menu
+preview: demo-primitives-p-navigation-menu-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-navigation-menu" />
+
+## Usage
+
+```tsx
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuTrigger,
+  NavigationMenuContent,
+  NavigationMenuPortal,
+  NavigationMenuPositioner,
+  NavigationMenuPopup,
+  NavigationMenuViewport,
+  NavigationMenuLink,
+} from '@/components/ui/navigation-menu'
+```
+
+```tsx
+<NavigationMenu>
+  <NavigationMenuList>
+    <NavigationMenuItem value="item-1">
+      <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
+      <NavigationMenuContent>
+        <NavigationMenuLink href="/docs">Documentation</NavigationMenuLink>
+      </NavigationMenuContent>
+    </NavigationMenuItem>
+    <NavigationMenuItem>
+      <NavigationMenuLink href="/pricing">Pricing</NavigationMenuLink>
+    </NavigationMenuItem>
+  </NavigationMenuList>
+
+  <NavigationMenuPortal>
+    <NavigationMenuPositioner sideOffset={8}>
+      <NavigationMenuPopup>
+        <NavigationMenuViewport />
+      </NavigationMenuPopup>
+    </NavigationMenuPositioner>
+  </NavigationMenuPortal>
+</NavigationMenu>
+```
+
+## Anatomy
+
+```tsx
+<NavigationMenu>
+  <NavigationMenuList>
+    <NavigationMenuItem>
+      <NavigationMenuTrigger />
+      <NavigationMenuContent />
+    </NavigationMenuItem>
+  </NavigationMenuList>
+</NavigationMenu>
+```
+
+## Accessibility
+
+- Follows the [WAI-ARIA Navigation Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/menubar/).
+
+### Keyboard Interactions
+
+| Key               | Action                                             |
+| :---------------- | :------------------------------------------------- |
+| <Kbd>Tab</Kbd>    | Moves focus through navigation triggers and links. |
+| <Kbd>Escape</Kbd> | Closes the active flyout content panel.            |
+
+## API Reference
+
+### NavigationMenu
+
+The root container element for navigation items. Wrapper for `NavigationMenu.Root` from Base UI.
+
+### NavigationMenuList
+
+The unordered list containing the navigation menu items. Wrapper for `NavigationMenu.List`.
+
+### NavigationMenuItem
+
+An individual item within the navigation menu list. Accepts a `value` identifier when it has associated dropdown content.
+
+### NavigationMenuTrigger
+
+Interactive trigger button that toggles and switches open submenus on hover/focus.
+
+### NavigationMenuContent
+
+The rich content container rendered inside the shared animated popup.
+
+### NavigationMenuPortal / NavigationMenuPositioner / NavigationMenuPopup
+
+Portal, positioning, and popup wrappers for floating dropdown panels. `NavigationMenuPositioner` accepts `sideOffset?: number` (default `8`) and `align?: "start" | "center" | "end"`.
+
+### NavigationMenuViewport
+
+The clipping viewport that smoothly transitions dimensions between open menus.
+
+### NavigationMenuLink
+
+Navigation link item rendered inside menus or top-level navigation lists.
+
+### NavigationMenuArrow / NavigationMenuBackdrop
+
+Arrow indicator pointing to the active trigger, and optional background backdrop overlay.
+
+### navigationMenuTriggerStyle
+
+Utility helper that generates standard trigger classes for standalone navigation links.

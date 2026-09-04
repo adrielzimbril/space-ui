@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-browser-cookie-listener-1",
+  "title": "useCookieListener",
+  "description": "Real-time cookie change observer",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-browser-use-cookie-listener",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/browser/cookie-listener/h-cookie-listener-1/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { useCookieListener } from '@/hooks/use-cookie-listener'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Badge } from '@/components/ui/badge'\nimport { IconCookie } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const cookies = useCookieListener(1000)\n  const latestValue = cookies?.['space_pref'] as string | undefined\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconCookie className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Listener</span>\n        </div>\n        <Badge variant={latestValue ? 'success' : 'outline'} size=\"sm\">\n          {latestValue ?? 'Listening'}\n        </Badge>\n      </div>\n      <CardPanel className=\"grid grid-cols-2 gap-2 rounded-[0.875rem] bg-background p-3\">\n        <div className=\"rounded-lg bg-muted p-2.5\">\n          <span className=\"block text-[.6875rem] font-semibold text-muted-foreground\">Key</span>\n          <span className=\"mt-0.5 block truncate font-mono text-sm font-semibold text-foreground\">space_pref</span>\n        </div>\n        <div className=\"rounded-lg bg-muted p-2.5\">\n          <span className=\"block text-[.6875rem] font-semibold text-muted-foreground\">Poll</span>\n          <span className=\"mt-0.5 block font-mono text-sm font-semibold tabular-nums text-foreground\">1000ms</span>\n        </div>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-cookie-listener-1.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "cookie-listener"
+  ],
+  "type": "registry:hook"
+}

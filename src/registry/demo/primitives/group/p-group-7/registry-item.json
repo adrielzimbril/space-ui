@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-group-7",
+  "type": "registry:ui",
+  "title": "Group 7",
+  "description": "Group with start text",
+  "registryDependencies": [
+    "@usespaceui/primitives-group",
+    "@usespaceui/primitives-input",
+    "@usespaceui/primitives-label"
+  ],
+  "categories": [
+    "group"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/group/p-group-7/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-group-7.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

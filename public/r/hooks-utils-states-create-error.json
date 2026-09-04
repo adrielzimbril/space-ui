@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-utils-states-create-error",
+  "title": "create-error",
+  "description": "create-error state utility.",
+  "files": [
+    {
+      "path": "src/registry/utils/states/create-error/index.ts",
+      "content": "/**\n * Options for creating a normalized error.\n */\nexport interface CreateErrorOptions {\n  statusCode?: number\n  statusMessage?: string\n  message?: string\n  fatal?: boolean\n  data?: unknown\n  cause?: unknown\n  stack?: string\n}\n\nexport type CreateErrorInput = string | (CreateErrorOptions & Record<string, unknown>)\n\n/**\n * A specialized error type that extends the native `Error` object\n */\nexport class NormalizedError extends Error {\n  statusCode: number\n  statusMessage?: string\n  fatal?: boolean\n  data?: unknown\n  cause?: unknown\n\n  constructor(opts: CreateErrorOptions) {\n    super(opts.message || 'An unexpected error occurred')\n    Object.setPrototypeOf(this, new.target.prototype)\n\n    this.statusCode = opts.statusCode ?? 500\n    this.statusMessage = opts.statusMessage\n    this.fatal = opts.fatal\n    this.data = opts.data\n    this.cause = opts.cause\n    this.message = opts.message || 'An unexpected error occurred'\n\n    if (opts.stack) {\n      this.stack = opts.stack\n    } else if (Error.captureStackTrace) {\n      Error.captureStackTrace(this, this.constructor)\n    }\n  }\n}\n\ninterface DefaultErrorMap {\n  [key: string]: CreateErrorOptions\n}\n\nconst defaultErrors = {\n  BAD_REQUEST: { statusCode: 400, statusMessage: 'Bad Request' },\n  UNAUTHORIZED: { statusCode: 401, statusMessage: 'Unauthorized' },\n  FORBIDDEN: { statusCode: 403, statusMessage: 'Forbidden' },\n  NOT_FOUND: { statusCode: 404, statusMessage: 'Not Found' },\n  INTERNAL_ERROR: { statusCode: 500, statusMessage: 'Internal Server Error' },\n} satisfies DefaultErrorMap\n\ntype KeyOfDefaultErrors = keyof typeof defaultErrors\n\n/**\n * Creates a normalized error\n *\n * @param input - The input to create the error from\n * @param overrides - Optional overrides for the error options\n *\n * @example\n * const error = createError(\"BAD_REQUEST\", { message: \"Custom message\" });\n * // returns a normalized error with status code 400\n */\nexport function createError(\n  input: KeyOfDefaultErrors | string | CreateErrorOptions,\n  overrides?: CreateErrorOptions,\n): NormalizedError {\n  // If input is a string, check if it matches a default error key\n  if (typeof input === 'string') {\n    if (input in defaultErrors) {\n      // Narrow input to KeyOfDefaultErrors for indexing\n      const combinedOptions = {\n        ...defaultErrors[input as KeyOfDefaultErrors],\n        ...overrides,\n      }\n      return new NormalizedError(combinedOptions)\n    }\n\n    // Otherwise treat input as the error message\n    return new NormalizedError({\n      ...overrides,\n      message: input,\n      statusCode: overrides?.statusCode ?? 500,\n    })\n  }\n\n  // If input is an object (CreateErrorOptions)\n  return new NormalizedError(input)\n}\n",
+      "type": "registry:lib",
+      "target": "utils/states/create-error.ts"
+    }
+  ],
+  "categories": [
+    "utils",
+    "create-error"
+  ],
+  "type": "registry:lib"
+}

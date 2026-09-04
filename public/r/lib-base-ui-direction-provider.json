@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lib-base-ui-direction-provider",
+  "title": "Direction Provider",
+  "description": "Utility and configuration helper for Direction Provider.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "files": [
+    {
+      "path": "src/registry/lib/base-ui/direction-provider/index.ts",
+      "content": "export { DirectionProvider, useDirection } from '@base-ui/react/direction-provider'\n",
+      "type": "registry:lib",
+      "target": "lib/base-ui/direction-provider.ts"
+    }
+  ],
+  "categories": [
+    "base-ui"
+  ],
+  "type": "registry:lib"
+}

@@ -1,0 +1,170 @@
+---
+title: Typography
+description: Responsive type scale, font variables, heading hierarchy, optical line-heights, and interactive typography specs.
+---
+
+## Overview
+
+Space UI typography is built on the principles of **restraint, precision, and responsive scalability**. Rather than arbitrary one-off font sizes, the system uses a mathematically grounded type scale with descending heading levels, optical line-heights, and dedicated tokens for body and interface controls.
+
+The design system is powered by three primary font CSS variables:
+
+- `--font-sans`: Default body text, menus, inputs, tables, and dialogs.
+- `--font-heading`: Display titles, page headers, modal titles, and section headlines.
+- `--font-mono`: Codeblocks, keyboard shortcuts (`<Kbd />`), status badges, and tabular values.
+
+---
+
+## Text Playground
+
+Test how headings, body paragraphs, blockquotes, lists, and interactive accordion widgets respond across different screen sizes and typeface configurations.
+
+<TypographyPlayground />
+
+---
+
+## Heading Font Specs
+
+Headings feature tight, optical line-heights (`1.10–1.35`) and proportional negative letter-spacing (tracking) to produce dense, punchy titles that balance neatly across lines.
+
+<HeadingSpecs />
+
+---
+
+## Body & UI Font Specs
+
+Body and interface typography is calibrated for maximum legibility at high reading speeds. Line-heights are relaxed (`1.40–1.60`) to provide comfortable vertical rhythm.
+
+<BodySpecs />
+
+---
+
+## Type Scale Reference
+
+A quick-reference matrix mapping typographic roles to rem/pixel sizes, line-heights, weights, tracking, and Tailwind CSS v4 utility classes:
+
+| Role                    | Size (Desktop)   | Line Height | Weight                        | Tracking | Tailwind v4            | Description                                    |
+| :---------------------- | :--------------- | :---------- | :---------------------------- | :------- | :--------------------- | :--------------------------------------------- |
+| **H1 Title**            | 64px / 4.0rem    | 72px / 1.12 | SemiBold / 600                | -0.025em | `text-5xl lg:text-6xl` | Display hero headlines & major page titles     |
+| **H2 Section**          | 48px / 3.0rem    | 56px / 1.16 | SemiBold / 600                | -0.020em | `text-4xl lg:text-5xl` | Main content sections & feature headings       |
+| **H3 Subsection**       | 36px / 2.25rem   | 44px / 1.22 | SemiBold / 600                | -0.015em | `text-3xl`             | Subsections & card headers                     |
+| **H4 Card Title**       | 28px / 1.75rem   | 36px / 1.28 | SemiBold / 600                | -0.010em | `text-2xl`             | Panel titles, dialog headers, modal titles     |
+| **H5 Subhead**          | 22px / 1.375rem  | 30px / 1.36 | SemiBold / 600                | -0.005em | `text-xl`              | Feature group titles & small card headings     |
+| **H6 Group Header**     | 18px / 1.125rem  | 26px / 1.44 | SemiBold / 600                | 0em      | `text-lg`              | List section titles & sub-labels               |
+| **Body Large**          | 18px / 1.125rem  | 28px / 1.55 | Regular / 400 • Medium / 500  | -0.005em | `text-lg`              | Lead paragraphs & hero descriptions            |
+| **Body Base**           | 16px / 1.0rem    | 24px / 1.50 | Regular / 400 • Medium / 500  | -0.005em | `text-base`            | Default documentation copy & blog paragraphs   |
+| **UI Small / Controls** | 14px / 0.875rem  | 20px / 1.43 | Regular / 400 • Medium / 500  | 0em      | `text-sm`              | Buttons, form controls, table cells, dropdowns |
+| **Subtext / Caption**   | 13px / 0.8125rem | 18px / 1.38 | Regular / 400 • Medium / 500  | 0em      | `text-[13px]`          | Helper texts, breadcrumbs, timestamp strings   |
+| **Badge / Micro**       | 12px / 0.75rem   | 16px / 1.33 | Medium / 500 • SemiBold / 600 | +0.010em | `text-xs`              | Keyboard shortcuts, status badges, micro tags  |
+
+---
+
+## Typographic Principles
+
+When styling components or long-form documentation, follow these core guidelines:
+
+### 1. Line-Height by Role
+
+- **Headings**: Keep line-height tight (around `1.10–1.25`) so multiline headlines read as cohesive units.
+- **Body & Paragraphs**: Use generous line-height (`1.50–1.60`) so the eye easily transitions to the next line.
+- **Single-line Controls**: Use `leading-none` or `leading-normal` with centered flex alignment.
+
+### 2. Cap the Measure (Line Length)
+
+Unbounded paragraph widths fatigue the reader. Cap long-form reading copy around **60–75 characters per line** using `max-w-[65ch]` or `max-w-2xl`.
+
+### 3. Deliberate Text Wrapping
+
+- Apply `text-wrap: balance` on headings and card titles to distribute line lengths evenly.
+- Apply `text-wrap: pretty` on lead paragraphs and descriptions to prevent single-word orphans on the final line.
+
+### 4. Tabular Numbers on Changing Values
+
+Proportional digits have variable widths, causing layout jitter when counters, prices, or timers tick. Use `font-variant-numeric: tabular-nums` (Tailwind `tabular-nums`) for dynamic numeric values:
+
+```tsx
+<span className="font-mono tabular-nums text-foreground">${price.toFixed(2)}</span>
+```
+
+### 5. iOS Mobile Input 16px Rule
+
+iOS Safari automatically zooms the viewport if a form input has a font size smaller than `16px`. Always start mobile inputs at `16px` and scale down on larger viewports:
+
+```tsx
+<input className="text-base sm:text-sm" />
+```
+
+---
+
+## Configuration & Custom Fonts
+
+### 1. Setup with `next/font` (Next.js)
+
+Configure Google Fonts or local variable fonts in your root layout:
+
+```tsx title="app/layout.tsx"
+import { Inter, Geist, JetBrains_Mono } from 'next/font/google'
+import '@/styles/globals.css'
+
+const fontSans = Inter({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  display: 'swap',
+})
+
+const fontHeading = Geist({
+  subsets: ['latin'],
+  variable: '--font-heading',
+  display: 'swap',
+})
+
+const fontMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
+})
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html
+      lang="en"
+      className={`${fontSans.variable} ${fontHeading.variable} ${fontMono.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="font-sans antialiased bg-background text-foreground">{children}</body>
+    </html>
+  )
+}
+```
+
+### 2. Tailwind CSS v4 Theme Integration
+
+In Tailwind CSS v4, map your font variables inside `@theme` in `globals.css`:
+
+```css title="app/globals.css"
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: var(--font-heading), var(--font-sans), system-ui, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    text-wrap: balance;
+  }
+}
+```

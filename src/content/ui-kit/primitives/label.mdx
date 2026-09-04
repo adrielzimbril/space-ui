@@ -1,0 +1,39 @@
+---
+title: Label
+description: Provides an accessible text caption for form controls that focuses the corresponding input when clicked.
+preview: demo-primitives-p-input-6
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-label" />
+
+## Usage
+
+```tsx
+import { Label } from '@/components/ui/label'
+```
+
+```tsx
+<Label htmlFor="email">Email</Label>
+```
+
+## API Reference
+
+This is a custom component using Base UI's `useRender` hook, not a direct Base UI wrapper.
+
+### Label
+
+A label component that can be rendered as different elements.
+
+| Prop     | Type                 | Default | Description                   |
+| -------- | -------------------- | ------- | ----------------------------- |
+| `render` | `React.ReactElement` | -       | Render as a different element |
+
+## Examples
+
+For accessible labelling and validation, prefer using the `FieldLabel` component. See some [related examples](/ui-kit/primitives/field).
+
+### With Checkbox
+
+<ComponentPreview name="demo-primitives-p-checkbox-1" />

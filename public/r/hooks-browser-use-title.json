@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-browser-use-title",
+  "title": "useTitle",
+  "description": "useTitle hook.",
+  "registryDependencies": [
+    "@usespaceui/hooks-lifecycle-use-isomorphic-layout-effect"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/browser/use-title/index.ts",
+      "content": "'use client'\n\nimport { useRef } from 'react'\nimport { useIsomorphicLayoutEffect } from '@/hooks/use-isomorphic-layout-effect'\n\nexport interface UseTitleOptions {\n  /** Restore previous title when component unmounts (default: true). */\n  restoreOnUnmount?: boolean\n}\n\n/**\n * React hook to dynamically set the document title with automatic restoration on unmount.\n *\n * @param {string} title - The document title string.\n * @param {UseTitleOptions} [options={ restoreOnUnmount: true }] - Title options.\n *\n * @example\n * useTitle('Dashboard - SpaceUI', { restoreOnUnmount: true });\n */\nexport function useTitle(title: string, options: UseTitleOptions = { restoreOnUnmount: true }): void {\n  const prevTitle = useRef<string>(typeof document !== 'undefined' ? document.title : '')\n\n  useIsomorphicLayoutEffect(() => {\n    if (typeof document === 'undefined') return\n    document.title = title\n  }, [title])\n\n  useIsomorphicLayoutEffect(() => {\n    return () => {\n      if (options.restoreOnUnmount && typeof document !== 'undefined') {\n        document.title = prevTitle.current\n      }\n    }\n  }, [options.restoreOnUnmount])\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-title.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "title"
+  ],
+  "type": "registry:hook"
+}

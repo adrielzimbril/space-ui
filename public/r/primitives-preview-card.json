@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-preview-card",
+  "title": "Preview Card",
+  "description": "Accessible Preview Card primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/preview-card/index.tsx",
+      "content": "'use client'\n\nimport { PreviewCard as PreviewCardPrimitive } from '@base-ui/react/preview-card'\nimport type React from 'react'\nimport { cn } from '@/lib/utils'\n\nexport const PreviewCard: typeof PreviewCardPrimitive.Root = PreviewCardPrimitive.Root\n\nexport function PreviewCardTrigger({ ...props }: PreviewCardPrimitive.Trigger.Props): React.ReactElement {\n  return <PreviewCardPrimitive.Trigger data-slot=\"preview-card-trigger\" {...props} />\n}\n\nexport function PreviewCardPopup({\n  className,\n  children,\n  align = 'center',\n  sideOffset = 4,\n  anchor,\n  portalProps,\n  ...props\n}: PreviewCardPrimitive.Popup.Props & {\n  align?: PreviewCardPrimitive.Positioner.Props['align']\n  sideOffset?: PreviewCardPrimitive.Positioner.Props['sideOffset']\n  anchor?: PreviewCardPrimitive.Positioner.Props['anchor']\n  portalProps?: PreviewCardPrimitive.Portal.Props\n}): React.ReactElement {\n  return (\n    <PreviewCardPrimitive.Portal {...portalProps}>\n      <PreviewCardPrimitive.Positioner\n        align={align}\n        anchor={anchor}\n        className=\"z-50\"\n        data-slot=\"preview-card-positioner\"\n        sideOffset={sideOffset}\n      >\n        <PreviewCardPrimitive.Popup\n          className={cn(\n            'relative flex w-64 origin-(--transform-origin) text-balance rounded-lg border bg-popover not-dark:bg-clip-padding p-4 text-popover-foreground text-sm transition-[scale,opacity] before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-lg)-1px)] data-ending-style:scale-98 data-starting-style:scale-98 data-ending-style:opacity-0 data-starting-style:opacity-0 ',\n            className,\n          )}\n          data-slot=\"preview-card-content\"\n          {...props}\n        >\n          {children}\n        </PreviewCardPrimitive.Popup>\n      </PreviewCardPrimitive.Positioner>\n    </PreviewCardPrimitive.Portal>\n  )\n}\n\nexport {\n  PreviewCardPrimitive,\n  PreviewCard as HoverCard,\n  PreviewCardTrigger as HoverCardTrigger,\n  PreviewCardPopup as HoverCardContent,\n}\n\nexport const PreviewCardPortal: typeof PreviewCardPrimitive.Portal = PreviewCardPrimitive.Portal\nexport const PreviewCardArrow: typeof PreviewCardPrimitive.Arrow = PreviewCardPrimitive.Arrow\nexport const PreviewCardPositioner: typeof PreviewCardPrimitive.Positioner = PreviewCardPrimitive.Positioner\nexport const PreviewCardBackdrop: typeof PreviewCardPrimitive.Backdrop = PreviewCardPrimitive.Backdrop\n\nexport type PreviewCardProps = PreviewCardPrimitive.Root.Props\nexport type PreviewCardTriggerProps = PreviewCardPrimitive.Trigger.Props\nexport type PreviewCardPortalProps = PreviewCardPrimitive.Portal.Props\nexport type PreviewCardPositionerProps = PreviewCardPrimitive.Positioner.Props\nexport type PreviewCardPopupProps = PreviewCardPrimitive.Popup.Props\nexport type PreviewCardArrowProps = PreviewCardPrimitive.Arrow.Props\nexport type PreviewCardBackdropProps = PreviewCardPrimitive.Backdrop.Props\n",
+      "type": "registry:ui",
+      "target": "components/ui/preview-card.tsx"
+    }
+  ],
+  "categories": [
+    "preview-card"
+  ],
+  "type": "registry:ui"
+}

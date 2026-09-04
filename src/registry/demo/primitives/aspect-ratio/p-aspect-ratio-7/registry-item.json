@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-aspect-ratio-7",
+  "type": "registry:ui",
+  "title": "4:5 social media portrait aspect ratio",
+  "description": "4:5 social media portrait aspect ratio",
+  "registryDependencies": [
+    "@usespaceui/primitives-aspect-ratio"
+  ],
+  "categories": [
+    "aspect-ratio"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/aspect-ratio/p-aspect-ratio-7/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-aspect-ratio-7.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

@@ -1,0 +1,31 @@
+---
+title: useToggle
+description: Boolean state toggle switch.
+preview: demo-hooks-lifecycle-toggle-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-lifecycle-use-toggle" />
+
+## Usage
+
+```tsx
+import { useToggle } from '@/hooks/use-toggle'
+
+const [isOn, toggle, setVal] = useToggle(false)
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter      | Type      | Default | Description    |
+| :------------- | :-------- | :------ | :------------- |
+| `initialValue` | `boolean` | `false` | Initial state. |
+
+### Return Value
+
+| Return Type                                   | Description |
+| :-------------------------------------------- | :---------- |
+| `[boolean, () => void, (v: boolean) => void]` | Tuple.      |

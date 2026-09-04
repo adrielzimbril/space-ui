@@ -1,0 +1,49 @@
+---
+title: useScrollTo
+description: Programmatic smooth scrolling helper supporting window or custom scrollable containers, element IDs, selectors, refs, and pixel coordinates.
+preview: demo-hooks-dom-scroll-to-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-dom-use-scroll-to" />
+
+## Usage
+
+```tsx
+import { useScrollTo } from '@/hooks/use-scroll-to'
+
+// Pattern 1: Direct function call
+const scrollTo = useScrollTo()
+scrollTo({ top: 0, behavior: 'smooth' })
+scrollTo('#section-contact')
+scrollTo(500)
+
+// Pattern 2: Helper methods
+const { scrollToTop, scrollToBottom, scrollToElement } = useScrollTo()
+scrollToTop()
+scrollToBottom()
+
+// Pattern 3: Custom scrollable container
+const containerRef = useRef<HTMLDivElement>(null)
+const scrollTo = useScrollTo(containerRef)
+scrollTo('#item-5', { block: 'center' })
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter      | Type                             | Default     | Description                                                 |
+| :------------- | :------------------------------- | :---------- | :---------------------------------------------------------- |
+| `containerRef` | `RefObject<HTMLElement \| null>` | `undefined` | Optional DOM container ref to scroll instead of the window. |
+
+### Return Value
+
+| Property                           | Type       | Description                                                          |
+| :--------------------------------- | :--------- | :------------------------------------------------------------------- |
+| `scrollTo(target, options)`        | `Function` | Scrolls to pixel offset, ID string, React ref, or `ScrollToOptions`. |
+| `scrollToTop(options)`             | `Function` | Smoothly scrolls to the top (0px).                                   |
+| `scrollToBottom(options)`          | `Function` | Smoothly scrolls to the bottom of the container or document.         |
+| `scrollToElement(el, options)`     | `Function` | Scrolls a specific element into view.                                |
+| `scrollToElementById(id, options)` | `Function` | Scrolls an element with matching DOM ID into view.                   |

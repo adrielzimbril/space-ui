@@ -1,0 +1,31 @@
+---
+title: useClickOutside
+description: Outside click callback trigger.
+preview: demo-hooks-dom-click-outside-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-dom-use-click-outside" />
+
+## Usage
+
+```tsx
+import { useClickOutside } from '@/hooks/use-click-outside'
+
+const ref = React.useRef(null)
+useClickOutside(ref, () => setOpen(false))
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter | Type                     | Default    | Description     |
+| :-------- | :----------------------- | :--------- | :-------------- |
+| `ref`     | `RefObject<HTMLElement>` | _required_ | Target element. |
+| `handler` | `(e) => void`            | _required_ | Callback.       |
+
+### Return Value
+
+_Returns void._

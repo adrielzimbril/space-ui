@@ -1,0 +1,248 @@
+---
+title: Menu
+description: Displays a floating dropdown menu of actions or options when users click a trigger button, keeping pages clean and organized.
+
+links:
+  doc: https://base-ui.com/react/components/menu#api-reference
+preview: demo-primitives-p-menu-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-menu" />
+
+## Usage
+
+```tsx
+import {
+  Menu,
+  MenuCheckboxItem,
+  MenuGroup,
+  MenuGroupLabel,
+  MenuItem,
+  MenuLinkItem,
+  MenuPopup,
+  MenuRadioGroup,
+  MenuRadioItem,
+  MenuSeparator,
+  MenuSub,
+  MenuSubPopup,
+  MenuSubTrigger,
+  MenuTrigger,
+} from '@/components/ui/menu'
+```
+
+```tsx
+<Menu>
+  <MenuTrigger>Open</MenuTrigger>
+  <MenuPopup align="start" sideOffset={4}>
+    <MenuItem>Profile</MenuItem>
+    <MenuSeparator />
+
+    <MenuGroup>
+      <MenuGroupLabel>Playback</MenuGroupLabel>
+      <MenuItem>Play</MenuItem>
+      <MenuItem>Pause</MenuItem>
+    </MenuGroup>
+
+    <MenuSeparator />
+
+    <MenuCheckboxItem>Shuffle</MenuCheckboxItem>
+    <MenuCheckboxItem>Repeat</MenuCheckboxItem>
+    <MenuCheckboxItem variant="switch">Auto save</MenuCheckboxItem>
+
+    <MenuSeparator />
+
+    <MenuGroup>
+      <MenuGroupLabel>Sort by</MenuGroupLabel>
+      <MenuRadioGroup>
+        <MenuRadioItem>Artist</MenuRadioItem>
+        <MenuRadioItem>Album</MenuRadioItem>
+        <MenuRadioItem>Title</MenuRadioItem>
+      </MenuRadioGroup>
+    </MenuGroup>
+
+    <MenuSeparator />
+
+    <MenuSub>
+      <MenuSubTrigger>Add to playlist</MenuSubTrigger>
+      <MenuSubPopup>
+        <MenuItem>Jazz</MenuItem>
+        <MenuItem>Rock</MenuItem>
+      </MenuSubPopup>
+    </MenuSub>
+  </MenuPopup>
+</Menu>
+```
+
+## Anatomy
+
+```tsx
+<Menu>
+  <MenuTrigger />
+  <MenuPopup>
+    <MenuItem />
+    <MenuSeparator />
+    <MenuSub>
+      <MenuSubTrigger />
+      <MenuSubPopup />
+    </MenuSub>
+  </MenuPopup>
+</Menu>
+```
+
+## Accessibility
+
+- Follows the [WAI-ARIA Menu Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/menu/).
+- Manages submenu traversal and focus restoration automatically.
+
+### Keyboard Interactions
+
+| Key                                       | Action                                        |
+| :---------------------------------------- | :-------------------------------------------- |
+| <Kbd>Enter</Kbd> / <Kbd>Space</Kbd>       | Opens the menu or activates the focused item. |
+| <Kbd>ArrowDown</Kbd> / <Kbd>ArrowUp</Kbd> | Moves focus across menu items.                |
+| <Kbd>ArrowRight</Kbd>                     | Opens a submenu.                              |
+| <Kbd>ArrowLeft</Kbd>                      | Closes the active submenu.                    |
+| <Kbd>Escape</Kbd>                         | Closes the entire menu.                       |
+
+## API Reference
+
+### Menu
+
+Root component. Alias for `Menu.Root` from Base UI. Also exported as `DropdownMenu`.
+
+### MenuCreateHandle
+
+Creates a handle for detached menu triggers. Also exported as `DropdownMenuCreateHandle`.
+
+### MenuPortal
+
+Portal component that renders the menu popup into a portal container. Alias for `Menu.Portal` from Base UI. Also exported as `DropdownMenuPortal`.
+
+### MenuTrigger
+
+Trigger button that opens the menu. Alias for `Menu.Trigger` from Base UI. Also exported as `DropdownMenuTrigger`.
+
+### MenuPopup
+
+Popup container that displays the menu content. Also exported as `DropdownMenuContent`.
+
+| Prop          | Type                                          | Default    | Description                                                                                            |
+| ------------- | --------------------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------ |
+| `side`        | `"top" \| "bottom" \| "left" \| "right"`      | `"bottom"` | Side of the trigger to position the popup                                                              |
+| `align`       | `"start" \| "center" \| "end"`                | `"center"` | Alignment relative to the trigger                                                                      |
+| `sideOffset`  | `number`                                      | `4`        | Distance from the trigger in pixels                                                                    |
+| `alignOffset` | `number`                                      | -          | Offset along the alignment axis                                                                        |
+| `anchor`      | `Element \| null \| React.RefObject<Element>` | -          | Custom anchor element or ref to anchor the popup against                                               |
+| `portalProps` | `Menu.Portal.Props`                           | -          | Props forwarded to the internal portal (`keepMounted`, `container`, etc.); see Base UI Menu portal API |
+
+### MenuGroup
+
+Groups related menu items. Alias for `Menu.Group` from Base UI. Also exported as `DropdownMenuGroup`.
+
+### MenuItem
+
+Individual menu item. Also exported as `DropdownMenuItem`.
+
+| Prop      | Type                         | Default     | Description                                           |
+| --------- | ---------------------------- | ----------- | ----------------------------------------------------- |
+| `inset`   | `boolean`                    | -           | Adds left padding to align with items that have icons |
+| `variant` | `"default" \| "destructive"` | `"default"` | Controls the item styling                             |
+
+**Using `inset`:** When mixing items with and without icons, use `inset` on icon-less items to maintain alignment:
+
+```tsx
+<MenuItem><PencilIcon /> Edit</MenuItem>
+<MenuItem><TrashIcon /> Delete</MenuItem>
+<MenuItem inset>Profile</MenuItem>  {/* Aligns with icon items above */}
+```
+
+### MenuLinkItem
+
+Link menu item for navigation. **`LinkItem`** renders a native **`<a>`** when you pass **`href`**. Styled like **`MenuItem`**.
+
+| Prop           | Type                         | Default     | Description                                           |
+| -------------- | ---------------------------- | ----------- | ----------------------------------------------------- |
+| `inset`        | `boolean`                    | -           | Adds left padding to align with items that have icons |
+| `variant`      | `"default" \| "destructive"` | `"default"` | Controls the item styling                             |
+| `closeOnClick` | `boolean`                    | `true`      | Whether the menu closes when the link is clicked      |
+
+If you were using **`MenuItem render={<Link href="..." />}`**, migrate to **`MenuLinkItem`** but **keep `render`** — do not replace it with **`href`** alone when using a router **`Link`**.
+
+```tsx
+<MenuLinkItem render={<Link href="/docs" />}>Docs</MenuLinkItem>
+```
+
+Use **`href`** only for plain anchor links:
+
+```tsx
+<MenuLinkItem href="/docs">Docs</MenuLinkItem>
+```
+
+### MenuCheckboxItem
+
+Checkbox menu item. Also exported as `DropdownMenuCheckboxItem`.
+
+| Prop      | Type                    | Default     | Description                                              |
+| --------- | ----------------------- | ----------- | -------------------------------------------------------- |
+| `variant` | `"default" \| "switch"` | `"default"` | Display style - `switch` shows a toggle switch indicator |
+
+### MenuRadioGroup
+
+Groups radio menu items. Alias for `Menu.RadioGroup` from Base UI. Also exported as `DropdownMenuRadioGroup`.
+
+### MenuRadioItem
+
+Radio menu item. Styled wrapper for `Menu.RadioItem` from Base UI. Also exported as `DropdownMenuRadioItem`.
+
+### MenuGroupLabel
+
+Label for a menu group. Also exported as `DropdownMenuLabel`.
+
+| Prop    | Type      | Default | Description                                           |
+| ------- | --------- | ------- | ----------------------------------------------------- |
+| `inset` | `boolean` | -       | Adds left padding to align with items that have icons |
+
+### MenuSeparator
+
+Visual separator between menu items. Styled wrapper for `Menu.Separator` from Base UI. Also exported as `DropdownMenuSeparator`.
+
+### MenuShortcut
+
+Displays keyboard shortcut text. Custom component (not a Base UI wrapper). Also exported as `DropdownMenuShortcut`.
+
+### MenuSub
+
+Submenu container. Alias for `Menu.SubmenuRoot` from Base UI. Also exported as `DropdownMenuSub`.
+
+### MenuSubTrigger
+
+Trigger for opening a submenu. Also exported as `DropdownMenuSubTrigger`.
+
+| Prop    | Type      | Default | Description                                           |
+| ------- | --------- | ------- | ----------------------------------------------------- |
+| `inset` | `boolean` | -       | Adds left padding to align with items that have icons |
+
+### MenuSubPopup
+
+Popup for submenu content. Also exported as `DropdownMenuSubContent`.
+
+| Prop          | Type                           | Default   | Description                                                                      |
+| ------------- | ------------------------------ | --------- | -------------------------------------------------------------------------------- |
+| `align`       | `"start" \| "center" \| "end"` | `"start"` | Alignment relative to the trigger                                                |
+| `sideOffset`  | `number`                       | `0`       | Distance from the trigger in pixels                                              |
+| `alignOffset` | `number`                       | `-5`      | Offset along the alignment axis. Defaults to `-5` when `align` is not `"center"` |
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-menu-2" description="Menu with hover" />
+  <ShowcaseCard name="demo-primitives-p-menu-3" description="Menu with checkbox" />
+  <ShowcaseCard name="demo-primitives-p-menu-4" description="Menu with radio group" />
+  <ShowcaseCard name="demo-primitives-p-menu-5" description="Menu with link" />
+  <ShowcaseCard name="demo-primitives-p-menu-6" description="Menu with group labels" />
+  <ShowcaseCard name="demo-primitives-p-menu-7" description="Nested menu" />
+  <ShowcaseCard name="demo-primitives-p-menu-8" description="Menu close on click" />
+  <ShowcaseCard name="demo-primitives-p-menu-9" description="Menu with checkbox items as switches" />
+</ShowcaseGrid>

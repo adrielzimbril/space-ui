@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-dom-use-mouse-position",
+  "title": "useMousePosition",
+  "description": "useMousePosition hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/dom/use-mouse-position/index.ts",
+      "content": "'use client'\n\nimport { useState } from 'react'\nimport { useEventListener } from '@/hooks/use-event-listener'\n\nexport interface MousePosition {\n  x: number\n  y: number\n}\n\n/**\n * React hook that tracks the global mouse pointer coordinate positions (X and Y).\n *\n * @returns {MousePosition} Object containing `{ x, y }` coordinates.\n *\n * @example\n * const { x, y } = useMousePosition();\n */\nexport function useMousePosition(): MousePosition {\n  const [mousePosition, setMousePosition] = useState<MousePosition>({\n    x: 0,\n    y: 0,\n  })\n\n  useEventListener('mousemove', (event: MouseEvent) => {\n    setMousePosition({ x: event.clientX, y: event.clientY })\n  })\n\n  return mousePosition\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-mouse-position.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "dom",
+    "mouse-position"
+  ],
+  "type": "registry:hook"
+}

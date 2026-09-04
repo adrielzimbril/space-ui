@@ -1,0 +1,32 @@
+---
+title: formatContent & truncate
+description: Text truncate and content formatting helpers.
+preview: demo-hooks-utils-format-content-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-utils-format-content" />
+
+## Usage
+
+```tsx
+import { slugifyHeadline } from '@/utils/format-content'
+
+slugifyHeadline('Getting Started with React!') // => "getting-started-with-react"
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter   | Type     | Default    | Description |
+| :---------- | :------- | :--------- | :---------- |
+| `text`      | `string` | _required_ | Input text. |
+| `maxLength` | `number` | _required_ | Max length. |
+
+### Return Value
+
+| Return Type | Description       |
+| :---------- | :---------------- |
+| `string`    | Truncated string. |

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-drawer-10",
+  "title": "Drawer 10",
+  "description": "Edit profile form with default and bare footer variants",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-drawer",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-form",
+    "@usespaceui/primitives-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/drawer/p-drawer-10/index.tsx",
+      "content": "import { Button } from '@/components/ui/button'\nimport {\n  Drawer,\n  DrawerClose,\n  DrawerDescription,\n  DrawerFooter,\n  DrawerHeader,\n  DrawerPanel,\n  DrawerPopup,\n  DrawerTitle,\n  DrawerTrigger,\n} from '@/components/ui/drawer'\nimport { Field, FieldLabel } from '@/components/ui/field'\nimport { Form } from '@/components/ui/form'\nimport { Input } from '@/components/ui/input'\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      <Drawer position=\"right\">\n        <DrawerTrigger render={<Button variant=\"outline\" />}>Default footer</DrawerTrigger>\n        <DrawerPopup variant=\"inset\">\n          <DrawerHeader>\n            <DrawerTitle>Edit profile</DrawerTitle>\n            <DrawerDescription>Make changes to your profile here. Click save when you&apos;re done.</DrawerDescription>\n          </DrawerHeader>\n          <Form className=\"contents\">\n            <DrawerPanel className=\"grid gap-4\">\n              <Field>\n                <FieldLabel>Name</FieldLabel>\n                <Input defaultValue=\"Margaret Welsh\" type=\"text\" />\n              </Field>\n              <Field>\n                <FieldLabel>Username</FieldLabel>\n                <Input defaultValue=\"@maggie.welsh\" type=\"text\" />\n              </Field>\n            </DrawerPanel>\n            <DrawerFooter>\n              <DrawerClose render={<Button variant=\"ghost\" />}>Cancel</DrawerClose>\n              <Button>Save</Button>\n            </DrawerFooter>\n          </Form>\n        </DrawerPopup>\n      </Drawer>\n      <Drawer position=\"right\">\n        <DrawerTrigger render={<Button variant=\"outline\" />}>Bare footer</DrawerTrigger>\n        <DrawerPopup variant=\"inset\">\n          <DrawerHeader>\n            <DrawerTitle>Edit profile</DrawerTitle>\n            <DrawerDescription>Make changes to your profile here. Click save when you&apos;re done.</DrawerDescription>\n          </DrawerHeader>\n          <Form className=\"contents\">\n            <DrawerPanel className=\"grid gap-4\">\n              <Field>\n                <FieldLabel>Name</FieldLabel>\n                <Input defaultValue=\"Margaret Welsh\" type=\"text\" />\n              </Field>\n              <Field>\n                <FieldLabel>Username</FieldLabel>\n                <Input defaultValue=\"@maggie.welsh\" type=\"text\" />\n              </Field>\n            </DrawerPanel>\n            <DrawerFooter variant=\"bare\">\n              <DrawerClose render={<Button variant=\"ghost\" />}>Cancel</DrawerClose>\n              <Button>Save</Button>\n            </DrawerFooter>\n          </Form>\n        </DrawerPopup>\n      </Drawer>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-drawer-10.tsx"
+    }
+  ],
+  "categories": [
+    "drawer"
+  ],
+  "type": "registry:ui"
+}

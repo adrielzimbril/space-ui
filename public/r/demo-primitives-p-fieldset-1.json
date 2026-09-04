@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-fieldset-1",
+  "title": "Fieldset 1",
+  "description": "Fieldset with multiple fields",
+  "registryDependencies": [
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-fieldset",
+    "@usespaceui/primitives-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/fieldset/p-fieldset-1/index.tsx",
+      "content": "import { Field, FieldDescription, FieldLabel } from '@/components/ui/field'\nimport { Fieldset, FieldsetLegend } from '@/components/ui/fieldset'\nimport { Input } from '@/components/ui/input'\n\nexport default function Particle() {\n  return (\n    <Fieldset className=\"flex w-full flex-col gap-6\">\n      <FieldsetLegend>Billing Details</FieldsetLegend>\n      <Field>\n        <FieldLabel>Company</FieldLabel>\n        <Input placeholder=\"Enter company name\" type=\"text\" />\n        <FieldDescription>The name that will appear on invoices.</FieldDescription>\n      </Field>\n\n      <Field>\n        <FieldLabel>Tax ID</FieldLabel>\n        <Input placeholder=\"Enter tax identification number\" type=\"text\" />\n        <FieldDescription>Your business tax identification number.</FieldDescription>\n      </Field>\n    </Fieldset>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-fieldset-1.tsx"
+    }
+  ],
+  "categories": [
+    "fieldset",
+    "input"
+  ],
+  "type": "registry:ui"
+}

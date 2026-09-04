@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-tree-6",
+  "type": "registry:component",
+  "title": "Organization chart tree with avatars",
+  "description": "Organization chart tree with avatars",
+  "dependencies": [
+    "@headless-tree/core",
+    "@headless-tree/react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-tree",
+    "@usespaceui/primitives-avatar"
+  ],
+  "categories": [
+    "component",
+    "tree"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/tree/c-tree-6/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-tree-6.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

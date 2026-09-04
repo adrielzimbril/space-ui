@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-components-in-view",
+  "title": "InView",
+  "description": "InView component.",
+  "registryDependencies": [
+    "@usespaceui/hooks-animation-use-in-view"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/components/in-view/index.tsx",
+      "content": "import * as React from 'react'\nimport { useInView, type UseInViewOptions } from '@/hooks/use-in-view'\n\n/**\n * Props for the `<InView>` component.\n */\nexport interface InViewProps extends UseInViewOptions {\n  /** Optional HTML tag or React component to render as a wrapper (default: 'div'). */\n  as?: React.ElementType\n  /** CSS class name(s) for the wrapper element. */\n  className?: string\n  /**\n   * Children elements, or a render prop function receiving the intersection observer status.\n   */\n  children:\n    | React.ReactNode\n    | ((props: {\n        inView: boolean\n        ref: (node?: Element | null) => void\n        entry?: IntersectionObserverEntry\n      }) => React.ReactNode)\n}\n\n/**\n * Declarative component wrapper that monitors when an element enters or leaves the viewport.\n *\n * @param {InViewProps} props - Component props.\n * @returns {React.ReactNode} The rendered element or render prop result.\n *\n * @example\n * <InView threshold={0.5} triggerOnce>\n *   {({ inView, ref }) => (\n *     <div ref={ref} className={inView ? 'animate-fade-in' : 'opacity-0'}>\n *       Header content visible: {String(inView)}\n *     </div>\n *   )}\n * </InView>\n */\nexport function InView({ as: Component = 'div', className, children, ...options }: InViewProps): React.ReactNode {\n  const [ref, inView, entry] = useInView(options)\n\n  if (typeof children === 'function') {\n    return <>{(children as Function)({ inView, ref, entry })}</>\n  }\n\n  return (\n    <Component ref={ref} className={className}>\n      {children}\n    </Component>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/ui/in-view.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "components",
+    "in-view"
+  ],
+  "type": "registry:hook"
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-spinner",
+  "type": "registry:ui",
+  "title": "Spinner",
+  "description": "Accessible Spinner primitive component for Space UI.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "categories": [
+    "spinner"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/spinner/index.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/spinner.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

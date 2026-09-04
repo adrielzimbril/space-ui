@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-lifecycle-use-toggle",
+  "type": "registry:hook",
+  "title": "useToggle",
+  "description": "useToggle hook.",
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "toggle"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/lifecycle/use-toggle/index.ts",
+      "type": "registry:hook",
+      "target": "hooks/use-toggle.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

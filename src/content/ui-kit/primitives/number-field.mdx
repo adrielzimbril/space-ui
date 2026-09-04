@@ -1,0 +1,120 @@
+---
+title: Number Field
+description: Allows users to enter numeric values or adjust them step-by-step using increment and decrement buttons or keyboard arrow keys.
+
+links:
+  doc: https://base-ui.com/react/components/number-field#api-reference
+preview: demo-primitives-p-number-field-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-number-field" />
+
+## Usage
+
+```tsx
+import {
+  NumberField,
+  NumberFieldDecrement,
+  NumberFieldGroup,
+  NumberFieldIncrement,
+  NumberFieldInput,
+  NumberFieldScrubArea,
+} from '@/components/ui/number-field'
+```
+
+```tsx
+<NumberField defaultValue={0}>
+  <NumberFieldScrubArea label="Quantity" />
+  <NumberFieldGroup>
+    <NumberFieldDecrement />
+    <NumberFieldInput />
+    <NumberFieldIncrement />
+  </NumberFieldGroup>
+</NumberField>
+```
+
+## Anatomy
+
+```tsx
+<NumberField>
+  <NumberFieldDecrement />
+  <NumberFieldInput />
+  <NumberFieldIncrement />
+</NumberField>
+```
+
+## Features
+
+### Stepper Buttons
+
+Number field equipped with increment and decrement stepper controls.
+
+<ComponentPreview name="demo-primitives-p-number-field-5" />
+
+### Disabled State
+
+Number field rendered in a disabled state.
+
+<ComponentPreview name="demo-primitives-p-number-field-4" />
+
+## Accessibility
+
+- Follows the [WAI-ARIA Spinbutton Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/spinbutton/).
+
+### Keyboard Interactions
+
+| Key                  | Action                                              |
+| :------------------- | :-------------------------------------------------- |
+| <Kbd>ArrowUp</Kbd>   | Increments the numeric value by the defined step.   |
+| <Kbd>ArrowDown</Kbd> | Decrements the numeric value by the defined step.   |
+| <Kbd>Home</Kbd>      | Sets the value to the minimum limit (if specified). |
+| <Kbd>End</Kbd>       | Sets the value to the maximum limit (if specified). |
+
+## API Reference
+
+### NumberField
+
+Root component. Styled wrapper for `NumberField.Root` from Base UI.
+
+| Prop   | Type                        | Default     | Description                                           |
+| ------ | --------------------------- | ----------- | ----------------------------------------------------- |
+| `size` | `"sm" \| "default" \| "lg"` | `"default"` | Controls the size of all child components via context |
+
+### NumberFieldGroup
+
+Container for the input and buttons. Styled wrapper for `NumberField.Group` from Base UI.
+
+### NumberFieldInput
+
+Input element for the number value. Styled wrapper for `NumberField.Input` from Base UI.
+
+### NumberFieldIncrement
+
+Button to increment the value. Styled wrapper for `NumberField.Increment` from Base UI with plus icon.
+
+### NumberFieldDecrement
+
+Button to decrement the value. Styled wrapper for `NumberField.Decrement` from Base UI with minus icon.
+
+### NumberFieldScrubArea
+
+Draggable area for scrubbing the value. Styled wrapper for `NumberField.ScrubArea` from Base UI.
+
+| Prop    | Type     | Default | Description                            |
+| ------- | -------- | ------- | -------------------------------------- |
+| `label` | `string` | -       | Label text displayed in the scrub area |
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-number-field-2" description="Small number field" />
+  <ShowcaseCard name="demo-primitives-p-number-field-3" description="Large number field" />
+  <ShowcaseCard name="demo-primitives-p-number-field-6" description="Number field with scrub" />
+  <ShowcaseCard name="demo-primitives-p-number-field-7" description="Number field with range" />
+  <ShowcaseCard name="demo-primitives-p-number-field-8" description="Number field with formatted value" />
+  <ShowcaseCard name="demo-primitives-p-number-field-9" description="Number field with step" />
+  <ShowcaseCard name="demo-primitives-p-number-field-10" description="Number field in form" />
+  <ShowcaseCard name="demo-primitives-p-number-field-11" description="Pill-shaped number field" />
+</ShowcaseGrid>

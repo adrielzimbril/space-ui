@@ -1,0 +1,113 @@
+---
+title: OTP Field
+description: Provides individual segmented character boxes for typing verification codes and one-time passwords, with automatic focus progression.
+
+links:
+  doc: https://base-ui.com/react/components/otp-field
+preview: demo-primitives-p-otp-field-1
+---
+
+This component wraps [Base UI OTP Field](https://base-ui.com/react/components/otp-field).
+
+## Installation
+
+<ComponentInstallation name="primitives-otp-field" />
+
+## Usage
+
+```tsx
+import { OTPField, OTPFieldInput, OTPFieldSeparator } from '@/components/ui/otp-field'
+```
+
+```tsx
+<OTPField aria-label="Verification code" length={6}>
+  <OTPFieldInput />
+  <OTPFieldInput aria-label="Character 2 of 6" />
+  <OTPFieldInput aria-label="Character 3 of 6" />
+  <OTPFieldSeparator />
+  <OTPFieldInput aria-label="Character 4 of 6" />
+  <OTPFieldInput aria-label="Character 5 of 6" />
+  <OTPFieldInput aria-label="Character 6 of 6" />
+</OTPField>
+```
+
+## Anatomy
+
+```tsx
+<OtpField>
+  <OtpFieldGroup>
+    <OtpFieldSlot index={0} />
+    <OtpFieldSlot index={1} />
+    <OtpFieldSlot index={2} />
+    <OtpFieldSlot index={3} />
+  </OtpFieldGroup>
+</OtpField>
+```
+
+## Features
+
+### Masked Input
+
+OTP input with password-style bullet masking.
+
+<ComponentPreview name="demo-primitives-p-otp-field-2" />
+
+### With Separator
+
+OTP field divided into separated slot groups using `OtpFieldSeparator`.
+
+<ComponentPreview name="demo-primitives-p-otp-field-3" />
+
+## Accessibility
+
+- Manages input focus automatically as characters are typed or deleted.
+- Supports pasting multi-digit OTP codes seamlessly across slots.
+
+### Keyboard Interactions
+
+| Key                                          | Action                                                      |
+| :------------------------------------------- | :---------------------------------------------------------- |
+| <Kbd>Backspace</Kbd>                         | Deletes current digit and moves focus to the previous slot. |
+| <Kbd>ArrowLeft</Kbd> / <Kbd>ArrowRight</Kbd> | Moves cursor between OTP slots.                             |
+
+## API Reference
+
+This component is built on [Base UI OTP Field](https://base-ui.com/react/components/otp-field). Each slot is a real `<input>`; order in the tree must match `length` on the root.
+
+### OTPField
+
+Root component. Accepts the same props as `OTPField.Root`; `className` is merged with the default layout styles.
+
+Use **`length`** (required) for the number of characters. The previous `maxLength` prop from the legacy `input-otp` package is not used.
+
+| Prop             | Type                                               | Default     | Description                                                                                            |
+| ---------------- | -------------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------ |
+| `size`           | `"default" \| "lg"`                                | `"default"` | Size applied to all slots in the field                                                                 |
+| `validationType` | `"numeric" \| "alpha" \| "alphanumeric" \| "none"` | `numeric`   | Which characters are accepted; see [Base UI OTP Field](https://base-ui.com/react/components/otp-field) |
+| `mask`           | `boolean`                                          | `false`     | When `true`, masks entered characters in each slot                                                     |
+
+### OTPFieldInput
+
+Renders one OTP character input (Base UI `OTPField.Input`). Slots are ordered by **DOM order** in the tree (no `index` prop).
+
+| Prop          | Type     | Description                                                                                                 |
+| ------------- | -------- | ----------------------------------------------------------------------------------------------------------- |
+| `className`   | `string` | Merged with the default slot styles                                                                         |
+| `placeholder` | `string` | Native placeholder; pair with `focus-visible:placeholder:text-transparent` if hints should hide when typing |
+
+Label the OTP control on the root (`OTPField`) with `aria-label` or a visible `<label>`/`FieldLabel`. In Base UI 1.6+, the first `OTPFieldInput` should inherit that field label, while subsequent slots can use `aria-label` (for example, `Character 2 of 6`).
+
+### OTPFieldSeparator
+
+Visual separator between slot groups. Uses the design-system `Separator` inside `OTPField.Separator` for layout and accessibility.
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-otp-field-4" description="OTP field with label" />
+  <ShowcaseCard name="demo-primitives-p-otp-field-5" description="OTP field with custom sanitization" />
+  <ShowcaseCard name="demo-primitives-p-otp-field-6" description="OTP field with auto validation" />
+  <ShowcaseCard name="demo-primitives-p-otp-field-7" description="Alphanumeric OTP field" />
+  <ShowcaseCard name="demo-primitives-p-otp-field-8" description="OTP field with placeholder hints" />
+  <ShowcaseCard name="demo-primitives-p-otp-field-9" description="Masked OTP field" />
+</ShowcaseGrid>

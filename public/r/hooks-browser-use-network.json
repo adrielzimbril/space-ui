@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-browser-use-network",
+  "title": "useNetwork",
+  "description": "useNetwork hook.",
+  "registryDependencies": [
+    "@usespaceui/hooks-dom-use-event-listener"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/browser/use-network/index.ts",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { useEventListener } from '@/hooks/use-event-listener'\n\nexport interface NetworkState {\n  isOnline: boolean\n  isOffline: boolean\n  online: boolean\n  offline: boolean\n  downlink?: number\n  effectiveType?: string\n  rtt?: number\n  saveData?: boolean\n}\n\nexport function useNetwork(): NetworkState {\n  const [isOnline, setIsOnline] = React.useState<boolean>(() => {\n    return typeof navigator !== 'undefined' && typeof navigator.onLine === 'boolean' ? navigator.onLine : true\n  })\n\n  const [connection, setConnection] = React.useState<{\n    downlink?: number\n    effectiveType?: string\n    rtt?: number\n    saveData?: boolean\n  }>({})\n\n  const updateNetworkInfo = React.useCallback(() => {\n    if (typeof navigator === 'undefined') return\n    setIsOnline(navigator.onLine)\n    const conn =\n      (navigator as any).connection || (navigator as any).mozConnection || (navigator as any).webkitConnection\n    if (conn) {\n      setConnection({\n        downlink: conn.downlink,\n        effectiveType: conn.effectiveType,\n        rtt: conn.rtt,\n        saveData: conn.saveData,\n      })\n    }\n  }, [])\n\n  useEventListener('online', () => setIsOnline(true))\n  useEventListener('offline', () => setIsOnline(false))\n\n  React.useEffect(() => {\n    updateNetworkInfo()\n  }, [updateNetworkInfo])\n\n  return {\n    isOnline,\n    isOffline: !isOnline,\n    online: isOnline,\n    offline: !isOnline,\n    ...connection,\n  }\n}\n\nexport function useOnlineStatus(): boolean {\n  return useNetwork().isOnline\n}\n\nexport function useOffline(): boolean {\n  return useNetwork().isOffline\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-network.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "network"
+  ],
+  "type": "registry:hook"
+}

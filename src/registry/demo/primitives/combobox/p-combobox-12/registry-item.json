@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-combobox-12",
+  "type": "registry:ui",
+  "title": "Combobox 12",
+  "description": "Combobox with start addon",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-combobox"
+  ],
+  "categories": [
+    "combobox",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/combobox/p-combobox-12/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-combobox-12.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

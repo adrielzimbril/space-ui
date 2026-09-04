@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-timeline-4",
+  "type": "registry:component",
+  "title": "Timeline with git activity.",
+  "description": "Timeline with git activity.",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-timeline"
+  ],
+  "categories": [
+    "component",
+    "timeline"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/timeline/c-timeline-4/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-timeline-4.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

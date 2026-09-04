@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-card-info-2",
+  "title": "Philosophy & Principles Cards",
+  "description": "Interactive showcase of core philosophy and value cards with custom gradient icons.",
+  "registryDependencies": [
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/blocks/card-info/card-info-2/index.tsx",
+      "content": "'use client'\n\nimport React from 'react'\nimport { Badge } from '@/components/ui/badge'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { cn } from '@/lib/utils'\nimport { BalanceIcon, BookIcon, LongitudeIcon, WandIcon } from '@/components/blocks/card-info/card-info-1/icons'\n\nexport function DetailsCard({\n  icon,\n  title,\n  description,\n}: {\n  icon: string | React.ReactNode\n  title: string\n  description: string\n}) {\n  return (\n    <Card className=\"bg-muted rounded-3xl md:rounded-5xl overflow-hidden h-full md:max-w-xl\">\n      <CardPanel\n        className={cn(\n          'flex relative flex-col min-h-60 items-center justify-center p-4 rounded-xl md:rounded-3xl bg-background overflow-hidden',\n        )}\n      >\n        <div className=\"flex flex-col items-start gap-4 w-full max-w-[90%] py-12 mx-auto\">\n          <Badge\n            variant=\"secondary\"\n            className=\"aspect-square p-4 rounded-full size-auto! [&>svg]:size-12! [&>img]:size-12!\"\n          >\n            {typeof icon === 'string' ? (\n              <img className=\"object-cover pointer-events-none\" src={icon} alt={title} loading=\"lazy\" />\n            ) : (\n              icon\n            )}\n          </Badge>\n          <h3 className=\"text-3xl tracking-wide leading-[120%]\">{title}</h3>\n\n          <p className=\"text-muted-foreground whitespace-pre-line text-xl leading-[140%]\">{description}</p>\n        </div>\n      </CardPanel>\n    </Card>\n  )\n}\n\ninterface PhilosophyCard {\n  title: string\n  icon: React.ReactNode\n  alt: string\n  description: string\n}\n\nconst data: PhilosophyCard[] = [\n  {\n    title: 'User First',\n    icon: <WandIcon />,\n    alt: 'Symbol',\n    description:\n      'Every project starts with a simple question: what truly matters to the user?\\nMy role: turn that answer into experiences people love to use — and that exceed their expectations.',\n  },\n  {\n    title: 'Always Learning',\n    icon: <BookIcon />,\n    alt: 'Book',\n    description:\n      \"Design, AI, growth, systems… I love staying curious and exploring what's next.\\nEvery new insight is a chance to improve what I create — and inspire those I work with.\",\n  },\n  {\n    title: 'Teams that Rise Together',\n    icon: <LongitudeIcon />,\n    alt: 'Longitude',\n    description:\n      'A great product is always a team effort. I love creating spaces where ideas flow, everyone feels involved, and we build something everyone is proud of.',\n  },\n  {\n    title: 'Move Fast, Move Right',\n    icon: <BalanceIcon />,\n    alt: 'Balance default',\n    description:\n      'I believe in fast iterations and intentional decisions.\\nEvery test is a compass, every adjustment brings the product closer to its best version.',\n  },\n]\n\nexport default function Particle() {\n  return (\n    <div\n      className={cn(\n        'md:grid grid-cols-1 md:grid-cols-2 md:max-w-5xl gap-6 items-center justify-center justify-items-center self-center place-self-center w-full place-items-center',\n      )}\n    >\n      {data.map((item, index) => (\n        <DetailsCard key={index} icon={item.icon} title={item.title} description={item.description} />\n      ))}\n    </div>\n  )\n}\n",
+      "type": "registry:block",
+      "target": "components/blocks/card-info/card-info-2.tsx"
+    }
+  ],
+  "categories": [
+    "card-info"
+  ],
+  "type": "registry:block"
+}

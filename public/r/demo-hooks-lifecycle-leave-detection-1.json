@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-lifecycle-leave-detection-1",
+  "title": "useLeaveDetection",
+  "description": "Mouse exit window boundary detector",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-lifecycle-use-leave-detection",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/lifecycle/leave-detection/h-leave-detection-1/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { useLeaveDetection } from '@/hooks/use-leave-detection'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Badge } from '@/components/ui/badge'\nimport { Button } from '@/components/ui/button'\nimport { IconPointer, IconRotateClockwise } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const { isOutside, leaveCount, direction, reset } = useLeaveDetection({\n    detectBlur: true,\n    detectVisibility: true,\n  })\n\n  const directionLabel = () => {\n    switch (direction) {\n      case 'top':\n        return 'Top'\n      case 'left':\n        return 'Left'\n      case 'right':\n        return 'Right'\n      case 'bottom':\n        return 'Bottom'\n      case 'blur':\n        return 'Blur'\n      case 'visibility':\n        return 'Tab'\n      default:\n        return 'Inside'\n    }\n  }\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconPointer className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Leave</span>\n        </div>\n        <Badge variant={isOutside ? 'destructive' : 'outline'} size=\"sm\">\n          {isOutside ? 'Outside' : 'Focused'}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex flex-col gap-3 rounded-[0.875rem] bg-background p-3\">\n        <div className=\"grid grid-cols-2 gap-2\">\n          <div className=\"rounded-lg bg-muted p-2.5\">\n            <span className=\"block text-[.6875rem] font-semibold text-muted-foreground\">Direction</span>\n            <span className=\"mt-0.5 block truncate font-mono text-sm font-semibold text-foreground\">\n              {directionLabel()}\n            </span>\n          </div>\n          <div className=\"rounded-lg bg-muted p-2.5\">\n            <span className=\"block text-[.6875rem] font-semibold text-muted-foreground\">Exits</span>\n            <span className=\"mt-0.5 block font-mono text-sm font-semibold tabular-nums text-foreground\">\n              {leaveCount}\n            </span>\n          </div>\n        </div>\n        <Button size=\"sm\" variant=\"outline\" onClick={reset} className=\"w-full\">\n          <IconRotateClockwise className=\"size-3.5\" />\n          Reset\n        </Button>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-leave-detection-1.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "leave-detection"
+  ],
+  "type": "registry:hook"
+}

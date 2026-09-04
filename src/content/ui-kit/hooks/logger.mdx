@@ -1,0 +1,33 @@
+---
+title: logger
+description: Scoped development and production logger.
+preview: demo-hooks-utils-logger-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-utils-logger" />
+
+## Usage
+
+```tsx
+import { logger } from '@/utils/logger'
+
+const log = logger.create('AUTH')
+log.info('User logged in')
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Method                     | Description            |
+| :------------------------- | :--------------------- |
+| `logger.create(namespace)` | Creates scoped logger. |
+| `log.info(...args)`        | Info level log.        |
+| `log.warn(...args)`        | Warning level log.     |
+| `log.error(...args)`       | Error level log.       |
+
+### Return Value
+
+_Logger instance._

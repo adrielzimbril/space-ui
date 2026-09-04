@@ -1,0 +1,49 @@
+---
+title: Theme Toggle
+description: View Transition API theme switch with circle, blur, rectangle, and polygon reveals.
+author:
+  name: usespaceui
+  url: https://github.com/usespaceui
+preview: demo-components-spaceui-c-theme-toggle-1
+---
+
+The demo lets you pick `variant`, `start` origin, and blur, then click the button. Source: `registry/components/spaceui/theme-toggle/index.tsx`. It uses `next-themes` and injects `::view-transition-*` CSS before `document.startViewTransition`.
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-theme-toggle" />
+
+Requires `next-themes` and a theme provider already in the app.
+
+## Usage
+
+```tsx
+import { ThemeToggleButton, useThemeToggle } from '@/components/spaceui/theme-toggle'
+
+;<ThemeToggleButton variant="circle" start="top-left" blur size="lg" />
+```
+
+```tsx
+const { isDark, toggleTheme } = useThemeToggle({ variant: 'rectangle', start: 'left-right' })
+```
+
+## Files
+
+| File                     | Role                                                     |
+| ------------------------ | -------------------------------------------------------- |
+| `theme-toggle/index.tsx` | `createAnimation`, `useThemeToggle`, `ThemeToggleButton` |
+
+## API Reference
+
+### ThemeToggleButton / useThemeToggle
+
+| Prop            | Type                                                    | Default         | Description                      |
+| --------------- | ------------------------------------------------------- | --------------- | -------------------------------- |
+| `variant`       | `'circle' \| 'circle-blur' \| 'rectangle' \| 'polygon'` | `'circle'`      | Reveal shape                     |
+| `start`         | `'center' \| 'top-left' \| …`                           | `'center'`      | Clip origin (depends on variant) |
+| `blur`          | `boolean`                                               | `false`         | Blur during the reveal           |
+| `size`          | `'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl'`                  | `'md'` (`icon`) | Square button size               |
+| `buttonVariant` | `'outline' \| 'secondary' \| 'default' \| 'ghost'`      | `'secondary'`   | Primitive button visual style    |
+| `className`     | `string`                                                | —               | Button class (button only)       |
+
+`useThemeToggle` also returns `toggleTheme`, `setCrazyLightTheme`, `setCrazyDarkTheme`, `setCrazySystemTheme`, and `isDark`.

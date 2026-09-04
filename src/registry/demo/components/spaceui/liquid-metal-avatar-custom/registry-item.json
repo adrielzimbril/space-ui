@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "liquid-metal-avatar-custom",
+  "type": "registry:component",
+  "title": "Liquid Metal Avatar Custom",
+  "description": "Interactive demo showcasing the Liquid Metal Avatar Custom component.",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-liquid-metal-avatar"
+  ],
+  "categories": [
+    "liquid-metal-avatar-custom"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/liquid-metal-avatar-custom/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/liquid-metal-avatar-custom.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

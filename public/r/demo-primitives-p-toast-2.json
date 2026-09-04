@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-toast-2",
+  "title": "Toast 2",
+  "description": "Stacked toasts with varying content height",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-toast"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/toast/p-toast-2/index.tsx",
+      "content": "'use client'\n\nimport { useState } from 'react'\nimport { Button } from '@/components/ui/button'\nimport { toastManager } from '@/components/ui/toast'\n\nconst TEXTS = [\n  'Short message.',\n  'A bit longer message that spans two lines.',\n  'This is a longer description that intentionally takes more vertical space to demonstrate stacking with varying heights.',\n  'An even longer description that should span multiple lines so we can verify the clamped collapsed height and smooth expansion animation when hovering or focusing the viewport.',\n]\n\nexport default function Particle() {\n  const [count, setCount] = useState(0)\n\n  function createToast() {\n    setCount((prev) => prev + 1)\n    const description = TEXTS[Math.floor(Math.random() * TEXTS.length)]\n    toastManager.add({\n      description,\n      title: `Toast ${count + 1} created`,\n    })\n  }\n\n  return (\n    <Button onClick={createToast} variant=\"outline\">\n      With Varying Heights\n    </Button>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-toast-2.tsx"
+    }
+  ],
+  "categories": [
+    "toast"
+  ],
+  "type": "registry:ui"
+}

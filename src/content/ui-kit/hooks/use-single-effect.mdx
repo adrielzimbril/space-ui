@@ -1,0 +1,31 @@
+---
+title: useSingleEffect
+description: Guaranteed exactly-once execution effect (StrictMode safe).
+preview: demo-hooks-lifecycle-single-effect-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-lifecycle-use-single-effect" />
+
+## Usage
+
+```tsx
+import { useSingleEffect } from '@/hooks/use-single-effect'
+
+useSingleEffect(() => {
+  initAnalytics()
+})
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter | Type         | Default    | Description               |
+| :-------- | :----------- | :--------- | :------------------------ |
+| `effect`  | `() => void` | _required_ | Run-once effect function. |
+
+### Return Value
+
+_Returns void._

@@ -1,0 +1,100 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-sign-in",
+  "title": "Sign In Page 1",
+  "description": "Interactive demo showcasing the Sign In Page 1 component.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-checkbox",
+    "@usespaceui/primitives-input",
+    "@usespaceui/primitives-label"
+  ],
+  "files": [
+    {
+      "path": "src/registry/blocks/sign-in/sign-in-1/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'\nimport { Input } from '@/components/ui/input'\nimport { Button } from '@/components/ui/button'\nimport { Label } from '@/components/ui/label'\nimport { Checkbox } from '@/components/ui/checkbox'\nimport { cn } from '@/lib/utils'\n\nexport interface SignInBlockProps {\n  title?: string\n  description?: string\n  buttonText?: string\n  cardWidth?: number\n  borderRadius?: number\n  padding?: number\n  variant?: 'default' | 'elevated' | 'bordered' | 'soft'\n  buttonVariant?: 'default' | 'outline' | 'secondary' | 'ghost'\n  socialColumns?: number\n  maxAttempts?: number\n  showSocials?: boolean\n  showRememberMe?: boolean\n  showForgotPassword?: boolean\n}\n\nexport default function SignInBlock({\n  title = 'Welcome back',\n  description = 'Enter your credentials to access your account',\n  buttonText = 'Sign In',\n  cardWidth = 384,\n  borderRadius = 16,\n  padding = 24,\n  variant = 'default',\n  buttonVariant = 'default',\n  socialColumns = 2,\n  maxAttempts = 5,\n  showSocials = true,\n  showRememberMe = true,\n  showForgotPassword = true,\n}: SignInBlockProps) {\n  const variantStyles =\n    {\n      default: 'border-border bg-background',\n      elevated: 'border-border bg-background',\n      bordered: 'border-2 border-foreground/20 bg-background',\n      soft: 'border-transparent bg-muted/40',\n    }[variant] ?? 'border-border bg-background'\n\n  return (\n    <div className=\"flex min-h-[600px] w-full items-center justify-center p-4\">\n      <Card\n        className={cn('w-full border transition-all duration-200 overflow-hidden', variantStyles)}\n        style={{\n          maxWidth: `${cardWidth}px`,\n          borderRadius: `${borderRadius}px`,\n        }}\n      >\n        <CardHeader\n          className=\"space-y-2 text-center\"\n          style={{ padding: `${padding}px`, paddingBottom: `${padding / 2}px` }}\n        >\n          <CardTitle className=\"text-2xl font-bold tracking-tight\">{title}</CardTitle>\n          <CardDescription className=\"text-sm text-muted-foreground\">{description}</CardDescription>\n        </CardHeader>\n        <CardContent\n          className=\"space-y-4\"\n          style={{ padding: `${padding}px`, paddingTop: `${padding / 2}px`, paddingBottom: `${padding / 2}px` }}\n        >\n          <div className=\"space-y-2\">\n            <Label htmlFor=\"email\" className=\"text-sm font-medium\">\n              Email\n            </Label>\n            <Input id=\"email\" type=\"email\" placeholder=\"m@example.com\" className=\"w-full\" required />\n          </div>\n          <div className=\"space-y-2\">\n            <div className=\"flex items-center justify-between\">\n              <Label htmlFor=\"password\" className=\"text-sm font-medium\">\n                Password\n              </Label>\n              {showForgotPassword && (\n                <a href=\"#\" className=\"text-xs font-medium text-primary hover:underline\">\n                  Forgot password?\n                </a>\n              )}\n            </div>\n            <Input id=\"password\" type=\"password\" className=\"w-full\" required />\n          </div>\n          {showRememberMe && (\n            <div className=\"flex items-center space-x-2 pt-2\">\n              <Checkbox id=\"remember\" />\n              <Label\n                htmlFor=\"remember\"\n                className=\"text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70\"\n              >\n                Remember me\n              </Label>\n            </div>\n          )}\n          <Button className=\"w-full mt-4\" size=\"lg\" variant={buttonVariant as any}>\n            {buttonText}\n          </Button>\n          {maxAttempts > 0 && (\n            <p className=\"text-[11px] text-center text-muted-foreground\">\n              Maximum security attempts: <span className=\"font-semibold text-foreground\">{maxAttempts}</span>\n            </p>\n          )}\n        </CardContent>\n        {showSocials && (\n          <CardFooter\n            className=\"flex flex-col space-y-4 border-t border-border\"\n            style={{ padding: `${padding}px`, paddingTop: `${padding * 0.75}px` }}\n          >\n            <div className=\"relative w-full\">\n              <div className=\"absolute inset-0 flex items-center\">\n                <span className=\"w-full border-t border-border\" />\n              </div>\n              <div className=\"relative flex justify-center text-xs uppercase\">\n                <span className=\"bg-background px-2 text-muted-foreground\">Or continue with</span>\n              </div>\n            </div>\n            <div className={cn('grid gap-3 w-full', socialColumns === 1 ? 'grid-cols-1' : 'grid-cols-2')}>\n              <Button variant=\"outline\" className=\"w-full\">\n                <svg\n                  role=\"img\"\n                  viewBox=\"0 0 24 24\"\n                  className=\"mr-2 h-4 w-4 fill-current\"\n                  xmlns=\"http://www.w3.org/2000/svg\"\n                >\n                  <path d=\"M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12\" />\n                </svg>\n                GitHub\n              </Button>\n              <Button variant=\"outline\" className=\"w-full\">\n                <svg\n                  role=\"img\"\n                  viewBox=\"0 0 24 24\"\n                  className=\"mr-2 h-4 w-4 fill-current\"\n                  xmlns=\"http://www.w3.org/2000/svg\"\n                >\n                  <path d=\"M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z\" />\n                </svg>\n                Google\n              </Button>\n            </div>\n            <div className=\"mt-4 text-center text-sm text-muted-foreground w-full\">\n              Don't have an account?{' '}\n              <a href=\"#\" className=\"font-semibold text-primary hover:underline\">\n                Sign up\n              </a>\n            </div>\n          </CardFooter>\n        )}\n      </Card>\n    </div>\n  )\n}\n",
+      "type": "registry:block",
+      "target": "components/blocks/sign-in/index.tsx"
+    }
+  ],
+  "meta": {
+    "demoProps": {
+      "title": {
+        "value": "Welcome back"
+      },
+      "description": {
+        "value": "Enter your credentials to access your account"
+      },
+      "buttonText": {
+        "value": "Sign In"
+      },
+      "variant": {
+        "value": "default",
+        "options": {
+          "Default": "default",
+          "Elevated": "elevated",
+          "Bordered": "bordered",
+          "Soft": "soft"
+        }
+      },
+      "buttonVariant": {
+        "value": "default",
+        "options": {
+          "Default": "default",
+          "Outline": "outline",
+          "Secondary": "secondary",
+          "Ghost": "ghost"
+        }
+      },
+      "cardWidth": {
+        "value": 384,
+        "min": 280,
+        "max": 600,
+        "step": 8
+      },
+      "borderRadius": {
+        "value": 16,
+        "min": 0,
+        "max": 32,
+        "step": 2
+      },
+      "padding": {
+        "value": 24,
+        "min": 12,
+        "max": 48,
+        "step": 4
+      },
+      "socialColumns": {
+        "value": 2,
+        "options": {
+          "1 Column": 1,
+          "2 Columns": 2
+        }
+      },
+      "maxAttempts": {
+        "value": 5,
+        "min": 0,
+        "max": 10,
+        "step": 1
+      },
+      "showSocials": {
+        "value": true
+      },
+      "showRememberMe": {
+        "value": true
+      },
+      "showForgotPassword": {
+        "value": true
+      }
+    }
+  },
+  "categories": [
+    "sign-in"
+  ],
+  "type": "registry:block"
+}

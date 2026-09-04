@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-textarea-13",
+  "title": "Textarea 13",
+  "description": "Textarea with button aligned right",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-textarea"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/textarea/p-textarea-13/index.tsx",
+      "content": "import { Button } from '@/components/ui/button'\nimport { Textarea } from '@/components/ui/textarea'\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-col gap-2\">\n      <Textarea placeholder=\"Type your message here\" />\n      <Button className=\"self-end\">Send</Button>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-textarea-13.tsx"
+    }
+  ],
+  "categories": [
+    "button",
+    "textarea"
+  ],
+  "type": "registry:ui"
+}

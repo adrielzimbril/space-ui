@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-tabs-8",
+  "title": "Tabs 8",
+  "description": "Tabs with count badge",
+  "registryDependencies": [
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-tabs"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/tabs/p-tabs-8/index.tsx",
+      "content": "import { Badge } from '@/components/ui/badge'\nimport { Tabs, TabsList, TabsPanel, TabsTab } from '@/components/ui/tabs'\n\nexport default function Particle() {\n  return (\n    <Tabs defaultValue=\"tab-1\">\n      <TabsList>\n        <TabsTab value=\"tab-1\">\n          All\n          <Badge className=\"not-in-data-active:text-muted-foreground\" variant=\"outline\">\n            128\n          </Badge>\n        </TabsTab>\n        <TabsTab value=\"tab-2\">\n          Pending\n          <Badge className=\"not-in-data-active:text-muted-foreground\" variant=\"outline\">\n            8\n          </Badge>\n        </TabsTab>\n        <TabsTab value=\"tab-3\">\n          Completed\n          <Badge className=\"not-in-data-active:text-muted-foreground\" variant=\"outline\">\n            120\n          </Badge>\n        </TabsTab>\n      </TabsList>\n      <TabsPanel value=\"tab-1\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">All items content</p>\n      </TabsPanel>\n      <TabsPanel value=\"tab-2\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">Pending items content</p>\n      </TabsPanel>\n      <TabsPanel value=\"tab-3\">\n        <p className=\"p-4 text-center text-muted-foreground text-xs\">Completed items content</p>\n      </TabsPanel>\n    </Tabs>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-tabs-8.tsx"
+    }
+  ],
+  "categories": [
+    "tabs",
+    "badge"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,29 @@
+---
+title: useDeviceOS
+description: Detects operating system platform.
+preview: demo-hooks-browser-device-os-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-browser-use-device-os" />
+
+## Usage
+
+```tsx
+import { useDeviceOS } from '@/hooks/use-device-os'
+
+const os = useDeviceOS() // 'macos' | 'windows' | 'ios' | 'android' | 'linux'
+```
+
+## API Reference
+
+### Parameters / Props
+
+_None_
+
+### Return Value
+
+| Return Type | Description  |
+| :---------- | :----------- |
+| `string`    | Detected OS. |

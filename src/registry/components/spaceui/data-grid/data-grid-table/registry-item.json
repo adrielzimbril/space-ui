@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-data-grid-table",
+  "type": "registry:component",
+  "title": "Data Grid Table",
+  "description": "Data Grid Table component for Space UI.",
+  "dependencies": [
+    "@tanstack/react-table"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-data-grid",
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-checkbox",
+    "@usespaceui/primitives-spinner"
+  ],
+  "categories": [
+    "component",
+    "data-grid",
+    "data-grid-data-grid-table"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/data-grid/data-grid-table/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/data-grid-table.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

@@ -1,0 +1,37 @@
+---
+title: RenderAfter
+description: Delayed lazy component mounting.
+preview: demo-hooks-components-render-after-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-components-render-after" />
+
+## Usage
+
+````tsx
+import { RenderAfter } from '@/components/render-after'
+
+import { RenderAfter } from '@/components/render-after'```
+
+```tsx
+<RenderAfter delay={1000}>
+  <Popup />
+</RenderAfter>
+````
+
+## API Reference
+
+### Parameters / Props
+
+| Prop       | Type        | Default    | Description          |
+| :--------- | :---------- | :--------- | :------------------- |
+| `delay`    | `number`    | _required_ | Delay in ms.         |
+| `fallback` | `ReactNode` | `null`     | Loading placeholder. |
+
+### Return Value
+
+| Return Type | Description      |
+| :---------- | :--------------- |
+| `ReactNode` | Rendered output. |

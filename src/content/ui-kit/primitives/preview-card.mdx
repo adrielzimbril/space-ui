@@ -1,0 +1,55 @@
+---
+title: Preview Card
+description: Displays an informative preview card when users hover over a link, giving them a summary of the linked page before clicking.
+
+links:
+  doc: https://base-ui.com/react/components/preview-card#api-reference
+preview: demo-primitives-p-preview-card-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-preview-card" />
+
+## Usage
+
+```tsx
+import { Button } from '@/components/ui/button'
+import { PreviewCard, PreviewCardPopup, PreviewCardTrigger } from '@/components/ui/preview-card'
+```
+
+```tsx
+<PreviewCard>
+  <PreviewCardTrigger>Open Preview Card</PreviewCardTrigger>
+  <PreviewCardPopup>Preview Card Content</PreviewCardPopup>
+</PreviewCard>
+```
+
+## API Reference
+
+### PreviewCard
+
+Root component. Alias for `PreviewCard.Root` from Base UI.
+
+### PreviewCardTrigger
+
+Trigger element that shows the preview card on hover. Alias for `PreviewCard.Trigger` from Base UI.
+
+### PreviewCardPopup
+
+Popup container that displays the preview content. Also exported as `HoverCardContent`.
+
+| Prop          | Type                                          | Default    | Description                                                                                                    |
+| ------------- | --------------------------------------------- | ---------- | -------------------------------------------------------------------------------------------------------------- |
+| `align`       | `"start" \| "center" \| "end"`                | `"center"` | Alignment relative to the trigger                                                                              |
+| `sideOffset`  | `number`                                      | `4`        | Distance from the trigger in pixels                                                                            |
+| `anchor`      | `Element \| null \| React.RefObject<Element>` | -          | Custom anchor element or ref to anchor the popup against                                                       |
+| `portalProps` | `PreviewCard.Portal.Props`                    | -          | Props forwarded to the internal portal (`keepMounted`, `container`, etc.); see Base UI Preview Card portal API |
+
+### PreviewCardPortal / PreviewCardPositioner / PreviewCardArrow / PreviewCardBackdrop
+
+Primitive sub-components for custom positioning, arrows, backdrops, and portal rendering.
+
+### Aliases
+
+`PreviewCard`, `PreviewCardTrigger`, and `PreviewCardPopup` are also exported as `HoverCard`, `HoverCardTrigger`, and `HoverCardContent`.

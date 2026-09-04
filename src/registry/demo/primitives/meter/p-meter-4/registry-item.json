@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-meter-4",
+  "type": "registry:ui",
+  "title": "Meter 4",
+  "description": "Meter with range",
+  "registryDependencies": [
+    "@usespaceui/primitives-meter"
+  ],
+  "categories": [
+    "meter"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/meter/p-meter-4/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-meter-4.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

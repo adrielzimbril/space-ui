@@ -1,0 +1,33 @@
+---
+title: useMap
+description: Reactive Map collection state manager.
+preview: demo-hooks-form-map-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-form-use-map" />
+
+## Usage
+
+```tsx
+import { useMap } from '@/hooks/use-map'
+
+const [map, actions] = useMap([['key', 'val']])
+actions.set('key', 'newVal')
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter        | Type       | Default | Description    |
+| :--------------- | :--------- | :------ | :------------- |
+| `initialEntries` | `[K, V][]` | `[]`    | Initial pairs. |
+
+### Return Value
+
+| Property  | Type        | Description                    |
+| :-------- | :---------- | :----------------------------- |
+| `map`     | `Map<K, V>` | Reactive Map instance.         |
+| `actions` | `Object`    | `set`, `delete`, `clear`, etc. |

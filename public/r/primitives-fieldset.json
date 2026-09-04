@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-fieldset",
+  "title": "Fieldset",
+  "description": "Accessible Fieldset primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/fieldset/index.tsx",
+      "content": "'use client'\n\nimport { Fieldset as FieldsetPrimitive } from '@base-ui/react/fieldset'\nimport type React from 'react'\nimport { cn } from '@/lib/utils'\n\nexport function Fieldset({ className, ...props }: FieldsetPrimitive.Root.Props): React.ReactElement {\n  return <FieldsetPrimitive.Root className={className} data-slot=\"fieldset\" {...props} />\n}\nexport function FieldsetLegend({ className, ...props }: FieldsetPrimitive.Legend.Props): React.ReactElement {\n  return (\n    <FieldsetPrimitive.Legend\n      className={cn('font-semibold text-foreground', className)}\n      data-slot=\"fieldset-legend\"\n      {...props}\n    />\n  )\n}\n\nexport { FieldsetPrimitive }\n",
+      "type": "registry:ui",
+      "target": "components/ui/fieldset.tsx"
+    }
+  ],
+  "categories": [
+    "fieldset"
+  ],
+  "type": "registry:ui"
+}

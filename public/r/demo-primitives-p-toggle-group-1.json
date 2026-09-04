@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-toggle-group-1",
+  "title": "Toggle Group Variants",
+  "description": "Default and outline toggle groups",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-toggle-group"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/toggle-group/p-toggle-group-1/index.tsx",
+      "content": "import { IconBold, IconItalic, IconUnderline } from '@tabler/icons-react'\nimport { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <ToggleGroup defaultValue={['bold']} multiple variant=\"default\">\n        <ToggleGroupItem value=\"bold\">\n          <IconBold />\n        </ToggleGroupItem>\n        <ToggleGroupItem value=\"italic\">\n          <IconItalic />\n        </ToggleGroupItem>\n        <ToggleGroupItem value=\"underline\">\n          <IconUnderline />\n        </ToggleGroupItem>\n      </ToggleGroup>\n\n      <ToggleGroup defaultValue={['bold']} multiple variant=\"outline\">\n        <ToggleGroupItem value=\"bold\">\n          <IconBold />\n        </ToggleGroupItem>\n        <ToggleGroupItem value=\"italic\">\n          <IconItalic />\n        </ToggleGroupItem>\n        <ToggleGroupItem value=\"underline\">\n          <IconUnderline />\n        </ToggleGroupItem>\n      </ToggleGroup>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-toggle-group-1.tsx"
+    }
+  ],
+  "categories": [
+    "toggle"
+  ],
+  "type": "registry:ui"
+}

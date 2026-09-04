@@ -1,0 +1,116 @@
+---
+title: Iconography
+description: Icon standards for Space UI using Tabler Icons for components and Lucide Icons for primitives.
+---
+
+## Overview
+
+Space UI relies on clean, static vector iconography designed for clarity, visual balance, and performance. We adopt a dual-library approach where each icon set serves a distinct structural role:
+
+1. **Tabler Icons (`@tabler/icons-react`)**: Our primary icon language for **Components**, **Showcases**, and **Application Blocks**. Tabler's softened terminals, continuous rounded curves, and balanced stroke weights naturally harmonize with the squircle geometry and refined surfaces of Space UI.
+2. **Lucide Icons (`lucide-react`)**: Dedicated to low-level **Primitives** (`Accordion`, `Select`, `Dialog`, `Breadcrumb`) to provide lightweight, standard UI state indicators (`ChevronDown`, `Check`, `X`, `Search`).
+
+---
+
+## Dual Iconography Comparison
+
+Explore side-by-side examples of identical icon concepts implemented with **Tabler Icons** versus **Lucide Icons** to understand the design decisions and aesthetic differences:
+
+| Icon Concept          | Tabler Icons (Components & Blocks)                                | Lucide Icons (Primitives)                                 | Usage Context                                 |
+| :-------------------- | :---------------------------------------------------------------- | :-------------------------------------------------------- | :-------------------------------------------- |
+| **Settings**          | <IconPreview library="tabler" name="IconSettings" />              | <IconPreview library="lucide" name="Settings" />          | Administration, user preferences, options     |
+| **Calendar**          | <IconPreview library="tabler" name="IconCalendar" />              | <IconPreview library="lucide" name="Calendar" />          | Date pickers, event scheduling, timelines     |
+| **Notifications**     | <IconPreview library="tabler" name="IconBell" />                  | <IconPreview library="lucide" name="Bell" />              | Alert center, bell counters, status tags      |
+| **Search**            | <IconPreview library="tabler" name="IconSearch" />                | <IconPreview library="lucide" name="Search" />            | Command menu, search inputs, filters          |
+| **User / Profile**    | <IconPreview library="tabler" name="IconUser" />                  | <IconPreview library="lucide" name="User" />              | Account dropdown, avatars, member lists       |
+| **Folder**            | <IconPreview library="tabler" name="IconFolder" />                | <IconPreview library="lucide" name="Folder" />            | File tree, directory explorers, project items |
+| **Mail**              | <IconPreview library="tabler" name="IconMail" />                  | <IconPreview library="lucide" name="Mail" />              | Contact forms, inbox rows, email inputs       |
+| **Sparkles / AI**     | <IconPreview library="tabler" name="IconSparkles" />              | <IconPreview library="lucide" name="Sparkles" />          | AI assistants, prompt generators, highlights  |
+| **Shield / Security** | <IconPreview library="tabler" name="IconShield" />                | <IconPreview library="lucide" name="Shield" />            | Security banners, permissions, auth status    |
+| **Layout Grid**       | <IconPreview library="tabler" name="IconLayoutGrid" />            | <IconPreview library="lucide" name="LayoutGrid" />        | Grid views, dashboard switchers, catalogs     |
+| **Sliders / Filters** | <IconPreview library="tabler" name="IconAdjustmentsHorizontal" /> | <IconPreview library="lucide" name="SlidersHorizontal" /> | Filter controls, configuration panels         |
+| **Trash / Delete**    | <IconPreview library="tabler" name="IconTrash" />                 | <IconPreview library="lucide" name="Trash" />             | Destructive actions, item removal             |
+
+---
+
+## Installation
+
+Install both libraries to support primitives and compound components in your application:
+
+### Tabler Icons (Components & Blocks)
+
+<InstallCommandBlock packages="@tabler/icons-react" />
+
+### Lucide Icons (Primitives)
+
+<InstallCommandBlock packages="lucide-react" />
+
+---
+
+## Usage Guidelines
+
+### 1. Tabler in Components & Blocks
+
+When building custom UI sections, feature cards, dashboards, or buttons, import icons from `@tabler/icons-react`:
+
+```tsx
+import { IconRocket, IconBrandGithub, IconArrowRight } from '@tabler/icons-react'
+import { Button } from '@/components/ui/button'
+
+export function HeroActions() {
+  return (
+    <div className="flex items-center gap-3">
+      <Button>
+        <IconRocket className="size-4" />
+        <span>Get Started</span>
+        <IconArrowRight className="size-4" />
+      </Button>
+      <Button variant="outline">
+        <IconBrandGithub className="size-4" />
+        <span>GitHub</span>
+      </Button>
+    </div>
+  )
+}
+```
+
+### 2. Lucide in Headless Primitives
+
+Primitives use `lucide-react` for standard UI indicators and state controls:
+
+```tsx
+import { ChevronDown } from 'lucide-react'
+import { AccordionPrimitive } from '@/components/ui/accordion'
+
+export function AccordionTrigger({ children, ...props }: AccordionPrimitive.Trigger.Props) {
+  return (
+    <AccordionPrimitive.Trigger {...props}>
+      {children}
+      <ChevronDown className="size-4 shrink-0 transition-transform duration-200" />
+    </AccordionPrimitive.Trigger>
+  )
+}
+```
+
+---
+
+## Icon Sizing Standards
+
+To maintain consistent vertical rhythm across your application, adhere to the standard Space UI icon scale:
+
+| Context                          | Tailwind Class         | Pixel Size  | Stroke Width   |
+| :------------------------------- | :--------------------- | :---------- | :------------- |
+| **Badges & Micro tags**          | `size-3` or `size-3.5` | 12px – 14px | `1.5` – `1.75` |
+| **Buttons & Form Controls**      | `size-4`               | 16px        | `1.75` – `2.0` |
+| **Section & Card Headers**       | `size-4.5` or `size-5` | 18px – 20px | `1.5` – `2.0`  |
+| **Empty States & Feature Tiles** | `size-8` or `size-10`  | 32px – 40px | `1.25` – `1.5` |
+
+---
+
+## Optical Alignment
+
+When pairing icons with text inside buttons or badges:
+
+- Always apply `shrink-0` to prevent icon distortion inside flex containers.
+- Use `pointer-events-none` on decorative icons to ensure click events pass cleanly to the parent trigger.
+- Keep icon colors inherited or muted with `text-muted-foreground` to preserve high visual hierarchy on the label text.

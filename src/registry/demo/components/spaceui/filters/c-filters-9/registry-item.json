@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-filters-9",
+  "type": "registry:component",
+  "title": "Filters with i18n support",
+  "description": "Filters with i18n support",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-filters",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-menu"
+  ],
+  "categories": [
+    "component",
+    "filters"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/filters/c-filters-9/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-filters-9.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

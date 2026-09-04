@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-toast-8",
+  "title": "Toast 8",
+  "description": "Anchored deduplicated success toast",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-toast",
+    "@usespaceui/primitives-tooltip"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/toast/p-toast-8/index.tsx",
+      "content": "'use client'\n\nimport { IconSparkles } from '@tabler/icons-react'\nimport { useRef } from 'react'\nimport { Button } from '@/components/ui/button'\nimport { anchoredToastManager } from '@/components/ui/toast'\nimport { Tooltip, TooltipPopup, TooltipTrigger } from '@/components/ui/tooltip'\n\nconst ANCHORED_SAVE_TOAST_ID = 'space-demo-anchored-save-toast'\n\nexport default function Particle() {\n  const saveButtonRef = useRef<HTMLButtonElement>(null)\n  const toastTimeout = 2000\n\n  function handleSave() {\n    if (!saveButtonRef.current) return\n    anchoredToastManager.add({\n      data: {\n        tooltipStyle: true,\n      },\n      id: ANCHORED_SAVE_TOAST_ID,\n      positionerProps: {\n        anchor: saveButtonRef.current,\n        sideOffset: 6,\n      },\n      timeout: toastTimeout,\n      title: 'Draft saved',\n    })\n  }\n\n  return (\n    <Tooltip>\n      <TooltipTrigger\n        delay={0}\n        render={<Button aria-label=\"Save\" onClick={handleSave} ref={saveButtonRef} size=\"icon\" variant=\"outline\" />}\n      >\n        <IconSparkles aria-hidden=\"true\" />\n      </TooltipTrigger>\n      <TooltipPopup>\n        <p>Save</p>\n      </TooltipPopup>\n    </Tooltip>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-toast-8.tsx"
+    }
+  ],
+  "categories": [
+    "toast",
+    "button"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-lifecycle-use-single-effect",
+  "type": "registry:hook",
+  "title": "useSingleEffect",
+  "description": "useSingleEffect hook.",
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "single-effect"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/lifecycle/use-single-effect/index.ts",
+      "type": "registry:hook",
+      "target": "hooks/use-single-effect.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

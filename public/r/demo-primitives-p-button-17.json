@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-button-17",
+  "title": "Button 17",
+  "description": "Pill-shaped button with rounded-full styling",
+  "registryDependencies": [
+    "@usespaceui/primitives-button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/button/p-button-17/index.tsx",
+      "content": "import { Button } from '@/components/ui/button'\n\nexport default function Particle() {\n  return <Button className=\"rounded-full\">Pill Button</Button>\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-button-17.tsx"
+    }
+  ],
+  "categories": [
+    "button"
+  ],
+  "type": "registry:ui"
+}

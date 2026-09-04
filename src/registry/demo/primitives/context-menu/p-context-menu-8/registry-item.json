@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-context-menu-8",
+  "type": "registry:ui",
+  "title": "Context Menu 8",
+  "description": "Context menu with switch checkbox items",
+  "registryDependencies": [
+    "@usespaceui/primitives-context-menu"
+  ],
+  "categories": [
+    "context menu",
+    "menu",
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/context-menu/p-context-menu-8/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-context-menu-8.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

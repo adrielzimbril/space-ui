@@ -1,0 +1,31 @@
+---
+title: formatText (slugify, capitalize)
+description: String transforms and slug generation.
+preview: demo-hooks-utils-format-text-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-utils-format-text" />
+
+## Usage
+
+```tsx
+import { truncateText, randomWord } from '@/utils/format-text'
+
+truncateText('Hello World!', { maxLength: 8 }) // => "Hello..."
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter | Type     | Default    | Description    |
+| :-------- | :------- | :--------- | :------------- |
+| `text`    | `string` | _required_ | Target string. |
+
+### Return Value
+
+| Return Type | Description         |
+| :---------- | :------------------ |
+| `string`    | Transformed string. |

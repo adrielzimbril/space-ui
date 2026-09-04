@@ -1,0 +1,58 @@
+---
+title: Checkbox Group
+description: Groups multiple related checkboxes together under a single control, making it easy for users to select one or several choices.
+
+links:
+  doc: https://base-ui.com/react/components/checkbox-group#api-reference
+preview: demo-primitives-p-checkbox-group-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-checkbox-group" />
+
+## Usage
+
+```tsx
+import { Checkbox } from '@/components/ui/checkbox'
+import { CheckboxGroup } from '@/components/ui/checkbox-group'
+```
+
+```tsx
+<CheckboxGroup>
+  <Label>
+    <Checkbox defaultChecked />
+    Next.js
+  </Label>
+  <Label>
+    <Checkbox />
+    Vite
+  </Label>
+  <Label>
+    <Checkbox />
+    Astro
+  </Label>
+</CheckboxGroup>
+```
+
+## Features
+
+### Disabled Items
+
+Checkbox group with individual disabled option items.
+
+<ComponentPreview name="demo-primitives-p-checkbox-group-2" />
+
+## API Reference
+
+### CheckboxGroup
+
+Styled wrapper for `CheckboxGroup` from Base UI. Provides shared state management for a group of checkboxes with flex column layout.
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-checkbox-group-3" description="Checkbox group with parent checkbox" />
+  <ShowcaseCard name="demo-primitives-p-checkbox-group-4" description="Nested checkbox group with parent" />
+  <ShowcaseCard name="demo-primitives-p-checkbox-group-5" description="Checkbox group form" />
+</ShowcaseGrid>

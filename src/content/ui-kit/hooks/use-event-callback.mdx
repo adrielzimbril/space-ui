@@ -1,0 +1,31 @@
+---
+title: useEventCallback
+description: Stable guaranteed callback reference.
+preview: demo-hooks-lifecycle-event-callback-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-lifecycle-use-event-callback" />
+
+## Usage
+
+```tsx
+import { useEventCallback } from '@/hooks/use-event-callback'
+
+const onClick = useEventCallback(() => doSomething(state))
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter | Type | Default    | Description        |
+| :-------- | :--- | :--------- | :----------------- |
+| `fn`      | `T`  | _required_ | Callback function. |
+
+### Return Value
+
+| Return Type | Description        |
+| :---------- | :----------------- |
+| `T`         | Memoized callback. |

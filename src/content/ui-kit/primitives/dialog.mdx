@@ -1,0 +1,187 @@
+---
+title: Dialog
+description: Opens a focused popup window over the main page, allowing users to complete a dedicated task or view details without losing page context.
+
+links:
+  doc: https://base-ui.com/react/components/dialog#api-reference
+preview: demo-primitives-p-dialog-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-dialog" />
+
+## Usage
+
+```tsx
+import {
+  Dialog,
+  DialogClose,
+  DialogDescription,
+  DialogPanel,
+  DialogFooter,
+  DialogHeader,
+  DialogPopup,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog'
+```
+
+```tsx
+<Dialog>
+  <DialogTrigger>Open Dialog</DialogTrigger>
+  <DialogPopup>
+    <DialogHeader>
+      <DialogTitle>Dialog Title</DialogTitle>
+      <DialogDescription>Dialog Description</DialogDescription>
+    </DialogHeader>
+    <DialogPanel>Content</DialogPanel>
+    <DialogFooter>
+      <DialogClose>Close</DialogClose>
+    </DialogFooter>
+  </DialogPopup>
+</Dialog>
+```
+
+## Anatomy
+
+```tsx
+<Dialog>
+  <DialogTrigger />
+  <DialogBackdrop />
+  <DialogPopup>
+    <DialogHeader>
+      <DialogTitle />
+      <DialogDescription />
+    </DialogHeader>
+    <DialogPanel />
+    <DialogFooter>
+      <DialogClose />
+    </DialogFooter>
+  </DialogPopup>
+</Dialog>
+```
+
+## Features
+
+### Bare Footer
+
+Dialog with a bare footer (`variant="bare"`), removing the default border and background styling.
+
+<ComponentPreview name="demo-primitives-p-dialog-6" />
+
+## Accessibility
+
+- Follows the [WAI-ARIA Dialog (Modal) Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/).
+- Traps keyboard focus within the dialog and locks background body scrolling while open.
+
+### Keyboard Interactions
+
+| Key                    | Action                                                           |
+| :--------------------- | :--------------------------------------------------------------- |
+| <Kbd>Tab</Kbd>         | Moves focus to the next focusable element inside the dialog.     |
+| <Kbd>Shift + Tab</Kbd> | Moves focus to the previous focusable element inside the dialog. |
+| <Kbd>Escape</Kbd>      | Closes the dialog and restores focus to the trigger element.     |
+
+## API Reference
+
+### Dialog
+
+Root component. Alias for `Dialog.Root` from Base UI.
+
+### DialogTrigger
+
+Trigger button that opens the dialog. Alias for `Dialog.Trigger` from Base UI.
+
+### DialogCreateHandle
+
+Creates a handle for detached dialog triggers. Use it when the trigger and popup need to be coordinated across different parts of the tree.
+
+### DialogPopup
+
+Popup container that displays the dialog content. Also exported as `DialogContent`.
+
+| Prop                  | Type                  | Default | Description                                                                                              |
+| --------------------- | --------------------- | ------- | -------------------------------------------------------------------------------------------------------- |
+| `showCloseButton`     | `boolean`             | `true`  | When true, displays a close button in the top-right corner                                               |
+| `bottomStickOnMobile` | `boolean`             | `true`  | When true, sticks to the bottom of the screen on mobile devices                                          |
+| `closeProps`          | `Dialog.Close.Props`  | -       | Props forwarded to the internal close button, useful for overriding `aria-label`                         |
+| `portalProps`         | `Dialog.Portal.Props` | -       | Props forwarded to the internal portal (`keepMounted`, `container`, etc.); see Base UI Dialog portal API |
+
+### DialogHeader
+
+Container for the dialog title and description. Supports the `render` prop for polymorphic composition (e.g. `render={<Link href="/" />}`).
+
+### DialogFooter
+
+Footer section for action buttons. Supports the `render` prop for polymorphic composition.
+
+| Prop      | Type                  | Default     | Description                                                                                |
+| --------- | --------------------- | ----------- | ------------------------------------------------------------------------------------------ |
+| `variant` | `"default" \| "bare"` | `"default"` | Controls the footer styling. `default` includes border and background, `bare` removes them |
+
+**Example:**
+
+```tsx
+// Default variant (with border and background)
+<DialogFooter>
+  <DialogClose>Cancel</DialogClose>
+  <Button>Save</Button>
+</DialogFooter>
+
+// Bare variant (no border or background)
+<DialogFooter variant="bare">
+  <DialogClose>Cancel</DialogClose>
+  <Button>Save</Button>
+</DialogFooter>
+```
+
+### DialogTitle
+
+Title component. Alias for `Dialog.Title` from Base UI.
+
+### DialogDescription
+
+Description component. Alias for `Dialog.Description` from Base UI.
+
+### DialogPanel
+
+Scrollable content container. Automatically wraps content in a `ScrollArea` component. Supports the `render` prop for polymorphic composition.
+
+| Prop         | Type      | Default | Description                                    |
+| ------------ | --------- | ------- | ---------------------------------------------- |
+| `scrollFade` | `boolean` | `true`  | When true, shows a fade effect at scroll edges |
+
+**Example:**
+
+```tsx
+<DialogPanel>
+  {/* Long content that will scroll if it exceeds the dialog height */}
+  <div>...</div>
+</DialogPanel>
+```
+
+### DialogClose
+
+Close button component. Alias for `Dialog.Close` from Base UI.
+
+### DialogPortal
+
+Portal component for rendering outside the DOM hierarchy. Alias for `Dialog.Portal` from Base UI.
+
+### DialogBackdrop
+
+Backdrop/overlay component. Also exported as `DialogOverlay`. Alias for `Dialog.Backdrop` from Base UI.
+
+### DialogViewport
+
+Viewport component for positioning. Alias for `Dialog.Viewport` from Base UI.
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-dialog-2" description="Dialog opened from menu" />
+  <ShowcaseCard name="demo-primitives-p-dialog-3" description="Nested dialogs" />
+  <ShowcaseCard name="demo-primitives-p-dialog-4" description="Dialog with close confirmation" />
+  <ShowcaseCard name="demo-primitives-p-dialog-5" description="Dialog with long content" />
+</ShowcaseGrid>

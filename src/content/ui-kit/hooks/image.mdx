@@ -1,0 +1,35 @@
+---
+title: Image
+description: Progressive loading responsive image component.
+preview: demo-hooks-components-image-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-components-image" />
+
+## Usage
+
+````tsx
+import { Image } from '@/components/image'
+
+import { Image } from '@/components/image'```
+
+```tsx
+<Image src="/photo.jpg" alt="Space UI" fallback="/placeholder.jpg" />
+````
+
+## API Reference
+
+### Parameters / Props
+
+| Prop       | Type     | Default     | Description        |
+| :--------- | :------- | :---------- | :----------------- |
+| `src`      | `string` | _required_  | Image URL.         |
+| `fallback` | `string` | `undefined` | Error placeholder. |
+
+### Return Value
+
+| Return Type    | Description    |
+| :------------- | :------------- |
+| `ReactElement` | Image element. |

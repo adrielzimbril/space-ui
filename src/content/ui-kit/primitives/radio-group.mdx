@@ -1,0 +1,80 @@
+---
+title: Radio Group
+description: Presents a list of options where users can select only one choice at a time, making mutually exclusive decisions clear.
+
+links:
+  doc: https://base-ui.com/react/components/radio#api-reference
+preview: demo-primitives-p-radio-group-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-radio-group" />
+
+## Usage
+
+```tsx
+import { Label } from '@/components/ui/label'
+import { Radio, RadioGroup } from '@/components/ui/radio-group'
+```
+
+```tsx
+<RadioGroup defaultValue="next">
+  <Label>
+    <Radio value="next" /> Next.js
+  </Label>
+  <Label>
+    <Radio value="vite" /> Vite
+  </Label>
+  <Label>
+    <Radio value="astro" /> Astro
+  </Label>
+</RadioGroup>
+```
+
+## Anatomy
+
+```tsx
+<RadioGroup>
+  <Radio value="1">
+    <RadioIndicator />
+  </Radio>
+</RadioGroup>
+```
+
+## Features
+
+### Sizes
+
+Radio buttons in `sm`, `default`, and `lg` sizes.
+
+<ComponentPreview name="demo-primitives-p-radio-group-2" />
+
+## Accessibility
+
+- Follows the [WAI-ARIA Radio Group Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/radio/).
+
+### Keyboard Interactions
+
+| Key                                          | Action                                        |
+| :------------------------------------------- | :-------------------------------------------- |
+| <Kbd>ArrowDown</Kbd> / <Kbd>ArrowRight</Kbd> | Moves selection to the next radio option.     |
+| <Kbd>ArrowUp</Kbd> / <Kbd>ArrowLeft</Kbd>    | Moves selection to the previous radio option. |
+
+## API Reference
+
+### RadioGroup
+
+Root component. Styled wrapper for `RadioGroup.Root` from Base UI with flex column layout.
+
+### Radio
+
+Individual radio button. Styled wrapper for `Radio.Root` from Base UI with built-in indicator. Also exported as `RadioGroupItem`.
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-radio-group-3" description="Radio group card" />
+  <ShowcaseCard name="demo-primitives-p-radio-group-4" description="Radio group in form" />
+  <ShowcaseCard name="demo-primitives-p-radio-group-5" description="Theme selector with image cards" />
+</ShowcaseGrid>

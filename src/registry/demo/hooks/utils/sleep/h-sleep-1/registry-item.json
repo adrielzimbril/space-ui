@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-utils-sleep-1",
+  "type": "registry:hook",
+  "title": "sleep",
+  "description": "Promise-based delay timer",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-utils-sleep",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "hooks",
+    "utils",
+    "sleep"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/utils/sleep/h-sleep-1/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-sleep-1.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

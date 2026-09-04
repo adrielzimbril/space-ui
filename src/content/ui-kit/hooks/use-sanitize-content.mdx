@@ -1,0 +1,31 @@
+---
+title: useSanitizeContent
+description: SSR-safe HTML sanitizer that strips XSS threats while preserving rich formatting.
+preview: demo-hooks-form-sanitize-content-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-form-use-sanitize-content" />
+
+## Usage
+
+```tsx
+import { useSanitizeContent } from '@/hooks/use-sanitize-content'
+
+const safeHtml = useSanitizeContent('<p>Safe content</p><script>alert(1)</script>')
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter | Type                                          | Default    | Description |
+| :-------- | :-------------------------------------------- | :--------- | :---------- |
+| `input`   | `string \| &#123; description: string &#125;` | _required_ | Dirty HTML. |
+
+### Return Value
+
+| Return Type | Description                  |
+| :---------- | :--------------------------- |
+| `string`    | Clean, XSS-safe HTML string. |

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-tabs-1",
+  "title": "Tabs Variants",
+  "description": "Default rounded tabs and underline tabs",
+  "registryDependencies": [
+    "@usespaceui/primitives-tabs"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/tabs/p-tabs-1/index.tsx",
+      "content": "import { Tabs, TabsList, TabsTab } from '@/components/ui/tabs'\n\nexport default function Particle() {\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-4\">\n      <Tabs defaultValue=\"preview\">\n        <TabsList size=\"sm\" variant=\"default\">\n          <TabsTab value=\"preview\">Preview</TabsTab>\n          <TabsTab value=\"code\">Code</TabsTab>\n          <TabsTab value=\"props\">Props</TabsTab>\n        </TabsList>\n      </Tabs>\n\n      <Tabs defaultValue=\"preview\">\n        <TabsList variant=\"default\">\n          <TabsTab value=\"preview\">Preview</TabsTab>\n          <TabsTab value=\"code\">Code</TabsTab>\n          <TabsTab value=\"props\">Props</TabsTab>\n        </TabsList>\n      </Tabs>\n\n      <Tabs defaultValue=\"preview\">\n        <TabsList size=\"lg\" variant=\"default\">\n          <TabsTab value=\"preview\">Preview</TabsTab>\n          <TabsTab value=\"code\">Code</TabsTab>\n          <TabsTab value=\"props\">Props</TabsTab>\n        </TabsList>\n      </Tabs>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-tabs-1.tsx"
+    }
+  ],
+  "categories": [
+    "tabs"
+  ],
+  "type": "registry:ui"
+}

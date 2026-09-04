@@ -1,0 +1,108 @@
+---
+title: Avatar Extended
+description: Extended Avatar components with rings, status badges, indicators, and icons.
+preview: demo-primitives-p-avatar-5
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-avatar-extended" />
+
+## Anatomy
+
+```tsx
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import {
+  AvatarExtended,
+  AvatarRing,
+  AvatarBadge,
+  AvatarIndicator,
+  AvatarIcon,
+} from '@/components/spaceui/avatar-extended'
+
+export default () => (
+  <AvatarExtended>
+    <Avatar>
+      <AvatarImage />
+      <AvatarFallback>U</AvatarFallback>
+    </Avatar>
+
+    <AvatarRing className="ring-primary" />
+    <AvatarIndicator className="bg-emerald-500" />
+    <AvatarBadge>+6</AvatarBadge>
+    <AvatarIcon>
+      <IconCheck className="size-3" />
+    </AvatarIcon>
+  </AvatarExtended>
+)
+```
+
+## Features
+
+### Verified Icon & Company Logo
+
+Use the `AvatarIcon` component to display small status indicators, verified badges, or company logos at the corner of the avatar.
+
+<ComponentPreview name="demo-primitives-p-avatar-6" />
+
+### Avatar Rings
+
+Apply custom selection states or decorative borders using the `AvatarRing` component with standard utility classes.
+
+<ComponentPreview name="demo-primitives-p-avatar-3" />
+
+### Avatar Badges (Counts)
+
+Display unread notifications or counters cleanly over the avatar using the `AvatarBadge` component.
+
+<ComponentPreview name="demo-primitives-p-avatar-8" />
+
+## API Reference
+
+The extended components accept standard HTML attributes and use `className` for styling.
+
+### AvatarExtended
+
+The root wrapper component that establishes the relative positioning context. Extends `React.HTMLAttributes<HTMLDivElement>`.
+
+| Prop       | Type        | Default | Description                                                   |
+| :--------- | :---------- | :------ | :------------------------------------------------------------ |
+| `children` | `ReactNode` | -       | Must contain an `Avatar` and any of the extension components. |
+
+---
+
+### AvatarRing
+
+An absolute overlay that applies a decorative ring or focus outline around the avatar. Extends `React.HTMLAttributes<HTMLSpanElement>`.
+
+_No specific props. Use `className` to pass Tailwind ring utility classes (e.g. `ring-primary ring-offset-2`)._
+
+---
+
+### AvatarIndicator
+
+A small status dot positioned at the bottom right by default, used for online/offline states. Extends `React.HTMLAttributes<HTMLSpanElement>`.
+
+_No specific props. Use `className` to set the color (e.g. `bg-emerald-500`)._
+
+---
+
+### AvatarBadge
+
+A notification counter or badge positioned at the top right. It wraps the standard `Badge` primitive. Extends `BadgeProps`.
+
+| Prop      | Type                                                                                                    | Default     | Description                                         |
+| :-------- | :------------------------------------------------------------------------------------------------------ | :---------- | :-------------------------------------------------- |
+| `variant` | `"default" \| "destructive" \| "error" \| "info" \| "outline" \| "secondary" \| "success" \| "warning"` | `"default"` | The visual variant of the badge.                    |
+| `size`    | `"default" \| "sm" \| "lg"`                                                                             | `"sm"`      | The size of the badge.                              |
+| `square`  | `boolean`                                                                                               | `true`      | Forces a square ratio for numbers. Fixed to `true`. |
+
+---
+
+### AvatarIcon
+
+A wrapper used to absolutely position small icons, logos, or verified checkmarks at the bottom right. Extends `React.HTMLAttributes<HTMLDivElement>`.
+
+| Prop       | Type        | Default | Description                          |
+| :--------- | :---------- | :------ | :----------------------------------- |
+| `children` | `ReactNode` | -       | The icon or logo element to display. |

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-rating-5",
+  "title": "Rating with size.",
+  "description": "Rating with size.",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-rating"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/rating/c-rating-5/index.tsx",
+      "content": "import { Rating } from '@/components/spaceui/rating'\n\nexport default function Pattern() {\n  return (\n    <div className=\"flex flex-col items-center gap-4\">\n      <Rating rating={4} size=\"sm\" />\n      <Rating rating={4} />\n      <Rating rating={4} size=\"lg\" />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/c-rating-5.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "rating"
+  ],
+  "type": "registry:component"
+}

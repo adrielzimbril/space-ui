@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-number-field",
+  "type": "registry:ui",
+  "title": "Number Field",
+  "description": "Accessible Number Field primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-label"
+  ],
+  "categories": [
+    "number-field"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/number-field/index.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/number-field.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

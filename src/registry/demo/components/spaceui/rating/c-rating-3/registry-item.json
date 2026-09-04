@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-rating-3",
+  "type": "registry:component",
+  "title": "Rating with show value.",
+  "description": "Rating with show value.",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-rating"
+  ],
+  "categories": [
+    "component",
+    "rating"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/rating/c-rating-3/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-rating-3.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

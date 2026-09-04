@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lib-segmented-control",
+  "type": "registry:lib",
+  "title": "Segmented Control",
+  "description": "Shared layout and sizing styles for segmented controls and tabs.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "categories": [
+    "layout",
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/lib/segmented-control/index.ts",
+      "type": "registry:lib",
+      "target": "lib/segmented-control.ts"
+    }
+  ],
+  "createdAt": "2026-08-28",
+  "updatedAt": "2026-08-28"
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-lifecycle-first-render-1",
+  "type": "registry:hook",
+  "title": "useFirstRender",
+  "description": "First render cycle indicator",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-lifecycle-use-first-render",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "first-render"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/lifecycle/first-render/h-first-render-1/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-first-render-1.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

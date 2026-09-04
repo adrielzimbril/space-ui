@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-card-10",
+  "type": "registry:ui",
+  "title": "Card 10",
+  "description": "Card within a frame with header and footer",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-form",
+    "@usespaceui/primitives-frame",
+    "@usespaceui/primitives-input",
+    "@usespaceui/primitives-select"
+  ],
+  "categories": [
+    "card",
+    "form",
+    "frame"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/card/p-card-10/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-card-10.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

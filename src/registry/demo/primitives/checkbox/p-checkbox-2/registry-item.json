@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-checkbox-2",
+  "type": "registry:ui",
+  "title": "Checkbox Sizes",
+  "description": "Checkboxes in sm, default, and lg sizes",
+  "registryDependencies": [
+    "@usespaceui/primitives-checkbox"
+  ],
+  "categories": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/checkbox/p-checkbox-2/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-checkbox-2.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

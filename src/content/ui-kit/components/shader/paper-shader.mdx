@@ -1,0 +1,56 @@
+---
+title: Paper Shader
+description: Paper Shaders WebGL2 canvas. Pass a fragment shader and uniforms; the mount compiles, resizes, and ticks time.
+author:
+  name: usespaceui
+  url: https://github.com/usespaceui
+preview: demo-components-shader-c-paper-shader-1
+---
+
+The canvas is `registry/components/shader/paper-shader/index.tsx` (default export `PaperShader`). The demo fragment lives in `demo/components/shader/paper-shader/c-paper-shader-1/shader-source.tsx`.
+
+## Installation
+
+<ComponentInstallation name="components-shader-paper-shader" />
+
+## Usage
+
+```tsx
+import PaperShader from '@/components/shader/paper-shader'
+
+;<PaperShader
+  fragmentShader={shader}
+  uniforms={{
+    u_colorBack: [0.1, 0.1, 0.1, 1],
+    u_colorTint: [1, 1, 1, 1],
+    u_contour: 0.5,
+    u_distortion: 0.1,
+    u_softness: 0.05,
+    u_speed: 1,
+  }}
+  speed={1}
+  webGlContextAttributes={{ alpha: true, antialias: true }}
+/>
+```
+
+## Files
+
+| File                                 | Role                                     |
+| ------------------------------------ | ---------------------------------------- |
+| `paper-shader/index.tsx`             | WebGL2 mount, compile, uniforms, dispose |
+| `c-paper-shader-1/index.tsx`         | Demo wrapper                             |
+| `c-paper-shader-1/shader-source.tsx` | Example GLSL 300 es fragment             |
+
+## API Reference
+
+| Prop                     | Type                      | Default      | Description                                       |
+| ------------------------ | ------------------------- | ------------ | ------------------------------------------------- |
+| `fragmentShader`         | `string`                  | **required** | GLSL 300 es fragment source                       |
+| `uniforms`               | `Record<string, unknown>` | `{}`         | Values uploaded each frame (`u_time` is injected) |
+| `speed`                  | `number`                  | `0`          | Time multiplier                                   |
+| `webGlContextAttributes` | `WebGLContextAttributes`  | —            | Context flags                                     |
+| `minPixelRatio`          | `number`                  | —            | DPR floor                                         |
+| `maxPixelCount`          | `number`                  | —            | Pixel cap for large canvases                      |
+| `style`                  | `CSSProperties`           | —            | Outer div style                                   |
+
+The parent must be positioned; the canvas is `absolute inset-0`.

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-collapsible",
+  "title": "Collapsible",
+  "description": "Accessible Collapsible primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/collapsible/index.tsx",
+      "content": "'use client'\n\nimport { Collapsible as CollapsiblePrimitive } from '@base-ui/react/collapsible'\nimport type React from 'react'\nimport { cn } from '@/lib/utils'\n\nexport function Collapsible({ ...props }: CollapsiblePrimitive.Root.Props): React.ReactElement {\n  return <CollapsiblePrimitive.Root data-slot=\"collapsible\" {...props} />\n}\n\nexport function CollapsibleTrigger({ className, ...props }: CollapsiblePrimitive.Trigger.Props): React.ReactElement {\n  return <CollapsiblePrimitive.Trigger className={className} data-slot=\"collapsible-trigger\" {...props} />\n}\n\nexport function CollapsiblePanel({ className, ...props }: CollapsiblePrimitive.Panel.Props): React.ReactElement {\n  return (\n    <CollapsiblePrimitive.Panel\n      className={cn(\n        'h-(--collapsible-panel-height) overflow-hidden transition-[height] duration-200 data-ending-style:h-0 data-starting-style:h-0',\n        className,\n      )}\n      data-slot=\"collapsible-panel\"\n      {...props}\n    />\n  )\n}\n\nexport { CollapsiblePrimitive, CollapsiblePanel as CollapsibleContent }\n",
+      "type": "registry:ui",
+      "target": "components/ui/collapsible.tsx"
+    }
+  ],
+  "categories": [
+    "collapsible"
+  ],
+  "type": "registry:ui"
+}

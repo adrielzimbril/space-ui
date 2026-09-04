@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-slider-6",
+  "type": "registry:ui",
+  "title": "Slider 6",
+  "description": "Slider with labels above",
+  "registryDependencies": [
+    "@usespaceui/primitives-slider"
+  ],
+  "categories": [
+    "slider"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/slider/p-slider-6/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-slider-6.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

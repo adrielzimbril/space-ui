@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-button-24",
+  "type": "registry:ui",
+  "title": "Button 24",
+  "description": "Copy button with feedback",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-browser-use-clipboard",
+    "@usespaceui/primitives-button"
+  ],
+  "categories": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/button/p-button-24/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-button-24.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

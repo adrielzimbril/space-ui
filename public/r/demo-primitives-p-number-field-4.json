@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-number-field-4",
+  "title": "Number Field 4",
+  "description": "Disabled number field",
+  "registryDependencies": [
+    "@usespaceui/primitives-number-field"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/number-field/p-number-field-4/index.tsx",
+      "content": "import {\n  NumberField,\n  NumberFieldDecrement,\n  NumberFieldGroup,\n  NumberFieldIncrement,\n  NumberFieldInput,\n} from '@/components/ui/number-field'\n\nexport default function Particle() {\n  return (\n    <NumberField defaultValue={42} disabled>\n      <NumberFieldGroup>\n        <NumberFieldDecrement />\n        <NumberFieldInput />\n        <NumberFieldIncrement />\n      </NumberFieldGroup>\n    </NumberField>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-number-field-4.tsx"
+    }
+  ],
+  "categories": [
+    "number field",
+    "input"
+  ],
+  "type": "registry:ui"
+}

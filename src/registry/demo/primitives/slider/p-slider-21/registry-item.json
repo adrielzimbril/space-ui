@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-slider-21",
+  "type": "registry:ui",
+  "title": "Slider 21",
+  "description": "Object position sliders with reset",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-fieldset",
+    "@usespaceui/primitives-label",
+    "@usespaceui/primitives-number-field",
+    "@usespaceui/primitives-slider"
+  ],
+  "categories": [
+    "slider",
+    "number field",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/slider/p-slider-21/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-slider-21.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

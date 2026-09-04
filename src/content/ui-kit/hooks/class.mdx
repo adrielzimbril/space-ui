@@ -1,0 +1,37 @@
+---
+title: Class
+description: Conditional class wrapper component.
+preview: demo-hooks-components-class-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-components-class" />
+
+## Usage
+
+````tsx
+import { Class } from '@/components/class'
+
+import { Class } from '@/components/class'```
+
+```tsx
+<Class names={{ 'bg-primary text-white': isActive }}>
+  <div>Box</div>
+</Class>
+````
+
+## API Reference
+
+### Parameters / Props
+
+| Prop       | Type                      | Default    | Description          |
+| :--------- | :------------------------ | :--------- | :------------------- |
+| `names`    | `Record<string, boolean>` | _required_ | Class condition map. |
+| `children` | `ReactElement`            | _required_ | Target element.      |
+
+### Return Value
+
+| Return Type    | Description                          |
+| :------------- | :----------------------------------- |
+| `ReactElement` | Cloned element with classes applied. |

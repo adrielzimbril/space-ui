@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-input",
+  "title": "Input",
+  "description": "Accessible Input primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/input/index.tsx",
+      "content": "'use client'\n\nimport { Input as InputPrimitive } from '@base-ui/react/input'\nimport type * as React from 'react'\nimport { cn } from '@/lib/utils'\n\nexport type InputProps = Omit<InputPrimitive.Props & React.RefAttributes<HTMLInputElement>, 'size'> & {\n  size?: 'sm' | 'default' | 'lg' | number\n  unstyled?: boolean\n  nativeInput?: boolean\n}\n\nexport function Input({\n  className,\n  size = 'default',\n  unstyled = false,\n  nativeInput = false,\n  style,\n  ...props\n}: InputProps): React.ReactElement {\n  const inputClassName = cn(\n    'h-8.5 w-full min-w-0 rounded-[inherit] px-[calc(--spacing(3)-1px)] text-foreground leading-8.5 outline-none [transition:background-color_5000000s_ease-in-out_0s] placeholder:text-muted-foreground/60 sm:h-7.5 sm:leading-7.5 autofill:[-webkit-text-fill-color:var(--foreground)]',\n    size === 'sm' && 'h-7.5 px-[calc(--spacing(2.5)-1px)] leading-7.5 sm:h-6.5 sm:leading-6.5',\n    size === 'lg' && 'h-9.5 leading-9.5 sm:h-8.5 sm:leading-8.5',\n    props.type === 'search' &&\n      '[&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none [&::-webkit-search-results-button]:appearance-none [&::-webkit-search-results-decoration]:appearance-none',\n    props.type === 'file' &&\n      'text-muted-foreground file:me-3 file:bg-transparent file:font-medium file:text-foreground file:text-sm',\n  )\n  return (\n    <span\n      className={\n        cn(\n          !unstyled &&\n            'relative inline-flex w-full rounded-lg border border-input bg-background text-base transition-all duration-150 focus-within:border-foreground/20 focus-within:ring-2 focus-within:ring-foreground/10 has-disabled:opacity-50 has-disabled:pointer-events-none has-aria-invalid:border-destructive has-aria-invalid:focus-within:ring-destructive/20 sm:text-sm dark:border-input dark:bg-input/30 dark:focus-within:border-foreground/70 dark:focus-within:ring-foreground/15',\n          className,\n        ) || undefined\n      }\n      data-size={size}\n      data-slot=\"input-control\"\n    >\n      {nativeInput ? (\n        <input\n          className={inputClassName}\n          data-slot=\"input\"\n          size={typeof size === 'number' ? size : undefined}\n          style={typeof style === 'function' ? undefined : style}\n          {...props}\n        />\n      ) : (\n        <InputPrimitive\n          className={inputClassName}\n          data-slot=\"input\"\n          size={typeof size === 'number' ? size : undefined}\n          style={style}\n          {...props}\n        />\n      )}\n    </span>\n  )\n}\nexport { InputPrimitive }\n",
+      "type": "registry:ui",
+      "target": "components/ui/input.tsx"
+    }
+  ],
+  "categories": [
+    "input"
+  ],
+  "type": "registry:ui"
+}

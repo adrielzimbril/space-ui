@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-checkbox-group-2",
+  "title": "Checkbox Group 2",
+  "description": "Checkbox group with disabled items",
+  "registryDependencies": [
+    "@usespaceui/primitives-checkbox",
+    "@usespaceui/primitives-checkbox-group",
+    "@usespaceui/primitives-label"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/checkbox-group/p-checkbox-group-2/index.tsx",
+      "content": "import { Checkbox } from '@/components/ui/checkbox'\nimport { CheckboxGroup } from '@/components/ui/checkbox-group'\nimport { Label } from '@/components/ui/label'\n\nexport default function Particle() {\n  return (\n    <CheckboxGroup aria-label=\"Select frameworks\" defaultValue={['next']}>\n      <Label>\n        <Checkbox value=\"next\" />\n        Next.js\n      </Label>\n      <Label>\n        <Checkbox disabled value=\"vite\" />\n        Vite\n      </Label>\n      <Label>\n        <Checkbox value=\"astro\" />\n        Astro\n      </Label>\n    </CheckboxGroup>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-checkbox-group-2.tsx"
+    }
+  ],
+  "categories": [
+    "checkbox",
+    "checkbox group",
+    "disabled"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-date-picker-3",
+  "type": "registry:ui",
+  "title": "Date Picker 3",
+  "description": "Date picker with field and dropdown navigation",
+  "dependencies": [
+    "@daypicker/react",
+    "@tabler/icons-react",
+    "date-fns",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-calendar",
+    "@usespaceui/primitives-combobox",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-popover"
+  ],
+  "categories": [
+    "date picker",
+    "calendar",
+    "popover",
+    "button",
+    "field",
+    "combobox"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/date-picker/p-date-picker-3/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-date-picker-3.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

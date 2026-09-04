@@ -1,0 +1,41 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-interactive-fun-facts",
+  "type": "registry:block",
+  "title": "Interactive 3D Fun Facts Game",
+  "description": "Interactive 3D stacked deck quiz game block with True/False feedback, live score and dialog summary.",
+  "dependencies": ["@tabler/icons-react"],
+  "registryDependencies": [
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-dialog",
+    "@usespaceui/primitives-toast"
+  ],
+  "categories": ["interactive-fun-facts"],
+  "files": [
+    {
+      "path": "src/registry/blocks/interactive-fun-facts/interactive-fun-facts-1/index.tsx",
+      "type": "registry:block",
+      "target": "components/blocks/interactive-fun-facts/index.tsx"
+    },
+    {
+      "path": "src/registry/blocks/interactive-fun-facts/interactive-fun-facts-1/data.ts",
+      "type": "registry:block",
+      "target": "components/blocks/interactive-fun-facts/data.ts"
+    },
+    {
+      "path": "src/registry/blocks/interactive-fun-facts/interactive-fun-facts-1/question-card.tsx",
+      "type": "registry:block",
+      "target": "components/blocks/interactive-fun-facts/question-card.tsx"
+    },
+    {
+      "path": "src/registry/blocks/interactive-fun-facts/interactive-fun-facts-1/modals.tsx",
+      "type": "registry:block",
+      "target": "components/blocks/interactive-fun-facts/modals.tsx"
+    }
+  ],
+  "createdAt": "2026-08-31",
+  "updatedAt": "2026-08-31"
+}

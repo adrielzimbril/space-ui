@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-input-group-11",
+  "type": "registry:ui",
+  "title": "Input Group 11",
+  "description": "Input group with keyboard shortcut",
+  "registryDependencies": [
+    "@usespaceui/primitives-input-group",
+    "@usespaceui/primitives-kbd"
+  ],
+  "categories": [
+    "input group",
+    "kbd"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/input-group/p-input-group-11/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-input-group-11.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-avatar-4",
+  "title": "Avatar 4",
+  "description": "Avatar with user icon fallback",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-avatar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/avatar/p-avatar-4/index.tsx",
+      "content": "import { IconUser } from '@tabler/icons-react'\nimport { Avatar, AvatarFallback } from '@/components/ui/avatar'\n\nexport default function Particle() {\n  return (\n    <Avatar>\n      <AvatarFallback>\n        <IconUser className=\"size-4\" />\n      </AvatarFallback>\n    </Avatar>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-avatar-4.tsx"
+    }
+  ],
+  "categories": [
+    "avatar"
+  ],
+  "type": "registry:ui"
+}

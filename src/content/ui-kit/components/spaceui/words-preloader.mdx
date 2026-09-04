@@ -1,0 +1,39 @@
+---
+title: Words Preloader
+description: Greeting cycle preloader that exits with a curved SVG wipe. Replay from the demo.
+author:
+  name: usespaceui
+  url: https://github.com/usespaceui
+preview: demo-components-spaceui-c-words-preloader-1
+---
+
+The overlay is `absolute` inside a relative parent so it does not cover the docs chrome. Source: `registry/components/spaceui/words-preloader/index.tsx`. Remount with a `key` to replay.
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-words-preloader" />
+
+## Usage
+
+```tsx
+import { WordsPreloader } from '@/components/spaceui/words-preloader'
+
+;<WordsPreloader words={['Hello', 'bonjour', 'Ciao']} duration={2000}>
+  <YourPage />
+</WordsPreloader>
+```
+
+## Files
+
+| File                        | Role                               |
+| --------------------------- | ---------------------------------- |
+| `words-preloader/index.tsx` | Overlay, word index, SVG path wipe |
+
+## API Reference
+
+| Prop        | Type        | Default       | Description                          |
+| ----------- | ----------- | ------------- | ------------------------------------ |
+| `words`     | `string[]`  | greetings     | Sequence shown before the wipe       |
+| `duration`  | `number`    | `2000`        | Milliseconds before exit             |
+| `className` | `string`    | —             | Root class                           |
+| `children`  | `ReactNode` | fallback copy | Content revealed after the preloader |

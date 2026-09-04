@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-group-20",
+  "title": "Group 20",
+  "description": "Group with input and text button",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-group",
+    "@usespaceui/primitives-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/group/p-group-20/index.tsx",
+      "content": "import { Button } from '@/components/ui/button'\nimport { Group, GroupSeparator } from '@/components/ui/group'\nimport { Input } from '@/components/ui/input'\n\nexport default function Particle() {\n  return (\n    <Group aria-label=\"Email subscription\">\n      <Input aria-label=\"Email\" placeholder=\"Email\" type=\"email\" />\n      <GroupSeparator />\n      <Button variant=\"outline\">Subscribe</Button>\n    </Group>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-group-20.tsx"
+    }
+  ],
+  "categories": [
+    "button",
+    "group",
+    "input"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,140 @@
+---
+title: Sortable
+description: Allows users to reorder items in a list or grid by dragging and dropping them with smooth layout animations.
+component: true
+base: base
+preview:
+  name: demo-components-spaceui-c-sortable-1
+  align: start
+  className: '**:[.preview]:h-auto'
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-sortable" />
+
+## Usage
+
+```tsx
+import { Sortable, SortableItem, SortableItemHandle } from '@/components/spaceui/sortable'
+```
+
+```tsx
+<Sortable value={items} onValueChange={setItems} getItemValue={(item) => item.id}>
+  {items.map((item) => (
+    <SortableItem key={item.id} value={item.id}>
+      <SortableItemHandle>
+        <GripVertical />
+      </SortableItemHandle>
+      {item.content}
+    </SortableItem>
+  ))}
+</Sortable>
+```
+
+## Examples
+
+### Grid
+
+<ComponentPreview name="demo-components-spaceui-c-sortable-2" className="**:[.preview]:h-auto" align="start" />
+
+### Nested
+
+<ComponentPreview name="demo-components-spaceui-c-sortable-3" className="**:[.preview]:h-auto" align="start" />
+
+### Persist to a backend
+
+<ComponentPreview name="demo-components-spaceui-c-sortable-8" className="**:[.preview]:h-auto" align="start" />
+
+## Persisting order
+
+Sortable commits once, on drop, so `onValueChange` alone is already enough to
+persist the whole array. When you want index-based mutations and a one-line
+rollback, use `onValueCommit`: it fires with the reordered array and a
+`previousValue` snapshot.
+
+```tsx
+const reorder = api.list.reorder.useMutation()
+
+<Sortable
+  value={items}
+  onValueChange={setItems}
+  getItemValue={(item) => item.id}
+  onValueCommit={(next, meta) => {
+    reorder.mutate(
+      { id: next[meta.overIndex].id, toIndex: meta.overIndex },
+      {
+        onError: () => {
+          setItems(meta.previousValue) // roll back
+          toast.error("Could not save the new order. Restored.")
+        },
+      },
+    )
+  }}
+>
+  {/* ... */}
+</Sortable>
+```
+
+## API Reference
+
+### Sortable
+
+The root component that manages the sortable state and drag-and-drop context.
+
+| Prop            | Type                                                                               | Default      | Description                                                                                                                                                                           |
+| :-------------- | :--------------------------------------------------------------------------------- | :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `value`         | `T[]`                                                                              | -            | **Required**. The array of items to sort.                                                                                                                                             |
+| `onValueChange` | `(value: T[]) => void`                                                             | -            | **Required**. Fired once, on drop, with the reordered array. This alone is enough to persist the whole array.                                                                         |
+| `getItemValue`  | `(item: T) => string`                                                              | -            | **Required**. Function to extract a unique ID from an item.                                                                                                                           |
+| `onValueCommit` | `(value: T[], meta: SortableCommitMeta<T>) => void`                                | -            | Fired on drop with the reordered array and a `previousValue` snapshot. Convenient for index-based backend mutations and one-line rollback. See [Persisting order](#persisting-order). |
+| `onMove`        | `(event: { event: DragEndEvent; activeIndex: number; overIndex: number }) => void` | -            | Opt-in. When set, replaces the default `onValueChange` reorder so you apply the move yourself.                                                                                        |
+| `strategy`      | `"horizontal" \| "vertical" \| "grid"`                                             | `"vertical"` | The sorting strategy and layout of the list.                                                                                                                                          |
+| `onDragStart`   | `(event: DragStartEvent) => void`                                                  | -            | Raw dnd-kit passthrough, fired when a drag starts.                                                                                                                                    |
+| `onDragEnd`     | `(event: DragEndEvent) => void`                                                    | -            | Raw dnd-kit passthrough, fired before the reorder is applied (so `onValueChange` is the persistence seam, not this).                                                                  |
+| `onDragCancel`  | `(event: DragCancelEvent) => void`                                                 | -            | Raw dnd-kit passthrough, fired when a drag is cancelled.                                                                                                                              |
+| `accessibility` | `DndContextProps["accessibility"]`                                                 | -            | dnd-kit accessibility options (announcements and screen reader instructions).                                                                                                         |
+| `modifiers`     | `Modifiers`                                                                        | -            | dnd-kit modifiers applied to the drag.                                                                                                                                                |
+| `className`     | `string`                                                                           | -            | Additional CSS classes for the container.                                                                                                                                             |
+
+`SortableCommitMeta<T>` is `{ event: DragEndEvent; activeIndex: number; overIndex: number; previousValue: T[] }`.
+
+---
+
+### SortableItem
+
+An individual draggable item within the sortable list.
+
+| Prop        | Type      | Default | Description                                       |
+| :---------- | :-------- | :------ | :------------------------------------------------ |
+| `value`     | `string`  | -       | **Required**. The unique identifier for the item. |
+| `disabled`  | `boolean` | `false` | Whether the item is draggable.                    |
+| `className` | `string`  | -       | Additional CSS classes for the item.              |
+
+---
+
+### SortableItemHandle
+
+The drag handle for an individual sortable item.
+
+| Prop        | Type     | Default | Description                            |
+| :---------- | :------- | :------ | :------------------------------------- |
+| `className` | `string` | -       | Additional CSS classes for the handle. |
+
+## All 8 variations
+
+### Sortable playlist with frame
+
+<ComponentPreview name="demo-components-spaceui-c-sortable-4" />
+
+### Sortable settings priority with frame
+
+<ComponentPreview name="demo-components-spaceui-c-sortable-5" />
+
+### Sortable sidebar navigation with frame
+
+<ComponentPreview name="demo-components-spaceui-c-sortable-6" />
+
+### Sortable image gallery grid with frame
+
+<ComponentPreview name="demo-components-spaceui-c-sortable-7" />

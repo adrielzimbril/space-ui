@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-utils-states-catch-error",
+  "title": "catch-error",
+  "description": "catch-error state utility.",
+  "files": [
+    {
+      "path": "src/registry/utils/states/catch-error/index.ts",
+      "content": "/**\n * catchError\n *\n * @param promise - The promise to catch errors from\n * @returns A tuple containing either the error or the result\n *\n * @example\n * const [error, data] = await catchError(somePromise);\n * if (error) {\n *   // handle error\n * } else {\n *   // use result data\n * }\n */\nexport async function catchError<T>(fn: Promise<T> | (() => T)): Promise<[undefined, T] | [Error]> {\n  try {\n    const result = typeof fn === 'function' ? fn() : await fn\n    return [undefined, result] as [undefined, T]\n  } catch (error) {\n    return [error as Error]\n  }\n}\n",
+      "type": "registry:lib",
+      "target": "utils/states/catch-error.ts"
+    }
+  ],
+  "categories": [
+    "utils",
+    "catch-error"
+  ],
+  "type": "registry:lib"
+}

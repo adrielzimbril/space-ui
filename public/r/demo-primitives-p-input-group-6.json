@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-input-group-6",
+  "title": "Input Group 6",
+  "description": "Input group with number field",
+  "registryDependencies": [
+    "@usespaceui/primitives-input-group",
+    "@usespaceui/primitives-number-field"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/input-group/p-input-group-6/index.tsx",
+      "content": "import { InputGroup, InputGroupAddon, InputGroupText } from '@/components/ui/input-group'\nimport { NumberField, NumberFieldInput } from '@/components/ui/number-field'\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <NumberField aria-label=\"Enter the amount\" defaultValue={10}>\n        <NumberFieldInput className=\"text-left\" />\n      </NumberField>\n      <InputGroupAddon>\n        <InputGroupText>€</InputGroupText>\n      </InputGroupAddon>\n      <InputGroupAddon align=\"inline-end\">\n        <InputGroupText>EUR</InputGroupText>\n      </InputGroupAddon>\n    </InputGroup>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-input-group-6.tsx"
+    }
+  ],
+  "categories": [
+    "input group",
+    "number field"
+  ],
+  "type": "registry:ui"
+}

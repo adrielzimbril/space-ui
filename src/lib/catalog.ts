@@ -1,0 +1,142 @@
+import hooksMeta from '@/content/ui-kit/hooks/meta.json'
+import primitivesMeta from '@/content/ui-kit/primitives/meta.json'
+import componentsMeta from '@/content/ui-kit/components/meta.json'
+import blocksMeta from '@/content/ui-kit/blocks/meta.json'
+import type { RelatedComponent } from '@/lib/docs-metadata'
+import type { RelatedGroup } from '@/components/docs/layout/related-components'
+import { uiKitSource } from '@/lib/source'
+
+export const CATALOG_SECTIONS = ['hooks', 'primitives', 'components', 'blocks'] as const
+export type CatalogSection = (typeof CATALOG_SECTIONS)[number]
+
+export const NESTED_COMPONENT_CATALOGS = ['orb', 'shader', 'backgrounds'] as const
+
+const META: Record<CatalogSection, { title: string; pages: string[] }> = {
+  hooks: hooksMeta,
+  primitives: primitivesMeta,
+  components: componentsMeta,
+  blocks: blocksMeta,
+}
+
+function categoryBadge(section: CatalogSection, groupTitle: string, folder?: string) {
+  const title = groupTitle.toLowerCase()
+  if (folder === 'orb' || title === 'orb') return 'Orb'
+  if (folder === 'shader' || title.includes('shader')) return 'Shader'
+  if (folder === 'backgrounds' || title.includes('background')) return 'Background'
+  if (section === 'hooks') {
+    if (title.includes('control-flow')) return 'Component'
+    if (title.includes('utilit')) return 'Utility'
+    return 'Hook'
+  }
+  if (section === 'primitives') return 'Primitive'
+  if (section === 'components') return 'Component'
+  return 'Block'
+}
+
+function sectionId(title: string) {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '')
+}
+
+export function isCatalogSection(value: string | undefined): value is CatalogSection {
+  return CATALOG_SECTIONS.includes(value as CatalogSection)
+}
+
+export function isCatalogIndex(slug: string[] | undefined) {
+  if (!slug?.length) return false
+  if (isCatalogSection(slug[0]) && (slug.length === 1 || slug[1] === 'index')) return true
+  return (
+    slug[0] === 'components' &&
+    slug.length === 2 &&
+    NESTED_COMPONENT_CATALOGS.includes(slug[1] as (typeof NESTED_COMPONENT_CATALOGS)[number])
+  )
+}
+
+function pageMap(section: CatalogSection) {
+  return new Map(
+    uiKitSource
+      .getPages()
+      .filter((page) => page.slugs[0] === section && page.slugs.length > 1)
+      .map((page) => [page.slugs.slice(1).join('/'), page]),
+  )
+}
+
+function toItem(
+  entry: string,
+  page: { data: { title: string; description?: string }; url: string },
+  badge: string,
+): RelatedComponent {
+  return {
+    name: entry,
+    title: page.data.title,
+    description: page.data.description,
+    url: page.url,
+    category: badge,
+  }
+}
+
+export function getUiKitCatalog(slug: string[] | undefined): RelatedGroup[] {
+  const section = slug?.[0]
+  if (!isCatalogSection(section)) return []
+
+  if (slug.length === 2 && section === 'components') {
+    return getNestedCatalog(slug[1])
+  }
+
+  return getSectionCatalog(section)
+}
+
+function getNestedCatalog(folder: string): RelatedGroup[] {
+  const prefix = `${folder}/`
+  const bySlug = pageMap('components')
+  const items: RelatedComponent[] = []
+
+  for (const entry of componentsMeta.pages) {
+    if (!entry.startsWith(prefix) || entry === folder) continue
+    const page = bySlug.get(entry)
+    if (!page) continue
+    items.push(toItem(entry, page, categoryBadge('components', folder, folder)))
+  }
+
+  if (items.length === 0) return []
+  return [{ id: folder, title: folder.charAt(0).toUpperCase() + folder.slice(1), items }]
+}
+
+function getSectionCatalog(section: CatalogSection): RelatedGroup[] {
+  const meta = META[section]
+  const bySlug = pageMap(section)
+  const groups: RelatedGroup[] = []
+  let current: RelatedGroup | null = null
+
+  const ensureGroup = (title: string) => {
+    const group: RelatedGroup = {
+      id: sectionId(title),
+      title,
+      items: [],
+    }
+    groups.push(group)
+    current = group
+    return group
+  }
+
+  const nestedRoots = new Set(NESTED_COMPONENT_CATALOGS as readonly string[])
+
+  for (const entry of meta.pages) {
+    if (entry.startsWith('---')) {
+      ensureGroup(entry.replace(/^-+/, '').replace(/-+$/, '').trim())
+      continue
+    }
+
+    if (entry === 'index' || nestedRoots.has(entry)) continue
+    const group = current ?? ensureGroup(meta.title)
+
+    const page = bySlug.get(entry)
+    if (!page) continue
+
+    group.items.push(toItem(entry, page, categoryBadge(section, group.title)))
+  }
+
+  return groups.filter((group) => group.items.length > 0)
+}

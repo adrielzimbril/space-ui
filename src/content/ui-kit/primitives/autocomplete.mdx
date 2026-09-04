@@ -1,0 +1,171 @@
+---
+title: Autocomplete
+description: Displays matching suggestions as users type into an input field, helping them find items quickly and reducing typing errors.
+
+links:
+  doc: https://base-ui.com/react/components/autocomplete#api-reference
+preview: demo-primitives-p-autocomplete-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-autocomplete" />
+
+## Usage
+
+```tsx
+import {
+  Autocomplete,
+  AutocompleteEmpty,
+  AutocompleteInput,
+  AutocompleteItem,
+  AutocompleteList,
+  AutocompletePopup,
+} from '@/components/ui/autocomplete'
+
+const items = [
+  { value: "apple", label: "Apple" },
+  { value: "banana", label: "Banana" },
+  { value: "orange", label: "Orange" },
+  { value: "grape", label: "Grape" },
+]
+
+<Autocomplete items={items}>
+  <AutocompleteInput placeholder="Search..." />
+  <AutocompletePopup>
+    <AutocompleteEmpty>No results found.</AutocompleteEmpty>
+    <AutocompleteList>
+      {(item) => <AutocompleteItem key={item.value} value={item}>{item.label}</AutocompleteItem>}
+    </AutocompleteList>
+  </AutocompletePopup>
+</Autocomplete>
+```
+
+## Features
+
+### Sizes
+
+Autocomplete inputs in `sm`, `default`, and `lg` sizes.
+
+<ComponentPreview name="demo-primitives-p-autocomplete-2" />
+
+## API Reference
+
+### Autocomplete
+
+The root autocomplete component. Manages the autocomplete state and provides context to child components.
+
+| Prop       | Type                                        | Description                                       |
+| ---------- | ------------------------------------------- | ------------------------------------------------- |
+| `items`    | `readonly unknown[]`                        | The array of items to display in the autocomplete |
+| `open`     | `boolean`                                   | Controls whether the popup is open                |
+| `...props` | `React.ComponentProps<typeof Autocomplete>` | All Base UI Autocomplete props are supported      |
+
+### AutocompleteInput
+
+The input field component with extended features for size variants and addon support.
+
+| Prop           | Type                             | Default     | Description                                                                                     |
+| -------------- | -------------------------------- | ----------- | ----------------------------------------------------------------------------------------------- |
+| `size`         | `"sm" \| "default" \| "lg"`      | `"default"` | The size variant of the input field                                                             |
+| `startAddon`   | `React.ReactNode`                | -           | Element to display at the start (left side) of the input, such as an icon                       |
+| `showTrigger`  | `boolean`                        | `false`     | Whether to display a trigger button (chevron icon) on the right side of the input               |
+| `showClear`    | `boolean`                        | `false`     | Whether to display a clear button (X icon) on the right side of the input when there is a value |
+| `triggerProps` | `Autocomplete.Trigger.Props`     | -           | Props forwarded to the internal trigger button, useful for overriding `aria-label`              |
+| `clearProps`   | `Autocomplete.Clear.Props`       | -           | Props forwarded to the internal clear button, useful for overriding `aria-label`                |
+| `className`    | `string`                         | -           | Additional CSS classes to apply to the component                                                |
+| `...props`     | Base UI Autocomplete Input props | -           | All standard autocomplete input attributes are supported                                        |
+
+### AutocompletePopup
+
+The popup container that displays the autocomplete suggestions.
+
+| Prop          | Type                                          | Default    | Description                                                                                                                         |
+| ------------- | --------------------------------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `side`        | `"top" \| "bottom" \| "left" \| "right"`      | `"bottom"` | Preferred edge to position the popup relative to the trigger/input                                                                  |
+| `sideOffset`  | `number`                                      | `4`        | Distance from the trigger in pixels                                                                                                 |
+| `align`       | `"start" \| "center" \| "end"`                | `"center"` | Alignment relative to the trigger along the cross-axis                                                                              |
+| `alignOffset` | `number`                                      | `0`        | Distance in pixels to shift the popup along the alignment axis                                                                      |
+| `anchor`      | `Element \| null \| React.RefObject<Element>` | -          | Custom anchor element or ref to anchor the popup against                                                                            |
+| `portalProps` | `Autocomplete.Portal.Props`                   | -          | Props forwarded to the internal portal (`keepMounted`, `container`, etc.); see Base UI Combobox portal API (autocomplete reuses it) |
+| `className`   | `string`                                      | -          | Additional CSS classes to apply to the component                                                                                    |
+| `...props`    | Base UI Autocomplete Popup props              | -          | All standard autocomplete popup attributes are supported                                                                            |
+
+### AutocompleteList
+
+A scrollable container for autocomplete items.
+
+| Prop        | Type                            | Description                                             |
+| ----------- | ------------------------------- | ------------------------------------------------------- |
+| `className` | `string`                        | Additional CSS classes to apply to the component        |
+| `...props`  | Base UI Autocomplete List props | All standard autocomplete list attributes are supported |
+
+### AutocompleteItem
+
+An individual selectable autocomplete item.
+
+| Prop        | Type                            | Description                                             |
+| ----------- | ------------------------------- | ------------------------------------------------------- |
+| `value`     | `unknown`                       | The value of the item                                   |
+| `className` | `string`                        | Additional CSS classes to apply to the component        |
+| `...props`  | Base UI Autocomplete Item props | All standard autocomplete item attributes are supported |
+
+### AutocompleteEmpty
+
+Displays a message when no results are found.
+
+| Prop        | Type                             | Description                                              |
+| ----------- | -------------------------------- | -------------------------------------------------------- |
+| `className` | `string`                         | Additional CSS classes to apply to the component         |
+| `...props`  | Base UI Autocomplete Empty props | All standard autocomplete empty attributes are supported |
+
+### AutocompleteGroup
+
+Groups related autocomplete items together.
+
+| Prop        | Type                             | Description                                              |
+| ----------- | -------------------------------- | -------------------------------------------------------- |
+| `items`     | `readonly unknown[]`             | The array of items in this group                         |
+| `className` | `string`                         | Additional CSS classes to apply to the component         |
+| `...props`  | Base UI Autocomplete Group props | All standard autocomplete group attributes are supported |
+
+### AutocompleteGroupLabel
+
+Displays a label for an autocomplete group.
+
+| Prop        | Type                                   | Description                                                    |
+| ----------- | -------------------------------------- | -------------------------------------------------------------- |
+| `className` | `string`                               | Additional CSS classes to apply to the component               |
+| `...props`  | Base UI Autocomplete Group Label props | All standard autocomplete group label attributes are supported |
+
+### AutocompleteCollection
+
+Used to wrap items within a group for rendering.
+
+| Prop       | Type                                  | Description                                                   |
+| ---------- | ------------------------------------- | ------------------------------------------------------------- |
+| `...props` | Base UI Autocomplete Collection props | All standard autocomplete collection attributes are supported |
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-autocomplete-3" description="Large autocomplete" />
+  <ShowcaseCard name="demo-primitives-p-autocomplete-4" description="Autocomplete with label" />
+  <ShowcaseCard
+    name="demo-primitives-p-autocomplete-5"
+    description="Autocomplete autofilling the input with the highlighted item"
+  />
+  <ShowcaseCard name="demo-primitives-p-autocomplete-6" description="Autocomplete auto highlighting the first option" />
+  <ShowcaseCard name="demo-primitives-p-autocomplete-7" description="Autocomplete with clear button" />
+  <ShowcaseCard name="demo-primitives-p-autocomplete-8" description="Autocomplete with trigger and clear buttons" />
+  <ShowcaseCard name="demo-primitives-p-autocomplete-9" description="Autocomplete with grouped items" />
+  <ShowcaseCard name="demo-primitives-p-autocomplete-10" description="Autocomplete with limited number of results" />
+  <ShowcaseCard name="demo-primitives-p-autocomplete-11" description="Autocomplete with async items loading" />
+  <ShowcaseCard name="demo-primitives-p-autocomplete-12" description="Autocomplete form" />
+  <ShowcaseCard name="demo-primitives-p-autocomplete-13" description="Autocomplete form" />
+  <ShowcaseCard name="demo-primitives-p-autocomplete-14" description="Pill-shaped autocomplete" />
+  <ShowcaseCard
+    name="demo-primitives-p-autocomplete-15"
+    description="Address autocomplete with Google Maps Places API"
+  />
+</ShowcaseGrid>

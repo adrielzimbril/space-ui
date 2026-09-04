@@ -1,0 +1,30 @@
+---
+title: useConfirmExit
+description: Unsaved changes tab exit guard.
+preview: demo-hooks-lifecycle-confirm-exit-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-lifecycle-use-confirm-exit" />
+
+## Usage
+
+```tsx
+import { useConfirmExit } from '@/hooks/use-confirm-exit'
+
+useConfirmExit(hasUnsavedChanges, 'You have unsaved changes.')
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter | Type      | Default     | Description       |
+| :-------- | :-------- | :---------- | :---------------- |
+| `enabled` | `boolean` | _required_  | Guard state.      |
+| `message` | `string`  | `undefined` | Optional message. |
+
+### Return Value
+
+_Returns void._

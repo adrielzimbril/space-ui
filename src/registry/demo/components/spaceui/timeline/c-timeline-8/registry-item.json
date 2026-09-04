@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-timeline-8",
+  "type": "registry:component",
+  "title": "Vertical timeline",
+  "description": "Vertical timeline",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-timeline"
+  ],
+  "categories": [
+    "component",
+    "timeline"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/timeline/c-timeline-8/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-timeline-8.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

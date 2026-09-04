@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-tournament-bracket-1",
+  "title": "Tournament Bracket Demo",
+  "description": "Knockout bracket with round navigation.",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-tournament-bracket"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/tournament-bracket/c-tournament-bracket-1/index.tsx",
+      "content": "'use client'\n\nimport { TournamentBracket } from '@/components/spaceui/tournament-bracket'\n\nexport default function TournamentBracketDemo() {\n  return (\n    <div className=\"w-full overflow-x-auto py-4\">\n      <TournamentBracket />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/c-tournament-bracket-1.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "tournament-bracket"
+  ],
+  "type": "registry:component"
+}

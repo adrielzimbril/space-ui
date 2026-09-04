@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-number-field-10",
+  "title": "Number Field 10",
+  "description": "Number field in form",
+  "dependencies": [
+    "zod",
+    "zod-v4"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-form",
+    "@usespaceui/primitives-number-field"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/number-field/p-number-field-10/index.tsx",
+      "content": "'use client'\n\nimport type { FormEvent } from 'react'\nimport { useState } from 'react'\nimport { z } from 'zod-v4'\nimport { Button } from '@/components/ui/button'\nimport { Field } from '@/components/ui/field'\nimport { Form } from '@/components/ui/form'\nimport {\n  NumberField,\n  NumberFieldDecrement,\n  NumberFieldGroup,\n  NumberFieldIncrement,\n  NumberFieldInput,\n  NumberFieldScrubArea,\n} from '@/components/ui/number-field'\n\nconst schema = z.object({\n  quantity: z.coerce\n    .number({ message: 'Please enter a quantity.' })\n    .min(1, { message: 'Quantity must be at least 1.' })\n    .max(100, { message: 'Maximum quantity is 100.' }),\n})\n\ntype Errors = Record<string, string | string[]>\n\nasync function submitForm(event: FormEvent<HTMLFormElement>) {\n  event.preventDefault()\n\n  const formData = new FormData(event.currentTarget)\n  const result = schema.safeParse(Object.fromEntries(formData))\n\n  if (!result.success) {\n    const { fieldErrors } = z.flattenError(result.error)\n    return { errors: fieldErrors as Errors }\n  }\n\n  return {\n    data: result.data,\n    errors: {} as Errors,\n  }\n}\n\nexport default function Particle() {\n  const [loading, setLoading] = useState(false)\n\n  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {\n    setLoading(true)\n    const response = await submitForm(event)\n    await new Promise((r) => setTimeout(r, 800))\n    setLoading(false)\n    if (Object.keys(response.errors).length === 0) {\n      alert(`Quantity: ${response.data?.quantity}`)\n    }\n  }\n\n  return (\n    <Form className=\"flex w-full flex-col gap-4\" onSubmit={onSubmit}>\n      <Field name=\"quantity\">\n        <NumberField defaultValue={1} max={100} min={1}>\n          <NumberFieldScrubArea label=\"Quantity\" />\n          <NumberFieldGroup>\n            <NumberFieldDecrement />\n            <NumberFieldInput />\n            <NumberFieldIncrement />\n          </NumberFieldGroup>\n        </NumberField>\n      </Field>\n\n      <Button loading={loading} type=\"submit\">\n        Submit\n      </Button>\n    </Form>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-number-field-10.tsx"
+    }
+  ],
+  "categories": [
+    "number field",
+    "input",
+    "form",
+    "field",
+    "zod"
+  ],
+  "type": "registry:ui"
+}

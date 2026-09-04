@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-calendar-4",
+  "type": "registry:ui",
+  "title": "Calendar 4",
+  "description": "Calendar with month/year dropdown navigation",
+  "registryDependencies": [
+    "@usespaceui/primitives-calendar"
+  ],
+  "categories": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/calendar/p-calendar-4/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-calendar-4.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

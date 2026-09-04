@@ -1,0 +1,30 @@
+---
+title: useUrgentUpdate
+description: React 18 transition priority switcher.
+preview: demo-hooks-lifecycle-urgent-update-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-lifecycle-use-urgent-update" />
+
+## Usage
+
+```tsx
+import { useUrgentUpdate } from '@/hooks/use-urgent-update'
+
+const urgent = useUrgentUpdate()
+urgent(() => setCount((c) => c + 1))
+```
+
+## API Reference
+
+### Parameters / Props
+
+_None_
+
+### Return Value
+
+| Return Type                | Description            |
+| :------------------------- | :--------------------- |
+| `(fn: () => void) => void` | Urgent update wrapper. |

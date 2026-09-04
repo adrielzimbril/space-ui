@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-lifecycle-use-idle",
+  "title": "useIdle",
+  "description": "useIdle hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/lifecycle/use-idle/index.ts",
+      "content": "'use client'\n\nimport { useState, useEffect } from 'react'\n\n/**\n * React hook to detect user inactivity/idle state after a specified timeout in ms.\n *\n * @param {number} [ms=60000] - Inactivity threshold in milliseconds (default: 60s).\n * @returns {boolean} `true` if user is currently idle.\n *\n * @example\n * const isIdle = useIdle(30000); // 30 seconds\n */\nexport function useIdle(ms = 60000): boolean {\n  const [idle, setIdle] = useState(false)\n\n  useEffect(() => {\n    let timeoutId: ReturnType<typeof setTimeout>\n\n    const handleActivity = () => {\n      setIdle(false)\n      clearTimeout(timeoutId)\n      timeoutId = setTimeout(() => setIdle(true), ms)\n    }\n\n    const events = ['mousemove', 'mousedown', 'keydown', 'touchstart', 'scroll']\n    events.forEach((name) => window.addEventListener(name, handleActivity, { passive: true }))\n\n    timeoutId = setTimeout(() => setIdle(true), ms)\n\n    return () => {\n      clearTimeout(timeoutId)\n      events.forEach((name) => window.removeEventListener(name, handleActivity))\n    }\n  }, [ms])\n\n  return idle\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-idle.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "idle"
+  ],
+  "type": "registry:hook"
+}

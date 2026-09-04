@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-liquid-metal-card",
+  "type": "registry:component",
+  "title": "Liquid Metal Card",
+  "description": "Liquid Metal Card component for Space UI.",
+  "dependencies": [
+    "@paper-design/shaders-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "liquid-metal-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/liquid-metal-card/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/liquid-metal-card.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

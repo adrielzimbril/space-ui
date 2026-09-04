@@ -1,0 +1,31 @@
+---
+title: cache
+description: Memory memoization cache map.
+preview: demo-hooks-utils-cache-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-utils-cache" />
+
+## Usage
+
+```tsx
+import { cache } from '@/utils/cache'
+
+const memoized = cache((x: number) => x * 10)
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter | Type       | Default    | Description             |
+| :-------- | :--------- | :--------- | :---------------------- |
+| `fn`      | `Function` | _required_ | Computation to memoize. |
+
+### Return Value
+
+| Return Type | Description        |
+| :---------- | :----------------- |
+| `Function`  | Memoized function. |

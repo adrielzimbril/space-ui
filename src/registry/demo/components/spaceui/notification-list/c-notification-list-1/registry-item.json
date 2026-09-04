@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-notification-list-1",
+  "type": "registry:component",
+  "title": "Notification List",
+  "description": "Demo showing a notification list.",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-notification-list"
+  ],
+  "categories": [
+    "component",
+    "notification-list"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/notification-list/c-notification-list-1/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-notification-list-1.tsx"
+    }
+  ],
+  "createdAt": "2026-09-02",
+  "updatedAt": "2026-09-02"
+}

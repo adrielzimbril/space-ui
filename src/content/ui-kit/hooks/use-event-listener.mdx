@@ -1,0 +1,30 @@
+---
+title: useEventListener
+description: Declarative event listener binding.
+preview: demo-hooks-dom-event-listener-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-dom-use-event-listener" />
+
+## Usage
+
+```tsx
+import { useEventListener } from '@/hooks/use-event-listener'
+
+useEventListener('keydown', (e) => console.log(e.key))
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter   | Type       | Default    | Description    |
+| :---------- | :--------- | :--------- | :------------- |
+| `eventName` | `string`   | _required_ | Event name.    |
+| `handler`   | `Function` | _required_ | Event handler. |
+
+### Return Value
+
+_Returns void._

@@ -1,0 +1,36 @@
+---
+title: useDebounce
+description: Debounces fast-changing state values with configurable delay.
+preview: demo-hooks-lifecycle-debounce-1
+---
+
+### Example 2: Real-Time Member Filter
+
+<ComponentPreview name="demo-hooks-lifecycle-debounce-2" />
+
+## Installation
+
+<ComponentInstallation name="hooks-lifecycle-use-debounce" />
+
+## Usage
+
+```tsx
+import { useDebounce } from '@/hooks/use-debounce'
+
+const debounced = useDebounce(query, 400)
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter | Type     | Default    | Description        |
+| :-------- | :------- | :--------- | :----------------- |
+| `value`   | `T`      | _required_ | Value to debounce. |
+| `delay`   | `number` | `500`      | Delay in ms.       |
+
+### Return Value
+
+| Return Type | Description      |
+| :---------- | :--------------- |
+| `T`         | Debounced value. |

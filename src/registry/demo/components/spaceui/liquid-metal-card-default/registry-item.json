@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "liquid-metal-card-default",
+  "type": "registry:component",
+  "title": "Liquid Metal Card Default",
+  "description": "Interactive demo showcasing the Liquid Metal Card Default component.",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-liquid-metal-card",
+    "@usespaceui/primitives-button"
+  ],
+  "categories": [
+    "liquid-metal-card-default"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/liquid-metal-card-default/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/liquid-metal-card-default.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

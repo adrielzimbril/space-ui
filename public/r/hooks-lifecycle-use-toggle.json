@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-lifecycle-use-toggle",
+  "title": "useToggle",
+  "description": "useToggle hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/lifecycle/use-toggle/index.ts",
+      "content": "'use client'\n\nimport { useState, useCallback } from 'react'\n\n/**\n * React hook to manage boolean toggle states with explicit set/toggle handlers.\n *\n * @param {boolean} [initialValue=false] - Initial boolean state.\n * @returns {[boolean, (value?: boolean) => void, (next: boolean) => void]} Tuple of [value, toggle, setValue].\n *\n * @example\n * const [isOpen, toggleOpen, setIsOpen] = useToggle(false);\n */\nexport function useToggle(initialValue = false): [boolean, (value?: boolean) => void, (next: boolean) => void] {\n  const [value, setValue] = useState<boolean>(initialValue)\n\n  const toggle = useCallback((next?: boolean) => {\n    setValue((current) => (typeof next === 'boolean' ? next : !current))\n  }, [])\n\n  return [value, toggle, setValue]\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-toggle.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "toggle"
+  ],
+  "type": "registry:hook"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-kbd",
+  "type": "registry:ui",
+  "title": "Kbd",
+  "description": "Accessible Kbd primitive component for Space UI.",
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "categories": [
+    "kbd"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/kbd/index.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/kbd.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

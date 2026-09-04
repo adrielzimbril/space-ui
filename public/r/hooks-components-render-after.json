@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-components-render-after",
+  "title": "RenderAfter",
+  "description": "RenderAfter component.",
+  "files": [
+    {
+      "path": "src/registry/hooks/components/render-after/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\n\n/**\n * Props for the `<RenderAfter>` delayed rendering component.\n */\nexport interface RenderAfterProps {\n  /** Delay duration in milliseconds before rendering children. */\n  delay: number\n  /** Optional fallback content to render during the delay period. */\n  fallback?: React.ReactNode\n  /** Content to render once the delay has elapsed. */\n  children: React.ReactNode\n}\n\n/**\n * Delays the rendering of child components by a specified number of milliseconds.\n *\n * @param {RenderAfterProps} props - Component props.\n * @returns {React.ReactNode} The rendered children once time has elapsed, or fallback.\n *\n * @example\n * <RenderAfter delay={500} fallback={<SkeletonLoader />}>\n *   <ExpensiveDataChart />\n * </RenderAfter>\n */\nexport function RenderAfter({ delay, fallback = null, children }: RenderAfterProps): React.ReactNode {\n  const [ready, setReady] = React.useState(false)\n\n  React.useEffect(() => {\n    const timer = setTimeout(() => {\n      setReady(true)\n    }, delay)\n\n    return () => clearTimeout(timer)\n  }, [delay])\n\n  if (!ready) {\n    return fallback\n  }\n\n  return <>{children}</>\n}\n",
+      "type": "registry:hook",
+      "target": "components/ui/render-after.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "components",
+    "render-after"
+  ],
+  "type": "registry:hook"
+}

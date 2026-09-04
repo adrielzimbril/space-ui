@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-browser-use-media-query",
+  "title": "useMediaQuery",
+  "description": "useMediaQuery hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/browser/use-media-query/index.ts",
+      "content": "'use client'\n\nimport * as React from 'react'\n\nfunction subscribe(callback: () => void, query: string): () => void {\n  if (typeof window === 'undefined') return () => {}\n  const mql = window.matchMedia(query)\n  mql.addEventListener('change', callback)\n  return () => mql.removeEventListener('change', callback)\n}\n\n/**\n * React 18/19 optimized media query hook using `useSyncExternalStore`.\n *\n * @param {string} query - The CSS media query string to match (e.g. '(max-width: 768px)').\n * @param {boolean} [serverFallback=false] - The fallback value used during Server-Side Rendering.\n * @returns {boolean} `true` if the media query matches, otherwise `false`.\n *\n * @example\n * const isMobile = useMediaQuery('(max-width: 768px)');\n * const isDark = useMediaQuery('(prefers-color-scheme: dark)');\n */\nexport function useMediaQuery(query: string, serverFallback = false): boolean {\n  return React.useSyncExternalStore(\n    React.useCallback((callback) => subscribe(callback, query), [query]),\n    () => (typeof window !== 'undefined' ? window.matchMedia(query).matches : serverFallback),\n    () => serverFallback,\n  )\n}\n\n/**\n * Convenient shortcut hook to detect if the current viewport is mobile (<= 768px).\n *\n * @returns {boolean} `true` if viewport width is 768px or less.\n *\n * @example\n * const isMobile = useIsMobile();\n */\nexport function useIsMobile(): boolean {\n  return useMediaQuery('(max-width: 768px)', false)\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-media-query.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "media-query"
+  ],
+  "type": "registry:hook"
+}

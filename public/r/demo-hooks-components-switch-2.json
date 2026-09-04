@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-components-switch-2",
+  "title": "Switch (Order Status Badges)",
+  "description": "Multi-state conditional branch matching",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-components-switch",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/components/switch/h-switch-2/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { Switch, Case, Default } from '@/components/ui/switch'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Button } from '@/components/ui/button'\nimport { Badge } from '@/components/ui/badge'\nimport { IconClock, IconAlertCircle, IconCheck, IconX, IconTruckDelivery } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const [status, setStatus] = React.useState<'pending' | 'processing' | 'shipped' | 'cancelled'>('processing')\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconTruckDelivery className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Switch</span>\n        </div>\n        <Badge\n          variant={status === 'shipped' ? 'success' : status === 'cancelled' ? 'destructive' : 'outline'}\n          size=\"sm\"\n          className=\"capitalize\"\n        >\n          {status}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex flex-col gap-3 rounded-[0.875rem] bg-background p-3\">\n        <div className=\"flex flex-wrap gap-1\">\n          {(['pending', 'processing', 'shipped', 'cancelled'] as const).map((s) => (\n            <Button\n              key={s}\n              size=\"sm\"\n              variant={status === s ? 'default' : 'outline'}\n              onClick={() => setStatus(s)}\n              className=\"flex-1 capitalize\"\n            >\n              {s}\n            </Button>\n          ))}\n        </div>\n        <div className=\"flex items-center justify-center rounded-lg bg-muted p-2.5\">\n          <Switch>\n            <Case condition={status === 'pending'}>\n              <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n                <IconClock className=\"size-4 text-muted-foreground\" />\n                Pending approval\n              </div>\n            </Case>\n            <Case condition={status === 'processing'}>\n              <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n                <IconAlertCircle className=\"size-4 animate-spin text-muted-foreground\" />\n                Preparing for transit\n              </div>\n            </Case>\n            <Case condition={status === 'shipped'}>\n              <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n                <IconCheck className=\"size-4 text-muted-foreground\" />\n                In transit\n              </div>\n            </Case>\n            <Default>\n              <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n                <IconX className=\"size-4 text-muted-foreground\" />\n                Cancelled\n              </div>\n            </Default>\n          </Switch>\n        </div>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-switch-2.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "components",
+    "switch"
+  ],
+  "type": "registry:hook"
+}

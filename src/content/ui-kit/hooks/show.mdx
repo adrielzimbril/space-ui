@@ -1,0 +1,38 @@
+---
+title: Show
+description: Truthy conditional renderer that unwraps non-null data directly to children render function.
+preview: demo-hooks-components-show-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-components-show" />
+
+## Usage
+
+````tsx
+import { Show } from '@/components/show'
+
+import { Show } from '@/components/show'```
+
+```tsx
+<Show when={currentUser} fallback={<p>Logged Out</p>}>
+  {(user) => <h1>Hello, {user.name}</h1>}
+</Show>
+````
+
+## API Reference
+
+### Parameters / Props
+
+| Prop       | Type                                                 | Default    | Description                          |
+| :--------- | :--------------------------------------------------- | :--------- | :----------------------------------- |
+| `when`     | `T \| null \| undefined \| false`                    | _required_ | Condition data.                      |
+| `fallback` | `ReactNode`                                          | `null`     | Falsy fallback.                      |
+| `children` | `ReactNode \| ((data: NonNullable<T>) => ReactNode)` | _required_ | Render callback with unwrapped data. |
+
+### Return Value
+
+| Return Type | Description      |
+| :---------- | :--------------- |
+| `ReactNode` | Rendered output. |

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-otp-field-4",
+  "title": "Otp Field 4",
+  "description": "OTP field with label",
+  "registryDependencies": [
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-otp-field"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/otp-field/p-otp-field-4/index.tsx",
+      "content": "import { Field, FieldDescription, FieldLabel } from '@/components/ui/field'\nimport { OTPField, OTPFieldInput } from '@/components/ui/otp-field'\n\nconst OTP_LENGTH = 4\n\nconst OTP_SLOT_KEYS = Array.from({ length: OTP_LENGTH }, (_, i) => `otp-slot-${i}`)\n\nexport default function Particle() {\n  return (\n    <Field className=\"items-center\">\n      <FieldLabel>Verification code</FieldLabel>\n      <OTPField length={OTP_LENGTH}>\n        {OTP_SLOT_KEYS.map((slotKey, index) => (\n          <OTPFieldInput key={slotKey} aria-label={`Character ${index + 1} of ${OTP_LENGTH}`} />\n        ))}\n      </OTPField>\n      <FieldDescription>Enter the {OTP_LENGTH}-digit code sent to your email.</FieldDescription>\n    </Field>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-otp-field-4.tsx"
+    }
+  ],
+  "categories": [
+    "otp field",
+    "input",
+    "field"
+  ],
+  "type": "registry:ui"
+}

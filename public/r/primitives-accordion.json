@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-accordion",
+  "title": "Accordion",
+  "description": "Accessible Accordion primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/accordion/index.tsx",
+      "content": "'use client'\n\nimport { Accordion as AccordionPrimitive } from '@base-ui/react/accordion'\nimport { ChevronDownIcon } from 'lucide-react'\nimport type React from 'react'\nimport { cn } from '@/lib/utils'\n\nexport function Accordion(props: AccordionPrimitive.Root.Props): React.ReactElement {\n  return <AccordionPrimitive.Root data-slot=\"accordion\" {...props} />\n}\n\nexport function AccordionItem({ className, ...props }: AccordionPrimitive.Item.Props): React.ReactElement {\n  return (\n    <AccordionPrimitive.Item\n      className={cn('border-b last:border-b-0', className)}\n      data-slot=\"accordion-item\"\n      {...props}\n    />\n  )\n}\n\nexport function AccordionTrigger({\n  className,\n  children,\n  ...props\n}: AccordionPrimitive.Trigger.Props): React.ReactElement {\n  return (\n    <AccordionPrimitive.Header className=\"flex\">\n      <AccordionPrimitive.Trigger\n        className={cn(\n          'flex flex-1 cursor-pointer items-start justify-between gap-4 rounded-md py-4 text-left font-medium text-sm outline-none transition-all focus-visible:ring-[3px] focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-64 data-panel-open:*:data-[slot=accordion-indicator]:rotate-180',\n          className,\n        )}\n        data-slot=\"accordion-trigger\"\n        {...props}\n      >\n        {children}\n        <ChevronDownIcon\n          className=\"pointer-events-none size-4 shrink-0 translate-y-0.5 opacity-80 transition-transform duration-200 ease-in-out\"\n          data-slot=\"accordion-indicator\"\n        />\n      </AccordionPrimitive.Trigger>\n    </AccordionPrimitive.Header>\n  )\n}\n\nexport function AccordionPanel({ className, children, ...props }: AccordionPrimitive.Panel.Props): React.ReactElement {\n  return (\n    <AccordionPrimitive.Panel\n      className=\"h-(--accordion-panel-height) overflow-hidden text-muted-foreground text-sm transition-[height] duration-200 ease-in-out data-ending-style:h-0 data-starting-style:h-0\"\n      data-slot=\"accordion-panel\"\n      {...props}\n    >\n      <div className={cn('pt-0 pb-4', className)}>{children}</div>\n    </AccordionPrimitive.Panel>\n  )\n}\n\nexport { AccordionPrimitive, AccordionPanel as AccordionContent }\n",
+      "type": "registry:ui",
+      "target": "components/ui/accordion.tsx"
+    }
+  ],
+  "categories": [
+    "accordion"
+  ],
+  "type": "registry:ui"
+}

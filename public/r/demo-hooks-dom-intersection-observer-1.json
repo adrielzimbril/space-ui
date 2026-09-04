@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-dom-intersection-observer-1",
+  "title": "useIntersectionObserver",
+  "description": "Advanced element intersection observer",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-dom-use-intersection-observer",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/dom/intersection-observer/h-intersection-observer-1/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { useIntersectionObserver } from '@/hooks/use-intersection-observer'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Badge } from '@/components/ui/badge'\nimport { IconEye, IconScan } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const ref = React.useRef<HTMLDivElement>(null)\n  const entry = useIntersectionObserver(ref, { threshold: 0.5 })\n  const isIntersecting = !!entry?.isIntersecting\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconScan className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Intersect</span>\n        </div>\n        <Badge variant={isIntersecting ? 'success' : 'outline'} size=\"sm\">\n          {isIntersecting ? 'In view' : 'Hidden'}\n        </Badge>\n      </div>\n      <CardPanel className=\"rounded-[0.875rem] bg-background p-3\">\n        <div className=\"h-32 overflow-y-auto rounded-lg bg-muted p-2\">\n          <div className=\"flex h-12 items-center justify-center text-[.6875rem] font-semibold text-muted-foreground\">\n            Scroll down\n          </div>\n          <div\n            ref={ref}\n            className=\"flex items-center justify-between rounded-lg bg-background p-2.5 text-sm font-semibold text-foreground\"\n          >\n            <span>Target</span>\n            <IconEye className=\"size-4 text-muted-foreground\" />\n          </div>\n          <div className=\"flex h-12 items-center justify-center text-[.6875rem] font-semibold text-muted-foreground\">\n            Scroll up\n          </div>\n        </div>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-intersection-observer-1.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "dom",
+    "intersection-observer"
+  ],
+  "type": "registry:hook"
+}

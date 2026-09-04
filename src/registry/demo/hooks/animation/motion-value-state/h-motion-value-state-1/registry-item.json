@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-animation-motion-value-state-1",
+  "type": "registry:hook",
+  "title": "useMotionValueState",
+  "description": "Framer Motion value subscriber",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "hooks",
+    "animation",
+    "motion-value-state"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/animation/motion-value-state/h-motion-value-state-1/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-motion-value-state-1.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

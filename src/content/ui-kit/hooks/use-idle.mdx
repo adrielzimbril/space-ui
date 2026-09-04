@@ -1,0 +1,31 @@
+---
+title: useIdle
+description: User inactivity timeout monitor.
+preview: demo-hooks-lifecycle-idle-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-lifecycle-use-idle" />
+
+## Usage
+
+```tsx
+import { useIdle } from '@/hooks/use-idle'
+
+const isIdle = useIdle(5000)
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter | Type     | Default | Description           |
+| :-------- | :------- | :------ | :-------------------- |
+| `timeout` | `number` | `60000` | Idle threshold in ms. |
+
+### Return Value
+
+| Return Type | Description   |
+| :---------- | :------------ |
+| `boolean`   | True if idle. |

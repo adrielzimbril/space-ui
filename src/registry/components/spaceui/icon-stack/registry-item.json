@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-icon-stack",
+  "type": "registry:component",
+  "title": "Icon Stack",
+  "description": "Icon Stack component for Space UI.",
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "categories": [
+    "component",
+    "icon-stack"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/icon-stack/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/icon-stack.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

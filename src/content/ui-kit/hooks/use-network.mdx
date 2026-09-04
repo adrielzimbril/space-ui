@@ -1,0 +1,31 @@
+---
+title: useNetwork
+description: Real-time network connection monitor providing online/offline state and bandwidth.
+preview: demo-hooks-browser-network-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-browser-use-network" />
+
+## Usage
+
+```tsx
+import { useNetwork } from '@/hooks/use-network'
+
+const { isOnline, downlink, effectiveType } = useNetwork()
+```
+
+## API Reference
+
+### Parameters / Props
+
+_None_
+
+### Return Value
+
+| Property        | Type                  | Description                |
+| :-------------- | :-------------------- | :------------------------- |
+| `isOnline`      | `boolean`             | Internet connection state. |
+| `downlink`      | `number \| undefined` | Bandwidth in Mbps.         |
+| `effectiveType` | `string \| undefined` | Connection tier.           |

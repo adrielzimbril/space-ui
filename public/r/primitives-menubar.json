@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-menubar",
+  "title": "Menubar",
+  "description": "Accessible Menubar primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-menu"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/menubar/index.tsx",
+      "content": "'use client'\n\nimport { Menubar as MenubarPrimitive } from '@base-ui/react/menubar'\nimport { Menu as MenuPrimitive } from '@base-ui/react/menu'\nimport * as React from 'react'\nimport { cn } from '@/lib/utils'\nimport {\n  MenuPopup,\n  MenuGroup,\n  MenuItem,\n  MenuCheckboxItem,\n  MenuRadioGroup,\n  MenuRadioItem,\n  MenuGroupLabel,\n  MenuSeparator,\n  MenuShortcut,\n  MenuSub,\n  MenuSubTrigger,\n  MenuSubPopup,\n} from '@/components/ui/menu'\n\nexport function Menubar({ className, ...props }: MenubarPrimitive.Props): React.ReactElement {\n  return (\n    <MenubarPrimitive\n      className={cn('flex h-10 items-center gap-1 rounded-md border border-border bg-background p-1', className)}\n      data-slot=\"menubar\"\n      {...props}\n    />\n  )\n}\n\nexport const MenubarMenu: typeof MenuPrimitive.Root = MenuPrimitive.Root\n\nexport const MenubarPortal: typeof MenuPrimitive.Portal = MenuPrimitive.Portal\n\nexport function MenubarTrigger({ className, children, ...props }: MenuPrimitive.Trigger.Props): React.ReactElement {\n  return (\n    <MenuPrimitive.Trigger\n      className={cn(\n        'flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:bg-accent focus:bg-accent data-popup-open:bg-accent data-[state=open]:bg-accent transition-colors',\n        className,\n      )}\n      data-slot=\"menubar-trigger\"\n      {...props}\n    >\n      {children}\n    </MenuPrimitive.Trigger>\n  )\n}\n\nexport function MenubarContent({\n  className,\n  align = 'start',\n  alignOffset = -4,\n  ...props\n}: React.ComponentProps<typeof MenuPopup>): React.ReactElement {\n  return (\n    <MenuPopup align={align} alignOffset={alignOffset} className={className} data-slot=\"menubar-content\" {...props} />\n  )\n}\n\nexport const MenubarGroup = MenuGroup\nexport const MenubarItem = MenuItem\nexport const MenubarCheckboxItem = MenuCheckboxItem\nexport const MenubarRadioGroup = MenuRadioGroup\nexport const MenubarRadioItem = MenuRadioItem\nexport const MenubarLabel = MenuGroupLabel\nexport const MenubarSeparator = MenuSeparator\nexport const MenubarShortcut = MenuShortcut\nexport const MenubarSub = MenuSub\nexport const MenubarSubTrigger = MenuSubTrigger\n\nexport function MenubarSubContent({\n  className,\n  align = 'start',\n  alignOffset = -4,\n  ...props\n}: React.ComponentProps<typeof MenuSubPopup>): React.ReactElement {\n  return (\n    <MenuSubPopup\n      align={align}\n      alignOffset={alignOffset}\n      className={className}\n      data-slot=\"menubar-sub-content\"\n      {...props}\n    />\n  )\n}\n\nexport { MenubarPrimitive, MenuPrimitive }\n",
+      "type": "registry:ui",
+      "target": "components/ui/menubar.tsx"
+    }
+  ],
+  "categories": [
+    "menubar"
+  ],
+  "type": "registry:ui"
+}

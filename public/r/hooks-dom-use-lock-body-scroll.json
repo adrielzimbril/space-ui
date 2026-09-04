@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-dom-use-lock-body-scroll",
+  "title": "useLockBodyScroll",
+  "description": "useLockBodyScroll hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/dom/use-lock-body-scroll/index.ts",
+      "content": "'use client'\n\nimport * as React from 'react'\n\nexport interface LockBodyScrollReturn {\n  isLocked: boolean\n  setIsLocked: React.Dispatch<React.SetStateAction<boolean>>\n  lock: () => void\n  unlock: () => void\n  toggle: () => void\n}\n\nexport function useLockBodyScroll(initialLocked: boolean = false): LockBodyScrollReturn {\n  const [isLocked, setIsLocked] = React.useState<boolean>(initialLocked)\n\n  React.useEffect(() => {\n    if (typeof document === 'undefined') return\n\n    const originalPaddingRight = document.documentElement.style.paddingRight\n    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth\n\n    if (isLocked) {\n      if (scrollbarWidth > 0) {\n        document.documentElement.style.paddingRight = `${scrollbarWidth}px`\n      }\n      document.documentElement.style.overflow = 'hidden'\n    } else {\n      document.documentElement.style.removeProperty('overflow')\n      document.documentElement.style.paddingRight = originalPaddingRight\n    }\n\n    return () => {\n      document.documentElement.style.removeProperty('overflow')\n      document.documentElement.style.paddingRight = originalPaddingRight\n    }\n  }, [isLocked])\n\n  return {\n    isLocked,\n    setIsLocked,\n    lock: () => setIsLocked(true),\n    unlock: () => setIsLocked(false),\n    toggle: () => setIsLocked((prev) => !prev),\n  }\n}\n\nexport const usePreventBodyScroll = useLockBodyScroll\n",
+      "type": "registry:hook",
+      "target": "hooks/use-lock-body-scroll.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "dom",
+    "lock-body-scroll"
+  ],
+  "type": "registry:hook"
+}

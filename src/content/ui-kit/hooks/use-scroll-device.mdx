@@ -1,0 +1,56 @@
+---
+title: useScrollDevice
+description: Real-time 8-directional scroll detection (cardinal & diagonal) with hardware gesture recognition (touchpad 2D swipe, mouse wheel, touch, keyboard).
+preview: demo-hooks-dom-scroll-device-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-dom-use-scroll-device" />
+
+## Usage
+
+```tsx
+import { useScrollDevice } from '@/hooks/use-scroll-device'
+
+const {
+  device,
+  direction,
+  directionX,
+  directionY,
+  isScrolling,
+  isDiagonal,
+  isScrollingUp,
+  isScrollingDown,
+  isScrollingLeft,
+  isScrollingRight,
+  deltaX,
+  deltaY,
+} = useScrollDevice({ threshold: 3, idleTimeout: 250 })
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter             | Type     | Default | Description                                                                |
+| :-------------------- | :------- | :------ | :------------------------------------------------------------------------- |
+| `options.threshold`   | `number` | `3`     | Minimum delta in pixels before triggering direction change.                |
+| `options.idleTimeout` | `number` | `250`   | Inactivity delay in milliseconds before resetting scrolling state to idle. |
+
+### Return Value
+
+| Property           | Type                                                                                                      | Description                                                       |
+| :----------------- | :-------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------- |
+| `device`           | `'wheel' \| 'touchpad' \| 'touch' \| 'keyboard' \| null`                                                  | Detected user input method.                                       |
+| `direction`        | `'up' \| 'down' \| 'left' \| 'right' \| 'up-left' \| 'up-right' \| 'down-left' \| 'down-right' \| 'none'` | Real-time 8-directional compass direction.                        |
+| `directionX`       | `'left' \| 'right' \| 'none'`                                                                             | Horizontal scroll axis direction.                                 |
+| `directionY`       | `'up' \| 'down' \| 'none'`                                                                                | Vertical scroll axis direction.                                   |
+| `isDiagonal`       | `boolean`                                                                                                 | `true` when simultaneous X & Y scrolling occurs.                  |
+| `isScrolling`      | `boolean`                                                                                                 | `true` while gesture or scrolling is active.                      |
+| `isScrollingUp`    | `boolean`                                                                                                 | `true` when scrolling upwards (includes up-left, up-right).       |
+| `isScrollingDown`  | `boolean`                                                                                                 | `true` when scrolling downwards (includes down-left, down-right). |
+| `isScrollingLeft`  | `boolean`                                                                                                 | `true` when scrolling leftwards.                                  |
+| `isScrollingRight` | `boolean`                                                                                                 | `true` when scrolling rightwards.                                 |
+| `deltaX`           | `number`                                                                                                  | Real-time pixel delta on horizontal axis.                         |
+| `deltaY`           | `number`                                                                                                  | Real-time pixel delta on vertical axis.                           |

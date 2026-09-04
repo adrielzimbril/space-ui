@@ -1,0 +1,33 @@
+---
+title: useSize
+description: Measures real-time element pixel dimensions with ResizeObserver.
+preview: demo-hooks-dom-size-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-dom-use-size" />
+
+## Usage
+
+```tsx
+import { useSize } from '@/hooks/use-size'
+
+const ref = React.useRef(null)
+const { width, height } = useSize(ref)
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter   | Type                     | Default    | Description     |
+| :---------- | :----------------------- | :--------- | :-------------- |
+| `targetRef` | `RefObject<HTMLElement>` | _required_ | Ref to measure. |
+
+### Return Value
+
+| Property | Type     | Description       |
+| :------- | :------- | :---------------- |
+| `width`  | `number` | Width in pixels.  |
+| `height` | `number` | Height in pixels. |

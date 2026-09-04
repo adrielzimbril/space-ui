@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-dom-event-listener-1",
+  "type": "registry:hook",
+  "title": "useEventListener",
+  "description": "Declarative window/element event binding",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-dom-use-event-listener",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-kbd"
+  ],
+  "categories": [
+    "hooks",
+    "dom",
+    "event-listener"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/dom/event-listener/h-event-listener-1/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-event-listener-1.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

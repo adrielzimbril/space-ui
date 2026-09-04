@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-scroll-area",
+  "title": "Scroll Area",
+  "description": "Accessible Scroll Area primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/scroll-area/index.tsx",
+      "content": "'use client'\n\nimport { ScrollArea as ScrollAreaPrimitive } from '@base-ui/react/scroll-area'\nimport type React from 'react'\nimport { cn } from '@/lib/utils'\n\nexport function ScrollArea({\n  className,\n  children,\n  scrollFade = false,\n  scrollbarGutter = false,\n  showScrollbar = true,\n  fill = false,\n  clampContentMinWidth = true,\n  overscrollContain = false,\n  ...props\n}: ScrollAreaPrimitive.Root.Props & {\n  scrollFade?: boolean\n  scrollbarGutter?: boolean\n  showScrollbar?: boolean\n  fill?: boolean\n  clampContentMinWidth?: boolean\n  overscrollContain?: boolean\n}): React.ReactElement {\n  return (\n    <ScrollAreaPrimitive.Root className={cn('size-full min-h-0', className)} {...props}>\n      <ScrollAreaPrimitive.Viewport\n        className={cn(\n          'h-full max-h-[inherit] rounded-[inherit] outline-none transition-shadows focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background',\n          overscrollContain && 'data-has-overflow-y:overscroll-y-contain data-has-overflow-x:overscroll-x-contain',\n          scrollFade &&\n            'mask-t-from-[calc(100%-min(var(--fade-size),var(--scroll-area-overflow-y-start)))] mask-b-from-[calc(100%-min(var(--fade-size),var(--scroll-area-overflow-y-end)))] mask-l-from-[calc(100%-min(var(--fade-size),var(--scroll-area-overflow-x-start)))] mask-r-from-[calc(100%-min(var(--fade-size),var(--scroll-area-overflow-x-end)))] [--fade-size:1.5rem]',\n          scrollbarGutter && 'data-has-overflow-y:pe-2.5 data-has-overflow-x:pb-2.5',\n        )}\n        data-slot=\"scroll-area-viewport\"\n      >\n        <ScrollAreaPrimitive.Content\n          className={cn(fill && 'size-full')}\n          data-slot=\"scroll-area-content\"\n          style={clampContentMinWidth ? { minWidth: 0 } : undefined}\n        >\n          {children}\n        </ScrollAreaPrimitive.Content>\n      </ScrollAreaPrimitive.Viewport>\n      {showScrollbar && (\n        <>\n          <ScrollBar orientation=\"vertical\" />\n          <ScrollBar orientation=\"horizontal\" />\n        </>\n      )}\n      <ScrollAreaPrimitive.Corner data-slot=\"scroll-area-corner\" />\n    </ScrollAreaPrimitive.Root>\n  )\n}\n\nexport function ScrollBar({\n  className,\n  orientation = 'vertical',\n  ...props\n}: ScrollAreaPrimitive.Scrollbar.Props): React.ReactElement {\n  return (\n    <ScrollAreaPrimitive.Scrollbar\n      className={cn(\n        'm-1 flex opacity-0 transition-opacity delay-300 data-[orientation=horizontal]:h-1.5 data-[orientation=vertical]:w-1.5 data-[orientation=horizontal]:flex-col data-hovering:opacity-100 data-scrolling:opacity-100 data-hovering:delay-0 data-scrolling:delay-0 data-hovering:duration-100 data-scrolling:duration-100',\n        className,\n      )}\n      data-slot=\"scroll-area-scrollbar\"\n      orientation={orientation}\n      {...props}\n    >\n      <ScrollAreaPrimitive.Thumb\n        className=\"relative flex-1 rounded-full bg-foreground/20\"\n        data-slot=\"scroll-area-thumb\"\n      />\n    </ScrollAreaPrimitive.Scrollbar>\n  )\n}\nexport { ScrollAreaPrimitive }\n",
+      "type": "registry:ui",
+      "target": "components/ui/scroll-area.tsx"
+    }
+  ],
+  "categories": [
+    "scroll-area"
+  ],
+  "type": "registry:ui"
+}

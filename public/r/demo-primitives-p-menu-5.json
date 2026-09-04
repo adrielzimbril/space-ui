@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-menu-5",
+  "title": "Menu 5",
+  "description": "Menu with link",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-menu"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/menu/p-menu-5/index.tsx",
+      "content": "import Link from 'next/link'\nimport { Button } from '@/components/ui/button'\nimport { Menu, MenuLinkItem, MenuPopup, MenuTrigger } from '@/components/ui/menu'\n\nexport default function Particle() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\n      <MenuPopup>\n        <MenuLinkItem render={<Link href=\"/docs\" />}>Docs</MenuLinkItem>\n        <MenuLinkItem render={<Link href=\"/particles\" />}>Particles</MenuLinkItem>\n      </MenuPopup>\n    </Menu>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-menu-5.tsx"
+    }
+  ],
+  "categories": [
+    "dropdown",
+    "menu"
+  ],
+  "type": "registry:ui"
+}

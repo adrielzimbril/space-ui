@@ -1,0 +1,31 @@
+---
+title: sleep
+description: Promise-based delay timer.
+preview: demo-hooks-utils-sleep-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-utils-sleep" />
+
+## Usage
+
+```tsx
+import { sleep } from '@/utils/sleep'
+
+await sleep(1000) // delays for 1s
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter | Type     | Default    | Description            |
+| :-------- | :------- | :--------- | :--------------------- |
+| `ms`      | `number` | _required_ | Delay in milliseconds. |
+
+### Return Value
+
+| Return Type     | Description           |
+| :-------------- | :-------------------- |
+| `Promise<void>` | Resolves after delay. |

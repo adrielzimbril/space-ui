@@ -1,0 +1,16 @@
+import Link from 'next/link'
+import { IconArrowUpRight } from '@tabler/icons-react'
+import { StatusBadge } from '@/registry/components/spaceui/status-badge'
+
+export default function StatusBadgeUnavailableDemo() {
+  return (
+    <div className="flex flex-wrap items-center justify-center gap-4 p-4">
+      <StatusBadge mode="inline" status="offline" primaryText="Complet" size="default">
+        <Link href="#planning" className="inline-flex items-center gap-1 hover:text-foreground transition-colors">
+          <span>Prochaines disponibilités : 15 Septembre</span>
+          <IconArrowUpRight className="size-3.5" />
+        </Link>
+      </StatusBadge>
+    </div>
+  )
+}

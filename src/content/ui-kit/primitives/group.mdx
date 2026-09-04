@@ -1,0 +1,169 @@
+---
+title: Group
+description: Combines adjacent interactive elements into a seamless visual segment for a cleaner, unified toolbar layout.
+preview: demo-primitives-p-group-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-group" />
+
+## Usage
+
+```tsx
+import { Button } from '@/components/ui/button'
+import { Group, GroupSeparator } from '@/components/ui/group'
+```
+
+```tsx
+<Group>
+  <Button>Button</Button>
+  <GroupSeparator />
+  <Button>Button</Button>
+</Group>
+```
+
+## Features
+
+### Disabled State
+
+Group container with disabled child items.
+
+<ComponentPreview name="demo-primitives-p-group-5" />
+
+## Accessibility
+
+- The `Group` component has the `role` attribute set to `group`.
+- Use `Tab` to navigate between the controls in the group.
+- Use `aria-label` or `aria-labelledby` to label the group.
+
+```tsx showLineNumbers
+<Group aria-label="Media controls">
+  <Button variant="outline">Play</Button>
+  <GroupSeparator />
+  <Button variant="outline">Pause</Button>
+</Group>
+```
+
+### Group vs ToggleGroup
+
+- Use the `Group` component when you want to group controls that perform an action.
+- Use the `ToggleGroup` component when you want to group controls that toggle a state.
+
+## API Reference
+
+### Group
+
+The `Group` component is a container that visually groups a series of related controls together with consistent styling.
+
+| Prop          | Type                         | Default        |
+| ------------- | ---------------------------- | -------------- |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` |
+
+```tsx
+<Group>
+  <Button>Button 1</Button>
+  <GroupSeparator />
+  <Button>Button 2</Button>
+</Group>
+```
+
+Nest multiple groups to create complex layouts with spacing. See the [nested groups](#nested-groups) example for more details.
+
+```tsx
+<Group>
+  <Group>
+    <Button>1</Button>
+    <GroupSeparator />
+    <Button>2</Button>
+  </Group>
+  <Group>
+    <Button>Previous</Button>
+    <GroupSeparator />
+    <Button>Next</Button>
+  </Group>
+</Group>
+```
+
+### GroupSeparator
+
+The `GroupSeparator` component visually divides controls within a group.
+
+| Prop          | Type                         | Default      |
+| ------------- | ---------------------------- | ------------ |
+| `orientation` | `"horizontal" \| "vertical"` | `"vertical"` |
+
+```tsx
+<Group>
+  <Button>Button 1</Button>
+  <GroupSeparator />
+  <Button>Button 2</Button>
+</Group>
+```
+
+**Note:** Unlike shadcn's ButtonGroup, `GroupSeparator` is required between all controls, including outline buttons. This ensures consistent visual hierarchy and focus states.
+
+### GroupText
+
+Use this component to display text within a group, such as labels or prefixes.
+
+| Prop     | Type                      | Default |
+| -------- | ------------------------- | ------- |
+| `render` | `React.ReactNode \| null` | `null`  |
+
+```tsx
+<Group>
+  <GroupText>https://</GroupText>
+  <GroupSeparator />
+  <Input placeholder="example.com" />
+</Group>
+```
+
+Use the `render` prop to render a custom component as the text, for example a label.
+
+```tsx
+<Group>
+  <GroupText render={<Label htmlFor="domain" aria-label="Domain" />}>https://</GroupText>
+  <GroupSeparator />
+  <Input id="domain" placeholder="example.com" />
+</Group>
+```
+
+### Aliases
+
+`Group`, `GroupText`, and `GroupSeparator` are also exported as `ButtonGroup`, `ButtonGroupText`, and `ButtonGroupSeparator` for compatibility.
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-group-2" description="Group with input" />
+  <ShowcaseCard name="demo-primitives-p-group-3" description="Small group" />
+  <ShowcaseCard name="demo-primitives-p-group-4" description="Large group" />
+  <ShowcaseCard name="demo-primitives-p-group-6" description="Group with default button" />
+  <ShowcaseCard name="demo-primitives-p-group-7" description="Group with start text" />
+  <ShowcaseCard name="demo-primitives-p-group-8" description="Group with end text" />
+  <ShowcaseCard name="demo-primitives-p-group-9" description="Vertical group" />
+  <ShowcaseCard name="demo-primitives-p-group-10" description="Nested groups" />
+  <ShowcaseCard name="demo-primitives-p-group-11" description="Group with popup" />
+  <ShowcaseCard name="demo-primitives-p-group-12" description="Group with input group" />
+  <ShowcaseCard name="demo-primitives-p-group-13" description="Group with menu" />
+  <ShowcaseCard name="demo-primitives-p-group-14" description="Group with select" />
+  <ShowcaseCard name="demo-primitives-p-group-15" description="Group with search" contained={false} />
+  <ShowcaseCard name="demo-primitives-p-group-16" description="Group with add button and input" />
+  <ShowcaseCard name="demo-primitives-p-group-17" description="Group with input and currency text" />
+  <ShowcaseCard name="demo-primitives-p-group-18" description="Group with select and input" />
+  <ShowcaseCard name="demo-primitives-p-group-19" description="Group with input and select" />
+  <ShowcaseCard name="demo-primitives-p-group-20" description="Group with input and text button" />
+  <ShowcaseCard name="demo-primitives-p-group-21" description="Group with two number inputs for range" />
+  <ShowcaseCard
+    name="demo-primitives-p-group-22"
+    description="Group with filter label, combobox multi-select, and remove button"
+  />
+  <ShowcaseCard name="demo-primitives-p-group-23" description="Group with model selection and tooltips" />
+  <ShowcaseCard name="demo-primitives-p-group-24" description="Group with status select and search input" />
+  <ShowcaseCard name="demo-primitives-p-group-25" description="Group for 1-10 rating scale" />
+  <ShowcaseCard name="demo-primitives-p-group-26" description="Group toolbar example 1" />
+  <ShowcaseCard name="demo-primitives-p-group-27" description="Group toolbar example 2" />
+  <ShowcaseCard name="demo-primitives-p-group-28" description="Group with team collaboration actions and avatars" />
+  <ShowcaseCard name="demo-primitives-p-group-29" description="Group with document actions" />
+</ShowcaseGrid>

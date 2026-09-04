@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-alert-dialog",
+  "type": "registry:ui",
+  "title": "Alert Dialog",
+  "description": "Accessible Alert Dialog primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "categories": [
+    "alert-dialog"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/alert-dialog/index.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/alert-dialog.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

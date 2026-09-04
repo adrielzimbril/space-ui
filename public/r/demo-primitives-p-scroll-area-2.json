@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-scroll-area-2",
+  "title": "Scroll Area 2",
+  "description": "Horizontal scroll area",
+  "registryDependencies": [
+    "@usespaceui/primitives-scroll-area"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/scroll-area/p-scroll-area-2/index.tsx",
+      "content": "import { ScrollArea } from '@/components/ui/scroll-area'\n\nconst shortcuts = [\n  { keys: '⌘ K', action: 'Search' },\n  { keys: '⌘ B', action: 'Sidebar' },\n  { keys: '⌘ J', action: 'Terminal' },\n  { keys: '⌘ S', action: 'Save' },\n  { keys: '⌘ ⇧ P', action: 'Commands' },\n  { keys: '⌘ P', action: 'Quick open' },\n  { keys: '⌘ /', action: 'Comment' },\n  { keys: '⌘ D', action: 'Next match' },\n  { keys: '⌘ ⇧ K', action: 'Delete line' },\n  { keys: '⌥ ↑', action: 'Move up' },\n  { keys: '⌥ ↓', action: 'Move down' },\n  { keys: '⌘ ⇧ F', action: 'Find in files' },\n  { keys: '⌘ W', action: 'Close tab' },\n  { keys: '⌘ ,', action: 'Settings' },\n  { keys: 'F2', action: 'Rename' },\n  { keys: 'F12', action: 'Definition' },\n  { keys: '⌘ .', action: 'Quick fix' },\n  { keys: '⌘ ⇧ L', action: 'Select all' },\n]\n\nexport default function Particle() {\n  return (\n    <ScrollArea className=\"max-w-96 rounded-lg border\">\n      <div className=\"flex w-max gap-4 p-4\">\n        {shortcuts.map(({ keys, action }) => (\n          <div\n            className=\"flex h-20 w-28 shrink-0 flex-col items-center justify-center gap-1.5 rounded-md bg-muted\"\n            key={keys}\n          >\n            <kbd className=\"font-mono text-xs font-medium\">{keys}</kbd>\n            <span className=\"text-muted-foreground text-xs\">{action}</span>\n          </div>\n        ))}\n      </div>\n    </ScrollArea>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-scroll-area-2.tsx"
+    }
+  ],
+  "categories": [
+    "scroll area"
+  ],
+  "type": "registry:ui"
+}

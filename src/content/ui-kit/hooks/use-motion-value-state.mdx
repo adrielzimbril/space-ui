@@ -1,0 +1,31 @@
+---
+title: useMotionValueState
+description: Framer Motion value reactive state subscriber.
+preview: demo-hooks-animation-motion-value-state-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-animation-use-motion-value-state" />
+
+## Usage
+
+```tsx
+import { useMotionValueState } from '@/hooks/use-motion-value-state'
+
+const currentVal = useMotionValueState(motionVal)
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter     | Type             | Default    | Description   |
+| :------------ | :--------------- | :--------- | :------------ |
+| `motionValue` | `MotionValue<T>` | _required_ | Motion value. |
+
+### Return Value
+
+| Return Type | Description     |
+| :---------- | :-------------- |
+| `T`         | Reactive value. |

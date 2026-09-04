@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-dom-use-key-press",
+  "title": "useKeyPress",
+  "description": "useKeyPress hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/dom/use-key-press/index.ts",
+      "content": "'use client'\n\nimport { useState } from 'react'\nimport { useEventListener } from '@/hooks/use-event-listener'\n\n/**\n * React hook that returns `true` while a specific keyboard key is pressed down.\n *\n * @param {string} targetKey - The key value to watch (e.g. 'Escape', 'Enter', 'ArrowDown').\n * @returns {boolean} `true` while the key is pressed, `false` when released.\n *\n * @example\n * const isShiftPressed = useKeyPress('Shift');\n */\nexport function useKeyPress(targetKey: string): boolean {\n  const [keyPressed, setKeyPressed] = useState<boolean>(false)\n\n  function downHandler({ key }: KeyboardEvent): void {\n    if (key === targetKey) {\n      setKeyPressed(true)\n    }\n  }\n\n  const upHandler = ({ key }: KeyboardEvent): void => {\n    if (key === targetKey) {\n      setKeyPressed(false)\n    }\n  }\n\n  useEventListener('keydown', downHandler)\n  useEventListener('keyup', upHandler)\n\n  return keyPressed\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-key-press.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "dom",
+    "key-press"
+  ],
+  "type": "registry:hook"
+}

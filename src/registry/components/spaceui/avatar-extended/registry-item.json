@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-avatar-extended",
+  "type": "registry:component",
+  "title": "Avatar Extended",
+  "description": "Extended avatar components with badges, indicators, and logos.",
+  "registryDependencies": [
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-badge"
+  ],
+  "categories": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/avatar-extended/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/avatar-extended.tsx"
+    }
+  ],
+  "createdAt": "2026-09-01",
+  "updatedAt": "2026-09-01"
+}

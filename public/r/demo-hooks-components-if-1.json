@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-components-if-1",
+  "title": "If",
+  "description": "Declarative boolean conditional renderer",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-components-if",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/components/if/h-if-1/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { If } from '@/components/ui/if'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Button } from '@/components/ui/button'\nimport { Badge } from '@/components/ui/badge'\nimport { IconFilter, IconCheck, IconX } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const [active, setActive] = React.useState(true)\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconFilter className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>If</span>\n        </div>\n        <Badge variant={active ? 'success' : 'outline'} size=\"sm\">\n          {active ? 'True' : 'False'}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex flex-col gap-3 rounded-[0.875rem] bg-background p-3\">\n        <div className=\"flex items-center justify-center rounded-lg bg-muted p-2.5\">\n          <If\n            condition={active}\n            fallback={\n              <div className=\"flex items-center gap-2 text-sm font-medium text-muted-foreground\">\n                <IconX className=\"size-4\" />\n                <span>False</span>\n              </div>\n            }\n          >\n            <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n              <IconCheck className=\"size-4 text-muted-foreground\" />\n              <span>True</span>\n            </div>\n          </If>\n        </div>\n        <Button size=\"sm\" variant=\"outline\" onClick={() => setActive((p) => !p)} className=\"w-full\">\n          Toggle\n        </Button>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-if-1.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "components",
+    "if"
+  ],
+  "type": "registry:hook"
+}

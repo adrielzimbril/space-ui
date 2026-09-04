@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-browser-use-script",
+  "title": "useScript",
+  "description": "useScript hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/browser/use-script/index.ts",
+      "content": "'use client'\n\nimport { useState, useEffect } from 'react'\n\nexport type ScriptStatus = 'idle' | 'loading' | 'ready' | 'error'\n\n/**\n * React hook to dynamically load external JavaScript script files.\n *\n * @param {string} src - The URL of the script to load.\n * @returns {ScriptStatus} The current loading status ('idle' | 'loading' | 'ready' | 'error').\n *\n * @example\n * const stripeStatus = useScript('https://js.stripe.com/v3/');\n */\nexport function useScript(src: string): ScriptStatus {\n  const [status, setStatus] = useState<ScriptStatus>(src ? 'loading' : 'idle')\n\n  useEffect(() => {\n    if (!src) {\n      setStatus('idle')\n      return\n    }\n\n    let script: HTMLScriptElement | null = document.querySelector(`script[src=\"${src}\"]`)\n\n    if (!script) {\n      script = document.createElement('script')\n      script.src = src\n      script.async = true\n      script.setAttribute('data-status', 'loading')\n      document.body.appendChild(script)\n\n      const setAttributeFromEvent = (event: Event) => {\n        script?.setAttribute('data-status', event.type === 'load' ? 'ready' : 'error')\n      }\n\n      script.addEventListener('load', setAttributeFromEvent)\n      script.addEventListener('error', setAttributeFromEvent)\n    } else {\n      setStatus(script.getAttribute('data-status') as ScriptStatus)\n    }\n\n    const setStateFromEvent = (event: Event) => {\n      setStatus(event.type === 'load' ? 'ready' : 'error')\n    }\n\n    script.addEventListener('load', setStateFromEvent)\n    script.addEventListener('error', setStateFromEvent)\n\n    return () => {\n      if (script) {\n        script.removeEventListener('load', setStateFromEvent)\n        script.removeEventListener('error', setStateFromEvent)\n      }\n    }\n  }, [src])\n\n  return status\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-script.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "script"
+  ],
+  "type": "registry:hook"
+}

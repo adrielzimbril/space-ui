@@ -1,0 +1,37 @@
+---
+title: If
+description: Declarative boolean conditional rendering with lazy function execution.
+preview: demo-hooks-components-if-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-components-if" />
+
+## Usage
+
+````tsx
+import { If } from '@/components/if'
+
+import { If } from '@/components/if'```
+
+```tsx
+<If condition={isLoggedIn} fallback={<p>Logged Out</p>}>
+  <p>Welcome back!</p>
+</If>
+````
+
+## API Reference
+
+### Parameters / Props
+
+| Prop        | Type                         | Default    | Description        |
+| :---------- | :--------------------------- | :--------- | :----------------- |
+| `condition` | `boolean \| (() => boolean)` | _required_ | Boolean condition. |
+| `fallback`  | `ReactNode`                  | `null`     | Fallback branch.   |
+
+### Return Value
+
+| Return Type | Description      |
+| :---------- | :--------------- |
+| `ReactNode` | Rendered output. |

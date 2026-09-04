@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-form-use-parse-markdown",
+  "type": "registry:hook",
+  "title": "useParseMarkdown",
+  "description": "useParseMarkdown hook.",
+  "categories": [
+    "hooks",
+    "form",
+    "parse-markdown"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/form/use-parse-markdown/index.ts",
+      "type": "registry:hook",
+      "target": "hooks/use-parse-markdown.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

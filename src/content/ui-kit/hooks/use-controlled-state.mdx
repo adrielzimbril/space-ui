@@ -1,0 +1,42 @@
+---
+title: useControlledState
+description: Seamless synchronizer for both controlled and uncontrolled component state patterns.
+preview: demo-hooks-animation-controlled-state-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-animation-use-controlled-state" />
+
+## Usage
+
+```tsx
+import { useControlledState } from '@/hooks/use-controlled-state'
+
+// Pattern 1: Object config (Radix / Space UI standard)
+const [value, setValue] = useControlledState({
+  prop: props.value,
+  defaultProp: 'Off',
+  onChange: props.onChange,
+})
+
+// Pattern 2: Positional arguments
+const [value, setValue] = useControlledState(props.value, 'Off', props.onChange)
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter             | Type               | Default     | Description                                     |
+| :-------------------- | :----------------- | :---------- | :---------------------------------------------- |
+| `options.prop`        | `T \| undefined`   | `undefined` | Controlled value passed from parent props.      |
+| `options.defaultProp` | `T`                | `undefined` | Default value for uncontrolled usage.           |
+| `options.onChange`    | `(val: T) => void` | `undefined` | Optional change callback fired on state update. |
+
+### Return Value
+
+| Property | Type                                   | Description                                                  |
+| :------- | :------------------------------------- | :----------------------------------------------------------- |
+| `[0]`    | `T`                                    | Current resolved state value.                                |
+| `[1]`    | `(val: T \| ((prev: T) => T)) => void` | State updater function (supports value or updater callback). |

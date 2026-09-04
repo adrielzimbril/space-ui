@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-image-dark",
+  "title": "Image Dark",
+  "description": "An adaptive image component that dynamically switches between light and dark mode sources using standard img elements.",
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/image-dark/index.tsx",
+      "content": "import { cn } from '@/lib/utils'\nimport * as React from 'react'\n\nexport interface ImageDarkProps extends React.ImgHTMLAttributes<HTMLImageElement> {\n  /**\n   * The default light-mode image source.\n   */\n  src: string\n  /**\n   * The dark-mode image source. When provided, automatically switches based on the dark theme.\n   */\n  darkSrc?: string\n}\n\n/**\n * An adaptive image component that seamlessly switches between light and dark mode assets using standard <img> elements.\n * Uses pure CSS theme classes to prevent hydration mismatch, flashes, and layout shifts without any external image framework dependencies.\n */\nexport const ImageDark = React.forwardRef<HTMLImageElement, ImageDarkProps>(\n  ({ src, darkSrc, className, alt = '', ...props }, ref) => {\n    if (!darkSrc) {\n      return <img ref={ref} src={src} alt={alt} className={className} {...props} />\n    }\n\n    return (\n      <>\n        <img ref={ref} src={src} alt={alt} className={cn('dark:hidden', className)} {...props} />\n        <img src={darkSrc} alt={alt} className={cn('hidden dark:block', className)} {...props} />\n      </>\n    )\n  },\n)\n\nImageDark.displayName = 'ImageDark'\n\nexport { ImageDark as DarkImage, ImageDark as ThemedImage }\n",
+      "type": "registry:component",
+      "target": "components/spaceui/image-dark.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "image-dark"
+  ],
+  "type": "registry:component"
+}

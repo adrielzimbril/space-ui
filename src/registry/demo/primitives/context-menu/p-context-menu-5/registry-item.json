@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-context-menu-5",
+  "type": "registry:ui",
+  "title": "Context Menu 5",
+  "description": "Context menu with group labels",
+  "registryDependencies": [
+    "@usespaceui/primitives-context-menu"
+  ],
+  "categories": [
+    "context menu",
+    "menu"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/context-menu/p-context-menu-5/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-context-menu-5.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

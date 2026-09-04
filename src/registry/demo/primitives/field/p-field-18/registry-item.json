@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-field-18",
+  "type": "registry:ui",
+  "title": "Field 18",
+  "description": "Complete form built with field",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-checkbox",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-form",
+    "@usespaceui/primitives-input",
+    "@usespaceui/primitives-select"
+  ],
+  "categories": [
+    "button",
+    "checkbox",
+    "field",
+    "form",
+    "input",
+    "label",
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/field/p-field-18/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-field-18.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

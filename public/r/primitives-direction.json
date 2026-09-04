@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-direction",
+  "title": "Direction",
+  "description": "Accessible Direction primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/direction/index.tsx",
+      "content": "'use client'\n\nexport { DirectionProvider, useDirection } from '@base-ui/react/direction-provider'\n",
+      "type": "registry:ui",
+      "target": "components/ui/direction.tsx"
+    }
+  ],
+  "categories": [
+    "direction"
+  ],
+  "type": "registry:ui"
+}

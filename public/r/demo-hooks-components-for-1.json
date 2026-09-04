@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-components-for-1",
+  "title": "For",
+  "description": "Declarative list iteration with fallback",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-components-for",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/components/for/h-for-1/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { For } from '@/components/ui/for'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Button } from '@/components/ui/button'\nimport { Badge } from '@/components/ui/badge'\nimport { IconListNumbers, IconPlus, IconTrash } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const [items, setItems] = React.useState(['Next.js 15', 'React 19', 'Space UI', 'TypeScript 5'])\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconListNumbers className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>For</span>\n        </div>\n        <Button\n          size=\"sm\"\n          variant=\"outline\"\n          onClick={() => setItems(items.length > 0 ? [] : ['Next.js 15', 'React 19', 'Space UI', 'TypeScript 5'])}\n        >\n          {items.length > 0 ? <IconTrash className=\"size-3.5\" /> : <IconPlus className=\"size-3.5\" />}\n          {items.length > 0 ? 'Clear' : 'Populate'}\n        </Button>\n      </div>\n      <CardPanel className=\"flex max-h-48 flex-col gap-2 overflow-y-auto rounded-[0.875rem] bg-background p-3\">\n        <For\n          each={items}\n          fallback={<div className=\"rounded-lg bg-muted p-2.5 text-center text-xs text-muted-foreground\">No items</div>}\n        >\n          {(item, i) => (\n            <div key={i} className=\"flex items-center justify-between gap-2 rounded-lg bg-muted p-2.5\">\n              <span className=\"text-xs font-medium text-foreground\">{item}</span>\n              <span className=\"font-mono text-[.6875rem] tabular-nums text-muted-foreground\">#{i + 1}</span>\n            </div>\n          )}\n        </For>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-for-1.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "components",
+    "for"
+  ],
+  "type": "registry:hook"
+}

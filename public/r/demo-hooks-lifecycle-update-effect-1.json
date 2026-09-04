@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-lifecycle-update-effect-1",
+  "title": "useUpdateEffect",
+  "description": "Effect executed only on dependencies update",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-lifecycle-use-update-effect",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/lifecycle/update-effect/h-update-effect-1/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { useUpdateEffect } from '@/hooks/use-update-effect'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Button } from '@/components/ui/button'\nimport { Badge } from '@/components/ui/badge'\nimport { IconRefresh } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const [count, setCount] = React.useState(0)\n  const [updated, setUpdated] = React.useState(false)\n\n  useUpdateEffect(() => {\n    setUpdated(true)\n  }, [count])\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconRefresh className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Update</span>\n        </div>\n        <Badge variant={updated ? 'default' : 'outline'} size=\"sm\">\n          {updated ? 'Updated' : 'Initial'}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex items-center justify-between rounded-[0.875rem] bg-background p-3\">\n        <div className=\"rounded-lg bg-muted p-2.5\">\n          <span className=\"block text-[.6875rem] font-semibold text-muted-foreground\">Count</span>\n          <span className=\"mt-0.5 block font-mono text-sm font-semibold tabular-nums text-foreground\">{count}</span>\n        </div>\n        <Button size=\"sm\" onClick={() => setCount((c) => c + 1)}>\n          Increment\n        </Button>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-update-effect-1.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "update-effect",
+    "calendar"
+  ],
+  "type": "registry:hook"
+}

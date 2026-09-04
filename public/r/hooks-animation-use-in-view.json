@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-animation-use-in-view",
+  "title": "useInView",
+  "description": "useInView hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/animation/use-in-view/index.ts",
+      "content": "'use client'\n\nimport * as React from 'react'\n\nexport interface UseInViewOptions extends IntersectionObserverInit {\n  triggerOnce?: boolean\n  inViewOnce?: boolean\n  once?: boolean\n  skip?: boolean\n  inView?: boolean\n  initialInView?: boolean\n  fallbackInView?: boolean\n  inViewMargin?: string\n  margin?: string\n  onChange?: (inView: boolean, entry: IntersectionObserverEntry) => void\n}\n\nexport type UseInViewReturn = [(node?: Element | null) => void, boolean, IntersectionObserverEntry | undefined] & {\n  ref: (node?: Element | null) => void\n  inView: boolean\n  entry?: IntersectionObserverEntry\n}\n\nexport function useInView(options: UseInViewOptions = {}): UseInViewReturn {\n  const {\n    threshold = 0,\n    root = null,\n    rootMargin = options.inViewMargin ?? options.margin ?? '0px',\n    triggerOnce = options.inViewOnce ?? options.once ?? false,\n    skip = options.inView === false,\n    initialInView = false,\n    fallbackInView = false,\n    onChange,\n  } = options\n\n  const [ref, setRef] = React.useState<Element | null>(null)\n  const [inView, setInView] = React.useState<boolean>(initialInView)\n  const [entry, setEntry] = React.useState<IntersectionObserverEntry | undefined>(undefined)\n\n  const onChangeRef = React.useRef(onChange)\n  onChangeRef.current = onChange\n\n  const callbackRef = React.useCallback((node?: Element | null) => {\n    setRef(node ?? null)\n  }, [])\n\n  React.useEffect(() => {\n    if (skip || !ref) return\n\n    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {\n      setInView(fallbackInView)\n      return\n    }\n\n    let isCancelled = false\n\n    const observer = new IntersectionObserver(\n      (entries) => {\n        for (const currentEntry of entries) {\n          if (currentEntry.target === ref && !isCancelled) {\n            const isIntersecting = currentEntry.isIntersecting\n            setInView(isIntersecting)\n            setEntry(currentEntry)\n            onChangeRef.current?.(isIntersecting, currentEntry)\n\n            if (isIntersecting && triggerOnce) {\n              observer.unobserve(ref)\n              observer.disconnect()\n            }\n          }\n        }\n      },\n      {\n        threshold,\n        root,\n        rootMargin,\n      },\n    )\n\n    observer.observe(ref)\n\n    return () => {\n      isCancelled = true\n      observer.disconnect()\n    }\n  }, [ref, threshold, root, rootMargin, triggerOnce, skip, fallbackInView])\n\n  const result = [callbackRef, inView, entry] as UseInViewReturn\n  result.ref = callbackRef\n  result.inView = inView\n  result.entry = entry\n\n  return result\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-in-view.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "animation",
+    "in-view"
+  ],
+  "type": "registry:hook"
+}

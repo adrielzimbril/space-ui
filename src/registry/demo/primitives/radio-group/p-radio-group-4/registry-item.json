@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-radio-group-4",
+  "type": "registry:ui",
+  "title": "Radio Group 4",
+  "description": "Radio group in form",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-fieldset",
+    "@usespaceui/primitives-form",
+    "@usespaceui/primitives-radio-group"
+  ],
+  "categories": [
+    "radio group",
+    "form"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/radio-group/p-radio-group-4/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-radio-group-4.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

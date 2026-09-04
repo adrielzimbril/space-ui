@@ -1,0 +1,65 @@
+import {
+  menuConfig,
+  megaMenuDocs,
+  megaMenuUiKit,
+  megaMenuResources,
+  mobileNavGroups,
+  searchNavShortcuts,
+  searchStaticResources,
+  type MegaMenuItem,
+  type ResourceItem,
+  type NavItem,
+  type NavGroup,
+  type SearchShortcutItem,
+} from './menu-config'
+
+export {
+  menuConfig,
+  megaMenuDocs,
+  megaMenuUiKit,
+  megaMenuResources,
+  mobileNavGroups,
+  searchNavShortcuts,
+  searchStaticResources,
+  type MegaMenuItem,
+  type ResourceItem,
+  type NavItem,
+  type NavGroup,
+  type SearchShortcutItem,
+}
+
+const appInfo = {
+  site: 'https://www.spaceui.one',
+  appName: 'Space UI',
+  namespace: 'usespaceui',
+  twitterHandle: '@usespaceui',
+}
+
+export const siteConfig = {
+  name: 'spaceui.one',
+  appName: appInfo.appName,
+  title: 'Space UI - Motion-Powered React & Tailwind Components',
+  description:
+    'Space UI - A modern, high-performance UI kit built with React, TypeScript, Tailwind CSS, Base UI, and Framer Motion. Explore sensory components, blocks, primitives, and full starter kits.',
+  ogDescription:
+    'Space UI - A modern, high-performance UI kit built with React, TypeScript, Tailwind CSS, Base UI, and Framer Motion.',
+  links: {
+    docs: `${appInfo.site}/docs`,
+    github: `https://github.com/${appInfo.namespace}/ui`,
+    twitter: `https://x.com/${appInfo.twitterHandle}`,
+    authorTwitter: 'https://x.com/adrielzimbril',
+  },
+  author: {
+    name: 'adrielzimbril',
+    twitter: 'https://x.com/adrielzimbril',
+    twitterHandle: '@adrielzimbril',
+  },
+  namespace: appInfo.namespace,
+  twitterHandle: appInfo.twitterHandle,
+  ogImage: `${appInfo.site}/og-image.png`,
+  url: appInfo.site,
+  megaMenu: menuConfig.megaMenu,
+  mobileMenu: menuConfig.mobileMenu,
+  search: menuConfig.search,
+  resources: menuConfig.megaMenu.resources,
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-switch",
+  "title": "Switch",
+  "description": "Accessible Switch primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/switch/index.tsx",
+      "content": "'use client'\n\nimport { Switch as SwitchPrimitive } from '@base-ui/react/switch'\nimport type React from 'react'\nimport { cn } from '@/lib/utils'\n\nexport function Switch({ className, ...props }: SwitchPrimitive.Root.Props): React.ReactElement {\n  return (\n    <SwitchPrimitive.Root\n      className={cn(\n        'inline-flex h-[calc(var(--thumb-size)+2px)] w-[calc(var(--thumb-size)*2-2px)] shrink-0 items-center rounded-full p-px outline-none transition-[background-color] duration-200 [--thumb-size:--spacing(5)] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background data-disabled:cursor-not-allowed data-checked:bg-primary data-unchecked:bg-input data-disabled:opacity-64 sm:[--thumb-size:--spacing(4)]',\n        className,\n      )}\n      data-slot=\"switch\"\n      {...props}\n    >\n      <SwitchPrimitive.Thumb\n        className={cn(\n          'pointer-events-none block aspect-square h-full origin-left in-[[role=switch]:active,[data-slot=label]:active,[data-slot=field-label]:active]:not-data-disabled:scale-x-110 in-[[role=switch]:active,[data-slot=label]:active,[data-slot=field-label]:active]:rounded-[var(--thumb-size)/calc(var(--thumb-size)*1.1)] rounded-(--thumb-size) bg-background will-change-transform [transition:translate_.15s,border-radius_.15s,scale_.1s_.1s,transform-origin_.15s] data-checked:origin-[var(--thumb-size)_50%] data-checked:translate-x-[calc(var(--thumb-size)-4px)]',\n        )}\n        data-slot=\"switch-thumb\"\n      />\n    </SwitchPrimitive.Root>\n  )\n}\n\nexport { SwitchPrimitive }\n",
+      "type": "registry:ui",
+      "target": "components/ui/switch.tsx"
+    }
+  ],
+  "categories": [
+    "switch"
+  ],
+  "type": "registry:ui"
+}

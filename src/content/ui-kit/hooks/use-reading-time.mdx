@@ -1,0 +1,44 @@
+---
+title: useReadingTime
+description: Real-time article reading time calculator with CJK multilingual support, Markdown/HTML stripping, and code/image weighting.
+preview: demo-hooks-form-reading-time-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-form-use-reading-time" />
+
+## Usage
+
+```tsx
+import { useReadingTime, formatTime } from '@/hooks/use-reading-time'
+
+const stats = useReadingTime(articleContent, {
+  wordsPerMinute: 200,
+  includeImages: true,
+  includeCodeBlocks: true,
+})
+
+const formatted = formatTime(stats, 'short') // "2m 15s"
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter                   | Type      | Default | Description                                     |
+| :-------------------------- | :-------- | :------ | :---------------------------------------------- |
+| `content`                   | `string`  | `''`    | Raw text, Markdown, or HTML content to analyze. |
+| `options.wordsPerMinute`    | `number`  | `200`   | Average reading speed in words per minute.      |
+| `options.includeImages`     | `boolean` | `true`  | Add extra reading weight for image elements.    |
+| `options.includeCodeBlocks` | `boolean` | `true`  | Weight code block tokens.                       |
+
+### Return Value
+
+| Property       | Type     | Description                        |
+| :------------- | :------- | :--------------------------------- |
+| `minutes`      | `number` | Integer minutes portion.           |
+| `seconds`      | `number` | Remaining seconds portion.         |
+| `totalSeconds` | `number` | Total duration in seconds.         |
+| `wordCount`    | `number` | Total word count (alias: `words`). |
+| `imageCount`   | `number` | Detected image tag count.          |

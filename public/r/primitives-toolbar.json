@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-toolbar",
+  "title": "Toolbar",
+  "description": "Accessible Toolbar primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/toolbar/index.tsx",
+      "content": "'use client'\n\nimport { Toolbar as ToolbarPrimitive } from '@base-ui/react/toolbar'\nimport type React from 'react'\nimport { cn } from '@/lib/utils'\n\nexport function Toolbar({ className, ...props }: ToolbarPrimitive.Root.Props): React.ReactElement {\n  return (\n    <ToolbarPrimitive.Root\n      className={cn(\n        'relative flex gap-2 rounded-xl border bg-card not-dark:bg-clip-padding p-1 text-card-foreground',\n        className,\n      )}\n      data-slot=\"toolbar\"\n      {...props}\n    />\n  )\n}\n\nexport function ToolbarButton({ className, ...props }: ToolbarPrimitive.Button.Props): React.ReactElement {\n  return <ToolbarPrimitive.Button className={cn(className)} data-slot=\"toolbar-button\" {...props} />\n}\n\nexport function ToolbarLink({ className, ...props }: ToolbarPrimitive.Link.Props): React.ReactElement {\n  return <ToolbarPrimitive.Link className={cn(className)} data-slot=\"toolbar-link\" {...props} />\n}\n\nexport function ToolbarInput({ className, ...props }: ToolbarPrimitive.Input.Props): React.ReactElement {\n  return <ToolbarPrimitive.Input className={cn(className)} data-slot=\"toolbar-input\" {...props} />\n}\n\nexport function ToolbarGroup({ className, ...props }: ToolbarPrimitive.Group.Props): React.ReactElement {\n  return (\n    <ToolbarPrimitive.Group className={cn('flex items-center gap-1', className)} data-slot=\"toolbar-group\" {...props} />\n  )\n}\n\nexport function ToolbarSeparator({ className, ...props }: ToolbarPrimitive.Separator.Props): React.ReactElement {\n  return (\n    <ToolbarPrimitive.Separator\n      className={cn(\n        \"shrink-0 bg-border data-[orientation=horizontal]:my-0.5 data-[orientation=vertical]:my-1.5 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:not-[[class^='h-']]:not-[[class*='_h-']]:self-stretch\",\n        className,\n      )}\n      data-slot=\"toolbar-separator\"\n      {...props}\n    />\n  )\n}\n\nexport { ToolbarPrimitive }\n",
+      "type": "registry:ui",
+      "target": "components/ui/toolbar.tsx"
+    }
+  ],
+  "categories": [
+    "toolbar"
+  ],
+  "type": "registry:ui"
+}

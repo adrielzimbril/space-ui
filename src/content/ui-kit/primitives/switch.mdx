@@ -1,0 +1,77 @@
+---
+title: Switch
+description: Allows users to toggle a single setting instantly between on and off, behaving just like a physical light switch.
+
+links:
+  doc: https://base-ui.com/react/components/switch#api-reference
+preview: demo-primitives-p-switch-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-switch" />
+
+## Usage
+
+```tsx
+import { Switch } from '@/components/ui/switch'
+```
+
+```tsx
+<Switch />
+```
+
+## Anatomy
+
+```tsx
+<Switch>
+  <SwitchThumb />
+</Switch>
+```
+
+## Features
+
+### Sizes
+
+Switch toggle controls in `sm`, `default`, and `lg` sizes.
+
+<ComponentPreview name="demo-primitives-p-switch-2" />
+
+## Accessibility
+
+- Follows the [WAI-ARIA Switch Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/switch/).
+
+### Keyboard Interactions
+
+| Key                                 | Action                                 |
+| :---------------------------------- | :------------------------------------- |
+| <Kbd>Space</Kbd> / <Kbd>Enter</Kbd> | Toggles the switch between on and off. |
+
+## API Reference
+
+### Switch
+
+Styled wrapper for `Switch.Root` from Base UI with built-in thumb. Size is controlled via the `--thumb-size` CSS variable.
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-switch-3" description="Switch card" />
+  <ShowcaseCard name="demo-primitives-p-switch-4" description="Switch in form" />
+  <ShowcaseCard name="demo-primitives-p-switch-5" description="Custom size switch" />
+  <ShowcaseCard
+    name="demo-primitives-p-switch-6"
+    description="Weekly availability editor with time range combobox pickers"
+    contained={false}
+  />
+  <ShowcaseCard
+    name="demo-primitives-p-switch-7"
+    description="Weekly availability editor with grouped time range controls"
+    contained={false}
+  />
+  <ShowcaseCard
+    name="demo-primitives-p-switch-8"
+    description="Weekly availability editor with From/To labeled time groups"
+    contained={false}
+  />
+</ShowcaseGrid>

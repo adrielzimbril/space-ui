@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-utils-logger",
+  "title": "logger",
+  "description": "logger utility.",
+  "files": [
+    {
+      "path": "src/registry/utils/logger/index.ts",
+      "content": "export const logger = {\n  log: (...args: any[]) => console.log('[🫗LOGGER]', ...args),\n  warn: (...args: any[]) => console.warn('[⚠️ LOGGER]', ...args),\n  error: (...args: any[]) => console.error('[❌LOGGER]', ...args),\n  info: (...args: any[]) => console.info('[ℹ️ LOGGER]', ...args),\n  trace: (...args: any[]) => console.trace('[🔎 LOGGER]', ...args),\n  debug: (...args: any[]) => {\n    if (typeof process !== 'undefined' && process.env?.NODE_ENV === 'development') {\n      console.debug('[🪲LOGGER]', ...args)\n    }\n  },\n}\n",
+      "type": "registry:lib",
+      "target": "utils/logger.ts"
+    }
+  ],
+  "categories": [
+    "utils",
+    "logger"
+  ],
+  "type": "registry:lib"
+}

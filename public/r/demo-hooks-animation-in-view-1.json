@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-animation-in-view-1",
+  "title": "useInView",
+  "description": "Trigger animation when element enters viewport",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-animation-use-in-view",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/animation/in-view/h-in-view-1/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { useInView } from '@/hooks/use-in-view'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Badge } from '@/components/ui/badge'\nimport { IconEye } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const [ref, inView] = useInView({ threshold: 0.5 })\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconEye className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>In View</span>\n        </div>\n        <Badge variant={inView ? 'success' : 'outline'} size=\"sm\">\n          {inView ? 'In view' : 'Hidden'}\n        </Badge>\n      </div>\n      <CardPanel className=\"rounded-[0.875rem] bg-background p-3\">\n        <div\n          ref={ref}\n          className=\"flex items-center justify-center rounded-lg bg-muted p-6 text-sm font-semibold text-muted-foreground\"\n        >\n          {inView ? 'Visible' : 'Offscreen'}\n        </div>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-in-view-1.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "animation",
+    "in-view"
+  ],
+  "type": "registry:hook"
+}

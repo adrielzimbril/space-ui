@@ -1,0 +1,80 @@
+---
+title: Accordion
+description: Allows you to display content in collapsible panels, making it easy for users to explore details on demand while conserving screen space.
+
+links:
+  doc: https://base-ui.com/react/components/accordion#api-reference
+preview: demo-primitives-p-accordion-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-accordion" />
+
+## Usage
+
+```tsx
+import { Accordion, AccordionItem, AccordionPanel, AccordionTrigger } from '@/components/ui/accordion'
+```
+
+```tsx
+<Accordion>
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Your Accordion Title Goes Here</AccordionTrigger>
+    <AccordionPanel>
+      This is where your accordion content will appear. You can customize this text with any message.
+    </AccordionPanel>
+  </AccordionItem>
+</Accordion>
+```
+
+## Anatomy
+
+```tsx
+<Accordion>
+  <AccordionItem>
+    <AccordionTrigger />
+    <AccordionPanel />
+  </AccordionItem>
+</Accordion>
+```
+
+## Accessibility
+
+- Adheres to the [WAI-ARIA Accordion Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/accordion/).
+- Each accordion header trigger is wrapped with the proper `aria-expanded` and `aria-controls` attributes.
+
+### Keyboard Interactions
+
+| Key                                 | Action                                            |
+| :---------------------------------- | :------------------------------------------------ |
+| <Kbd>Space</Kbd> / <Kbd>Enter</Kbd> | Expands or collapses the focused accordion panel. |
+| <Kbd>ArrowDown</Kbd>                | Moves focus to the next accordion trigger.        |
+| <Kbd>ArrowUp</Kbd>                  | Moves focus to the previous accordion trigger.    |
+| <Kbd>Home</Kbd>                     | Moves focus to the first accordion trigger.       |
+| <Kbd>End</Kbd>                      | Moves focus to the last accordion trigger.        |
+
+## API Reference
+
+### Accordion
+
+Root component. Alias for `Accordion.Root` from Base UI.
+
+### AccordionItem
+
+Individual accordion item container. Styled wrapper for `Accordion.Item` from Base UI with bottom border styling.
+
+### AccordionTrigger
+
+Trigger button that toggles the accordion panel. Styled wrapper for `Accordion.Trigger` from Base UI. Includes a built-in chevron icon that rotates when expanded.
+
+### AccordionPanel
+
+Collapsible content panel. Styled wrapper for `Accordion.Panel` from Base UI with animated height transitions. Also exported as `AccordionContent`.
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-accordion-2" description="Accordion allowing multiple panels open" />
+  <ShowcaseCard name="demo-primitives-p-accordion-3" description="Bordered accordion items" />
+</ShowcaseGrid>

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-button-13",
+  "title": "Button 13",
+  "description": "Social login icon buttons",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/button/p-button-13/index.tsx",
+      "content": "import { IconBrandFacebook, IconBrandGithub, IconBrandGoogle, IconBrandX } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\n\nexport default function Particle() {\n  return (\n    <div className=\"inline-flex flex-wrap gap-2\">\n      <Button aria-label=\"Login with Google\" size=\"icon\" variant=\"outline\">\n        <IconBrandGoogle aria-hidden=\"true\" />\n      </Button>\n      <Button aria-label=\"Login with Facebook\" size=\"icon\" variant=\"outline\">\n        <IconBrandFacebook aria-hidden=\"true\" />\n      </Button>\n      <Button aria-label=\"Login with X\" size=\"icon\" variant=\"outline\">\n        <IconBrandX aria-hidden=\"true\" />\n      </Button>\n      <Button aria-label=\"Login with GitHub\" size=\"icon\" variant=\"outline\">\n        <IconBrandGithub aria-hidden=\"true\" />\n      </Button>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-button-13.tsx"
+    }
+  ],
+  "categories": [
+    "button"
+  ],
+  "type": "registry:ui"
+}

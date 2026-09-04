@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-lifecycle-use-idle",
+  "type": "registry:hook",
+  "title": "useIdle",
+  "description": "useIdle hook.",
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "idle"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/lifecycle/use-idle/index.ts",
+      "type": "registry:hook",
+      "target": "hooks/use-idle.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

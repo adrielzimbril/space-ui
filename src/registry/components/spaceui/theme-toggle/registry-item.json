@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-theme-toggle",
+  "type": "registry:component",
+  "title": "Theme Toggle",
+  "description": "View-transition theme toggle with circle, rectangle, polygon, and blur reveals.",
+  "dependencies": ["motion", "next-themes", "@tabler/icons-react"],
+  "registryDependencies": [
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-button",
+    "@usespaceui/components-spaceui-morph-icon"
+  ],
+  "categories": ["component", "theme-toggle"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/theme-toggle/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/theme-toggle.tsx"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

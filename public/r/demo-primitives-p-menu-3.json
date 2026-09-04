@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-menu-3",
+  "title": "Menu 3",
+  "description": "Menu with checkbox",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-menu"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/menu/p-menu-3/index.tsx",
+      "content": "import { Button } from '@/components/ui/button'\nimport { Menu, MenuCheckboxItem, MenuPopup, MenuTrigger } from '@/components/ui/menu'\n\nexport default function Particle() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\n      <MenuPopup>\n        <MenuCheckboxItem defaultChecked>Auto save</MenuCheckboxItem>\n        <MenuCheckboxItem>Notifications</MenuCheckboxItem>\n      </MenuPopup>\n    </Menu>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-menu-3.tsx"
+    }
+  ],
+  "categories": [
+    "dropdown",
+    "menu"
+  ],
+  "type": "registry:ui"
+}

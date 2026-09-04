@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-timeline-6",
+  "type": "registry:component",
+  "title": "Timeline with pipeline steps.",
+  "description": "Timeline with pipeline steps.",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-timeline",
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-avatar",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-collapsible",
+    "@usespaceui/primitives-frame",
+    "@usespaceui/primitives-spinner"
+  ],
+  "categories": [
+    "component",
+    "timeline"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/timeline/c-timeline-6/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-timeline-6.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

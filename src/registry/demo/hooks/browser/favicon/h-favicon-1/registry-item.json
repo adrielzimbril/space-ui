@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-browser-favicon-1",
+  "type": "registry:hook",
+  "title": "useFavicon",
+  "description": "Dynamic browser favicon switcher",
+  "registryDependencies": [
+    "@usespaceui/hooks-browser-use-favicon",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "favicon"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/browser/favicon/h-favicon-1/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-favicon-1.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

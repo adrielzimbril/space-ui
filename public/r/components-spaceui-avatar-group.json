@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-avatar-group",
+  "title": "Avatar Group",
+  "description": "Avatar group stacking and overlapping system.",
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/avatar-group/index.tsx",
+      "content": "'use client'\n\nimport React from 'react'\nimport { cn } from '@/lib/utils'\n\nexport interface AvatarGroupProps extends React.HTMLAttributes<HTMLDivElement> {\n  stacking?: 'left' | 'right'\n}\n\nexport function AvatarGroup({\n  className,\n  stacking = 'right',\n  children,\n  ...props\n}: AvatarGroupProps): React.ReactElement {\n  const count = React.Children.count(children)\n\n  return (\n    <div className={cn('flex items-center justify-center -space-x-2 *:ring-2 *:ring-background', className)} {...props}>\n      {React.Children.map(children, (child, index) => {\n        if (!React.isValidElement(child)) return child\n        return React.cloneElement(child as React.ReactElement<any>, {\n          style: {\n            ...((child.props.style as React.CSSProperties) || {}),\n            zIndex: stacking === 'left' ? count - index : undefined,\n          },\n        })\n      })}\n    </div>\n  )\n}\n\nexport function AvatarGroupAction({ className, ...props }: React.HTMLAttributes<HTMLDivElement>): React.ReactElement {\n  return (\n    <div\n      className={cn(\n        'relative inline-flex size-8 shrink-0 select-none items-center justify-center rounded-full bg-muted font-medium text-xs ring-2 ring-background',\n        className,\n      )}\n      data-slot=\"avatar-group-action\"\n      {...props}\n    />\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/avatar-group.tsx"
+    }
+  ],
+  "categories": [
+    "avatar"
+  ],
+  "type": "registry:component"
+}

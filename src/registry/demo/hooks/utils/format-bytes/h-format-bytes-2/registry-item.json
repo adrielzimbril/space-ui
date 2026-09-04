@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-utils-format-bytes-2",
+  "type": "registry:hook",
+  "title": "formatBytes (Storage Meter)",
+  "description": "Storage meter with dynamic byte conversion",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-utils-format-bytes"
+  ],
+  "categories": [
+    "hooks",
+    "utils",
+    "format-bytes"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/utils/format-bytes/h-format-bytes-2/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-format-bytes-2.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

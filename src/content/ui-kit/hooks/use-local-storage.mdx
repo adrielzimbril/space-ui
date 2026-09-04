@@ -1,0 +1,40 @@
+---
+title: useLocalStorage
+description: Synchronizes state with window.localStorage across tabs.
+preview: demo-hooks-browser-local-storage-1
+---
+
+### Example 2: Form Settings Object
+
+<ComponentPreview name="demo-hooks-browser-local-storage-2" />
+
+### Example 3: Persistent Todo List
+
+<ComponentPreview name="demo-hooks-browser-local-storage-3" />
+
+## Installation
+
+<ComponentInstallation name="hooks-browser-use-local-storage" />
+
+## Usage
+
+```tsx
+import { useLocalStorage } from '@/hooks/use-local-storage'
+
+const [count, setCount, remove] = useLocalStorage('key', 0)
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter      | Type     | Default    | Description     |
+| :------------- | :------- | :--------- | :-------------- |
+| `key`          | `string` | _required_ | Storage key.    |
+| `initialValue` | `T`      | _required_ | Fallback value. |
+
+### Return Value
+
+| Return Type                         | Description                 |
+| :---------------------------------- | :-------------------------- |
+| `[T, (val: T) => void, () => void]` | Value, setter, and remover. |

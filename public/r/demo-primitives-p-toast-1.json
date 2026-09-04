@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-toast-1",
+  "title": "Toast Variants",
+  "description": "Trigger various toast notification types",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-toast"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/toast/p-toast-1/index.tsx",
+      "content": "'use client'\n\nimport { Button } from '@/components/ui/button'\nimport { toastManager } from '@/components/ui/toast'\n\nexport default function Particle() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-2\">\n      <Button\n        onClick={() =>\n          toastManager.add({\n            title: 'Event created',\n            description: 'Your event has been scheduled successfully.',\n          })\n        }\n        variant=\"outline\"\n      >\n        Default\n      </Button>\n      <Button\n        onClick={() =>\n          toastManager.add({\n            type: 'success',\n            title: 'Profile updated',\n            description: 'Your changes have been saved.',\n          })\n        }\n        variant=\"outline\"\n      >\n        Success\n      </Button>\n      <Button\n        onClick={() =>\n          toastManager.add({\n            type: 'info',\n            title: 'New notification',\n            description: 'You have 3 unread messages in your inbox.',\n          })\n        }\n        variant=\"outline\"\n      >\n        Info\n      </Button>\n      <Button\n        onClick={() =>\n          toastManager.add({\n            type: 'warning',\n            title: 'Storage warning',\n            description: 'Your disk space is almost full (90%).',\n          })\n        }\n        variant=\"outline\"\n      >\n        Warning\n      </Button>\n      <Button\n        onClick={() =>\n          toastManager.add({\n            type: 'error',\n            title: 'Action failed',\n            description: 'Could not connect to the remote server.',\n          })\n        }\n        variant=\"outline\"\n      >\n        Error\n      </Button>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-toast-1.tsx"
+    }
+  ],
+  "categories": [
+    "toast"
+  ],
+  "type": "registry:ui"
+}

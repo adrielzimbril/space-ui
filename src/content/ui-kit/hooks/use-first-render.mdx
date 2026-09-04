@@ -1,0 +1,29 @@
+---
+title: useFirstRender
+description: First render cycle indicator.
+preview: demo-hooks-lifecycle-first-render-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-lifecycle-use-first-render" />
+
+## Usage
+
+```tsx
+import { useFirstRender } from '@/hooks/use-first-render'
+
+const isFirst = useFirstRender()
+```
+
+## API Reference
+
+### Parameters / Props
+
+_None_
+
+### Return Value
+
+| Return Type | Description                 |
+| :---------- | :-------------------------- |
+| `boolean`   | True only on initial mount. |

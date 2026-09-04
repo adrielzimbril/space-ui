@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-checkbox-group-3",
+  "title": "Checkbox Group 3",
+  "description": "Checkbox group with parent checkbox",
+  "registryDependencies": [
+    "@usespaceui/primitives-checkbox",
+    "@usespaceui/primitives-checkbox-group",
+    "@usespaceui/primitives-label"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/checkbox-group/p-checkbox-group-3/index.tsx",
+      "content": "'use client'\n\nimport { useState } from 'react'\nimport { Checkbox } from '@/components/ui/checkbox'\nimport { CheckboxGroup } from '@/components/ui/checkbox-group'\nimport { Label } from '@/components/ui/label'\n\nconst frameworks = [\n  { id: 'next', name: 'Next.js' },\n  { id: 'vite', name: 'Vite' },\n  { id: 'astro', name: 'Astro' },\n]\n\nexport default function Particle() {\n  const [value, setValue] = useState<string[]>([])\n\n  return (\n    <CheckboxGroup\n      allValues={frameworks.map((framework) => framework.id)}\n      aria-labelledby=\"frameworks-caption\"\n      onValueChange={setValue}\n      value={value}\n    >\n      <Label id=\"frameworks-caption\">\n        <Checkbox name=\"frameworks\" parent />\n        Frameworks\n      </Label>\n\n      {frameworks.map((framework) => (\n        <Label className=\"ms-4\" key={framework.id}>\n          <Checkbox value={framework.id} />\n          {framework.name}\n        </Label>\n      ))}\n    </CheckboxGroup>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-checkbox-group-3.tsx"
+    }
+  ],
+  "categories": [
+    "checkbox",
+    "checkbox group"
+  ],
+  "type": "registry:ui"
+}

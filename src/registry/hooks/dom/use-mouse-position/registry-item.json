@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-dom-use-mouse-position",
+  "type": "registry:hook",
+  "title": "useMousePosition",
+  "description": "useMousePosition hook.",
+  "categories": [
+    "hooks",
+    "dom",
+    "mouse-position"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/dom/use-mouse-position/index.ts",
+      "type": "registry:hook",
+      "target": "hooks/use-mouse-position.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

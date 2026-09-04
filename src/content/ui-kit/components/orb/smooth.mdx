@@ -1,0 +1,55 @@
+---
+title: Smooth Orb
+description: Audio-reactive fluid WebGL orb. Swap ambient, microphone, or file input, change the texture, and toggle grain.
+author:
+  name: usespaceui
+  url: https://github.com/usespaceui
+preview: demo-components-orb-c-orb-smooth-1
+---
+
+## Installation
+
+<ComponentInstallation name="components-orb-smooth" />
+
+## Usage
+
+```tsx
+import { OrbSmooth } from '@/components/orb/smooth'
+
+export function HeroOrb() {
+  return <OrbSmooth size={420} audioMode="ambient" grainAnimated />
+}
+```
+
+## Files
+
+| File                       | Role                                       |
+| -------------------------- | ------------------------------------------ |
+| `smooth/index.tsx`         | `OrbSmooth` WebGPU fluid sim + display     |
+| `smooth/sim.wgsl.ts`       | Splat, advect, pressure, blur passes       |
+| `smooth/display.wgsl.ts`   | Sphere shading, grain, texture mapping     |
+| `smooth/audio-analyzer.ts` | Mic / `<audio>` analyser → shader uniforms |
+| `smooth/types.ts`          | `OrbSmoothProps`, `AudioMode`              |
+
+## API Reference
+
+### OrbSmooth
+
+| Prop                 | Type                           | Default     | Description                                |
+| -------------------- | ------------------------------ | ----------- | ------------------------------------------ |
+| `textureUrl`         | `string`                       | —           | Equirect / image mapped onto the orb       |
+| `audioMode`          | `'ambient' \| 'mic' \| 'file'` | `'ambient'` | How audio drives the fluid                 |
+| `audioElement`       | `RefObject<HTMLAudioElement>`  | —           | Required when `audioMode` is `'file'`      |
+| `useMicrophone`      | `boolean`                      | `false`     | Legacy mic flag, overridden by `audioMode` |
+| `animated`           | `boolean`                      | `true`      | Runs the simulation loop                   |
+| `sphereScale`        | `number`                       | `0.9`       | Sphere size in the display pass            |
+| `spherePower`        | `number`                       | `1.1`       | Limb falloff                               |
+| `grainOpacity`       | `number`                       | `0`         | Film grain mix                             |
+| `grainAnimated`      | `boolean`                      | `true`      | Wave-drift grain (off = static)            |
+| `watercolorStrength` | `number`                       | `0.5`       | Watercolor UV warp (min = 0, max = 1)      |
+| `timeScale`          | `number`                       | `1.4`       | Simulation speed                           |
+| `className`          | `string`                       | —           | Canvas wrapper class                       |
+
+## Audio modes
+
+Use the demo buttons: **Ambient** idles the fluid, **Mic** requests `getUserMedia`, **Audio file** binds an `<audio>` element. Grain and texture are independent of audio.

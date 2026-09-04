@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-morph-icon",
+  "title": "Morph Icon",
+  "description": "An animated morphing icon transition wrapper supporting motion presets like blur-scale, rotate-scale, flip, and spring.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/morph-icon/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { AnimatePresence, motion, type HTMLMotionProps } from 'motion/react'\nimport { cn } from '@/lib/utils'\n\nexport type MorphIconVariant = 'blur-scale' | 'rotate-scale' | 'flip' | 'spring'\n\nexport interface MorphIconProps extends Omit<HTMLMotionProps<'span'>, 'children'> {\n  /** Key identifying the active state/icon */\n  activeKey: React.Key\n  /** The icon to render */\n  children: React.ReactNode\n  /** Animation transition style */\n  variant?: MorphIconVariant\n  /** Animation duration in seconds */\n  duration?: number\n}\n\nconst variantsMap: Record<\n  MorphIconVariant,\n  {\n    initial: HTMLMotionProps<'span'>['initial']\n    animate: HTMLMotionProps<'span'>['animate']\n    exit: HTMLMotionProps<'span'>['exit']\n  }\n> = {\n  'blur-scale': {\n    initial: { scale: 0.2, opacity: 0, filter: 'blur(4px)', rotate: -15 },\n    animate: { scale: 1, opacity: 1, filter: 'blur(0px)', rotate: 0 },\n    exit: { scale: 0.2, opacity: 0, filter: 'blur(4px)', rotate: 15 },\n  },\n  'rotate-scale': {\n    initial: { scale: 0, opacity: 0, rotate: -90 },\n    animate: { scale: 1, opacity: 1, rotate: 0 },\n    exit: { scale: 0, opacity: 0, rotate: 90 },\n  },\n  flip: {\n    initial: { rotateY: 90, opacity: 0 },\n    animate: { rotateY: 0, opacity: 1 },\n    exit: { rotateY: -90, opacity: 0 },\n  },\n  spring: {\n    initial: { scale: 0.3, y: 4, opacity: 0 },\n    animate: { scale: 1, y: 0, opacity: 1 },\n    exit: { scale: 0.3, y: -4, opacity: 0 },\n  },\n}\n\nexport function MorphIcon({\n  activeKey,\n  children,\n  className,\n  variant = 'blur-scale',\n  duration = 0.22,\n  ...props\n}: MorphIconProps): React.ReactElement {\n  const selectedVariant = variantsMap[variant] ?? variantsMap['blur-scale']\n\n  return (\n    <AnimatePresence mode=\"popLayout\" initial={false}>\n      <motion.span\n        key={activeKey}\n        data-slot=\"morph-icon\"\n        className={cn('inline-flex items-center justify-center pointer-events-none shrink-0', className)}\n        initial={selectedVariant.initial}\n        animate={selectedVariant.animate}\n        exit={selectedVariant.exit}\n        transition={{ duration, ease: [0.16, 1, 0.3, 1] }}\n        {...props}\n      >\n        {children}\n      </motion.span>\n    </AnimatePresence>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/morph-icon.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "morph-icon"
+  ],
+  "type": "registry:component"
+}

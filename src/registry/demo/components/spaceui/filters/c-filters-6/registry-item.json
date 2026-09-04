@@ -1,0 +1,36 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-filters-6",
+  "type": "registry:component",
+  "title": "Filters with custom controls",
+  "description": "Filters with custom controls",
+  "dependencies": [
+    "@tabler/icons-react",
+    "date-fns",
+    "react-day-picker"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-date-selector",
+    "@usespaceui/components-spaceui-filters",
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-calendar",
+    "@usespaceui/primitives-dialog",
+    "@usespaceui/primitives-popover",
+    "@usespaceui/primitives-scroll-area",
+    "@usespaceui/primitives-slider"
+  ],
+  "categories": [
+    "component",
+    "filters"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/filters/c-filters-6/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-filters-6.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

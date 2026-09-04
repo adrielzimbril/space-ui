@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-utils-event",
+  "title": "event",
+  "description": "event utility.",
+  "files": [
+    {
+      "path": "src/registry/utils/event/index.ts",
+      "content": "/**\n * Safely binds an event listener to any EventTarget (Window, Document, HTMLElement).\n *\n * @template T\n * @param {T | null} target - The target element or object to bind the listener to.\n * @param {...any} args - Standard arguments matching addEventListener (eventName, handler, options).\n *\n * @example\n * bindEvent(window, 'resize', () => console.log('Resized!'), { passive: true });\n */\nexport function bindEvent<T extends Window | Document | HTMLElement | EventTarget>(\n  target: T | null,\n  ...args: Parameters<T['addEventListener']> | [string, Function | null, ...any]\n): void {\n  if (target && target.addEventListener) {\n    target.addEventListener(...(args as Parameters<HTMLElement['addEventListener']>))\n  }\n}\n\n/**\n * Safely unbinds an event listener from any EventTarget (Window, Document, HTMLElement).\n *\n * @template T\n * @param {T | null} target - The target element or object to unbind the listener from.\n * @param {...any} args - Standard arguments matching removeEventListener (eventName, handler, options).\n *\n * @example\n * unbindEvent(window, 'resize', handleResize);\n */\nexport function unbindEvent<T extends Window | Document | HTMLElement | EventTarget>(\n  target: T | null,\n  ...args: Parameters<T['removeEventListener']> | [string, Function | null, ...any]\n): void {\n  if (target && target.removeEventListener) {\n    target.removeEventListener(...(args as Parameters<HTMLElement['removeEventListener']>))\n  }\n}\n\n/**\n * Dispatches a CustomEvent on the global `window` object.\n *\n * @param {string} eventName - The unique name of the custom event.\n * @param {any} [detail] - Optional payload data attached to the event.\n *\n * @example\n * dispatchWindowEvent('app:toggle-sidebar', { open: true });\n */\nexport function dispatchWindowEvent(eventName: string, detail?: any): void {\n  if (typeof window === 'undefined') return\n  window.dispatchEvent(new CustomEvent(eventName, { detail }))\n}\n\n/**\n * Dispatches a CustomEvent on a specified DOM element or EventTarget.\n *\n * @param {EventTarget} target - The DOM target to dispatch the event on.\n * @param {string} eventName - The unique name of the custom event.\n * @param {any} [detail] - Optional payload data attached to the event.\n *\n * @example\n * dispatchCustomEvent(modalElement, 'modal:close');\n */\nexport function dispatchCustomEvent(target: EventTarget, eventName: string, detail?: any): void {\n  target.dispatchEvent(new CustomEvent(eventName, { detail }))\n}\n",
+      "type": "registry:lib",
+      "target": "utils/event.ts"
+    }
+  ],
+  "categories": [
+    "utils",
+    "event"
+  ],
+  "type": "registry:lib"
+}

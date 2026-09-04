@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-browser-title-1",
+  "title": "useTitle",
+  "description": "Document head title modifier",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-browser-use-title",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/browser/title/h-title-1/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { useTitle } from '@/hooks/use-title'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Badge } from '@/components/ui/badge'\nimport { Input } from '@/components/ui/input'\nimport { IconTypography } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const [title, setTitle] = React.useState('Space UI Hooks')\n  useTitle(title)\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconTypography className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Title</span>\n        </div>\n        <Badge variant=\"outline\" size=\"sm\">\n          Active\n        </Badge>\n      </div>\n      <CardPanel className=\"flex flex-col gap-3 rounded-[0.875rem] bg-background p-3\">\n        <Input\n          value={title}\n          onChange={(e) => setTitle(e.target.value)}\n          placeholder=\"Space UI Hooks\"\n          aria-label=\"Document title\"\n          className=\"text-base sm:text-sm\"\n        />\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-title-1.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "title"
+  ],
+  "type": "registry:hook"
+}

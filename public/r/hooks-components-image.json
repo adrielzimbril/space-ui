@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-components-image",
+  "title": "Image",
+  "description": "Image component.",
+  "files": [
+    {
+      "path": "src/registry/hooks/components/image/index.tsx",
+      "content": "import { ImgHTMLAttributes } from 'react'\n\ntype Props = ImgHTMLAttributes<HTMLImageElement> & { fallback: string }\n\nexport const Image = ({ src, loading, alt, fallback, ...props }: Props) => {\n  const handleBrokenImage = (event: any) => (event.target.src = fallback)\n\n  return <img src={src} loading={loading} alt={alt} onError={handleBrokenImage} {...props} />\n}\n",
+      "type": "registry:hook",
+      "target": "components/ui/image.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "components",
+    "image"
+  ],
+  "type": "registry:hook"
+}

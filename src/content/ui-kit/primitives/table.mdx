@@ -1,0 +1,224 @@
+---
+title: Table
+description: Organizes structured records into clear rows and columns with column headers, hover highlights, and responsive layouts.
+preview:
+  name: demo-primitives-p-table-1
+  contained: false
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-table" />
+
+## Usage
+
+```tsx
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table'
+```
+
+```tsx
+<Table>
+  <TableCaption>Caption</TableCaption>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Header</TableHead>
+      <TableHead>Header</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>Cell</TableCell>
+      <TableCell>Cell</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+```
+
+## Anatomy
+
+```tsx
+<Table>
+  <TableCaption />
+  <TableHeader>
+    <TableRow>
+      <TableHead />
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell />
+    </TableRow>
+  </TableBody>
+  <TableFooter />
+</Table>
+```
+
+## Features
+
+### Card Style Variant
+
+Table styled as card rows with isolated row containers (`variant="card"`).
+
+<ComponentPreview name="demo-primitives-p-table-5" contained={false} />
+
+## API Reference
+
+### Table
+
+The main table container component. Set `variant="card"` for a card-style table: separated borders, rounded corners, and row surfaces that read as cards. That pairs well with a [Frame](/ui-kit/primitives/frame) (page chrome) or [Card](/ui-kit/primitives/card) (card shell with optional header actions). The default variant is a simpler row layout with standard borders.
+
+| Prop        | Type                    | Default     |
+| ----------- | ----------------------- | ----------- |
+| `className` | `string`                |             |
+| `variant`   | `"default"` \| `"card"` | `"default"` |
+
+```tsx
+<Table>
+  <TableHeader>...</TableHeader>
+  <TableBody>...</TableBody>
+</Table>
+
+<Table variant="card">
+  <TableHeader>...</TableHeader>
+  <TableBody>...</TableBody>
+</Table>
+```
+
+### TableHeader
+
+Header section of the table containing column headers.
+
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` |         |
+
+```tsx
+<TableHeader>
+  <TableRow>
+    <TableHead>Header</TableHead>
+  </TableRow>
+</TableHeader>
+```
+
+### TableBody
+
+Body section of the table containing table rows and data.
+
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` |         |
+
+```tsx
+<TableBody>
+  <TableRow>
+    <TableCell>Cell</TableCell>
+  </TableRow>
+</TableBody>
+```
+
+### TableFooter
+
+Footer section of the table.
+
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` |         |
+
+```tsx
+<TableFooter>
+  <TableRow>
+    <TableCell>Footer</TableCell>
+  </TableRow>
+</TableFooter>
+```
+
+### TableRow
+
+A row in the table.
+
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` |         |
+
+```tsx
+<TableRow>
+  <TableCell>Cell</TableCell>
+</TableRow>
+```
+
+### TableHead
+
+A header cell in the table.
+
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` |         |
+
+```tsx
+<TableHead>Header</TableHead>
+```
+
+### TableCell
+
+A data cell in the table.
+
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` |         |
+
+```tsx
+<TableCell>Cell</TableCell>
+```
+
+### TableCaption
+
+A caption for the table.
+
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` |         |
+
+```tsx
+<TableCaption>Caption</TableCaption>
+```
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-table-2" description="Frame with card-style table" contained={false} />
+  <ShowcaseCard
+    name="demo-primitives-p-table-3"
+    description="Table with TanStack Table and checkboxes"
+    contained={false}
+  />
+  <ShowcaseCard
+    name="demo-primitives-p-table-4"
+    description="Table with TanStack Table, sorting, and pagination"
+    contained={false}
+  />
+  <ShowcaseCard
+    name="demo-primitives-p-table-6"
+    description="CardFrame with TanStack Table and checkboxes"
+    contained={false}
+  />
+  <ShowcaseCard name="demo-primitives-p-table-7" description="CardFrame with card-style table" contained={false} />
+  <ShowcaseCard
+    name="demo-primitives-p-table-8"
+    description="CardFrame with TanStack Table, sorting, and pagination"
+    contained={false}
+  />
+  <ShowcaseCard
+    name="demo-primitives-p-table-9"
+    description="CardFrame with TanStack Table, sorting, and pagination"
+    contained={false}
+  />
+</ShowcaseGrid>

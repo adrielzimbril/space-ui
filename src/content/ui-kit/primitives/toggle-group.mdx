@@ -1,0 +1,86 @@
+---
+title: Toggle Group
+description: Groups multiple toggleable buttons together so users can select single or multiple options, ideal for text styling toolbars.
+preview: demo-primitives-p-toggle-group-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-toggle-group" />
+
+## Usage
+
+```tsx
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
+```
+
+```tsx
+<ToggleGroup>
+  <ToggleGroupItem>Bold</ToggleGroupItem>
+  <ToggleGroupItem>Italic</ToggleGroupItem>
+  <ToggleGroupItem>Underline</ToggleGroupItem>
+</ToggleGroup>
+```
+
+## Features
+
+### Variants
+
+Toggle groups in `default` and `outline` styles.
+
+<ComponentPreview name="demo-primitives-p-toggle-group-1" />
+
+### Sizes
+
+Toggle groups in `sm`, `default`, and `lg` sizes.
+
+<ComponentPreview name="demo-primitives-p-toggle-group-2" />
+
+### Vertical Orientation
+
+Toggle group arranged vertically with `orientation="vertical"`.
+
+<ComponentPreview name="demo-primitives-p-toggle-group-3" />
+
+### Multiple Selection
+
+Toggle group configured for multiple selection via `multiple`.
+
+<ComponentPreview name="demo-primitives-p-toggle-group-6" />
+
+### Disabled State
+
+Toggle group rendered in a disabled state.
+
+<ComponentPreview name="demo-primitives-p-toggle-group-4" />
+
+## API Reference
+
+### ToggleGroup
+
+Root component. Styled wrapper for `ToggleGroup.Root` from Base UI. Provides shared variant and size to child toggles via context.
+
+| Prop          | Type                         | Default        | Description                               |
+| ------------- | ---------------------------- | -------------- | ----------------------------------------- |
+| `variant`     | `"default" \| "outline"`     | `"default"`    | Controls the styling of all child toggles |
+| `size`        | `"default" \| "sm" \| "lg"`  | `"default"`    | Controls the size of all child toggles    |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | Controls horizontal or vertical layout    |
+
+### ToggleGroupItem
+
+Individual toggle button within the group. Styled wrapper for `Toggle` from Base UI. Inherits variant and size from parent ToggleGroup context.
+
+### ToggleGroupSeparator
+
+Visual separator between toggle buttons.
+
+| Prop          | Type                         | Default      | Description                         |
+| ------------- | ---------------------------- | ------------ | ----------------------------------- |
+| `orientation` | `"horizontal" \| "vertical"` | `"vertical"` | Direction matching the parent group |
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-toggle-group-5" description="Toggle group with disabled item" />
+  <ShowcaseCard name="demo-primitives-p-toggle-group-7" description="Toggle group with tooltips" />
+</ShowcaseGrid>

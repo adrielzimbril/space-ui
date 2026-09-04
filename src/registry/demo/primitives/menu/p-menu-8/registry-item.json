@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-menu-8",
+  "type": "registry:ui",
+  "title": "Menu 8",
+  "description": "Menu close on click",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-menu"
+  ],
+  "categories": [
+    "dropdown",
+    "menu"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/menu/p-menu-8/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-menu-8.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

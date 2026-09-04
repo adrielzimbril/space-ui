@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "block-card-info-2",
+  "type": "registry:block",
+  "title": "Philosophy & Principles Cards",
+  "description": "Interactive showcase of core philosophy and value cards with custom gradient icons.",
+  "registryDependencies": ["@usespaceui/lib-utils", "@usespaceui/primitives-badge", "@usespaceui/primitives-card"],
+  "categories": ["card-info"],
+  "files": [
+    {
+      "path": "src/registry/blocks/card-info/card-info-2/index.tsx",
+      "type": "registry:block",
+      "target": "components/blocks/card-info/card-info-2.tsx"
+    }
+  ],
+  "createdAt": "2026-08-31",
+  "updatedAt": "2026-08-31"
+}

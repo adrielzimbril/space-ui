@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-components-class-1",
+  "type": "registry:hook",
+  "title": "Class",
+  "description": "Conditional class wrapper component",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-components-class",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "hooks",
+    "components",
+    "class"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/components/class/h-class-1/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-class-1.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

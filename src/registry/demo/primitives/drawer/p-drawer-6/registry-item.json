@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-drawer-6",
+  "type": "registry:ui",
+  "title": "Drawer 6",
+  "description": "Scrollable content with terms and conditions",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-drawer"
+  ],
+  "categories": [
+    "drawer"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/drawer/p-drawer-6/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-drawer-6.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

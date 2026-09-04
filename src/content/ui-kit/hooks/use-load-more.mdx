@@ -1,0 +1,49 @@
+---
+title: useLoadMore
+description: Universal pagination and load-more trigger supporting async data fetchers and client-side array batching.
+preview: demo-hooks-form-load-more-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-form-use-load-more" />
+
+## Usage
+
+```tsx
+import { useLoadMore } from '@/hooks/use-load-more'
+
+// Pattern 1: Async loader function
+const { loading, trigger, page } = useLoadMore(async (pageNumber) => {
+  await fetchArticles(pageNumber)
+})
+
+// Pattern 2: Client-side array slicing
+const { data, loadMore, loading, hasMore } = useLoadMore({
+  dataSource: allProducts,
+  initialCount: 6,
+  incrementCount: 6,
+})
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter                | Type                             | Default     | Description                          |
+| :----------------------- | :------------------------------- | :---------- | :----------------------------------- |
+| `fetcher`                | `(page: number) => Promise<any>` | `undefined` | Async loader callback function.      |
+| `options.dataSource`     | `T[]`                            | `undefined` | Array to paginate client-side.       |
+| `options.initialCount`   | `number`                         | `3`         | Initial number of items to display.  |
+| `options.incrementCount` | `number`                         | `3`         | Number of items to add on each load. |
+
+### Return Value
+
+| Property   | Type                  | Description                                                         |
+| :--------- | :-------------------- | :------------------------------------------------------------------ |
+| `loading`  | `boolean`             | Whether data loading is currently in progress (alias: `isLoading`). |
+| `loadMore` | `() => Promise<void>` | Triggers the next batch or fetcher call (alias: `trigger`).         |
+| `hasMore`  | `boolean`             | Whether more items are available.                                   |
+| `data`     | `T[]`                 | Currently visible items (when using `dataSource`).                  |
+| `page`     | `number`              | Current page number.                                                |
+| `reset()`  | `Function`            | Resets pagination state to initial values.                          |

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-event-calendar-2",
+  "type": "registry:component",
+  "title": "Event calendar with resource view for room bookings",
+  "description": "Event calendar with resource view for room bookings",
+  "dependencies": [
+    "@tabler/icons-react",
+    "date-fns"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-event-calendar",
+    "@usespaceui/components-spaceui-event-calendar-content",
+    "@usespaceui/components-spaceui-event-calendar-nav",
+    "@usespaceui/components-spaceui-event-calendar-types",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "component",
+    "event-calendar",
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/event-calendar/c-event-calendar-2/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-event-calendar-2.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

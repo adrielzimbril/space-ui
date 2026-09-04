@@ -1,0 +1,31 @@
+---
+title: useInView
+description: Tracks viewport intersection with IntersectionObserver.
+preview: demo-hooks-animation-in-view-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-animation-use-in-view" />
+
+## Usage
+
+```tsx
+import { useInView } from '@/hooks/use-in-view'
+
+const [ref, inView] = useInView({ threshold: 0.5 })
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter           | Type     | Default | Description      |
+| :------------------ | :------- | :------ | :--------------- |
+| `options.threshold` | `number` | `0`     | Ratio threshold. |
+
+### Return Value
+
+| Return Type                                           | Description  |
+| :---------------------------------------------------- | :----------- |
+| `[RefObject<T>, boolean, IntersectionObserverEntry?]` | State tuple. |

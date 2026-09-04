@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-lifecycle-use-debounce",
+  "title": "useDebounce",
+  "description": "useDebounce hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/lifecycle/use-debounce/index.ts",
+      "content": "'use client'\n\nimport { useState, useEffect } from 'react'\n\n/**\n * React hook that delays updating a value until after a specified delay period has elapsed without changes.\n *\n * @template T\n * @param {T} value - The input value to debounce.\n * @param {number} delay - Delay duration in milliseconds.\n * @returns {T} The debounced value.\n *\n * @example\n * const [query, setQuery] = useState('');\n * const debouncedQuery = useDebounce(query, 300);\n */\nexport function useDebounce<T>(value: T, delay: number): T {\n  const [debouncedValue, setDebouncedValue] = useState<T>(value)\n\n  useEffect(() => {\n    const handler = setTimeout(() => {\n      setDebouncedValue(value)\n    }, delay)\n\n    return () => clearTimeout(handler)\n  }, [value, delay])\n\n  return debouncedValue\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-debounce.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "debounce"
+  ],
+  "type": "registry:hook"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-calendar-11",
+  "title": "Calendar 11",
+  "description": "Calendar with right-aligned navigation",
+  "registryDependencies": [
+    "@usespaceui/primitives-calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/calendar/p-calendar-11/index.tsx",
+      "content": "'use client'\n\nimport { useState } from 'react'\nimport { Calendar } from '@/components/ui/calendar'\n\nexport default function Particle() {\n  const [date, setDate] = useState<Date | undefined>(new Date())\n\n  return (\n    <Calendar\n      classNames={{\n        month_caption: 'ms-0 me-[calc(var(--cell-size)*2)] justify-start',\n        nav: 'justify-end',\n      }}\n      mode=\"single\"\n      onSelect={setDate}\n      selected={date}\n    />\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-calendar-11.tsx"
+    }
+  ],
+  "categories": [
+    "calendar"
+  ],
+  "type": "registry:ui"
+}

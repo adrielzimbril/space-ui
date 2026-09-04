@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-dom-use-click-outside",
+  "title": "useClickOutside",
+  "description": "useClickOutside hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/dom/use-click-outside/index.ts",
+      "content": "'use client'\n\nimport { type RefObject } from 'react'\nimport { useEventListener } from '@/hooks/use-event-listener'\n\n/**\n * React hook that triggers a callback when a click or touch event occurs outside the referenced DOM element.\n *\n * @template T\n * @param {RefObject<T | null>} ref - React ref of the element to watch outside clicks for.\n * @param {(event: MouseEvent | TouchEvent) => void} handler - Callback invoked upon outside click.\n * @param {string} [mouseEvent='mousedown'] - DOM mouse event type to listen for.\n *\n * @example\n * const dropdownRef = useRef<HTMLDivElement>(null);\n * useClickOutside(dropdownRef, () => setIsOpen(false));\n */\nexport function useClickOutside<T extends HTMLElement = HTMLElement>(\n  ref: RefObject<T | null>,\n  handler: (event: MouseEvent | TouchEvent) => void,\n  mouseEvent: 'mousedown' | 'mouseup' = 'mousedown',\n): void {\n  useEventListener(mouseEvent, (event: MouseEvent) => {\n    const el = ref?.current\n    if (!el || el.contains(event.target as Node)) {\n      return\n    }\n    handler(event)\n  })\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-click-outside.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "dom",
+    "click-outside"
+  ],
+  "type": "registry:hook"
+}

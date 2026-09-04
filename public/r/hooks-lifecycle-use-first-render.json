@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-lifecycle-use-first-render",
+  "title": "useFirstRender",
+  "description": "useFirstRender hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/lifecycle/use-first-render/index.ts",
+      "content": "'use client'\n\nimport { useRef } from 'react'\n\n/**\n * React hook that returns `true` strictly during the component's initial render, and `false` thereafter.\n *\n * @returns {boolean} `true` on first render, otherwise `false`.\n *\n * @example\n * const isFirst = useFirstRender();\n */\nexport function useFirstRender(): boolean {\n  const isFirst = useRef(true)\n\n  if (isFirst.current) {\n    isFirst.current = false\n    return true\n  }\n\n  return isFirst.current\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-first-render.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "first-render"
+  ],
+  "type": "registry:hook"
+}

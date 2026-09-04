@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-browser-use-tab-notification",
+  "title": "useTabNotification",
+  "description": "useTabNotification hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/browser/use-tab-notification/index.ts",
+      "content": "'use client'\n\nimport { useEffect, useRef } from 'react'\n\n/**\n * React hook to alternate the document title when the tab is inactive (e.g. for unread messages).\n *\n * @param {string} notificationText - Text to display when user leaves tab.\n * @param {number} [interval=1000] - Flashing interval in ms.\n *\n * @example\n * useTabNotification('(1) New Message!', 1000);\n */\nexport function useTabNotification(notificationText: string, interval = 1000): void {\n  const originalTitle = useRef<string>('')\n\n  useEffect(() => {\n    if (typeof document === 'undefined') return\n    originalTitle.current = document.title\n\n    let timer: ReturnType<typeof setInterval>\n    let isOriginal = false\n\n    const handleVisibilityChange = () => {\n      if (document.hidden && notificationText) {\n        timer = setInterval(() => {\n          document.title = isOriginal ? originalTitle.current : notificationText\n          isOriginal = !isOriginal\n        }, interval)\n      } else {\n        clearInterval(timer)\n        document.title = originalTitle.current\n      }\n    }\n\n    document.addEventListener('visibilitychange', handleVisibilityChange)\n\n    return () => {\n      clearInterval(timer)\n      document.removeEventListener('visibilitychange', handleVisibilityChange)\n      if (typeof document !== 'undefined') {\n        document.title = originalTitle.current\n      }\n    }\n  }, [notificationText, interval])\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-tab-notification.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "tab-notification"
+  ],
+  "type": "registry:hook"
+}

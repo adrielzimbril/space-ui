@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-autocomplete-15",
+  "type": "registry:ui",
+  "title": "Autocomplete 15",
+  "description": "Address autocomplete with Google Maps Places API",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-autocomplete",
+    "@usespaceui/primitives-spinner"
+  ],
+  "categories": [
+    "autocomplete",
+    "input",
+    "async",
+    "search"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/autocomplete/p-autocomplete-15/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-autocomplete-15.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

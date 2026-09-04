@@ -1,0 +1,61 @@
+---
+title: Checkbox
+description: Allows users to turn a single option on or off, or select multiple items from a list with clear checkmarks and partial states.
+
+links:
+  doc: https://base-ui.com/react/components/checkbox#api-reference
+preview: demo-primitives-p-checkbox-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-checkbox" />
+
+## Usage
+
+```tsx
+import { Checkbox } from '@/components/ui/checkbox'
+```
+
+```tsx
+<Checkbox />
+```
+
+## Anatomy
+
+```tsx
+<Checkbox>
+  <CheckboxIndicator />
+</Checkbox>
+```
+
+## Features
+
+### Sizes
+
+Checkboxes in `sm`, `default`, and `lg` sizes.
+
+<ComponentPreview name="demo-primitives-p-checkbox-2" />
+
+## Accessibility
+
+- Follows the [WAI-ARIA Checkbox Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/).
+
+### Keyboard Interactions
+
+| Key              | Action                                                    |
+| :--------------- | :-------------------------------------------------------- |
+| <Kbd>Space</Kbd> | Toggles the checkbox state between checked and unchecked. |
+
+## API Reference
+
+### Checkbox
+
+Styled wrapper for `Checkbox.Root` from Base UI. Includes a built-in indicator with checkmark and indeterminate icons.
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-checkbox-3" description="Card-style checkbox" />
+  <ShowcaseCard name="demo-primitives-p-checkbox-4" description="Checkbox form" />
+</ShowcaseGrid>

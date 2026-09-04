@@ -1,0 +1,125 @@
+---
+title: Tabs
+description: Splits content into switchable tabs on a single screen, allowing users to view different sections of related information without reloading the page.
+
+links:
+  doc: https://base-ui.com/react/components/tabs#api-reference
+preview: demo-primitives-p-tabs-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-tabs" />
+
+## Usage
+
+```tsx
+import { Tabs, TabsList, TabsPanel, TabsTab } from '@/components/ui/tabs'
+```
+
+```tsx
+<Tabs defaultValue="tab-1">
+  <TabsList>
+    <TabsTab value="tab-1">Tab 1</TabsTab>
+    <TabsTab value="tab-2">Tab 2</TabsTab>
+    <TabsTab value="tab-3">Tab 3</TabsTab>
+  </TabsList>
+  <TabsPanel value="tab-1">Tab 1 content</TabsPanel>
+  <TabsPanel value="tab-2">Tab 2 content</TabsPanel>
+  <TabsPanel value="tab-3">Tab 3 content</TabsPanel>
+</Tabs>
+```
+
+## Anatomy
+
+```tsx
+<Tabs>
+  <TabsList>
+    <TabsTab />
+    <TabsIndicator />
+  </TabsList>
+  <TabsPanel />
+</Tabs>
+```
+
+## Features
+
+### Variants
+
+Tabs in rounded button style (`default`) and border line style (`underline`).
+
+<ComponentPreview name="demo-primitives-p-tabs-1" />
+
+### Sizes
+
+Tabs triggers in `sm`, `default`, and `lg` sizes.
+
+<ComponentPreview name="demo-primitives-p-tabs-2" />
+
+## Accessibility
+
+- Follows the [WAI-ARIA Tabs Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/).
+- Tab triggers and panels are linked via `aria-controls` and `aria-labelledby`.
+
+### Keyboard Interactions
+
+| Key                                          | Action                                                   |
+| :------------------------------------------- | :------------------------------------------------------- |
+| <Kbd>ArrowRight</Kbd> / <Kbd>ArrowDown</Kbd> | Moves focus to the next tab and activates its panel.     |
+| <Kbd>ArrowLeft</Kbd> / <Kbd>ArrowUp</Kbd>    | Moves focus to the previous tab and activates its panel. |
+| <Kbd>Home</Kbd>                              | Jumps to and activates the first tab.                    |
+| <Kbd>End</Kbd>                               | Jumps to and activates the last tab.                     |
+
+### Vertical Orientation
+
+Tabs navigation arranged vertically using `orientation="vertical"`.
+
+<ComponentPreview name="demo-primitives-p-tabs-9" />
+
+## API Reference
+
+### Tabs
+
+Root component. Styled wrapper for `Tabs.Root` from Base UI.
+
+| Prop      | Type                       | Default     | Description               |
+| --------- | -------------------------- | ----------- | ------------------------- |
+| `variant` | `"default" \| "underline"` | `"default"` | Controls the tabs styling |
+
+### TabsList
+
+Container for tab triggers. Styled wrapper for `Tabs.List` from Base UI.
+
+| Prop      | Type                        | Default     | Description                                           |
+| --------- | --------------------------- | ----------- | ----------------------------------------------------- |
+| `variant` | `"default" \| "underline"`  | `"default"` | Controls the tabs list variant                        |
+| `size`    | `"sm" \| "default" \| "lg"` | `"default"` | Controls the height and padding across all child tabs |
+
+### TabsTab
+
+Individual tab trigger. Styled wrapper for `Tabs.Tab` from Base UI. Also exported as `TabsTrigger`.
+
+| Prop   | Type                        | Default     | Description                                 |
+| ------ | --------------------------- | ----------- | ------------------------------------------- |
+| `size` | `"sm" \| "default" \| "lg"` | `"default"` | Controls the specific tab trigger dimension |
+
+### TabsPanel
+
+Content panel for each tab. Styled wrapper for `Tabs.Panel` from Base UI. Also exported as `TabsContent`.
+
+### TabsIndicator
+
+Visual indicator for the active tab. Styled wrapper for `Tabs.Indicator` from Base UI.
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-tabs-3" description="Tabs with full rounded triggers" />
+  <ShowcaseCard name="demo-primitives-p-tabs-4" description="Tabs with icon before name" />
+  <ShowcaseCard name="demo-primitives-p-tabs-5" description="Tabs with icon before name and underline" />
+  <ShowcaseCard name="demo-primitives-p-tabs-6" description="Tabs with icon only" />
+  <ShowcaseCard name="demo-primitives-p-tabs-7" description="Tabs with underline and icon on top" />
+  <ShowcaseCard name="demo-primitives-p-tabs-8" description="Tabs with count badge" />
+  <ShowcaseCard name="demo-primitives-p-tabs-10" description="Tabs with icon only and count badge" />
+  <ShowcaseCard name="demo-primitives-p-tabs-11" description="Tabs with icon only and grouped tooltips" />
+</ShowcaseGrid>

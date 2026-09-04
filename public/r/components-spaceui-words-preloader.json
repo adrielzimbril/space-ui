@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-words-preloader",
+  "title": "Words Preloader",
+  "description": "Typography preloader that cycles greetings then wipes away with a curved SVG mask.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/words-preloader/index.tsx",
+      "content": "'use client'\n\nimport { Fragment, useEffect, useRef, useState, type ReactNode } from 'react'\nimport { AnimatePresence, motion } from 'motion/react'\nimport { cn } from '@/lib/utils'\n\nconst DEFAULT_WORDS = ['Hello', 'bonjour', 'Ciao', 'Olà', 'やあ', 'Hallå', 'Guten tag', 'ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ ਜੀ']\n\nexport type WordsPreloaderProps = {\n  words?: string[]\n  duration?: number\n  className?: string\n  children?: ReactNode\n}\n\nexport function WordsPreloader({ words = DEFAULT_WORDS, duration = 2000, className, children }: WordsPreloaderProps) {\n  const [isLoading, setIsLoading] = useState(true)\n\n  useEffect(() => {\n    const timer = window.setTimeout(() => setIsLoading(false), duration)\n    return () => window.clearTimeout(timer)\n  }, [duration])\n\n  return (\n    <div className={cn('relative h-full min-h-80 w-full overflow-hidden', className)}>\n      <AnimatePresence mode=\"wait\">{isLoading ? <PreloaderContent words={words} /> : null}</AnimatePresence>\n      <div className=\"flex h-full min-h-80 w-full items-center justify-center\">{children ?? 'Your landing page'}</div>\n    </div>\n  )\n}\n\nfunction PreloaderContent({ words }: { words: string[] }) {\n  const [index, setIndex] = useState(0)\n  const rootRef = useRef<HTMLDivElement>(null)\n  const [dimension, setDimension] = useState({ width: 0, height: 0 })\n\n  useEffect(() => {\n    const el = rootRef.current\n    if (!el) return\n    const measure = () => setDimension({ width: el.clientWidth, height: el.clientHeight })\n    measure()\n    const ro = new ResizeObserver(measure)\n    ro.observe(el)\n    return () => ro.disconnect()\n  }, [])\n\n  useEffect(() => {\n    if (index >= words.length - 1) return\n    const timer = window.setTimeout(() => setIndex((i) => i + 1), index === 0 ? 1000 : 150)\n    return () => window.clearTimeout(timer)\n  }, [index, words.length])\n\n  const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${dimension.width / 2} ${dimension.height + 300} 0 ${dimension.height}  L0 0`\n  const targetPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${dimension.width / 2} ${dimension.height} 0 ${dimension.height}  L0 0`\n\n  return (\n    <motion.div\n      ref={rootRef}\n      variants={{\n        initial: { top: 0 },\n        exit: {\n          top: '-100%',\n          transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.2 },\n        },\n      }}\n      initial=\"initial\"\n      exit=\"exit\"\n      className=\"absolute inset-0 z-20 flex items-center justify-center bg-background\"\n    >\n      {dimension.width > 0 ? (\n        <Fragment>\n          <motion.p\n            variants={{\n              initial: { opacity: 0 },\n              enter: { opacity: 0.75, transition: { duration: 1, delay: 0.2 } },\n            }}\n            className=\"absolute z-10 text-5xl font-semibold tracking-tighter text-foreground md:text-6xl\"\n            initial=\"initial\"\n            animate=\"enter\"\n          >\n            {words[index]}\n          </motion.p>\n          <svg className=\"absolute top-0 h-[calc(100%+300px)] w-full\">\n            <motion.path\n              variants={{\n                initial: {\n                  d: initialPath,\n                  transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] },\n                },\n                exit: {\n                  d: targetPath,\n                  transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: 0.3 },\n                },\n              }}\n              initial=\"initial\"\n              exit=\"exit\"\n              className=\"fill-background\"\n            />\n          </svg>\n        </Fragment>\n      ) : null}\n    </motion.div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/words-preloader.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "words-preloader"
+  ],
+  "type": "registry:component"
+}

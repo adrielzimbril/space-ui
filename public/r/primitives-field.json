@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-field",
+  "title": "Field",
+  "description": "Accessible Field primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/field/index.tsx",
+      "content": "'use client'\n\nimport { Field as FieldPrimitive } from '@base-ui/react/field'\nimport type React from 'react'\nimport { cn } from '@/lib/utils'\n\nexport function Field({ className, ...props }: FieldPrimitive.Root.Props): React.ReactElement {\n  return (\n    <FieldPrimitive.Root\n      className={cn('w-full flex flex-col items-start gap-2', className)}\n      data-slot=\"field\"\n      {...props}\n    />\n  )\n}\n\nexport function FieldLabel({ className, ...props }: FieldPrimitive.Label.Props): React.ReactElement {\n  return (\n    <FieldPrimitive.Label\n      className={cn(\n        'inline-flex items-center gap-2 font-medium text-base/4.5 text-foreground data-disabled:opacity-50 sm:text-sm/4',\n        className,\n      )}\n      data-slot=\"field-label\"\n      {...props}\n    />\n  )\n}\n\nexport function FieldItem({ className, ...props }: FieldPrimitive.Item.Props): React.ReactElement {\n  return <FieldPrimitive.Item className={cn('flex', className)} data-slot=\"field-item\" {...props} />\n}\n\nexport function FieldDescription({ className, ...props }: FieldPrimitive.Description.Props): React.ReactElement {\n  return (\n    <FieldPrimitive.Description\n      className={cn('text-muted-foreground/80 text-xs', className)}\n      data-slot=\"field-description\"\n      {...props}\n    />\n  )\n}\n\nexport function FieldError({ className, ...props }: FieldPrimitive.Error.Props): React.ReactElement {\n  return (\n    <FieldPrimitive.Error\n      className={cn('text-destructive text-xs font-medium', className)}\n      data-slot=\"field-error\"\n      {...props}\n    />\n  )\n}\n\nexport const FieldControl: typeof FieldPrimitive.Control = FieldPrimitive.Control\nexport const FieldValidity: typeof FieldPrimitive.Validity = FieldPrimitive.Validity\n\nexport { FieldPrimitive }\n\nexport function FieldGroup({ className, ...props }: React.HTMLAttributes<HTMLDivElement>): React.ReactElement {\n  return <div className={cn('space-y-4', className)} data-slot=\"field-group\" {...props} />\n}\n\nexport function FieldSeparator({\n  className,\n  children,\n  ...props\n}: React.HTMLAttributes<HTMLDivElement>): React.ReactElement {\n  return (\n    <div className={cn('relative flex items-center', className)} data-slot=\"field-separator\" {...props}>\n      <div className=\"flex-1 border-t border-border\"></div>\n      {children && <div className=\"px-3 text-muted-foreground\">{children}</div>}\n      <div className=\"flex-1 border-t border-border\"></div>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/field.tsx"
+    }
+  ],
+  "cssVars": {
+    "light": {
+      "destructive-foreground": "var(--color-red-500)"
+    },
+    "dark": {
+      "destructive-foreground": "var(--color-red-400)"
+    }
+  },
+  "categories": [
+    "field"
+  ],
+  "type": "registry:ui"
+}

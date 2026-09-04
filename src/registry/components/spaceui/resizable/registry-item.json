@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-resizable",
+  "type": "registry:component",
+  "title": "Resizable",
+  "description": "Resizable component for Space UI.",
+  "dependencies": [
+    "react-resizable-panels"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "categories": [
+    "component",
+    "resizable",
+    "base-resizable"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/resizable/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/resizable.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

@@ -1,0 +1,43 @@
+---
+title: Fieldset
+description: Groups related form controls together under a descriptive header, making long or complex forms easier to read and understand.
+
+links:
+  doc: https://base-ui.com/react/components/fieldset#api-reference
+preview: demo-primitives-p-fieldset-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-fieldset" />
+
+## Usage
+
+```tsx
+import { Fieldset, FieldsetLegend } from '@/components/ui/fieldset'
+```
+
+```tsx
+<Fieldset>
+  <FieldsetLegend>Fieldset legend</FieldsetLegend>
+</Fieldset>
+```
+
+## Anatomy
+
+```tsx
+<Fieldset>
+  <FieldsetLegend />
+  <FieldsetContent />
+</Fieldset>
+```
+
+## API Reference
+
+### Fieldset
+
+Root component. Styled wrapper for `Fieldset.Root` from Base UI with flex column layout.
+
+### FieldsetLegend
+
+Legend for the fieldset. Styled wrapper for `Fieldset.Legend` from Base UI with semibold font weight.

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-select-7",
+  "title": "Select 7",
+  "description": "Select with icon",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-select"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/select/p-select-7/index.tsx",
+      "content": "import { IconRoute } from '@tabler/icons-react'\nimport { Select, SelectItem, SelectPopup, SelectTrigger, SelectValue } from '@/components/ui/select'\n\nconst items = [\n  { label: 'Next.js', value: 'next' },\n  { label: 'Vite', value: 'vite' },\n  { label: 'Astro', value: 'astro' },\n]\n\nexport default function Particle() {\n  return (\n    <Select aria-label=\"Select framework with icon\" defaultValue=\"next\" items={items}>\n      <SelectTrigger>\n        <IconRoute aria-hidden=\"true\" />\n        <SelectValue />\n      </SelectTrigger>\n      <SelectPopup alignItemWithTrigger={false}>\n        {items.map(({ label, value }) => (\n          <SelectItem key={value} value={value}>\n            {label}\n          </SelectItem>\n        ))}\n      </SelectPopup>\n    </Select>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-select-7.tsx"
+    }
+  ],
+  "categories": [
+    "select"
+  ],
+  "type": "registry:ui"
+}

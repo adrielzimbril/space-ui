@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-dom-use-scroll-position",
+  "title": "useScrollPosition",
+  "description": "useScrollPosition hook.",
+  "registryDependencies": [
+    "@usespaceui/hooks-lifecycle-use-isomorphic-layout-effect"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/dom/use-scroll-position/index.ts",
+      "content": "'use client'\n\nimport { useState, useCallback, type RefObject } from 'react'\nimport { useEventListener } from '@/hooks/use-event-listener'\nimport { useIsomorphicLayoutEffect } from '@/hooks/use-isomorphic-layout-effect'\n\nexport type ScrollPositionTuple = [number, number]\n\nexport interface ScrollPositionObject {\n  x: number\n  y: number\n  scrollX: number\n  scrollY: number\n}\n\nexport type ScrollPosition = ScrollPositionTuple & ScrollPositionObject\n\n/**\n * React hook that returns the current window or container scroll offsets.\n * Supports both object destructuring ({ x, y, scrollX, scrollY }) and array tuple destructuring ([x, y]).\n *\n * @param {RefObject<HTMLElement | null>} [targetRef] - Optional element ref to measure instead of window.\n * @returns {ScrollPosition} Object & Tuple containing `{ x, y, scrollX, scrollY }`.\n *\n * @example\n * // Object destructuring with scrollX / scrollY:\n * const { scrollX, scrollY } = useScrollPosition();\n *\n * // Object destructuring with x / y:\n * const { x, y } = useScrollPosition();\n *\n * // Array destructuring:\n * const [x, y] = useScrollPosition();\n */\nexport function useScrollPosition<T extends HTMLElement = HTMLElement>(\n  targetRef?: RefObject<T | null>,\n): ScrollPosition {\n  const getPosition = useCallback((): [number, number] => {\n    if (typeof window === 'undefined') return [0, 0]\n    if (targetRef && targetRef.current) {\n      return [targetRef.current.scrollLeft, targetRef.current.scrollTop]\n    }\n    return [window.scrollX || window.pageXOffset || 0, window.scrollY || window.pageYOffset || 0]\n  }, [targetRef])\n\n  const [coords, setCoords] = useState<[number, number]>([0, 0])\n\n  useIsomorphicLayoutEffect(() => {\n    setCoords(getPosition())\n  }, [getPosition])\n\n  const handleScroll = useCallback(() => {\n    setCoords(getPosition())\n  }, [getPosition])\n\n  useEventListener('scroll', handleScroll, targetRef as any, { passive: true })\n\n  const [x, y] = coords\n  const result = [x, y] as unknown as ScrollPosition\n  ;(result as any).x = x\n  ;(result as any).y = y\n  ;(result as any).scrollX = x\n  ;(result as any).scrollY = y\n\n  return result\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-scroll-position.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "dom",
+    "scroll-position"
+  ],
+  "type": "registry:hook"
+}

@@ -1,0 +1,33 @@
+---
+title: useFullscreen
+description: Element fullscreen mode controller.
+preview: demo-hooks-browser-fullscreen-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-browser-use-fullscreen" />
+
+## Usage
+
+```tsx
+import { useFullscreen } from '@/hooks/use-fullscreen'
+
+const ref = React.useRef(null)
+const { isFullscreen, toggle } = useFullscreen(ref)
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter   | Type                     | Default                    | Description     |
+| :---------- | :----------------------- | :------------------------- | :-------------- |
+| `targetRef` | `RefObject<HTMLElement>` | `document.documentElement` | Target element. |
+
+### Return Value
+
+| Property       | Type         | Description         |
+| :------------- | :----------- | :------------------ |
+| `isFullscreen` | `boolean`    | Fullscreen state.   |
+| `toggle`       | `() => void` | Toggles fullscreen. |

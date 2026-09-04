@@ -1,0 +1,222 @@
+---
+title: Kanban
+description: Displays tasks across draggable columns, allowing users to organize projects, track progress stages, and reorder cards intuitively.
+component: true
+base: base
+preview:
+  name: demo-components-spaceui-c-kanban-1
+  align: start
+  className: '**:[.preview]:h-auto'
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-kanban" />
+
+## Usage
+
+```tsx
+import {
+  Kanban,
+  KanbanBoard,
+  KanbanColumn,
+  KanbanColumnContent,
+  KanbanColumnHandle,
+  KanbanItem,
+  KanbanItemHandle,
+  KanbanOverlay,
+} from '@/components/spaceui/kanban'
+```
+
+```tsx
+<Kanban value={columns} onValueChange={setColumns} getItemValue={(item) => item.id}>
+  <KanbanBoard>
+    {Object.entries(columns).map(([id, items]) => (
+      <KanbanColumn key={id} value={id}>
+        <KanbanColumnHandle>
+          <h3>{id}</h3>
+        </KanbanColumnHandle>
+        <KanbanColumnContent value={id}>
+          {items.map((item) => (
+            <KanbanItem key={item.id} value={item.id}>
+              <KanbanItemHandle>{item.content}</KanbanItemHandle>
+            </KanbanItem>
+          ))}
+        </KanbanColumnContent>
+      </KanbanColumn>
+    ))}
+  </KanbanBoard>
+  <KanbanOverlay>
+    <div className="bg-muted size-full rounded-md" />
+  </KanbanOverlay>
+</Kanban>
+```
+
+## Examples
+
+### Overlay
+
+<ComponentPreview name="demo-components-spaceui-c-kanban-2" className="**:[.preview]:h-auto" align="start" />
+
+### Persist to a backend
+
+<ComponentPreview name="demo-components-spaceui-c-kanban-6" className="**:[.preview]:h-auto" align="start" />
+
+## Persisting moves
+
+Keep `value` and `onValueChange` so the board reshuffles live while dragging, and
+use `onValueCommit` to save. It fires once per completed drag (never during the
+hover preview) with the final board and a `previousValue` snapshot, so you can
+update optimistically and roll back on error. Its `meta.kind` tells you whether a
+card moved (`"item"`) or a column was reordered (`"column"`).
+
+```tsx
+const moveCard = api.board.moveCard.useMutation()
+const reorderColumns = api.board.reorderColumns.useMutation()
+
+<Kanban
+  value={columns}
+  onValueChange={setColumns}
+  getItemValue={(task) => task.id}
+  onValueCommit={(next, meta) => {
+    if (meta.kind === "column") {
+      reorderColumns.mutate({ order: Object.keys(next) })
+      return
+    }
+    moveCard.mutate(
+      {
+        id: String(meta.event.active.id),
+        to: meta.overContainer,
+        index: meta.overIndex,
+      },
+      {
+        onError: () => {
+          setColumns(meta.previousValue) // roll back
+          toast.error("Could not move the card. Your board was restored.")
+        },
+      },
+    )
+  }}
+>
+  {/* ... */}
+</Kanban>
+```
+
+If a user might start another drag before the mutation settles, prefer a refetch
+in `onError` instead of restoring the snapshot, so a newer arrangement is not
+clobbered.
+
+If you do not need the live cross-column preview, `onMove` is a simpler
+alternative: it fires once on drop for item moves and lets you apply the move
+yourself. Column reorders still arrive through `onValueChange`.
+
+## API Reference
+
+### Kanban
+
+The root component that provides the kanban context and manages the items state.
+
+| Prop              | Type                                                              | Default | Description                                                                                                                                                                        |
+| :---------------- | :---------------------------------------------------------------- | :------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `value`           | `Record<string, T[]>`                                             | -       | `Required`. The current state of columns and their items.                                                                                                                          |
+| `onValueChange`   | `(value: Record<string, T[]>) => void`                            | -       | `Required`. Fired when items move within or between columns. In the default mode it also fires during the drag to render the live preview, so avoid persisting from here directly. |
+| `getItemValue`    | `(item: T) => string`                                             | -       | `Required`. Function to get a unique identifier for an item.                                                                                                                       |
+| `onValueCommit`   | `(value: Record<string, T[]>, meta: KanbanCommitMeta<T>) => void` | -       | Fired once per completed drag with the final board and a `previousValue` snapshot. Use it to persist moves to a backend. See [Persisting moves](#persisting-moves).                |
+| `onMove`          | `(event: KanbanMoveEvent) => void`                                | -       | Opt-in single commit point for item moves. When set, the live preview is disabled and you apply the move yourself.                                                                 |
+| `restoreOnCancel` | `boolean`                                                         | `false` | When `true`, cancelling a drag (for example pressing Escape) restores the board to its pre-drag arrangement.                                                                       |
+| `onDragStart`     | `(event: DragStartEvent) => void`                                 | -       | Raw dnd-kit passthrough, fired when a drag starts.                                                                                                                                 |
+| `onDragEnd`       | `(event: DragEndEvent) => void`                                   | -       | Raw dnd-kit passthrough, fired after internal cleanup and before the final `onValueChange`/`onMove` call. In the default mode, `onValueChange` has already fired during dragOver.  |
+| `onDragCancel`    | `(event: DragCancelEvent) => void`                                | -       | Raw dnd-kit passthrough, fired when a drag is cancelled.                                                                                                                           |
+| `accessibility`   | `DndContextProps["accessibility"]`                                | -       | dnd-kit accessibility options (announcements and screen reader instructions).                                                                                                      |
+| `modifiers`       | `Modifiers`                                                       | -       | dnd-kit modifiers applied to the drag.                                                                                                                                             |
+| `className`       | `string`                                                          | -       | Additional CSS classes for the container.                                                                                                                                          |
+
+`KanbanCommitMeta<T>` is `{ kind: "item" | "column"; event: DragEndEvent; activeContainer: string; activeIndex: number; overContainer: string; overIndex: number; previousValue: Record<string, T[]> }`.
+
+---
+
+### KanbanBoard
+
+The horizontal container for kanban columns.
+
+| Prop        | Type     | Default | Description                           |
+| :---------- | :------- | :------ | :------------------------------------ |
+| `className` | `string` | -       | Additional CSS classes for the board. |
+
+---
+
+### KanbanColumn
+
+An individual column within the kanban board.
+
+| Prop        | Type     | Default | Description                                       |
+| :---------- | :------- | :------ | :------------------------------------------------ |
+| `value`     | `string` | -       | `Required`. The unique identifier for the column. |
+| `className` | `string` | -       | Additional CSS classes for the column.            |
+
+---
+
+### KanbanColumnHandle
+
+The drag handle for a column (if columns are sortable).
+
+| Prop        | Type     | Default | Description                            |
+| :---------- | :------- | :------ | :------------------------------------- |
+| `className` | `string` | -       | Additional CSS classes for the handle. |
+
+---
+
+### KanbanColumnContent
+
+The scrollable area within a column that holds the items.
+
+| Prop        | Type     | Default | Description                                                       |
+| :---------- | :------- | :------ | :---------------------------------------------------------------- |
+| `value`     | `string` | -       | `Required`. The identifier of the column this content belongs to. |
+| `className` | `string` | -       | Additional CSS classes for the content area.                      |
+
+---
+
+### KanbanItem
+
+An individual draggable item within a column.
+
+| Prop        | Type      | Default | Description                                     |
+| :---------- | :-------- | :------ | :---------------------------------------------- |
+| `value`     | `string`  | -       | `Required`. The unique identifier for the item. |
+| `disabled`  | `boolean` | `false` | Whether the item is draggable.                  |
+| `className` | `string`  | -       | Additional CSS classes for the item.            |
+
+---
+
+### KanbanItemHandle
+
+The drag handle for an individual item.
+
+| Prop        | Type     | Default | Description                            |
+| :---------- | :------- | :------ | :------------------------------------- |
+| `className` | `string` | -       | Additional CSS classes for the handle. |
+
+---
+
+### KanbanOverlay
+
+The ghost element displayed during a drag operation.
+
+| Prop        | Type     | Default | Description                             |
+| :---------- | :------- | :------ | :-------------------------------------- |
+| `className` | `string` | -       | Additional CSS classes for the overlay. |
+
+## All 6 variations
+
+### Kanban board with frame columns
+
+<ComponentPreview name="demo-components-spaceui-c-kanban-3" />
+
+### Minimal kanban with stacked frame
+
+<ComponentPreview name="demo-components-spaceui-c-kanban-4" />
+
+### Feature roadmap kanban with progress
+
+<ComponentPreview name="demo-components-spaceui-c-kanban-5" />

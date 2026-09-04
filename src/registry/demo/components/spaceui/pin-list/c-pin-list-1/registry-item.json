@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-pin-list-1",
+  "type": "registry:component",
+  "title": "Pin List",
+  "description": "Demo showing a pin list.",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-pin-list"
+  ],
+  "categories": [
+    "component",
+    "pin-list"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/pin-list/c-pin-list-1/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-pin-list-1.tsx"
+    }
+  ],
+  "createdAt": "2026-09-02",
+  "updatedAt": "2026-09-02"
+}

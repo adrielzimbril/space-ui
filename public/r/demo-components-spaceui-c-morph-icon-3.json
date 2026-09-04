@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-morph-icon-3",
+  "title": "Action & Status Toggles",
+  "description": "Common UI action toggles (like, mute, play/pause, upvote) with dedicated morphing effects.",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-morph-icon",
+    "@usespaceui/primitives-button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/morph-icon/c-morph-icon-3/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { Button } from '@/components/ui/button'\nimport { MorphIcon } from '@/components/spaceui/morph-icon'\nimport {\n  IconHeart,\n  IconHeartFilled,\n  IconVolume,\n  IconVolumeOff,\n  IconPlayerPlay,\n  IconPlayerPause,\n  IconThumbUp,\n  IconThumbUpFilled,\n} from '@tabler/icons-react'\n\nexport default function ActionTogglesDemo() {\n  const [liked, setLiked] = React.useState(false)\n  const [muted, setMuted] = React.useState(false)\n  const [playing, setPlaying] = React.useState(false)\n  const [upvoted, setUpvoted] = React.useState(false)\n\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4 p-8\">\n      {/* Like / Heart */}\n      <Button\n        variant=\"outline\"\n        size=\"icon\"\n        className=\"size-11 rounded-xl bg-background hover:bg-muted cursor-pointer\"\n        onClick={() => setLiked((v) => !v)}\n      >\n        <MorphIcon activeKey={liked ? 'liked' : 'unliked'} variant=\"spring\">\n          {liked ? <IconHeartFilled className=\"size-5\" /> : <IconHeart className=\"size-5\" />}\n        </MorphIcon>\n      </Button>\n\n      {/* Volume / Mute */}\n      <Button\n        variant=\"outline\"\n        size=\"icon\"\n        className=\"size-11 rounded-xl bg-background hover:bg-muted cursor-pointer\"\n        onClick={() => setMuted((v) => !v)}\n      >\n        <MorphIcon activeKey={muted ? 'muted' : 'unmuted'} variant=\"blur-scale\">\n          {muted ? <IconVolumeOff className=\"size-5\" /> : <IconVolume className=\"size-5\" />}\n        </MorphIcon>\n      </Button>\n\n      {/* Play / Pause */}\n      <Button\n        variant=\"outline\"\n        size=\"icon\"\n        className=\"size-11 rounded-xl bg-background hover:bg-muted cursor-pointer\"\n        onClick={() => setPlaying((v) => !v)}\n      >\n        <MorphIcon activeKey={playing ? 'playing' : 'paused'} variant=\"rotate-scale\">\n          {playing ? <IconPlayerPause className=\"size-5\" /> : <IconPlayerPlay className=\"size-5\" />}\n        </MorphIcon>\n      </Button>\n\n      {/* Upvote */}\n      <Button\n        variant=\"outline\"\n        size=\"icon\"\n        className=\"size-11 rounded-xl bg-background hover:bg-muted cursor-pointer\"\n        onClick={() => setUpvoted((v) => !v)}\n      >\n        <MorphIcon activeKey={upvoted ? 'upvoted' : 'neutral'} variant=\"flip\">\n          {upvoted ? <IconThumbUpFilled className=\"size-5\" /> : <IconThumbUp className=\"size-5\" />}\n        </MorphIcon>\n      </Button>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/c-morph-icon-3.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "morph-icon"
+  ],
+  "type": "registry:component"
+}

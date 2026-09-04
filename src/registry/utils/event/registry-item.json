@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-utils-event",
+  "type": "registry:lib",
+  "title": "event",
+  "description": "event utility.",
+  "categories": [
+    "utils",
+    "event"
+  ],
+  "files": [
+    {
+      "path": "src/registry/utils/event/index.ts",
+      "type": "registry:lib",
+      "target": "utils/event.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

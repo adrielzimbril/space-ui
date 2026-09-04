@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-lifecycle-use-first-visit",
+  "type": "registry:hook",
+  "title": "useFirstVisit",
+  "description": "useFirstVisit hook.",
+  "registryDependencies": [
+    "@usespaceui/hooks-browser-use-local-storage"
+  ],
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "first-visit"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/lifecycle/use-first-visit/index.ts",
+      "type": "registry:hook",
+      "target": "hooks/use-first-visit.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

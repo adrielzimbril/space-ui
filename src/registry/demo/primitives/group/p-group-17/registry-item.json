@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-group-17",
+  "type": "registry:ui",
+  "title": "Group 17",
+  "description": "Group with input and currency text",
+  "registryDependencies": [
+    "@usespaceui/primitives-group",
+    "@usespaceui/primitives-input",
+    "@usespaceui/primitives-label"
+  ],
+  "categories": [
+    "group",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/group/p-group-17/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-group-17.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-menu-4",
+  "title": "Menu 4",
+  "description": "Menu with radio group",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-menu"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/menu/p-menu-4/index.tsx",
+      "content": "import { Button } from '@/components/ui/button'\nimport { Menu, MenuPopup, MenuRadioGroup, MenuRadioItem, MenuTrigger } from '@/components/ui/menu'\n\nexport default function Particle() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\n      <MenuPopup>\n        <MenuRadioGroup defaultValue=\"system\">\n          <MenuRadioItem value=\"light\">Light</MenuRadioItem>\n          <MenuRadioItem value=\"dark\">Dark</MenuRadioItem>\n          <MenuRadioItem value=\"system\">System</MenuRadioItem>\n        </MenuRadioGroup>\n      </MenuPopup>\n    </Menu>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-menu-4.tsx"
+    }
+  ],
+  "categories": [
+    "dropdown",
+    "menu"
+  ],
+  "type": "registry:ui"
+}

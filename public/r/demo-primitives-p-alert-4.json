@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-alert-4",
+  "title": "Alert 4",
+  "description": "Alert status variants",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-alert",
+    "@usespaceui/primitives-button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/alert/p-alert-4/index.tsx",
+      "content": "import { Alert, AlertAction, AlertTitle } from '@/components/ui/alert'\nimport { Button } from '@/components/ui/button'\nimport {\n  IconAlertCircleFilled,\n  IconAlertTriangleFilled,\n  IconCircleCheckFilled,\n  IconInfoCircleFilled,\n  IconStarFilled,\n  IconX,\n} from '@tabler/icons-react'\n\nconst alerts = [\n  {\n    icon: <IconStarFilled className=\"text-muted-foreground\" />,\n    title: 'Your Alert Title Goes Here',\n    variant: 'default' as const,\n  },\n  {\n    icon: <IconAlertCircleFilled className=\"text-red-500\" />,\n    title: 'Your Alert Title Goes Here',\n    variant: 'error' as const,\n  },\n  {\n    icon: <IconInfoCircleFilled className=\"text-blue-500\" />,\n    title: 'Your Alert Title Goes Here',\n    variant: 'info' as const,\n  },\n  {\n    icon: <IconCircleCheckFilled className=\"text-emerald-500\" />,\n    title: 'Your Alert Title Goes Here',\n    variant: 'success' as const,\n  },\n  {\n    icon: <IconAlertTriangleFilled className=\"text-amber-500\" />,\n    title: 'Your Alert Title Goes Here',\n    variant: 'warning' as const,\n  },\n]\n\nexport default function Particle() {\n  return (\n    <div className=\"flex w-full flex-col gap-3\">\n      {alerts.map((item, index) => (\n        <Alert key={index} variant={item.variant}>\n          {item.icon}\n          <AlertTitle className=\"font-normal\">{item.title}</AlertTitle>\n          <AlertAction className=\"items-center gap-2\">\n            <Button variant=\"link\" size=\"xs\" className=\"underline\">\n              Upgrade\n            </Button>\n            <Button variant=\"ghost\" size=\"icon-xs\">\n              <IconX />\n              <span className=\"sr-only\">Close</span>\n            </Button>\n          </AlertAction>\n        </Alert>\n      ))}\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-alert-4.tsx"
+    }
+  ],
+  "categories": [
+    "alert"
+  ],
+  "type": "registry:ui"
+}

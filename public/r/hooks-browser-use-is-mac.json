@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-browser-use-is-mac",
+  "title": "useIsMac",
+  "description": "useIsMac hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/browser/use-is-mac/index.ts",
+      "content": "'use client'\n\nimport * as React from 'react'\n\n/**\n * React hook that detects if the client device is running macOS.\n *\n * @returns {boolean} `true` if user agent matches macOS, otherwise `false`.\n *\n * @example\n * const isMac = useIsMac();\n * const shortcut = isMac ? '⌘K' : 'Ctrl+K';\n */\nexport function useIsMac(): boolean {\n  const [isMac, setIsMac] = React.useState(false)\n\n  React.useEffect(() => {\n    if (typeof navigator !== 'undefined') {\n      const platform = (navigator as any).userAgentData?.platform || navigator.platform || ''\n      setIsMac(/Mac|iPod|iPhone|iPad/.test(platform))\n    }\n  }, [])\n\n  return isMac\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-is-mac.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "is-mac"
+  ],
+  "type": "registry:hook"
+}

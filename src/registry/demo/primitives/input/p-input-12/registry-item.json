@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-input-12",
+  "type": "registry:ui",
+  "title": "Input 12",
+  "description": "Input with label and required indicator",
+  "registryDependencies": [
+    "@usespaceui/primitives-input",
+    "@usespaceui/primitives-label"
+  ],
+  "categories": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/input/p-input-12/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-input-12.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

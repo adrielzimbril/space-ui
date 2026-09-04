@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-button-16",
+  "type": "registry:ui",
+  "title": "Button 16",
+  "description": "Button with avatar",
+  "registryDependencies": [
+    "@usespaceui/primitives-avatar",
+    "@usespaceui/primitives-button"
+  ],
+  "categories": [
+    "button",
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/button/p-button-16/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-button-16.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

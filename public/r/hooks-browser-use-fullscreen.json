@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-browser-use-fullscreen",
+  "title": "useFullscreen",
+  "description": "useFullscreen hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/browser/use-fullscreen/index.ts",
+      "content": "'use client'\n\nimport { useState, useCallback, useEffect, type RefObject } from 'react'\n\n/**\n * React hook to control and observe full-screen mode for the window or an element.\n *\n * @param {RefObject<HTMLElement | null>} [elementRef] - Optional element ref to fullscreen (defaults to documentElement).\n * @returns {{ isFullscreen: boolean, enter: () => Promise<void>, exit: () => Promise<void>, toggle: () => Promise<void> }} Fullscreen state and actions.\n *\n * @example\n * const { isFullscreen, toggle } = useFullscreen();\n */\nexport function useFullscreen(elementRef?: RefObject<HTMLElement | null>) {\n  const [isFullscreen, setIsFullscreen] = useState<boolean>(false)\n\n  const enter = useCallback(async () => {\n    if (typeof document === 'undefined') return\n    const element = elementRef?.current || document.documentElement\n    if (element.requestFullscreen) {\n      await element.requestFullscreen()\n    }\n  }, [elementRef])\n\n  const exit = useCallback(async () => {\n    if (typeof document === 'undefined') return\n    if (document.fullscreenElement && document.exitFullscreen) {\n      await document.exitFullscreen()\n    }\n  }, [])\n\n  const toggle = useCallback(async () => {\n    if (isFullscreen) {\n      await exit()\n    } else {\n      await enter()\n    }\n  }, [isFullscreen, enter, exit])\n\n  useEffect(() => {\n    if (typeof document === 'undefined') return\n\n    const handleFullscreenChange = () => {\n      setIsFullscreen(Boolean(document.fullscreenElement))\n    }\n\n    document.addEventListener('fullscreenchange', handleFullscreenChange)\n    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange)\n  }, [])\n\n  return { isFullscreen, enter, exit, toggle }\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-fullscreen.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "fullscreen"
+  ],
+  "type": "registry:hook"
+}

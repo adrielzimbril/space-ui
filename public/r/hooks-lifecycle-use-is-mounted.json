@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-lifecycle-use-is-mounted",
+  "title": "useIsMounted",
+  "description": "useIsMounted hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/lifecycle/use-is-mounted/index.ts",
+      "content": "'use client'\n\nimport { useRef, useEffect, useCallback } from 'react'\n\n/**\n * React hook returning a getter function to check if the component is currently mounted (useful for async cancellations).\n *\n * @returns {() => boolean} Function returning `true` if component is currently mounted.\n *\n * @example\n * const isMounted = useIsMounted();\n * const fetchData = async () => {\n *   const data = await api.get();\n *   if (isMounted()) setState(data);\n * };\n */\nexport function useIsMounted(): () => boolean {\n  const isMounted = useRef(false)\n\n  useEffect(() => {\n    isMounted.current = true\n    return () => {\n      isMounted.current = false\n    }\n  }, [])\n\n  return useCallback(() => isMounted.current, [])\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-is-mounted.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "is-mounted"
+  ],
+  "type": "registry:hook"
+}

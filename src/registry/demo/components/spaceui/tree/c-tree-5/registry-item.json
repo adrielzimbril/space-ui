@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-tree-5",
+  "type": "registry:component",
+  "title": "File explorer tree with type icons",
+  "description": "File explorer tree with type icons",
+  "dependencies": [
+    "@headless-tree/core",
+    "@headless-tree/react",
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-tree"
+  ],
+  "categories": [
+    "component",
+    "tree"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/tree/c-tree-5/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-tree-5.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

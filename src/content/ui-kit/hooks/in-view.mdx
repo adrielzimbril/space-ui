@@ -1,0 +1,37 @@
+---
+title: InView
+description: Viewport intersection trigger component wrapper.
+preview: demo-hooks-components-in-view-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-components-in-view" />
+
+## Usage
+
+````tsx
+import { InView } from '@/components/in-view'
+
+import { InView } from '@/components/in-view'```
+
+```tsx
+<InView fallback={<Skeleton />}>
+  <ExpensiveChart />
+</InView>
+````
+
+## API Reference
+
+### Parameters / Props
+
+| Prop       | Type        | Default    | Description              |
+| :--------- | :---------- | :--------- | :----------------------- |
+| `fallback` | `ReactNode` | `null`     | Out of view placeholder. |
+| `children` | `ReactNode` | _required_ | Content when in view.    |
+
+### Return Value
+
+| Return Type | Description      |
+| :---------- | :--------------- |
+| `ReactNode` | Rendered branch. |

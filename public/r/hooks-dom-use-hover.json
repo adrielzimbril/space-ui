@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-dom-use-hover",
+  "title": "useHover",
+  "description": "useHover hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/dom/use-hover/index.ts",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { useEventListener } from '@/hooks/use-event-listener'\n\nexport type UseHoverReturn<T extends HTMLElement = HTMLElement> = [React.RefObject<T | null>, boolean] & {\n  ref: React.RefObject<T | null>\n  isHovered: boolean\n  value: boolean\n}\n\n/**\n * React hook to observe mouse hover state on a target DOM element.\n *\n * @template T\n * @param {React.RefObject<T | null>} [elementRef] - Optional React ref of the element to watch.\n * @returns {boolean | UseHoverReturn<T>} Boolean hover state or [ref, isHovered] tuple if called without arguments.\n *\n * @example\n * // Pattern 1: Automatic Ref Tuple\n * const [ref, isHovered] = useHover<HTMLDivElement>();\n *\n * // Pattern 2: External Ref Passing\n * const buttonRef = useRef<HTMLButtonElement>(null);\n * const isHovered = useHover(buttonRef);\n */\nexport function useHover<T extends HTMLElement = HTMLElement>(): UseHoverReturn<T>\nexport function useHover<T extends HTMLElement = HTMLElement>(elementRef: React.RefObject<T | null>): boolean\nexport function useHover<T extends HTMLElement = HTMLElement>(elementRef?: React.RefObject<T | null>): any {\n  const internalRef = React.useRef<T | null>(null)\n  const targetRef = elementRef ?? internalRef\n  const [value, setValue] = React.useState<boolean>(false)\n\n  const handleMouseEnter = React.useCallback(() => setValue(true), [])\n  const handleMouseLeave = React.useCallback(() => setValue(false), [])\n\n  useEventListener('mouseenter', handleMouseEnter, targetRef as any)\n  useEventListener('mouseleave', handleMouseLeave, targetRef as any)\n\n  if (elementRef !== undefined) {\n    return value\n  }\n\n  const tuple = [internalRef, value] as unknown as UseHoverReturn<T>\n  ;(tuple as any).ref = internalRef\n  ;(tuple as any).isHovered = value\n  ;(tuple as any).value = value\n\n  return tuple\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-hover.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "dom",
+    "hover"
+  ],
+  "type": "registry:hook"
+}

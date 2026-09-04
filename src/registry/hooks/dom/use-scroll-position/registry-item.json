@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-dom-use-scroll-position",
+  "type": "registry:hook",
+  "title": "useScrollPosition",
+  "description": "useScrollPosition hook.",
+  "registryDependencies": [
+    "@usespaceui/hooks-lifecycle-use-isomorphic-layout-effect"
+  ],
+  "categories": [
+    "hooks",
+    "dom",
+    "scroll-position"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/dom/use-scroll-position/index.ts",
+      "type": "registry:hook",
+      "target": "hooks/use-scroll-position.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

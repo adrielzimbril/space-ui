@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-utils-cookie",
+  "title": "cookie",
+  "description": "cookie utility.",
+  "files": [
+    {
+      "path": "src/registry/utils/cookie/index.ts",
+      "content": "/**\n * Parses a string value into its native JavaScript data type if possible.\n *\n * @param {string | undefined} value - The raw string value to parse.\n * @param {boolean} [isItRetry=false] - Internal flag to retry parsing with quotes.\n * @returns {any} The parsed value (JSON, primitive, or undefined).\n */\nexport const parseToDataType = (value: string | undefined, isItRetry = false): any => {\n  try {\n    return value === 'undefined' || value === undefined ? undefined : JSON.parse(value)\n  } catch (e) {\n    if (!isItRetry) {\n      return parseToDataType(`\"${value?.replaceAll?.('\"', '')}\"`, true)\n    }\n    return undefined\n  }\n}\n\n/**\n * Converts a typed value into a string suitable for cookie storage.\n *\n * @template T\n * @param {T} value - The value to serialize.\n * @returns {string} The string representation of the value.\n */\nexport const parseToCookieType = <T>(value: T): string => {\n  if (typeof value === 'string') {\n    return value\n  }\n  return JSON.stringify(value)\n}\n\n/**\n * Retrieves the value of a specific cookie by its name.\n *\n * @param {string} name - The name of the cookie.\n * @returns {any} The parsed cookie value, or `undefined` if not found.\n *\n * @example\n * const token = getCookie('auth_token');\n */\nexport const getCookie = (name: string): any => {\n  if (typeof document === 'undefined') return undefined\n  const value = `; ${document.cookie}`\n  const [_, cookie] = value.split(`; ${name}=`)\n  return cookie ? parseToDataType(cookie.split(';')[0]) : undefined\n}\n\n/**\n * Retrieves all cookies formatted as a key-value record object.\n *\n * @param {string[]} [cookies=[]] - Optional list of specific cookie keys to extract.\n * @returns {Record<string, any>} An object containing all matching cookie key-value pairs.\n *\n * @example\n * const allCookies = getCookies();\n * const authCookies = getCookies(['user_id', 'session_id']);\n */\nexport const getCookies = (cookies: string[] = []): Record<string, any> => {\n  if (typeof document === 'undefined') return {}\n  if (cookies.length) {\n    return cookies.reduce((result, cookie) => ({ ...result, [cookie]: getCookie(cookie) }), {})\n  }\n\n  return Object.fromEntries(\n    document.cookie\n      .split('; ')\n      .filter(Boolean)\n      .map((c) => {\n        const [key, value] = c.split('=')\n        return [key, parseToDataType(value)]\n      }),\n  )\n}\n\n/**\n * Sets a cookie in the browser with an expiration time in days.\n *\n * @template T\n * @param {string} name - The name of the cookie.\n * @param {T} value - The value to store in the cookie.\n * @param {number} expireDays - Expiration time in days from now.\n *\n * @example\n * setCookie('theme', 'dark', 30); // Expires in 30 days\n */\nexport const setCookie = <T>(name: string, value: T, expireDays: number): void => {\n  if (typeof document === 'undefined') return\n  const date = new Date()\n  const millisecondsInADay = 24 * 60 * 60 * 1000\n  date.setTime(date.getTime() + expireDays * millisecondsInADay)\n  const expires = `expires=${date.toUTCString()}`\n  document.cookie = `${name}=${parseToCookieType(value)}; ${expires}; path=/;`\n}\n\n/**\n * Deletes a cookie by expiring its date in the past.\n *\n * @param {string} name - The name of the cookie to remove.\n *\n * @example\n * deleteCookie('auth_token');\n */\nexport const deleteCookie = (name: string): void => {\n  if (typeof document === 'undefined') return\n  document.cookie = `${name}=; path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;`\n}\n",
+      "type": "registry:lib",
+      "target": "utils/cookie.ts"
+    }
+  ],
+  "categories": [
+    "utils",
+    "cookie"
+  ],
+  "type": "registry:lib"
+}

@@ -1,0 +1,40 @@
+---
+title: Image Dark
+description: An adaptive image component that dynamically switches between light and dark mode sources using standard HTML img elements with zero layout shift and no hydration mismatch.
+preview: demo-components-spaceui-c-image-dark-1
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-image-dark" />
+
+## Usage
+
+```tsx
+import { ImageDark } from '@/components/spaceui/image-dark'
+```
+
+```tsx
+<ImageDark src="/logo.svg" darkSrc="/logo-dark.svg" alt="Brand Logo" width={48} height={48} />
+```
+
+## API Reference
+
+### ImageDark Props
+
+`ImageDark` accepts all standard HTML `<img>` element attributes (`width`, `height`, `loading`, `decoding`, `alt`, `className`, etc.) along with the following:
+
+| Prop        | Type     | Default      | Description                                                                               |
+| ----------- | -------- | ------------ | ----------------------------------------------------------------------------------------- |
+| `src`       | `string` | **Required** | The primary/light mode image source URL or path.                                          |
+| `darkSrc`   | `string` | `undefined`  | The dark mode image source URL or path. Swapped automatically in dark theme.              |
+| `alt`       | `string` | `""`         | Alternative text description for accessibility.                                           |
+| `className` | `string` | `undefined`  | Additional classes merged onto both image elements (`dark:hidden` / `hidden dark:block`). |
+
+---
+
+### Card Integration
+
+Use standard image sizing and container styling inside cards, hero banners, or device mockups.
+
+<ComponentPreview name="demo-components-spaceui-c-image-dark-2" />

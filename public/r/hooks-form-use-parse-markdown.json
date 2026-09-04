@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-form-use-parse-markdown",
+  "title": "useParseMarkdown",
+  "description": "useParseMarkdown hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/form/use-parse-markdown/index.ts",
+      "content": "/**\n * Utility function to convert basic markdown to HTML\n *\n * @param text - The markdown text to convert\n *\n * @returns The HTML string\n *\n * @example\n * const html = useParseMarkdown(\"# Hello World\");\n */\nfunction useParseMarkdown(text: string): string {\n  return (\n    text\n      // Remove leading and trailing newlines\n      .trim()\n      // Bold **text** or __text__\n      .replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>')\n      .replace(/__(.*?)__/g, '<strong>$1</strong>')\n      // Italic *text* or _text_\n      .replace(/\\*(.*?)\\*/g, '<em>$1</em>')\n      .replace(/_(.*?)_/g, '<em>$1</em>')\n      // Link [text](url)\n      .replace(\n        /\\[([^\\]]+)\\]\\(([^)]+)\\)/g,\n        '<a href=\"$2\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline\">$1</a>',\n      )\n      // Code inline `code`\n      .replace(/`([^`]+)`/g, '<code class=\"bg-gray-100 px-1 py-0.5 rounded text-sm\">$1</code>')\n      // Line break double for paragraphs (only in the middle of the text)\n      .replace(/(?<!^)\\n\\n(?!$)/g, '<br/><br/>')\n      // Line break simple (only in the middle of the text)\n      .replace(/(?<!^)\\n(?!$)/g, '<br/>')\n  )\n}\n\nexport { useParseMarkdown }\n",
+      "type": "registry:hook",
+      "target": "hooks/use-parse-markdown.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "form",
+    "parse-markdown"
+  ],
+  "type": "registry:hook"
+}

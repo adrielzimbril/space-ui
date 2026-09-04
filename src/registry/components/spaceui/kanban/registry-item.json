@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-kanban",
+  "type": "registry:component",
+  "title": "Kanban",
+  "description": "Kanban component for Space UI.",
+  "dependencies": [
+    "@base-ui/react",
+    "@dnd-kit/core",
+    "@dnd-kit/sortable",
+    "@dnd-kit/utilities"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "categories": [
+    "component",
+    "kanban"
+  ],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/kanban/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/kanban.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

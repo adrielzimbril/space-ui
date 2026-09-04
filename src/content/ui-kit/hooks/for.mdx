@@ -1,0 +1,42 @@
+---
+title: For
+description: Declarative JSX list rendering component with automatic empty state fallback.
+preview: demo-hooks-components-for-1
+---
+
+### Example 2: Interactive Product Catalog with Search
+
+<ComponentPreview name="demo-hooks-components-for-2" />
+
+## Installation
+
+<ComponentInstallation name="hooks-components-for" />
+
+## Usage
+
+````tsx
+import { For } from '@/components/for'
+
+import { For } from '@/components/for'```
+
+```tsx
+<For each={['A', 'B', 'C']} fallback={<p>Empty</p>}>
+  {(item, i) => <div key={i}>{item}</div>}
+</For>
+````
+
+## API Reference
+
+### Parameters / Props
+
+| Prop       | Type                                    | Default    | Description           |
+| :--------- | :-------------------------------------- | :--------- | :-------------------- |
+| `each`     | `T[] \| null \| undefined`              | _required_ | Array to map.         |
+| `fallback` | `ReactNode`                             | `null`     | Empty state fallback. |
+| `children` | `(item: T, index: number) => ReactNode` | _required_ | Item renderer.        |
+
+### Return Value
+
+| Return Type | Description    |
+| :---------- | :------------- |
+| `ReactNode` | Rendered list. |

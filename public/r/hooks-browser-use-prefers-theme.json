@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-browser-use-prefers-theme",
+  "title": "usePrefersTheme",
+  "description": "usePrefersTheme hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/browser/use-prefers-theme/index.ts",
+      "content": "'use client'\n\nimport { useMediaQuery } from '@/hooks/use-media-query'\n\n/**\n * React hook that detects the user's OS color scheme preference ('dark' | 'light').\n *\n * @returns {'dark' | 'light'} The preferred color scheme.\n *\n * @example\n * const theme = usePrefersTheme();\n */\nexport function usePrefersTheme(): 'dark' | 'light' {\n  const isDark = useMediaQuery('(prefers-color-scheme: dark)', false)\n  return isDark ? 'dark' : 'light'\n}\n\nexport function useIsDarkMode(): boolean {\n  return useMediaQuery('(prefers-color-scheme: dark)', false)\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-prefers-theme.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "prefers-theme"
+  ],
+  "type": "registry:hook"
+}

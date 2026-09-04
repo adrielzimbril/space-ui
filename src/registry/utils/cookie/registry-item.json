@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-utils-cookie",
+  "type": "registry:lib",
+  "title": "cookie",
+  "description": "cookie utility.",
+  "categories": [
+    "utils",
+    "cookie"
+  ],
+  "files": [
+    {
+      "path": "src/registry/utils/cookie/index.ts",
+      "type": "registry:lib",
+      "target": "utils/cookie.ts"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

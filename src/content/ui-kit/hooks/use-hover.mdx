@@ -1,0 +1,41 @@
+---
+title: useHover
+description: Observes mouse hover state on target DOM elements using either automatic ref tuples or external refs.
+preview: demo-hooks-dom-hover-1
+---
+
+### Example 2: External Ref Passing
+
+<ComponentPreview name="demo-hooks-dom-hover-2" />
+
+## Installation
+
+<ComponentInstallation name="hooks-dom-use-hover" />
+
+## Usage
+
+```tsx
+import { useHover } from '@/hooks/use-hover'
+
+// Pattern 1: Automatic Ref Tuple
+const [ref, isHovered] = useHover<HTMLDivElement>()
+
+// Pattern 2: External Ref Passing
+const buttonRef = useRef<HTMLButtonElement>(null)
+const isHovered = useHover(buttonRef)
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter    | Type                             | Default     | Description                           |
+| :----------- | :------------------------------- | :---------- | :------------------------------------ |
+| `elementRef` | `RefObject<HTMLElement \| null>` | `undefined` | Optional external React ref to watch. |
+
+### Return Value
+
+| Return Type                                    | Description                                             |
+| :--------------------------------------------- | :------------------------------------------------------ |
+| `[RefObject<T>, boolean] & { ref, isHovered }` | Returned when called with no arguments (`useHover()`).  |
+| `boolean`                                      | Returned when passed an external ref (`useHover(ref)`). |

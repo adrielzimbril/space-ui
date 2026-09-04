@@ -1,0 +1,30 @@
+---
+title: useCookieListener
+description: Observer callback triggered when a specific cookie value changes.
+preview: demo-hooks-browser-cookie-listener-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-browser-use-cookie-listener" />
+
+## Usage
+
+```tsx
+import { useCookieListener } from '@/hooks/use-cookie-listener'
+
+useCookieListener('token', (newToken) => console.log(newToken))
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter  | Type                            | Default    | Description         |
+| :--------- | :------------------------------ | :--------- | :------------------ |
+| `name`     | `string`                        | _required_ | Target cookie name. |
+| `callback` | `(val: string \| null) => void` | _required_ | Change handler.     |
+
+### Return Value
+
+_Returns void._

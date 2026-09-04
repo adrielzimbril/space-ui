@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-select-8",
+  "title": "Select 8",
+  "description": "Select options with icon",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-select"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/select/p-select-8/index.tsx",
+      "content": "'use client'\n\nimport { IconSourceCode, IconGlobe, IconBox, IconGauge } from '@tabler/icons-react'\nimport { Select, SelectItem, SelectPopup, SelectTrigger, SelectValue } from '@/components/ui/select'\n\nconst items = [\n  { icon: IconBox, label: 'Components', value: 'components' },\n  { icon: IconGauge, label: 'Performance', value: 'performance' },\n  { icon: IconGlobe, label: 'Network', value: 'network' },\n  { icon: IconSourceCode, label: 'Development', value: 'development' },\n]\n\nexport default function Particle() {\n  return (\n    <Select aria-label=\"Select category\" defaultValue={items[0]} itemToStringValue={(item) => item.value}>\n      <SelectTrigger>\n        <SelectValue>\n          {(item) => (\n            <span className=\"flex items-center gap-2\">\n              <item.icon />\n              <span className=\"truncate\">{item.label}</span>\n            </span>\n          )}\n        </SelectValue>\n      </SelectTrigger>\n      <SelectPopup>\n        {items.map((item) => (\n          <SelectItem key={item.value} value={item}>\n            <span className=\"flex items-center gap-2\">\n              <item.icon />\n              <span className=\"truncate\">{item.label}</span>\n            </span>\n          </SelectItem>\n        ))}\n      </SelectPopup>\n    </Select>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-select-8.tsx"
+    }
+  ],
+  "categories": [
+    "select"
+  ],
+  "type": "registry:ui"
+}

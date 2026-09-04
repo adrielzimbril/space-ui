@@ -1,0 +1,64 @@
+---
+title: Segmented Control
+description: A visual pattern for presenting related choices, navigation destinations, filters, or content views.
+preview: demo-primitives-p-radio-group-6
+---
+
+## About
+
+A segmented control is a visual pattern, not a standalone behavior. It uses the same presentation across several components while preserving the semantics, keyboard interactions, and state model of each underlying primitive.
+
+## Choose the right primitive
+
+| Intent                            | Use                                                  | Why                                                                   |
+| --------------------------------- | ---------------------------------------------------- | --------------------------------------------------------------------- |
+| Choose one value in a form        | [Radio Group](/docs/ui-kit/primitives/radio-group)   | Represents a mutually exclusive value and participates in form state. |
+| Navigate to another URL or route  | Navigation links                                     | Preserves link behavior, browser history, and `aria-current`.         |
+| Apply an exclusive filter or mode | [Toggle Group](/docs/ui-kit/primitives/toggle-group) | Represents the pressed state of an action that may be cleared.        |
+| Switch between related panels     | [Tabs](/docs/ui-kit/primitives/tabs)                 | Connects each tab to an associated content panel.                     |
+
+Choose the primitive from the interaction first, then apply the segmented-control styling. Visual similarity alone is not a reason to use Tabs or Toggle Group.
+
+## Shared styling
+
+For a custom composition, use the shared styling library:
+
+```tsx
+import {
+  segmentedControlItemLayoutClassName,
+  segmentedControlItemVariants,
+  segmentedControlRootClassName,
+} from '@/lib/segmented-control'
+```
+
+```tsx
+const itemClassName = segmentedControlItemVariants({
+  size: 'default',
+  state: 'checked',
+})
+```
+
+| Option  | Values                                | Description                                                 |
+| ------- | ------------------------------------- | ----------------------------------------------------------- |
+| `size`  | `"sm" \| "default" \| "lg"`           | Controls item height and horizontal padding.                |
+| `state` | `"checked" \| "current" \| "pressed"` | Selects the state attribute used by the underlying element. |
+
+Use `checked` with Radio Group, `current` with navigation links, and `pressed` with Toggle Group. Tabs retain their own animated indicator and do not use the shared state recipe. They reuse `segmentedControlItemLayoutClassName` so icons match the other segmented implementations.
+
+## Radio options
+
+Use Radio Group when the selected segment represents a mutually exclusive value, especially in forms.
+
+<ComponentPreview name="demo-primitives-p-radio-group-6" />
+
+## Navigation
+
+Use links when each segment points to a different destination. Apply `aria-current="page"` to the active link.
+
+<ComponentPreview name="demo-primitives-p-navigation-2" />
+
+## Tabs
+
+Use Tabs when each segment controls an associated content panel. Tabs share the visual language of segmented controls but keep their animated indicator, orientation support, and panel semantics.
+
+<ComponentPreview name="demo-primitives-p-tabs-1" />

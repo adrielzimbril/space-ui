@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-form-map-1",
+  "title": "useMap",
+  "description": "Reactive Map collection state manager",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-form-use-map",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/form/map/h-map-1/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { useMap } from '@/hooks/use-map'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Button } from '@/components/ui/button'\nimport { Badge } from '@/components/ui/badge'\nimport { IconPlus, IconMinus, IconTable } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const [map, actions] = useMap<string, number>([\n    ['Apples', 5],\n    ['Oranges', 10],\n  ])\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconTable className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Map</span>\n        </div>\n        <Badge variant=\"outline\" size=\"sm\" className=\"font-mono tabular-nums\">\n          {map.size}\n        </Badge>\n      </div>\n      <CardPanel className=\"flex flex-col gap-2 rounded-[0.875rem] bg-background p-3\">\n        {Array.from(map.entries()).map(([key, count]) => (\n          <div key={key} className=\"flex items-center justify-between gap-3 rounded-lg bg-muted p-2.5\">\n            <div className=\"min-w-0\">\n              <span className=\"block text-[.6875rem] font-semibold text-muted-foreground\">{key}</span>\n              <span className=\"mt-0.5 block font-mono text-sm font-semibold tabular-nums text-foreground\">{count}</span>\n            </div>\n            <div className=\"flex items-center gap-1.5\">\n              <Button\n                size=\"icon-xs\"\n                variant=\"outline\"\n                onClick={() => actions.set(key, Math.max(0, count - 1))}\n                aria-label={`Decrease ${key}`}\n              >\n                <IconMinus className=\"size-3\" />\n              </Button>\n              <Button\n                size=\"icon-xs\"\n                variant=\"outline\"\n                onClick={() => actions.set(key, count + 1)}\n                aria-label={`Increase ${key}`}\n              >\n                <IconPlus className=\"size-3\" />\n              </Button>\n            </div>\n          </div>\n        ))}\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-map-1.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "form",
+    "map"
+  ],
+  "type": "registry:hook"
+}

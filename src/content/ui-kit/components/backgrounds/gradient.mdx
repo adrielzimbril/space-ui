@@ -1,0 +1,38 @@
+---
+title: Gradient Background
+description: Creates a smoothly animating multi-color gradient background that shifts colors gently behind your page content.
+author:
+  name: usespaceui
+  url: https://github.com/usespaceui
+preview: demo-components-backgrounds-gradient
+---
+
+## Installation
+
+<ComponentInstallation name="components-backgrounds-gradient" />
+
+## Usage
+
+```tsx
+<GradientBackground />
+```
+
+## API Reference
+
+### GradientBackground
+
+<TypeTable
+  type={{
+    transition: {
+      description: 'The transition of the gradient',
+      type: 'Transition',
+      required: false,
+      default: "{ duration: 15, ease: 'easeInOut', repeat: Infinity }",
+    },
+    '...props': {
+      description: 'The props of the GradientBackground.',
+      type: 'React.ComponentProps<"div">',
+      required: false,
+    },
+  }}
+/>

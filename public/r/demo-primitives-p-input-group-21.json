@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-input-group-21",
+  "title": "Input Group 21",
+  "description": "Input group with start tooltip",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-input-group",
+    "@usespaceui/primitives-tooltip"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/input-group/p-input-group-21/index.tsx",
+      "content": "'use client'\n\nimport { IconInfoCircle } from '@tabler/icons-react'\nimport { Button } from '@/components/ui/button'\nimport { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'\nimport { Tooltip, TooltipPopup, TooltipTrigger } from '@/components/ui/tooltip'\n\nexport default function Particle() {\n  return (\n    <InputGroup>\n      <InputGroupAddon>\n        <Tooltip>\n          <TooltipTrigger render={<Button aria-label=\"More information\" size=\"icon-xs\" variant=\"ghost\" />}>\n            <IconInfoCircle />\n          </TooltipTrigger>\n          <TooltipPopup>Enter your username</TooltipPopup>\n        </Tooltip>\n      </InputGroupAddon>\n      <InputGroupInput aria-label=\"Username\" placeholder=\"Username\" type=\"text\" />\n    </InputGroup>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-input-group-21.tsx"
+    }
+  ],
+  "categories": [
+    "button",
+    "input",
+    "input group",
+    "tooltip"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-lifecycle-use-isomorphic-layout-effect",
+  "title": "useIsomorphicLayoutEffect",
+  "description": "useIsomorphicLayoutEffect hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/lifecycle/use-isomorphic-layout-effect/index.ts",
+      "content": "'use client'\n\nimport { useEffect, useLayoutEffect } from 'react'\n\n/**\n * Custom `useLayoutEffect` that safely falls back to `useEffect` during SSR to prevent React hydration warnings.\n */\nexport const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect\n",
+      "type": "registry:hook",
+      "target": "hooks/use-isomorphic-layout-effect.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "isomorphic-layout-effect"
+  ],
+  "type": "registry:hook"
+}

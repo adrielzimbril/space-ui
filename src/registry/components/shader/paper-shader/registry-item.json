@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-shader-paper-shader",
+  "type": "registry:component",
+  "title": "Paper Shader",
+  "description": "Paper Shaders WebGL2 canvas driven by a fragment shader and live uniforms.",
+  "categories": ["shader", "webgl"],
+  "files": [
+    {
+      "path": "src/registry/components/shader/paper-shader/index.tsx",
+      "type": "registry:component",
+      "target": "components/shader/paper-shader.tsx"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

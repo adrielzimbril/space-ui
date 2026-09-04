@@ -1,0 +1,58 @@
+---
+title: Bloop Orb
+description: Compact assistant orb with listen, think, and speak states, voice palettes, and audio input.
+author:
+  name: usespaceui
+  url: https://github.com/usespaceui
+preview: demo-components-orb-c-orb-bloop-1
+---
+
+## Installation
+
+<ComponentInstallation name="components-orb-bloop" />
+
+## Usage
+
+```tsx
+import { OrbBloop } from '@/components/orb/bloop'
+import { BLOOP_PALETTES } from '@/components/orb/bloop-palettes'
+
+const palette = BLOOP_PALETTES.BLUE
+
+<OrbBloop
+  size={220}
+  audioMode="ambient"
+  state="speak"
+  bloopColorMain={palette.main}
+  bloopColorLow={palette.low}
+  bloopColorMid={palette.mid}
+  bloopColorHigh={palette.high}
+/>
+```
+
+## Files
+
+| File                           | Role                                                 |
+| ------------------------------ | ---------------------------------------------------- |
+| `bloop/index.tsx`              | WebGL2 bloop shader, state springs, audio hook       |
+| `bloop/palettes.ts`            | `BLOOP_PALETTES` (Cove, Sky, Juniper, Ember, Breeze) |
+| `orb/smooth/audio-analyzer.ts` | Shared analyser (registry dependency)                |
+
+## API Reference
+
+### OrbBloop
+
+| Prop                 | Type                                       | Default     | Description                               |
+| -------------------- | ------------------------------------------ | ----------- | ----------------------------------------- |
+| `size`               | `number`                                   | `144`       | CSS pixel size of the canvas              |
+| `audioMode`          | `'ambient' \| 'mic' \| 'file'`             | `'ambient'` | Audio driver                              |
+| `audioElement`       | `RefObject<HTMLAudioElement>`              | —           | File mode source                          |
+| `state`              | `'idle' \| 'listen' \| 'think' \| 'speak'` | `'idle'`    | Active pose                               |
+| `bloopColorMain`     | `[number, number, number]`                 | blue        | Main fill, 0–1 RGB                        |
+| `bloopColorLow`      | `[number, number, number]`                 | —           | Low band                                  |
+| `bloopColorMid`      | `[number, number, number]`                 | —           | Mid band                                  |
+| `bloopColorHigh`     | `[number, number, number]`                 | —           | High band                                 |
+| `watercolorStrength` | `number`                                   | `0.5`       | Watercolor warp amount (min = 0, max = 1) |
+| `watercolorAnimated` | `boolean`                                  | `false`     | Drift the watercolor field                |
+
+Drive states from your assistant FSM. The demo buttons set one state at a time.

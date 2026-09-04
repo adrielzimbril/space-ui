@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-drawer-13",
+  "type": "registry:ui",
+  "title": "Drawer 13",
+  "description": "Responsive actions menu: menu on desktop, drawer on mobile",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-browser-use-media-query",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-drawer",
+    "@usespaceui/primitives-menu"
+  ],
+  "categories": [
+    "drawer",
+    "menu"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/drawer/p-drawer-13/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-drawer-13.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

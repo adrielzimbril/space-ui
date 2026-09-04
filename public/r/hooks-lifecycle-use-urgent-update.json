@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-lifecycle-use-urgent-update",
+  "title": "useUrgentUpdate",
+  "description": "useUrgentUpdate hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/lifecycle/use-urgent-update/index.ts",
+      "content": "'use client'\n\nimport { useReducer } from 'react'\nconst r = (v: number) => (v + 1) % 1000000\n\nexport function useUrgentUpdate() {\n  const [_, u] = useReducer(r, 0)\n\n  return u\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-urgent-update.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "urgent-update",
+    "calendar"
+  ],
+  "type": "registry:hook"
+}

@@ -1,0 +1,31 @@
+---
+title: useKeyPress
+description: Detect active pressed keyboard keys.
+preview: demo-hooks-dom-key-press-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-dom-use-key-press" />
+
+## Usage
+
+```tsx
+import { useKeyPress } from '@/hooks/use-key-press'
+
+const isEscape = useKeyPress('Escape')
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter   | Type     | Default    | Description |
+| :---------- | :------- | :--------- | :---------- |
+| `targetKey` | `string` | _required_ | Key name.   |
+
+### Return Value
+
+| Return Type | Description         |
+| :---------- | :------------------ |
+| `boolean`   | True while pressed. |

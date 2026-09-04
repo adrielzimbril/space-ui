@@ -1,0 +1,45 @@
+---
+title: useScrollPosition
+description: Real-time window or element scroll offset coordinates (X and Y).
+preview: demo-hooks-dom-scroll-position-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-dom-use-scroll-position" />
+
+## Usage
+
+```tsx
+import { useScrollPosition } from '@/hooks/use-scroll-position'
+
+// Pattern 1: Object destructuring with scrollX / scrollY
+const { scrollX, scrollY } = useScrollPosition()
+
+// Pattern 2: Object destructuring with x / y
+const { x, y } = useScrollPosition()
+
+// Pattern 3: Array tuple destructuring
+const [x, y] = useScrollPosition()
+
+// Pattern 4: Target container element
+const containerRef = useRef<HTMLDivElement>(null)
+const { scrollY } = useScrollPosition(containerRef)
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter   | Type                             | Default     | Description                                                |
+| :---------- | :------------------------------- | :---------- | :--------------------------------------------------------- |
+| `targetRef` | `RefObject<HTMLElement \| null>` | `undefined` | Optional DOM element ref to measure instead of the window. |
+
+### Return Value
+
+| Property  | Type     | Description                                              |
+| :-------- | :------- | :------------------------------------------------------- |
+| `scrollX` | `number` | Horizontal scroll offset in pixels (alias: `x` / `[0]`). |
+| `scrollY` | `number` | Vertical scroll offset in pixels (alias: `y` / `[1]`).   |
+| `x`       | `number` | Horizontal coordinate.                                   |
+| `y`       | `number` | Vertical coordinate.                                     |

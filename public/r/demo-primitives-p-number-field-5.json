@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-number-field-5",
+  "title": "Number Field 5",
+  "description": "Number field with label",
+  "registryDependencies": [
+    "@usespaceui/primitives-label",
+    "@usespaceui/primitives-number-field"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/number-field/p-number-field-5/index.tsx",
+      "content": "'use client'\n\nimport { useId } from 'react'\nimport { Label } from '@/components/ui/label'\nimport {\n  NumberField,\n  NumberFieldDecrement,\n  NumberFieldGroup,\n  NumberFieldIncrement,\n  NumberFieldInput,\n} from '@/components/ui/number-field'\n\nexport default function Particle() {\n  const id = useId()\n  return (\n    <div className=\"flex flex-col items-start gap-2\">\n      <Label htmlFor={id}>Quantity</Label>\n      <NumberField defaultValue={0} id={id}>\n        <NumberFieldGroup>\n          <NumberFieldDecrement />\n          <NumberFieldInput />\n          <NumberFieldIncrement />\n        </NumberFieldGroup>\n      </NumberField>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-number-field-5.tsx"
+    }
+  ],
+  "categories": [
+    "number field",
+    "input"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,78 @@
+---
+title: Textarea
+description: Allows users to type multi-line text, comments, or long descriptions with support for auto-expanding height as they write.
+preview: demo-primitives-p-textarea-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-textarea" />
+
+## Usage
+
+```tsx
+import { Textarea } from '@/components/ui/textarea'
+```
+
+```tsx
+<Textarea />
+```
+
+## Features
+
+### Sizes
+
+Textarea controls in `sm`, `default`, and `lg` sizes.
+
+<ComponentPreview name="demo-primitives-p-textarea-2" />
+
+### Disabled
+
+Textarea rendered in a disabled state via the `disabled` prop.
+
+<ComponentPreview name="demo-primitives-p-textarea-3" />
+
+### Read Only
+
+Textarea configured in read-only mode via the `readOnly` prop.
+
+<ComponentPreview name="demo-primitives-p-textarea-9" />
+
+## Field Integration
+
+Unlike Base UI's built-in form controls, Base UI does not provide a native Textarea primitive. This component wraps the native `<textarea>` element in `Field.Control` internally, so it integrates with `Field` out of the box — no need to wrap it in a `FieldControl` manually.
+
+```tsx
+<Field>
+  <FieldLabel>Bio</FieldLabel>
+  <Textarea placeholder="Tell us about yourself…" />
+  <FieldDescription>Write a short bio.</FieldDescription>
+  <FieldError>This field is required.</FieldError>
+</Field>
+```
+
+## API Reference
+
+### Textarea
+
+Styled native textarea element with custom size options.
+
+| Prop       | Type                                  | Default     | Description                                                                            |
+| ---------- | ------------------------------------- | ----------- | -------------------------------------------------------------------------------------- |
+| `size`     | `"sm" \| "default" \| "lg" \| number` | `"default"` | Controls the textarea padding. Number values are passed to the native `rows` attribute |
+| `unstyled` | `boolean`                             | `false`     | When true, removes all default styling                                                 |
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-textarea-4" description="Textarea with label" />
+  <ShowcaseCard name="demo-primitives-p-textarea-5" description="Textarea in form" />
+  <ShowcaseCard name="demo-primitives-p-textarea-6" description="Textarea with label and required indicator" />
+  <ShowcaseCard name="demo-primitives-p-textarea-7" description="Textarea with optional label" />
+  <ShowcaseCard name="demo-primitives-p-textarea-8" description="Textarea with custom border and background" />
+  <ShowcaseCard name="demo-primitives-p-textarea-10" description="Textarea with characters remaining counter" />
+  <ShowcaseCard name="demo-primitives-p-textarea-11" description="Textarea field with required indicator" />
+  <ShowcaseCard name="demo-primitives-p-textarea-12" description="Shorter textarea with fixed height" />
+  <ShowcaseCard name="demo-primitives-p-textarea-13" description="Textarea with button aligned right" />
+  <ShowcaseCard name="demo-primitives-p-textarea-14" description="Textarea with button aligned left" />
+</ShowcaseGrid>

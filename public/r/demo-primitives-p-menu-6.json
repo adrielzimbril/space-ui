@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-menu-6",
+  "title": "Menu 6",
+  "description": "Menu with group labels",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-menu"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/menu/p-menu-6/index.tsx",
+      "content": "import { Button } from '@/components/ui/button'\nimport {\n  Menu,\n  MenuGroup,\n  MenuGroupLabel,\n  MenuItem,\n  MenuPopup,\n  MenuSeparator,\n  MenuTrigger,\n} from '@/components/ui/menu'\n\nexport default function Particle() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\" />}>Open menu</MenuTrigger>\n      <MenuPopup>\n        <MenuGroup>\n          <MenuGroupLabel>Account</MenuGroupLabel>\n          <MenuItem>Profile</MenuItem>\n          <MenuItem>Billing</MenuItem>\n        </MenuGroup>\n        <MenuSeparator />\n        <MenuGroup>\n          <MenuGroupLabel>Support</MenuGroupLabel>\n          <MenuItem>Docs</MenuItem>\n          <MenuItem>Contact</MenuItem>\n        </MenuGroup>\n      </MenuPopup>\n    </Menu>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-menu-6.tsx"
+    }
+  ],
+  "categories": [
+    "dropdown",
+    "menu"
+  ],
+  "type": "registry:ui"
+}

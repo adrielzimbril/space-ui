@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-checkbox-group",
+  "title": "Checkbox Group",
+  "description": "Accessible Checkbox Group primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/checkbox-group/index.tsx",
+      "content": "'use client'\n\nimport { CheckboxGroup as CheckboxGroupPrimitive } from '@base-ui/react/checkbox-group'\nimport type React from 'react'\nimport { cn } from '@/lib/utils'\n\nexport function CheckboxGroup({ className, ...props }: CheckboxGroupPrimitive.Props): React.ReactElement {\n  return <CheckboxGroupPrimitive className={cn('flex flex-col items-start gap-3', className)} {...props} />\n}\n\nexport { CheckboxGroupPrimitive }\n",
+      "type": "registry:ui",
+      "target": "components/ui/checkbox-group.tsx"
+    }
+  ],
+  "categories": [
+    "checkbox-group",
+    "checkbox"
+  ],
+  "type": "registry:ui"
+}

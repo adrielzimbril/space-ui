@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-phone-input-6",
+  "title": "Phone input with error state",
+  "description": "Phone input with error state",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-phone-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/phone-input/c-phone-input-6/index.tsx",
+      "content": "import { PhoneInput } from '@/components/spaceui/phone-input'\n\nexport default function Pattern() {\n  return <PhoneInput aria-invalid=\"true\" placeholder=\"Enter phone number\" />\n}\n",
+      "type": "registry:component",
+      "target": "components/spaceui/c-phone-input-6.tsx"
+    }
+  ],
+  "categories": [
+    "component",
+    "phone-input"
+  ],
+  "type": "registry:component"
+}

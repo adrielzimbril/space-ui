@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-dom-use-intersection-observer",
+  "title": "useIntersectionObserver",
+  "description": "useIntersectionObserver hook.",
+  "files": [
+    {
+      "path": "src/registry/hooks/dom/use-intersection-observer/index.ts",
+      "content": "'use client'\n\nimport { useEffect, useState, type RefObject } from 'react'\n\n/**\n * React hook to monitor an element's visibility using the native IntersectionObserver API.\n *\n * @param {RefObject<Element | null>} elementRef - The element to observe.\n * @param {IntersectionObserverInit} [options={}] - IntersectionObserver configuration options.\n * @returns {IntersectionObserverEntry | null} The current IntersectionObserverEntry or `null`.\n *\n * @example\n * const sectionRef = useRef<HTMLDivElement>(null);\n * const entry = useIntersectionObserver(sectionRef, { threshold: 0.5 });\n * const isVisible = entry?.isIntersecting;\n */\nexport function useIntersectionObserver(\n  elementRef: RefObject<Element | null>,\n  { threshold = 0, root = null, rootMargin = '0%' }: IntersectionObserverInit = {},\n): IntersectionObserverEntry | null {\n  const [entry, setEntry] = useState<IntersectionObserverEntry | null>(null)\n\n  useEffect(() => {\n    const node = elementRef?.current\n    if (typeof window === 'undefined' || !node || !('IntersectionObserver' in window)) return\n\n    const observer = new IntersectionObserver(([entry]) => setEntry(entry), {\n      threshold,\n      root,\n      rootMargin,\n    })\n\n    observer.observe(node)\n    return () => observer.disconnect()\n  }, [elementRef, threshold, root, rootMargin])\n\n  return entry\n}\n",
+      "type": "registry:hook",
+      "target": "hooks/use-intersection-observer.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "dom",
+    "intersection-observer"
+  ],
+  "type": "registry:hook"
+}

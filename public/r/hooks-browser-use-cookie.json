@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-browser-use-cookie",
+  "title": "useCookie",
+  "description": "useCookie hook.",
+  "registryDependencies": [
+    "@usespaceui/hooks-lifecycle-use-event-callback",
+    "@usespaceui/hooks-lifecycle-use-single-effect",
+    "@usespaceui/hooks-utils-cookie"
+  ],
+  "files": [
+    {
+      "path": "src/registry/hooks/browser/use-cookie/index.ts",
+      "content": "'use client'\n\nimport { useState, useCallback } from 'react'\nimport { useSingleEffect } from '@/hooks/use-single-effect'\nimport { useEventCallback } from '@/hooks/use-event-callback'\nimport { deleteCookie, getCookie, getCookies, setCookie } from '@/utils/cookie'\n\n/**\n * React hook to manage cookies in the browser.\n *\n * @template T\n * @param {string} cookieName - Name of the cookie.\n * @returns {[(name?: string) => T, (newValue: T, expireDays?: number) => void, (name?: string) => void, Record<string, any>]} A tuple of [getter, setter, deleter, allCookies].\n *\n * @example\n * const [getTheme, setTheme, removeTheme] = useCookie('user_theme');\n * setTheme('dark', 30); // 30 days\n */\nexport function useCookie<T>(cookieName: string) {\n  const [cookies, setCookies] = useState<Record<string, any>>({})\n\n  const refreshCookies = useEventCallback(() => {\n    setCookies(getCookies())\n  })\n\n  useSingleEffect(() => {\n    refreshCookies()\n  })\n\n  const get = useCallback(\n    (name: string = cookieName): T => {\n      return getCookie(name) as T\n    },\n    [cookieName],\n  )\n\n  const set = useCallback(\n    (newValue: T, expireDays = 1) => {\n      setCookie(cookieName, newValue, expireDays)\n      refreshCookies()\n    },\n    [cookieName, refreshCookies],\n  )\n\n  const remove = useCallback(\n    (name: string = cookieName) => {\n      deleteCookie(name)\n      refreshCookies()\n    },\n    [cookieName, refreshCookies],\n  )\n\n  return [get, set, remove, cookies] as const\n}\n\nexport const useCookies = useCookie\n",
+      "type": "registry:hook",
+      "target": "hooks/use-cookie.ts"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "cookie"
+  ],
+  "type": "registry:hook"
+}

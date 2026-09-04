@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks-components-switch",
+  "title": "Switch",
+  "description": "Switch component.",
+  "files": [
+    {
+      "path": "src/registry/hooks/components/switch/index.tsx",
+      "content": "import * as React from 'react'\n\n/**\n * Props for the `<Case>` branch component.\n */\nexport interface CaseProps {\n  /** The condition for this branch to match. */\n  condition: boolean | (() => boolean)\n  /** The content to render if this branch is matched. */\n  children: React.ReactNode\n}\n\n/**\n * Individual conditional branch used inside a `<Switch>` container.\n *\n * @param {CaseProps} props - Component props.\n */\nexport function Case({ children }: CaseProps): React.ReactNode {\n  return <>{children}</>\n}\n\n/**\n * Props for the `<Default>` fallback branch component.\n */\nexport interface DefaultProps {\n  /** Fallback content to render when no `<Case>` matches. */\n  children: React.ReactNode\n}\n\n/**\n * Fallback branch rendered inside a `<Switch>` container when no `<Case>` matches.\n *\n * @param {DefaultProps} props - Component props.\n */\nexport function Default({ children }: DefaultProps): React.ReactNode {\n  return <>{children}</>\n}\n\n/**\n * Props for the `<Switch>` container component.\n */\nexport interface SwitchProps {\n  /** Child elements containing `<Case>` and optional `<Default>` branches. */\n  children: React.ReactNode\n}\n\n/**\n * Declarative pattern-matching switch-case container component.\n *\n * @param {SwitchProps} props - Component props.\n * @returns {React.ReactNode} The first matching branch or default fallback.\n *\n * @example\n * <Switch>\n *   <Case condition={status === 'loading'}><Spinner /></Case>\n *   <Case condition={status === 'error'}><ErrorMessage /></Case>\n *   <Case condition={status === 'success'}><Dashboard /></Case>\n *   <Default><Placeholder /></Default>\n * </Switch>\n */\nexport function Switch({ children }: SwitchProps): React.ReactNode {\n  let defaultChild: React.ReactNode = null\n  const childArray = React.Children.toArray(children)\n\n  for (const child of childArray) {\n    if (!React.isValidElement(child)) continue\n\n    if (child.type === Default) {\n      defaultChild = child\n      continue\n    }\n\n    if (child.type === Case) {\n      const condition = (child.props as CaseProps).condition\n      const isMatch = typeof condition === 'function' ? condition() : condition\n      if (isMatch) {\n        return child\n      }\n    }\n  }\n\n  return defaultChild\n}\n",
+      "type": "registry:hook",
+      "target": "components/ui/switch.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "components",
+    "switch"
+  ],
+  "type": "registry:hook"
+}

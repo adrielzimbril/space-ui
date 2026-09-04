@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-components-in-view-1",
+  "type": "registry:hook",
+  "title": "InView",
+  "description": "Viewport trigger component wrapper",
+  "registryDependencies": [
+    "@usespaceui/hooks-components-in-view"
+  ],
+  "categories": [
+    "hooks",
+    "components",
+    "in-view"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/components/in-view/h-in-view-1/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-in-view-1.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

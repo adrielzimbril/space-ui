@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-filters-12",
+  "type": "registry:component",
+  "title": "Filters with async server-side search",
+  "description": "Filters with async server-side search",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-filters"
+  ],
+  "categories": [
+    "component",
+    "filters"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/filters/c-filters-12/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-filters-12.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

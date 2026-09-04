@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-hooks-dom-event-listener-1",
+  "title": "useEventListener",
+  "description": "Declarative window/element event binding",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-dom-use-event-listener",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-kbd"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/dom/event-listener/h-event-listener-1/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { useEventListener } from '@/hooks/use-event-listener'\nimport { Card, CardPanel } from '@/components/ui/card'\nimport { Badge } from '@/components/ui/badge'\nimport { IconKeyboard } from '@tabler/icons-react'\n\nexport default function Demo() {\n  const [lastKey, setLastKey] = React.useState('None')\n  useEventListener('keydown', (e: KeyboardEvent) => setLastKey(e.key))\n\n  return (\n    <Card className=\"w-full max-w-md bg-muted rounded-2xl overflow-hidden\">\n      <div className=\"flex items-center justify-between gap-3 px-3 pt-1 pb-1\">\n        <div className=\"flex items-center gap-2 text-sm font-semibold text-foreground\">\n          <Badge variant=\"secondary\" className=\"rounded-sm aspect-square h-full! bg-transparent\">\n            <IconKeyboard className=\"size-4 text-muted-foreground\" />\n          </Badge>\n          <span>Listener</span>\n        </div>\n        <Badge variant=\"outline\" size=\"sm\">\n          Live\n        </Badge>\n      </div>\n      <CardPanel className=\"rounded-[0.875rem] bg-background p-3\">\n        <div className=\"rounded-lg bg-muted p-2.5\">\n          <span className=\"block text-[.6875rem] font-semibold text-muted-foreground\">Last key</span>\n          <span className=\"mt-0.5 block font-mono text-xl font-semibold tabular-nums text-foreground\">{lastKey}</span>\n        </div>\n      </CardPanel>\n    </Card>\n  )\n}\n",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-event-listener-1.tsx"
+    }
+  ],
+  "categories": [
+    "hooks",
+    "dom",
+    "event-listener"
+  ],
+  "type": "registry:hook"
+}

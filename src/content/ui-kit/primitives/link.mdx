@@ -1,0 +1,78 @@
+---
+title: Link
+description: Allows users to navigate to other pages or external websites with clear hover underlines and accessible link styling.
+preview: demo-primitives-p-link-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-link" />
+
+## Usage
+
+```tsx
+import { Link } from '@/components/ui/link'
+```
+
+```tsx
+<Link href="/about">About us</Link>
+```
+
+## Features
+
+### Text Link Variants
+
+<ComponentPreview name="demo-primitives-p-link-1" />
+
+### Button-style Links
+
+Use `asButton` to render a link styled with our `Button` primitive variants (`default`, `secondary`, `outline`, `ghost`, `destructive`, `destructive-outline`) and sizes.
+
+<ComponentPreview name="demo-primitives-p-link-3" />
+
+### External Links
+
+Pass standard HTML anchor attributes such as `target="_blank"` and `rel="noopener noreferrer"`.
+
+<ComponentPreview name="demo-primitives-p-link-5" />
+
+### Next.js Client Routing
+
+Pass `NextLink` to the `render` prop to take advantage of Next.js SPA navigation and prefetching.
+
+<ComponentPreview name="demo-primitives-p-link-7" />
+
+## Polymorphic Routing (`render`)
+
+Because the `Link` primitive is built on **Base UI**, it renders as a native HTML `<a>` tag by default. This makes it 100% universal across all React setups (Vite, Next.js, Remix, Astro, TanStack Start).
+
+When building a Next.js application, you can pass Next.js `NextLink` to the `render` prop to enable client-side navigation, automatic prefetching, and router cache:
+
+```tsx
+import NextLink from 'next/link'
+import { Link } from '@/components/ui/link'
+
+export function NavLink() {
+  return <Link render={<NextLink href="/dashboard" />}>Dashboard</Link>
+}
+```
+
+## API Reference
+
+### Link Props
+
+| Prop        | Type                                                                                         | Default     | Description                                              |
+| :---------- | :------------------------------------------------------------------------------------------- | :---------- | :------------------------------------------------------- |
+| `variant`   | `"default" \| "secondary" \| "ghost" \| "outline" \| "destructive" \| "destructive-outline"` | `"default"` | Controls the visual text styling or button styling       |
+| `size`      | `"default" \| "xs" \| "sm" \| "lg" \| "icon" \| "icon-xs" \| "icon-sm" \| "icon-lg"`         | `"default"` | Controls button size when `asButton` is true             |
+| `underline` | `boolean`                                                                                    | `false`     | When true, adds hover underline effect with offset       |
+| `asButton`  | `boolean`                                                                                    | `false`     | When true, applies button variant and dimensions styling |
+| `render`    | `React.ReactElement`                                                                         | -           | Polymorphic render prop (e.g. Next.js Link)              |
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-link-3" description="Button-like link variants" />
+  <ShowcaseCard name="demo-primitives-p-link-5" description="External links with icon" />
+  <ShowcaseCard name="demo-primitives-p-link-7" description="Link with NextLink render prop" />
+</ShowcaseGrid>

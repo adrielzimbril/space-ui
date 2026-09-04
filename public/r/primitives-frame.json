@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-frame",
+  "title": "Frame",
+  "description": "Accessible Frame primitive component for Space UI.",
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/frame/index.tsx",
+      "content": "import type * as React from 'react'\nimport { cn } from '@/lib/utils'\n\nexport function Frame({ className, ...props }: React.ComponentProps<'div'>): React.ReactElement {\n  return (\n    <div\n      className={cn(\n        'relative flex flex-col rounded-2xl bg-muted p-1',\n        '*:[[data-slot=frame-panel]+[data-slot=frame-panel]]:mt-1',\n        className,\n      )}\n      data-slot=\"frame\"\n      {...props}\n    />\n  )\n}\n\nexport function FramePanel({ className, ...props }: React.ComponentProps<'div'>): React.ReactElement {\n  return (\n    <div\n      className={cn(\n        'relative rounded-xl bg-background bg-clip-padding p-5 before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-xl)-1px)] ',\n        className,\n      )}\n      data-slot=\"frame-panel\"\n      {...props}\n    />\n  )\n}\n\nexport function FrameHeader({ className, ...props }: React.ComponentProps<'header'>): React.ReactElement {\n  return <header className={cn('flex flex-col p-2', className)} data-slot=\"frame-panel-header\" {...props} />\n}\n\nexport function FrameTitle({ className, ...props }: React.ComponentProps<'div'>): React.ReactElement {\n  return <div className={cn('font-semibold text-sm', className)} data-slot=\"frame-panel-title\" {...props} />\n}\n\nexport function FrameDescription({ className, ...props }: React.ComponentProps<'div'>): React.ReactElement {\n  return (\n    <div className={cn('text-muted-foreground text-sm', className)} data-slot=\"frame-panel-description\" {...props} />\n  )\n}\n\nexport function FrameFooter({ className, ...props }: React.ComponentProps<'footer'>): React.ReactElement {\n  return <footer className={cn('p-2', className)} data-slot=\"frame-panel-footer\" {...props} />\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/frame.tsx"
+    }
+  ],
+  "categories": [
+    "frame"
+  ],
+  "type": "registry:ui"
+}

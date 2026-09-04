@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-drawer-8",
+  "type": "registry:ui",
+  "title": "Drawer 8",
+  "description": "Nested right drawers with inset variant",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-drawer",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-input"
+  ],
+  "categories": [
+    "drawer"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/drawer/p-drawer-8/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-drawer-8.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

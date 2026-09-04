@@ -1,0 +1,52 @@
+---
+title: Kbd
+description: Displays keyboard shortcut keys in styled badges, showing users which keys to press to perform actions faster.
+preview: demo-primitives-p-kbd-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-kbd" />
+
+## Usage
+
+```tsx
+import { Kbd, KbdGroup } from '@/components/ui/kbd'
+```
+
+Single key:
+
+```tsx
+<Kbd>K</Kbd>
+```
+
+Multiple keys (key combination):
+
+```tsx
+<KbdGroup>
+  <Kbd>⌘</Kbd>
+  <Kbd>K</Kbd>
+</KbdGroup>
+```
+
+## API Reference
+
+### Kbd
+
+Displays a single keyboard key.
+
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` |         |
+
+### KbdGroup
+
+Groups multiple keyboard keys for key combinations.
+
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` |         |
+
+### Input Group
+
+<ComponentPreview name="demo-primitives-p-input-group-11" className="[&_.preview>*]:w-full [&_.preview>*]:max-w-64" />

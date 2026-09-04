@@ -1,0 +1,45 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-alert",
+  "type": "registry:ui",
+  "title": "Alert",
+  "description": "Accessible Alert primitive component for Space UI.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "cssVars": {
+    "dark": {
+      "destructive-foreground": "var(--color-red-400)",
+      "info": "var(--color-blue-100)",
+      "info-foreground": "var(--color-blue-800)",
+      "success": "var(--color-emerald-100)",
+      "success-foreground": "var(--color-emerald-800)",
+      "warning": "var(--color-amber-100)",
+      "warning-foreground": "var(--color-amber-800)"
+    },
+    "light": {
+      "destructive-foreground": "var(--color-red-500)",
+      "info": "var(--color-blue-100)",
+      "info-foreground": "var(--color-blue-900)",
+      "success": "var(--color-emerald-100)",
+      "success-foreground": "var(--color-emerald-900)",
+      "warning": "var(--color-amber-100)",
+      "warning-foreground": "var(--color-amber-900)"
+    }
+  },
+  "categories": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/alert/index.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/alert.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

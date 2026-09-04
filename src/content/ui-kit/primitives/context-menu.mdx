@@ -1,0 +1,215 @@
+---
+title: Context Menu
+description: Opens a custom action menu right at the cursor position when users right-click or long-press an element on the screen.
+
+links:
+  doc: https://base-ui.com/react/components/context-menu#api-reference
+preview: demo-primitives-p-context-menu-1
+---
+
+## Installation
+
+<ComponentInstallation name="primitives-context-menu" />
+
+## Usage
+
+```tsx
+import {
+  ContextMenu,
+  ContextMenuCheckboxItem,
+  ContextMenuGroup,
+  ContextMenuGroupLabel,
+  ContextMenuItem,
+  ContextMenuLinkItem,
+  ContextMenuPopup,
+  ContextMenuRadioGroup,
+  ContextMenuRadioItem,
+  ContextMenuSeparator,
+  ContextMenuSub,
+  ContextMenuSubPopup,
+  ContextMenuSubTrigger,
+  ContextMenuTrigger,
+} from '@/components/ui/context-menu'
+```
+
+```tsx
+<ContextMenu>
+  <ContextMenuTrigger className="flex h-32 items-center justify-center rounded-lg border border-dashed">
+    Right click here
+  </ContextMenuTrigger>
+  <ContextMenuPopup>
+    <ContextMenuItem>Back</ContextMenuItem>
+    <ContextMenuItem>Forward</ContextMenuItem>
+    <ContextMenuSeparator />
+    <ContextMenuLinkItem render={<Link href="/docs" />}>Documentation</ContextMenuLinkItem>
+    <ContextMenuSeparator />
+    <ContextMenuSub>
+      <ContextMenuSubTrigger>More tools</ContextMenuSubTrigger>
+      <ContextMenuSubPopup>
+        <ContextMenuItem>Inspect</ContextMenuItem>
+        <ContextMenuItem>View source</ContextMenuItem>
+      </ContextMenuSubPopup>
+    </ContextMenuSub>
+  </ContextMenuPopup>
+</ContextMenu>
+```
+
+## Anatomy
+
+```tsx
+<ContextMenu>
+  <ContextMenuTrigger />
+  <ContextMenuPopup>
+    <ContextMenuItem />
+    <ContextMenuSeparator />
+    <ContextMenuSub>
+      <ContextMenuSubTrigger />
+      <ContextMenuSubPopup />
+    </ContextMenuSub>
+  </ContextMenuPopup>
+</ContextMenu>
+```
+
+## Accessibility
+
+- Follows the [WAI-ARIA Menu Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/menu/).
+- Activated on right-click or long-press, with full keyboard traversal.
+
+### Keyboard Interactions
+
+| Key                                          | Action                                  |
+| :------------------------------------------- | :-------------------------------------- |
+| <Kbd>ArrowDown</Kbd> / <Kbd>ArrowUp</Kbd>    | Navigates through context menu options. |
+| <Kbd>ArrowRight</Kbd> / <Kbd>ArrowLeft</Kbd> | Opens and closes submenus.              |
+| <Kbd>Escape</Kbd>                            | Dismisses the context menu.             |
+
+## API Reference
+
+### ContextMenu
+
+Root component. Alias for `ContextMenu.Root` from Base UI.
+
+### ContextMenuTrigger
+
+An area that opens the menu on right click or long press. Renders a `<div>` element.
+
+### ContextMenuPopup
+
+Popup container that displays the menu content at the pointer.
+
+| Prop          | Type                                          | Default    | Description                                                                                                    |
+| ------------- | --------------------------------------------- | ---------- | -------------------------------------------------------------------------------------------------------------- |
+| `side`        | `"top" \| "bottom" \| "left" \| "right"`      | `"bottom"` | Side of the anchor to position the popup                                                                       |
+| `align`       | `"start" \| "center" \| "end"`                | `"center"` | Alignment relative to the anchor                                                                               |
+| `sideOffset`  | `number`                                      | `4`        | Distance from the anchor in pixels                                                                             |
+| `alignOffset` | `number`                                      | -          | Offset along the alignment axis                                                                                |
+| `anchor`      | `Element \| null \| React.RefObject<Element>` | -          | Custom anchor element or ref to anchor the popup against                                                       |
+| `portalProps` | `ContextMenu.Portal.Props`                    | -          | Props forwarded to the internal portal (`keepMounted`, `container`, etc.); see Base UI Context Menu portal API |
+
+### ContextMenuGroup
+
+Groups related menu items. Alias for `ContextMenu.Group` from Base UI.
+
+### ContextMenuItem
+
+Individual menu item.
+
+| Prop      | Type                         | Default     | Description                                           |
+| --------- | ---------------------------- | ----------- | ----------------------------------------------------- |
+| `inset`   | `boolean`                    | -           | Adds left padding to align with items that have icons |
+| `variant` | `"default" \| "destructive"` | `"default"` | Controls the item styling                             |
+
+**Using `inset`:** When mixing items with and without icons, use `inset` on icon-less items to maintain alignment:
+
+```tsx
+<ContextMenuItem><PencilIcon /> Edit</ContextMenuItem>
+<ContextMenuItem inset>Properties</ContextMenuItem>
+```
+
+### ContextMenuLinkItem
+
+Link menu item for navigation. **`LinkItem`** renders a native **`<a>`** when you pass **`href`**. Styled like **`ContextMenuItem`**.
+
+| Prop           | Type                         | Default     | Description                                           |
+| -------------- | ---------------------------- | ----------- | ----------------------------------------------------- |
+| `inset`        | `boolean`                    | -           | Adds left padding to align with items that have icons |
+| `variant`      | `"default" \| "destructive"` | `"default"` | Controls the item styling                             |
+| `closeOnClick` | `boolean`                    | `true`      | Whether the menu closes when the link is clicked      |
+
+If you were using **`ContextMenuItem render={<Link href="..." />}`**, migrate to **`ContextMenuLinkItem`** but **keep `render`** — do not replace it with **`href`** alone when using a router **`Link`**.
+
+```tsx
+<ContextMenuLinkItem render={<Link href="/docs" />}>Docs</ContextMenuLinkItem>
+```
+
+Use **`href`** only for plain anchor links:
+
+```tsx
+<ContextMenuLinkItem href="/docs">Docs</ContextMenuLinkItem>
+```
+
+### ContextMenuCheckboxItem
+
+Checkbox menu item.
+
+| Prop      | Type                    | Default     | Description                                              |
+| --------- | ----------------------- | ----------- | -------------------------------------------------------- |
+| `variant` | `"default" \| "switch"` | `"default"` | Display style - `switch` shows a toggle switch indicator |
+
+### ContextMenuRadioGroup
+
+Groups radio menu items. Alias for `ContextMenu.RadioGroup` from Base UI.
+
+### ContextMenuRadioItem
+
+Radio menu item. Styled wrapper for `ContextMenu.RadioItem` from Base UI.
+
+### ContextMenuGroupLabel
+
+Label for a menu group.
+
+| Prop    | Type      | Default | Description                                           |
+| ------- | --------- | ------- | ----------------------------------------------------- |
+| `inset` | `boolean` | -       | Adds left padding to align with items that have icons |
+
+### ContextMenuSeparator
+
+Visual separator between menu items.
+
+### ContextMenuShortcut
+
+Displays keyboard shortcut text. Custom component (not a Base UI wrapper).
+
+### ContextMenuSub
+
+Submenu container. Alias for `ContextMenu.SubmenuRoot` from Base UI.
+
+### ContextMenuSubTrigger
+
+Trigger for opening a submenu.
+
+| Prop    | Type      | Default | Description                                           |
+| ------- | --------- | ------- | ----------------------------------------------------- |
+| `inset` | `boolean` | -       | Adds left padding to align with items that have icons |
+
+### ContextMenuSubPopup
+
+Popup for submenu content.
+
+| Prop          | Type                           | Default   | Description                                                                      |
+| ------------- | ------------------------------ | --------- | -------------------------------------------------------------------------------- |
+| `align`       | `"start" \| "center" \| "end"` | `"start"` | Alignment relative to the trigger                                                |
+| `sideOffset`  | `number`                       | `0`       | Distance from the trigger in pixels                                              |
+| `alignOffset` | `number`                       | `-5`      | Offset along the alignment axis. Defaults to `-5` when `align` is not `"center"` |
+
+## Examples
+
+<ShowcaseGrid showLayoutToggle={false} columns={1}>
+  <ShowcaseCard name="demo-primitives-p-context-menu-2" description="Context menu with link items" />
+  <ShowcaseCard name="demo-primitives-p-context-menu-3" description="Nested context menu" />
+  <ShowcaseCard name="demo-primitives-p-context-menu-4" description="Context menu with checkbox items" />
+  <ShowcaseCard name="demo-primitives-p-context-menu-5" description="Context menu with group labels" />
+  <ShowcaseCard name="demo-primitives-p-context-menu-6" description="Context menu with icons" />
+  <ShowcaseCard name="demo-primitives-p-context-menu-7" description="Context menu with radio group" />
+  <ShowcaseCard name="demo-primitives-p-context-menu-8" description="Context menu with switch checkbox items" />
+</ShowcaseGrid>

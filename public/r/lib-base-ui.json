@@ -1,0 +1,39 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lib-base-ui",
+  "title": "Base UI Utilities",
+  "description": "Base UI core utilities and providers.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "files": [
+    {
+      "path": "src/registry/lib/base-ui/csp-provider/index.ts",
+      "content": "export { CSPProvider } from '@base-ui/react/csp-provider'\n",
+      "type": "registry:lib",
+      "target": "lib/base-ui/csp-provider.ts"
+    },
+    {
+      "path": "src/registry/lib/base-ui/direction-provider/index.ts",
+      "content": "export { DirectionProvider, useDirection } from '@base-ui/react/direction-provider'\n",
+      "type": "registry:lib",
+      "target": "lib/base-ui/direction-provider.ts"
+    },
+    {
+      "path": "src/registry/lib/base-ui/merge-props/index.ts",
+      "content": "export { mergeProps } from '@base-ui/react/merge-props'\n",
+      "type": "registry:lib",
+      "target": "lib/base-ui/merge-props.ts"
+    },
+    {
+      "path": "src/registry/lib/base-ui/use-render/index.ts",
+      "content": "export { useRender } from '@base-ui/react/use-render'\n",
+      "type": "registry:lib",
+      "target": "lib/base-ui/use-render.ts"
+    }
+  ],
+  "categories": [
+    "base-ui"
+  ],
+  "type": "registry:lib"
+}

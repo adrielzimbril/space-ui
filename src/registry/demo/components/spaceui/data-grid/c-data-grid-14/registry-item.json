@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-data-grid-14",
+  "type": "registry:component",
+  "title": "Data grid with draggable rows",
+  "description": "Data grid with draggable rows",
+  "dependencies": [
+    "@dnd-kit/core",
+    "@dnd-kit/sortable",
+    "@tanstack/react-table"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-data-grid",
+    "@usespaceui/components-spaceui-data-grid-pagination",
+    "@usespaceui/components-spaceui-data-grid-scroll-area",
+    "@usespaceui/components-spaceui-data-grid-table-dnd-rows",
+    "@usespaceui/primitives-avatar"
+  ],
+  "categories": [
+    "component",
+    "data-grid"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/data-grid/c-data-grid-14/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-data-grid-14.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

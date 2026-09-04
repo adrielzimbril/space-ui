@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-primitives-p-context-menu-2",
+  "title": "Context Menu 2",
+  "description": "Context menu with link items",
+  "registryDependencies": [
+    "@usespaceui/primitives-context-menu"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/context-menu/p-context-menu-2/index.tsx",
+      "content": "import Link from 'next/link'\nimport {\n  ContextMenu,\n  ContextMenuLinkItem,\n  ContextMenuPopup,\n  ContextMenuTrigger,\n} from '@/components/ui/context-menu'\n\nexport default function Particle() {\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className=\"flex h-32 w-full max-w-sm items-center justify-center rounded-lg border border-dashed text-muted-foreground text-sm\">\n        Right click here\n      </ContextMenuTrigger>\n      <ContextMenuPopup>\n        <ContextMenuLinkItem render={<Link href=\"/docs\" />}>Docs</ContextMenuLinkItem>\n        <ContextMenuLinkItem render={<Link href=\"/particles\" />}>Particles</ContextMenuLinkItem>\n      </ContextMenuPopup>\n    </ContextMenu>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-context-menu-2.tsx"
+    }
+  ],
+  "categories": [
+    "context menu",
+    "menu"
+  ],
+  "type": "registry:ui"
+}

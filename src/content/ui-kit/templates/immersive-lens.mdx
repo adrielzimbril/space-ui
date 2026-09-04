@@ -1,0 +1,48 @@
+---
+title: Immersive Lens Portfolio
+description: Full-page immersive photography template with Three.js WebGL distortion shaders, horizontal & vertical gallery views, and animated GSAP lightbox.
+author:
+  name: usespaceui
+  url: https://github.com/usespaceui
+preview:
+  name: template-immersive-lens
+  iframe: true
+---
+
+## Installation
+
+<ComponentInstallation name="template-immersive-lens" />
+
+## Architecture
+
+This template is structured into modular Next.js components, decoupled hooks, and data layers:
+
+```text
+├── app/                              # Next.js App Router
+│   ├── page.tsx                      # Server Component (Metadata & SEO)
+│   ├── layout.tsx                    # Fullscreen isolation layout
+│   └── loading.tsx                   # Preloader / Suspense fallback
+├── components/                       # Functional components
+│   ├── client-page.tsx               # Interactive client orchestrator
+│   ├── vertical-gallery.tsx          # Vertical scroll gallery with image cards
+│   ├── horizontal-gallery.tsx        # Horizontal swipe gallery
+│   ├── glass-dock.tsx                # Glassmorphic HUD bottom dock
+│   ├── lightbox-modal.tsx            # Fullscreen modal & FLIP transitions
+│   ├── custom-cursor.tsx             # Custom interactive cursor
+│   └── lens-webgl-layer.tsx          # Three.js WebGL distortion layer
+├── hooks/                            # Decoupled standalone hooks
+│   ├── use-custom-cursor.ts
+│   ├── use-horizontal-drag.ts
+│   └── use-lightbox.ts
+└── lib/
+    └── data.ts                       # Curated datasets, ease curves & constants
+```
+
+## Key Features
+
+- **Next.js App Router Architecture**: Clean separation between Server Component metadata/SSR and interactive Client Islands.
+- **Decoupled Hooks**: `useCustomCursor`, `useHorizontalDrag`, and `useLightbox` are standalone and reusable.
+- **Full-Screen Immersion**: Locked to split view with full viewport immersion shortcut (`F` / `Esc`).
+- **WebGL Shader Layer**: Fluid Three.js distortion on scroll velocity and hover interactions.
+- **Curated High-Resolution Imagery**: Preconfigured with curated photography assets and optimal aspect ratios.
+- **Glassmorphism HUD**: Translucent blurred floating dock with category switching, layout mode toggling, and progress counters.

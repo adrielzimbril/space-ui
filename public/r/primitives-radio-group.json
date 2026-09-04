@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "primitives-radio-group",
+  "title": "Radio Group",
+  "description": "Accessible Radio Group primitive component for Space UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/primitives/radio-group/index.tsx",
+      "content": "'use client'\n\nimport { Radio as RadioPrimitive } from '@base-ui/react/radio'\nimport { RadioGroup as RadioGroupPrimitive } from '@base-ui/react/radio-group'\nimport type React from 'react'\nimport { cn } from '@/lib/utils'\n\nexport function RadioGroup({ className, ...props }: RadioGroupPrimitive.Props): React.ReactElement {\n  return <RadioGroupPrimitive className={cn('flex flex-col gap-3', className)} data-slot=\"radio-group\" {...props} />\n}\n\nexport function Radio({ className, ...props }: RadioPrimitive.Root.Props): React.ReactElement {\n  return (\n    <RadioPrimitive.Root\n      className={cn(\n        'relative inline-flex size-4.5 shrink-0 items-center justify-center rounded-full border border-input bg-background not-dark:bg-clip-padding outline-none transition-colors before:pointer-events-none before:absolute before:inset-0 before:rounded-full not-data-disabled:not-data-checked:not-aria-invalid: focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background aria-invalid:border-destructive/36 focus-visible:aria-invalid:border-destructive/64 focus-visible:aria-invalid:ring-destructive/48 data-disabled:cursor-not-allowed data-disabled:opacity-64 sm:size-4 dark:not-data-checked:bg-input/32 dark:aria-invalid:ring-destructive/24 dark:not-data-disabled:not-data-checked:not-aria-invalid: [[data-disabled],[data-checked],[aria-invalid]]:shadow-none',\n        className,\n      )}\n      data-slot=\"radio\"\n      {...props}\n    >\n      <RadioPrimitive.Indicator\n        className=\"absolute -inset-px flex size-4.5 items-center justify-center rounded-full before:size-2 before:rounded-full before:bg-primary-foreground data-unchecked:hidden data-checked:bg-primary sm:size-4 sm:before:size-1.5\"\n        data-slot=\"radio-indicator\"\n      />\n    </RadioPrimitive.Root>\n  )\n}\n\nexport { RadioGroupPrimitive, RadioPrimitive, Radio as RadioGroupItem }\n",
+      "type": "registry:ui",
+      "target": "components/ui/radio-group.tsx"
+    }
+  ],
+  "categories": [
+    "radio-group",
+    "radio"
+  ],
+  "type": "registry:ui"
+}

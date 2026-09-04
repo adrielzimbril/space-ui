@@ -1,0 +1,31 @@
+---
+title: useScript
+description: Dynamic script loader with load status.
+preview: demo-hooks-browser-script-1
+---
+
+## Installation
+
+<ComponentInstallation name="hooks-browser-use-script" />
+
+## Usage
+
+```tsx
+import { useScript } from '@/hooks/use-script'
+
+const status = useScript('https://example.com/lib.js')
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter | Type     | Default    | Description |
+| :-------- | :------- | :--------- | :---------- |
+| `src`     | `string` | _required_ | Script URL. |
+
+### Return Value
+
+| Return Type                                 | Description     |
+| :------------------------------------------ | :-------------- |
+| `'idle' \| 'loading' \| 'ready' \| 'error'` | Loading status. |

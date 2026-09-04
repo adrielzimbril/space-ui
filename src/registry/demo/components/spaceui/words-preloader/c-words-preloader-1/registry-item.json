@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-components-spaceui-c-words-preloader-1",
+  "type": "registry:component",
+  "title": "Words Preloader Demo",
+  "description": "Replayable greeting preloader.",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-words-preloader",
+    "@usespaceui/primitives-button"
+  ],
+  "categories": ["component", "words-preloader"],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/words-preloader/c-words-preloader-1/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-words-preloader-1.tsx"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}
