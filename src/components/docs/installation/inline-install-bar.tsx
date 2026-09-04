@@ -19,11 +19,13 @@ const MANAGERS: { id: PackageManager; name: string }[] = [
 export interface InlineInstallBarProps extends React.HTMLAttributes<HTMLDivElement> {
   packageName?: string
   isShadcn?: boolean
+  commandOverride?: string | Partial<Record<PackageManager, string>>
 }
 
 export function InlineInstallBar({
   packageName,
   isShadcn: explicitIsShadcn,
+  commandOverride,
   className,
   ...props
 }: InlineInstallBarProps) {
@@ -42,7 +44,12 @@ export function InlineInstallBar({
 
   const commands = isShadcn ? getShadcnAddCommands(rawPkg) : getPackageInstallCommands(rawPkg)
 
-  const command = commands[manager] || commands.npm
+  const command =
+    (typeof commandOverride === 'string'
+      ? commandOverride
+      : commandOverride?.[manager]) ||
+    commands[manager] ||
+    commands.npm
 
   return (
     <div
