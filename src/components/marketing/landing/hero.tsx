@@ -1,141 +1,48 @@
-import { motion } from 'motion/react'
-import { SplittingText } from '@/registry/components/texts/splitting'
-import ReactIcon from '@/registry/icons/react-icon'
-import TSIcon from '@/registry/icons/ts-icon'
-import TailwindIcon from '@/registry/icons/tailwind-icon'
-import MotionIcon from '@/registry/icons/motion-icon'
-import ShadcnIcon from '@/registry/icons/shadcn-icon'
-import { Button } from '@/registry/primitives/button'
+'use client'
+
 import Link from 'next/link'
-import { MotionEffect } from '@/registry/components/spaceui/motion-effect'
-import { IconSparkles, IconArrowRight } from '@tabler/icons-react'
+import { IconArrowRight } from '@tabler/icons-react'
+import { Button } from '@/registry/primitives/button'
+import { Badge } from '@/registry/primitives/badge'
+import { OrbSmooth } from '@/registry/components/orb/smooth'
+import { Surface } from './surface'
 
-const ICONS = [ReactIcon, TSIcon, TailwindIcon, MotionIcon, ShadcnIcon]
-const TITLE = 'Animate your UI with smooth style'
-
-export const Hero = () => {
+export function Hero() {
   return (
-    <div className="relative overflow-hidden flex flex-col items-center px-5">
-      <div className="relative z-10 flex flex-col items-center justify-center pt-30">
-        <MotionEffect
-          slide={{
-            direction: 'down',
-          }}
-          fade
-          zoom
-          inView
-        >
-          <div className="mb-8 rounded-full bg-accent py-1 pl-1 pr-3 text-sm flex items-center gap-2">
-            <Link
-              href="/docs/primitives/effects/image-zoom"
-              className="flex items-center gap-2 text-neutral-600 dark:text-neutral-400"
-            >
-              <span className="h-6 px-2 bg-primary text-xs text-primary-foreground rounded-full flex gap-1 items-center justify-center">
-                New
-                <IconSparkles delay={500} className="size-3.5" animate />
-              </span>{' '}
-              <span>Image Zoom Effect</span>
-            </Link>
-          </div>
-        </MotionEffect>
-
-        <MotionEffect
-          slide={{
-            direction: 'down',
-          }}
-          fade
-          zoom
-          inView
-          delay={0.15}
-        >
-          <div className="relative z-10">
-            <h1 className="md:max-w-[800px] max-w-[320px]">
-              <SplittingText
-                text={TITLE}
-                aria-hidden="true"
-                className="block md:text-5xl text-4xl font-medium text-center text-neutral-200 dark:text-neutral-800"
-                disableAnimation
-              />
+    <section data-page-section className="px-4 pb-16 pt-10 sm:px-6 lg:px-8 lg:pb-24 lg:pt-16">
+      <h2 className="sr-only">Overview</h2>
+      <div className="mx-auto w-full max-w-6xl">
+        <Surface innerClassName="grid gap-10 px-5 py-10 sm:px-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(18rem,0.9fr)] lg:items-center lg:px-12 lg:py-14">
+          <div className="max-w-2xl">
+            <Badge variant="secondary" className="rounded-sm">
+              Space UI
+            </Badge>
+            <h1 className="mt-6 text-4xl font-semibold leading-[1.02] tracking-[-0.03em] text-balance sm:text-6xl">
+              Nested trays on quiet paper.
             </h1>
-            <div className="md:max-w-[800px] max-w-[320px] absolute inset-0 flex items-center justify-center">
-              <SplittingText
-                text={TITLE}
-                className="block md:text-5xl text-4xl font-medium text-center"
-                type="chars"
-                delay={400}
-                initial={{ y: 0, opacity: 0, x: 0, filter: 'blur(10px)' }}
-                animate={{ y: 0, opacity: 1, x: 0, filter: 'blur(0px)' }}
-                transition={{ duration: 0.4, ease: 'easeOut' }}
-              />
+            <p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground text-pretty sm:text-lg">
+              Primitives, components, hooks, and blocks for Next.js. Hierarchy comes from stacking surfaces, not from
+              drop shadows. One carbon fill does the work color usually does.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button size="lg" render={<Link href="/docs" />}>
+                Get started
+                <IconArrowRight />
+              </Button>
+              <Button size="lg" variant="outline" render={<Link href="/ui-kit/components" />}>
+                Browse the kit
+              </Button>
             </div>
           </div>
-        </MotionEffect>
-
-        <MotionEffect
-          slide={{
-            direction: 'down',
-          }}
-          fade
-          zoom
-          inView
-          delay={0.3}
-        >
-          <p className="block font-normal md:text-lg sm:text-base text-sm text-center mt-3 text-muted-foreground md:max-w-[660px] sm:max-w-[450px] text-balance">
-            A fully animated, open-source React component distribution. Browse a list of animated primitives, components
-            and icons you can install and use in your projects.
-          </p>
-        </MotionEffect>
-
-        <div className="flex sm:flex-row flex-col sm:gap-4 gap-3 mt-5 mb-8 max-sm:w-full">
-          <MotionEffect
-            slide={{
-              direction: 'down',
-            }}
-            fade
-            zoom
-            delay={0.45}
-          >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button size="lg" className="w-full !pr-5" variant="default" asChild>
-                <Link href="/docs/installation">
-                  Get Started <IconArrowRight className="!size-5" />
-                </Link>
-              </Button>
-            </motion.div>
-          </MotionEffect>
-
-          <MotionEffect
-            slide={{
-              direction: 'down',
-            }}
-            fade
-            zoom
-            delay={0.6}
-          >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button size="lg" className="w-full" variant="accent" asChild>
-                <Link href="/docs/components">Browse Components</Link>
-              </Button>
-            </motion.div>
-          </MotionEffect>
-        </div>
-
-        <div className="flex items-center gap-4 justify-center sm:justify-start">
-          {ICONS.map((Icon, index) => (
-            <MotionEffect
-              key={index}
-              slide={{
-                direction: 'down',
-              }}
-              fade
-              zoom
-              delay={0.75 + index * 0.1}
-            >
-              <Icon className="size-8" />
-            </MotionEffect>
-          ))}
-        </div>
+          <div className="flex items-center justify-center">
+            <div className="rounded-2xl bg-muted p-2">
+              <div className="grid place-items-center rounded-[0.875rem] bg-background p-6">
+                <OrbSmooth size={240} audioMode="ambient" grainAnimated watercolorStrength={0.5} />
+              </div>
+            </div>
+          </div>
+        </Surface>
       </div>
-    </div>
+    </section>
   )
 }
