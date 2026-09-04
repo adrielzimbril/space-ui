@@ -52,8 +52,8 @@ export function isCatalogIndex(slug: string[] | undefined) {
   if (isCatalogSection(slug[0]) && (slug.length === 1 || slug[1] === 'index')) return true
   return (
     slug[0] === 'components' &&
-    slug.length === 2 &&
-    NESTED_COMPONENT_CATALOGS.includes(slug[1] as (typeof NESTED_COMPONENT_CATALOGS)[number])
+    NESTED_COMPONENT_CATALOGS.includes(slug[1] as (typeof NESTED_COMPONENT_CATALOGS)[number]) &&
+    (slug.length === 2 || slug[2] === 'index')
   )
 }
 

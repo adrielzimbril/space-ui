@@ -1,4 +1,4 @@
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 import { getMDXComponents } from '@/mdx-components'
 import { createRelativeLink } from 'fumadocs-ui/mdx'
 
@@ -14,7 +14,7 @@ import { getDocMetadata } from '@/lib/docs-metadata'
 
 import { PageLayoutSync } from '@/components/docs/layout/page-layout-sync'
 import { ComponentPreview } from '@/components/docs/preview/preview'
-import { normalizePreviewConfig } from '@/config/preview-config'
+import { normalizePreviewConfig, Mode } from '@/config/preview-config'
 
 export function generateStaticParams() {
   return source.generateParams()
@@ -22,6 +22,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata(props: { params: Promise<{ slug?: string[] }> }) {
   const { slug = [] } = await props.params
+  if (!slug.length) return { title: 'UI Kit' }
   const page = source.getPage(slug)
   if (!page) notFound()
 
@@ -62,6 +63,9 @@ export async function generateMetadata(props: { params: Promise<{ slug?: string[
 
 export default async function Page(props: { params: Promise<{ slug?: string[] }> }) {
   const params = await props.params
+  if (!params.slug || params.slug.length === 0) {
+    redirect('/ui-kit/components')
+  }
   const page = source.getPage(params.slug)
 
   if (!page) {
@@ -95,10 +99,10 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
   return (
     <>
       <PageLayoutSync
-        mode={pageData.mode}
-        defaultMode={pageData.defaultMode}
+        mode={showCatalog ? Mode.standard : pageData.mode}
+        defaultMode={showCatalog ? Mode.standard : pageData.defaultMode}
         path={`ui-kit/${page.path}`}
-        preview={pageData.preview}
+        preview={showCatalog ? null : pageData.preview}
         title={pageData.title}
       />
       <div className="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full">

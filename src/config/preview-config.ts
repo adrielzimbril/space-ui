@@ -97,33 +97,69 @@ export function getEffectiveContained(
  * - Individual Block pages (/ui-kit/blocks/[slug]): defaultMode 'split', mode 'both' (not locked to dual)
  * - Catalog index pages (/ui-kit/blocks, /ui-kit/components/shader): standard
  */
+export function isDocsRoute(pathname?: string | null): boolean {
+  if (!pathname) return false
+  const normalized = pathname.startsWith('/') ? pathname : `/${pathname}`
+  const clean = normalized.split('?')[0].split('#')[0].replace(/\/+$/, '')
+  return clean === '/docs' || clean.startsWith('/docs/')
+}
+
+export function isCatalogRoute(pathname?: string | null): boolean {
+  if (!pathname) return false
+  const normalized = pathname.startsWith('/') ? pathname : `/${pathname}`
+  const clean = normalized.split('?')[0].split('#')[0].replace(/\/+$/, '')
+
+  if (clean === '/ui-kit') return true
+  if (clean.endsWith('/index')) return true
+
+  const catalogExactRoutes = [
+    '/ui-kit/primitives',
+    '/ui-kit/components',
+    '/ui-kit/blocks',
+    '/ui-kit/templates',
+    '/ui-kit/hooks',
+    '/ui-kit/components/shader',
+    '/ui-kit/components/orb',
+    '/ui-kit/components/backgrounds',
+  ]
+
+  return catalogExactRoutes.includes(clean)
+}
+
+/**
+ * Resolves the initial route-level layout constraint and default mode synchronously.
+ * Prevents flashing in standard mode for split-preferred routes like shaders and blocks.
+ *
+ * Rules:
+ * - Docs pages (/docs, /docs/*): strictly locked to standard mode (no dual mode)
+ * - Catalog index pages (/ui-kit, /ui-kit/blocks, /ui-kit/templates, /ui-kit/primitives, /ui-kit/components, /ui-kit/hooks, ...): strictly locked to standard mode (no dual mode)
+ * - Shaders detail pages (/ui-kit/components/shader/*): defaultMode 'split' (can be locked via frontmatter)
+ * - Individual Block pages (/ui-kit/blocks/[slug]): defaultMode 'split', mode 'split'
+ * - Individual Template pages (/ui-kit/templates/[slug]): defaultMode 'split', mode 'split'
+ */
 export function getRouteLayoutDefaults(pathname?: string | null): {
   mode: LayoutMode
   constraint: PageLayoutConstraint
 } | null {
   if (!pathname) return null
 
-  // Exclude catalog index pages
-  const isCatalog =
-    pathname === '/ui-kit/primitives' ||
-    pathname === '/ui-kit/primitives/' ||
-    pathname === '/ui-kit/components' ||
-    pathname === '/ui-kit/components/' ||
-    pathname === '/ui-kit/components/shader' ||
-    pathname === '/ui-kit/components/shader/' ||
-    pathname === '/ui-kit/blocks' ||
-    pathname === '/ui-kit/blocks/' ||
-    pathname === '/ui-kit/templates' ||
-    pathname === '/ui-kit/templates/'
-
-  if (isCatalog) {
+  // 1. All docs pages are strictly locked to standard mode (no dual mode)
+  if (isDocsRoute(pathname)) {
     return {
       mode: Mode.standard,
-      constraint: { mode: Mode.both, defaultMode: Mode.standard },
+      constraint: { mode: Mode.standard, defaultMode: Mode.standard },
     }
   }
 
-  // Shaders detail pages (/ui-kit/components/shader/...)
+  // 2. All catalog index pages (blocks, templates, primitives, components, hooks, etc.) are strictly locked to standard mode
+  if (isCatalogRoute(pathname)) {
+    return {
+      mode: Mode.standard,
+      constraint: { mode: Mode.standard, defaultMode: Mode.standard },
+    }
+  }
+
+  // 3. Shaders detail pages (/ui-kit/components/shader/...)
   if (pathname.includes('/components/shader')) {
     return {
       mode: Mode.split,
@@ -131,7 +167,7 @@ export function getRouteLayoutDefaults(pathname?: string | null): {
     }
   }
 
-  // Individual Blocks detail pages (/ui-kit/blocks/...)
+  // 4. Individual Blocks detail pages (/ui-kit/blocks/...)
   if (pathname.includes('/blocks/') || pathname.startsWith('/ui-kit/blocks/')) {
     return {
       mode: Mode.split,
@@ -139,7 +175,7 @@ export function getRouteLayoutDefaults(pathname?: string | null): {
     }
   }
 
-  // Individual Templates detail pages (/ui-kit/templates/...)
+  // 5. Individual Templates detail pages (/ui-kit/templates/...)
   if (pathname.includes('/templates/') || pathname.startsWith('/ui-kit/templates/')) {
     return {
       mode: Mode.split,
