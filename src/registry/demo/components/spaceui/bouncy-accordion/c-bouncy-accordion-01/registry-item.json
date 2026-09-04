@@ -20,5 +20,8 @@
     }
   ],
   "createdAt": "2026-09-04",
-  "updatedAt": "2026-09-04"
+  "updatedAt": "2026-09-04",
+  "dependencies": [
+    "@tabler/icons-react"
+  ]
 }

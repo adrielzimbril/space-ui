@@ -16,5 +16,9 @@
     "lifecycle",
     "event-callback"
   ],
-  "type": "registry:hook"
+  "type": "registry:hook",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/hooks-lifecycle-use-isomorphic-layout-effect.json"
+  ]
 }

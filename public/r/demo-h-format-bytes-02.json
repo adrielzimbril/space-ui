@@ -7,7 +7,9 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "https://www.spaceui.one/r/hooks-utils-format-bytes.json"
+    "https://www.spaceui.one/r/hooks-utils-format-bytes.json",
+    "https://www.spaceui.one/r/primitives-badge.json",
+    "https://www.spaceui.one/r/primitives-card.json"
   ],
   "files": [
     {

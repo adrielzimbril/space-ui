@@ -16,5 +16,9 @@
     "dom",
     "click-outside"
   ],
-  "type": "registry:hook"
+  "type": "registry:hook",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/hooks-dom-use-event-listener.json"
+  ]
 }

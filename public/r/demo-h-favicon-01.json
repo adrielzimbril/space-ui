@@ -22,5 +22,8 @@
     "browser",
     "favicon"
   ],
-  "type": "registry:hook"
+  "type": "registry:hook",
+  "dependencies": [
+    "@tabler/icons-react"
+  ]
 }

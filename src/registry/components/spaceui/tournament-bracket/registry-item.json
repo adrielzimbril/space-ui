@@ -5,6 +5,7 @@
   "title": "Tournament Bracket",
   "description": "Animated knockout bracket with round navigation and live match states.",
   "dependencies": [
+    "@tabler/icons-react",
     "motion"
   ],
   "registryDependencies": [

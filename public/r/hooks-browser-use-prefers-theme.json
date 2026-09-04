@@ -16,5 +16,9 @@
     "browser",
     "prefers-theme"
   ],
-  "type": "registry:hook"
+  "type": "registry:hook",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/hooks-browser-use-media-query.json"
+  ]
 }

@@ -18,5 +18,8 @@
     "component",
     "dirt-carousel"
   ],
-  "type": "registry:component"
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json"
+  ]
 }

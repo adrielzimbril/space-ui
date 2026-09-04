@@ -4,8 +4,14 @@
   "type": "registry:component",
   "title": "Bloop Orb",
   "description": "Compact audio-reactive bloop orb shader.",
-  "dependencies": ["vgpu"],
-  "categories": ["orb", "webgpu", "bloop"],
+  "dependencies": [
+    "vgpu"
+  ],
+  "categories": [
+    "orb",
+    "webgpu",
+    "bloop"
+  ],
   "files": [
     {
       "path": "src/registry/components/orb/bloop/index.tsx",
@@ -39,5 +45,10 @@
     }
   ],
   "createdAt": "2026-09-03",
-  "updatedAt": "2026-09-03"
+  "updatedAt": "2026-09-03",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-gpu-runtime.json",
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-toast.json"
+  ]
 }

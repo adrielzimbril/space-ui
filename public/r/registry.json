@@ -79,11 +79,12 @@
       "title": "Eleven Labs Landing",
       "description": "ElevenLabs-inspired landing page block with a live audio-reactive orb hero.",
       "dependencies": [
+        "@elevenlabs/elevenlabs-js",
         "@tabler/icons-react"
       ],
       "registryDependencies": [
-        "https://www.spaceui.one/r/lib-utils.json",
-        "https://www.spaceui.one/r/components-orb-smooth.json"
+        "https://www.spaceui.one/r/components-orb-smooth.json",
+        "https://www.spaceui.one/r/lib-utils.json"
       ],
       "categories": [
         "eleven-labs",
@@ -414,7 +415,12 @@
         }
       ],
       "createdAt": "2026-09-03",
-      "updatedAt": "2026-09-03"
+      "updatedAt": "2026-09-03",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-gpu-runtime.json",
+        "https://www.spaceui.one/r/lib-utils.json",
+        "https://www.spaceui.one/r/primitives-toast.json"
+      ]
     },
     {
       "name": "components-orb-smooth",
@@ -462,7 +468,12 @@
         }
       ],
       "createdAt": "2026-09-03",
-      "updatedAt": "2026-09-03"
+      "updatedAt": "2026-09-03",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-gpu-runtime.json",
+        "https://www.spaceui.one/r/lib-utils.json",
+        "https://www.spaceui.one/r/primitives-toast.json"
+      ]
     },
     {
       "name": "components-shader-cloud",
@@ -473,6 +484,7 @@
         "vgpu"
       ],
       "registryDependencies": [
+        "https://www.spaceui.one/r/lib-gpu-runtime.json",
         "https://www.spaceui.one/r/lib-utils.json"
       ],
       "categories": [
@@ -585,11 +597,12 @@
       "title": "Bouncy Accordion",
       "description": "Spring accordion that splits rounded rows when a panel opens.",
       "dependencies": [
-        "motion",
-        "@tabler/icons-react"
+        "@tabler/icons-react",
+        "motion"
       ],
       "registryDependencies": [
-        "https://www.spaceui.one/r/lib-utils.json"
+        "https://www.spaceui.one/r/lib-utils.json",
+        "https://www.spaceui.one/r/primitives-button.json"
       ],
       "categories": [
         "component",
@@ -987,7 +1000,10 @@
         }
       ],
       "createdAt": "2026-09-03",
-      "updatedAt": "2026-09-03"
+      "updatedAt": "2026-09-03",
+      "registryDependencies": [
+        "https://www.spaceui.one/r/lib-utils.json"
+      ]
     },
     {
       "name": "components-spaceui-event-calendar",
@@ -1885,6 +1901,7 @@
       "title": "Tournament Bracket",
       "description": "Animated knockout bracket with round navigation and live match states.",
       "dependencies": [
+        "@tabler/icons-react",
         "motion"
       ],
       "registryDependencies": [
@@ -2038,7 +2055,8 @@
       "title": "Bloop Orb Demo",
       "description": "Compact bloop orb shader.",
       "registryDependencies": [
-        "https://www.spaceui.one/r/components-orb-bloop.json"
+        "https://www.spaceui.one/r/components-orb-bloop.json",
+        "https://www.spaceui.one/r/components-orb-smooth.json"
       ],
       "categories": [
         "orb",
@@ -2134,7 +2152,8 @@
         }
       ],
       "createdAt": "2026-09-03",
-      "updatedAt": "2026-09-03"
+      "updatedAt": "2026-09-03",
+      "dependencies": []
     },
     {
       "name": "demo-c-orb-smooth-01",
@@ -2376,7 +2395,10 @@
         }
       ],
       "createdAt": "2026-09-04",
-      "updatedAt": "2026-09-04"
+      "updatedAt": "2026-09-04",
+      "dependencies": [
+        "@tabler/icons-react"
+      ]
     },
     {
       "name": "demo-c-liquid-metal-avatar-custom-01",
@@ -4694,7 +4716,8 @@
         "@tabler/icons-react"
       ],
       "registryDependencies": [
-        "https://www.spaceui.one/r/components-spaceui-icon-stack.json"
+        "https://www.spaceui.one/r/components-spaceui-icon-stack.json",
+        "https://www.spaceui.one/r/components-spaceui-item.json"
       ],
       "categories": [
         "component",
@@ -7132,6 +7155,7 @@
       ],
       "registryDependencies": [
         "https://www.spaceui.one/r/hooks-browser-use-clipboard.json",
+        "https://www.spaceui.one/r/primitives-badge.json",
         "https://www.spaceui.one/r/primitives-button.json",
         "https://www.spaceui.one/r/primitives-card.json"
       ],
@@ -7289,7 +7313,10 @@
         }
       ],
       "createdAt": "2026-08-24",
-      "updatedAt": "2026-08-24"
+      "updatedAt": "2026-08-24",
+      "dependencies": [
+        "@tabler/icons-react"
+      ]
     },
     {
       "name": "demo-h-fullscreen-01",
@@ -7844,7 +7871,9 @@
       "title": "InView",
       "description": "Viewport trigger component wrapper",
       "registryDependencies": [
-        "https://www.spaceui.one/r/hooks-components-in-view.json"
+        "https://www.spaceui.one/r/hooks-components-in-view.json",
+        "https://www.spaceui.one/r/primitives-badge.json",
+        "https://www.spaceui.one/r/primitives-card.json"
       ],
       "categories": [
         "hooks",
@@ -7859,7 +7888,10 @@
         }
       ],
       "createdAt": "2026-08-24",
-      "updatedAt": "2026-08-24"
+      "updatedAt": "2026-08-24",
+      "dependencies": [
+        "@tabler/icons-react"
+      ]
     },
     {
       "name": "demo-h-render-after-01",
@@ -9372,7 +9404,9 @@
         "@tabler/icons-react"
       ],
       "registryDependencies": [
-        "https://www.spaceui.one/r/hooks-utils-format-bytes.json"
+        "https://www.spaceui.one/r/hooks-utils-format-bytes.json",
+        "https://www.spaceui.one/r/primitives-badge.json",
+        "https://www.spaceui.one/r/primitives-card.json"
       ],
       "categories": [
         "hooks",
@@ -9568,7 +9602,9 @@
       "title": "rangeMap & mapRange (Interpolation)",
       "description": "Linear range interpolation",
       "registryDependencies": [
-        "https://www.spaceui.one/r/hooks-utils-range-map.json"
+        "https://www.spaceui.one/r/hooks-utils-range-map.json",
+        "https://www.spaceui.one/r/primitives-badge.json",
+        "https://www.spaceui.one/r/primitives-card.json"
       ],
       "categories": [
         "hooks",
@@ -9583,7 +9619,10 @@
         }
       ],
       "createdAt": "2026-08-24",
-      "updatedAt": "2026-08-24"
+      "updatedAt": "2026-08-24",
+      "dependencies": [
+        "@tabler/icons-react"
+      ]
     },
     {
       "name": "demo-h-sleep-01",
@@ -21774,7 +21813,11 @@
         }
       ],
       "createdAt": "2026-09-03",
-      "updatedAt": "2026-09-03"
+      "updatedAt": "2026-09-03",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-browser-use-media-query.json"
+      ]
     },
     {
       "name": "hooks-browser-use-script",
@@ -22060,7 +22103,11 @@
         }
       ],
       "createdAt": "2026-09-03",
-      "updatedAt": "2026-09-03"
+      "updatedAt": "2026-09-03",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-dom-use-event-listener.json"
+      ]
     },
     {
       "name": "hooks-dom-use-event-listener",
@@ -22103,7 +22150,11 @@
         }
       ],
       "createdAt": "2026-09-03",
-      "updatedAt": "2026-09-03"
+      "updatedAt": "2026-09-03",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-dom-use-event-listener.json"
+      ]
     },
     {
       "name": "hooks-dom-use-intersection-observer",
@@ -22143,7 +22194,11 @@
         }
       ],
       "createdAt": "2026-09-03",
-      "updatedAt": "2026-09-03"
+      "updatedAt": "2026-09-03",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-dom-use-event-listener.json"
+      ]
     },
     {
       "name": "hooks-dom-use-lock-body-scroll",
@@ -22183,7 +22238,11 @@
         }
       ],
       "createdAt": "2026-09-03",
-      "updatedAt": "2026-09-03"
+      "updatedAt": "2026-09-03",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-dom-use-event-listener.json"
+      ]
     },
     {
       "name": "hooks-dom-use-scroll-device",
@@ -22203,7 +22262,11 @@
         }
       ],
       "createdAt": "2026-09-03",
-      "updatedAt": "2026-09-03"
+      "updatedAt": "2026-09-03",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-dom-use-event-listener.json"
+      ]
     },
     {
       "name": "hooks-dom-use-scroll-position",
@@ -22211,6 +22274,7 @@
       "title": "useScrollPosition",
       "description": "useScrollPosition hook.",
       "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-dom-use-event-listener.json",
         "https://www.spaceui.one/r/hooks-lifecycle-use-isomorphic-layout-effect.json"
       ],
       "categories": [
@@ -22226,7 +22290,8 @@
         }
       ],
       "createdAt": "2026-09-03",
-      "updatedAt": "2026-09-03"
+      "updatedAt": "2026-09-03",
+      "dependencies": []
     },
     {
       "name": "hooks-dom-use-scroll-to",
@@ -22277,6 +22342,7 @@
       "title": "useWindowSize",
       "description": "useWindowSize hook.",
       "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-dom-use-event-listener.json",
         "https://www.spaceui.one/r/hooks-lifecycle-use-isomorphic-layout-effect.json"
       ],
       "categories": [
@@ -22292,7 +22358,8 @@
         }
       ],
       "createdAt": "2026-09-03",
-      "updatedAt": "2026-09-03"
+      "updatedAt": "2026-09-03",
+      "dependencies": []
     },
     {
       "name": "hooks-form-use-character-limit",
@@ -22562,7 +22629,11 @@
         }
       ],
       "createdAt": "2026-09-03",
-      "updatedAt": "2026-09-03"
+      "updatedAt": "2026-09-03",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://www.spaceui.one/r/hooks-lifecycle-use-isomorphic-layout-effect.json"
+      ]
     },
     {
       "name": "hooks-lifecycle-use-first-render",

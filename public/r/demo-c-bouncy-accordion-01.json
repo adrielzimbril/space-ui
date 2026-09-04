@@ -19,5 +19,8 @@
     "component",
     "bouncy-accordion"
   ],
-  "type": "registry:component"
+  "type": "registry:component",
+  "dependencies": [
+    "@tabler/icons-react"
+  ]
 }

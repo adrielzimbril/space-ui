@@ -49,5 +49,10 @@
     "webgpu",
     "smooth"
   ],
-  "type": "registry:component"
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-gpu-runtime.json",
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/primitives-toast.json"
+  ]
 }
