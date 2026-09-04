@@ -1,6 +1,3 @@
-import fs from 'node:fs/promises'
-import path from 'node:path'
-
 export type DocDependency = {
   name: string
   label: string
@@ -151,29 +148,9 @@ function formatBytes(bytes: number): string {
   return `${val} ${sizes[i]}`
 }
 
-let cachedMetaMap: Record<string, any> | null = null
+import metaMapData from '@/__registry__/meta.json'
 
-async function getMetaMap(): Promise<Record<string, any>> {
-  if (cachedMetaMap) return cachedMetaMap
-  const possiblePaths = [
-    path.join(process.cwd(), 'src', '__registry__', 'meta.json'),
-    path.join(process.cwd(), 'apps', 'www', 'src', '__registry__', 'meta.json'),
-    path.join(process.cwd(), 'public', 'r', 'registry-meta.json'),
-    path.join(process.cwd(), 'apps', 'www', 'public', 'r', 'registry-meta.json'),
-  ]
-  for (const metaPath of possiblePaths) {
-    try {
-      const content = await fs.readFile(metaPath, 'utf8')
-      cachedMetaMap = JSON.parse(content)
-      if (cachedMetaMap && Object.keys(cachedMetaMap).length > 0) {
-        return cachedMetaMap
-      }
-    } catch {
-      // try next path
-    }
-  }
-  return {}
-}
+const metaMap = metaMapData as unknown as Record<string, any>
 
 export async function getDocMetadata(slug: string[] = []): Promise<DocMetadata> {
   if (!slug || slug.length === 0) {
@@ -186,8 +163,6 @@ export async function getDocMetadata(slug: string[] = []): Promise<DocMetadata> 
 
   const lastPart = slug[slug.length - 1]
   const joinedSlug = slug.join('-')
-
-  const metaMap = await getMetaMap()
 
   let entry =
     metaMap[lastPart] ||
@@ -212,92 +187,6 @@ export async function getDocMetadata(slug: string[] = []): Promise<DocMetadata> 
         m.category?.toLowerCase() === lastPart.toLowerCase() ||
         m.categories?.some((c: string) => c.toLowerCase() === lastPart.toLowerCase()),
     )
-
-  // Dynamic fallback for blocks or components missing size / updatedAt
-  if (!entry || !entry.size || !entry.updatedAt) {
-    const possibleBlockDirs = [
-      path.join(process.cwd(), 'src', 'registry', 'demo', 'blocks', lastPart),
-      path.join(process.cwd(), 'apps', 'www', 'src', 'registry', 'demo', 'blocks', lastPart),
-      path.join(process.cwd(), 'src', 'registry', 'blocks', lastPart),
-      path.join(process.cwd(), 'apps', 'www', 'src', 'registry', 'blocks', lastPart),
-    ]
-
-    for (const dir of possibleBlockDirs) {
-      try {
-        const stat = await fs.stat(dir)
-        if (stat.isDirectory()) {
-          const subdirs = await fs.readdir(dir, { withFileTypes: true })
-          let totalBytes = 0
-          let fileCount = 0
-          let latestDate = stat.mtime
-          let blockMeta: any = null
-
-          for (const sub of subdirs) {
-            const subPath = path.join(dir, sub.name)
-            if (sub.isDirectory()) {
-              const regJsonPath = path.join(subPath, 'registry-item.json')
-              try {
-                const regData = JSON.parse(await fs.readFile(regJsonPath, 'utf8'))
-                if (!blockMeta) blockMeta = regData
-                if (Array.isArray(regData.files)) {
-                  for (const f of regData.files) {
-                    const filePath = typeof f === 'string' ? f : f.path
-                    const absF = path.isAbsolute(filePath) ? filePath : path.join(process.cwd(), filePath)
-                    try {
-                      const fStat = await fs.stat(absF)
-                      totalBytes += fStat.size
-                      fileCount++
-                      if (fStat.mtime > latestDate) latestDate = fStat.mtime
-                    } catch {}
-                  }
-                }
-              } catch {}
-            }
-          }
-
-          if (totalBytes > 0 || blockMeta) {
-            entry = {
-              ...entry,
-              title: entry?.title || blockMeta?.title,
-              description: entry?.description || blockMeta?.description,
-              createdAt: entry?.createdAt || blockMeta?.createdAt,
-              updatedAt: entry?.updatedAt || blockMeta?.updatedAt || latestDate.toISOString(),
-              size: entry?.size || formatBytes(totalBytes),
-              rawSize: entry?.rawSize || totalBytes,
-              directSize: entry?.directSize || formatBytes(totalBytes),
-              fileCount: entry?.fileCount || fileCount,
-              dependencies: entry?.dependencies || blockMeta?.dependencies || [],
-              registryDependencies: entry?.registryDependencies || blockMeta?.registryDependencies || [],
-            }
-            break
-          }
-        }
-      } catch {}
-    }
-
-    // Fallback to MDX file stats if still missing updatedAt
-    if (!entry?.updatedAt) {
-      const possibleMdxFiles = [
-        path.join(process.cwd(), 'src', 'content', 'ui-kit', 'blocks', `${lastPart}.mdx`),
-        path.join(process.cwd(), 'apps', 'www', 'src', 'content', 'ui-kit', 'blocks', `${lastPart}.mdx`),
-        path.join(process.cwd(), 'src', 'content', `${slug.join('/')}.mdx`),
-        path.join(process.cwd(), 'src', 'content', 'ui-kit', `${slug.join('/')}.mdx`),
-        path.join(process.cwd(), 'apps', 'www', 'src', 'content', 'ui-kit', `${slug.join('/')}.mdx`),
-      ]
-      for (const mdxPath of possibleMdxFiles) {
-        try {
-          const mdxStat = await fs.stat(mdxPath)
-          entry = {
-            ...entry,
-            updatedAt: mdxStat.mtime.toISOString(),
-            createdAt: entry?.createdAt || mdxStat.birthtime.toISOString(),
-            size: entry?.size || formatBytes(mdxStat.size),
-          }
-          break
-        } catch {}
-      }
-    }
-  }
 
   const rawDeps = Array.isArray(entry?.dependencies) ? entry.dependencies : []
   const rawRegDeps = Array.isArray(entry?.registryDependencies) ? entry.registryDependencies : []
