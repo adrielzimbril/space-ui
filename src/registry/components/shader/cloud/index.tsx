@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import { cn } from '@/registry/lib/utils'
+import { attachGpuGate } from '@/registry/lib/gpu-runtime'
 import { CLOUDS_WGSL } from './clouds.wgsl'
 
 export type CloudProps = {
@@ -50,6 +51,7 @@ export function Cloud({
     let cancelled = false
     let stopLoop: (() => void) | undefined
     let disposeGpu: (() => void) | undefined
+    let disposeGate: (() => void) | undefined
 
     async function mount() {
       const { init, effect, surface, clock, frameLoop } = await import('vgpu')
@@ -60,8 +62,10 @@ export function Cloud({
         return
       }
 
-      const scale = isMobile() ? 12 : 3
-      const dpr = Math.max(window.devicePixelRatio / scale, 0.35)
+      const gate = attachGpuGate(canvas)
+      disposeGate = gate.dispose
+      const scale = gate.state.lowPower ? 16 : 3
+      const dpr = Math.max(window.devicePixelRatio / scale, 0.25)
       const canvasSurface = surface(gpu, canvasRef.current, {
         dpr,
         alphaMode: 'opaque',
@@ -103,6 +107,7 @@ export function Cloud({
       let lastH = 0
       let lastKey = ''
       const loop = frameLoop(gpu, (frame) => {
+        if (gate.state.paused) return
         const width = Math.max(canvas.clientWidth, 200)
         const height = Math.max(canvas.clientHeight, 200)
         const cur = propsRef.current
@@ -147,6 +152,7 @@ export function Cloud({
     return () => {
       cancelled = true
       stopLoop?.()
+      disposeGate?.()
       disposeGpu?.()
     }
   }, [])

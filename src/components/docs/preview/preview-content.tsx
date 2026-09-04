@@ -65,11 +65,15 @@ export function PreviewContent({
       <div
         key={reloadKey}
         data-slot="preview-viewport"
-        className={cn('flex size-full items-center justify-center', isContained ? 'p-4 sm:p-8' : 'p-0', className)}
+        className={cn(
+          'flex size-full min-h-0 min-w-0 items-center justify-center',
+          isContained ? 'p-4 sm:p-8' : 'p-0',
+          className,
+        )}
       >
         <div
           data-slot="preview"
-          className={cn('size-[stretch] flex items-center justify-center', isContained && 'w-full max-w-72')}
+          className={cn('flex size-full min-h-0 min-w-0 items-center justify-center', isContained && 'w-full max-w-72')}
         >
           <Iframe key={reloadKey} name={resolvedPreviewName} bigScreen={bigScreen} themeOverride={themeOverride} />
         </div>

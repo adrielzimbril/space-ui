@@ -225,13 +225,13 @@ export function PlaygroundCanvasStage({
         />
 
         {/* Active Canvas Stage */}
-        <div key={reloadKey} className="size-full flex items-center justify-center overflow-auto relative">
+        <div key={reloadKey} className="relative size-full min-h-0 min-w-0">
           <div
             className={cn(
-              'size-full flex items-center justify-center transition-all duration-300 relative',
+              'relative size-full min-h-0 min-w-0 transition-all duration-300',
               !isImmersive && VIEWPORT_WIDTH_CLASSES[viewport],
             )}
-            data-is-loade={activePreview ? 'Loading' : 'Loaded'}
+            data-loaded={activePreview ? 'true' : 'false'}
           >
             {activePreview && (
               <PreviewContent

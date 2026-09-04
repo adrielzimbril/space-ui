@@ -48,18 +48,22 @@ export default function Iframe({
 
   if (!origin) return <PreviewLoading />
 
+  const [path, query] = name.split('?')
+  const src = `${origin}/registry/view/${encodeURIComponent(path)}${query ? `?${query}` : ''}`
+
   return (
-    <div className="relative size-full flex items-center justify-center">
-      {!loaded && <PreviewLoading className="absolute inset-0 z-0" />}
+    <div className="relative size-full min-h-0 min-w-0">
+      {!loaded && <PreviewLoading className="absolute inset-0 z-10" />}
       <iframe
         ref={iframeRef}
+        title={name}
         onLoad={() => {
           setLoaded(true)
           syncIframeTheme()
         }}
-        src={`${origin}/registry/view/${name}`}
+        src={src}
         className={cn(
-          'relative size-[stretch] transition-opacity duration-300',
+          'absolute inset-0 size-full border-0 transition-opacity duration-300',
           loaded ? 'opacity-100' : 'opacity-0',
           bigScreen && 'w-400',
         )}
