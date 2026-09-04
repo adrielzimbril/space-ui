@@ -22,7 +22,7 @@
     {
       "path": "src/registry/demo/hooks/form/parse-markdown/h-parse-markdown-01/index.tsx",
       "type": "registry:hook",
-      "target": "components/spaceui/h-parse-markdown-01.tsx"
+      "target": "components/spaceui/parse-markdown.tsx"
     }
   ],
   "createdAt": "2026-08-24",

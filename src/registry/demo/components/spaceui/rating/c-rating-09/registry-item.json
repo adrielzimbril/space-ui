@@ -19,7 +19,7 @@
     {
       "path": "src/registry/demo/components/spaceui/rating/c-rating-09/index.tsx",
       "type": "registry:component",
-      "target": "components/spaceui/c-rating-09.tsx"
+      "target": "components/spaceui/rating.tsx"
     }
   ],
   "createdAt": "2026-08-21",

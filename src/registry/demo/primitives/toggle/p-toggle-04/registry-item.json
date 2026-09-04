@@ -14,7 +14,7 @@
     {
       "path": "src/registry/demo/primitives/toggle/p-toggle-04/index.tsx",
       "type": "registry:ui",
-      "target": "components/spaceui/p-toggle-04.tsx"
+      "target": "components/spaceui/toggle.tsx"
     }
   ],
   "createdAt": "2026-08-21",

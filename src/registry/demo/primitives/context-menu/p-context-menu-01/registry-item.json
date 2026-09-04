@@ -15,7 +15,7 @@
     {
       "path": "src/registry/demo/primitives/context-menu/p-context-menu-01/index.tsx",
       "type": "registry:ui",
-      "target": "components/spaceui/p-context-menu-01.tsx"
+      "target": "components/spaceui/context-menu.tsx"
     }
   ],
   "createdAt": "2026-08-21",

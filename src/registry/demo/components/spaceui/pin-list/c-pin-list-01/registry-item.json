@@ -18,7 +18,7 @@
     {
       "path": "src/registry/demo/components/spaceui/pin-list/c-pin-list-01/index.tsx",
       "type": "registry:component",
-      "target": "components/spaceui/c-pin-list-01.tsx"
+      "target": "components/spaceui/pin-list.tsx"
     }
   ],
   "createdAt": "2026-09-02",

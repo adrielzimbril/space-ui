@@ -97,7 +97,7 @@
     {
       "path": "src/registry/demo/components/orb/bloop/c-orb-bloop-01/index.tsx",
       "type": "registry:component",
-      "target": "components/orb/c-orb-bloop-01.tsx"
+      "target": "components/orb/bloop.tsx"
     }
   ],
   "createdAt": "2026-09-03",

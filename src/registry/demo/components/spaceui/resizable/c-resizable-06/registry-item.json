@@ -15,7 +15,7 @@
     {
       "path": "src/registry/demo/components/spaceui/resizable/c-resizable-06/index.tsx",
       "type": "registry:component",
-      "target": "components/spaceui/c-resizable-06.tsx"
+      "target": "components/spaceui/resizable.tsx"
     }
   ],
   "createdAt": "2026-08-21",

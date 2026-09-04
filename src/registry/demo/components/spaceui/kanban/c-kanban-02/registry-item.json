@@ -22,7 +22,7 @@
     {
       "path": "src/registry/demo/components/spaceui/kanban/c-kanban-02/index.tsx",
       "type": "registry:component",
-      "target": "components/spaceui/c-kanban-02.tsx"
+      "target": "components/spaceui/kanban.tsx"
     }
   ],
   "createdAt": "2026-08-21",

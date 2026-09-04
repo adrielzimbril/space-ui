@@ -16,7 +16,7 @@
     {
       "path": "src/registry/demo/primitives/toast/p-toast-04/index.tsx",
       "type": "registry:ui",
-      "target": "components/spaceui/p-toast-04.tsx"
+      "target": "components/spaceui/toast.tsx"
     }
   ],
   "createdAt": "2026-08-21",

@@ -17,7 +17,7 @@
     {
       "path": "src/registry/demo/components/spaceui/image-dark/c-image-dark-01/index.tsx",
       "type": "registry:component",
-      "target": "components/spaceui/c-image-dark-01.tsx"
+      "target": "components/spaceui/image-dark.tsx"
     }
   ],
   "createdAt": "2026-08-21",

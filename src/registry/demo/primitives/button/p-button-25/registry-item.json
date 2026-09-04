@@ -18,7 +18,7 @@
     {
       "path": "src/registry/demo/primitives/button/p-button-25/index.tsx",
       "type": "registry:ui",
-      "target": "components/spaceui/p-button-25.tsx"
+      "target": "components/spaceui/button.tsx"
     }
   ],
   "createdAt": "2026-08-21",

@@ -46,7 +46,7 @@
     {
       "path": "src/registry/demo/components/shader/cloud/c-cloud-01/index.tsx",
       "type": "registry:component",
-      "target": "components/shader/c-cloud-01.tsx"
+      "target": "components/shader/cloud.tsx"
     }
   ],
   "createdAt": "2026-09-03",

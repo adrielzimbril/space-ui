@@ -22,7 +22,7 @@
     {
       "path": "src/registry/demo/primitives/toggle/p-toggle-06/index.tsx",
       "type": "registry:ui",
-      "target": "components/spaceui/p-toggle-06.tsx"
+      "target": "components/spaceui/toggle.tsx"
     }
   ],
   "createdAt": "2026-08-21",

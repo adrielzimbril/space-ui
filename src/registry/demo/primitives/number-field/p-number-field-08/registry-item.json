@@ -15,7 +15,7 @@
     {
       "path": "src/registry/demo/primitives/number-field/p-number-field-08/index.tsx",
       "type": "registry:ui",
-      "target": "components/spaceui/p-number-field-08.tsx"
+      "target": "components/spaceui/number-field.tsx"
     }
   ],
   "createdAt": "2026-08-21",

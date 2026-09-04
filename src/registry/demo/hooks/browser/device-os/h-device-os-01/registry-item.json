@@ -21,7 +21,7 @@
     {
       "path": "src/registry/demo/hooks/browser/device-os/h-device-os-01/index.tsx",
       "type": "registry:hook",
-      "target": "components/spaceui/h-device-os-01.tsx"
+      "target": "components/spaceui/device-os.tsx"
     }
   ],
   "createdAt": "2026-08-24",

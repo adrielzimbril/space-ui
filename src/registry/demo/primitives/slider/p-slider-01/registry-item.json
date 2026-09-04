@@ -14,7 +14,7 @@
     {
       "path": "src/registry/demo/primitives/slider/p-slider-01/index.tsx",
       "type": "registry:ui",
-      "target": "components/spaceui/p-slider-01.tsx"
+      "target": "components/spaceui/slider.tsx"
     }
   ],
   "createdAt": "2026-08-21",

@@ -30,7 +30,7 @@
     {
       "path": "src/registry/demo/components/spaceui/filters/c-filters-08/index.tsx",
       "type": "registry:component",
-      "target": "components/spaceui/c-filters-08.tsx"
+      "target": "components/spaceui/filters.tsx"
     }
   ],
   "createdAt": "2026-08-21",

@@ -15,7 +15,7 @@
     {
       "path": "src/registry/demo/primitives/sheet/p-sheet-03/index.tsx",
       "type": "registry:ui",
-      "target": "components/spaceui/p-sheet-03.tsx"
+      "target": "components/spaceui/sheet.tsx"
     }
   ],
   "createdAt": "2026-08-21",

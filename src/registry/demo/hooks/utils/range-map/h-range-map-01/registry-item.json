@@ -21,7 +21,7 @@
     {
       "path": "src/registry/demo/hooks/utils/range-map/h-range-map-01/index.tsx",
       "type": "registry:hook",
-      "target": "components/spaceui/h-range-map-01.tsx"
+      "target": "components/spaceui/range-map.tsx"
     }
   ],
   "createdAt": "2026-08-24",

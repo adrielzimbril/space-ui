@@ -22,7 +22,7 @@
     {
       "path": "src/registry/demo/hooks/form/map/h-map-01/index.tsx",
       "type": "registry:hook",
-      "target": "components/spaceui/h-map-01.tsx"
+      "target": "components/spaceui/map.tsx"
     }
   ],
   "createdAt": "2026-08-24",

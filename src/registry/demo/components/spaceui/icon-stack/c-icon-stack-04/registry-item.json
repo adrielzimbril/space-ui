@@ -18,7 +18,7 @@
     {
       "path": "src/registry/demo/components/spaceui/icon-stack/c-icon-stack-04/index.tsx",
       "type": "registry:component",
-      "target": "components/spaceui/c-icon-stack-04.tsx"
+      "target": "components/spaceui/icon-stack.tsx"
     }
   ],
   "createdAt": "2026-08-21",

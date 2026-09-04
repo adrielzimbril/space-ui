@@ -14,7 +14,7 @@
     {
       "path": "src/registry/demo/primitives/meter/p-meter-01/index.tsx",
       "type": "registry:ui",
-      "target": "components/spaceui/p-meter-01.tsx"
+      "target": "components/spaceui/meter.tsx"
     }
   ],
   "createdAt": "2026-08-21",

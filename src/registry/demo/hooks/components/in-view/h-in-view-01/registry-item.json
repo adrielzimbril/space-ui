@@ -16,7 +16,7 @@
     {
       "path": "src/registry/demo/hooks/components/in-view/h-in-view-01/index.tsx",
       "type": "registry:hook",
-      "target": "components/spaceui/h-in-view-01.tsx"
+      "target": "components/spaceui/in-view.tsx"
     }
   ],
   "createdAt": "2026-08-24",

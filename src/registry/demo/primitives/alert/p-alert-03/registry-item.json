@@ -19,7 +19,7 @@
     {
       "path": "src/registry/demo/primitives/alert/p-alert-03/index.tsx",
       "type": "registry:ui",
-      "target": "components/spaceui/p-alert-03.tsx"
+      "target": "components/spaceui/alert.tsx"
     }
   ],
   "createdAt": "2026-08-21",

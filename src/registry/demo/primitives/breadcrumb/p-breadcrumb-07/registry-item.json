@@ -20,7 +20,7 @@
     {
       "path": "src/registry/demo/primitives/breadcrumb/p-breadcrumb-07/index.tsx",
       "type": "registry:ui",
-      "target": "components/spaceui/p-breadcrumb-07.tsx"
+      "target": "components/spaceui/breadcrumb.tsx"
     }
   ],
   "createdAt": "2026-08-21",

@@ -22,7 +22,7 @@
     {
       "path": "src/registry/demo/hooks/utils/format-content/h-format-content-01/index.tsx",
       "type": "registry:hook",
-      "target": "components/spaceui/h-format-content-01.tsx"
+      "target": "components/spaceui/format-content.tsx"
     }
   ],
   "createdAt": "2026-08-24",

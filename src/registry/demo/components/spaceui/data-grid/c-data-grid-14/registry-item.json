@@ -24,7 +24,7 @@
     {
       "path": "src/registry/demo/components/spaceui/data-grid/c-data-grid-14/index.tsx",
       "type": "registry:component",
-      "target": "components/spaceui/c-data-grid-14.tsx"
+      "target": "components/spaceui/data-grid.tsx"
     }
   ],
   "createdAt": "2026-08-21",

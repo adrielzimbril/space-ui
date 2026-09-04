@@ -22,7 +22,7 @@
     {
       "path": "src/registry/demo/hooks/utils/cookie/h-cookie-01/index.tsx",
       "type": "registry:hook",
-      "target": "components/spaceui/h-cookie-01.tsx"
+      "target": "components/spaceui/cookie.tsx"
     }
   ],
   "createdAt": "2026-08-24",

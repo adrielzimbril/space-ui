@@ -15,7 +15,7 @@
     {
       "path": "src/registry/demo/primitives/autocomplete/p-autocomplete-14/index.tsx",
       "type": "registry:ui",
-      "target": "components/spaceui/p-autocomplete-14.tsx"
+      "target": "components/spaceui/autocomplete.tsx"
     }
   ],
   "createdAt": "2026-08-21",

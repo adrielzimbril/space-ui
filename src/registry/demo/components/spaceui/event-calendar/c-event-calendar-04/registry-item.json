@@ -25,7 +25,7 @@
     {
       "path": "src/registry/demo/components/spaceui/event-calendar/c-event-calendar-04/index.tsx",
       "type": "registry:component",
-      "target": "components/spaceui/c-event-calendar-04.tsx"
+      "target": "components/spaceui/event-calendar.tsx"
     }
   ],
   "createdAt": "2026-08-21",

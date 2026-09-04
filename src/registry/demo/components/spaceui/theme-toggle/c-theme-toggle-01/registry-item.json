@@ -106,7 +106,7 @@
     {
       "path": "src/registry/demo/components/spaceui/theme-toggle/c-theme-toggle-01/index.tsx",
       "type": "registry:component",
-      "target": "components/spaceui/c-theme-toggle-01.tsx"
+      "target": "components/spaceui/theme-toggle.tsx"
     }
   ],
   "createdAt": "2026-09-03",

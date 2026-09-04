@@ -15,12 +15,12 @@
     {
       "path": "src/registry/demo/components/shader/paper-shader/c-paper-shader-01/index.tsx",
       "type": "registry:component",
-      "target": "components/shader/c-paper-shader-01.tsx"
+      "target": "components/shader/paper-shader.tsx"
     },
     {
       "path": "src/registry/demo/components/shader/paper-shader/c-paper-shader-01/index.tsx",
       "type": "registry:component",
-      "target": "components/shader/c-paper-shader-01.tsx"
+      "target": "components/shader/paper-shader.tsx"
     }
   ],
   "createdAt": "2026-09-03",

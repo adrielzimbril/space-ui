@@ -23,7 +23,7 @@
     {
       "path": "src/registry/demo/hooks/lifecycle/update-effect/h-update-effect-01/index.tsx",
       "type": "registry:hook",
-      "target": "components/spaceui/h-update-effect-01.tsx"
+      "target": "components/spaceui/update-effect.tsx"
     }
   ],
   "createdAt": "2026-08-24",

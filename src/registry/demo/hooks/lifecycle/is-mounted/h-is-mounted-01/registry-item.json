@@ -21,7 +21,7 @@
     {
       "path": "src/registry/demo/hooks/lifecycle/is-mounted/h-is-mounted-01/index.tsx",
       "type": "registry:hook",
-      "target": "components/spaceui/h-is-mounted-01.tsx"
+      "target": "components/spaceui/is-mounted.tsx"
     }
   ],
   "createdAt": "2026-08-24",

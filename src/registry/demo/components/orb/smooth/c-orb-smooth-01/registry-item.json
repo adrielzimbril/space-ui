@@ -110,7 +110,7 @@
     {
       "path": "src/registry/demo/components/orb/smooth/c-orb-smooth-01/index.tsx",
       "type": "registry:component",
-      "target": "components/orb/c-orb-smooth-01.tsx"
+      "target": "components/orb/smooth.tsx"
     }
   ],
   "createdAt": "2026-09-03",

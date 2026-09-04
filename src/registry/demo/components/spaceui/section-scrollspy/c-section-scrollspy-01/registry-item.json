@@ -16,7 +16,7 @@
     {
       "path": "src/registry/demo/components/spaceui/section-scrollspy/c-section-scrollspy-01/index.tsx",
       "type": "registry:component",
-      "target": "components/spaceui/c-section-scrollspy-01.tsx"
+      "target": "components/spaceui/section-scrollspy.tsx"
     }
   ],
   "createdAt": "2026-09-04",
