@@ -126,7 +126,7 @@ export const megaMenuResources: ResourceItem[] = [
     title: 'UI Avatars',
     label: 'avatars',
     description: 'Customizable 3D & flat user profile avatars.',
-    href: '/resources/avatar',
+    href: 'https://avatars.spaceui.one',
     icon: IconUserCircle,
     upcoming: false,
     release: 'beta',

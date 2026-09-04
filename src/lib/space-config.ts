@@ -45,7 +45,8 @@ export const siteConfig = {
     'Space UI - A modern, high-performance UI kit built with React, TypeScript, Tailwind CSS, Base UI, and Framer Motion.',
   links: {
     docs: `${appInfo.site}/docs`,
-    github: `https://github.com/${appInfo.namespace}/ui`,
+    // github: `https://github.com/${appInfo.namespace}/ui`,
+    github: `https://github.com/adrielzimbril/space-ui`,
     // twitter: `https://x.com/${appInfo.twitterHandle}`,
     x: 'https://x.com/adrielzimbril',
     authorTwitter: 'https://x.com/adrielzimbril',
