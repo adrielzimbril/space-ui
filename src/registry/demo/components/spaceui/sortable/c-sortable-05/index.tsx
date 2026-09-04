@@ -41,7 +41,7 @@ const defaultChannels: NotificationChannel[] = [
   },
 ]
 
-export default function Pattern() {
+export default function Demo() {
   const [channels, setChannels] = useState<NotificationChannel[]>(defaultChannels)
 
   const toggleChannel = (id: string) => {

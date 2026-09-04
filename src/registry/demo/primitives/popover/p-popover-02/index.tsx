@@ -11,7 +11,7 @@ import {
   PopoverTrigger,
 } from '@/registry/primitives/popover'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Popover>
       <PopoverTrigger render={<Button variant="outline" />}>Open Popover</PopoverTrigger>

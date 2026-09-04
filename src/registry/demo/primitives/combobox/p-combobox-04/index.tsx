@@ -24,7 +24,7 @@ const items = [
   { label: 'Pear', value: 'pear' },
 ]
 
-export default function Particle() {
+export default function Demo() {
   const id = useId()
   return (
     <Combobox items={items}>

@@ -25,7 +25,7 @@ const items = [
   { label: 'Pear', value: 'pear' },
 ]
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Combobox defaultValue={[items[0], items[4]]} items={items} multiple>
       <ComboboxChips>

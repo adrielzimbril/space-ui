@@ -73,7 +73,7 @@ const items: Record<string, Item> = {
 
 const indent = 20
 
-export default function Pattern() {
+export default function Demo() {
   const tree = useTree<Item>({
     initialState: {
       expandedItems: ['leads', 'accounts', 'activities'],

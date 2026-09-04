@@ -29,7 +29,7 @@ const viewers = [
   },
 ]
 
-export default function Pattern() {
+export default function Demo() {
   return (
     <div className="flex shrink-0 items-center gap-2">
       <AvatarGroup>

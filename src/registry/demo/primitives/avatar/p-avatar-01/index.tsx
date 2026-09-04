@@ -1,6 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/registry/primitives/avatar'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Avatar>
       <AvatarImage alt="Lauren Tan" src="https://avatars.spaceui.one/v1?name=laurentan&variant=glass" />

@@ -7,7 +7,7 @@ import {
   NumberFieldScrubArea,
 } from '@/registry/primitives/number-field'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="flex flex-col gap-6">
       <NumberField defaultValue={0} step={10}>

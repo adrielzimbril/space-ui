@@ -4,7 +4,7 @@ import { IconStar } from '@tabler/icons-react'
 import { useState } from 'react'
 import { Button } from '@/registry/primitives/button'
 
-export default function Particle() {
+export default function Demo() {
   const [isStarred, setIsStarred] = useState(false)
   const count = isStarred ? 730 : 729
 

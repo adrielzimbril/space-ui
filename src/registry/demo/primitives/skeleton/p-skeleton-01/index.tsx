@@ -91,7 +91,7 @@ function UserCardSkeleton() {
   )
 }
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="flex w-full max-w-92 flex-col gap-6">
       {users.map((user) => (

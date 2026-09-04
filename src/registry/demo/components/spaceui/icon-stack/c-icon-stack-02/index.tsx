@@ -19,7 +19,7 @@ const sizes = [
   },
 ]
 
-export default function Pattern() {
+export default function Demo() {
   return (
     <div className="flex flex-wrap items-end justify-center gap-8">
       {sizes.map((item) => (

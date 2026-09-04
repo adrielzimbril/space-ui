@@ -14,7 +14,7 @@ import {
 } from '@/registry/primitives/combobox'
 import { SelectButton } from '@/registry/primitives/select'
 
-export default function Particle() {
+export default function Demo() {
   const timezones = Intl.supportedValuesOf('timeZone')
 
   const formattedTimezones = useMemo(() => {

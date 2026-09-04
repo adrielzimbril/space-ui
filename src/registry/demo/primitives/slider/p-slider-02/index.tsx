@@ -1,7 +1,7 @@
 import { Field, FieldLabel } from '@/registry/primitives/field'
 import { Slider, SliderValue } from '@/registry/primitives/slider'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Field>
       <Slider defaultValue={50}>

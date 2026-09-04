@@ -47,7 +47,7 @@ const formFields = (
   </>
 )
 
-export default function Particle() {
+export default function Demo() {
   const isMobile = useMediaQuery('max-md')
 
   if (isMobile) {

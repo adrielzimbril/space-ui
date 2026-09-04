@@ -6,7 +6,7 @@ import { Form } from '@/registry/primitives/form'
 import { Popover, PopoverDescription, PopoverPopup, PopoverTitle, PopoverTrigger } from '@/registry/primitives/popover'
 import { Textarea } from '@/registry/primitives/textarea'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Popover>
       <PopoverTrigger render={<Button variant="outline" />}>Open Popover</PopoverTrigger>

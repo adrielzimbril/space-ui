@@ -6,7 +6,7 @@ import { cn } from '@/registry/lib/utils'
 import { Button } from '@/registry/primitives/button'
 import { Group } from '@/registry/primitives/group'
 
-export default function Pattern() {
+export default function Demo() {
   const [rating, setRating] = useState<number | null>(null)
 
   return (

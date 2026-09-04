@@ -68,7 +68,7 @@ function VirtualizedOptions({ options, highlightedIndex, renderOption }: FilterO
   )
 }
 
-export default function Pattern() {
+export default function Demo() {
   const products = useMemo<FilterOption[]>(
     () =>
       Array.from({ length: 5000 }, (_, index) => {

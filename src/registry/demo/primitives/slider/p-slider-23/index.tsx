@@ -8,7 +8,7 @@ import { Fieldset, FieldsetLegend } from '@/registry/primitives/fieldset'
 import { Form } from '@/registry/primitives/form'
 import { Slider, SliderValue } from '@/registry/primitives/slider'
 
-export default function Particle() {
+export default function Demo() {
   const [loading, setLoading] = useState<boolean>(false)
   const [value, setValue] = useState<number | readonly number[]>([25, 75])
 

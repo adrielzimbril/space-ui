@@ -8,7 +8,7 @@ import { Card, CardContent } from '@/registry/primitives/card'
 import { Label } from '@/registry/primitives/label'
 import { Textarea } from '@/registry/primitives/textarea'
 
-export default function Pattern() {
+export default function Demo() {
   const [rating, setRating] = useState(0)
   const [review, setReview] = useState('')
 

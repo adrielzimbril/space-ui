@@ -1,6 +1,6 @@
 import { Skeleton } from '@/registry/primitives/skeleton'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="flex w-full max-w-92 items-center gap-4">
       <Skeleton className="size-10 rounded-full" />

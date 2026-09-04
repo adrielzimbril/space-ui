@@ -8,7 +8,7 @@ import {
   ProgressValue,
 } from '@/registry/primitives/progress'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Progress max={512} value={502}>
       <div className="flex items-center justify-between gap-2">

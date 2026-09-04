@@ -1,6 +1,6 @@
 import { Rating } from '@/registry/components/spaceui/rating'
 
-export default function Pattern() {
+export default function Demo() {
   return (
     <div className="flex flex-col items-center gap-4">
       <Rating rating={4} size="sm" />

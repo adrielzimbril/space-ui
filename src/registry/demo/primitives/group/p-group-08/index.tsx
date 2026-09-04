@@ -2,7 +2,7 @@ import { Group, GroupSeparator, GroupText } from '@/registry/primitives/group'
 import { Input } from '@/registry/primitives/input'
 import { Label } from '@/registry/primitives/label'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Group aria-label="Domain input">
       <Input aria-label="Domain" defaultValue="spaceui" id="domain-suffix" type="text" />

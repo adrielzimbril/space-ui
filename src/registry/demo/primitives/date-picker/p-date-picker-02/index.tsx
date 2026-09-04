@@ -8,7 +8,7 @@ import { Button } from '@/registry/primitives/button'
 import { Calendar } from '@/registry/primitives/calendar'
 import { Popover, PopoverPopup, PopoverTrigger } from '@/registry/primitives/popover'
 
-export default function Particle() {
+export default function Demo() {
   const [date, setDate] = useState<DateRange | undefined>()
 
   return (

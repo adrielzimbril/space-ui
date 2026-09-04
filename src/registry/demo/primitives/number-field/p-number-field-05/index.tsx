@@ -10,7 +10,7 @@ import {
   NumberFieldInput,
 } from '@/registry/primitives/number-field'
 
-export default function Particle() {
+export default function Demo() {
   const id = useId()
   return (
     <div className="flex flex-col items-start gap-2">

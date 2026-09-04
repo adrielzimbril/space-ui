@@ -26,7 +26,7 @@ const items = [
   { label: 'Pear', value: 'pear' },
 ]
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Field>
       <FieldLabel>Fruits</FieldLabel>

@@ -1,6 +1,6 @@
 import { Badge } from '@/registry/primitives/badge'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Badge variant="outline">
       Notifications

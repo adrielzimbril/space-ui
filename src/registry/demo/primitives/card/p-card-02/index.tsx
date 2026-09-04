@@ -5,7 +5,7 @@ import { Field, FieldLabel } from '@/registry/primitives/field'
 import { Form } from '@/registry/primitives/form'
 import { Input } from '@/registry/primitives/input'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Card className="w-full max-w-xs">
       <CardHeader>

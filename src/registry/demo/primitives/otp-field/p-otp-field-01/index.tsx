@@ -4,7 +4,7 @@ const OTP_LENGTH = 6
 
 const OTP_SLOT_KEYS = Array.from({ length: OTP_LENGTH }, (_, i) => `otp-slot-${i}`)
 
-export default function Particle() {
+export default function Demo() {
   return (
     <OTPField aria-label="One-time password" length={OTP_LENGTH}>
       {OTP_SLOT_KEYS.map((slotKey, index) => (

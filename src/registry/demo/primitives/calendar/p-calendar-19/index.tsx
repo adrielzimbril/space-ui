@@ -7,7 +7,7 @@ import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { Toggle } from '@/registry/primitives/toggle'
 import { ToggleGroup } from '@/registry/primitives/toggle-group'
 
-export default function Particle() {
+export default function Demo() {
   const today = new Date()
   const [date, setDate] = useState<Date>(today)
   const [time, setTime] = useState<string | null>(null)

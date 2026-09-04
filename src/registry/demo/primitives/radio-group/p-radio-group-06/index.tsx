@@ -7,7 +7,7 @@ const smClassName = segmentedControlItemVariants({ className: 'grow', size: 'sm'
 const defaultClassName = segmentedControlItemVariants({ className: 'grow', state: 'checked' })
 const lgClassName = segmentedControlItemVariants({ className: 'grow', size: 'lg', state: 'checked' })
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="flex w-full max-w-sm flex-col gap-4">
       <RadioGroupPrimitive aria-label="Plan" className={segmentedControlRootClassName} defaultValue="pro">

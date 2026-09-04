@@ -43,7 +43,7 @@ const gitActivity = [
   },
 ]
 
-export default function Pattern() {
+export default function Demo() {
   return (
     <Timeline defaultValue={3} className="w-full max-w-md">
       {gitActivity.map((item) => (

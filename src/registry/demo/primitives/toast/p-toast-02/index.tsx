@@ -11,7 +11,7 @@ const TEXTS = [
   'An even longer description that should span multiple lines so we can verify the clamped collapsed height and smooth expansion animation when hovering or focusing the viewport.',
 ]
 
-export default function Particle() {
+export default function Demo() {
   const [count, setCount] = useState(0)
 
   function createToast() {

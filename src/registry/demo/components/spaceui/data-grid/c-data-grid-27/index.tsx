@@ -61,7 +61,7 @@ function generateData(count: number): IData[] {
 
 const allData = generateData(200)
 
-export default function Pattern() {
+export default function Demo() {
   const [sorting, setSorting] = useState<SortingState>([])
 
   const columns = useMemo<ColumnDef<IData>[]>(

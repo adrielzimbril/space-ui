@@ -113,7 +113,7 @@ function TaskColumn({ value, tasks, isOverlay, ...props }: TaskColumnProps) {
   )
 }
 
-export default function Pattern() {
+export default function Demo() {
   const [columns, setColumns] = useState<Record<string, Task[]>>({
     todo: [
       { id: '1', title: 'Add authentication', priority: 'high' },

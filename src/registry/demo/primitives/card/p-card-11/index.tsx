@@ -11,7 +11,7 @@ import {
 } from '@/registry/primitives/card'
 import { Empty, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/registry/primitives/empty'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <CardFrame className="w-full">
       <CardFrameHeader>

@@ -9,7 +9,7 @@ import { Field, FieldItem, FieldLabel } from '@/registry/primitives/field'
 import { Fieldset, FieldsetLegend } from '@/registry/primitives/fieldset'
 import { Form } from '@/registry/primitives/form'
 
-export default function Particle() {
+export default function Demo() {
   const [loading, setLoading] = useState(false)
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()

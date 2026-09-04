@@ -252,7 +252,7 @@ function ActionsCell({ row }: { row: Row<IData> }) {
   )
 }
 
-export default function Pattern() {
+export default function Demo() {
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
     pageSize: 5,

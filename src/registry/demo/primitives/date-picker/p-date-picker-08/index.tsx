@@ -6,7 +6,7 @@ import { Calendar } from '@/registry/primitives/calendar'
 import { Popover, PopoverPopup, PopoverTrigger } from '@/registry/primitives/popover'
 import { SelectButton } from '@/registry/primitives/select'
 
-export default function Particle() {
+export default function Demo() {
   const [date, setDate] = useState<Date | undefined>()
 
   return (

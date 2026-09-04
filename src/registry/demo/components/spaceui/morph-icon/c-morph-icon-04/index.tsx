@@ -12,7 +12,7 @@ const VARIANTS: { name: MorphIconVariant; label: string; desc: string }[] = [
   { name: 'spring', label: 'Spring Bounce', desc: 'Bouncy vertical pop effect' },
 ]
 
-export default function VariantsShowcaseDemo() {
+export default function Demo() {
   const [toggle, setToggle] = React.useState(false)
 
   return (

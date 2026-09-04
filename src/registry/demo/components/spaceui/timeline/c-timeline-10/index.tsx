@@ -53,7 +53,7 @@ const deployments = [
   },
 ]
 
-export default function Pattern() {
+export default function Demo() {
   return (
     <div className="w-full max-w-xs">
       <Timeline defaultValue={4}>

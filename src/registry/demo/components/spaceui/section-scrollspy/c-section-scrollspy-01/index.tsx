@@ -37,7 +37,7 @@ const SECTIONS = [
   { title: 'Section 30', badge: '30' },
 ]
 
-export default function SectionScrollspyDemo() {
+export default function Demo() {
   const scrollRef = React.useRef<HTMLDivElement>(null)
 
   return (

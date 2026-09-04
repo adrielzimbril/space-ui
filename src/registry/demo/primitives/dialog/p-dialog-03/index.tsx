@@ -13,7 +13,7 @@ import {
 import { Field, FieldLabel } from '@/registry/primitives/field'
 import { Input } from '@/registry/primitives/input'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Dialog>
       <DialogTrigger render={<Button variant="outline" />}>Open parent</DialogTrigger>

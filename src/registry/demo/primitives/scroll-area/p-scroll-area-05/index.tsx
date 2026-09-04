@@ -21,7 +21,7 @@ const shortcuts = [
   { keys: '⌘ ⇧ L', action: 'Select all' },
 ]
 
-export default function Particle() {
+export default function Demo() {
   return (
     <ScrollArea className="max-w-96 rounded-lg border" scrollbarGutter>
       <div className="flex w-max gap-4 p-4">

@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { InputGroup, InputGroupAddon, InputGroupInput, InputGroupText } from '@/registry/primitives/input-group'
 
-export default function Particle() {
+export default function Demo() {
   const maxLength = 14
   const [value, setValue] = useState('')
 

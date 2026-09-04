@@ -8,7 +8,7 @@ import { Tooltip, TooltipPopup, TooltipTrigger } from '@/registry/primitives/too
 
 const ANCHORED_SAVE_TOAST_ID = 'space-demo-anchored-save-toast'
 
-export default function Particle() {
+export default function Demo() {
   const saveButtonRef = useRef<HTMLButtonElement>(null)
   const toastTimeout = 2000
 

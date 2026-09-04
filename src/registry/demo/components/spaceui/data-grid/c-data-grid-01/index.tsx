@@ -146,7 +146,7 @@ const demoData: IData[] = users.map((user, index) => ({
   balance: 5143.03 + index * 100,
 }))
 
-export default function Pattern() {
+export default function Demo() {
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
     pageSize: 5,

@@ -4,7 +4,7 @@ import { addDays, subDays } from 'date-fns'
 import { useState } from 'react'
 import { Calendar } from '@/registry/primitives/calendar'
 
-export default function Particle() {
+export default function Demo() {
   const today = new Date()
   const [date, setDate] = useState<Date[] | undefined>([
     subDays(today, 17),

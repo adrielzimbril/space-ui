@@ -6,7 +6,7 @@ const items = [
   { label: 'Archived', value: 'archived' },
 ]
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Select aria-label="Select filter" defaultValue="active" items={items}>
       <SelectTrigger className="[--radius-lg:9999px] [--radius:9999px]">

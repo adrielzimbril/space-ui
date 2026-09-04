@@ -4,7 +4,7 @@ import { IconChevronDown, IconArrowUp } from '@tabler/icons-react'
 import { useState } from 'react'
 import { Button } from '@/registry/primitives/button'
 
-export default function Particle() {
+export default function Demo() {
   const [isExpanded, setIsExpanded] = useState<boolean>(false)
 
   const toggleExpand = () => {

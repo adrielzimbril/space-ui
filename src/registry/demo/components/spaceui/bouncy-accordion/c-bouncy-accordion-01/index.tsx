@@ -12,7 +12,7 @@ import {
 import { BouncyAccordion } from '@/registry/components/spaceui/bouncy-accordion'
 import { Badge } from '@/registry/primitives/badge'
 
-export default function BouncyAccordionDemo() {
+export default function Demo() {
   return (
     <div className="w-full min-w-52 max-w-xs p-4">
       <BouncyAccordion

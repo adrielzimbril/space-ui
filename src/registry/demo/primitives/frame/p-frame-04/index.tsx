@@ -1,7 +1,7 @@
 import { Frame, FrameDescription, FrameHeader, FramePanel, FrameTitle } from '@/registry/primitives/frame'
 import { Separator } from '@/registry/primitives/separator'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Frame className="w-full">
       <FrameHeader>

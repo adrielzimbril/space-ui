@@ -81,7 +81,7 @@ function groupTags(tags: Tag[]): TagGroup[] {
 
 const groupedTags: TagGroup[] = groupTags(tagsData)
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Combobox items={groupedTags}>
       <div className="flex flex-col items-start gap-2">

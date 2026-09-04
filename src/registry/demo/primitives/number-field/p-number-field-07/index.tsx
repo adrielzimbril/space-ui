@@ -6,7 +6,7 @@ import {
   NumberFieldInput,
 } from '@/registry/primitives/number-field'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <NumberField defaultValue={5} max={10} min={0}>
       <NumberFieldGroup>

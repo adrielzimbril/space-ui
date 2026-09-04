@@ -118,7 +118,7 @@ async function searchSampleAddresses(query: string): Promise<AddressSuggestion[]
   return sampleAddresses.filter((address) => address.text.toLowerCase().includes(lowerQuery))
 }
 
-export default function Particle() {
+export default function Demo() {
   const [searchValue, setSearchValue] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [suggestions, setSuggestions] = useState<AddressSuggestion[]>([])

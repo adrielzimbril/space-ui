@@ -24,7 +24,7 @@ const stacks = [
   },
 ]
 
-export default function Pattern() {
+export default function Demo() {
   return (
     <div className="flex flex-wrap items-end justify-center gap-7">
       {stacks.map((item) => (

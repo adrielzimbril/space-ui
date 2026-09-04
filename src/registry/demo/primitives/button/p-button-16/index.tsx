@@ -1,7 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/registry/primitives/avatar'
 import { Button } from '@/registry/primitives/button'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Button className="rounded-full ps-1">
       <Avatar className="size-6">

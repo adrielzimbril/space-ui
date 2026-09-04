@@ -44,7 +44,7 @@ const ProfileContent = () => {
   )
 }
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="flex gap-2">
       <PopoverTrigger

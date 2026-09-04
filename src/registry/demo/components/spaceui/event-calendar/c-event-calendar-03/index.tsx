@@ -105,7 +105,7 @@ function buildEvents(anchor: Date): CalendarEvent[] {
   ]
 }
 
-export default function Pattern() {
+export default function Demo() {
   const events = useMemo(() => buildEvents(new Date()), [])
   const apiRef = useRef<EventCalendarApi | null>(null)
   const counter = useRef(0)

@@ -3,7 +3,7 @@
 import PaperShader from '@/registry/components/shader/paper-shader'
 import { ORIGINAL_FRAGMENT_SHADER } from './shader-source'
 
-export default function CShaderDemo() {
+export default function Demo() {
   return (
     <div className="size-full overflow-hidden">
       <PaperShader

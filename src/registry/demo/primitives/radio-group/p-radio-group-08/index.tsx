@@ -9,7 +9,7 @@ const itemClassName = segmentedControlItemVariants({
   state: 'checked',
 })
 
-export default function Particle() {
+export default function Demo() {
   return (
     <RadioGroupPrimitive aria-label="Billing period" className={segmentedControlRootClassName} defaultValue="monthly">
       <RadioPrimitive.Root className={itemClassName} value="monthly">

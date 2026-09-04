@@ -1,6 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/registry/primitives/avatar'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="flex flex-wrap items-center gap-3">
       <Avatar className="size-6">

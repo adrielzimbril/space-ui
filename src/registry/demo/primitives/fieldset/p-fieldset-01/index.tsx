@@ -2,7 +2,7 @@ import { Field, FieldDescription, FieldLabel } from '@/registry/primitives/field
 import { Fieldset, FieldsetLegend } from '@/registry/primitives/fieldset'
 import { Input } from '@/registry/primitives/input'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Fieldset className="flex w-full flex-col gap-6">
       <FieldsetLegend>Billing Details</FieldsetLegend>

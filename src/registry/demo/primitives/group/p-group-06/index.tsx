@@ -3,7 +3,7 @@ import { Button } from '@/registry/primitives/button'
 import { Group, GroupSeparator } from '@/registry/primitives/group'
 import { Menu, MenuItem, MenuPopup, MenuTrigger } from '@/registry/primitives/menu'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Group aria-label="File actions">
       <Button>

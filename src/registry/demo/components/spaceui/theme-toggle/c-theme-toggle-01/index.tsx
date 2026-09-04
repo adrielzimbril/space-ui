@@ -20,7 +20,7 @@ interface ThemeToggleDemoProps {
   size?: ThemeToggleSize
 }
 
-export default function ThemeToggleDemo({
+export default function Demo({
   variant = 'circle',
   startCircle = 'center',
   startRectangle = 'bottom-up',

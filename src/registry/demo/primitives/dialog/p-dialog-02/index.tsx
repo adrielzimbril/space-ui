@@ -13,7 +13,7 @@ import {
 } from '@/registry/primitives/dialog'
 import { Menu, MenuItem, MenuPopup, MenuTrigger } from '@/registry/primitives/menu'
 
-export default function Particle() {
+export default function Demo() {
   const [dialogOpen, setDialogOpen] = useState(false)
   return (
     <>

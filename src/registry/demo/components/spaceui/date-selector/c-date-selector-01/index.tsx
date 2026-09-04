@@ -6,7 +6,7 @@ import { format } from 'date-fns'
 
 import { Card, CardContent } from '@/registry/primitives/card'
 
-export default function Pattern() {
+export default function Demo() {
   const [value, setValue] = useState<DateSelectorValue | undefined>()
 
   return (

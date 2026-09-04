@@ -5,7 +5,7 @@ import { toastManager } from '@/registry/primitives/toast'
 
 const DEDUP_ID = 'space-demo-dedup-toast'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Button
       onClick={() => {

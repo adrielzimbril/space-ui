@@ -6,7 +6,7 @@ import { Input } from '@/registry/primitives/input'
 import { MorphIcon } from '@/registry/components/spaceui/morph-icon'
 import { IconChevronDown, IconChevronUp, IconEye, IconEyeOff, IconPlus, IconMinus } from '@tabler/icons-react'
 
-export default function AccordionVisibilityDemo() {
+export default function Demo() {
   const [expanded, setExpanded] = React.useState(false)
   const [showPassword, setShowPassword] = React.useState(false)
   const [openSection, setOpenSection] = React.useState(false)

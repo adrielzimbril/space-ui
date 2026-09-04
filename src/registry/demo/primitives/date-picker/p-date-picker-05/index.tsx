@@ -8,7 +8,7 @@ import { Calendar } from '@/registry/primitives/calendar'
 import { InputGroup, InputGroupAddon, InputGroupInput } from '@/registry/primitives/input-group'
 import { Popover, PopoverPopup, PopoverTrigger } from '@/registry/primitives/popover'
 
-export default function Particle() {
+export default function Demo() {
   const [date, setDate] = useState<Date | undefined>()
   const [inputValue, setInputValue] = useState('')
   const [month, setMonth] = useState<Date>(() => new Date())

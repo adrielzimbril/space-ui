@@ -3,7 +3,7 @@
 import { Button } from '@/registry/primitives/button'
 import { toastManager } from '@/registry/primitives/toast'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="flex flex-wrap items-center gap-2">
       <Button

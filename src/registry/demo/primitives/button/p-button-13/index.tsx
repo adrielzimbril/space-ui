@@ -1,7 +1,7 @@
 import { IconBrandFacebook, IconBrandGithub, IconBrandGoogle, IconBrandX } from '@tabler/icons-react'
 import { Button } from '@/registry/primitives/button'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="inline-flex flex-wrap gap-2">
       <Button aria-label="Login with Google" size="icon" variant="outline">

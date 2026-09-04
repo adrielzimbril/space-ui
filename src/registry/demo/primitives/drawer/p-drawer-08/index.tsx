@@ -13,7 +13,7 @@ import {
 import { Field, FieldLabel } from '@/registry/primitives/field'
 import { Input } from '@/registry/primitives/input'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Drawer position="right">
       <DrawerTrigger render={<Button variant="outline" />}>Nested inset drawers</DrawerTrigger>

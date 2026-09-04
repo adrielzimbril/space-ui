@@ -1,7 +1,7 @@
 import NextLink from 'next/link'
 import { Link } from '@/registry/primitives/link'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="flex flex-wrap items-center justify-center  gap-6 text-sm">
       <Link render={<NextLink href="/ui-kit/primitives/button" />}>Next.js Internal Link</Link>

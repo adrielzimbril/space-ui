@@ -8,7 +8,7 @@ import {
   BreadcrumbSeparator,
 } from '@/registry/primitives/breadcrumb'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Breadcrumb>
       <BreadcrumbList>

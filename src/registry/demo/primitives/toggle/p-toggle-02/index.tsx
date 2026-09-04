@@ -1,7 +1,7 @@
 import { IconBold } from '@tabler/icons-react'
 import { Toggle } from '@/registry/primitives/toggle'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="flex flex-wrap items-center gap-3">
       <Toggle size="sm" defaultPressed>

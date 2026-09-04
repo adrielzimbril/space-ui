@@ -1,7 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/registry/primitives/avatar'
 import { AvatarGroup } from '@/registry/components/spaceui/avatar-group'
 
-export default function AvatarGroupDemo() {
+export default function Demo() {
   return (
     <div className="flex flex-col items-center gap-10">
       <div className="flex flex-col items-center gap-2">
@@ -12,8 +12,8 @@ export default function AvatarGroupDemo() {
             <AvatarFallback>EM</AvatarFallback>
           </Avatar>
           <Avatar className="ring-2 ring-muted">
-            <AvatarImage alt="Shadcn" src="https://avatars.spaceui.one/v1?name=shadcn&variant=invader" />
-            <AvatarFallback>SH</AvatarFallback>
+            <AvatarImage alt="Nova" src="https://avatars.spaceui.one/v1?name=nova&variant=invader" />
+            <AvatarFallback>NV</AvatarFallback>
           </Avatar>
           <Avatar className="ring-2 ring-muted">
             <AvatarImage alt="Evil Rabbit" src="https://avatars.spaceui.one/v1?name=evilrabbit&variant=kendo" />

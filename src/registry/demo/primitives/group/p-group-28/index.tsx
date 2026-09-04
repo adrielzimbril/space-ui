@@ -13,7 +13,7 @@ import {
   MenuTrigger,
 } from '@/registry/primitives/menu'
 const team = [
-  { name: 'Shadcn', src: 'https://avatars.spaceui.one/v1?name=shadcn&variant=lumina', fallback: 'SH' },
+  { name: 'Nova', src: 'https://avatars.spaceui.one/v1?name=nova&variant=lumina', fallback: 'SH' },
   { name: 'Max', src: 'https://avatars.spaceui.one/v1?name=max&variant=shaula', fallback: 'MA' },
   {
     name: 'Evil Rabbit',
@@ -22,7 +22,7 @@ const team = [
   },
 ]
 
-export default function Pattern() {
+export default function Demo() {
   return (
     <Group>
       {/* Team Context */}

@@ -2,7 +2,7 @@ import { IconSettings, IconLayoutDashboard, IconFolder } from '@tabler/icons-rea
 import { Badge } from '@/registry/primitives/badge'
 import { Tabs, TabsList, TabsPanel, TabsTab } from '@/registry/primitives/tabs'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Tabs className="items-center" defaultValue="tab-1">
       <TabsList>

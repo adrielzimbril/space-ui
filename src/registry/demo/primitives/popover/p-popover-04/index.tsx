@@ -23,7 +23,7 @@ const occurrences = [
   { date: 'Wed, Jul 15', id: 'occurrence-3', time: '11:00 – 11:30am' },
 ]
 
-export default function Particle() {
+export default function Demo() {
   const [selected, setSelected] = useState(occurrences.map((occurrence) => occurrence.id))
 
   return (

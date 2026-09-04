@@ -393,7 +393,7 @@ const languageOptions = [
   { value: 'ja', label: '日本語', flag: 'jp' },
 ]
 
-export default function Pattern() {
+export default function Demo() {
   const [currentLanguage, setCurrentLanguage] = useState<string>('es')
   const [filters, setFilters] = useState<Filter[]>([createFilter('status', 'is', ['active'])])
 

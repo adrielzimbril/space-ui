@@ -1,7 +1,7 @@
 import { IconChevronDown } from '@tabler/icons-react'
 import { Collapsible, CollapsiblePanel, CollapsibleTrigger } from '@/registry/primitives/collapsible'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Collapsible>
       <CollapsibleTrigger className="inline-flex items-center gap-2 font-medium text-sm data-panel-open:[&_svg]:rotate-180">

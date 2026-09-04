@@ -31,7 +31,7 @@ async function submitForm(event: FormEvent<HTMLFormElement>) {
   }
 }
 
-export default function Particle() {
+export default function Demo() {
   const [loading, setLoading] = useState(false)
   const [errors, setErrors] = useState<Errors>({})
 

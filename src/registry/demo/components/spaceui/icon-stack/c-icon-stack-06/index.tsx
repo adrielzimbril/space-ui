@@ -2,7 +2,7 @@ import { IconPackage } from '@tabler/icons-react'
 import { IconStack } from '@/registry/components/spaceui/icon-stack'
 
 import { Item, ItemContent, ItemDescription, ItemMedia, ItemTitle } from '@/registry/components/spaceui/item'
-export default function Pattern() {
+export default function Demo() {
   return (
     <div className="mx-auto flex w-full max-w-md items-center justify-center p-4">
       <Item variant="outline" className="max-w-sm">
@@ -13,7 +13,7 @@ export default function Pattern() {
         </ItemMedia>
         <ItemContent>
           <ItemTitle>Registry package ready</ItemTitle>
-          <ItemDescription>Use IconStack as rich media inside compact shadcn items.</ItemDescription>
+          <ItemDescription>Use IconStack as rich media inside compact UI items.</ItemDescription>
         </ItemContent>
       </Item>
     </div>

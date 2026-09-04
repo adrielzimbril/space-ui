@@ -10,7 +10,7 @@ const items = [
   { icon: IconSourceCode, label: 'Development', value: 'development' },
 ]
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Select aria-label="Select category" defaultValue={items[0]} itemToStringValue={(item) => item.value}>
       <SelectTrigger>

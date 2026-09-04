@@ -6,7 +6,7 @@ import { Scrollspy } from '@/registry/components/spaceui/scrollspy'
 import { Button } from '@/registry/primitives/button'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 
-export default function Pattern() {
+export default function Demo() {
   const parentRef = useRef<HTMLDivElement | null>(null)
 
   const nav = [

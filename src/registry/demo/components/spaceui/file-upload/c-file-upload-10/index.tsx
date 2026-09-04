@@ -14,7 +14,7 @@ interface CoverUploadProps {
   onImageChange?: (file: File | null) => void
 }
 
-export default function Pattern({
+export default function Demo({
   maxSize = 5 * 1024 * 1024, // 5MB default
   accept = 'image/*',
   className,

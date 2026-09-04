@@ -1,5 +1,5 @@
 import { Rating } from '@/registry/components/spaceui/rating'
 
-export default function Pattern() {
+export default function Demo() {
   return <Rating rating={3.5} />
 }

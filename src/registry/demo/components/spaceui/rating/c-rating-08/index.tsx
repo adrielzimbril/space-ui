@@ -12,7 +12,7 @@ const emojis = [
   { value: 5, emoji: '🤩', label: 'Amazing' },
 ]
 
-export default function Pattern() {
+export default function Demo() {
   const [selected, setSelected] = useState<number | null>(null)
 
   return (

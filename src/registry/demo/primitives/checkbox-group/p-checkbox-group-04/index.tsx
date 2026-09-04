@@ -18,7 +18,7 @@ const userManagementPermissions = [
   { id: 'assign-roles', name: 'Assign Roles' },
 ]
 
-export default function Particle() {
+export default function Demo() {
   const [mainValue, setMainValue] = useState<string[]>([])
   const [managementValue, setManagementValue] = useState<string[]>([])
 

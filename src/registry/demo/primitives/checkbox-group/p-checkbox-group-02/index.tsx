@@ -2,7 +2,7 @@ import { Checkbox } from '@/registry/primitives/checkbox'
 import { CheckboxGroup } from '@/registry/primitives/checkbox-group'
 import { Label } from '@/registry/primitives/label'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <CheckboxGroup aria-label="Select frameworks" defaultValue={['next']}>
       <Label>

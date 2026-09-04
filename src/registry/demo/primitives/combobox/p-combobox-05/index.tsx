@@ -22,7 +22,7 @@ const items = [
   { label: 'Pear', value: 'pear' },
 ]
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Combobox autoHighlight items={items}>
       <ComboboxInput aria-label="Select an item" placeholder="Select an item..." />

@@ -1,6 +1,6 @@
 import { Separator } from '@/registry/primitives/separator'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="max-w-72">
       <div className="flex flex-col gap-1">

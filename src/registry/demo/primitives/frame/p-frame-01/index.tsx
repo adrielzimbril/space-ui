@@ -1,6 +1,6 @@
 import { Frame, FrameDescription, FrameFooter, FrameHeader, FramePanel, FrameTitle } from '@/registry/primitives/frame'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Frame className="w-full">
       <FrameHeader>

@@ -86,7 +86,7 @@ export interface DirtCarouselDemoProps {
   autoRotate?: boolean
 }
 
-export default function DirtCarouselDemo({
+export default function Demo({
   direction = 'flat',
   radius = 800,
   ballSize = 800,

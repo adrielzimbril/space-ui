@@ -6,7 +6,7 @@ import { anchoredToastManager } from '@/registry/primitives/toast'
 import { Toggle } from '@/registry/primitives/toggle'
 import { Tooltip, TooltipPopup, TooltipTrigger } from '@/registry/primitives/tooltip'
 
-export default function Particle() {
+export default function Demo() {
   const [bookmarked, setBookmarked] = useState(false)
   const toggleRef = useRef<HTMLDivElement>(null)
   const toastIdRef = useRef<string | null>(null)

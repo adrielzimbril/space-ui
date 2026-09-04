@@ -1,7 +1,7 @@
 import { Field, FieldDescription, FieldLabel } from '@/registry/primitives/field'
 import { Slider } from '@/registry/primitives/slider'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Field className="items-stretch gap-3">
       <FieldLabel>Country</FieldLabel>

@@ -1,6 +1,6 @@
 import { Badge } from '@/registry/primitives/badge'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="flex flex-wrap items-center gap-2">
       <Badge variant="default">Default</Badge>

@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from '@/registry/components/spaceui/resizable'
 
-export default function Pattern() {
+export default function Demo() {
   const [sizes, setSizes] = useState<Record<string, number>>({
     left: 30,
     right: 70,

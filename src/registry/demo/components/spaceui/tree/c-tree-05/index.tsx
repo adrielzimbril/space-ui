@@ -81,7 +81,7 @@ const getFileIcon = (type?: string, isExpanded?: boolean) => {
 
 const indent = 20
 
-export default function Pattern() {
+export default function Demo() {
   const tree = useTree<FileItem>({
     initialState: {
       expandedItems: ['src', 'app', 'components'],

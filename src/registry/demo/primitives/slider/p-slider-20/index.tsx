@@ -8,7 +8,7 @@ const bands = [
   { label: '16k', value: 2 },
 ]
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="flex h-48 justify-center gap-8">
       {bands.map((band) => (

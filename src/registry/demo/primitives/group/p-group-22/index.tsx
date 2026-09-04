@@ -70,7 +70,7 @@ function MemberAvatar({ name, avatarUrl, className }: { name: string; avatarUrl?
   )
 }
 
-export default function Particle() {
+export default function Demo() {
   const [selectedMembers, setSelectedMembers] = useState<FilterOption[]>(members.slice(0, 2))
 
   const renderTriggerContent = () => {

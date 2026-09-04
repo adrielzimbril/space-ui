@@ -4,7 +4,7 @@ import { IconCheck, IconCopy } from '@tabler/icons-react'
 import { Button } from '@/registry/primitives/button'
 import { useClipboard } from '@/registry/hooks/browser/use-clipboard'
 
-export default function Particle() {
+export default function Demo() {
   const { copy, copied } = useClipboard({ timeout: 2000 })
 
   const handleCopy = () => {

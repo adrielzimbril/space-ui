@@ -5,7 +5,7 @@ import { Button } from '@/registry/primitives/button'
 import { MorphIcon } from '@/registry/components/spaceui/morph-icon'
 import { IconSun, IconMoon, IconDeviceDesktop } from '@tabler/icons-react'
 
-export default function ThemeMorphDemo() {
+export default function Demo() {
   const [theme, setTheme] = React.useState<'light' | 'dark' | 'system'>('light')
 
   return (

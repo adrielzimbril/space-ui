@@ -1,7 +1,7 @@
 import { IconSparkles } from '@tabler/icons-react'
 import { Button } from '@/registry/primitives/button'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Button className="pe-0" variant="outline">
       <IconSparkles aria-hidden="true" />

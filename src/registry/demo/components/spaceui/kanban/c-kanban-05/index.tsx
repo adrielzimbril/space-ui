@@ -62,7 +62,7 @@ function FeatureCard({
   )
 }
 
-export default function Pattern() {
+export default function Demo() {
   const [columns, setColumns] = useState<Record<string, Feature[]>>({
     planned: [
       {

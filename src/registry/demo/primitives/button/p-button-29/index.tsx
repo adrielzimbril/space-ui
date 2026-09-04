@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Button } from '@/registry/primitives/button'
 import { sleep } from '@/registry/utils/sleep'
 
-export default function Particle() {
+export default function Demo() {
   const [isLoading, setIsLoading] = useState(false)
 
   const handleClick = async () => {

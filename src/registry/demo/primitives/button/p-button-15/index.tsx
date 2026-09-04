@@ -2,7 +2,7 @@ import { IconQrcode } from '@tabler/icons-react'
 import { Button } from '@/registry/primitives/button'
 import { Group, GroupSeparator } from '@/registry/primitives/group'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Group>
       <Button aria-label="QR code" size="icon">

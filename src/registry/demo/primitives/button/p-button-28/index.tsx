@@ -8,7 +8,7 @@ import { Spinner } from '@/registry/primitives/spinner'
 import { toastManager } from '@/registry/primitives/toast'
 import { Tooltip, TooltipPopup, TooltipProvider, TooltipTrigger } from '@/registry/primitives/tooltip'
 
-export default function Particle() {
+export default function Demo() {
   const [isDownloading, setIsDownloading] = useState(false)
   const [progress, setProgress] = useState(0)
   const abortControllerRef = useRef<AbortController | null>(null)

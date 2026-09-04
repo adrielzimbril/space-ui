@@ -1,7 +1,7 @@
 import { Field, FieldError, FieldLabel } from '@/registry/primitives/field'
 import { Input } from '@/registry/primitives/input'
 
-export default function FieldWithErrorDemo() {
+export default function Demo() {
   return (
     <Field>
       <FieldLabel>Email</FieldLabel>

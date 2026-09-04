@@ -480,7 +480,7 @@ function CustomSliderRangeInput({ values, onChange, autoFocus }: CustomRendererP
   )
 }
 
-export default function Pattern() {
+export default function Demo() {
   const [filters, setFilters] = useState<Filter[]>([createFilter('customDateRange', 'between', [])])
   const [lastAddedValues, setLastAddedValues] = useState<unknown[] | null>(null)
 

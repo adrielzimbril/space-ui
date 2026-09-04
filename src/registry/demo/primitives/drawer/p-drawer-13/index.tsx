@@ -37,7 +37,7 @@ import {
 
 const TRIGGER_ARIA_LABEL = 'Open menu'
 
-export default function Particle() {
+export default function Demo() {
   const isMobile = useMediaQuery('max-md')
 
   if (isMobile) {

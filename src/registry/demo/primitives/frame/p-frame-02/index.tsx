@@ -3,7 +3,7 @@ import { Button } from '@/registry/primitives/button'
 import { Collapsible, CollapsiblePanel, CollapsibleTrigger } from '@/registry/primitives/collapsible'
 import { Frame, FrameHeader, FramePanel } from '@/registry/primitives/frame'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Frame className="w-full">
       <Collapsible>

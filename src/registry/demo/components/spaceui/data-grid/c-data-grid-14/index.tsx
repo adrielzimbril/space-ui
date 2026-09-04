@@ -118,7 +118,7 @@ const demoData: IData[] = [
   },
 ]
 
-export default function Pattern() {
+export default function Demo() {
   const columns = useMemo<ColumnDef<IData>[]>(
     () => [
       {

@@ -9,7 +9,7 @@ const items = [
   { label: 'Go', value: 'go' },
 ]
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Select aria-label="Select language" defaultValue={items[0]} itemToStringValue={(item) => item.value}>
       <SelectTrigger>

@@ -14,7 +14,7 @@ export interface CloudDemoProps {
   sunlight?: string
 }
 
-export default function CloudDemo({
+export default function Demo({
   speed = 1,
   bg = '#ffffff',
   sky = '#68b8d7',

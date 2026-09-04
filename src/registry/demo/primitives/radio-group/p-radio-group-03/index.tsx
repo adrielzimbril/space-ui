@@ -1,7 +1,7 @@
 import { Label } from '@/registry/primitives/label'
 import { Radio, RadioGroup } from '@/registry/primitives/radio-group'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <RadioGroup defaultValue="r-1">
       <Label className="flex items-start gap-2 rounded-lg border p-3 hover:bg-accent/50 has-data-checked:border-primary/48 has-data-checked:bg-accent/50">

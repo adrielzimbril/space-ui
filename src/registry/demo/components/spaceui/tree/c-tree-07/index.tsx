@@ -42,7 +42,7 @@ const items: Record<string, PermissionItem> = {
 
 const indent = 24
 
-export default function Pattern() {
+export default function Demo() {
   const [checked, setChecked] = useState<Set<string>>(
     new Set(['users-view', 'content-view', 'content-publish', 'billing-view', 'api-read']),
   )

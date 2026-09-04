@@ -1,7 +1,7 @@
 import { Badge } from '@/registry/primitives/badge'
 import { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow } from '@/registry/primitives/table'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Table className="w-full" variant="card">
       <TableHeader>

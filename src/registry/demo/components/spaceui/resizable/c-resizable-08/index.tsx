@@ -8,7 +8,7 @@ const verticalPillClasses =
 const horizontalPillClasses =
   'before:pointer-events-none before:absolute before:top-1/2 before:left-1/2 before:z-10 before:h-1 before:w-6 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-muted-foreground/25 before:transition-all before:duration-300 before:ease-[cubic-bezier(0.32,0.72,0,1)] hover:before:w-10 hover:before:bg-muted-foreground/40 active:before:h-1.5 active:before:w-12 active:before:bg-primary'
 
-export default function Pattern() {
+export default function Demo() {
   return (
     <div className="mx-auto w-full max-w-lg">
       <ResizablePanelGroup orientation="horizontal" className="rounded-2xl min-h-[300px] border">

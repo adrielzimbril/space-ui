@@ -1,7 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/registry/primitives/avatar'
 import { AvatarExtended, AvatarBadge } from '@/registry/components/spaceui/avatar-extended'
 
-export default function AvatarCounts() {
+export default function Demo() {
   return (
     <div className="flex flex-wrap items-center gap-8">
       <AvatarExtended>
@@ -14,8 +14,8 @@ export default function AvatarCounts() {
 
       <AvatarExtended>
         <Avatar>
-          <AvatarImage alt="Shadcn" src="https://avatars.spaceui.one/v1?name=shadcn&variant=glass" />
-          <AvatarFallback>SH</AvatarFallback>
+          <AvatarImage alt="Nova" src="https://avatars.spaceui.one/v1?name=nova&variant=glass" />
+          <AvatarFallback>NV</AvatarFallback>
         </Avatar>
         <AvatarBadge variant="destructive">20</AvatarBadge>
       </AvatarExtended>

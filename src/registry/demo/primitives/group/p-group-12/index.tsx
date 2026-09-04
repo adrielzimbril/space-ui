@@ -4,7 +4,7 @@ import { Group } from '@/registry/primitives/group'
 import { InputGroup, InputGroupAddon, InputGroupInput } from '@/registry/primitives/input-group'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/registry/primitives/tooltip'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Group aria-label="Message composer" className="[--radius-lg:9999px] [--radius:9999rem]">
       <Group aria-label="Attachments">

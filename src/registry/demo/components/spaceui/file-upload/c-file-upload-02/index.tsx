@@ -14,7 +14,7 @@ interface AvatarUploadProps {
   defaultAvatar?: string
 }
 
-export default function Pattern({
+export default function Demo({
   maxSize = 2 * 1024 * 1024, // 2MB
   className,
   onFileChange,

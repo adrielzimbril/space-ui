@@ -3,7 +3,7 @@ import { Badge } from '@/registry/primitives/badge'
 
 import { Button } from '@/registry/primitives/button'
 import { Group, GroupSeparator } from '@/registry/primitives/group'
-export default function Pattern() {
+export default function Demo() {
   return (
     <Group>
       <Button variant="outline">

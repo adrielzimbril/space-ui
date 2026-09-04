@@ -2,7 +2,7 @@ import { IconArrowRight } from '@tabler/icons-react'
 import { Button } from '@/registry/primitives/button'
 import { InputGroup, InputGroupAddon, InputGroupInput } from '@/registry/primitives/input-group'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <InputGroup>
       <InputGroupInput aria-label="Subscribe to our newsletter" disabled placeholder="Your best email" type="email" />

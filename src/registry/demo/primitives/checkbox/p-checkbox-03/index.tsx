@@ -1,7 +1,7 @@
 import { Checkbox } from '@/registry/primitives/checkbox'
 import { Label } from '@/registry/primitives/label'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Label className="flex items-start gap-2 rounded-xl border p-3 hover:bg-accent/50 has-data-checked:border-primary/25 has-data-checked:bg-accent/50">
       <Checkbox defaultChecked />

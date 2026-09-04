@@ -6,7 +6,7 @@ import { Badge } from '@/registry/primitives/badge'
 import { Button } from '@/registry/primitives/button'
 import { IconArrowUpRight } from '@tabler/icons-react'
 
-export default function ImageDarkDemo2() {
+export default function Demo() {
   return (
     <Card className="w-full max-w-md overflow-hidden border border-border">
       <div className="relative aspect-video w-full overflow-hidden p-6 flex items-center justify-center border-b border-border">

@@ -84,7 +84,7 @@ function buildBookings(anchor: Date): CalendarEvent<BookingData>[] {
   ]
 }
 
-export default function Pattern() {
+export default function Demo() {
   const events = useMemo(() => buildBookings(new Date()), [])
   const apiRef = useRef<EventCalendarApi | null>(null)
   const bookingCount = useRef(0)

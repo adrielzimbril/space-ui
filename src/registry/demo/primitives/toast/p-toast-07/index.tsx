@@ -5,7 +5,7 @@ import { toastManager } from '@/registry/primitives/toast'
 
 const ERROR_TOAST_ID = 'space-demo-error-upsert'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Button
       onClick={() => {

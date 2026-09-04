@@ -109,7 +109,7 @@ function renderTooltip({ occurrence }: { occurrence: { event: CalendarEvent<Even
   )
 }
 
-export default function Pattern() {
+export default function Demo() {
   const events = useMemo(() => buildEvents(new Date()), [])
   const apiRef = useRef<EventCalendarApi<EventData> | null>(null)
   const counter = useRef(0)

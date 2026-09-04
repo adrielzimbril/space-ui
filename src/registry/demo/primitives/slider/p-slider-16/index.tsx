@@ -6,7 +6,7 @@ import { Slider } from '@/registry/primitives/slider'
 
 const labels = ['Awful', 'Poor', 'Okay', 'Good', 'Amazing']
 
-export default function Particle() {
+export default function Demo() {
   const [value, setValue] = useState<number | readonly number[]>(3)
 
   const currentValue = Array.isArray(value) ? value[0] : value

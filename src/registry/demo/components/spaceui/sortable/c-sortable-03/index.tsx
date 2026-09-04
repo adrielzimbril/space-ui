@@ -48,7 +48,7 @@ const defaultOptionGroups: OptionGroup[] = [
   },
 ]
 
-export default function Pattern() {
+export default function Demo() {
   const [optionGroups, setOptionGroups] = useState<OptionGroup[]>(defaultOptionGroups)
 
   const handleParentReorder = (newGroups: OptionGroup[]) => {

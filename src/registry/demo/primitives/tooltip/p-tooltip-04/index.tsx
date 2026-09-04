@@ -26,7 +26,7 @@ const ShareSocialContent = () => {
   return <span>Share to social media</span>
 }
 
-export default function Particle() {
+export default function Demo() {
   return (
     <TooltipProvider>
       <Group aria-label="Share options" orientation="vertical">

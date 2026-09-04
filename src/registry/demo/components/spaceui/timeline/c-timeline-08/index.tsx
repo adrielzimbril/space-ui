@@ -32,7 +32,7 @@ const releaseCycle = [
   },
 ]
 
-export default function Pattern() {
+export default function Demo() {
   return (
     <Timeline defaultValue={2} orientation="horizontal" className="w-full max-w-xl">
       {releaseCycle.map((item) => (

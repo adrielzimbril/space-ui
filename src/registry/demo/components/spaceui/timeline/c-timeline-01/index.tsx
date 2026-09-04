@@ -11,7 +11,7 @@ import {
   TimelineTitle,
 } from '@/registry/components/spaceui/timeline'
 
-export default function Pattern() {
+export default function Demo() {
   return (
     <Timeline defaultValue={2} className="w-full max-w-md">
       <TimelineItem step={1}>

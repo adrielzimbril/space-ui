@@ -1,7 +1,7 @@
 import { InputGroup, InputGroupAddon, InputGroupText } from '@/registry/primitives/input-group'
 import { NumberField, NumberFieldInput } from '@/registry/primitives/number-field'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <InputGroup>
       <NumberField aria-label="Enter the amount" defaultValue={10}>

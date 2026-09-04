@@ -4,7 +4,7 @@ import { ImageDark } from '@/registry/components/spaceui/image-dark'
 import { Badge } from '@/registry/primitives/badge'
 import { Separator } from '@/registry/primitives/separator'
 
-export default function ImageDarkDemo1() {
+export default function Demo() {
   return (
     <div className="w-full overflow-hidden">
       <div className="flex items-center justify-center">

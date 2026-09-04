@@ -19,9 +19,9 @@ const USERS: PresenceUser[] = [
   },
   {
     id: 3,
-    name: 'Shadcn',
-    src: 'https://avatars.spaceui.one/v1?name=shadcn&variant=pebble',
-    fallback: 'CN',
+    name: 'Nova',
+    src: 'https://avatars.spaceui.one/v1?name=nova&variant=pebble',
+    fallback: 'NV',
     online: true,
   },
   {
@@ -75,8 +75,8 @@ const USERS: PresenceUser[] = [
   },
 ]
 
-export default function UserPresenceAvatarDemo() {
+export default function Demo() {
   return <UserPresenceAvatar users={USERS} />
 }
 
-export { UserPresenceAvatarDemo }
+export { Demo as UserPresenceAvatarDemo }

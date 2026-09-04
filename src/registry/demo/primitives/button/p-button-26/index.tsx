@@ -1,7 +1,7 @@
 import { IconBrandGithub, IconBrandGoogle, IconBrandX } from '@tabler/icons-react'
 import { Button } from '@/registry/primitives/button'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="flex flex-col gap-2">
       <Button variant="outline">

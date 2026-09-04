@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Rating } from '@/registry/components/spaceui/rating'
 
-export default function Pattern() {
+export default function Demo() {
   const [rating, setRating] = useState(3.5)
 
   return (

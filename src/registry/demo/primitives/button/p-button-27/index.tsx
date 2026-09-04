@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Button } from '@/registry/primitives/button'
 
-export default function Particle() {
+export default function Demo() {
   const [open, setOpen] = useState(false)
 
   return (

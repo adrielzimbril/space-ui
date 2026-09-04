@@ -10,7 +10,7 @@ import {
   ComboboxPopup,
 } from '@/registry/primitives/combobox'
 
-export default function Particle() {
+export default function Demo() {
   const timezones = Intl.supportedValuesOf('timeZone')
 
   const formattedTimezones = useMemo(() => {

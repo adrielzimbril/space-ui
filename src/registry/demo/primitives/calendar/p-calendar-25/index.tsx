@@ -143,7 +143,7 @@ function applyTime(date: Date, time: string) {
   return next
 }
 
-export default function Particle() {
+export default function Demo() {
   const [date, setDate] = useState<Date | undefined>(() => {
     const initial = new Date()
     initial.setHours(12, 0, 0, 0)

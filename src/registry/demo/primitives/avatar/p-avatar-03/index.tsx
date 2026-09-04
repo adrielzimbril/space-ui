@@ -1,7 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/registry/primitives/avatar'
 import { AvatarExtended, AvatarRing } from '@/registry/components/spaceui/avatar-extended'
 
-export default function AvatarRings() {
+export default function Demo() {
   return (
     <div className="flex flex-wrap items-center gap-6">
       <AvatarExtended>
@@ -14,8 +14,8 @@ export default function AvatarRings() {
 
       <AvatarExtended>
         <Avatar className="rounded-lg">
-          <AvatarImage alt="Shadcn" src="https://avatars.spaceui.one/v1?name=lyra&variant=glass" />
-          <AvatarFallback>CN</AvatarFallback>
+          <AvatarImage alt="Nova" src="https://avatars.spaceui.one/v1?name=lyra&variant=glass" />
+          <AvatarFallback>NV</AvatarFallback>
         </Avatar>
         <AvatarRing className="rounded-lg ring-emerald-500" />
       </AvatarExtended>

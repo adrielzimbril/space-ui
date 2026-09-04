@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { Button } from '@/registry/primitives/button'
 import { InputGroup, InputGroupAddon, InputGroupInput } from '@/registry/primitives/input-group'
 
-export default function Particle() {
+export default function Demo() {
   const [value, setValue] = useState('Clear me')
 
   return (

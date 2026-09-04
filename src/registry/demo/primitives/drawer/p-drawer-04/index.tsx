@@ -8,7 +8,7 @@ import {
   DrawerTrigger,
 } from '@/registry/primitives/drawer'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="flex flex-wrap gap-2">
       <Drawer position="right">

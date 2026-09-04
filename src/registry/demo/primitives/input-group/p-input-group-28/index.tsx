@@ -5,7 +5,7 @@ import { Button } from '@/registry/primitives/button'
 import { InputGroup, InputGroupAddon, InputGroupText, InputGroupTextarea } from '@/registry/primitives/input-group'
 import { Tooltip, TooltipPopup, TooltipTrigger } from '@/registry/primitives/tooltip'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <InputGroup>
       <InputGroupTextarea placeholder="Type a message…" />

@@ -23,7 +23,7 @@ const items = [
   { label: 'Pear', value: 'pear' },
 ]
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Autocomplete items={items}>
       <AutocompleteInput aria-label="Search items" placeholder="Search items…" startAddon={<IconSearch />} />

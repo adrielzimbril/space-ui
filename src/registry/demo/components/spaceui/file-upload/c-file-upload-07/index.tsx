@@ -26,7 +26,7 @@ interface ImageUploadProps {
   onUploadComplete?: (images: ImageFile[]) => void
 }
 
-export default function Pattern({
+export default function Demo({
   maxFiles = 10,
   maxSize = 2 * 1024 * 1024, // 2MB
   accept = 'image/*',

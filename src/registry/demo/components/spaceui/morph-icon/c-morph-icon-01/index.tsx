@@ -20,7 +20,7 @@ export interface MorphIconDemoProps {
   duration?: number
 }
 
-export default function MorphIconDemo({ variant = 'blur-scale', duration = 0.25 }: MorphIconDemoProps) {
+export default function Demo({ variant = 'blur-scale', duration = 0.25 }: MorphIconDemoProps) {
   const [theme, setTheme] = React.useState<'light' | 'dark' | 'system'>('light')
   const [copied, setCopied] = React.useState(false)
   const [playing, setPlaying] = React.useState(false)

@@ -37,7 +37,7 @@ interface ProgressUploadProps {
   simulateUpload?: boolean
 }
 
-export default function Pattern({
+export default function Demo({
   maxFiles = 5,
   maxSize = 10 * 1024 * 1024, // 10MB
   accept = '*',

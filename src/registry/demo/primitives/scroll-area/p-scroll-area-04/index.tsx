@@ -29,7 +29,7 @@ const shortcuts = [
   { keys: '⌘ ⇧ ]', action: 'Unfold region' },
 ]
 
-export default function Particle() {
+export default function Demo() {
   return (
     <ScrollArea className="h-64 rounded-lg border" scrollFade>
       <div className="px-4 py-2">

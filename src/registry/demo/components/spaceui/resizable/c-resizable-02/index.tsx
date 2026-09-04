@@ -2,7 +2,7 @@
 
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from '@/registry/components/spaceui/resizable'
 
-export default function Pattern() {
+export default function Demo() {
   return (
     <div className="mx-auto w-full max-w-lg">
       <ResizablePanelGroup orientation="horizontal" className="rounded-2xl min-h-[200px] border">

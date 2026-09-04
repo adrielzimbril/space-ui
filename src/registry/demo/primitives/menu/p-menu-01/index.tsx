@@ -23,7 +23,7 @@ import {
   MenuTrigger,
 } from '@/registry/primitives/menu'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <Menu>
       <MenuTrigger render={<Button variant="outline" />}>Open menu</MenuTrigger>

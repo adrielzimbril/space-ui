@@ -2,7 +2,7 @@ import { Group, GroupSeparator } from '@/registry/primitives/group'
 import { Label } from '@/registry/primitives/label'
 import { NumberField, NumberFieldGroup, NumberFieldInput } from '@/registry/primitives/number-field'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <div className="flex flex-col gap-2">
       <Label>Range</Label>

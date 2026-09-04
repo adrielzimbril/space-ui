@@ -3,7 +3,7 @@ import { IconStack } from '@/registry/components/spaceui/icon-stack'
 
 import { Button } from '@/registry/primitives/button'
 import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/registry/primitives/empty'
-export default function Pattern() {
+export default function Demo() {
   return (
     <div className="flex items-center justify-center p-4">
       <Empty className="max-w-md py-10">

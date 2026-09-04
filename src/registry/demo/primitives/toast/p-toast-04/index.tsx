@@ -5,7 +5,7 @@ import { Button } from '@/registry/primitives/button'
 import { Spinner } from '@/registry/primitives/spinner'
 import { anchoredToastManager } from '@/registry/primitives/toast'
 
-export default function Particle() {
+export default function Demo() {
   const submitRef = useRef<HTMLButtonElement>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const toastIdRef = useRef<string | null>(null)

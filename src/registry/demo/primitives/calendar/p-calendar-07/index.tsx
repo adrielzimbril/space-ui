@@ -3,7 +3,7 @@
 import { addDays } from 'date-fns'
 import { Calendar } from '@/registry/primitives/calendar'
 
-export default function Particle() {
+export default function Demo() {
   const today = new Date()
 
   return (

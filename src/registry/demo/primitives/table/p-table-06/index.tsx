@@ -155,7 +155,7 @@ const getColumns = (): ColumnDef<Project>[] => [
   },
 ]
 
-export default function Particle() {
+export default function Demo() {
   const [tableData] = useState<Project[]>(data)
   const [rowSelection, setRowSelection] = useState({})
 

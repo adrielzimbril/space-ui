@@ -10,7 +10,7 @@ import {
 } from '@/registry/primitives/alert-dialog'
 import { Button } from '@/registry/primitives/button'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <AlertDialog>
       <AlertDialogTrigger render={<Button variant="destructive-outline" />}>Delete Account</AlertDialogTrigger>

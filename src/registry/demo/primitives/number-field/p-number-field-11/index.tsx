@@ -6,7 +6,7 @@ import {
   NumberFieldInput,
 } from '@/registry/primitives/number-field'
 
-export default function Particle() {
+export default function Demo() {
   return (
     <NumberField defaultValue={0}>
       <NumberFieldGroup className="[--radius-lg:9999px] [--radius:9999px]">

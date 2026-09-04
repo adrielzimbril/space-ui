@@ -6,7 +6,7 @@ import { Calendar } from '@/registry/primitives/calendar'
 import { Field, FieldLabel } from '@/registry/primitives/field'
 import { InputGroup, InputGroupAddon, InputGroupInput } from '@/registry/primitives/input-group'
 
-export default function Particle() {
+export default function Demo() {
   const [date, setDate] = useState<Date | undefined>(() => new Date())
   const [month, setMonth] = useState<Date>(() => new Date())
   const [timeValue, setTimeValue] = useState('12:00:00')

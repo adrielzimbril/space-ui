@@ -79,7 +79,7 @@ const items: Record<string, OrgItem> = {
 
 const indent = 24
 
-export default function Pattern() {
+export default function Demo() {
   const tree = useTree<OrgItem>({
     initialState: {
       expandedItems: ['ceo', 'cto'],

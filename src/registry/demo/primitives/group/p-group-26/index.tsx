@@ -18,7 +18,7 @@ const statuses = [
   { value: '5', label: 'Rejected', color: 'bg-destructive' },
 ]
 
-export default function Pattern() {
+export default function Demo() {
   return (
     <Group className="max-w-xs">
       <Select defaultValue={statuses[1]} items={statuses}>

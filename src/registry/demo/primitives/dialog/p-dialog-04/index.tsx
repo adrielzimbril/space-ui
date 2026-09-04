@@ -26,7 +26,7 @@ import { Field } from '@/registry/primitives/field'
 import { Form } from '@/registry/primitives/form'
 import { Textarea } from '@/registry/primitives/textarea'
 
-export default function Particle() {
+export default function Demo() {
   const [dialogOpen, setDialogOpen] = useState(false)
   const [confirmOpen, setConfirmOpen] = useState(false)
   const [value, setValue] = useState('')
