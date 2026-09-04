@@ -1,16 +1,16 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import { useTheme } from 'next-themes'
 import { IconLayout2 } from '@tabler/icons-react'
-import type { AvatarEffect, AvatarVariant } from '@usespaceui/avatars'
+import { resolveVariant, type AvatarEffect, type AvatarVariant } from '@usespaceui/avatars'
+import { bloomSound } from '@/components/providers/sound-provider'
+import { MobileNavDrawer } from '@/components/layout/mobile-nav-drawer'
+import { ToolbarButton } from '@/components/playground/playground-toolbar-button'
+import { source, uiKitSource, resourcesSource } from '@/lib/source'
 import { ResourceStudio } from '@/resources/studio'
 import { ResourceToolbar, type ResourceToolbarConfig } from '@/resources/components/resource-toolbar'
-import { MorphIcon } from '@/registry/components/spaceui/morph-icon'
-import { triggerThemeTransition, type ThemeValue } from '@/registry/components/spaceui/mode-switcher'
-import { MobileNavDrawer } from '@/components/layout/mobile-nav-drawer'
-import { source, uiKitSource, resourcesSource } from '@/lib/source'
-import { AvatarCanvas } from './canvas'
+import { AvatarCanvas, type SelectedCanvasAvatar } from './canvas'
+import { AvatarCodeModal } from './code-modal'
 import { AvatarControlPanel } from './control-panel'
 import { MockupView } from './mockup-view'
 import { GalleryView } from './gallery-view'
@@ -19,7 +19,6 @@ import { getRandomPersonas, getSelectedAvatarDetails, resolvePaletteColors } fro
 type ViewMode = 'canvas' | 'mockup' | 'gallery'
 
 export function AvatarsPlayground() {
-  const { resolvedTheme, setTheme } = useTheme()
   const [pool, setPool] = useState<string[]>(() => getRandomPersonas(200))
   const [pattern, setPattern] = useState<AvatarVariant | 'all'>('all')
   const [size, setSize] = useState(164)
@@ -28,14 +27,22 @@ export function AvatarsPlayground() {
   const [paletteIndex, setPaletteIndex] = useState(-2)
   const [customColors, setCustomColors] = useState<string[]>([])
   const [circle, setCircle] = useState(true)
-  const [view, setView] = useState<ViewMode>('canvas')
+  const [view, setView] = useState<ViewMode>('gallery')
   const [canvasKey, setCanvasKey] = useState(0)
   const [showRight, setShowRight] = useState(true)
   const [expanded, setExpanded] = useState(false)
+  const [selectedAvatar, setSelectedAvatar] = useState<SelectedCanvasAvatar | null>(null)
 
   const parsedColors = useMemo(() => resolvePaletteColors(paletteIndex, customColors), [paletteIndex, customColors])
   const details = useMemo(() => getSelectedAvatarDetails(pattern), [pattern])
-  const theme: ThemeValue = resolvedTheme === 'dark' ? 'dark' : 'light'
+
+  const selectAvatar = (avatar: SelectedCanvasAvatar) => {
+    bloomSound()
+    setSelectedAvatar({
+      ...avatar,
+      variant: avatar.variant === 'all' ? resolveVariant(avatar.seed, 'all') : avatar.variant,
+    })
+  }
 
   const reset = () => {
     setPool(getRandomPersonas(200))
@@ -46,9 +53,10 @@ export function AvatarsPlayground() {
     setPaletteIndex(-2)
     setCustomColors([])
     setCircle(true)
-    setView('canvas')
+    setView('gallery')
     setShowRight(true)
     setExpanded(false)
+    setSelectedAvatar(null)
     setCanvasKey((key) => key + 1)
   }
 
@@ -68,82 +76,96 @@ export function AvatarsPlayground() {
   }
 
   return (
-    <ResourceStudio
-      showRight={showRight && !expanded}
-      onToggleRight={setShowRight}
-      className={expanded ? 'p-0' : undefined}
-      canvas={
-        view === 'canvas' ? (
-          <AvatarCanvas
-            key={canvasKey}
+    <>
+      <ResourceStudio
+        showRight={showRight && !expanded}
+        onToggleRight={setShowRight}
+        className={expanded ? 'p-0' : undefined}
+        canvas={
+          view === 'canvas' ? (
+            <AvatarCanvas
+              key={canvasKey}
+              pool={pool}
+              pattern={pattern}
+              size={size}
+              effect={effect}
+              animate={animate}
+              circle={circle}
+              parsedColors={parsedColors}
+              paletteIndex={paletteIndex}
+              onSelectAvatar={selectAvatar}
+            />
+          ) : view === 'mockup' ? (
+            <MockupView
+              pool={pool}
+              pattern={pattern}
+              size={size}
+              effect={effect}
+              animate={animate}
+              circle={circle}
+              parsedColors={parsedColors}
+              paletteIndex={paletteIndex}
+            />
+          ) : (
+            <GalleryView
+              pool={pool}
+              pattern={pattern}
+              size={size}
+              effect={effect}
+              animate={animate}
+              circle={circle}
+              parsedColors={parsedColors}
+              paletteIndex={paletteIndex}
+              onSelectAvatar={selectAvatar}
+            />
+          )
+        }
+        float={
+          <ResourceToolbar
+            config={toolbarConfig}
+            left={
+              <MobileNavDrawer
+                trees={[source.pageTree, uiKitSource.pageTree, resourcesSource.pageTree]}
+                triggerClassName="flex!"
+                trigger={
+                  <ToolbarButton label="Open navigation">
+                    <IconLayout2 className="size-4" />
+                  </ToolbarButton>
+                }
+              />
+            }
+          />
+        }
+        right={
+          <AvatarControlPanel
             pool={pool}
             pattern={pattern}
-            size={size}
-            effect={effect}
-            animate={animate}
-            circle={circle}
-            parsedColors={parsedColors}
+            setPattern={setPattern}
             paletteIndex={paletteIndex}
-            onSelectAvatar={() => {}}
-          />
-        ) : view === 'mockup' ? (
-          <MockupView
-            pool={pool}
-            pattern={pattern}
+            setPaletteIndex={setPaletteIndex}
+            customColors={customColors}
+            setCustomColors={setCustomColors}
             size={size}
+            setSize={setSize}
             effect={effect}
-            animate={animate}
+            setEffect={setEffect}
             circle={circle}
-            parsedColors={parsedColors}
-            paletteIndex={paletteIndex}
-          />
-        ) : (
-          <GalleryView
-            pool={pool}
-            pattern={pattern}
-            size={size}
-            effect={effect}
+            setCircle={setCircle}
             animate={animate}
-            circle={circle}
+            setAnimate={setAnimate}
             parsedColors={parsedColors}
-            paletteIndex={paletteIndex}
+            details={details}
+            regenerateSeeds={() => setPool(getRandomPersonas(200))}
+            view={view}
+            setView={setView}
           />
-        )
-      }
-      float={
-        <ResourceToolbar
-          config={toolbarConfig}
-          left={
-            <ToolbarButton label="Open navigation">
-              <IconLayout2 className="size-4" />
-            </ToolbarButton>
-          }
-        />
-      }
-      right={
-        <AvatarControlPanel
-          pool={pool}
-          pattern={pattern}
-          setPattern={setPattern}
-          paletteIndex={paletteIndex}
-          setPaletteIndex={setPaletteIndex}
-          customColors={customColors}
-          setCustomColors={setCustomColors}
-          size={size}
-          setSize={setSize}
-          effect={effect}
-          setEffect={setEffect}
-          circle={circle}
-          setCircle={setCircle}
-          animate={animate}
-          setAnimate={setAnimate}
-          parsedColors={parsedColors}
-          details={details}
-          regenerateSeeds={() => setPool(getRandomPersonas(200))}
-          view={view}
-          setView={setView}
-        />
-      }
-    />
+        }
+      />
+      <AvatarCodeModal
+        target={selectedAvatar}
+        config={{ size, circle, effect, animate }}
+        onClose={() => setSelectedAvatar(null)}
+      />
+    </>
   )
 }

@@ -4,8 +4,8 @@ import { useMemo } from 'react'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { Avatar } from '@usespaceui/avatars/react'
 import { generatePalette } from '@usespaceui/gradients'
-import { cn } from '@/registry/lib/utils'
-import type { AvatarEffect, AvatarVariant } from '@usespaceui/avatars'
+import { resolveVariant, type AvatarEffect, type AvatarVariant } from '@usespaceui/avatars'
+import type { SelectedCanvasAvatar } from './canvas'
 
 interface GalleryViewProps {
   pool: string[]
@@ -16,6 +16,7 @@ interface GalleryViewProps {
   circle: boolean
   parsedColors?: string[]
   paletteIndex: number
+  onSelectAvatar: (avatar: SelectedCanvasAvatar) => void
 }
 
 export function GalleryView({
@@ -27,6 +28,7 @@ export function GalleryView({
   circle,
   parsedColors,
   paletteIndex,
+  onSelectAvatar,
 }: GalleryViewProps) {
   const expandedPool = useMemo(() => {
     const result: string[] = []
@@ -41,8 +43,16 @@ export function GalleryView({
         {expandedPool.map((seed, i) => {
           const currentColors = paletteIndex === -2 ? generatePalette(seed).colors : parsedColors
           return (
-            <div
+            <button
+              type="button"
               key={`${seed}-${i}`}
+              onClick={() =>
+                onSelectAvatar({
+                  seed,
+                  variant: pattern,
+                  colors: currentColors ? [...currentColors] : undefined,
+                })
+              }
               className="group relative flex aspect-square cursor-pointer select-none flex-col justify-between rounded-[1.25rem] bg-muted p-4 text-start outline-none active:scale-[0.98]"
             >
               <span className="absolute top-4 left-4 text-[0.625rem] font-medium tabular-nums text-muted-foreground">
@@ -63,9 +73,9 @@ export function GalleryView({
                 />
               </div>
               <span className="absolute inset-x-4 bottom-4 truncate text-[0.625rem] font-medium capitalize text-muted-foreground">
-                {pattern === 'all' ? seed.split(' ')[0] : pattern.replace(/-/g, ' ')}
+                {pattern === 'all' ? resolveVariant(seed, 'all').replace(/-/g, ' ') : pattern.replace(/-/g, ' ')}
               </span>
-            </div>
+            </button>
           )
         })}
       </div>
