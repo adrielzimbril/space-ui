@@ -4,7 +4,7 @@ import { getRegistryComponentGroup } from '@/__registry__/components'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/registry/primitives/tabs'
 import { Button } from '@/registry/primitives/button'
 import { cn } from '@/registry/lib/utils'
-import React, { Suspense, useEffect, useMemo, useState } from 'react'
+import React, { Suspense, useEffect, useMemo, useState, useRef } from 'react'
 import { usePreviewTheme } from '@/components/docs/preview/hooks/use-preview-theme'
 import { index } from '@/__registry__/index'
 import { motion, AnimatePresence } from 'motion/react'
@@ -12,6 +12,7 @@ import { ShikiRenderer } from '@/components/docs/code/shiki-renderer'
 import ReactIcon from '@/registry/icons/react-icon'
 import { type Binds, Tweakpane } from '@/components/docs/preview/tweakpane'
 import { useRegistryEntry } from '@/components/docs/preview/hooks/use-registry-entry'
+import { useIsMobile } from '@/registry/hooks/browser/use-media-query'
 import {
   IconRotateClockwise,
   IconExternalLink,
@@ -119,9 +120,19 @@ export function ComponentPreview({
   const isBundled = has(name)
   const isSelected = activePreview?.name === name
 
+  const isMobile = useIsMobile()
   const [binds, setBinds] = useState<Binds | null>(null)
   const [componentProps, setComponentProps] = useState<Record<string, unknown> | null>(null)
-  const [tweakMode, setTweakMode] = useState(true)
+  const [tweakMode, setTweakMode] = useState(false)
+  const hasAutoOpenedRef = useRef(false)
+
+  useEffect(() => {
+    if (!hasAutoOpenedRef.current && !isMobile) {
+      hasAutoOpenedRef.current = true
+      setTweakMode(true)
+    }
+  }, [isMobile])
+
   const [key, setKey] = useState(0)
   const { themeOverride, setThemeOverride } = usePreviewTheme(name)
   const { entry, error: registryError } = useRegistryEntry(name)
@@ -411,7 +422,7 @@ export function ComponentPreview({
         </TabsContent>
 
         <TabsContent value="code" className="rounded-[0.875rem] bg-background py-1.5 overflow-hidden outline-none mt-2">
-          <ShikiRenderer code={code} lang="tsx" className="max-h-126" />
+          <ShikiRenderer code={code ?? ''} lang="tsx" className="max-h-126" />
         </TabsContent>
       </Tabs>
 
