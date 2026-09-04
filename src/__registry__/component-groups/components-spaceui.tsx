@@ -55,10 +55,6 @@ export const registryComponents: Record<string, RegistryComponent> = {
     () => import('@/registry/components/spaceui/dirt-carousel/index.tsx'),
     {},
   ),
-  'components-spaceui-section-scrollspy': lazyRegistryComponent(
-    () => import('@/registry/components/spaceui/section-scrollspy/index.tsx'),
-    {},
-  ),
   'components-spaceui-filters': lazyRegistryComponent(
     () => import('@/registry/components/spaceui/filters/index.tsx'),
     {},
@@ -113,6 +109,10 @@ export const registryComponents: Record<string, RegistryComponent> = {
   ),
   'components-spaceui-scrollspy': lazyRegistryComponent(
     () => import('@/registry/components/spaceui/scrollspy/index.tsx'),
+    {},
+  ),
+  'components-spaceui-section-scrollspy': lazyRegistryComponent(
+    () => import('@/registry/components/spaceui/section-scrollspy/index.tsx'),
     {},
   ),
   'components-spaceui-sortable': lazyRegistryComponent(

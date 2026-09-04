@@ -1521,9 +1521,9 @@
     ],
     "createdAt": "2026-09-04",
     "updatedAt": "2026-09-04",
-    "size": "4.1 KB",
-    "rawSize": 4215,
-    "directSize": "4.1 KB",
+    "size": "4.3 KB",
+    "rawSize": 4382,
+    "directSize": "4.2 KB",
     "fileCount": 2,
     "dependencies": [
       "motion",
@@ -1548,9 +1548,9 @@
     ],
     "createdAt": "2026-09-04",
     "updatedAt": "2026-09-04",
-    "size": "4.1 KB",
-    "rawSize": 4215,
-    "directSize": "4.1 KB",
+    "size": "4.3 KB",
+    "rawSize": 4382,
+    "directSize": "4.2 KB",
     "fileCount": 2,
     "dependencies": [
       "motion",
@@ -3171,58 +3171,6 @@
       "motion"
     ],
     "registryDependencies": [],
-    "dependents": [],
-    "related": []
-  },
-  "docs-scrollbar": {
-    "name": "components-spaceui-docs-scrollbar",
-    "shortName": "docs-scrollbar",
-    "title": "Docs Scrollbar",
-    "description": "Floating section scrollbar that tracks the active heading as you scroll.",
-    "type": "registry:component",
-    "url": "/ui-kit/components/spaceui/docs-scrollbar",
-    "category": "Docs-scrollbar",
-    "categories": [
-      "docs-scrollbar"
-    ],
-    "createdAt": "2026-09-04",
-    "updatedAt": "2026-09-04",
-    "size": "9.7 KB",
-    "rawSize": 9938,
-    "directSize": "9.7 KB",
-    "fileCount": 2,
-    "dependencies": [
-      "motion"
-    ],
-    "registryDependencies": [
-      "@usespaceui/lib-utils"
-    ],
-    "dependents": [],
-    "related": []
-  },
-  "components-spaceui-docs-scrollbar": {
-    "name": "components-spaceui-docs-scrollbar",
-    "shortName": "docs-scrollbar",
-    "title": "Docs Scrollbar",
-    "description": "Floating section scrollbar that tracks the active heading as you scroll.",
-    "type": "registry:component",
-    "url": "/ui-kit/components/spaceui/docs-scrollbar",
-    "category": "Docs-scrollbar",
-    "categories": [
-      "docs-scrollbar"
-    ],
-    "createdAt": "2026-09-04",
-    "updatedAt": "2026-09-04",
-    "size": "9.7 KB",
-    "rawSize": 9938,
-    "directSize": "9.7 KB",
-    "fileCount": 2,
-    "dependencies": [
-      "motion"
-    ],
-    "registryDependencies": [
-      "@usespaceui/lib-utils"
-    ],
     "dependents": [],
     "related": []
   },
@@ -6221,6 +6169,58 @@
     "fileCount": 1,
     "dependencies": [],
     "registryDependencies": [],
+    "dependents": [],
+    "related": []
+  },
+  "section-scrollspy": {
+    "name": "components-spaceui-section-scrollspy",
+    "shortName": "section-scrollspy",
+    "title": "Section Scrollspy",
+    "description": "Floating section scrollbar that tracks the active heading as you scroll.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/section-scrollspy",
+    "category": "Section-scrollspy",
+    "categories": [
+      "section-scrollspy"
+    ],
+    "createdAt": "2026-09-04",
+    "updatedAt": "2026-09-04",
+    "size": "11 KB",
+    "rawSize": 11226,
+    "directSize": "10.9 KB",
+    "fileCount": 2,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "@usespaceui/lib-utils"
+    ],
+    "dependents": [],
+    "related": []
+  },
+  "components-spaceui-section-scrollspy": {
+    "name": "components-spaceui-section-scrollspy",
+    "shortName": "section-scrollspy",
+    "title": "Section Scrollspy",
+    "description": "Floating section scrollbar that tracks the active heading as you scroll.",
+    "type": "registry:component",
+    "url": "/ui-kit/components/spaceui/section-scrollspy",
+    "category": "Section-scrollspy",
+    "categories": [
+      "section-scrollspy"
+    ],
+    "createdAt": "2026-09-04",
+    "updatedAt": "2026-09-04",
+    "size": "11 KB",
+    "rawSize": 11226,
+    "directSize": "10.9 KB",
+    "fileCount": 2,
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "@usespaceui/lib-utils"
+    ],
     "dependents": [],
     "related": []
   },

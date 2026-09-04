@@ -3,9 +3,9 @@
   "version": "0.0.11",
   "private": true,
   "scripts": {
-    "build": "node --no-experimental-webstorage ./node_modules/next/dist/bin/next build",
-    "dev": "node --no-experimental-webstorage ./node_modules/next/dist/bin/next dev --turbo",
-    "start": "node --no-experimental-webstorage ./node_modules/next/dist/bin/next start",
+    "build": "next build",
+    "dev": "next dev --turbo",
+    "start": "next start",
     "postinstall": "fumadocs-mdx",
     "sync:styles": "tsx ./scripts/sync-globals-css.ts",
     "clean": "pnpm registry:clean && pnpm registry:build",
@@ -14,8 +14,7 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
-    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
-    "prepare": "husky"
+    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache"
   },
   "dependencies": {
     "@ai-sdk/openai": "^4.0.25",

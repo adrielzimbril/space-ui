@@ -1159,38 +1159,6 @@ export const index: Record<string, any> = {
     })(),
     command: '@usespaceui/components-spaceui-dirt-carousel',
   },
-  'components-spaceui-section-scrollspy': {
-    name: 'components-spaceui-section-scrollspy',
-    description: 'Floating section scrollbar that tracks the active heading as you scroll.',
-    type: 'registry:component',
-    dependencies: ['motion'],
-    devDependencies: undefined,
-    registryDependencies: ['@usespaceui/lib-utils'],
-    files: [
-      {
-        path: 'src/registry/components/spaceui/section-scrollspy/index.tsx',
-        type: 'registry:component',
-        target: 'components/spaceui/section-scrollspy.tsx',
-      },
-    ],
-    keywords: [],
-    component: (() => {
-      const LazyComp = React.lazy(async () => {
-        const mod = await import('@/registry/components/spaceui/section-scrollspy/index.tsx')
-        const exportName =
-          Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
-          'components-spaceui-section-scrollspy'
-        const Comp = mod.default || mod[exportName]
-        if (mod.animations) {
-          ;(LazyComp as any).animations = mod.animations
-        }
-        return { default: Comp }
-      })
-      LazyComp.demoProps = {}
-      return LazyComp
-    })(),
-    command: '@usespaceui/components-spaceui-section-scrollspy',
-  },
   'components-spaceui-event-calendar': {
     name: 'components-spaceui-event-calendar',
     description: 'Event Calendar component for Space UI.',
@@ -2146,6 +2114,38 @@ export const index: Record<string, any> = {
       return LazyComp
     })(),
     command: '@usespaceui/components-spaceui-scrollspy',
+  },
+  'components-spaceui-section-scrollspy': {
+    name: 'components-spaceui-section-scrollspy',
+    description: 'Floating section scrollbar that tracks the active heading as you scroll.',
+    type: 'registry:component',
+    dependencies: ['motion'],
+    devDependencies: undefined,
+    registryDependencies: ['@usespaceui/lib-utils'],
+    files: [
+      {
+        path: 'src/registry/components/spaceui/section-scrollspy/index.tsx',
+        type: 'registry:component',
+        target: 'components/spaceui/section-scrollspy.tsx',
+      },
+    ],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import('@/registry/components/spaceui/section-scrollspy/index.tsx')
+        const exportName =
+          Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
+          'components-spaceui-section-scrollspy'
+        const Comp = mod.default || mod[exportName]
+        if (mod.animations) {
+          ;(LazyComp as any).animations = mod.animations
+        }
+        return { default: Comp }
+      })
+      LazyComp.demoProps = {}
+      return LazyComp
+    })(),
+    command: '@usespaceui/components-spaceui-section-scrollspy',
   },
   'components-spaceui-sortable': {
     name: 'components-spaceui-sortable',
@@ -4123,38 +4123,6 @@ export const index: Record<string, any> = {
       return LazyComp
     })(),
     command: '@usespaceui/demo-components-spaceui-c-dirt-carousel-1',
-  },
-  'demo-components-spaceui-c-section-scrollspy-1': {
-    name: 'demo-components-spaceui-c-section-scrollspy-1',
-    description: 'Floating docs index that follows the active section.',
-    type: 'registry:component',
-    dependencies: undefined,
-    devDependencies: undefined,
-    registryDependencies: ['@usespaceui/components-spaceui-section-scrollspy', '@usespaceui/primitives-badge'],
-    files: [
-      {
-        path: 'src/registry/demo/components/spaceui/section-scrollspy/c-section-scrollspy-1/index.tsx',
-        type: 'registry:component',
-        target: 'components/spaceui/c-section-scrollspy-1.tsx',
-      },
-    ],
-    keywords: [],
-    component: (() => {
-      const LazyComp = React.lazy(async () => {
-        const mod = await import('@/registry/demo/components/spaceui/section-scrollspy/c-section-scrollspy-1/index.tsx')
-        const exportName =
-          Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
-          'demo-components-spaceui-c-section-scrollspy-1'
-        const Comp = mod.default || mod[exportName]
-        if (mod.animations) {
-          ;(LazyComp as any).animations = mod.animations
-        }
-        return { default: Comp }
-      })
-      LazyComp.demoProps = {}
-      return LazyComp
-    })(),
-    command: '@usespaceui/demo-components-spaceui-c-section-scrollspy-1',
   },
   'demo-components-spaceui-c-event-calendar-1': {
     name: 'demo-components-spaceui-c-event-calendar-1',
@@ -7238,6 +7206,38 @@ export const index: Record<string, any> = {
       return LazyComp
     })(),
     command: '@usespaceui/demo-components-spaceui-c-scrollspy-2',
+  },
+  'demo-components-spaceui-c-section-scrollspy-1': {
+    name: 'demo-components-spaceui-c-section-scrollspy-1',
+    description: 'Floating section index that follows the active heading.',
+    type: 'registry:component',
+    dependencies: undefined,
+    devDependencies: undefined,
+    registryDependencies: ['@usespaceui/components-spaceui-section-scrollspy', '@usespaceui/primitives-badge'],
+    files: [
+      {
+        path: 'src/registry/demo/components/spaceui/section-scrollspy/c-section-scrollspy-1/index.tsx',
+        type: 'registry:component',
+        target: 'components/spaceui/c-section-scrollspy-1.tsx',
+      },
+    ],
+    keywords: [],
+    component: (() => {
+      const LazyComp = React.lazy(async () => {
+        const mod = await import('@/registry/demo/components/spaceui/section-scrollspy/c-section-scrollspy-1/index.tsx')
+        const exportName =
+          Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
+          'demo-components-spaceui-c-section-scrollspy-1'
+        const Comp = mod.default || mod[exportName]
+        if (mod.animations) {
+          ;(LazyComp as any).animations = mod.animations
+        }
+        return { default: Comp }
+      })
+      LazyComp.demoProps = {}
+      return LazyComp
+    })(),
+    command: '@usespaceui/demo-components-spaceui-c-section-scrollspy-1',
   },
   'demo-components-spaceui-c-sortable-1': {
     name: 'demo-components-spaceui-c-sortable-1',

@@ -1,54 +1,21 @@
 'use client'
 
-import { Features } from '@/components/marketing/landing/features'
 import { Hero } from '@/components/marketing/landing/hero'
-import { cn } from '@/registry/lib/utils'
-import { motion } from 'motion/react'
-import { useEffect, useState } from 'react'
-
-const CONTENT_VARIANTS = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: { type: 'spring', stiffness: 100, damping: 30 },
-  },
-} as const
+import { Principles } from '@/components/marketing/landing/principles'
+import { Catalog } from '@/components/marketing/landing/catalog'
+import { Studio } from '@/components/marketing/landing/studio'
+import { Cta } from '@/components/marketing/landing/cta'
+import { SectionScrollspy } from '@/registry/components/spaceui/section-scrollspy'
 
 export default function HomePage() {
-  const [transition, setTransition] = useState(false)
-  const [isLoaded, setIsLoaded] = useState(false)
-
-  useEffect(() => {
-    const timer = setTimeout(() => setTransition(true), 1250)
-    const timer2 = setTimeout(() => setIsLoaded(true), 2500)
-    return () => {
-      clearTimeout(timer)
-      clearTimeout(timer2)
-    }
-  }, [])
-
   return (
-    <main className={cn('relative h-dvh', !isLoaded && 'overflow-y-hidden')}>
-      <div className="h-dvh w-full flex flex-col justify-between">
-        {transition && (
-          <>
-            <div>
-              <motion.div
-                variants={CONTENT_VARIANTS}
-                initial="hidden"
-                animate={transition ? 'visible' : 'hidden'}
-                className="w-full"
-              >
-                <Hero key={String(transition)} />
-              </motion.div>
-
-              <Features />
-            </div>
-          </>
-        )}
-      </div>
+    <main className="relative min-h-dvh bg-background text-foreground">
+      <Hero />
+      <Principles />
+      <Catalog />
+      <Studio />
+      <Cta />
+      <SectionScrollspy portal />
     </main>
   )
 }
