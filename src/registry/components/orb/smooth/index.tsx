@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect } from 'react'
 import { cn } from '@/registry/lib/utils'
+import { attachGpuGate } from '@/registry/lib/gpu-runtime'
 import type { OrbSmoothProps } from './types'
 import { useOrbAudio } from './use-orb-audio'
 import {
@@ -118,6 +119,7 @@ export function OrbSmooth({
     let cancelled = false
     let stop: (() => void) | undefined
     let disposeGpu: (() => void) | undefined
+    let disposeGate: (() => void) | undefined
 
     async function mount() {
       const { init, effect, surface, frame, pingPong, sampler, target } = await import('vgpu')
@@ -128,8 +130,15 @@ export function OrbSmooth({
         return
       }
 
-      const simRes = 128
-      const dyeRes = 256
+      const gate = attachGpuGate(canvas)
+      disposeGate = gate.dispose
+      const lowPower = gate.state.lowPower
+      if (lowPower) {
+        canvas.width = 256
+        canvas.height = 256
+      }
+      const simRes = lowPower ? 48 : 128
+      const dyeRes = lowPower ? 96 : 256
       const floatFmt = 'rgba16float' as const
       const lin = sampler(gpu, { minFilter: 'linear', magFilter: 'linear' })
       const near = sampler(gpu, { minFilter: 'nearest', magFilter: 'nearest' })
@@ -201,14 +210,24 @@ export function OrbSmooth({
       const dyeTexel = 1 / dyeRes
       let raf = 0
 
+      let lastDraw = 0
       const render = () => {
         if (cancelled) return
         const cur = propsRef.current
+        if (gate.state.paused) {
+          if (cur.animated) raf = requestAnimationFrame(render)
+          return
+        }
+        const now = performance.now()
+        if (lowPower && now - lastDraw < 33) {
+          if (cur.animated) raf = requestAnimationFrame(render)
+          return
+        }
+        lastDraw = now
         if (cur.textureUrl !== currentUrl) {
           currentUrl = cur.textureUrl
           loadImage(currentUrl || '')
         }
-        const now = performance.now()
         const dt = Math.min((now - last) / 1000, 0.05)
         last = now
         time += dt * cur.timeScale
@@ -244,102 +263,104 @@ export function OrbSmooth({
         const cum = [cumulativeAudio[0], cumulativeAudio[1], cumulativeAudio[2], cumulativeAudio[3]] as const
         const avg = [audioAverage[0], audioAverage[1], audioAverage[2], audioAverage[3]] as const
 
-        for (const s of splats) {
-          const splatParams = {
-            point: [s.x, s.y],
-            color: [s.dx, s.dy, 1, 1],
-            cumulativeAudio: cum,
-            audioAverage: avg,
-            radius: 1.5,
-            time,
-            aspectRatio: 1,
+        if (!lowPower) {
+          for (const s of splats) {
+            const splatParams = {
+              point: [s.x, s.y],
+              color: [s.dx, s.dy, 1, 1],
+              cumulativeAudio: cum,
+              audioAverage: avg,
+              radius: 1.5,
+              time,
+              aspectRatio: 1,
+            }
+            splatFx.set({ uTarget: velocity.read.color, samp: lin, params: splatParams })
+            blit(splatFx, velocity.write)
+            velocity.swap()
+            splatFx.set({ uTarget: density.read.color, samp: lin, params: splatParams })
+            blit(splatFx, density.write)
+            density.swap()
           }
-          splatFx.set({ uTarget: velocity.read.color, samp: lin, params: splatParams })
-          blit(splatFx, velocity.write)
+
+          curlFx.set({ uVelocity: velocity.read.color, samp: near, params: { texelSize: [texelSize, texelSize] } })
+          blit(curlFx, curl)
+
+          vortFx.set({
+            uVelocity: velocity.read.color,
+            uCurl: curl.color,
+            samp: lin,
+            params: { texelSize: [texelSize, texelSize], curl: 0, dt: 0.016 },
+          })
+          blit(vortFx, velocity.write)
           velocity.swap()
-          splatFx.set({ uTarget: density.read.color, samp: lin, params: splatParams })
-          blit(splatFx, density.write)
-          density.swap()
-        }
 
-        curlFx.set({ uVelocity: velocity.read.color, samp: near, params: { texelSize: [texelSize, texelSize] } })
-        blit(curlFx, curl)
+          divFx.set({ uVelocity: velocity.read.color, samp: near, params: { texelSize: [texelSize, texelSize] } })
+          blit(divFx, divergence)
 
-        vortFx.set({
-          uVelocity: velocity.read.color,
-          uCurl: curl.color,
-          samp: lin,
-          params: { texelSize: [texelSize, texelSize], curl: 0, dt: 0.016 },
-        })
-        blit(vortFx, velocity.write)
-        velocity.swap()
+          clearFx.set({ uTexture: pressure.read.color, samp: near, params: { value: 0.97 } })
+          blit(clearFx, pressure.write)
+          pressure.swap()
 
-        divFx.set({ uVelocity: velocity.read.color, samp: near, params: { texelSize: [texelSize, texelSize] } })
-        blit(divFx, divergence)
+          for (let i = 0; i < 3; i++) {
+            pressFx.set({
+              uPressure: pressure.read.color,
+              uDivergence: divergence.color,
+              samp: near,
+              params: { texelSize: [texelSize, texelSize] },
+            })
+            blit(pressFx, pressure.write)
+            pressure.swap()
+          }
 
-        clearFx.set({ uTexture: pressure.read.color, samp: near, params: { value: 0.97 } })
-        blit(clearFx, pressure.write)
-        pressure.swap()
-
-        for (let i = 0; i < 3; i++) {
-          pressFx.set({
+          gradFx.set({
             uPressure: pressure.read.color,
-            uDivergence: divergence.color,
-            samp: near,
+            uVelocity: velocity.read.color,
+            samp: lin,
             params: { texelSize: [texelSize, texelSize] },
           })
-          blit(pressFx, pressure.write)
-          pressure.swap()
-        }
+          blit(gradFx, velocity.write)
+          velocity.swap()
 
-        gradFx.set({
-          uPressure: pressure.read.color,
-          uVelocity: velocity.read.color,
-          samp: lin,
-          params: { texelSize: [texelSize, texelSize] },
-        })
-        blit(gradFx, velocity.write)
-        velocity.swap()
-
-        advectFx.set({
-          uVelocity: velocity.read.color,
-          uSource: velocity.read.color,
-          samp: lin,
-          params: {
-            texelSize: [texelSize, texelSize],
-            dyeTexelSize: [texelSize, texelSize],
-            dt: 0.016,
-            dissipation: 0.98,
-          },
-        })
-        blit(advectFx, velocity.write)
-        velocity.swap()
-
-        advectFx.set({
-          uVelocity: velocity.read.color,
-          uSource: density.read.color,
-          samp: lin,
-          params: {
-            texelSize: [texelSize, texelSize],
-            dyeTexelSize: [dyeTexel, dyeTexel],
-            dt: 0.016,
-            dissipation: 0.98,
-          },
-        })
-        blit(advectFx, density.write)
-        density.swap()
-
-        for (const dir of [
-          [1.2, 0],
-          [0, 1.2],
-        ]) {
-          blurFx.set({
-            uTexture: density.read.color,
+          advectFx.set({
+            uVelocity: velocity.read.color,
+            uSource: velocity.read.color,
             samp: lin,
-            params: { simRes: [simRes, simRes], direction: dir },
+            params: {
+              texelSize: [texelSize, texelSize],
+              dyeTexelSize: [texelSize, texelSize],
+              dt: 0.016,
+              dissipation: 0.98,
+            },
           })
-          blit(blurFx, density.write)
+          blit(advectFx, velocity.write)
+          velocity.swap()
+
+          advectFx.set({
+            uVelocity: velocity.read.color,
+            uSource: density.read.color,
+            samp: lin,
+            params: {
+              texelSize: [texelSize, texelSize],
+              dyeTexelSize: [dyeTexel, dyeTexel],
+              dt: 0.016,
+              dissipation: 0.98,
+            },
+          })
+          blit(advectFx, density.write)
           density.swap()
+
+          for (const dir of [
+            [1.2, 0],
+            [0, 1.2],
+          ]) {
+            blurFx.set({
+              uTexture: density.read.color,
+              samp: lin,
+              params: { simRes: [simRes, simRes], direction: dir },
+            })
+            blit(blurFx, density.write)
+            density.swap()
+          }
         }
 
         const w = canvasRef.current?.width || size
@@ -393,6 +414,7 @@ export function OrbSmooth({
     return () => {
       cancelled = true
       stop?.()
+      disposeGate?.()
       disposeGpu?.()
     }
   }, [])

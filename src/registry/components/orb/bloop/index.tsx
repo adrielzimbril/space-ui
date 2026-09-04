@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from 'react'
 import { cn } from '@/registry/lib/utils'
+import { attachGpuGate } from '@/registry/lib/gpu-runtime'
 import { BloopState, type OrbBloopProps } from './types'
 import { useOrbAudio } from '@/registry/components/orb/smooth/use-orb-audio'
 import { BLOOP_WGSL } from './bloop.wgsl'
@@ -55,6 +56,7 @@ export function OrbBloop({
     let cancelled = false
     let stop: (() => void) | undefined
     let disposeGpu: (() => void) | undefined
+    let disposeGate: (() => void) | undefined
 
     async function mount() {
       const { init, effect, surface, frameLoop } = await import('vgpu')
@@ -65,13 +67,24 @@ export function OrbBloop({
         return
       }
 
+      const gate = attachGpuGate(canvas)
+      disposeGate = gate.dispose
+      if (gate.state.lowPower) {
+        canvas.width = 256
+        canvas.height = 256
+      }
       const canvasSurface = surface(gpu, canvasRef.current, {
         format: 'bgra8unorm',
         alphaMode: 'premultiplied',
+        ...(gate.state.lowPower ? { dpr: 1 } : {}),
       })
       const fx = effect(gpu, BLOOP_WGSL, { blend: 'premultiplied' })
+      let lastDraw = 0
       const loop = frameLoop(gpu, (frame) => {
+        if (gate.state.paused) return
         const now = Date.now()
+        if (gate.state.lowPower && now - lastDraw < 33) return
+        lastDraw = now
         const time = (now - startTime.current) / 1000
         let avg = [0, 0, 0, 0]
         let micLevel = 0
@@ -129,6 +142,7 @@ export function OrbBloop({
     return () => {
       cancelled = true
       stop?.()
+      disposeGate?.()
       disposeGpu?.()
     }
   }, [])
