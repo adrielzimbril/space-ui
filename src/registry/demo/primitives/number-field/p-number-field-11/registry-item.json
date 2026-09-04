@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-number-field-11",
+  "name": "demo-p-number-field-11",
   "type": "registry:ui",
   "title": "Number Field 11",
   "description": "Pill-shaped number field",

@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-drawer-12",
+  "name": "demo-p-drawer-12",
   "type": "registry:ui",
   "title": "Drawer 12",
   "description": "Responsive edit profile: dialog on desktop, drawer on mobile",

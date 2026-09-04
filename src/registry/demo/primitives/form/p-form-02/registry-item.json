@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-form-02",
+  "type": "registry:ui",
+  "title": "Form 2",
+  "description": "Form with zod validation",
+  "dependencies": [
+    "zod",
+    "zod-v4"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-form",
+    "@usespaceui/primitives-input"
+  ],
+  "categories": [
+    "button",
+    "field",
+    "form",
+    "label",
+    "validation",
+    "zod"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/form/p-form-02/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-form-02.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

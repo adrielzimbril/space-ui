@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-table-05",
+  "type": "registry:ui",
+  "title": "Table 5",
+  "description": "Card-style table variant",
+  "registryDependencies": [
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-table"
+  ],
+  "categories": [
+    "table"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/table/p-table-05/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-table-05.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

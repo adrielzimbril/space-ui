@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-reading-time-01",
+  "type": "registry:hook",
+  "title": "useReadingTime",
+  "description": "Article word counter and reading estimate",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-form-use-reading-time",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-textarea"
+  ],
+  "categories": [
+    "hooks",
+    "form",
+    "reading-time"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/form/reading-time/h-reading-time-01/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-reading-time-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-dialog-03",
+  "type": "registry:ui",
+  "title": "Dialog 3",
+  "description": "Nested dialogs",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-dialog",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-input"
+  ],
+  "categories": [
+    "dialog"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/dialog/p-dialog-03/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-dialog-03.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-button-18",
+  "name": "demo-p-button-18",
   "type": "registry:ui",
   "title": "Button 18",
   "description": "Button with animated arrow on hover",

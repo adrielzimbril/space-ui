@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-command-02",
+  "type": "registry:ui",
+  "title": "Command 2",
+  "description": "Command palette with AI assistant",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-autocomplete",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-command",
+    "@usespaceui/primitives-empty",
+    "@usespaceui/primitives-input",
+    "@usespaceui/primitives-kbd",
+    "@usespaceui/primitives-scroll-area",
+    "@usespaceui/primitives-skeleton",
+    "@usespaceui/primitives-spinner"
+  ],
+  "categories": [
+    "command",
+    "dialog"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/command/p-command-02/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-command-02.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

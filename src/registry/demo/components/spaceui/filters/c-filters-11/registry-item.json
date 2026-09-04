@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-components-spaceui-c-filters-11",
+  "name": "demo-c-filters-11",
   "type": "registry:component",
   "title": "Filters with prefetched async options",
   "description": "Filters with prefetched async options",

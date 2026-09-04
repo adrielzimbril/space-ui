@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-input-17",
+  "name": "demo-p-input-17",
   "type": "registry:ui",
   "title": "Input 17",
   "description": "Input with characters remaining counter",

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-input-05",
+  "type": "registry:ui",
+  "title": "Input 6",
+  "description": "Input with label",
+  "registryDependencies": [
+    "@usespaceui/primitives-input",
+    "@usespaceui/primitives-label"
+  ],
+  "categories": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/input/p-input-05/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-input-05.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-tabs-11",
+  "name": "demo-p-tabs-11",
   "type": "registry:ui",
   "title": "Tabs 11",
   "description": "Tabs with icon only and grouped tooltips",

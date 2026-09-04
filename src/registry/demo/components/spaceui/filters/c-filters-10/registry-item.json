@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-components-spaceui-c-filters-10",
+  "name": "demo-c-filters-10",
   "type": "registry:component",
   "title": "Filters with virtualized large lists",
   "description": "Filters with virtualized large lists",

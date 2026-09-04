@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-field-13",
+  "name": "demo-p-field-13",
   "type": "registry:ui",
   "title": "Field 13",
   "description": "Field with checkbox group",

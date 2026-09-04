@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-group-10",
+  "name": "demo-p-group-10",
   "type": "registry:ui",
   "title": "Group 10",
   "description": "Nested groups",

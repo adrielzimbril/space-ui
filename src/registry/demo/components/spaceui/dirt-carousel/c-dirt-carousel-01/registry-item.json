@@ -1,0 +1,59 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-dirt-carousel-01",
+  "type": "registry:component",
+  "title": "Dirt Carousel Demo",
+  "description": "3D carousel with official Tweakpane controls.",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-dirt-carousel"
+  ],
+  "categories": [
+    "component",
+    "dirt-carousel"
+  ],
+  "meta": {
+    "demoProps": {
+      "direction": {
+        "value": "flat",
+        "options": {
+          "Flat": "flat",
+          "Up": "up",
+          "Down": "down"
+        }
+      },
+      "radius": {
+        "value": 800,
+        "min": 300,
+        "max": 1200,
+        "step": 20
+      },
+      "ballSize": {
+        "value": 800,
+        "min": 300,
+        "max": 1200,
+        "step": 20
+      },
+      "bounce": {
+        "value": false
+      },
+      "mouseTilt": {
+        "value": false
+      },
+      "snap": {
+        "value": true
+      },
+      "autoRotate": {
+        "value": false
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/dirt-carousel/c-dirt-carousel-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-dirt-carousel-01.tsx"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-input-group-16",
+  "name": "demo-p-input-group-16",
   "type": "registry:ui",
   "title": "Input Group 16",
   "description": "Input group with loading spinner",

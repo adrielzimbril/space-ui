@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-meter-02",
+  "type": "registry:ui",
+  "title": "Meter 2",
+  "description": "Simple meter",
+  "registryDependencies": [
+    "@usespaceui/primitives-meter"
+  ],
+  "categories": [
+    "meter"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/meter/p-meter-02/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-meter-02.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

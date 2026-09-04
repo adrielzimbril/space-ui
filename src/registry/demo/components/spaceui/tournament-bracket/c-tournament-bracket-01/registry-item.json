@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-tournament-bracket-01",
+  "type": "registry:component",
+  "title": "Tournament Bracket Demo",
+  "description": "Knockout bracket with round navigation.",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-tournament-bracket"
+  ],
+  "categories": [
+    "component",
+    "tournament-bracket"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/tournament-bracket/c-tournament-bracket-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-tournament-bracket-01.tsx"
+    }
+  ],
+  "createdAt": "2026-09-03",
+  "updatedAt": "2026-09-03"
+}

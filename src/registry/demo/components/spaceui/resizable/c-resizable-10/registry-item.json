@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-components-spaceui-c-resizable-10",
+  "name": "demo-c-resizable-10",
   "type": "registry:component",
   "title": "State-tracked resizable layout.",
   "description": "State-tracked resizable layout.",

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-popover-03",
+  "type": "registry:ui",
+  "title": "Popover 3",
+  "description": "Animated popovers",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-avatar",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-popover"
+  ],
+  "categories": [
+    "avatar",
+    "button",
+    "popover"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/popover/p-popover-03/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-popover-03.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

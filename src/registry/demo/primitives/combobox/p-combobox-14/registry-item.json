@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-combobox-14",
+  "name": "demo-p-combobox-14",
   "type": "registry:ui",
   "title": "Combobox 14",
   "description": "Pill-shaped combobox",

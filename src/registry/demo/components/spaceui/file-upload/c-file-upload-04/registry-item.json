@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-file-upload-04",
+  "type": "registry:component",
+  "title": "Gallery file upload",
+  "description": "Gallery file upload",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-form-use-file-upload",
+    "@usespaceui/hooks-utils-format-bytes",
+    "@usespaceui/lib-utils",
+    "@usespaceui/primitives-alert",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-dialog",
+    "@usespaceui/primitives-spinner"
+  ],
+  "categories": [
+    "component",
+    "file-upload"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/file-upload/c-file-upload-04/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-file-upload-04.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

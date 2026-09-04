@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-title-01",
+  "type": "registry:hook",
+  "title": "useTitle",
+  "description": "Document head title modifier",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-browser-use-title",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-input"
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "title"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/browser/title/h-title-01/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-title-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

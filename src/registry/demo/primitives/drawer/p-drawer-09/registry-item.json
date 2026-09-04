@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-drawer-09",
+  "type": "registry:ui",
+  "title": "Drawer 9",
+  "description": "Bottom drawer with snap points",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-drawer"
+  ],
+  "categories": [
+    "drawer"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/drawer/p-drawer-09/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-drawer-09.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

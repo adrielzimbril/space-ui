@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-status-badge-05",
+  "type": "registry:component",
+  "title": "Status Badge with Link",
+  "description": "Interactive availability status badge with direct booking link.",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-status-badge"
+  ],
+  "categories": [
+    "component",
+    "status-badge"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/status-badge/c-status-badge-05/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-status-badge-05.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-table-06",
+  "type": "registry:ui",
+  "title": "Table 6",
+  "description": "CardFrame with TanStack Table and checkboxes",
+  "dependencies": [
+    "@tanstack/react-table"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-checkbox",
+    "@usespaceui/primitives-table"
+  ],
+  "categories": [
+    "card",
+    "checkbox",
+    "table",
+    "tanstack"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/table/p-table-06/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-table-06.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

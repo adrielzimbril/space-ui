@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-button-17",
+  "name": "demo-p-button-17",
   "type": "registry:ui",
   "title": "Button 17",
   "description": "Pill-shaped button with rounded-full styling",

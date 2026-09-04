@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-context-menu-07",
+  "type": "registry:ui",
+  "title": "Context Menu 7",
+  "description": "Context menu with radio group",
+  "registryDependencies": [
+    "@usespaceui/primitives-context-menu"
+  ],
+  "categories": [
+    "context menu",
+    "menu"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/context-menu/p-context-menu-07/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-context-menu-07.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

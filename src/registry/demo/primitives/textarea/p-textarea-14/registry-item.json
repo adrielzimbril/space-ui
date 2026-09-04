@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-textarea-14",
+  "name": "demo-p-textarea-14",
   "type": "registry:ui",
   "title": "Textarea 14",
   "description": "Textarea with button aligned left",

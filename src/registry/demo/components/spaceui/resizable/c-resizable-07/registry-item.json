@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-resizable-07",
+  "type": "registry:component",
+  "title": "Handle with large capsule expansion on drag",
+  "description": "Handle with large capsule expansion on drag",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-resizable"
+  ],
+  "categories": [
+    "component",
+    "resizable"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/resizable/c-resizable-07/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-resizable-07.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

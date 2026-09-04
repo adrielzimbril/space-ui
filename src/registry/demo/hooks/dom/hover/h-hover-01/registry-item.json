@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-hover-01",
+  "type": "registry:hook",
+  "title": "useHover",
+  "description": "Mouse hover state detector",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-dom-use-hover",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "hooks",
+    "dom",
+    "hover"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/dom/hover/h-hover-01/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-hover-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

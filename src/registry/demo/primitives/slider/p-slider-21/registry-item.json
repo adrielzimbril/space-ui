@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-slider-21",
+  "name": "demo-p-slider-21",
   "type": "registry:ui",
   "title": "Slider 21",
   "description": "Object position sliders with reset",

@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-select-22",
+  "name": "demo-p-select-22",
   "type": "registry:ui",
   "title": "Select 22",
   "description": "Select with label",

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-frame-04",
+  "type": "registry:ui",
+  "title": "Frame 4",
+  "description": "Frame with multiple stacked panels",
+  "registryDependencies": [
+    "@usespaceui/primitives-frame",
+    "@usespaceui/primitives-separator"
+  ],
+  "categories": [
+    "frame"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/frame/p-frame-04/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-frame-04.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

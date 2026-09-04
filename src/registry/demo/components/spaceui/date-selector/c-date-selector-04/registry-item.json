@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-date-selector-04",
+  "type": "registry:component",
+  "title": "Date selector with dropdown menu",
+  "description": "Date selector with dropdown menu",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-date-selector",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-dialog",
+    "@usespaceui/primitives-menu"
+  ],
+  "categories": [
+    "component",
+    "date-selector",
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/date-selector/c-date-selector-04/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-date-selector-04.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

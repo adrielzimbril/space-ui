@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-tabs-10",
+  "name": "demo-p-tabs-10",
   "type": "registry:ui",
   "title": "Tabs 10",
   "description": "Tabs with icon only and count badge",

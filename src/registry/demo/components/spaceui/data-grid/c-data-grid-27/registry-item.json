@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-components-spaceui-c-data-grid-27",
+  "name": "demo-c-data-grid-27",
   "type": "registry:component",
   "title": "Data grid with local infinite scroll",
   "description": "Data grid with local infinite scroll",

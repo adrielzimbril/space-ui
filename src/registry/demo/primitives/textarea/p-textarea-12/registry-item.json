@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-textarea-12",
+  "name": "demo-p-textarea-12",
   "type": "registry:ui",
   "title": "Textarea 12",
   "description": "Shorter textarea with fixed height",

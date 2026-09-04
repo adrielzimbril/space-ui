@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-alert-dialog-02",
+  "type": "registry:ui",
+  "title": "Alert Dialog 2",
+  "description": "Alert dialog with bare footer",
+  "registryDependencies": [
+    "@usespaceui/primitives-alert-dialog",
+    "@usespaceui/primitives-button"
+  ],
+  "categories": [
+    "alert dialog",
+    "dialog"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/alert-dialog/p-alert-dialog-02/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-alert-dialog-02.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

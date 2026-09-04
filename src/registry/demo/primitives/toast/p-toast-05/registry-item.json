@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-toast-05",
+  "type": "registry:ui",
+  "title": "Toast 5",
+  "description": "Long-running promise toast with cancel",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-toast"
+  ],
+  "categories": [
+    "toast",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/toast/p-toast-05/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-toast-05.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

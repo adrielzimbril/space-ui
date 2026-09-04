@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-input-group-24",
+  "name": "demo-p-input-group-24",
   "type": "registry:ui",
   "title": "Input Group 24",
   "description": "Input group with character counter",

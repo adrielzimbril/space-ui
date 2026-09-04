@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-calendar-14",
+  "name": "demo-p-calendar-14",
   "type": "registry:ui",
   "title": "Calendar 14",
   "description": "Calendar without arrow navigation (dropdown only)",

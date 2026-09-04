@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-group-26",
+  "name": "demo-p-group-26",
   "type": "registry:ui",
   "title": "Button group with select status addon",
   "description": "Button group with select status addon",

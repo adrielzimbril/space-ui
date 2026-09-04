@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-frame-01",
+  "type": "registry:ui",
+  "title": "Frame 1",
+  "description": "Basic frame",
+  "registryDependencies": [
+    "@usespaceui/primitives-frame"
+  ],
+  "categories": [
+    "frame"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/frame/p-frame-01/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-frame-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

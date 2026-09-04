@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-group-29",
+  "name": "demo-p-group-29",
   "type": "registry:ui",
   "title": "Button group with buttons and badge",
   "description": "Button group with buttons and badge",

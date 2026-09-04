@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-format-bytes-01",
+  "type": "registry:hook",
+  "title": "formatBytes",
+  "description": "File size formatter and byte parser",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-utils-format-bytes",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-input"
+  ],
+  "categories": [
+    "hooks",
+    "utils",
+    "format-bytes"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/utils/format-bytes/h-format-bytes-01/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-format-bytes-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

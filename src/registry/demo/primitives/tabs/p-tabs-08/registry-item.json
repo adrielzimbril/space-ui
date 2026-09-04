@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-tabs-08",
+  "type": "registry:ui",
+  "title": "Tabs 8",
+  "description": "Tabs with count badge",
+  "registryDependencies": [
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-tabs"
+  ],
+  "categories": [
+    "tabs",
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/tabs/p-tabs-08/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-tabs-08.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

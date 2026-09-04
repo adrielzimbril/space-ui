@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-calendar-15",
+  "name": "demo-p-calendar-15",
   "type": "registry:ui",
   "title": "Calendar 15",
   "description": "Calendar with current month button",

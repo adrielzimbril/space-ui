@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-select-09",
+  "type": "registry:ui",
+  "title": "Select 9",
+  "description": "Select with object values",
+  "registryDependencies": [
+    "@usespaceui/primitives-select"
+  ],
+  "categories": [
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/select/p-select-09/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-select-09.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

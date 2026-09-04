@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-components-spaceui-c-data-grid-29",
+  "name": "demo-c-data-grid-29",
   "type": "registry:component",
   "title": "Data grid with row pinning support",
   "description": "Data grid with row pinning support",

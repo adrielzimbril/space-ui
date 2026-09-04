@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-date-picker-09",
+  "type": "registry:ui",
+  "title": "Date Picker 9",
+  "description": "Two months calendar with range date",
+  "dependencies": [
+    "@daypicker/react",
+    "@tabler/icons-react",
+    "date-fns",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-calendar",
+    "@usespaceui/primitives-popover"
+  ],
+  "categories": [
+    "date picker",
+    "calendar",
+    "popover",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/date-picker/p-date-picker-09/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-date-picker-09.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

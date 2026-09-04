@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-if-01",
+  "type": "registry:hook",
+  "title": "If",
+  "description": "Declarative boolean conditional renderer",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-components-if",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "hooks",
+    "components",
+    "if"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/components/if/h-if-01/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-if-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

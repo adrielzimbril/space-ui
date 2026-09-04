@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-checkbox-group-01",
+  "type": "registry:ui",
+  "title": "Checkbox Group 1",
+  "description": "Basic checkbox group",
+  "registryDependencies": [
+    "@usespaceui/primitives-checkbox",
+    "@usespaceui/primitives-checkbox-group",
+    "@usespaceui/primitives-label"
+  ],
+  "categories": [
+    "checkbox",
+    "checkbox group"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/checkbox-group/p-checkbox-group-01/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-checkbox-group-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

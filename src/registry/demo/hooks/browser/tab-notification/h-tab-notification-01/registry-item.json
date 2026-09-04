@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-tab-notification-01",
+  "type": "registry:hook",
+  "title": "useTabNotification",
+  "description": "Document title badge notification",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-browser-use-tab-notification",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "tab-notification"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/browser/tab-notification/h-tab-notification-01/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-tab-notification-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-input-group-14",
+  "name": "demo-p-input-group-14",
   "type": "registry:ui",
   "title": "Input Group 14",
   "description": "Large input group",

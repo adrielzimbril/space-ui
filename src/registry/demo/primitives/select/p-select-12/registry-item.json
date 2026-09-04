@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-select-12",
+  "name": "demo-p-select-12",
   "type": "registry:ui",
   "title": "Select 12",
   "description": "Timezone select",

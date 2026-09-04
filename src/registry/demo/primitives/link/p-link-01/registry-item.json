@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-link-01",
+  "type": "registry:ui",
+  "title": "Link 1",
+  "description": "Text link variants",
+  "registryDependencies": [
+    "@usespaceui/primitives-link"
+  ],
+  "categories": [
+    "link"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/link/p-link-01/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-link-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

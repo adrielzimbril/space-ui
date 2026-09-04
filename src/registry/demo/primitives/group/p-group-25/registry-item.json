@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-group-25",
+  "name": "demo-p-group-25",
   "type": "registry:ui",
   "title": "Model selector with tier badges",
   "description": "Model selector with tier badges",

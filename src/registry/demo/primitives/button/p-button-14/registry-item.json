@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-button-14",
+  "name": "demo-p-button-14",
   "type": "registry:ui",
   "title": "Button 14",
   "description": "Star button with count badge",

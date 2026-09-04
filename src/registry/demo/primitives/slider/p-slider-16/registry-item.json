@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-slider-16",
+  "name": "demo-p-slider-16",
   "type": "registry:ui",
   "title": "Slider 16",
   "description": "Emoji rating slider",

@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-combobox-16",
+  "name": "demo-p-combobox-16",
   "type": "registry:ui",
   "title": "Combobox 16",
   "description": "Timezone combobox with search input",

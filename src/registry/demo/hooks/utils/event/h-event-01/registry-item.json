@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-event-01",
+  "type": "registry:hook",
+  "title": "event & bindEvent",
+  "description": "Safe cross-browser event listener binder",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-utils-event",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "hooks",
+    "utils",
+    "event"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/utils/event/h-event-01/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-event-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

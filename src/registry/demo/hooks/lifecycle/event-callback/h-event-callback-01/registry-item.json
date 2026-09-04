@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-event-callback-01",
+  "type": "registry:hook",
+  "title": "useEventCallback",
+  "description": "Stable guaranteed callback reference",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-lifecycle-use-event-callback",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-input"
+  ],
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "event-callback"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/lifecycle/event-callback/h-event-callback-01/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-event-callback-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

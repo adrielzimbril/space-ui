@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-input-08",
+  "type": "registry:ui",
+  "title": "Input 9",
+  "description": "Password input with toggle visibility",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-input-group",
+    "@usespaceui/primitives-tooltip"
+  ],
+  "categories": [
+    "button",
+    "input",
+    "input group",
+    "tooltip"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/input/p-input-08/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-input-08.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-autocomplete-11",
+  "name": "demo-p-autocomplete-11",
   "type": "registry:ui",
   "title": "Autocomplete 11",
   "description": "Autocomplete with async items loading",

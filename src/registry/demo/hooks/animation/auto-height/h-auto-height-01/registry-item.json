@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-auto-height-01",
+  "type": "registry:hook",
+  "title": "useAutoHeight",
+  "description": "Dynamic container height transition",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-animation-use-auto-height",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "hooks",
+    "animation",
+    "auto-height"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/animation/auto-height/h-auto-height-01/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-auto-height-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

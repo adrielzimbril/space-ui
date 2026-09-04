@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-calendar-25",
+  "name": "demo-p-calendar-25",
   "type": "registry:ui",
   "title": "Calendar 25",
   "description": "Calendar with 24-hour autocomplete time input",

@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-drawer-14",
+  "name": "demo-p-drawer-14",
   "type": "registry:ui",
   "title": "Drawer 14",
   "description": "Left drawer with swipe area",

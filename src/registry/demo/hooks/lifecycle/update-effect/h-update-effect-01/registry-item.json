@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-update-effect-01",
+  "type": "registry:hook",
+  "title": "useUpdateEffect",
+  "description": "Effect executed only on dependencies update",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-lifecycle-use-update-effect",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "hooks",
+    "lifecycle",
+    "update-effect",
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/lifecycle/update-effect/h-update-effect-01/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-update-effect-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

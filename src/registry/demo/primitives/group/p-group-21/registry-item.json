@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-group-21",
+  "name": "demo-p-group-21",
   "type": "registry:ui",
   "title": "Group 21",
   "description": "Group with two number inputs for range",

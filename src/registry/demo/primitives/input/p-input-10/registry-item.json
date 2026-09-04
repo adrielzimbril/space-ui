@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-input-10",
+  "name": "demo-p-input-10",
   "type": "registry:ui",
   "title": "Input 10",
   "description": "Input group with keyboard shortcut",

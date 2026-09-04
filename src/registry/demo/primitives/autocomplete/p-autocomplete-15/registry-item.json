@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-autocomplete-15",
+  "name": "demo-p-autocomplete-15",
   "type": "registry:ui",
   "title": "Autocomplete 15",
   "description": "Address autocomplete with Google Maps Places API",

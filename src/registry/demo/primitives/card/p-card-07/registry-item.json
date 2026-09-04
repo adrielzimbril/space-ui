@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-card-07",
+  "type": "registry:ui",
+  "title": "Card 7",
+  "description": "Framed card with no rounded bottom",
+  "dependencies": [
+    "@tabler/icons-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-field",
+    "@usespaceui/primitives-form",
+    "@usespaceui/primitives-input",
+    "@usespaceui/primitives-select"
+  ],
+  "categories": [
+    "card",
+    "form"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/card/p-card-07/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-card-07.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

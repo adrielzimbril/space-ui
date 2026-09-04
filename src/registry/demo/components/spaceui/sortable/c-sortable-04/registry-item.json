@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-sortable-04",
+  "type": "registry:component",
+  "title": "Sortable playlist with frame",
+  "description": "Sortable playlist with frame",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-sortable",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-frame"
+  ],
+  "categories": [
+    "component",
+    "sortable"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/sortable/c-sortable-04/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-sortable-04.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-resizable-04",
+  "type": "registry:component",
+  "title": "Nested resizable",
+  "description": "Nested resizable",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-resizable"
+  ],
+  "categories": [
+    "component",
+    "resizable"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/resizable/c-resizable-04/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-resizable-04.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

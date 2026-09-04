@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-toggle-group-01",
+  "type": "registry:ui",
+  "title": "Toggle Group Variants",
+  "description": "Default and outline toggle groups",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-toggle-group"
+  ],
+  "categories": [
+    "toggle"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/toggle-group/p-toggle-group-01/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-toggle-group-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

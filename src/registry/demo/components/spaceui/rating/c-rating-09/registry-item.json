@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-rating-09",
+  "type": "registry:component",
+  "title": "Rating with review text input",
+  "description": "Rating with review text input",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-rating",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card",
+    "@usespaceui/primitives-label",
+    "@usespaceui/primitives-textarea"
+  ],
+  "categories": [
+    "component",
+    "rating"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/rating/c-rating-09/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-rating-09.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

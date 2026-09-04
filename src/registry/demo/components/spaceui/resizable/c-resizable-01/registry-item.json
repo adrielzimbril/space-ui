@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-resizable-01",
+  "type": "registry:component",
+  "title": "Horizontal resizable layout",
+  "description": "Horizontal resizable layout",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-resizable"
+  ],
+  "categories": [
+    "component",
+    "resizable"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/resizable/c-resizable-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-resizable-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-button-28",
+  "name": "demo-p-button-28",
   "type": "registry:ui",
   "title": "Button 28",
   "description": "Download button with progress and cancel action",

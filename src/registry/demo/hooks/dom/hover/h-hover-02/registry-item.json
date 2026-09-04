@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-hover-02",
+  "type": "registry:hook",
+  "title": "useHover (External Ref)",
+  "description": "Hover state detection using an explicit external React ref",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-dom-use-hover",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "hooks",
+    "dom",
+    "hover"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/dom/hover/h-hover-02/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-hover-02.tsx"
+    }
+  ],
+  "createdAt": "2026-08-25",
+  "updatedAt": "2026-08-25"
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-menu-05",
+  "type": "registry:ui",
+  "title": "Menu 5",
+  "description": "Menu with link",
+  "registryDependencies": [
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-menu"
+  ],
+  "categories": [
+    "dropdown",
+    "menu"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/menu/p-menu-05/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-menu-05.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

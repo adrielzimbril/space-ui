@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-date-picker-07",
+  "type": "registry:ui",
+  "title": "Date Picker 7",
+  "description": "Multiple dates picker",
+  "dependencies": [
+    "@tabler/icons-react",
+    "date-fns",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-calendar",
+    "@usespaceui/primitives-popover"
+  ],
+  "categories": [
+    "date picker",
+    "calendar",
+    "popover",
+    "button",
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/date-picker/p-date-picker-07/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-date-picker-07.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

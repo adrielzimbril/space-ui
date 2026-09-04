@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-button-12",
+  "name": "demo-p-button-12",
   "type": "registry:ui",
   "title": "Button 12",
   "description": "Outline like button with count",

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-avatar-02",
+  "type": "registry:ui",
+  "title": "Avatar Sizes",
+  "description": "Avatar in various size options",
+  "registryDependencies": [
+    "@usespaceui/primitives-avatar"
+  ],
+  "categories": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/avatar/p-avatar-02/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-avatar-02.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

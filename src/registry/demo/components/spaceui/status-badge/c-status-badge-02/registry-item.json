@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-status-badge-02",
+  "type": "registry:component",
+  "title": "Status Badge Sizes",
+  "description": "Standard sizing scale from extra-small to extra-large.",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-status-badge"
+  ],
+  "categories": [
+    "component",
+    "status-badge"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/status-badge/c-status-badge-02/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-status-badge-02.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-group-24",
+  "name": "demo-p-group-24",
   "type": "registry:ui",
   "title": "Publish controls with split button and overflow",
   "description": "Publish controls with split button and overflow",

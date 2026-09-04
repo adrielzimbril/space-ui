@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-combobox-17",
+  "name": "demo-p-combobox-17",
   "type": "registry:ui",
   "title": "Combobox 17",
   "description": "Combobox with select trigger",

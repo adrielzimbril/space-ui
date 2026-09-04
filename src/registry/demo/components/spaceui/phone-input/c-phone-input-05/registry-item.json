@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-phone-input-05",
+  "type": "registry:component",
+  "title": "Phone input with preset value",
+  "description": "Phone input with preset value",
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-phone-input"
+  ],
+  "categories": [
+    "component",
+    "phone-input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/phone-input/c-phone-input-05/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-phone-input-05.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

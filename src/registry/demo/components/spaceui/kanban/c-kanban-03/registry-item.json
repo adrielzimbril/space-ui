@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-kanban-03",
+  "type": "registry:component",
+  "title": "Kanban board with frame columns",
+  "description": "Kanban board with frame columns",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/components-spaceui-kanban",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-frame"
+  ],
+  "categories": [
+    "component",
+    "kanban"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/kanban/c-kanban-03/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/c-kanban-03.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

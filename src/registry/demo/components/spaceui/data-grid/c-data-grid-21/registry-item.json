@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-components-spaceui-c-data-grid-21",
+  "name": "demo-c-data-grid-21",
   "type": "registry:component",
   "title": "Data grid with loading skeleton",
   "description": "Data grid with loading skeleton",

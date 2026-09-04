@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-select-20",
+  "name": "demo-p-select-20",
   "type": "registry:ui",
   "title": "Select 20",
   "description": "Auto width select",

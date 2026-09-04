@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-cookie-01",
+  "type": "registry:hook",
+  "title": "cookie",
+  "description": "Imperative cookie helper",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-utils-cookie",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "hooks",
+    "utils",
+    "cookie"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/utils/cookie/h-cookie-01/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-cookie-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

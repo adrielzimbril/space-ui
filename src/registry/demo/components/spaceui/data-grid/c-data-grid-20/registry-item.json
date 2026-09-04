@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-components-spaceui-c-data-grid-20",
+  "name": "demo-c-data-grid-20",
   "type": "registry:component",
   "title": "Data grid with column visibility controls",
   "description": "Data grid with column visibility controls",

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-combobox-04",
+  "type": "registry:ui",
+  "title": "Combobox 4",
+  "description": "Combobox with label",
+  "registryDependencies": [
+    "@usespaceui/primitives-combobox",
+    "@usespaceui/primitives-label"
+  ],
+  "categories": [
+    "combobox",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/combobox/p-combobox-04/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-combobox-04.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

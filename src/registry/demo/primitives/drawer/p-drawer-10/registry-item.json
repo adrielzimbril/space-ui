@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-drawer-10",
+  "name": "demo-p-drawer-10",
   "type": "registry:ui",
   "title": "Drawer 10",
   "description": "Edit profile form with default and bare footer variants",

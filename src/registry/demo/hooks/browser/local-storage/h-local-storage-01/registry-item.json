@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-h-local-storage-01",
+  "type": "registry:hook",
+  "title": "useLocalStorage",
+  "description": "Synchronized persistent storage",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "@usespaceui/hooks-browser-use-local-storage",
+    "@usespaceui/primitives-badge",
+    "@usespaceui/primitives-button",
+    "@usespaceui/primitives-card"
+  ],
+  "categories": [
+    "hooks",
+    "browser",
+    "local-storage"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/hooks/browser/local-storage/h-local-storage-01/index.tsx",
+      "type": "registry:hook",
+      "target": "components/spaceui/h-local-storage-01.tsx"
+    }
+  ],
+  "createdAt": "2026-08-24",
+  "updatedAt": "2026-08-24"
+}

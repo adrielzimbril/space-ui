@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-primitives-p-field-18",
+  "name": "demo-p-field-18",
   "type": "registry:ui",
   "title": "Field 18",
   "description": "Complete form built with field",

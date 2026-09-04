@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-scroll-area-03",
+  "type": "registry:ui",
+  "title": "Scroll Area 3",
+  "description": "Scroll area with both directions",
+  "registryDependencies": [
+    "@usespaceui/primitives-scroll-area"
+  ],
+  "categories": [
+    "scroll area"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/scroll-area/p-scroll-area-03/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-scroll-area-03.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}

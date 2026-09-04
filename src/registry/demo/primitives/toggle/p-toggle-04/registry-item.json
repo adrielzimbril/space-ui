@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-p-toggle-04",
+  "type": "registry:ui",
+  "title": "Toggle 4",
+  "description": "Disabled toggle",
+  "registryDependencies": [
+    "@usespaceui/primitives-toggle"
+  ],
+  "categories": [
+    "toggle"
+  ],
+  "files": [
+    {
+      "path": "src/registry/demo/primitives/toggle/p-toggle-04/index.tsx",
+      "type": "registry:ui",
+      "target": "components/spaceui/p-toggle-04.tsx"
+    }
+  ],
+  "createdAt": "2026-08-21",
+  "updatedAt": "2026-08-21"
+}
