@@ -93,14 +93,7 @@ async function resolveRegistryItem(
 
   if (parsed?.files && Array.isArray(parsed.files) && parsed.files.length > 0) {
     for (const file of parsed.files) {
-      let code: string = file.content || ''
-      if (!code && file.path) {
-        try {
-          code = await fs.readFile(path.join(process.cwd(), file.path), 'utf8')
-        } catch {
-          // ignore
-        }
-      }
+      const code: string = file.content || ''
 
       if (code) {
         const { title, tabLabel } = deduceTitleAndLabel(cleanName, file.path, file.target)

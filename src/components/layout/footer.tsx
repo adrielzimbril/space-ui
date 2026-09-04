@@ -1,3 +1,4 @@
+import { siteConfig } from '@/lib/space-config'
 import { MotionEffect } from '@/registry/components/spaceui/motion-effect'
 
 export const Footer = () => {
@@ -21,11 +22,11 @@ export const Footer = () => {
           <div className="size-full px-4 md:px-6 flex items-center justify-center prose prose-sm text-sm text-muted-foreground">
             <p className="text-center truncate">
               Built by{' '}
-              <a href="https://x.com/usespaceui" rel="noopener noreferrer" target="_blank">
+              <a href={siteConfig.links.github} rel="noopener noreferrer" target="_blank">
                 Skyleen
               </a>
               . The source code is available on{' '}
-              <a href="https://github.com/usespaceui/ui" rel="noopener noreferrer" target="_blank">
+              <a href={siteConfig.links.github} rel="noopener noreferrer" target="_blank">
                 GitHub
               </a>
               .

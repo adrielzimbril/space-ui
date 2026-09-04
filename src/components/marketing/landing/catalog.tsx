@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { IconArrowRight, IconBox, IconAtom, IconFolderHeart, IconHook } from '@tabler/icons-react'
+import { IconArrowRight, IconBox, IconAtom, IconFolderHeart, IconWebhook } from '@tabler/icons-react'
 import { Surface } from './surface'
 
 const KITS = [
@@ -19,7 +19,7 @@ const KITS = [
     title: 'Hooks',
     href: '/ui-kit/hooks',
     body: 'Clipboard, debounce, media, scroll. Small utilities with live trays.',
-    icon: IconHook,
+    icon: IconWebhook,
   },
   {
     title: 'Blocks',

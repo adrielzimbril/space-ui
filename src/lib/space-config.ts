@@ -46,7 +46,8 @@ export const siteConfig = {
   links: {
     docs: `${appInfo.site}/docs`,
     github: `https://github.com/${appInfo.namespace}/ui`,
-    twitter: `https://x.com/${appInfo.twitterHandle}`,
+    // twitter: `https://x.com/${appInfo.twitterHandle}`,
+    x: 'https://x.com/adrielzimbril',
     authorTwitter: 'https://x.com/adrielzimbril',
   },
   author: {

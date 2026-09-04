@@ -2,17 +2,17 @@ import { DocsLayoutProps } from 'fumadocs-ui/layouts/docs'
 import { baseOptions } from '@/app/layout.config'
 import { source } from '@/lib/source'
 import XIcon from '@/registry/icons/x-icon'
-import React from 'react'
+import { siteConfig } from '@/lib/space-config'
 
 export const DOCS_LAYOUT_PROPS: DocsLayoutProps = {
   tree: source.pageTree,
-  githubUrl: 'https://github.com/usespaceui/ui',
+  githubUrl: siteConfig.links.github,
   ...baseOptions,
   links: [
     ...(baseOptions.links || []),
     {
       icon: <XIcon />,
-      url: 'https://x.com/space_ui',
+      url: siteConfig.links.x,
       text: 'X',
       type: 'icon',
     },

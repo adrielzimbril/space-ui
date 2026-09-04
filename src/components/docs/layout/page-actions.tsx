@@ -18,6 +18,7 @@ import { Link } from '@/registry/primitives/link'
 import { useBundle, prettify } from '@/components/providers/bundle-provider'
 import { useUiSound } from '@/components/providers/sound-provider'
 import { useClipboard } from '@/registry/hooks/browser/use-clipboard'
+import { siteConfig } from '@/lib/space-config'
 
 const cache = new Map<string, string>()
 
@@ -36,10 +37,7 @@ export function PageActions({
 }) {
   const resolvedMarkdownUrl = markdownUrl ?? (url ? `${url}.mdx` : '')
   const resolvedGithubUrl =
-    githubUrl ??
-    (path
-      ? `https://github.com/usespaceui/ui/blob/main/apps/www/src/content/${path}`
-      : 'https://github.com/usespaceui/ui')
+    githubUrl ?? (path ? `${siteConfig.links.github}/blob/main/src/content/${path}` : siteConfig.links.github)
 
   const { has, toggle } = useBundle()
   const { playSound } = useUiSound()
