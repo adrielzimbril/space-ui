@@ -22,7 +22,7 @@
     {
       "path": "src/registry/demo/hooks/utils/cache/h-cache-01/index.tsx",
       "type": "registry:hook",
-      "target": "components/spaceui/h-cache-01.tsx"
+      "target": "components/spaceui/cache.tsx"
     }
   ],
   "createdAt": "2026-08-24",

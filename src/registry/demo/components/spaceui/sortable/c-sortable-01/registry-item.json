@@ -20,7 +20,7 @@
     {
       "path": "src/registry/demo/components/spaceui/sortable/c-sortable-01/index.tsx",
       "type": "registry:component",
-      "target": "components/spaceui/c-sortable-01.tsx"
+      "target": "components/spaceui/sortable.tsx"
     }
   ],
   "createdAt": "2026-08-21",

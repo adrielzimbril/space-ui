@@ -22,7 +22,7 @@
     {
       "path": "src/registry/demo/primitives/command/p-command-01/index.tsx",
       "type": "registry:ui",
-      "target": "components/spaceui/p-command-01.tsx"
+      "target": "components/spaceui/command.tsx"
     }
   ],
   "createdAt": "2026-08-21",

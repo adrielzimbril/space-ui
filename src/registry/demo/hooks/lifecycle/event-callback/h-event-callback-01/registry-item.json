@@ -23,7 +23,7 @@
     {
       "path": "src/registry/demo/hooks/lifecycle/event-callback/h-event-callback-01/index.tsx",
       "type": "registry:hook",
-      "target": "components/spaceui/h-event-callback-01.tsx"
+      "target": "components/spaceui/event-callback.tsx"
     }
   ],
   "createdAt": "2026-08-24",

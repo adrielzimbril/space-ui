@@ -21,7 +21,7 @@
     {
       "path": "src/registry/demo/hooks/lifecycle/first-visit/h-first-visit-01/index.tsx",
       "type": "registry:hook",
-      "target": "components/spaceui/h-first-visit-01.tsx"
+      "target": "components/spaceui/first-visit.tsx"
     }
   ],
   "createdAt": "2026-08-24",

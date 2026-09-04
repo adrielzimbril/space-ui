@@ -19,7 +19,7 @@
     {
       "path": "src/registry/demo/primitives/sidebar/p-sidebar-01/index.tsx",
       "type": "registry:ui",
-      "target": "components/spaceui/p-sidebar-01.tsx"
+      "target": "components/spaceui/sidebar.tsx"
     }
   ],
   "createdAt": "2026-08-21",

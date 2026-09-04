@@ -21,7 +21,7 @@
     {
       "path": "src/registry/demo/primitives/combobox/p-combobox-16/index.tsx",
       "type": "registry:ui",
-      "target": "components/spaceui/p-combobox-16.tsx"
+      "target": "components/spaceui/combobox.tsx"
     }
   ],
   "createdAt": "2026-08-21",

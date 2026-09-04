@@ -18,7 +18,7 @@
     {
       "path": "src/registry/demo/components/spaceui/timeline/c-timeline-03/index.tsx",
       "type": "registry:component",
-      "target": "components/spaceui/c-timeline-03.tsx"
+      "target": "components/spaceui/timeline.tsx"
     }
   ],
   "createdAt": "2026-08-21",

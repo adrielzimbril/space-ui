@@ -21,7 +21,7 @@
     {
       "path": "src/registry/demo/hooks/browser/orientation/h-orientation-01/index.tsx",
       "type": "registry:hook",
-      "target": "components/spaceui/h-orientation-01.tsx"
+      "target": "components/spaceui/orientation.tsx"
     }
   ],
   "createdAt": "2026-08-24",

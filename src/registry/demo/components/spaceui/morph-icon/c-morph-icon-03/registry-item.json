@@ -19,7 +19,7 @@
     {
       "path": "src/registry/demo/components/spaceui/morph-icon/c-morph-icon-03/index.tsx",
       "type": "registry:component",
-      "target": "components/spaceui/c-morph-icon-03.tsx"
+      "target": "components/spaceui/morph-icon.tsx"
     }
   ],
   "createdAt": "2026-08-26",

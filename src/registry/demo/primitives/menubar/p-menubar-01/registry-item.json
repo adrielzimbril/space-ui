@@ -17,7 +17,7 @@
     {
       "path": "src/registry/demo/primitives/menubar/p-menubar-01/index.tsx",
       "type": "registry:ui",
-      "target": "components/spaceui/p-menubar-01.tsx"
+      "target": "components/spaceui/menubar.tsx"
     }
   ],
   "createdAt": "2026-08-25",

@@ -20,7 +20,7 @@
     {
       "path": "src/registry/demo/primitives/card/p-card-05/index.tsx",
       "type": "registry:ui",
-      "target": "components/spaceui/p-card-05.tsx"
+      "target": "components/spaceui/card.tsx"
     }
   ],
   "createdAt": "2026-08-21",

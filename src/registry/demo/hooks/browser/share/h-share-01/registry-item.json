@@ -22,7 +22,7 @@
     {
       "path": "src/registry/demo/hooks/browser/share/h-share-01/index.tsx",
       "type": "registry:hook",
-      "target": "components/spaceui/h-share-01.tsx"
+      "target": "components/spaceui/share.tsx"
     }
   ],
   "createdAt": "2026-08-24",

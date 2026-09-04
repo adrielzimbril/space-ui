@@ -14,7 +14,7 @@
     {
       "path": "src/registry/demo/primitives/kbd/p-kbd-01/index.tsx",
       "type": "registry:ui",
-      "target": "components/spaceui/p-kbd-01.tsx"
+      "target": "components/spaceui/kbd.tsx"
     }
   ],
   "createdAt": "2026-08-21",

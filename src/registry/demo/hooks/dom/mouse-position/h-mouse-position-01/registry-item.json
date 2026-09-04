@@ -21,7 +21,7 @@
     {
       "path": "src/registry/demo/hooks/dom/mouse-position/h-mouse-position-01/index.tsx",
       "type": "registry:hook",
-      "target": "components/spaceui/h-mouse-position-01.tsx"
+      "target": "components/spaceui/mouse-position.tsx"
     }
   ],
   "createdAt": "2026-08-24",

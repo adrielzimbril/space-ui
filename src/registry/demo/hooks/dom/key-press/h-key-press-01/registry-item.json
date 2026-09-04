@@ -22,7 +22,7 @@
     {
       "path": "src/registry/demo/hooks/dom/key-press/h-key-press-01/index.tsx",
       "type": "registry:hook",
-      "target": "components/spaceui/h-key-press-01.tsx"
+      "target": "components/spaceui/key-press.tsx"
     }
   ],
   "createdAt": "2026-08-24",

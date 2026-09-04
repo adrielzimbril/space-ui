@@ -21,7 +21,7 @@
     {
       "path": "src/registry/demo/hooks/browser/network/h-network-01/index.tsx",
       "type": "registry:hook",
-      "target": "components/spaceui/h-network-01.tsx"
+      "target": "components/spaceui/network.tsx"
     }
   ],
   "createdAt": "2026-08-24",

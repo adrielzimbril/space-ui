@@ -22,7 +22,7 @@
     {
       "path": "src/registry/demo/components/spaceui/date-selector/c-date-selector-04/index.tsx",
       "type": "registry:component",
-      "target": "components/spaceui/c-date-selector-04.tsx"
+      "target": "components/spaceui/date-selector.tsx"
     }
   ],
   "createdAt": "2026-08-21",

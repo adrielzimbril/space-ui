@@ -22,7 +22,7 @@
     {
       "path": "src/registry/demo/hooks/form/reading-time/h-reading-time-01/index.tsx",
       "type": "registry:hook",
-      "target": "components/spaceui/h-reading-time-01.tsx"
+      "target": "components/spaceui/reading-time.tsx"
     }
   ],
   "createdAt": "2026-08-24",

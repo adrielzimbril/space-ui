@@ -16,7 +16,7 @@
     {
       "path": "src/registry/demo/components/spaceui/words-preloader/c-words-preloader-01/index.tsx",
       "type": "registry:component",
-      "target": "components/spaceui/c-words-preloader-01.tsx"
+      "target": "components/spaceui/words-preloader.tsx"
     }
   ],
   "createdAt": "2026-09-03",

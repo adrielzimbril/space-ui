@@ -19,7 +19,7 @@
     {
       "path": "src/registry/demo/hooks/utils/format-bytes/h-format-bytes-02/index.tsx",
       "type": "registry:hook",
-      "target": "components/spaceui/h-format-bytes-02.tsx"
+      "target": "components/spaceui/format-bytes.tsx"
     }
   ],
   "createdAt": "2026-08-24",

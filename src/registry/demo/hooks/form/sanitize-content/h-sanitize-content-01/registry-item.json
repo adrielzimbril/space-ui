@@ -22,7 +22,7 @@
     {
       "path": "src/registry/demo/hooks/form/sanitize-content/h-sanitize-content-01/index.tsx",
       "type": "registry:hook",
-      "target": "components/spaceui/h-sanitize-content-01.tsx"
+      "target": "components/spaceui/sanitize-content.tsx"
     }
   ],
   "createdAt": "2026-08-24",

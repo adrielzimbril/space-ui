@@ -51,7 +51,7 @@
     {
       "path": "src/registry/demo/components/spaceui/dirt-carousel/c-dirt-carousel-01/index.tsx",
       "type": "registry:component",
-      "target": "components/spaceui/c-dirt-carousel-01.tsx"
+      "target": "components/spaceui/dirt-carousel.tsx"
     }
   ],
   "createdAt": "2026-09-03",

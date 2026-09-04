@@ -25,7 +25,7 @@
     {
       "path": "src/registry/demo/primitives/field/p-field-18/index.tsx",
       "type": "registry:ui",
-      "target": "components/spaceui/p-field-18.tsx"
+      "target": "components/spaceui/field.tsx"
     }
   ],
   "createdAt": "2026-08-21",

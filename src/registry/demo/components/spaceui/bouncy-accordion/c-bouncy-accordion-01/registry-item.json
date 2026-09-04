@@ -16,7 +16,7 @@
     {
       "path": "src/registry/demo/components/spaceui/bouncy-accordion/c-bouncy-accordion-01/index.tsx",
       "type": "registry:component",
-      "target": "components/spaceui/c-bouncy-accordion-01.tsx"
+      "target": "components/spaceui/bouncy-accordion.tsx"
     }
   ],
   "createdAt": "2026-09-04",

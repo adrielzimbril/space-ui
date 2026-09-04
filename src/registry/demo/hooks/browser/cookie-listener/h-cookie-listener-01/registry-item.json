@@ -21,7 +21,7 @@
     {
       "path": "src/registry/demo/hooks/browser/cookie-listener/h-cookie-listener-01/index.tsx",
       "type": "registry:hook",
-      "target": "components/spaceui/h-cookie-listener-01.tsx"
+      "target": "components/spaceui/cookie-listener.tsx"
     }
   ],
   "createdAt": "2026-08-24",

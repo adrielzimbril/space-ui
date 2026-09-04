@@ -26,7 +26,7 @@
     {
       "path": "src/registry/demo/primitives/group/p-group-22/index.tsx",
       "type": "registry:ui",
-      "target": "components/spaceui/p-group-22.tsx"
+      "target": "components/spaceui/group.tsx"
     }
   ],
   "createdAt": "2026-08-21",
