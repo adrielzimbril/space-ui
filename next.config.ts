@@ -55,6 +55,9 @@ const config: NextConfig = {
     turbopackRustReactCompiler: true,
     useOffline: true,
   },
+  outputFileTracingIncludes: {
+    '/llms.mdx/**': ['./src/content/**/*'],
+  },
   async rewrites() {
     return [
       {
