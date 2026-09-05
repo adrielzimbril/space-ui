@@ -96,6 +96,12 @@ export function SquishmojiPlayground() {
   const [blinkTrigger, setBlinkTrigger] = useState(0)
   const [selectedSeed, setSelectedSeed] = useState<string | null>(null)
   const stageRef = useRef<HTMLDivElement>(null)
+  const motionSnapshot = useRef<{
+    animate: boolean
+    animWobble: boolean
+    animOnHover: boolean
+    animOnClick: boolean
+  } | null>(null)
   const isDesktop = useMediaQuery('(min-width: 768px)', true)
 
   const getSvg = () => stageRef.current?.querySelector('svg') ?? null
@@ -151,6 +157,26 @@ export function SquishmojiPlayground() {
     setView('gallery')
     setShowRight(isDesktop)
     setExpanded(false)
+    motionSnapshot.current = null
+  }
+
+  const changeView = (next: ResourceViewMode) => {
+    if (next === 'video' && view !== 'video') {
+      motionSnapshot.current = { animate, animWobble, animOnHover, animOnClick }
+      setAnimate(true)
+      setAnimWobble(true)
+      setAnimOnHover(true)
+      setAnimOnClick(true)
+    }
+    if (next !== 'video' && view === 'video' && motionSnapshot.current) {
+      const snap = motionSnapshot.current
+      setAnimate(snap.animate)
+      setAnimWobble(snap.animWobble)
+      setAnimOnHover(snap.animOnHover)
+      setAnimOnClick(snap.animOnClick)
+      motionSnapshot.current = null
+    }
+    setView(next)
   }
 
   const toolbarConfig: ResourceToolbarConfig = {
@@ -163,7 +189,7 @@ export function SquishmojiPlayground() {
     view,
     views: ['gallery', 'mockup', 'seed'],
     video: true,
-    onViewChange: setView,
+    onViewChange: changeView,
     onReset: reset,
     onToggleExpand: setExpanded,
     onToggleSidebar: setShowRight,
@@ -334,7 +360,7 @@ export function SquishmojiPlayground() {
               <Squishmoji
                 key={name}
                 seed={name}
-                size={Math.max(size, 280)}
+                size={720}
                 shape={shape}
                 expression={expression}
                 backgroundStyle={backgroundStyle}

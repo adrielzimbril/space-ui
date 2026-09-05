@@ -30,7 +30,7 @@ export function VideoStage({
     <div className="flex h-full w-full flex-col items-center justify-center gap-8 px-6 pb-10 pt-20">
       <div
         ref={stageRef}
-        className="grid max-h-[min(62vh,34rem)] w-full max-w-3xl place-items-center overflow-hidden rounded-2xl bg-muted"
+        className="@container flex items-center justify-center relative w-full max-w-3xl max-h-[min(62vh,34rem)] text-center overflow-hidden rounded-2xl bg-muted"
         style={{ aspectRatio: ratio }}
       >
         {preview}
