@@ -1,30 +1,44 @@
 import { imageFor, save } from './raster'
 
-let activeRecording: { recorder: MediaRecorder; frame: number; chunks: Blob[] } | null = null
+let activeRecording: { recorder: MediaRecorder; frame: number; chunks: Blob[]; drawing: boolean } | null = null
+
+function mimeType() {
+  const types = ['video/webm;codecs=vp9', 'video/webm;codecs=vp8', 'video/webm', 'video/mp4']
+  return types.find((type) => typeof MediaRecorder !== 'undefined' && MediaRecorder.isTypeSupported(type)) ?? ''
+}
 
 export function startLiveRecording(
   source: SVGSVGElement | (() => SVGSVGElement | null) | null,
   background: string,
-  size = 600,
+  size = 720,
 ) {
   if (!source || activeRecording) return false
+  const svg = typeof source === 'function' ? source() : source
+  if (!svg) return false
+  const type = mimeType()
+  if (!type) return false
   const canvas = document.createElement('canvas')
   canvas.width = canvas.height = size
-  const context = canvas.getContext('2d')!
-  const recorder = new MediaRecorder(canvas.captureStream(30), { mimeType: 'video/webm' })
+  const context = canvas.getContext('2d')
+  if (!context) return false
+  const stream = canvas.captureStream(30)
+  const recorder = new MediaRecorder(stream, { mimeType: type })
   const chunks: Blob[] = []
   recorder.ondataavailable = (event) => {
     if (event.data.size) chunks.push(event.data)
   }
-  recorder.start()
-  const session = { recorder, frame: 0, chunks }
+  const session = { recorder, frame: 0, chunks, drawing: false }
   activeRecording = session
-  const draw = async () => {
+  recorder.start(100)
+  const draw = () => {
     if (activeRecording !== session) return
-    try {
-      const svg = typeof source === 'function' ? source() : source
-      if (svg) {
-        const image = await imageFor(svg, size)
+    session.frame = window.requestAnimationFrame(draw)
+    if (session.drawing) return
+    const node = typeof source === 'function' ? source() : source
+    if (!node) return
+    session.drawing = true
+    void imageFor(node, size)
+      .then((image) => {
         if (activeRecording !== session) return
         if (background === 'transparent') context.clearRect(0, 0, size, size)
         else {
@@ -32,10 +46,10 @@ export function startLiveRecording(
           context.fillRect(0, 0, size, size)
         }
         context.drawImage(image, 0, 0, size, size)
-      }
-    } finally {
-      if (activeRecording === session) session.frame = window.requestAnimationFrame(draw)
-    }
+      })
+      .finally(() => {
+        if (activeRecording === session) session.drawing = false
+      })
   }
   session.frame = window.requestAnimationFrame(draw)
   return true
@@ -46,8 +60,12 @@ export function stopLiveRecording(fileName: string) {
   const session = activeRecording
   activeRecording = null
   window.cancelAnimationFrame(session.frame)
-  session.recorder.onstop = () => save(new Blob(session.chunks, { type: 'video/webm' }), `${fileName}.webm`)
-  session.recorder.stop()
+  const ext = session.recorder.mimeType.includes('mp4') ? 'mp4' : 'webm'
+  session.recorder.onstop = () => save(new Blob(session.chunks, { type: session.recorder.mimeType }), `${fileName}.${ext}`)
+  if (session.recorder.state === 'recording') {
+    session.recorder.requestData()
+    session.recorder.stop()
+  }
 }
 
 export function isLiveRecording() {

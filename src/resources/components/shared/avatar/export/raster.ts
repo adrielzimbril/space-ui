@@ -7,23 +7,26 @@ function save(blob: Blob, name: string) {
   window.setTimeout(() => URL.revokeObjectURL(url), 1000)
 }
 
+function svgMarkup(svg: SVGSVGElement | string) {
+  let source = typeof svg === 'string' ? svg : new XMLSerializer().serializeToString(svg)
+  if (!source.includes('xmlns=')) source = source.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg"')
+  return source
+}
+
 async function imageFor(svg: SVGSVGElement | string, size: number) {
-  const source = typeof svg === 'string' ? svg : new XMLSerializer().serializeToString(svg)
-  const url = URL.createObjectURL(new Blob([source], { type: 'image/svg+xml;charset=utf-8' }))
   const image = new Image()
+  image.crossOrigin = 'anonymous'
   await new Promise<void>((resolve, reject) => {
     image.onload = () => resolve()
-    image.onerror = reject
-    image.src = url
+    image.onerror = () => reject(new Error('SVG could not be rasterized'))
+    image.src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svgMarkup(svg))}`
   })
-  URL.revokeObjectURL(url)
   image.width = image.height = size
   return image
 }
 
 export async function exportSvgMarkup(svg: SVGSVGElement | string, fileName: string) {
-  const source = typeof svg === 'string' ? svg : new XMLSerializer().serializeToString(svg)
-  save(new Blob([source], { type: 'image/svg+xml;charset=utf-8' }), `${fileName}.svg`)
+  save(new Blob([svgMarkup(svg)], { type: 'image/svg+xml;charset=utf-8' }), `${fileName}.svg`)
 }
 
 export async function exportRaster(

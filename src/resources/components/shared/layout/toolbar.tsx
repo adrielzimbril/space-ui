@@ -12,6 +12,7 @@ import {
   IconAppWindow,
   IconLayoutGrid,
   IconFingerprint,
+  IconVideo,
   IconRotateClockwise,
   IconSun,
   IconMoon,
@@ -20,6 +21,7 @@ import { ToolbarButton } from '@/components/playground/playground-toolbar-button
 import { ToolbarSection } from '@/components/playground/playground-toolbar-section'
 import { MorphIcon } from '@/registry/components/spaceui/morph-icon'
 import { triggerThemeTransition } from '@/registry/components/spaceui/mode-switcher'
+import type { ResourceViewMode } from '@/resources/shared/types'
 
 export type ResourceToolbarConfig = {
   theme?: boolean
@@ -28,9 +30,9 @@ export type ResourceToolbarConfig = {
   sidebar?: boolean
   reset?: boolean
   viewToggle?: boolean
-  view?: 'mockup' | 'gallery' | 'seed'
-  views?: Array<'mockup' | 'gallery' | 'seed'>
-  onViewChange?: (view: 'mockup' | 'gallery' | 'seed') => void
+  view?: ResourceViewMode
+  views?: ResourceViewMode[]
+  onViewChange?: (view: ResourceViewMode) => void
   onReset?: () => void
   onToggleExpand?: (expanded: boolean) => void
   onToggleInfo?: (visible: boolean) => void
@@ -84,7 +86,8 @@ export function ResourceToolbar({
   }
 
   const nextView = views[(Math.max(views.indexOf(view), 0) + 1) % views.length] ?? view
-  const viewLabel = nextView === 'mockup' ? 'Mockup' : nextView === 'gallery' ? 'Gallery' : 'Seed'
+  const viewLabel =
+    nextView === 'mockup' ? 'Mockup' : nextView === 'gallery' ? 'Gallery' : nextView === 'seed' ? 'Seed' : 'Video'
 
   const leftButtons = (
     <>
@@ -138,6 +141,8 @@ export function ResourceToolbar({
             <IconAppWindow className="size-4" />
           ) : view === 'gallery' ? (
             <IconLayoutGrid className="size-4" />
+          ) : view === 'video' ? (
+            <IconVideo className="size-4" />
           ) : (
             <IconFingerprint className="size-4" />
           )}

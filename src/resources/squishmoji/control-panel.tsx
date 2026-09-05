@@ -126,7 +126,7 @@ export function SquishmojiControlPanel({
         <div className="flex items-center gap-2">
           <h2 className="text-xs font-semibold">Squishmoji</h2>
           <span className="text-[0.625rem] text-muted-foreground">
-            {view === 'mockup' ? 'Mockup' : view === 'gallery' ? 'Gallery' : 'Seed'}
+            {view === 'mockup' ? 'Mockup' : view === 'gallery' ? 'Gallery' : view === 'video' ? 'Video' : 'Seed'}
           </span>
         </div>
       </div>
@@ -269,7 +269,7 @@ export function SquishmojiControlPanel({
             </div>
           </div>
 
-          {view === 'seed' ? (
+          {view === 'seed' || view === 'video' ? (
             <div className="flex flex-col gap-2">
               <Slider
                 value={[size]}

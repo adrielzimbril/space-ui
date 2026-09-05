@@ -1,1 +1,1 @@
-export type ResourceViewMode = 'mockup' | 'gallery' | 'seed'
+export type ResourceViewMode = 'mockup' | 'gallery' | 'seed' | 'video'

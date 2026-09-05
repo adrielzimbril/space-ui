@@ -24,6 +24,7 @@ import { getRandomPersonas } from '@/resources/shared/utils'
 import type { ResourceViewMode } from '@/resources/shared/types'
 import { SquishmojiControlPanel } from './control-panel'
 import { SquishmojiCodeModal } from './code-modal'
+import { VideoStage } from './video-stage'
 import { AvatarExportPanel } from '@/resources/components/shared/avatar/export/panel'
 import { SequenceTimeline } from '@/resources/components/shared/avatar/export/sequence-timeline'
 import { exportRaster, exportSvgMarkup } from '@/resources/components/shared/avatar/export/raster'
@@ -157,7 +158,7 @@ export function SquishmojiPlayground() {
     reset: true,
     viewToggle: true,
     view,
-    views: ['gallery', 'mockup', 'seed'],
+    views: ['gallery', 'mockup', 'seed', 'video'],
     onViewChange: setView,
     onReset: reset,
     onToggleExpand: setExpanded,
@@ -180,7 +181,7 @@ export function SquishmojiPlayground() {
       onToggleRight={setShowRight}
       className={expanded ? 'p-0' : undefined}
       bottom={
-        expanded ? null : (
+        view === 'video' && !expanded ? (
           <SequenceTimeline
             sequence={sequence}
             onAdd={() =>
@@ -206,14 +207,15 @@ export function SquishmojiPlayground() {
             onReorder={setSequence}
             onExport={() => void exportToVideoSequence(sequence, videoBg, `${fileBase}-sequence`)}
           />
-        )
+        ) : null
       }
       installBar={
-        view !== 'seed' && !expanded ? <InlineInstallBar packageName="@usespaceui/squishmoji" isShadcn={false} /> : null
+        view !== 'seed' && view !== 'video' && !expanded ? (
+          <InlineInstallBar packageName="@usespaceui/squishmoji" isShadcn={false} />
+        ) : null
       }
       canvas={
-        <div ref={stageRef} className="h-full w-full">
-        {view === 'mockup' ? (
+        view === 'mockup' ? (
           <PersonaProvider
             render={(props) => (
               <Squishmoji
@@ -254,7 +256,7 @@ export function SquishmojiPlayground() {
             )}
             caption={(seed) => captionFor(seed, shape, expression)}
           />
-        ) : (
+        ) : view === 'seed' ? (
           <ResourceSeedView
             title="Squishmoji"
             description="Deterministic squishy SVG avatars from any string. Alive with motion, no assets, no network."
@@ -269,13 +271,14 @@ export function SquishmojiPlayground() {
             footnote="Seed is the only required prop. The same seed always renders the same squishmoji."
             preview={renderSquish(name, size)}
           />
-        )}
-        </div>
+        ) : (
+          <VideoStage stageRef={stageRef} seed={name} preview={renderSquish(name, Math.max(size, 220))} />
+        )
       }
       float={<ResourceToolbar config={toolbarConfig} left={<ResourceNav />} />}
       right={
         <SquishmojiControlPanel
-          seed={view === 'seed' ? seedName : (pool[0] ?? DEFAULT_SEEDS)}
+          seed={view === 'seed' || view === 'video' ? seedName : (pool[0] ?? DEFAULT_SEEDS)}
           shape={shape}
           setShape={setShape}
           expression={expression}
@@ -299,6 +302,7 @@ export function SquishmojiPlayground() {
           }}
           view={view}
         >
+          {view === 'video' ? (
           <AvatarExportPanel
             videoBg={videoBg}
             setVideoBg={setVideoBg}
@@ -322,6 +326,7 @@ export function SquishmojiPlayground() {
               void exportToVideoAuto(name, shape, expression, videoBg, `${fileBase}-auto`, 3, 0, 0, 1, 1, backgroundStyle)
             }
           />
+          ) : null}
         </SquishmojiControlPanel>
       }
     />
