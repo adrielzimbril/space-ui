@@ -25,6 +25,7 @@ import type { ResourceViewMode } from '@/resources/shared/types'
 import { SquishmojiControlPanel } from './control-panel'
 import { SquishmojiCodeModal } from './code-modal'
 import { AvatarExportPanel } from '@/resources/components/shared/avatar/export/panel'
+import { SequenceTimeline } from '@/resources/components/shared/avatar/export/sequence-timeline'
 import { exportRaster, exportSvgMarkup } from '@/resources/components/shared/avatar/export/raster'
 import { startLiveRecording, stopLiveRecording } from '@/resources/components/shared/avatar/export/video'
 import {
@@ -178,6 +179,35 @@ export function SquishmojiPlayground() {
       rightWidth="20rem"
       onToggleRight={setShowRight}
       className={expanded ? 'p-0' : undefined}
+      bottom={
+        expanded ? null : (
+          <SequenceTimeline
+            sequence={sequence}
+            onAdd={() =>
+              setSequence((steps) => [
+                ...steps,
+                {
+                  id: crypto.randomUUID(),
+                  shape,
+                  expression,
+                  durationSec: 2,
+                  backgroundStyle,
+                  seed: name,
+                  blink: false,
+                  wobble: animWobble,
+                  animate,
+                },
+              ])
+            }
+            onUpdate={(id, patch) =>
+              setSequence((steps) => steps.map((step) => (step.id === id ? { ...step, ...patch } : step)))
+            }
+            onRemove={(id) => setSequence((steps) => steps.filter((step) => step.id !== id))}
+            onReorder={setSequence}
+            onExport={() => void exportToVideoSequence(sequence, videoBg, `${fileBase}-sequence`)}
+          />
+        )
+      }
       installBar={
         view !== 'seed' && !expanded ? <InlineInstallBar packageName="@usespaceui/squishmoji" isShadcn={false} /> : null
       }
@@ -291,27 +321,6 @@ export function SquishmojiPlayground() {
             onAuto={() =>
               void exportToVideoAuto(name, shape, expression, videoBg, `${fileBase}-auto`, 3, 0, 0, 1, 1, backgroundStyle)
             }
-            sequence={sequence}
-            onAddStep={() =>
-              setSequence((steps) => [
-                ...steps,
-                {
-                  shape,
-                  expression,
-                  durationSec: 2,
-                  backgroundStyle,
-                  seed: name,
-                  blink: false,
-                  wobble: animWobble,
-                  animate,
-                },
-              ])
-            }
-            onUpdateStep={(index, patch) =>
-              setSequence((steps) => steps.map((step, i) => (i === index ? { ...step, ...patch } : step)))
-            }
-            onRemoveStep={(index) => setSequence((steps) => steps.filter((_, i) => i !== index))}
-            onExportSequence={() => void exportToVideoSequence(sequence, videoBg, `${fileBase}-sequence`)}
           />
         </SquishmojiControlPanel>
       }

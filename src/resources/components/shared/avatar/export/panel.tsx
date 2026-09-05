@@ -1,9 +1,7 @@
 'use client'
 
 import { Button } from '@/registry/primitives/button'
-import { Input } from '@/registry/primitives/input'
 import { cn } from '@/registry/lib/utils'
-import type { SequenceStep } from './squish-video'
 
 const VIDEO_BACKGROUNDS = [
   { id: 'transparent', label: 'Clear' },
@@ -20,11 +18,6 @@ export function AvatarExportPanel({
   onToggleRecord,
   onAuto,
   onBlink,
-  sequence,
-  onAddStep,
-  onUpdateStep,
-  onRemoveStep,
-  onExportSequence,
 }: {
   videoBg: string
   setVideoBg: (value: string) => void
@@ -34,11 +27,6 @@ export function AvatarExportPanel({
   onToggleRecord: () => void
   onAuto: () => void
   onBlink: () => void
-  sequence: SequenceStep[]
-  onAddStep: () => void
-  onUpdateStep: (index: number, patch: Partial<SequenceStep>) => void
-  onRemoveStep: (index: number) => void
-  onExportSequence: () => void
 }) {
   return (
     <div className="flex flex-col gap-4">
@@ -62,7 +50,6 @@ export function AvatarExportPanel({
           </Button>
         </div>
       </div>
-
       <div className="flex flex-col gap-2">
         <span className="text-[0.6875rem] font-semibold text-muted-foreground">Video background</span>
         <div className="flex gap-2">
@@ -82,68 +69,6 @@ export function AvatarExportPanel({
               style={bg.id !== 'transparent' ? { background: bg.id } : undefined}
             />
           ))}
-        </div>
-      </div>
-
-      <div className="flex flex-col gap-2">
-        <span className="text-[0.6875rem] font-semibold text-muted-foreground">Sequence</span>
-        <div className="flex max-h-40 flex-col gap-1.5 overflow-auto">
-          {sequence.length === 0 ? (
-            <p className="text-[0.625rem] text-muted-foreground">No steps yet.</p>
-          ) : (
-            sequence.map((step, index) => (
-              <div key={`${step.seed}-${index}`} className="flex items-center gap-1.5 rounded-lg bg-muted px-2 py-1.5">
-                <span className="min-w-0 flex-1 truncate text-[0.625rem]">
-                  {index + 1}. {step.shape} · {step.expression}
-                </span>
-                <Input
-                  unstyled
-                  type="number"
-                  min={0.5}
-                  max={10}
-                  step={0.5}
-                  value={step.durationSec}
-                  onChange={(event) => onUpdateStep(index, { durationSec: Number(event.target.value) })}
-                  className="h-6 w-10 border border-input bg-background px-1 text-[0.625rem]"
-                />
-                <label className="flex items-center gap-0.5 text-[0.5625rem] text-muted-foreground">
-                  <input
-                    type="checkbox"
-                    checked={step.blink}
-                    onChange={(event) => onUpdateStep(index, { blink: event.target.checked })}
-                  />
-                  Blink
-                </label>
-                <label className="flex items-center gap-0.5 text-[0.5625rem] text-muted-foreground">
-                  <input
-                    type="checkbox"
-                    checked={step.wobble}
-                    onChange={(event) => onUpdateStep(index, { wobble: event.target.checked })}
-                  />
-                  Wobble
-                </label>
-                <label className="flex items-center gap-0.5 text-[0.5625rem] text-muted-foreground">
-                  <input
-                    type="checkbox"
-                    checked={step.animate}
-                    onChange={(event) => onUpdateStep(index, { animate: event.target.checked })}
-                  />
-                  Anim
-                </label>
-                <button type="button" className="text-xs text-destructive" onClick={() => onRemoveStep(index)}>
-                  ×
-                </button>
-              </div>
-            ))
-          )}
-        </div>
-        <div className="grid grid-cols-2 gap-1.5">
-          <Button type="button" size="sm" variant="secondary" onClick={onAddStep}>
-            Add step
-          </Button>
-          <Button type="button" size="sm" disabled={sequence.length === 0} onClick={onExportSequence}>
-            Export seq
-          </Button>
         </div>
       </div>
     </div>

@@ -11,6 +11,7 @@ import {
 import { imageFor, save } from './raster'
 
 export interface SequenceStep {
+  id: string
   shape: SquishShapeChoice
   expression: SquishExpressionChoice
   durationSec: number
