@@ -1,5 +1,5 @@
-import { Heart, MessageCircle } from 'lucide-react'
-import { Persona as Avatar } from '@/resources/persona'
+import { IconHeart, IconMessageCircle } from '@tabler/icons-react'
+import { Persona as Avatar } from '@/resources/components/shared/avatar/persona'
 import type { MockupAvatarOptions } from './MockupPrimitives'
 import { cn } from '@/registry/lib/utils'
 
@@ -37,14 +37,14 @@ export default function ConversationMockup({
           type="button"
           className="inline-flex items-center gap-1.5 rounded-lg bg-muted px-2.5 py-1.5 text-[0.625rem] font-semibold text-muted-foreground hover:text-foreground active:scale-[0.96] [&_svg]:size-auto"
         >
-          <MessageCircle aria-hidden="true" size={14} className="size-auto" />
+          <IconMessageCircle aria-hidden="true" size={14} className="size-auto" />
           Reply
         </button>
         <button
           type="button"
           className="inline-flex items-center gap-1.5 rounded-lg bg-muted px-2.5 py-1.5 text-[0.625rem] font-semibold text-muted-foreground hover:text-foreground active:scale-[0.96] [&_svg]:size-auto"
         >
-          <Heart aria-hidden="true" size={14} className="size-auto" />
+          <IconHeart aria-hidden="true" size={14} className="size-auto" />
           React
         </button>
       </div>

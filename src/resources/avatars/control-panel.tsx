@@ -14,7 +14,7 @@ import { Slider } from '@/registry/primitives/slider'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/registry/primitives/select'
 import { ToggleGroup, ToggleGroupItem } from '@/registry/primitives/toggle-group'
 import { AvatarVariantSelect, PaletteSelect } from './option-select'
-import { DEFAULT_SEEDS } from './seeds'
+import { DEFAULT_SEEDS } from '@/resources/shared/seeds'
 import { toLabel, type AvatarViewMode } from './utils'
 
 const SIZE_MIN = 64
@@ -73,7 +73,7 @@ export function AvatarControlPanel({
         <div className="flex items-center gap-2">
           <h2 className="text-xs font-semibold">Avatar</h2>
           <span className="text-[0.625rem] text-muted-foreground">
-            {view === 'canvas' ? 'Canvas' : view === 'mockup' ? 'Mockup' : view === 'gallery' ? 'Gallery' : 'Seed'}
+            {view === 'mockup' ? 'Mockup' : view === 'gallery' ? 'Gallery' : 'Seed'}
           </span>
         </div>
       </div>
@@ -154,7 +154,7 @@ export function AvatarControlPanel({
             </div>
           </div>
 
-          {view === 'canvas' || view === 'seed' ? (
+          {view === 'seed' ? (
             <div className="flex flex-col gap-2">
               <span className="text-[0.6875rem] font-semibold text-muted-foreground">Size · {size}px</span>
               <Slider

@@ -9,7 +9,6 @@ import {
   IconLayoutSidebarRightExpand,
   IconArrowsMaximize,
   IconArrowsMinimize,
-  IconArtboard,
   IconAppWindow,
   IconLayoutGrid,
   IconFingerprint,
@@ -29,9 +28,9 @@ export type ResourceToolbarConfig = {
   sidebar?: boolean
   reset?: boolean
   viewToggle?: boolean
-  view?: 'canvas' | 'mockup' | 'gallery' | 'seed'
-  views?: Array<'canvas' | 'mockup' | 'gallery' | 'seed'>
-  onViewChange?: (view: 'canvas' | 'mockup' | 'gallery' | 'seed') => void
+  view?: 'mockup' | 'gallery' | 'seed'
+  views?: Array<'mockup' | 'gallery' | 'seed'>
+  onViewChange?: (view: 'mockup' | 'gallery' | 'seed') => void
   onReset?: () => void
   onToggleExpand?: (expanded: boolean) => void
   onToggleInfo?: (visible: boolean) => void
@@ -57,8 +56,8 @@ export function ResourceToolbar({
     sidebar = true,
     reset = true,
     viewToggle = false,
-    view = 'canvas',
-    views = ['canvas', 'mockup', 'gallery', 'seed'],
+    view = 'gallery',
+    views = ['gallery', 'mockup', 'seed'],
     onViewChange,
     onReset,
     onToggleExpand,
@@ -85,7 +84,7 @@ export function ResourceToolbar({
   }
 
   const nextView = views[(Math.max(views.indexOf(view), 0) + 1) % views.length] ?? view
-  const viewLabel = nextView === 'canvas' ? 'Canvas' : nextView === 'mockup' ? 'Mockup' : nextView === 'gallery' ? 'Gallery' : 'Seed'
+  const viewLabel = nextView === 'mockup' ? 'Mockup' : nextView === 'gallery' ? 'Gallery' : 'Seed'
 
   const leftButtons = (
     <>
@@ -134,10 +133,8 @@ export function ResourceToolbar({
 
       {/* 4. Vue (Canvas / Mockup / Gallery / Seed) */}
       {viewToggle ? (
-        <ToolbarButton label={viewLabel} pressed={view !== 'canvas'} onClick={cycleView}>
-          {view === 'canvas' ? (
-            <IconArtboard className="size-4" />
-          ) : view === 'mockup' ? (
+        <ToolbarButton label={viewLabel} pressed={view !== 'gallery'} onClick={cycleView}>
+          {view === 'mockup' ? (
             <IconAppWindow className="size-4" />
           ) : view === 'gallery' ? (
             <IconLayoutGrid className="size-4" />

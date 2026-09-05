@@ -1,5 +1,5 @@
 import { Button } from '@/registry/primitives/button'
-import { Persona as Avatar } from '@/resources/persona'
+import { Persona as Avatar } from '@/resources/components/shared/avatar/persona'
 import type { MockupAvatarOptions } from './MockupPrimitives'
 import { cn } from '@/registry/lib/utils'
 

@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import {
   resolveExpression,
   resolveShape,
@@ -11,18 +11,26 @@ import {
 import { Squishmoji } from '@usespaceui/squishmoji/react'
 import { bloomSound } from '@/components/providers/sound-provider'
 import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
-import { ResourceStudio } from '@/resources/studio'
-import { ResourceNav } from '@/resources/components/resource-nav'
-import { ResourceToolbar, type ResourceToolbarConfig } from '@/resources/components/resource-toolbar'
+import { ResourceStudio } from '@/resources/components/shared/layout/studio'
+import { ResourceNav } from '@/resources/components/shared/layout/nav'
+import { ResourceToolbar, type ResourceToolbarConfig } from '@/resources/components/shared/layout/toolbar'
 import { InlineInstallBar } from '@/components/docs/installation/inline-install-bar'
-import { ResourceGallery } from '@/resources/components/resource-gallery'
-import { ResourceSeedView } from '@/resources/components/resource-seed-view'
-import { PersonaProvider } from '@/resources/persona'
-import { MockupView } from '@/resources/avatars/mockup-view'
-import { DEFAULT_SEEDS } from '@/resources/avatars/seeds'
-import { getRandomPersonas } from '@/resources/avatars/utils'
-import type { ResourceViewMode } from '@/resources/view-mode'
+import { ResourceGallery } from '@/resources/components/shared/layout/gallery'
+import { ResourceSeedView } from '@/resources/components/shared/layout/seed-stage'
+import { PersonaProvider } from '@/resources/components/shared/avatar/persona'
+import { MockupView } from '@/resources/components/shared/avatar/mockup-view'
+import { DEFAULT_SEEDS } from '@/resources/shared/seeds'
+import { getRandomPersonas } from '@/resources/shared/utils'
+import type { ResourceViewMode } from '@/resources/shared/types'
 import { SquishmojiControlPanel } from './control-panel'
+import { AvatarExportPanel } from '@/resources/components/shared/avatar/export/panel'
+import { exportRaster, exportSvgMarkup } from '@/resources/components/shared/avatar/export/raster'
+import { startLiveRecording, stopLiveRecording } from '@/resources/components/shared/avatar/export/video'
+import {
+  exportToVideoAuto,
+  exportToVideoSequence,
+  type SequenceStep,
+} from '@/resources/components/shared/avatar/export/squish-video'
 
 function captionFor(seed: string, shape: SquishShapeChoice, expression: SquishExpressionChoice) {
   return `${resolveShape(seed, shape)} · ${resolveExpression(seed, expression)}`
@@ -76,13 +84,20 @@ export function SquishmojiPlayground() {
   const [seedName, setSeedName] = useState(DEFAULT_SEEDS)
   const [showRight, setShowRight] = useState(true)
   const [expanded, setExpanded] = useState(false)
+  const [videoBg, setVideoBg] = useState('transparent')
+  const [recording, setRecording] = useState(false)
+  const [sequence, setSequence] = useState<SequenceStep[]>([])
+  const stageRef = useRef<HTMLDivElement>(null)
   const isDesktop = useMediaQuery('(min-width: 768px)', true)
+
+  const getSvg = () => stageRef.current?.querySelector('svg') ?? null
 
   useEffect(() => {
     if (!isDesktop) setShowRight(false)
   }, [isDesktop])
 
   const name = seedName.trim() || DEFAULT_SEEDS
+  const fileBase = `squishmoji-${name}`
   const code = useMemo(
     () =>
       snippetFor({
@@ -163,7 +178,8 @@ export function SquishmojiPlayground() {
         view !== 'seed' && !expanded ? <InlineInstallBar packageName="@usespaceui/squishmoji" isShadcn={false} /> : null
       }
       canvas={
-        view === 'mockup' ? (
+        <div ref={stageRef} className="h-full w-full">
+        {view === 'mockup' ? (
           <PersonaProvider
             render={(props) => (
               <Squishmoji
@@ -219,7 +235,8 @@ export function SquishmojiPlayground() {
             footnote="Seed is the only required prop. The same seed always renders the same squishmoji."
             preview={renderSquish(name, size)}
           />
-        )
+        )}
+        </div>
       }
       float={<ResourceToolbar config={toolbarConfig} left={<ResourceNav />} />}
       right={
@@ -247,7 +264,51 @@ export function SquishmojiPlayground() {
             setSeedName(next[0] ?? DEFAULT_SEEDS)
           }}
           view={view}
-        />
+        >
+          <AvatarExportPanel
+            videoBg={videoBg}
+            setVideoBg={setVideoBg}
+            recording={recording}
+            onPng={() => void exportRaster(getSvg(), fileBase, 'png')}
+            onSvg={() => {
+              const svg = getSvg()
+              if (svg) void exportSvgMarkup(svg, fileBase)
+            }}
+            onToggleRecord={() => {
+              if (recording) {
+                stopLiveRecording(`${fileBase}-live`)
+                setRecording(false)
+                return
+              }
+              const started = startLiveRecording(getSvg, videoBg)
+              if (started) setRecording(true)
+            }}
+            onAuto={() =>
+              void exportToVideoAuto(name, shape, expression, videoBg, `${fileBase}-auto`, 3, 0, 0, 1, 1, backgroundStyle)
+            }
+            sequence={sequence}
+            onAddStep={() =>
+              setSequence((steps) => [
+                ...steps,
+                {
+                  shape,
+                  expression,
+                  durationSec: 2,
+                  backgroundStyle,
+                  seed: name,
+                  blink: false,
+                  wobble: animWobble,
+                  animate,
+                },
+              ])
+            }
+            onUpdateStep={(index, patch) =>
+              setSequence((steps) => steps.map((step, i) => (i === index ? { ...step, ...patch } : step)))
+            }
+            onRemoveStep={(index) => setSequence((steps) => steps.filter((_, i) => i !== index))}
+            onExportSequence={() => void exportToVideoSequence(sequence, videoBg, `${fileBase}-sequence`)}
+          />
+        </SquishmojiControlPanel>
       }
     />
   )

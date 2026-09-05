@@ -15,8 +15,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Slider } from '@/registry/primitives/slider'
 import { ToggleGroup, ToggleGroupItem } from '@/registry/primitives/toggle-group'
 import { Button } from '@/registry/primitives/button'
-import type { ResourceViewMode } from '@/resources/view-mode'
-import { DEFAULT_SEEDS } from '@/resources/avatars/seeds'
+import type { ReactNode } from 'react'
+import type { ResourceViewMode } from '@/resources/shared/types'
+import { DEFAULT_SEEDS } from '@/resources/shared/seeds'
 
 const SIZE_MIN = 64
 const SIZE_MAX = 256
@@ -71,6 +72,7 @@ export function SquishmojiControlPanel({
   setAnimOnClick,
   regenerateSeeds,
   view,
+  children,
 }: {
   seed: string
   shape: SquishShapeChoice
@@ -91,6 +93,7 @@ export function SquishmojiControlPanel({
   setAnimOnClick: (value: boolean) => void
   regenerateSeeds: () => void
   view: ResourceViewMode
+  children?: ReactNode
 }) {
   const activeSeed = seed.trim() || DEFAULT_SEEDS
 
@@ -351,6 +354,7 @@ export function SquishmojiControlPanel({
               </ToggleGroupItem>
             </ToggleGroup>
           </div>
+          {children}
         </div>
       </ScrollArea>
     </div>

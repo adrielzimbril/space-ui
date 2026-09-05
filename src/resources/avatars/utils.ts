@@ -1,12 +1,5 @@
 import { AvatarVariant, getAvatarDetails, type AvatarDetails } from '@usespaceui/avatars'
-
-export type AvatarViewMode = 'canvas' | 'mockup' | 'gallery' | 'seed'
 import { PRESET_PALETTES } from '@usespaceui/gradients'
-import { HISTORICAL_PERSONAS } from './seeds'
-
-export function getRandomPersonas(count: number): string[] {
-  return [...HISTORICAL_PERSONAS].sort(() => 0.5 - Math.random()).slice(0, count)
-}
 
 export function resolvePaletteColors(paletteIndex: number, customColors: string[]): string[] | undefined {
   if (paletteIndex === -2) return undefined
@@ -20,5 +13,5 @@ export function getSelectedAvatarDetails(pattern: AvatarVariant | 'all'): Avatar
   return getAvatarDetails(pattern === 'all' ? AvatarVariant.triton : pattern) ?? getAvatarDetails(AvatarVariant.triton)!
 }
 
-export const toLabel = (value: string) =>
-  value.replace(/[-_]/g, ' ').replace(/\b\w/g, (character) => character.toUpperCase())
+export { getRandomPersonas, toLabel } from '@/resources/shared/utils'
+export type { ResourceViewMode as AvatarViewMode } from '@/resources/shared/types'

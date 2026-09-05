@@ -5,7 +5,7 @@ import { DynamicCodeBlock } from '@/components/docs/code/dynamic-codeblock'
 import { InstallCommandBlock } from '@/components/docs/installation/install-command-block'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { Badge } from '@/registry/primitives/badge'
-import { DEFAULT_SEEDS } from './seeds'
+import { DEFAULT_SEEDS } from '@/resources/shared/seeds'
 
 const REACT_USAGE = `import { AvatarVariant, AvatarEffect } from '@usespaceui/avatars'
 import { Avatar } from '@usespaceui/avatars/react';

@@ -6,7 +6,7 @@ import { Avatar } from '@usespaceui/avatars/react'
 import { generatePalette } from '@usespaceui/gradients'
 import { resolveVariant, type AvatarEffect, type AvatarVariant } from '@usespaceui/avatars'
 import { cn } from '@/registry/lib/utils'
-import type { SelectedCanvasAvatar } from './canvas'
+import type { SelectedAvatar } from './types'
 
 interface GalleryViewProps {
   pool: string[]
@@ -16,7 +16,7 @@ interface GalleryViewProps {
   circle: boolean
   parsedColors?: string[]
   paletteIndex: number
-  onSelectAvatar: (avatar: SelectedCanvasAvatar) => void
+  onSelectAvatar: (avatar: SelectedAvatar) => void
   sidebarLeft?: boolean
   sidebarRight?: boolean
 }

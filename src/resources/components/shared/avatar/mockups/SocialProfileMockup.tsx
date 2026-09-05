@@ -1,5 +1,5 @@
 import { cn } from '@/registry/lib/utils'
-import { Persona as Avatar } from '@/resources/persona'
+import { Persona as Avatar } from '@/resources/components/shared/avatar/persona'
 import { MockupMetric, type MockupAvatarOptions } from './MockupPrimitives'
 
 export default function SocialProfileMockup({

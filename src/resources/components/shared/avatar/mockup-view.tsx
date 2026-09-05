@@ -1,9 +1,8 @@
 'use client'
 
 import type { AvatarEffect, AvatarVariant } from '@usespaceui/avatars'
-import { Avatar } from '@usespaceui/avatars/react'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
-import { MockupGallery } from './mockup/MockupGallery'
+import { MockupGallery } from './mockups/MockupGallery'
 import { playgroundMockupImages, dataList, dataTwitter, dataSuggested, dataShared, nameProfile, nameInstagram, nameUpload, nameUploadLikes } from './mock-data'
 
 export function MockupView({

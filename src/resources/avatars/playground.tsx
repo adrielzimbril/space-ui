@@ -4,18 +4,18 @@ import { useEffect, useMemo, useState } from 'react'
 import { resolveVariant, type AvatarEffect, type AvatarVariant } from '@usespaceui/avatars'
 import { bloomSound } from '@/components/providers/sound-provider'
 import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
-import { ResourceStudio } from '@/resources/studio'
-import { ResourceNav } from '@/resources/components/resource-nav'
-import { ResourceToolbar, type ResourceToolbarConfig } from '@/resources/components/resource-toolbar'
+import { ResourceStudio } from '@/resources/components/shared/layout/studio'
+import { ResourceNav } from '@/resources/components/shared/layout/nav'
+import { ResourceToolbar, type ResourceToolbarConfig } from '@/resources/components/shared/layout/toolbar'
 import { InlineInstallBar } from '@/components/docs/installation/inline-install-bar'
-import { AvatarCanvas, type SelectedCanvasAvatar } from './canvas'
 import { AvatarCodeModal } from './code-modal'
 import { AvatarControlPanel } from './control-panel'
-import { MockupView } from './mockup-view'
+import { MockupView } from '@/resources/components/shared/avatar/mockup-view'
 import { GalleryView } from './gallery-view'
 import { AvatarInfoPanel } from './info-panel'
 import { SeedView } from './seed-view'
-import { DEFAULT_SEEDS } from './seeds'
+import { DEFAULT_SEEDS } from '@/resources/shared/seeds'
+import type { SelectedAvatar } from './types'
 import { getRandomPersonas, getSelectedAvatarDetails, resolvePaletteColors, type AvatarViewMode } from './utils'
 
 export function AvatarsPlayground() {
@@ -29,11 +29,10 @@ export function AvatarsPlayground() {
   const [circle, setCircle] = useState(true)
   const [view, setView] = useState<AvatarViewMode>('gallery')
   const [seedName, setSeedName] = useState(DEFAULT_SEEDS)
-  const [canvasKey, setCanvasKey] = useState(0)
   const [showLeft, setShowLeft] = useState(false)
   const [showRight, setShowRight] = useState(true)
   const [expanded, setExpanded] = useState(false)
-  const [selectedAvatar, setSelectedAvatar] = useState<SelectedCanvasAvatar | null>(null)
+  const [selectedAvatar, setSelectedAvatar] = useState<SelectedAvatar | null>(null)
   const isDesktop = useMediaQuery('(min-width: 768px)', true)
 
   useEffect(() => {
@@ -46,7 +45,7 @@ export function AvatarsPlayground() {
   const parsedColors = useMemo(() => resolvePaletteColors(paletteIndex, customColors), [paletteIndex, customColors])
   const details = useMemo(() => getSelectedAvatarDetails(pattern), [pattern])
 
-  const selectAvatar = (avatar: SelectedCanvasAvatar) => {
+  const selectAvatar = (avatar: SelectedAvatar) => {
     bloomSound()
     setSelectedAvatar({
       ...avatar,
@@ -69,7 +68,6 @@ export function AvatarsPlayground() {
     setShowRight(isDesktop)
     setExpanded(false)
     setSelectedAvatar(null)
-    setCanvasKey((key) => key + 1)
   }
 
   const toolbarConfig: ResourceToolbarConfig = {
@@ -80,6 +78,7 @@ export function AvatarsPlayground() {
     reset: true,
     viewToggle: true,
     view,
+    views: ['gallery', 'mockup', 'seed'],
     onViewChange: setView,
     onReset: reset,
     onToggleExpand: setExpanded,
@@ -107,20 +106,7 @@ export function AvatarsPlayground() {
           ) : null
         }
         canvas={
-          view === 'canvas' ? (
-            <AvatarCanvas
-              key={canvasKey}
-              pool={pool}
-              pattern={pattern}
-              size={size}
-              effect={effect}
-              animate={animate}
-              circle={circle}
-              parsedColors={parsedColors}
-              paletteIndex={paletteIndex}
-              onSelectAvatar={selectAvatar}
-            />
-          ) : view === 'mockup' ? (
+          view === 'mockup' ? (
             <MockupView
               pool={pool}
               pattern={pattern}

@@ -1,4 +1,4 @@
-import { Persona as Avatar } from '@/resources/persona'
+import { Persona as Avatar } from '@/resources/components/shared/avatar/persona'
 import { MockupBadge, type MockupAvatarOptions } from './MockupPrimitives'
 import { cn } from '@/registry/lib/utils'
 

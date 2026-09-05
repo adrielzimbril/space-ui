@@ -1,7 +1,7 @@
 import { Button } from '@/registry/primitives/button'
-import { Heart, MessageCircle } from 'lucide-react'
+import { IconHeart, IconMessageCircle } from '@tabler/icons-react'
 import { cn } from '@/registry/lib/utils'
-import { Persona as Avatar } from '@/resources/persona'
+import { Persona as Avatar } from '@/resources/components/shared/avatar/persona'
 import Image from 'next/image'
 import type { MockupAvatarOptions } from './MockupPrimitives'
 
@@ -41,11 +41,11 @@ export default function NewPostMockup({
       </div>
       <div className="mt-auto grid grid-cols-2 gap-2 pt-4">
         <Button variant="secondary" size="sm" className="rounded-xl border-0 bg-muted [&_svg]:size-auto">
-          <Heart aria-hidden="true" size={15} className="size-auto" />
+          <IconHeart aria-hidden="true" size={15} className="size-auto" />
           Like
         </Button>
         <Button variant="secondary" size="sm" className="rounded-xl border-0 bg-muted [&_svg]:size-auto">
-          <MessageCircle aria-hidden="true" size={15} className="size-auto" />
+          <IconMessageCircle aria-hidden="true" size={15} className="size-auto" />
           Comment
         </Button>
       </div>

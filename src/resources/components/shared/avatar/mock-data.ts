@@ -1,4 +1,4 @@
-import { HISTORICAL_PERSONAS } from './seeds'
+import { HISTORICAL_PERSONAS } from '@/resources/shared/seeds'
 
 const commentsTwitter = [
   'Hilarious!',

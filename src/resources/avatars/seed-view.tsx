@@ -9,7 +9,7 @@ import { DynamicCodeBlock } from '@/components/docs/code/dynamic-codeblock'
 import { InstallCommandBlock } from '@/components/docs/installation/install-command-block'
 import { Button } from '@/registry/primitives/button'
 import { Input } from '@/registry/primitives/input'
-import { DEFAULT_SEEDS } from './seeds'
+import { DEFAULT_SEEDS } from '@/resources/shared/seeds'
 import { getRandomPersonas } from './utils'
 import { cn } from '@/registry/lib/utils'
 
