@@ -9,9 +9,9 @@ import {
   IconLayoutSidebarRightExpand,
   IconArrowsMaximize,
   IconArrowsMinimize,
-  IconAppWindow,
+  IconDeviceDesktop,
   IconLayoutGrid,
-  IconFingerprint,
+  IconAdjustments,
   IconVideo,
   IconRotateClockwise,
   IconSun,
@@ -136,15 +136,15 @@ export function ResourceToolbar({
         </ToolbarButton>
       ) : null}
 
-      {/* 4. Vue (Canvas / Mockup / Gallery / Seed) */}
+      {/* 4. Vue (Gallery / Mockup / Seed) */}
       {viewToggle ? (
         <ToolbarButton label={viewLabel} pressed={view !== 'gallery' && view !== 'video'} onClick={cycleView}>
-          {view === 'mockup' ? (
-            <IconAppWindow className="size-4" />
-          ) : view === 'gallery' ? (
+          {view === 'gallery' ? (
             <IconLayoutGrid className="size-4" />
+          ) : view === 'mockup' ? (
+            <IconDeviceDesktop className="size-4" />
           ) : (
-            <IconFingerprint className="size-4" />
+            <IconAdjustments className="size-4" />
           )}
         </ToolbarButton>
       ) : null}

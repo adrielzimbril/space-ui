@@ -4,6 +4,7 @@ import type { ReactNode } from 'react'
 import { useMemo } from 'react'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { cn } from '@/registry/lib/utils'
+import { DeferredMount } from './deferred-mount'
 
 export function ResourceGallery({
   pool,
@@ -52,8 +53,8 @@ export function ResourceGallery({
             <span className="absolute top-4 right-4 max-w-[50%] truncate text-[0.625rem] text-muted-foreground">
               {seed}
             </span>
-            <div className="pointer-events-none absolute inset-9 flex items-center justify-center self-center sm:inset-10">
-              {renderMedia(seed, i)}
+            <div className="pointer-events-none absolute inset-9 flex items-center justify-center self-center sm:inset-10 [content-visibility:auto] [contain-intrinsic-size:8rem]">
+              <DeferredMount>{renderMedia(seed, i)}</DeferredMount>
             </div>
             {caption ? (
               <span className="absolute inset-x-4 bottom-4 truncate text-[0.625rem] font-medium capitalize text-muted-foreground">

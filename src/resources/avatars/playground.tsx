@@ -19,7 +19,7 @@ import type { SelectedAvatar } from './types'
 import { getRandomPersonas, getSelectedAvatarDetails, resolvePaletteColors, type AvatarViewMode } from './utils'
 
 export function AvatarsPlayground() {
-  const [pool, setPool] = useState<string[]>(() => getRandomPersonas(200))
+  const [pool, setPool] = useState<string[]>(() => getRandomPersonas(126))
   const [pattern, setPattern] = useState<AvatarVariant | 'all'>('all')
   const [size, setSize] = useState(164)
   const [effect, setEffect] = useState<AvatarEffect>('none')
@@ -54,7 +54,7 @@ export function AvatarsPlayground() {
   }
 
   const reset = () => {
-    setPool(getRandomPersonas(200))
+    setPool(getRandomPersonas(126))
     setPattern('all')
     setSize(164)
     setEffect('none')
@@ -169,7 +169,7 @@ export function AvatarsPlayground() {
             parsedColors={parsedColors}
             details={details}
             regenerateSeeds={() => {
-              const next = getRandomPersonas(200)
+              const next = getRandomPersonas(126)
               setPool(next)
               setSeedName(next[0] ?? DEFAULT_SEEDS)
             }}

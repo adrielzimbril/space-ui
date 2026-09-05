@@ -6,6 +6,7 @@ import { Avatar } from '@usespaceui/avatars/react'
 import { generatePalette } from '@usespaceui/gradients'
 import { resolveVariant, type AvatarEffect, type AvatarVariant } from '@usespaceui/avatars'
 import { cn } from '@/registry/lib/utils'
+import { DeferredMount } from '@/resources/components/shared/layout/deferred-mount'
 import type { SelectedAvatar } from './types'
 
 interface GalleryViewProps {
@@ -35,8 +36,8 @@ export function GalleryView({
 }: GalleryViewProps) {
   const expandedPool = useMemo(() => {
     const result: string[] = []
-    while (result.length < 293 && pool.length > 0) result.push(...pool)
-    return result.slice(0, 293)
+    while (result.length < 126 && pool.length > 0) result.push(...pool)
+    return result.slice(0, 126)
   }, [pool])
 
   const activeSidebarsCount = Number(sidebarLeft) + Number(sidebarRight)
@@ -72,17 +73,19 @@ export function GalleryView({
               <span className="absolute top-4 right-4 max-w-[50%] truncate text-[0.625rem] text-muted-foreground">
                 {seed}
               </span>
-              <div className="pointer-events-none absolute inset-9 flex self-center items-center justify-center sm:inset-10">
-                <Avatar
-                  name={seed}
-                  size={164}
-                  variant={pattern}
-                  colors={currentColors}
-                  animate={animate}
-                  effect={effect}
-                  circle={circle}
-                  className="flex size-full max-h-full max-w-full items-center justify-center [&_svg]:size-full"
-                />
+              <div className="pointer-events-none absolute inset-9 flex self-center items-center justify-center sm:inset-10 [content-visibility:auto] [contain-intrinsic-size:8rem]">
+                <DeferredMount>
+                  <Avatar
+                    name={seed}
+                    size={96}
+                    variant={pattern}
+                    colors={currentColors}
+                    animate={false}
+                    effect={effect}
+                    circle={circle}
+                    className="flex size-full max-h-full max-w-full items-center justify-center [&_svg]:size-full"
+                  />
+                </DeferredMount>
               </div>
               <span className="absolute inset-x-4 bottom-4 truncate text-[0.625rem] font-medium capitalize text-muted-foreground">
                 {pattern === 'all' ? resolveVariant(seed, 'all').replace(/-/g, ' ') : pattern.replace(/-/g, ' ')}

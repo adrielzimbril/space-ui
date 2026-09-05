@@ -419,7 +419,7 @@ export function SquishmojiPlayground() {
               sidebarRight={showRight && !expanded}
               renderMedia={(seed) => (
                 <div className="flex size-full max-h-full max-w-full items-center justify-center [&_svg]:size-full">
-                  {renderSquish(seed, 164, false)}
+                  {renderSquish(seed, 96, false)}
                 </div>
               )}
               caption={(seed) => captionFor(seed, shape, expression)}
