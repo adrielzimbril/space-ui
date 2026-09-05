@@ -30,6 +30,7 @@ export type ResourceToolbarConfig = {
   sidebar?: boolean
   reset?: boolean
   viewToggle?: boolean
+  video?: boolean
   view?: ResourceViewMode
   views?: ResourceViewMode[]
   onViewChange?: (view: ResourceViewMode) => void
@@ -58,6 +59,7 @@ export function ResourceToolbar({
     sidebar = true,
     reset = true,
     viewToggle = false,
+    video = false,
     view = 'gallery',
     views = ['gallery', 'mockup', 'seed'],
     onViewChange,
@@ -136,16 +138,24 @@ export function ResourceToolbar({
 
       {/* 4. Vue (Canvas / Mockup / Gallery / Seed) */}
       {viewToggle ? (
-        <ToolbarButton label={viewLabel} pressed={view !== 'gallery'} onClick={cycleView}>
+        <ToolbarButton label={viewLabel} pressed={view !== 'gallery' && view !== 'video'} onClick={cycleView}>
           {view === 'mockup' ? (
             <IconAppWindow className="size-4" />
           ) : view === 'gallery' ? (
             <IconLayoutGrid className="size-4" />
-          ) : view === 'video' ? (
-            <IconVideo className="size-4" />
           ) : (
             <IconFingerprint className="size-4" />
           )}
+        </ToolbarButton>
+      ) : null}
+
+      {video ? (
+        <ToolbarButton
+          label="Video"
+          pressed={view === 'video'}
+          onClick={() => onViewChange?.(view === 'video' ? 'gallery' : 'video')}
+        >
+          <IconVideo className="size-4" />
         </ToolbarButton>
       ) : null}
 

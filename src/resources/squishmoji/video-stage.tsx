@@ -1,24 +1,58 @@
 'use client'
 
 import type { ReactNode, RefObject } from 'react'
+import { IconRefresh } from '@tabler/icons-react'
+import { bloomSound } from '@/components/providers/sound-provider'
+import { Button } from '@/registry/primitives/button'
+import { Input } from '@/registry/primitives/input'
+import type { VideoAspect } from '@/resources/components/shared/avatar/export/dims'
 
 export function VideoStage({
   stageRef,
   preview,
   seed,
+  setSeed,
+  placeholder,
+  onRandomize,
+  aspect,
 }: {
   stageRef: RefObject<HTMLDivElement | null>
   preview: ReactNode
   seed: string
+  setSeed: (value: string) => void
+  placeholder: string
+  onRandomize: () => void
+  aspect: VideoAspect
 }) {
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center gap-6 px-6">
-      <div ref={stageRef} className="grid place-items-center">
+    <div className="flex h-full w-full flex-col items-center justify-center gap-8 px-6 pb-8 pt-20">
+      <div
+        ref={stageRef}
+        className="grid max-h-[min(70vh,36rem)] w-full max-w-3xl place-items-center overflow-hidden rounded-2xl bg-muted"
+        style={{ aspectRatio: aspect.replace(':', ' / ') }}
+      >
         {preview}
       </div>
-      <div className="text-center">
-        <p className="text-sm font-medium tracking-tight">{seed}</p>
-        <p className="mt-1 text-xs text-muted-foreground">This take is recorded. Gallery and mockup stay stills.</p>
+      <div className="flex flex-wrap items-center justify-center gap-2 text-lg tracking-tight text-muted-foreground">
+        <Input
+          unstyled
+          value={seed}
+          onChange={(event) => setSeed(event.target.value)}
+          aria-label="Seed"
+          placeholder={placeholder}
+          className="w-auto min-w-36 border-0 border-b border-foreground/50 bg-transparent px-0 pb-0.5 text-lg font-medium text-foreground shadow-none outline-none placeholder:text-muted-foreground/50 focus:border-b-foreground focus-within:ring-0! focus-visible:ring-0! [&_input]:h-auto [&_input]:border-none [&_input]:p-0! [&_input]:outline-none [&_input]:ring-0!"
+        />
+        <Button
+          variant="ghost"
+          size="icon"
+          aria-label="Randomize seed"
+          onClick={() => {
+            bloomSound()
+            onRandomize()
+          }}
+        >
+          <IconRefresh />
+        </Button>
       </div>
     </div>
   )

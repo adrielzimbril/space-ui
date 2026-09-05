@@ -71,16 +71,26 @@ async function recordGenerated(
     wobble: boolean
     animate: boolean
   },
+  width = 1080,
+  height = 1080,
 ) {
   const canvas = document.createElement('canvas')
-  canvas.width = canvas.height = 1000
+  canvas.width = width
+  canvas.height = height
+  const side = Math.min(width, height)
+  const ox = (width - side) / 2
+  const oy = (height - side) / 2
   const context = canvas.getContext('2d')!
-  const recorder = new MediaRecorder(canvas.captureStream(30), { mimeType: 'video/webm' })
+  const type = ['video/webm;codecs=vp9', 'video/webm', 'video/mp4'].find(
+    (item) => typeof MediaRecorder !== 'undefined' && MediaRecorder.isTypeSupported(item),
+  )
+  if (!type) return
+  const recorder = new MediaRecorder(canvas.captureStream(30), { mimeType: type })
   const chunks: Blob[] = []
   recorder.ondataavailable = (event) => {
     if (event.data.size) chunks.push(event.data)
   }
-  recorder.onstop = () => save(new Blob(chunks, { type: 'video/webm' }), `${fileName}.webm`)
+  recorder.onstop = () => save(new Blob(chunks, { type }), `${fileName}.${type.includes('mp4') ? 'mp4' : 'webm'}`)
   recorder.start()
   try {
     const frames = Math.ceil(duration * 30)
@@ -89,23 +99,23 @@ async function recordGenerated(
     for (let frame = 0; frame < frames; frame++) {
       const time = frame / 30
       const state = frameAt(time)
-      const svg = renderLayout(state.layout, { size: 1000, seed: state.seed, backgroundStyle: state.backgroundStyle })
-      const image = await imageFor(svg, 1000)
-      if (background === 'transparent') context.clearRect(0, 0, 1000, 1000)
+      const svg = renderLayout(state.layout, { size: side, seed: state.seed, backgroundStyle: state.backgroundStyle })
+      const image = await imageFor(svg, side)
+      if (background === 'transparent') context.clearRect(0, 0, width, height)
       else {
         context.fillStyle = background
-        context.fillRect(0, 0, 1000, 1000)
+        context.fillRect(0, 0, width, height)
       }
       context.save()
       if (state.wobble) {
         const dx = Math.sin(time * 1.7) * 3.75
         const dy = Math.cos(time * 1.3) * 3.75
         const angle = (Math.sin(time) * 0.45 * Math.PI) / 180
-        context.translate(500 + dx, 500 + dy)
+        context.translate(ox + side / 2 + dx, oy + side / 2 + dy)
         context.rotate(angle)
-        context.translate(-500, -500)
+        context.translate(-(ox + side / 2), -(oy + side / 2))
       }
-      context.drawImage(image, 0, 0, 1000, 1000)
+      context.drawImage(image, ox, oy, side, side)
       context.restore()
       const wait = startedAt + (frame + 1) * frameDuration - performance.now()
       if (wait > 0) await new Promise((resolve) => window.setTimeout(resolve, wait))
@@ -127,6 +137,8 @@ export async function exportToVideoAuto(
   scale = 1,
   gaze = 1,
   backgroundStyle: SquishBackgroundStyleChoice = 'solid',
+  width = 1080,
+  height = 1080,
 ) {
   const engine = new SquishEngine(seed, { shape, expression })
   await recordGenerated(duration, fileName, background, (time) => ({
@@ -135,7 +147,7 @@ export async function exportToVideoAuto(
     seed,
     wobble: false,
     animate: true,
-  }))
+  }), width, height)
 }
 
 export async function exportToVideoSequence(
@@ -146,6 +158,8 @@ export async function exportToVideoSequence(
   split = 0,
   scale = 1,
   gaze = 1,
+  width = 1080,
+  height = 1080,
 ) {
   if (!steps.length) return
   const engine = new SquishEngine(steps[0]!.seed, { shape: steps[0]!.shape, expression: steps[0]!.expression })
@@ -171,5 +185,5 @@ export async function exportToVideoSequence(
       wobble: step.wobble,
       animate: step.animate,
     }
-  })
+  }, width, height)
 }

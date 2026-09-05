@@ -26,6 +26,7 @@ import { SquishmojiControlPanel } from './control-panel'
 import { SquishmojiCodeModal } from './code-modal'
 import { VideoStage } from './video-stage'
 import { AvatarExportPanel } from '@/resources/components/shared/avatar/export/panel'
+import { videoDims, type VideoAspect, type VideoExportSize } from '@/resources/components/shared/avatar/export/dims'
 import { SequenceTimeline } from '@/resources/components/shared/avatar/export/sequence-timeline'
 import { exportRaster, exportSvgMarkup } from '@/resources/components/shared/avatar/export/raster'
 import { startLiveRecording, stopLiveRecording } from '@/resources/components/shared/avatar/export/video'
@@ -88,6 +89,8 @@ export function SquishmojiPlayground() {
   const [showRight, setShowRight] = useState(true)
   const [expanded, setExpanded] = useState(false)
   const [videoBg, setVideoBg] = useState('transparent')
+  const [videoAspect, setVideoAspect] = useState<VideoAspect>('1:1')
+  const [videoSize, setVideoSize] = useState<VideoExportSize>(1080)
   const [recording, setRecording] = useState(false)
   const [sequence, setSequence] = useState<SequenceStep[]>([])
   const [blinkTrigger, setBlinkTrigger] = useState(0)
@@ -158,7 +161,8 @@ export function SquishmojiPlayground() {
     reset: true,
     viewToggle: true,
     view,
-    views: ['gallery', 'mockup', 'seed', 'video'],
+    views: ['gallery', 'mockup', 'seed'],
+    video: true,
     onViewChange: setView,
     onReset: reset,
     onToggleExpand: setExpanded,
@@ -172,13 +176,18 @@ export function SquishmojiPlayground() {
     setSelectedSeed(seed)
   }
 
+  const frame = videoDims(videoAspect, videoSize)
   const exportPanel =
     view === 'video' ? (
       <AvatarExportPanel
         videoBg={videoBg}
         setVideoBg={setVideoBg}
+        aspect={videoAspect}
+        setAspect={setVideoAspect}
+        exportSize={videoSize}
+        setExportSize={setVideoSize}
         recording={recording}
-        onPng={() => void exportRaster(getSvg(), fileBase, 'png')}
+        onPng={() => void exportRaster(getSvg(), fileBase, 'png', Math.min(frame.width, frame.height))}
         onSvg={() => {
           const svg = getSvg()
           if (svg) void exportSvgMarkup(svg, fileBase)
@@ -189,11 +198,25 @@ export function SquishmojiPlayground() {
             setRecording(false)
             return
           }
-          if (startLiveRecording(getSvg, videoBg)) setRecording(true)
+          if (startLiveRecording(getSvg, videoBg, frame.width, frame.height)) setRecording(true)
         }}
         onBlink={() => setBlinkTrigger((count) => count + 1)}
         onAuto={() =>
-          void exportToVideoAuto(name, shape, expression, videoBg, `${fileBase}-auto`, 3, 0, 0, 1, 1, backgroundStyle)
+          void exportToVideoAuto(
+            name,
+            shape,
+            expression,
+            videoBg,
+            `${fileBase}-auto`,
+            3,
+            0,
+            0,
+            1,
+            1,
+            backgroundStyle,
+            frame.width,
+            frame.height,
+          )
         }
       />
     ) : null
@@ -231,7 +254,9 @@ export function SquishmojiPlayground() {
             }
             onRemove={(id) => setSequence((steps) => steps.filter((step) => step.id !== id))}
             onReorder={setSequence}
-            onExport={() => void exportToVideoSequence(sequence, videoBg, `${fileBase}-sequence`)}
+            onExport={() =>
+              void exportToVideoSequence(sequence, videoBg, `${fileBase}-sequence`, 0, 0, 1, 1, frame.width, frame.height)
+            }
           />
         ) : null
       }
@@ -298,7 +323,15 @@ export function SquishmojiPlayground() {
             preview={renderSquish(name, size)}
           />
         ) : (
-          <VideoStage stageRef={stageRef} seed={name} preview={renderSquish(name, Math.max(size, 220))} />
+          <VideoStage
+            stageRef={stageRef}
+            seed={seedName}
+            setSeed={setSeedName}
+            placeholder={DEFAULT_SEEDS}
+            onRandomize={() => setSeedName(getRandomPersonas(1)[0] ?? DEFAULT_SEEDS)}
+            aspect={videoAspect}
+            preview={renderSquish(name, Math.max(size, 220))}
+          />
         )
       }
       float={<ResourceToolbar config={toolbarConfig} left={<ResourceNav />} />}

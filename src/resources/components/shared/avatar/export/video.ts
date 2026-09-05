@@ -10,7 +10,8 @@ function mimeType() {
 export function startLiveRecording(
   source: SVGSVGElement | (() => SVGSVGElement | null) | null,
   background: string,
-  size = 720,
+  width = 720,
+  height = 720,
 ) {
   if (!source || activeRecording) return false
   const svg = typeof source === 'function' ? source() : source
@@ -18,9 +19,11 @@ export function startLiveRecording(
   const type = mimeType()
   if (!type) return false
   const canvas = document.createElement('canvas')
-  canvas.width = canvas.height = size
+  canvas.width = width
+  canvas.height = height
   const context = canvas.getContext('2d')
   if (!context) return false
+  const side = Math.min(width, height)
   const stream = canvas.captureStream(30)
   const recorder = new MediaRecorder(stream, { mimeType: type })
   const chunks: Blob[] = []
@@ -37,15 +40,15 @@ export function startLiveRecording(
     const node = typeof source === 'function' ? source() : source
     if (!node) return
     session.drawing = true
-    void imageFor(node, size)
+    void imageFor(node, side)
       .then((image) => {
         if (activeRecording !== session) return
-        if (background === 'transparent') context.clearRect(0, 0, size, size)
+        if (background === 'transparent') context.clearRect(0, 0, width, height)
         else {
           context.fillStyle = background
-          context.fillRect(0, 0, size, size)
+          context.fillRect(0, 0, width, height)
         }
-        context.drawImage(image, 0, 0, size, size)
+        context.drawImage(image, (width - side) / 2, (height - side) / 2, side, side)
       })
       .finally(() => {
         if (activeRecording === session) session.drawing = false
