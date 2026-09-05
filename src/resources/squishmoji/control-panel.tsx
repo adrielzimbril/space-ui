@@ -245,7 +245,7 @@ export function SquishmojiControlPanel({
           </div>
 
           <div className="flex flex-col gap-2">
-            <span className="text-[0.6875rem] font-semibold text-muted-foreground">Background</span>
+            <span className="text-[0.6875rem] font-semibold text-muted-foreground">Background style</span>
             <Select
               value={backgroundStyle}
               onValueChange={(value) => value && setBackgroundStyle(value as SquishBackgroundStyleChoice)}
@@ -258,7 +258,8 @@ export function SquishmojiControlPanel({
                       style={{ background: backgroundFill(backgroundStyle, body, palette) }}
                     />
                     <span className="truncate">
-                      {BACKGROUND_SWATCHES.find((item) => item.id === backgroundStyle)?.label ?? toLabel(backgroundStyle)}
+                      {BACKGROUND_SWATCHES.find((item) => item.id === backgroundStyle)?.label ??
+                        toLabel(backgroundStyle)}
                     </span>
                   </span>
                 </SelectValue>
@@ -281,6 +282,7 @@ export function SquishmojiControlPanel({
 
           {view === 'seed' ? (
             <div className="flex flex-col gap-2">
+              <span className="text-[0.6875rem] font-semibold text-muted-foreground">Size</span>
               <Slider
                 value={[size]}
                 min={SIZE_MIN}

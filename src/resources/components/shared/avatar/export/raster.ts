@@ -59,11 +59,23 @@ export async function exportRaster(
   })
 }
 
-export async function exportSvgMarkup(svg: SVGSVGElement | string, fileName: string, background = 'transparent') {
-  let source = svgMarkup(svg)
-  if (background !== 'transparent') {
-    source = source.replace(/<svg([^>]*)>/, `<svg$1><rect width="100%" height="100%" fill="${background}"/>`)
-  }
+export async function exportSvgMarkup(
+  svg: SVGSVGElement | string,
+  fileName: string,
+  background = 'transparent',
+  width?: number,
+  height?: number,
+) {
+  const inner = svgMarkup(svg)
+  const w = width ?? 1000
+  const h = height ?? 1000
+  const side = Math.min(w, h)
+  const ox = (w - side) / 2
+  const oy = (h - side) / 2
+  const content = inner.replace(/^[\s\S]*?<svg[^>]*>/i, '').replace(/<\/svg>\s*$/i, '')
+  const source = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">${
+    background !== 'transparent' ? `<rect width="${w}" height="${h}" fill="${background}"/>` : ''
+  }<svg x="${ox}" y="${oy}" width="${side}" height="${side}" viewBox="0 0 ${side} ${side}">${content}</svg></svg>`
   save(new Blob([source], { type: 'image/svg+xml;charset=utf-8' }), `${fileName}.svg`)
 }
 

@@ -91,6 +91,7 @@ export function SquishmojiPlayground() {
   const [showRight, setShowRight] = useState(true)
   const [expanded, setExpanded] = useState(false)
   const [videoBg, setVideoBg] = useState('transparent')
+  const [stillFormat, setStillFormat] = useState<'png' | 'svg'>('png')
   const [videoAspect, setVideoAspect] = useState<VideoAspect>('1:1')
   const [videoSize, setVideoSize] = useState<VideoExportSize>(1080)
   const [recording, setRecording] = useState(false)
@@ -264,6 +265,64 @@ export function SquishmojiPlayground() {
       }
     })
   }
+  const videoActions = (
+    <div className="flex flex-col gap-2">
+      <Button type="button" size="sm" variant="secondary" onClick={() => setBlinkTrigger((count) => count + 1)}>
+        Blink
+      </Button>
+      <div className="h-px bg-border" />
+      <div className="grid grid-cols-2 gap-1.5">
+        <Button
+          type="button"
+          size="sm"
+          variant={recording ? 'destructive' : 'secondary'}
+          onClick={() => {
+            if (recording) {
+              stopLiveRecording(`${fileBase}-live`)
+              setRecording(false)
+              toastManager.add({ type: 'success', title: 'Recording saved' })
+              return
+            }
+            if (startLiveRecording(getSvg, videoBg, frame.width, frame.height)) {
+              setRecording(true)
+              toastManager.add({ type: 'info', title: 'Recording' })
+            } else {
+              toastManager.add({ type: 'error', title: 'Could not start recording' })
+            }
+          }}
+        >
+          {recording ? 'Stop' : 'Record'}
+        </Button>
+        <Button
+          type="button"
+          size="sm"
+          variant="secondary"
+          onClick={() =>
+            void notify('3s clip', () =>
+              exportToVideoAuto(
+                name,
+                shape,
+                expression,
+                videoBg,
+                `${fileBase}-clip`,
+                3,
+                0,
+                0,
+                1,
+                1,
+                backgroundStyle,
+                frame.width,
+                frame.height,
+              ),
+            )
+          }
+        >
+          3s clip
+        </Button>
+      </div>
+    </div>
+  )
+
   const exportPanel =
     view === 'video' ? (
       <AvatarExportPanel
@@ -273,23 +332,21 @@ export function SquishmojiPlayground() {
         setAspect={setVideoAspect}
         exportSize={videoSize}
         setExportSize={setVideoSize}
-        onPng={() => {
+        format={stillFormat}
+        setFormat={setStillFormat}
+        onExport={() => {
           const svg = getSvg()
           if (!svg) {
             toastManager.add({ type: 'error', title: 'Nothing to export' })
+            return
+          }
+          if (stillFormat === 'svg') {
+            void notify('SVG', () => exportSvgMarkup(svg, fileBase, videoBg, frame.width, frame.height))
             return
           }
           void notify('PNG', () =>
             exportRaster(svg, fileBase, 'png', Math.min(frame.width, frame.height), frame.width, frame.height, videoBg),
           )
-        }}
-        onSvg={() => {
-          const svg = getSvg()
-          if (!svg) {
-            toastManager.add({ type: 'error', title: 'Nothing to export' })
-            return
-          }
-          void notify('SVG', () => exportSvgMarkup(svg, fileBase, videoBg))
         }}
       />
     ) : null
@@ -435,62 +492,7 @@ export function SquishmojiPlayground() {
               setSeedName(next[0] ?? DEFAULT_SEEDS)
             }}
             view={view}
-            videoActions={
-              <div className="flex flex-col gap-2">
-                <Button type="button" size="sm" variant="secondary" onClick={() => setBlinkTrigger((count) => count + 1)}>
-                  Blink
-                </Button>
-                <div className="grid grid-cols-2 gap-1.5">
-                  <Button
-                    type="button"
-                    size="sm"
-                    variant={recording ? 'destructive' : 'secondary'}
-                    onClick={() => {
-                      if (recording) {
-                        stopLiveRecording(`${fileBase}-live`)
-                        setRecording(false)
-                        toastManager.add({ type: 'success', title: 'Recording saved' })
-                        return
-                      }
-                      if (startLiveRecording(getSvg, videoBg, frame.width, frame.height)) {
-                        setRecording(true)
-                        toastManager.add({ type: 'info', title: 'Recording' })
-                      } else {
-                        toastManager.add({ type: 'error', title: 'Could not start recording' })
-                      }
-                    }}
-                  >
-                    {recording ? 'Stop' : 'Record'}
-                  </Button>
-                  <Button
-                    type="button"
-                    size="sm"
-                    variant="secondary"
-                    onClick={() =>
-                      void notify('3s clip', () =>
-                        exportToVideoAuto(
-                          name,
-                          shape,
-                          expression,
-                          videoBg,
-                          `${fileBase}-clip`,
-                          3,
-                          0,
-                          0,
-                          1,
-                          1,
-                          backgroundStyle,
-                          frame.width,
-                          frame.height,
-                        ),
-                      )
-                    }
-                  >
-                    3s clip
-                  </Button>
-                </div>
-              </div>
-            }
+            videoActions={videoActions}
           >
             {exportPanel}
           </SquishmojiControlPanel>

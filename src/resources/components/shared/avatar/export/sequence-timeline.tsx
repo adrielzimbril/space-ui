@@ -97,7 +97,7 @@ function ShotRow({
           <button type="button" className="text-muted-foreground" {...attributes} {...listeners} aria-label="Reorder">
             <IconGripVertical className="size-3.5" />
           </button>
-          <button type="button" className="text-muted-foreground" onClick={onToggle} aria-label="Toggle tracks">
+          <button type="button" className="grid size-6 place-items-center text-muted-foreground" onClick={onToggle} aria-label="Toggle tracks">
             <IconChevronRight className={cn('size-3.5 transition-transform duration-200', expanded && 'rotate-90')} />
           </button>
           <Squishmoji
@@ -109,7 +109,14 @@ function ShotRow({
             animate={false}
             frozenAt={0}
           />
-          <button type="button" onClick={onSelect} className="min-w-0 flex-1 truncate text-left text-xs font-medium">
+          <button
+            type="button"
+            onClick={() => {
+              onSelect()
+              onToggle()
+            }}
+            className="min-w-0 flex-1 truncate text-left text-xs font-medium"
+          >
             Shot {index + 1}
           </button>
           <span className="text-[0.625rem] tabular-nums text-muted-foreground">{step.durationSec.toFixed(1)}s</span>
@@ -230,14 +237,8 @@ export function SequenceTimeline({
           {formatTime(total)} / {formatTime(total)}
         </span>
         <div className="flex items-center gap-1.5">
-          <Button type="button" size="xs" variant="secondary" onClick={onAdd}>
-            <IconPlus className="size-3.5" /> Add shot
-          </Button>
-          {onExportJson ? (
-            <Button type="button" size="xs" variant="secondary" disabled={sequence.length === 0} onClick={onExportJson}>
-              JSON
-            </Button>
-          ) : null}
+          <span className="px-2 text-[0.625rem] font-medium text-muted-foreground">Config</span>
+          <div className="h-4 w-px bg-border" />
           {onImportJson ? (
             <Button type="button" size="xs" variant="secondary" className="relative">
               Import
@@ -253,8 +254,16 @@ export function SequenceTimeline({
               />
             </Button>
           ) : null}
+          {onExportJson ? (
+            <Button type="button" size="xs" variant="secondary" disabled={sequence.length === 0} onClick={onExportJson}>
+              Export
+            </Button>
+          ) : null}
+          <Button type="button" size="xs" variant="secondary" onClick={onAdd}>
+            <IconPlus className="size-3.5" /> Add shot
+          </Button>
           <Button type="button" size="xs" disabled={sequence.length === 0} onClick={onExport}>
-            Export
+            Render
           </Button>
         </div>
       </div>
