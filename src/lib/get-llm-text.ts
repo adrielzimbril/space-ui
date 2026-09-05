@@ -14,29 +14,23 @@ const processor = remark()
   .use(remarkInclude)
   .use(remarkGfm)
 
-function getAppRoot(): string {
-  if (existsSync(path.join(process.cwd(), 'apps', 'www'))) {
-    return path.join(process.cwd(), 'apps', 'www')
-  }
-  return process.cwd()
-}
-
 function resolveContentPath(filePath: string): string {
   if (path.isAbsolute(filePath) && existsSync(filePath)) {
     return filePath
   }
-  const appRoot = getAppRoot()
+  const normalized = filePath.replace(/\\/g, '/')
+  const contentMatch =
+    normalized.match(/(?:^|\/)src\/content\/(.+)$/) || normalized.match(/(?:^|\/)content\/(.+)$/)
+  const rel = contentMatch ? contentMatch[1] : filePath.replace(/^src[\\/]/, '')
+
   const candidates = [
-    filePath,
-    path.resolve(appRoot, filePath),
-    path.resolve(appRoot, 'src', filePath.replace(/^src[\\/]/, '')),
-    path.resolve(process.cwd(), filePath),
-    path.resolve(process.cwd(), 'apps/www', filePath),
+    path.join(process.cwd(), 'src', 'content', rel),
+    path.join(process.cwd(), 'apps', 'www', 'src', 'content', rel),
   ]
   for (const c of candidates) {
     if (existsSync(c)) return c
   }
-  return path.resolve(appRoot, filePath)
+  return path.join(process.cwd(), 'src', 'content', rel)
 }
 
 export async function getLLMText(page: Page | any) {
