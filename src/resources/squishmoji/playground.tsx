@@ -229,37 +229,6 @@ export function SquishmojiPlayground() {
       rightWidth="20rem"
       onToggleRight={setShowRight}
       className={expanded ? 'p-0' : undefined}
-      bottom={
-        view === 'video' && !expanded ? (
-          <SequenceTimeline
-            sequence={sequence}
-            onAdd={() =>
-              setSequence((steps) => [
-                ...steps,
-                {
-                  id: crypto.randomUUID(),
-                  shape,
-                  expression,
-                  durationSec: 2,
-                  backgroundStyle,
-                  seed: name,
-                  blink: false,
-                  wobble: animWobble,
-                  animate,
-                },
-              ])
-            }
-            onUpdate={(id, patch) =>
-              setSequence((steps) => steps.map((step) => (step.id === id ? { ...step, ...patch } : step)))
-            }
-            onRemove={(id) => setSequence((steps) => steps.filter((step) => step.id !== id))}
-            onReorder={setSequence}
-            onExport={() =>
-              void exportToVideoSequence(sequence, videoBg, `${fileBase}-sequence`, 0, 0, 1, 1, frame.width, frame.height)
-            }
-          />
-        ) : null
-      }
       installBar={
         view !== 'seed' && view !== 'video' && !expanded ? (
           <InlineInstallBar packageName="@usespaceui/squishmoji" isShadcn={false} />
@@ -331,6 +300,45 @@ export function SquishmojiPlayground() {
             onRandomize={() => setSeedName(getRandomPersonas(1)[0] ?? DEFAULT_SEEDS)}
             aspect={videoAspect}
             preview={renderSquish(name, Math.max(size, 220))}
+            filmstrip={
+              <SequenceTimeline
+                sequence={sequence}
+                onAdd={() =>
+                  setSequence((steps) => [
+                    ...steps,
+                    {
+                      id: crypto.randomUUID(),
+                      shape,
+                      expression,
+                      durationSec: 2,
+                      backgroundStyle,
+                      seed: name,
+                      blink: false,
+                      wobble: animWobble,
+                      animate,
+                    },
+                  ])
+                }
+                onUpdate={(id, patch) =>
+                  setSequence((steps) => steps.map((step) => (step.id === id ? { ...step, ...patch } : step)))
+                }
+                onRemove={(id) => setSequence((steps) => steps.filter((step) => step.id !== id))}
+                onReorder={setSequence}
+                onExport={() =>
+                  void exportToVideoSequence(
+                    sequence,
+                    videoBg,
+                    `${fileBase}-sequence`,
+                    0,
+                    0,
+                    1,
+                    1,
+                    frame.width,
+                    frame.height,
+                  )
+                }
+              />
+            }
           />
         )
       }
