@@ -4,21 +4,10 @@ import { createMDX } from 'fumadocs-mdx/next'
 const withMDX = createMDX()
 
 const config: NextConfig = {
-  transpilePackages: ['@usespaceui/squishmoji'],
-  turbopack: {
-    root: '../../../',
-    resolveAlias: {
-      '@usespaceui/squishmoji': '../../../avatars/squishvatar/src/index.ts',
-      '@usespaceui/squishmoji/react': '../../../avatars/squishvatar/src/react/index.ts',
-    },
-  },
   images: {
     remotePatterns: [
       {
-        hostname: 'ui.aceternity.com',
-      },
-      {
-        hostname: 'ui.paceui.com',
+        hostname: 'ui.spaceui.com',
       },
       {
         hostname: 'spaceui.one',
