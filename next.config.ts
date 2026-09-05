@@ -1,12 +1,23 @@
 import type { NextConfig } from 'next'
 import { createMDX } from 'fumadocs-mdx/next'
 
+import fs from 'node:fs'
+import path from 'node:path'
+
 const withMDX = createMDX()
 
+const isLocalMonorepo =
+  !process.env.VERCEL &&
+  fs.existsSync(path.resolve(process.cwd(), '../../pnpm-workspace.yaml'))
+
 const config: NextConfig = {
-  turbopack: {
-    root: '../../',
-  },
+  ...(isLocalMonorepo
+    ? {
+        turbopack: {
+          root: '../../',
+        },
+      }
+    : {}),
   images: {
     remotePatterns: [
       {
