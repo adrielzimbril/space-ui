@@ -370,7 +370,8 @@ export function SquishmojiPlayground() {
                 <Squishmoji
                   key={name}
                   seed={name}
-                  size="80%"
+                  size={'100%'}
+                  className="aspect-square max-h-[85%] max-w-[85%] shrink-0"
                   shape={shape}
                   expression={expression}
                   backgroundStyle={backgroundStyle}

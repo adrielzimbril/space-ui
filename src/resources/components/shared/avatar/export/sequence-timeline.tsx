@@ -77,7 +77,7 @@ function ShotRow({
           <span className="text-[0.625rem] tabular-nums text-muted-foreground">{step.durationSec.toFixed(1)}s</span>
         </div>
         <div className="relative overflow-hidden" style={{ width: timelineWidth, minWidth: timelineWidth }}>
-          <button>
+          <button
             type="button"
             onClick={onSelect}
             className={cn(
