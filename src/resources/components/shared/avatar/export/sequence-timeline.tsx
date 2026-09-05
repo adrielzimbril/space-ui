@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import {
   DndContext,
   PointerSensor,
@@ -11,14 +11,18 @@ import {
 } from '@dnd-kit/core'
 import { SortableContext, arrayMove, useSortable, verticalListSortingStrategy } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
-import { IconChevronRight, IconGripVertical, IconPlus } from '@tabler/icons-react'
+import { IconChevronRight, IconGripVertical, IconPlus, IconTrash } from '@tabler/icons-react'
+import { Squishmoji } from '@usespaceui/squishmoji/react'
 import { Button } from '@/registry/primitives/button'
+import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { cn } from '@/registry/lib/utils'
 import type { SequenceStep } from './squish-video'
 
 const PX_PER_SEC = 96
 const ROW_H = 36
-const LABEL_W = 168
+const LABEL_W = 196
+const MIN_SEC = 0.5
+const MAX_SEC = 10
 
 function formatTime(seconds: number) {
   const whole = Math.max(0, seconds)
@@ -51,26 +55,60 @@ function ShotRow({
   onRemove: () => void
 }) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: step.id })
+  const dragStart = useRef({ x: 0, duration: 0 })
   const tracks = [
     { key: 'animate' as const, label: 'Motion', on: step.animate },
     { key: 'wobble' as const, label: 'Wobble', on: step.wobble },
     { key: 'blink' as const, label: 'Blink', on: step.blink },
   ]
+  const barWidth = Math.max(48, step.durationSec * PX_PER_SEC)
+
+  const onResizePointerDown = (event: React.PointerEvent<HTMLSpanElement>) => {
+    event.preventDefault()
+    event.stopPropagation()
+    dragStart.current = { x: event.clientX, duration: step.durationSec }
+    const target = event.currentTarget
+    target.setPointerCapture(event.pointerId)
+    const move = (next: PointerEvent) => {
+      const delta = (next.clientX - dragStart.current.x) / PX_PER_SEC
+      const duration = Math.min(MAX_SEC, Math.max(MIN_SEC, Math.round((dragStart.current.duration + delta) * 2) / 2))
+      onUpdate({ durationSec: duration })
+    }
+    const up = (next: PointerEvent) => {
+      target.releasePointerCapture(next.pointerId)
+      window.removeEventListener('pointermove', move)
+      window.removeEventListener('pointerup', up)
+    }
+    window.addEventListener('pointermove', move)
+    window.addEventListener('pointerup', up)
+  }
 
   return (
     <div
       ref={setNodeRef}
       style={{ transform: CSS.Transform.toString(transform), transition }}
-      className={cn(isDragging && 'z-10', selected && 'bg-muted/60')}
+      className={cn('transition-colors duration-200', isDragging && 'z-10', selected && 'bg-muted/60')}
     >
       <div className="flex" style={{ height: ROW_H }}>
-        <div className="sticky left-0 z-10 flex shrink-0 items-center gap-1 border-r border-border bg-background px-2" style={{ width: LABEL_W }}>
+        <div
+          className="sticky left-0 z-10 flex shrink-0 items-center gap-1.5 border-r border-border bg-background px-2"
+          style={{ width: LABEL_W }}
+        >
           <button type="button" className="text-muted-foreground" {...attributes} {...listeners} aria-label="Reorder">
             <IconGripVertical className="size-3.5" />
           </button>
           <button type="button" className="text-muted-foreground" onClick={onToggle} aria-label="Toggle tracks">
-            <IconChevronRight className={cn('size-3.5 transition-transform', expanded && 'rotate-90')} />
+            <IconChevronRight className={cn('size-3.5 transition-transform duration-200', expanded && 'rotate-90')} />
           </button>
+          <Squishmoji
+            seed={step.seed}
+            size={22}
+            shape={step.shape}
+            expression={step.expression}
+            backgroundStyle={step.backgroundStyle}
+            animate={false}
+            frozenAt={0}
+          />
           <button type="button" onClick={onSelect} className="min-w-0 flex-1 truncate text-left text-xs font-medium">
             Shot {index + 1}
           </button>
@@ -81,25 +119,37 @@ function ShotRow({
             type="button"
             onClick={onSelect}
             className={cn(
-              'absolute top-1.5 h-6 rounded-md px-2 text-left text-[0.625rem] font-medium',
+              'absolute top-1.5 flex h-6 items-center rounded-md pr-3 pl-2 text-left text-[0.625rem] font-medium transition-[width,left] duration-150',
               selected ? 'bg-primary text-primary-foreground' : 'bg-muted text-foreground',
             )}
-            style={{ left: start * PX_PER_SEC, width: Math.max(48, step.durationSec * PX_PER_SEC) }}
+            style={{ left: start * PX_PER_SEC, width: barWidth }}
           >
             Shot {index + 1}
+            <span
+              aria-label="Resize duration"
+              onPointerDown={onResizePointerDown}
+              className="absolute top-0 right-0 h-full w-2 cursor-ew-resize rounded-r-md"
+            />
           </button>
         </div>
       </div>
-      {expanded
-        ? tracks.map((track) => (
+      <div
+        className="grid transition-[grid-template-rows] duration-200 ease-out"
+        style={{ gridTemplateRows: expanded ? '1fr' : '0fr' }}
+      >
+        <div className="overflow-hidden">
+          {tracks.map((track) => (
             <div key={track.key} className="flex" style={{ height: ROW_H }}>
-              <div className="sticky left-0 z-10 flex shrink-0 items-center justify-between border-r border-border bg-background px-3" style={{ width: LABEL_W }}>
+              <div
+                className="sticky left-0 z-10 flex shrink-0 items-center justify-between border-r border-border bg-background px-3"
+                style={{ width: LABEL_W }}
+              >
                 <span className="text-[0.625rem] text-muted-foreground">{track.label}</span>
                 <button
                   type="button"
                   onClick={() => onUpdate({ [track.key]: !track.on })}
                   className={cn(
-                    'rounded px-1.5 text-[0.5625rem] font-medium',
+                    'rounded px-1.5 text-[0.5625rem] font-medium transition-colors',
                     track.on ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground',
                   )}
                 >
@@ -111,22 +161,21 @@ function ShotRow({
                   type="button"
                   onClick={() => onUpdate({ [track.key]: !track.on })}
                   className={cn(
-                    'absolute top-2 h-4 rounded-sm',
+                    'absolute top-2 h-4 rounded-sm transition-[width,left,background-color] duration-150',
                     track.on ? 'bg-primary/70' : 'bg-muted',
                   )}
-                  style={{ left: start * PX_PER_SEC, width: Math.max(48, step.durationSec * PX_PER_SEC) }}
+                  style={{ left: start * PX_PER_SEC, width: barWidth }}
                 />
               </div>
             </div>
-          ))
-        : null}
-      {selected ? (
-        <div className="flex h-8 items-center gap-2 border-t border-border px-3">
-          <button type="button" className="text-[0.625rem] text-destructive" onClick={onRemove}>
-            Remove
-          </button>
+          ))}
+          <div className="flex h-8 items-center border-t border-border px-3" style={{ width: LABEL_W }}>
+            <button type="button" className="inline-flex items-center gap-1 text-[0.625rem] text-destructive" onClick={onRemove}>
+              <IconTrash className="size-3" /> Remove
+            </button>
+          </div>
         </div>
-      ) : null}
+      </div>
     </div>
   )
 }
@@ -148,7 +197,7 @@ export function SequenceTimeline({
 }) {
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [openIds, setOpenIds] = useState<string[]>([])
-  const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 6 } }))
+  const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 8 } }))
   const total = sequence.reduce((sum, step) => sum + step.durationSec, 0)
   const starts = useMemo(() => {
     let cursor = 0
@@ -173,11 +222,9 @@ export function SequenceTimeline({
   return (
     <div className="flex flex-col">
       <div className="flex h-10 items-center justify-between gap-2 border-b border-border px-3">
-        <div className="flex items-center gap-2">
-          <span className="rounded-md bg-muted px-2 py-0.5 text-[0.625rem] font-medium tabular-nums">
-            {formatTime(total)} / {formatTime(total)}
-          </span>
-        </div>
+        <span className="rounded-md bg-muted px-2 py-0.5 text-[0.625rem] font-medium tabular-nums">
+          {formatTime(total)} / {formatTime(total)}
+        </span>
         <div className="flex items-center gap-1.5">
           <Button type="button" size="xs" variant="secondary" onClick={onAdd}>
             <IconPlus className="size-3.5" /> Add shot
@@ -187,22 +234,25 @@ export function SequenceTimeline({
           </Button>
         </div>
       </div>
-      <div className="flex max-h-56 min-h-28 overflow-auto" data-lenis-prevent="true">
+      <ScrollArea
+        className="h-64"
+        data-lenis-prevent="true"
+        scrollbarGutter
+        clampContentMinWidth={false}
+      >
         <div className="flex min-w-full flex-col">
           <div className="flex border-b border-border" style={{ height: 28 }}>
             <div className="sticky left-0 z-10 shrink-0 border-r border-border bg-background" style={{ width: LABEL_W }} />
-            <div className="relative min-w-0 flex-1 overflow-x-auto" data-lenis-prevent="true">
-              <div className="flex h-full" style={{ width: timelineWidth }}>
-                {Array.from({ length: ticks }, (_, index) => (
-                  <div
-                    key={index}
-                    className="shrink-0 border-l border-border/70 pl-1 text-[0.5625rem] tabular-nums text-muted-foreground"
-                    style={{ width: PX_PER_SEC }}
-                  >
-                    {index}s
-                  </div>
-                ))}
-              </div>
+            <div className="flex h-full" style={{ width: timelineWidth }}>
+              {Array.from({ length: ticks }, (_, index) => (
+                <div
+                  key={index}
+                  className="shrink-0 border-l border-border/70 pl-1 text-[0.5625rem] tabular-nums text-muted-foreground"
+                  style={{ width: PX_PER_SEC }}
+                >
+                  {index}s
+                </div>
+              ))}
             </div>
           </div>
           {sequence.length === 0 ? (
@@ -241,7 +291,7 @@ export function SequenceTimeline({
             <IconPlus className="size-3" /> Add shot
           </button>
         </div>
-      </div>
+      </ScrollArea>
     </div>
   )
 }

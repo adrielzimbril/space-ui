@@ -371,7 +371,7 @@ export function SquishmojiPlayground() {
                   key={name}
                   seed={name}
                   size={'100%'}
-                  className="aspect-square max-h-[85%] max-w-[85%] shrink-0"
+                  className="flex size-full items-center justify-center aspect-square [&_span]:size-[stretch]"
                   shape={shape}
                   expression={expression}
                   backgroundStyle={backgroundStyle}
