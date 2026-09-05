@@ -10,11 +10,11 @@ import type { VideoAspect } from '@/resources/components/shared/avatar/export/di
 export function VideoStage({
   stageRef,
   preview,
-  seed,
+  seed = '',
   setSeed,
-  placeholder,
+  placeholder = '',
   onRandomize,
-  aspect,
+  aspect = '1:1',
 }: {
   stageRef: RefObject<HTMLDivElement | null>
   preview: ReactNode
@@ -22,14 +22,15 @@ export function VideoStage({
   setSeed: (value: string) => void
   placeholder: string
   onRandomize: () => void
-  aspect: VideoAspect
+  aspect?: VideoAspect
 }) {
+  const ratio = (aspect ?? '1:1').replace(':', ' / ')
   return (
     <div className="flex h-full w-full flex-col items-center justify-center gap-8 px-6 pb-8 pt-20">
       <div
         ref={stageRef}
         className="grid max-h-[min(70vh,36rem)] w-full max-w-3xl place-items-center overflow-hidden rounded-2xl bg-muted"
-        style={{ aspectRatio: aspect.replace(':', ' / ') }}
+        style={{ aspectRatio: ratio }}
       >
         {preview}
       </div>
