@@ -126,8 +126,6 @@ export function SquishmojiCodeModal({
       shape: config.shape,
       expression: config.expression,
       backgroundStyle: config.backgroundStyle,
-      animate: config.animate,
-      animWobble: config.animWobble,
     })
   }, [visible, size, config])
 

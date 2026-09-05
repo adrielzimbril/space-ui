@@ -371,7 +371,17 @@ export function SquishmojiPlayground() {
               onReorder={setSequence}
               onExport={() =>
                 void notify('Sequence', () =>
-                  exportToVideoSequence(sequence, videoBg, `${fileBase}-sequence`, 0, 0, 1, 1, frame.width, frame.height),
+                  exportToVideoSequence(
+                    sequence,
+                    videoBg,
+                    `${fileBase}-sequence`,
+                    0,
+                    0,
+                    1,
+                    1,
+                    frame.width,
+                    frame.height,
+                  ),
                 )
               }
               onExportJson={exportSequenceJson}
@@ -404,8 +414,8 @@ export function SquishmojiPlayground() {
                 pattern="all"
                 size={size}
                 effect="none"
-              animate={false}
-              circle
+                animate={false}
+                circle
                 parsedColors={undefined}
                 paletteIndex={-2}
               />
@@ -419,7 +429,7 @@ export function SquishmojiPlayground() {
               sidebarRight={showRight && !expanded}
               renderMedia={(seed) => (
                 <div className="flex size-full max-h-full max-w-full items-center justify-center [&_svg]:size-full">
-                  {renderSquish(seed, 96, false)}
+                  {renderSquish(seed, 184, false)}
                 </div>
               )}
               caption={(seed) => captionFor(seed, shape, expression)}
