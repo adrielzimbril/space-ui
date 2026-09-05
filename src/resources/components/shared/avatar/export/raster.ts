@@ -25,23 +25,46 @@ async function imageFor(svg: SVGSVGElement | string, size: number) {
   return image
 }
 
-export async function exportSvgMarkup(svg: SVGSVGElement | string, fileName: string) {
-  save(new Blob([svgMarkup(svg)], { type: 'image/svg+xml;charset=utf-8' }), `${fileName}.svg`)
-}
-
 export async function exportRaster(
   svg: SVGSVGElement | string | null,
   fileName: string,
   format: 'png' | 'webp' = 'png',
   size = 1000,
+  width?: number,
+  height?: number,
+  background = 'transparent',
 ) {
   if (!svg) return
+  const w = width ?? size
+  const h = height ?? size
+  const side = Math.min(w, h)
   const canvas = document.createElement('canvas')
-  canvas.width = canvas.height = size
-  canvas.getContext('2d')!.drawImage(await imageFor(svg, size), 0, 0, size, size)
-  canvas.toBlob((blob) => {
-    if (blob) save(blob, `${fileName}.${format}`)
-  }, `image/${format}`)
+  canvas.width = w
+  canvas.height = h
+  const context = canvas.getContext('2d')!
+  if (background !== 'transparent') {
+    context.fillStyle = background
+    context.fillRect(0, 0, w, h)
+  }
+  context.drawImage(await imageFor(svg, side), (w - side) / 2, (h - side) / 2, side, side)
+  await new Promise<void>((resolve, reject) => {
+    canvas.toBlob((blob) => {
+      if (!blob) {
+        reject(new Error('Could not encode image'))
+        return
+      }
+      save(blob, `${fileName}.${format}`)
+      resolve()
+    }, `image/${format}`)
+  })
+}
+
+export async function exportSvgMarkup(svg: SVGSVGElement | string, fileName: string, background = 'transparent') {
+  let source = svgMarkup(svg)
+  if (background !== 'transparent') {
+    source = source.replace(/<svg([^>]*)>/, `<svg$1><rect width="100%" height="100%" fill="${background}"/>`)
+  }
+  save(new Blob([source], { type: 'image/svg+xml;charset=utf-8' }), `${fileName}.svg`)
 }
 
 export { save, imageFor }

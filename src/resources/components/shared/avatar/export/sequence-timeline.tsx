@@ -187,6 +187,8 @@ export function SequenceTimeline({
   onRemove,
   onReorder,
   onExport,
+  onExportJson,
+  onImportJson,
 }: {
   sequence: SequenceStep[]
   onAdd: () => void
@@ -194,6 +196,8 @@ export function SequenceTimeline({
   onRemove: (id: string) => void
   onReorder: (steps: SequenceStep[]) => void
   onExport: () => void
+  onExportJson?: () => void
+  onImportJson?: (file: File) => void
 }) {
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [openIds, setOpenIds] = useState<string[]>([])
@@ -229,6 +233,26 @@ export function SequenceTimeline({
           <Button type="button" size="xs" variant="secondary" onClick={onAdd}>
             <IconPlus className="size-3.5" /> Add shot
           </Button>
+          {onExportJson ? (
+            <Button type="button" size="xs" variant="secondary" disabled={sequence.length === 0} onClick={onExportJson}>
+              JSON
+            </Button>
+          ) : null}
+          {onImportJson ? (
+            <Button type="button" size="xs" variant="secondary" className="relative">
+              Import
+              <input
+                type="file"
+                accept="application/json"
+                className="absolute inset-0 cursor-pointer opacity-0"
+                onChange={(event) => {
+                  const file = event.target.files?.[0]
+                  if (file) onImportJson(file)
+                  event.target.value = ''
+                }}
+              />
+            </Button>
+          ) : null}
           <Button type="button" size="xs" disabled={sequence.length === 0} onClick={onExport}>
             Export
           </Button>
@@ -270,11 +294,7 @@ export function SequenceTimeline({
                     selected={selectedId === step.id}
                     expanded={openIds.includes(step.id)}
                     onSelect={() => setSelectedId(step.id)}
-                    onToggle={() =>
-                      setOpenIds((ids) =>
-                        ids.includes(step.id) ? ids.filter((id) => id !== step.id) : [...ids, step.id],
-                      )
-                    }
+                    onToggle={() => setOpenIds((ids) => (ids[0] === step.id ? [] : [step.id]))}
                     onUpdate={(patch) => onUpdate(step.id, patch)}
                     onRemove={() => onRemove(step.id)}
                   />

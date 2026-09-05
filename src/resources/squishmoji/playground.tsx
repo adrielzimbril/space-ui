@@ -10,6 +10,8 @@ import {
 } from '@usespaceui/squishmoji'
 import { Squishmoji } from '@usespaceui/squishmoji/react'
 import { bloomSound } from '@/components/providers/sound-provider'
+import { toastManager } from '@/registry/primitives/toast'
+import { Button } from '@/registry/primitives/button'
 import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
 import { ResourceStudio } from '@/resources/components/shared/layout/studio'
 import { ResourceNav } from '@/resources/components/shared/layout/nav'
@@ -110,6 +112,13 @@ export function SquishmojiPlayground() {
     if (!isDesktop) setShowRight(false)
   }, [isDesktop])
 
+  useEffect(() => {
+    if (!recording) return
+    stopLiveRecording(`${fileBase}-live`)
+    setRecording(false)
+    toastManager.add({ type: 'info', title: 'Recording stopped' })
+  }, [videoAspect, videoSize])
+
   const name = seedName.trim() || DEFAULT_SEEDS
   const fileBase = `squishmoji-${name}`
   const code = useMemo(
@@ -128,20 +137,31 @@ export function SquishmojiPlayground() {
     [name, shape, expression, size, backgroundStyle, animate, animWobble, animOnHover, animOnClick],
   )
 
-  const renderSquish = (seed: string, mediaSize: number) => (
+  const renderSquish = (seed: string, mediaSize: number, live = false) => (
     <Squishmoji
       seed={seed}
       size={mediaSize}
       shape={shape}
       expression={expression}
       backgroundStyle={backgroundStyle}
-      animate={animate}
-      animWobble={animWobble}
-      animOnHover={animOnHover}
-      animOnClick={animOnClick}
-      blinkTrigger={blinkTrigger}
+      animate={live ? animate : false}
+      animWobble={live ? animWobble : false}
+      animOnHover={live ? animOnHover : false}
+      animOnClick={live ? animOnClick : false}
+      blinkTrigger={live ? blinkTrigger : 0}
+      frozenAt={live ? undefined : 0}
     />
   )
+
+  const notify = async (label: string, run: () => void | Promise<void>) => {
+    toastManager.add({ id: 'squish-export', type: 'loading', title: `${label}…` })
+    try {
+      await run()
+      toastManager.add({ id: 'squish-export', type: 'success', title: `${label} saved` })
+    } catch {
+      toastManager.add({ id: 'squish-export', type: 'error', title: `${label} failed` })
+    }
+  }
 
   const reset = () => {
     setPool(getRandomPersonas(126))
@@ -203,6 +223,47 @@ export function SquishmojiPlayground() {
   }
 
   const frame = videoDims(videoAspect, videoSize)
+
+  const addShot = () => {
+    setSequence((steps) => [
+      ...steps,
+      {
+        id: crypto.randomUUID(),
+        shape,
+        expression,
+        durationSec: 2,
+        backgroundStyle,
+        seed: name,
+        blink: false,
+        wobble: animWobble,
+        animate,
+      },
+    ])
+  }
+
+  const exportSequenceJson = () => {
+    const blob = new Blob([JSON.stringify({ version: 1, shots: sequence }, null, 2)], { type: 'application/json' })
+    const url = URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = `${fileBase}-sequence.json`
+    link.click()
+    URL.revokeObjectURL(url)
+    toastManager.add({ type: 'success', title: 'Sequence JSON saved' })
+  }
+
+  const importSequenceJson = (file: File) => {
+    void file.text().then((text) => {
+      try {
+        const parsed = JSON.parse(text) as { shots?: SequenceStep[] }
+        if (!Array.isArray(parsed.shots)) throw new Error('Invalid sequence')
+        setSequence(parsed.shots.map((shot) => ({ ...shot, id: shot.id || crypto.randomUUID() })))
+        toastManager.add({ type: 'success', title: 'Sequence imported' })
+      } catch {
+        toastManager.add({ type: 'error', title: 'Invalid sequence file' })
+      }
+    })
+  }
   const exportPanel =
     view === 'video' ? (
       <AvatarExportPanel
@@ -212,38 +273,24 @@ export function SquishmojiPlayground() {
         setAspect={setVideoAspect}
         exportSize={videoSize}
         setExportSize={setVideoSize}
-        recording={recording}
-        onPng={() => void exportRaster(getSvg(), fileBase, 'png', Math.min(frame.width, frame.height))}
-        onSvg={() => {
+        onPng={() => {
           const svg = getSvg()
-          if (svg) void exportSvgMarkup(svg, fileBase)
-        }}
-        onToggleRecord={() => {
-          if (recording) {
-            stopLiveRecording(`${fileBase}-live`)
-            setRecording(false)
+          if (!svg) {
+            toastManager.add({ type: 'error', title: 'Nothing to export' })
             return
           }
-          if (startLiveRecording(getSvg, videoBg, frame.width, frame.height)) setRecording(true)
-        }}
-        onBlink={() => setBlinkTrigger((count) => count + 1)}
-        onAuto={() =>
-          void exportToVideoAuto(
-            name,
-            shape,
-            expression,
-            videoBg,
-            `${fileBase}-auto`,
-            3,
-            0,
-            0,
-            1,
-            1,
-            backgroundStyle,
-            frame.width,
-            frame.height,
+          void notify('PNG', () =>
+            exportRaster(svg, fileBase, 'png', Math.min(frame.width, frame.height), frame.width, frame.height, videoBg),
           )
-        }
+        }}
+        onSvg={() => {
+          const svg = getSvg()
+          if (!svg) {
+            toastManager.add({ type: 'error', title: 'Nothing to export' })
+            return
+          }
+          void notify('SVG', () => exportSvgMarkup(svg, fileBase, videoBg))
+        }}
       />
     ) : null
 
@@ -259,40 +306,19 @@ export function SquishmojiPlayground() {
           view === 'video' && !expanded ? (
             <SequenceTimeline
               sequence={sequence}
-              onAdd={() =>
-                setSequence((steps) => [
-                  ...steps,
-                  {
-                    id: crypto.randomUUID(),
-                    shape,
-                    expression,
-                    durationSec: 2,
-                    backgroundStyle,
-                    seed: name,
-                    blink: false,
-                    wobble: animWobble,
-                    animate,
-                  },
-                ])
-              }
+              onAdd={addShot}
               onUpdate={(id, patch) =>
                 setSequence((steps) => steps.map((step) => (step.id === id ? { ...step, ...patch } : step)))
               }
               onRemove={(id) => setSequence((steps) => steps.filter((step) => step.id !== id))}
               onReorder={setSequence}
               onExport={() =>
-                void exportToVideoSequence(
-                  sequence,
-                  videoBg,
-                  `${fileBase}-sequence`,
-                  0,
-                  0,
-                  1,
-                  1,
-                  frame.width,
-                  frame.height,
+                void notify('Sequence', () =>
+                  exportToVideoSequence(sequence, videoBg, `${fileBase}-sequence`, 0, 0, 1, 1, frame.width, frame.height),
                 )
               }
+              onExportJson={exportSequenceJson}
+              onImportJson={importSequenceJson}
             />
           ) : null
         }
@@ -311,10 +337,8 @@ export function SquishmojiPlayground() {
                   shape={shape}
                   expression={expression}
                   backgroundStyle={backgroundStyle}
-                  animate={animate}
-                  animWobble={animWobble}
-                  animOnHover={animOnHover}
-                  animOnClick={animOnClick}
+                  animate={false}
+                  frozenAt={0}
                 />
               )}
             >
@@ -323,8 +347,8 @@ export function SquishmojiPlayground() {
                 pattern="all"
                 size={size}
                 effect="none"
-                animate={animate}
-                circle
+              animate={false}
+              circle
                 parsedColors={undefined}
                 paletteIndex={-2}
               />
@@ -338,7 +362,7 @@ export function SquishmojiPlayground() {
               sidebarRight={showRight && !expanded}
               renderMedia={(seed) => (
                 <div className="flex size-full max-h-full max-w-full items-center justify-center [&_svg]:size-full">
-                  {renderSquish(seed, 164)}
+                  {renderSquish(seed, 164, false)}
                 </div>
               )}
               caption={(seed) => captionFor(seed, shape, expression)}
@@ -356,7 +380,7 @@ export function SquishmojiPlayground() {
               code={code}
               codeTitle="Squishmoji.tsx"
               footnote="Seed is the only required prop. The same seed always renders the same squishmoji."
-              preview={renderSquish(name, size)}
+              preview={renderSquish(name, size, true)}
             />
           ) : (
             <VideoStage
@@ -411,6 +435,62 @@ export function SquishmojiPlayground() {
               setSeedName(next[0] ?? DEFAULT_SEEDS)
             }}
             view={view}
+            videoActions={
+              <div className="flex flex-col gap-2">
+                <Button type="button" size="sm" variant="secondary" onClick={() => setBlinkTrigger((count) => count + 1)}>
+                  Blink
+                </Button>
+                <div className="grid grid-cols-2 gap-1.5">
+                  <Button
+                    type="button"
+                    size="sm"
+                    variant={recording ? 'destructive' : 'secondary'}
+                    onClick={() => {
+                      if (recording) {
+                        stopLiveRecording(`${fileBase}-live`)
+                        setRecording(false)
+                        toastManager.add({ type: 'success', title: 'Recording saved' })
+                        return
+                      }
+                      if (startLiveRecording(getSvg, videoBg, frame.width, frame.height)) {
+                        setRecording(true)
+                        toastManager.add({ type: 'info', title: 'Recording' })
+                      } else {
+                        toastManager.add({ type: 'error', title: 'Could not start recording' })
+                      }
+                    }}
+                  >
+                    {recording ? 'Stop' : 'Record'}
+                  </Button>
+                  <Button
+                    type="button"
+                    size="sm"
+                    variant="secondary"
+                    onClick={() =>
+                      void notify('3s clip', () =>
+                        exportToVideoAuto(
+                          name,
+                          shape,
+                          expression,
+                          videoBg,
+                          `${fileBase}-clip`,
+                          3,
+                          0,
+                          0,
+                          1,
+                          1,
+                          backgroundStyle,
+                          frame.width,
+                          frame.height,
+                        ),
+                      )
+                    }
+                  >
+                    3s clip
+                  </Button>
+                </div>
+              </div>
+            }
           >
             {exportPanel}
           </SquishmojiControlPanel>

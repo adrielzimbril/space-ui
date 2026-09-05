@@ -2,10 +2,9 @@
 
 import { Button } from '@/registry/primitives/button'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/registry/primitives/select'
-import { cn } from '@/registry/lib/utils'
 import type { VideoAspect, VideoExportSize } from './dims'
 
-const VIDEO_BACKGROUNDS = [
+const BACKGROUNDS = [
   { id: 'transparent', label: 'Clear' },
   { id: '#FFFFFF', label: 'White' },
   { id: '#1E293B', label: 'Dark' },
@@ -21,12 +20,8 @@ export function AvatarExportPanel({
   setAspect,
   exportSize,
   setExportSize,
-  recording,
   onPng,
   onSvg,
-  onToggleRecord,
-  onAuto,
-  onBlink,
 }: {
   videoBg: string
   setVideoBg: (value: string) => void
@@ -34,13 +29,11 @@ export function AvatarExportPanel({
   setAspect: (value: VideoAspect) => void
   exportSize: VideoExportSize
   setExportSize: (value: VideoExportSize) => void
-  recording: boolean
   onPng: () => void
   onSvg: () => void
-  onToggleRecord: () => void
-  onAuto: () => void
-  onBlink: () => void
 }) {
+  const current = BACKGROUNDS.find((item) => item.id === videoBg) ?? BACKGROUNDS[0]
+
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-2">
@@ -59,64 +52,69 @@ export function AvatarExportPanel({
           ))}
         </div>
       </div>
+      <Select value={String(exportSize)} onValueChange={(value) => value && setExportSize(Number(value) as VideoExportSize)}>
+        <SelectTrigger className="h-9 border-0 bg-muted px-3 text-xs">
+          <SelectValue />
+        </SelectTrigger>
+        <SelectContent>
+          {SIZES.map((item) => (
+            <SelectItem key={item} value={String(item)}>
+              {item}p
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
       <div className="flex flex-col gap-2">
-        <span className="text-[0.6875rem] font-semibold text-muted-foreground">Export size</span>
-        <Select
-          value={String(exportSize)}
-          onValueChange={(value) => value && setExportSize(Number(value) as VideoExportSize)}
-        >
-          <SelectTrigger className="h-9 border-0 bg-muted px-3 text-xs">
-            <SelectValue />
+        <span className="text-[0.6875rem] font-semibold text-muted-foreground">Background</span>
+        <Select value={videoBg} onValueChange={(value) => value && setVideoBg(value)}>
+          <SelectTrigger className="h-10 border-0 bg-muted px-2.5 text-xs">
+            <SelectValue>
+              <span className="flex items-center gap-2">
+                <span
+                  className="size-6 rounded-full border border-border"
+                  style={
+                    current.id === 'transparent'
+                      ? {
+                          background:
+                            'repeating-conic-gradient(#d4d4d8 0% 25%, white 0% 50%)',
+                          backgroundSize: '8px 8px',
+                        }
+                      : { background: current.id }
+                  }
+                />
+                {current.label}
+              </span>
+            </SelectValue>
           </SelectTrigger>
           <SelectContent>
-            {SIZES.map((item) => (
-              <SelectItem key={item} value={String(item)}>
-                {item}p
+            {BACKGROUNDS.map((bg) => (
+              <SelectItem key={bg.id} value={bg.id}>
+                <span className="flex items-center gap-2">
+                  <span
+                    className="size-6 rounded-full border border-border"
+                    style={
+                      bg.id === 'transparent'
+                        ? {
+                            background: 'repeating-conic-gradient(#d4d4d8 0% 25%, white 0% 50%)',
+                            backgroundSize: '8px 8px',
+                          }
+                        : { background: bg.id }
+                    }
+                  />
+                  {bg.label}
+                </span>
               </SelectItem>
             ))}
           </SelectContent>
         </Select>
       </div>
-      <div className="flex flex-col gap-2">
-        <span className="text-[0.6875rem] font-semibold text-muted-foreground">Export</span>
-        <div className="grid grid-cols-2 gap-1.5">
-          <Button type="button" size="sm" variant="secondary" onClick={onPng}>
-            PNG
-          </Button>
-          <Button type="button" size="sm" variant="secondary" onClick={onSvg}>
-            SVG
-          </Button>
-          <Button type="button" size="sm" variant={recording ? 'destructive' : 'secondary'} onClick={onToggleRecord}>
-            {recording ? 'Stop' : 'Record'}
-          </Button>
-          <Button type="button" size="sm" variant="secondary" onClick={onAuto}>
-            Auto 3s
-          </Button>
-          <Button type="button" size="sm" variant="secondary" className="col-span-2" onClick={onBlink}>
-            Blink
-          </Button>
-        </div>
-      </div>
-      <div className="flex flex-col gap-2">
-        <span className="text-[0.6875rem] font-semibold text-muted-foreground">Video background</span>
-        <div className="flex gap-2">
-          {VIDEO_BACKGROUNDS.map((bg) => (
-            <button
-              key={bg.id}
-              type="button"
-              aria-label={bg.label}
-              title={bg.label}
-              onClick={() => setVideoBg(bg.id)}
-              className={cn(
-                'size-8 rounded-lg border',
-                videoBg === bg.id ? 'border-foreground' : 'border-input',
-                bg.id === 'transparent' &&
-                  'bg-[repeating-conic-gradient(#d4d4d8_0%_25%,white_0%_50%)] bg-[length:10px_10px]',
-              )}
-              style={bg.id !== 'transparent' ? { background: bg.id } : undefined}
-            />
-          ))}
-        </div>
+      <div className="grid grid-cols-2 gap-1.5">
+        <Button type="button" size="sm" variant="secondary" onClick={onPng}>
+          PNG
+        </Button>
+        <Button type="button" size="sm" variant="secondary" onClick={onSvg}>
+          SVG
+        </Button>
       </div>
     </div>
   )

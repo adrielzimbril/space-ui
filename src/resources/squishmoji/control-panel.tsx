@@ -9,7 +9,6 @@ import {
   type SquishShapeChoice,
 } from '@usespaceui/squishmoji'
 import { Squishmoji } from '@usespaceui/squishmoji/react'
-import { cn } from '@/registry/lib/utils'
 import { squishPalette } from './palette'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/registry/primitives/select'
@@ -94,6 +93,7 @@ export function SquishmojiControlPanel({
   setAnimOnClick,
   regenerateSeeds,
   view,
+  videoActions,
   children,
 }: {
   seed: string
@@ -115,6 +115,7 @@ export function SquishmojiControlPanel({
   setAnimOnClick: (value: boolean) => void
   regenerateSeeds: () => void
   view: ResourceViewMode
+  videoActions?: ReactNode
   children?: ReactNode
 }) {
   const activeSeed = seed.trim() || DEFAULT_SEEDS
@@ -245,28 +246,37 @@ export function SquishmojiControlPanel({
 
           <div className="flex flex-col gap-2">
             <span className="text-[0.6875rem] font-semibold text-muted-foreground">Background</span>
-            <p className="text-[0.625rem] text-muted-foreground">All = the seed picks. Otherwise you pin a style.</p>
-            <div className="grid grid-cols-3 gap-1.5">
-              {BACKGROUND_SWATCHES.map((swatch) => {
-                const selected = backgroundStyle === swatch.id
-                const dark = swatch.id === 'all' || swatch.id === 'celaeno' || swatch.id === 'alcyone' || swatch.id === 'merope'
-                return (
-                  <button
-                    key={swatch.id}
-                    type="button"
-                    onClick={() => setBackgroundStyle(swatch.id)}
-                    className={cn(
-                      'rounded-lg border px-1.5 py-2 text-[0.625rem] font-semibold',
-                      selected ? 'border-foreground' : 'border-transparent',
-                      dark ? 'text-white' : 'text-foreground',
-                    )}
-                    style={{ background: backgroundFill(swatch.id, body, palette) }}
-                  >
-                    {swatch.label}
-                  </button>
-                )
-              })}
-            </div>
+            <Select
+              value={backgroundStyle}
+              onValueChange={(value) => value && setBackgroundStyle(value as SquishBackgroundStyleChoice)}
+            >
+              <SelectTrigger className="h-10 border-0 bg-muted px-2.5 text-xs">
+                <SelectValue>
+                  <span className="flex min-w-0 items-center gap-2">
+                    <span
+                      className="size-6 shrink-0 rounded-full border border-border"
+                      style={{ background: backgroundFill(backgroundStyle, body, palette) }}
+                    />
+                    <span className="truncate">
+                      {BACKGROUND_SWATCHES.find((item) => item.id === backgroundStyle)?.label ?? toLabel(backgroundStyle)}
+                    </span>
+                  </span>
+                </SelectValue>
+              </SelectTrigger>
+              <SelectContent>
+                {BACKGROUND_SWATCHES.map((swatch) => (
+                  <SelectItem key={swatch.id} value={swatch.id}>
+                    <span className="flex items-center gap-2">
+                      <span
+                        className="size-6 shrink-0 rounded-full border border-border"
+                        style={{ background: backgroundFill(swatch.id, body, palette) }}
+                      />
+                      {swatch.label}
+                    </span>
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
 
           {view === 'seed' ? (
@@ -358,6 +368,7 @@ export function SquishmojiControlPanel({
               </ToggleGroupItem>
             </ToggleGroup>
           </div>
+          {view === 'video' ? videoActions : null}
           {children}
         </div>
       </ScrollArea>
