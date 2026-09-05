@@ -43,31 +43,29 @@ function Clip({
         {...listeners}
         onClick={onSelect}
         className={cn(
-          'grid size-12 place-items-center overflow-hidden rounded-full border bg-background',
-          selected ? 'border-foreground' : 'border-transparent',
+          'flex h-16 w-28 flex-col items-center justify-center gap-1 rounded-xl bg-muted px-2',
+          selected && 'ring-1 ring-foreground',
         )}
       >
         <Squishmoji
           seed={step.seed}
-          size={40}
+          size={32}
           shape={step.shape}
           expression={step.expression}
           backgroundStyle={step.backgroundStyle}
           animate={false}
           frozenAt={0}
         />
+        <span className="text-[0.5625rem] tabular-nums text-muted-foreground">{step.durationSec.toFixed(1)}s</span>
       </button>
-      <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 rounded-full bg-background px-1 text-[0.5625rem] tabular-nums text-muted-foreground">
-        {step.durationSec.toFixed(1)}s
-      </span>
       {selected ? (
         <button
           type="button"
           aria-label="Remove clip"
           onClick={onRemove}
-          className="absolute -top-1 -right-1 grid size-4 place-items-center rounded-full bg-background text-muted-foreground"
+          className="absolute top-1 right-1 grid size-5 place-items-center rounded-md text-muted-foreground hover:text-foreground"
         >
-          <IconTrash className="size-2.5" />
+          <IconTrash className="size-3" />
         </button>
       ) : null}
     </div>
@@ -104,77 +102,88 @@ export function SequenceTimeline({
   }
 
   return (
-    <div className="flex w-full max-w-3xl flex-col items-end gap-2">
-      <div className="flex items-center gap-2 rounded-full border border-border/60 bg-background/80 px-2 py-1.5 backdrop-blur-md">
-        <Button type="button" size="icon-sm" variant="ghost" aria-label="Add clip" onClick={onAdd}>
-          <IconPlus className="size-4" />
-        </Button>
-        {sequence.length === 0 ? (
-          <span className="px-2 text-[0.625rem] text-muted-foreground">Add clips</span>
-        ) : (
-          <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={onDragEnd}>
-            <SortableContext items={sequence.map((step) => step.id)} strategy={horizontalListSortingStrategy}>
-              <div className="flex items-center gap-2 px-1">
-                {sequence.map((step) => (
-                  <Clip
-                    key={step.id}
-                    step={step}
-                    selected={selected?.id === step.id}
-                    onSelect={() => setSelectedId(step.id)}
-                    onRemove={() => onRemove(step.id)}
-                  />
-                ))}
-              </div>
-            </SortableContext>
-          </DndContext>
-        )}
-        <Button type="button" size="sm" className="rounded-full" disabled={sequence.length === 0} onClick={onExport}>
-          Export {total > 0 ? `${total.toFixed(1)}s` : ''}
-        </Button>
-      </div>
-      {selected ? (
-        <div className="flex items-center gap-2 rounded-full border border-border/60 bg-background/80 px-3 py-1.5 backdrop-blur-md">
-          <span className="text-[0.625rem] tabular-nums text-muted-foreground">{selected.durationSec.toFixed(1)}s</span>
-          <Slider
-            className="w-28"
-            min={0.5}
-            max={10}
-            step={0.5}
-            value={[selected.durationSec]}
-            onValueChange={(value) => {
-              const next = Array.isArray(value) ? value[0] : value
-              if (typeof next === 'number') onUpdate(selected.id, { durationSec: next })
-            }}
-          />
-          <Button
-            type="button"
-            size="xs"
-            variant={selected.blink ? 'default' : 'ghost'}
-            className="rounded-full"
-            onClick={() => onUpdate(selected.id, { blink: !selected.blink })}
-          >
-            Blink
+    <div className="flex flex-col">
+      <div className="flex h-10 shrink-0 items-center justify-between px-3">
+        <div className="flex items-center gap-2">
+          <h2 className="text-xs font-semibold">Sequence</h2>
+          <span className="text-[0.625rem] text-muted-foreground">{total.toFixed(1)}s</span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <Button type="button" size="xs" variant="secondary" onClick={onAdd}>
+            <IconPlus className="size-3.5" /> Add
           </Button>
-          <Button
-            type="button"
-            size="xs"
-            variant={selected.wobble ? 'default' : 'ghost'}
-            className="rounded-full"
-            onClick={() => onUpdate(selected.id, { wobble: !selected.wobble })}
-          >
-            Wobble
-          </Button>
-          <Button
-            type="button"
-            size="xs"
-            variant={selected.animate ? 'default' : 'ghost'}
-            className="rounded-full"
-            onClick={() => onUpdate(selected.id, { animate: !selected.animate })}
-          >
-            Anim
+          <Button type="button" size="xs" disabled={sequence.length === 0} onClick={onExport}>
+            Export
           </Button>
         </div>
-      ) : null}
+      </div>
+      <div className="flex flex-col gap-3 px-3.5 pb-3.5">
+        <div className="overflow-x-auto" data-lenis-prevent="true">
+          {sequence.length === 0 ? (
+            <p className="rounded-xl bg-muted px-3 py-4 text-center text-xs text-muted-foreground">
+              Add the current take as a clip.
+            </p>
+          ) : (
+            <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={onDragEnd}>
+              <SortableContext items={sequence.map((step) => step.id)} strategy={horizontalListSortingStrategy}>
+                <div className="flex gap-2">
+                  {sequence.map((step) => (
+                    <Clip
+                      key={step.id}
+                      step={step}
+                      selected={selected?.id === step.id}
+                      onSelect={() => setSelectedId(step.id)}
+                      onRemove={() => onRemove(step.id)}
+                    />
+                  ))}
+                </div>
+              </SortableContext>
+            </DndContext>
+          )}
+        </div>
+        {selected ? (
+          <div className="flex flex-wrap items-center gap-2 rounded-xl bg-muted px-3 py-2">
+            <span className="text-[0.6875rem] font-semibold tabular-nums text-muted-foreground">
+              {selected.durationSec.toFixed(1)}s
+            </span>
+            <Slider
+              className="min-w-32 max-w-56 flex-1"
+              min={0.5}
+              max={10}
+              step={0.5}
+              value={[selected.durationSec]}
+              onValueChange={(value) => {
+                const next = Array.isArray(value) ? value[0] : value
+                if (typeof next === 'number') onUpdate(selected.id, { durationSec: next })
+              }}
+            />
+            <Button
+              type="button"
+              size="xs"
+              variant={selected.blink ? 'default' : 'secondary'}
+              onClick={() => onUpdate(selected.id, { blink: !selected.blink })}
+            >
+              Blink
+            </Button>
+            <Button
+              type="button"
+              size="xs"
+              variant={selected.wobble ? 'default' : 'secondary'}
+              onClick={() => onUpdate(selected.id, { wobble: !selected.wobble })}
+            >
+              Wobble
+            </Button>
+            <Button
+              type="button"
+              size="xs"
+              variant={selected.animate ? 'default' : 'secondary'}
+              onClick={() => onUpdate(selected.id, { animate: !selected.animate })}
+            >
+              Anim
+            </Button>
+          </div>
+        ) : null}
+      </div>
     </div>
   )
 }

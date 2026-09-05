@@ -134,7 +134,7 @@ export function ResourceStudio({
         ) : null}
       </div>
       {bottom ? (
-        <div data-resource-ui className="mt-2 shrink-0">
+        <div data-resource-ui className="mt-2 shrink-0 overflow-hidden rounded-2xl bg-background">
           {bottom}
         </div>
       ) : null}

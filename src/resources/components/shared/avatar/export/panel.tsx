@@ -12,7 +12,7 @@ const VIDEO_BACKGROUNDS = [
 ] as const
 
 const ASPECTS: VideoAspect[] = ['1:1', '16:9', '9:16', '4:3']
-const SIZES: VideoExportSize[] = [720, 1080, 1440]
+const SIZES: VideoExportSize[] = [512, 720, 1080, 1440, 2160, 3160]
 
 export function AvatarExportPanel({
   videoBg,

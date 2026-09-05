@@ -269,7 +269,7 @@ export function SquishmojiControlPanel({
             </div>
           </div>
 
-          {view === 'seed' || view === 'video' ? (
+          {view === 'seed' ? (
             <div className="flex flex-col gap-2">
               <Slider
                 value={[size]}
