@@ -172,6 +172,32 @@ export function SquishmojiPlayground() {
     setSelectedSeed(seed)
   }
 
+  const exportPanel =
+    view === 'video' ? (
+      <AvatarExportPanel
+        videoBg={videoBg}
+        setVideoBg={setVideoBg}
+        recording={recording}
+        onPng={() => void exportRaster(getSvg(), fileBase, 'png')}
+        onSvg={() => {
+          const svg = getSvg()
+          if (svg) void exportSvgMarkup(svg, fileBase)
+        }}
+        onToggleRecord={() => {
+          if (recording) {
+            stopLiveRecording(`${fileBase}-live`)
+            setRecording(false)
+            return
+          }
+          if (startLiveRecording(getSvg, videoBg)) setRecording(true)
+        }}
+        onBlink={() => setBlinkTrigger((count) => count + 1)}
+        onAuto={() =>
+          void exportToVideoAuto(name, shape, expression, videoBg, `${fileBase}-auto`, 3, 0, 0, 1, 1, backgroundStyle)
+        }
+      />
+    ) : null
+
   return (
     <>
     <ResourceStudio
@@ -302,31 +328,7 @@ export function SquishmojiPlayground() {
           }}
           view={view}
         >
-          {view === 'video' ? (
-          <AvatarExportPanel
-            videoBg={videoBg}
-            setVideoBg={setVideoBg}
-            recording={recording}
-            onPng={() => void exportRaster(getSvg(), fileBase, 'png')}
-            onSvg={() => {
-              const svg = getSvg()
-              if (svg) void exportSvgMarkup(svg, fileBase)
-            }}
-            onToggleRecord={() => {
-              if (recording) {
-                stopLiveRecording(`${fileBase}-live`)
-                setRecording(false)
-                return
-              }
-              const started = startLiveRecording(getSvg, videoBg)
-              if (started) setRecording(true)
-            }}
-            onBlink={() => setBlinkTrigger((count) => count + 1)}
-            onAuto={() =>
-              void exportToVideoAuto(name, shape, expression, videoBg, `${fileBase}-auto`, 3, 0, 0, 1, 1, backgroundStyle)
-            }
-          />
-          ) : null}
+          {exportPanel}
         </SquishmojiControlPanel>
       }
     />
