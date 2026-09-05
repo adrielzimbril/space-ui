@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import {
   DndContext,
   PointerSensor,
@@ -9,66 +9,123 @@ import {
   useSensors,
   type DragEndEvent,
 } from '@dnd-kit/core'
-import { SortableContext, arrayMove, horizontalListSortingStrategy, useSortable } from '@dnd-kit/sortable'
+import { SortableContext, arrayMove, useSortable, verticalListSortingStrategy } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
-import { IconPlus, IconTrash } from '@tabler/icons-react'
-import { Squishmoji } from '@usespaceui/squishmoji/react'
+import { IconChevronRight, IconGripVertical, IconPlus } from '@tabler/icons-react'
 import { Button } from '@/registry/primitives/button'
-import { Slider } from '@/registry/primitives/slider'
 import { cn } from '@/registry/lib/utils'
 import type { SequenceStep } from './squish-video'
 
-function Clip({
+const PX_PER_SEC = 96
+const ROW_H = 36
+const LABEL_W = 168
+
+function formatTime(seconds: number) {
+  const whole = Math.max(0, seconds)
+  const m = Math.floor(whole / 60)
+  const s = whole % 60
+  return `${String(m).padStart(2, '0')}:${s.toFixed(2).padStart(5, '0')}`
+}
+
+function ShotRow({
   step,
+  index,
+  start,
+  timelineWidth,
   selected,
+  expanded,
   onSelect,
+  onToggle,
+  onUpdate,
   onRemove,
 }: {
   step: SequenceStep
+  index: number
+  start: number
+  timelineWidth: number
   selected: boolean
+  expanded: boolean
   onSelect: () => void
+  onToggle: () => void
+  onUpdate: (patch: Partial<SequenceStep>) => void
   onRemove: () => void
 }) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: step.id })
+  const tracks = [
+    { key: 'animate' as const, label: 'Motion', on: step.animate },
+    { key: 'wobble' as const, label: 'Wobble', on: step.wobble },
+    { key: 'blink' as const, label: 'Blink', on: step.blink },
+  ]
 
   return (
     <div
       ref={setNodeRef}
       style={{ transform: CSS.Transform.toString(transform), transition }}
-      className={cn('relative shrink-0', isDragging && 'z-10')}
+      className={cn(isDragging && 'z-10', selected && 'bg-muted/60')}
     >
-      <button
-        type="button"
-        {...attributes}
-        {...listeners}
-        onClick={onSelect}
-        className={cn(
-          'grid size-12 place-items-center overflow-hidden rounded-full bg-muted',
-          selected && 'ring-1 ring-foreground',
-        )}
-      >
-        <Squishmoji
-          seed={step.seed}
-          size={40}
-          shape={step.shape}
-          expression={step.expression}
-          backgroundStyle={step.backgroundStyle}
-          animate={false}
-          frozenAt={0}
-        />
-      </button>
-      <span className="mt-1 block text-center text-[0.5625rem] tabular-nums text-muted-foreground">
-        {step.durationSec.toFixed(1)}s
-      </span>
+      <div className="flex" style={{ height: ROW_H }}>
+        <div className="sticky left-0 z-10 flex shrink-0 items-center gap-1 border-r border-border bg-background px-2" style={{ width: LABEL_W }}>
+          <button type="button" className="text-muted-foreground" {...attributes} {...listeners} aria-label="Reorder">
+            <IconGripVertical className="size-3.5" />
+          </button>
+          <button type="button" className="text-muted-foreground" onClick={onToggle} aria-label="Toggle tracks">
+            <IconChevronRight className={cn('size-3.5 transition-transform', expanded && 'rotate-90')} />
+          </button>
+          <button type="button" onClick={onSelect} className="min-w-0 flex-1 truncate text-left text-xs font-medium">
+            Shot {index + 1}
+          </button>
+          <span className="text-[0.625rem] tabular-nums text-muted-foreground">{step.durationSec.toFixed(1)}s</span>
+        </div>
+        <div className="relative overflow-hidden" style={{ width: timelineWidth, minWidth: timelineWidth }}>
+          <button>
+            type="button"
+            onClick={onSelect}
+            className={cn(
+              'absolute top-1.5 h-6 rounded-md px-2 text-left text-[0.625rem] font-medium',
+              selected ? 'bg-primary text-primary-foreground' : 'bg-muted text-foreground',
+            )}
+            style={{ left: start * PX_PER_SEC, width: Math.max(48, step.durationSec * PX_PER_SEC) }}
+          >
+            Shot {index + 1}
+          </button>
+        </div>
+      </div>
+      {expanded
+        ? tracks.map((track) => (
+            <div key={track.key} className="flex" style={{ height: ROW_H }}>
+              <div className="sticky left-0 z-10 flex shrink-0 items-center justify-between border-r border-border bg-background px-3" style={{ width: LABEL_W }}>
+                <span className="text-[0.625rem] text-muted-foreground">{track.label}</span>
+                <button
+                  type="button"
+                  onClick={() => onUpdate({ [track.key]: !track.on })}
+                  className={cn(
+                    'rounded px-1.5 text-[0.5625rem] font-medium',
+                    track.on ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground',
+                  )}
+                >
+                  {track.on ? 'On' : 'Off'}
+                </button>
+              </div>
+              <div className="relative" style={{ width: timelineWidth, minWidth: timelineWidth }}>
+                <button
+                  type="button"
+                  onClick={() => onUpdate({ [track.key]: !track.on })}
+                  className={cn(
+                    'absolute top-2 h-4 rounded-sm',
+                    track.on ? 'bg-primary/70' : 'bg-muted',
+                  )}
+                  style={{ left: start * PX_PER_SEC, width: Math.max(48, step.durationSec * PX_PER_SEC) }}
+                />
+              </div>
+            </div>
+          ))
+        : null}
       {selected ? (
-        <button
-          type="button"
-          aria-label="Remove clip"
-          onClick={onRemove}
-          className="absolute -top-0.5 -right-0.5 grid size-4 place-items-center rounded-full bg-muted text-muted-foreground"
-        >
-          <IconTrash className="size-2.5" />
-        </button>
+        <div className="flex h-8 items-center gap-2 border-t border-border px-3">
+          <button type="button" className="text-[0.625rem] text-destructive" onClick={onRemove}>
+            Remove
+          </button>
+        </div>
       ) : null}
     </div>
   )
@@ -90,9 +147,19 @@ export function SequenceTimeline({
   onExport: () => void
 }) {
   const [selectedId, setSelectedId] = useState<string | null>(null)
+  const [openIds, setOpenIds] = useState<string[]>([])
   const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 6 } }))
   const total = sequence.reduce((sum, step) => sum + step.durationSec, 0)
-  const selected = sequence.find((step) => step.id === selectedId) ?? sequence[0]
+  const starts = useMemo(() => {
+    let cursor = 0
+    return sequence.map((step) => {
+      const start = cursor
+      cursor += step.durationSec
+      return start
+    })
+  }, [sequence])
+  const ticks = Math.max(6, Math.ceil(total) + 2)
+  const timelineWidth = ticks * PX_PER_SEC
 
   const onDragEnd = (event: DragEndEvent) => {
     const { active, over } = event
@@ -104,84 +171,77 @@ export function SequenceTimeline({
   }
 
   return (
-    <div className="flex flex-col gap-3 p-3.5">
-      <div className="flex flex-wrap items-center justify-between gap-2">
+    <div className="flex flex-col">
+      <div className="flex h-10 items-center justify-between gap-2 border-b border-border px-3">
         <div className="flex items-center gap-2">
-          <p className="text-xs font-semibold">Sequence</p>
-          <span className="text-[0.625rem] text-muted-foreground">{total.toFixed(1)}s · drag to reorder</span>
+          <span className="rounded-md bg-muted px-2 py-0.5 text-[0.625rem] font-medium tabular-nums">
+            {formatTime(total)} / {formatTime(total)}
+          </span>
         </div>
         <div className="flex items-center gap-1.5">
           <Button type="button" size="xs" variant="secondary" onClick={onAdd}>
-            <IconPlus className="size-3.5" /> Add
+            <IconPlus className="size-3.5" /> Add shot
           </Button>
           <Button type="button" size="xs" disabled={sequence.length === 0} onClick={onExport}>
             Export
           </Button>
         </div>
       </div>
-      <div className="overflow-x-auto py-1" data-lenis-prevent="true">
-        {sequence.length === 0 ? (
-          <p className="text-xs text-muted-foreground">Add the current take as a clip.</p>
-        ) : (
-          <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={onDragEnd}>
-            <SortableContext items={sequence.map((step) => step.id)} strategy={horizontalListSortingStrategy}>
-              <div className="flex items-start gap-3">
-                {sequence.map((step) => (
-                  <Clip
+      <div className="flex max-h-56 min-h-28 overflow-auto" data-lenis-prevent="true">
+        <div className="flex min-w-full flex-col">
+          <div className="flex border-b border-border" style={{ height: 28 }}>
+            <div className="sticky left-0 z-10 shrink-0 border-r border-border bg-background" style={{ width: LABEL_W }} />
+            <div className="relative min-w-0 flex-1 overflow-x-auto" data-lenis-prevent="true">
+              <div className="flex h-full" style={{ width: timelineWidth }}>
+                {Array.from({ length: ticks }, (_, index) => (
+                  <div
+                    key={index}
+                    className="shrink-0 border-l border-border/70 pl-1 text-[0.5625rem] tabular-nums text-muted-foreground"
+                    style={{ width: PX_PER_SEC }}
+                  >
+                    {index}s
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          {sequence.length === 0 ? (
+            <p className="px-3 py-6 text-xs text-muted-foreground">Add a shot to start the timeline.</p>
+          ) : (
+            <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={onDragEnd}>
+              <SortableContext items={sequence.map((step) => step.id)} strategy={verticalListSortingStrategy}>
+                {sequence.map((step, index) => (
+                  <ShotRow
                     key={step.id}
                     step={step}
-                    selected={selected?.id === step.id}
+                    index={index}
+                    start={starts[index] ?? 0}
+                    timelineWidth={timelineWidth}
+                    selected={selectedId === step.id}
+                    expanded={openIds.includes(step.id)}
                     onSelect={() => setSelectedId(step.id)}
+                    onToggle={() =>
+                      setOpenIds((ids) =>
+                        ids.includes(step.id) ? ids.filter((id) => id !== step.id) : [...ids, step.id],
+                      )
+                    }
+                    onUpdate={(patch) => onUpdate(step.id, patch)}
                     onRemove={() => onRemove(step.id)}
                   />
                 ))}
-              </div>
-            </SortableContext>
-          </DndContext>
-        )}
-      </div>
-      {selected ? (
-        <div className="flex flex-wrap items-center gap-2 rounded-xl bg-muted px-3 py-2">
-          <span className="text-[0.6875rem] font-semibold tabular-nums text-muted-foreground">
-            {selected.durationSec.toFixed(1)}s
-          </span>
-          <Slider
-            className="min-w-32 max-w-56 flex-1"
-            min={0.5}
-            max={10}
-            step={0.5}
-            value={[selected.durationSec]}
-            onValueChange={(value) => {
-              const next = Array.isArray(value) ? value[0] : value
-              if (typeof next === 'number') onUpdate(selected.id, { durationSec: next })
-            }}
-          />
-          <Button
+              </SortableContext>
+            </DndContext>
+          )}
+          <button
             type="button"
-            size="xs"
-            variant={selected.blink ? 'default' : 'secondary'}
-            onClick={() => onUpdate(selected.id, { blink: !selected.blink })}
+            onClick={onAdd}
+            className="flex h-9 items-center gap-1 border-t border-border px-3 text-left text-[0.625rem] text-muted-foreground hover:text-foreground"
+            style={{ width: LABEL_W }}
           >
-            Blink
-          </Button>
-          <Button
-            type="button"
-            size="xs"
-            variant={selected.wobble ? 'default' : 'secondary'}
-            onClick={() => onUpdate(selected.id, { wobble: !selected.wobble })}
-          >
-            Wobble
-          </Button>
-          <Button
-            type="button"
-            size="xs"
-            variant={selected.animate ? 'default' : 'secondary'}
-            onClick={() => onUpdate(selected.id, { animate: !selected.animate })}
-          >
-            Anim
-          </Button>
+            <IconPlus className="size-3" /> Add shot
+          </button>
         </div>
-      ) : null}
+      </div>
     </div>
   )
 }
