@@ -6,7 +6,7 @@ import { ResourcesMdx } from '../resources-mdx'
 
 export default async function Page(props: { params: Promise<{ slug: string[] }> }) {
   const { slug } = await props.params
-  if (slug[0] === 'avatars' || slug[0] === 'squishmoji') notFound()
+  if (slug[0] === 'avatars' || slug[0] === 'squishmoji' || slug[0] === '_empty') notFound()
   return (
     <UiKitLayoutWrapper>
       <ResourcesMdx slug={slug} />
@@ -15,13 +15,20 @@ export default async function Page(props: { params: Promise<{ slug: string[] }> 
 }
 
 export async function generateStaticParams() {
-  return source
+  const params = source
     .generateParams()
     .filter((params) => params.slug?.[0] && params.slug[0] !== 'avatars' && params.slug[0] !== 'squishmoji')
+
+  if (params.length === 0) {
+    return [{ slug: ['_empty'] }]
+  }
+
+  return params
 }
 
 export async function generateMetadata(props: { params: Promise<{ slug: string[] }> }): Promise<Metadata> {
   const { slug } = await props.params
+  if (slug[0] === '_empty') return {}
   const page = source.getPage(slug)
   if (!page) notFound()
   const image = ['/docs-og', ...slug, 'image.png'].join('/')

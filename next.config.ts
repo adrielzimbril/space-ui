@@ -14,7 +14,7 @@ const config: NextConfig = {
   ...(isLocalMonorepo
     ? {
         turbopack: {
-          root: '../../',
+          root: path.resolve(process.cwd(), '../../'),
         },
       }
     : {}),
@@ -53,7 +53,6 @@ const config: NextConfig = {
   experimental: {
     useTypeScriptCli: true,
     turbopackRustReactCompiler: true,
-    useOffline: true,
   },
   outputFileTracingIncludes: {
     '/llms.mdx/**': ['./src/content/**/*'],

@@ -4,7 +4,6 @@ import remarkMdx from 'remark-mdx'
 import { remarkInclude } from 'fumadocs-mdx/config'
 import type { Page } from '@/lib/source'
 import fs from 'node:fs/promises'
-import { existsSync } from 'node:fs'
 import path from 'node:path'
 import { siteConfig } from '@/lib/space-config'
 
@@ -14,35 +13,38 @@ const processor = remark()
   .use(remarkInclude)
   .use(remarkGfm)
 
-function resolveContentPath(filePath: string): string {
-  if (path.isAbsolute(filePath) && existsSync(filePath)) {
-    return filePath
-  }
-  const normalized = filePath.replace(/\\/g, '/')
-  const contentMatch =
-    normalized.match(/(?:^|\/)src\/content\/(.+)$/) || normalized.match(/(?:^|\/)content\/(.+)$/)
-  const rel = contentMatch ? contentMatch[1] : filePath.replace(/^src[\\/]/, '')
-
-  const candidates = [
-    path.join(process.cwd(), 'src', 'content', rel),
-    path.join(process.cwd(), 'apps', 'www', 'src', 'content', rel),
-  ]
-  for (const c of candidates) {
-    if (existsSync(c)) return c
-  }
-  return path.join(process.cwd(), 'src', 'content', rel)
-}
-
 export async function getLLMText(page: Page | any) {
-  if (!page.absolutePath) {
-    throw new Error(`Missing absolutePath for ${page.url}`)
+  if (!page) {
+    throw new Error('Page is required')
   }
 
-  const resolvedPath = resolveContentPath(page.absolutePath)
+  const collection = page.url.startsWith('/ui-kit')
+    ? 'ui-kit'
+    : page.url.startsWith('/resources')
+      ? 'resources'
+      : 'docs'
+
+  let fullPath = page.absolutePath
+
+  if (page.absolutePath) {
+    const normalized = page.absolutePath.replace(/\\/g, '/')
+    const match = normalized.match(/(?:^|\/)src\/content\/(.+)$/)
+    if (match) {
+      fullPath = path.join(process.cwd(), 'src', 'content', match[1])
+    }
+  } else if (page.path) {
+    fullPath = path.join(process.cwd(), 'src', 'content', collection, page.path)
+  }
+
+  if (!fullPath) {
+    throw new Error(`Unable to resolve file path for page: ${page.url}`)
+  }
+
+  const content = await fs.readFile(fullPath, 'utf-8')
 
   const processed = await processor.process({
-    path: resolvedPath,
-    value: await fs.readFile(resolvedPath),
+    path: fullPath,
+    value: content,
   })
 
   // note: it doesn't escape frontmatter, it's up to you.
