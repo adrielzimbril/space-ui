@@ -149,8 +149,15 @@ export function SquishmojiControlPanel({
 
           {view === 'canvas' || view === 'seed' ? (
             <div className="flex flex-col gap-2">
-              <span className="text-[0.6875rem] font-semibold text-muted-foreground">Size · {size}px</span>
-              <Slider value={[size]} min={SIZE_MIN} max={SIZE_MAX} onValueChange={(value) => setSize(value[0] ?? size)} />
+              <Slider
+                value={[size]}
+                min={SIZE_MIN}
+                max={SIZE_MAX}
+                onValueChange={(val) => {
+                  const next = Array.isArray(val) ? val[0] : val
+                  if (typeof next === 'number') setSize(next)
+                }}
+              />
             </div>
           ) : null}
 

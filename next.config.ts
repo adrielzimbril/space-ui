@@ -4,8 +4,13 @@ import { createMDX } from 'fumadocs-mdx/next'
 const withMDX = createMDX()
 
 const config: NextConfig = {
+  transpilePackages: ['@usespaceui/squishmoji'],
   turbopack: {
-    root: '../../',
+    root: '../../../',
+    resolveAlias: {
+      '@usespaceui/squishmoji': '../../../avatars/squishvatar/src/index.ts',
+      '@usespaceui/squishmoji/react': '../../../avatars/squishvatar/src/react/index.ts',
+    },
   },
   images: {
     remotePatterns: [

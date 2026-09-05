@@ -14,6 +14,7 @@ import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
 import { ResourceStudio } from '@/resources/studio'
 import { ResourceNav } from '@/resources/components/resource-nav'
 import { ResourceToolbar, type ResourceToolbarConfig } from '@/resources/components/resource-toolbar'
+import { InlineInstallBar } from '@/components/docs/installation/inline-install-bar'
 import { ResourceGallery } from '@/resources/components/resource-gallery'
 import { ResourceInfiniteCanvas } from '@/resources/components/resource-infinite-canvas'
 import { ResourceSeedView } from '@/resources/components/resource-seed-view'
@@ -160,6 +161,9 @@ export function SquishmojiPlayground() {
       rightWidth="20rem"
       onToggleRight={setShowRight}
       className={expanded ? 'p-0' : undefined}
+      installBar={
+        view !== 'seed' && !expanded ? <InlineInstallBar packageName="@usespaceui/squishmoji" isShadcn={false} /> : null
+      }
       canvas={
         view === 'canvas' ? (
           <ResourceInfiniteCanvas
@@ -212,7 +216,7 @@ export function SquishmojiPlayground() {
           />
         ) : (
           <ResourceSeedView
-            title="squishmoji"
+            title="Squishmoji"
             description="Deterministic squishy SVG avatars from any string. Alive with motion, no assets, no network."
             findLabel="Let's find your squishmoji"
             seed={seedName}
@@ -227,9 +231,7 @@ export function SquishmojiPlayground() {
           />
         )
       }
-      float={
-        <ResourceToolbar config={toolbarConfig} left={<ResourceNav />} />
-      }
+      float={<ResourceToolbar config={toolbarConfig} left={<ResourceNav />} />}
       right={
         <SquishmojiControlPanel
           seed={view === 'seed' ? seedName : (pool[0] ?? DEFAULT_SEEDS)}
