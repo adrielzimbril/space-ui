@@ -21,6 +21,8 @@ import { ToolbarButton } from '@/components/playground/playground-toolbar-button
 import { ToolbarSection } from '@/components/playground/playground-toolbar-section'
 import { MorphIcon } from '@/registry/components/spaceui/morph-icon'
 import { triggerThemeTransition } from '@/registry/components/spaceui/mode-switcher'
+import { useEventListener } from '@/registry/hooks/dom/use-event-listener'
+import { bloomSound } from '@/components/providers/sound-provider'
 import type { ResourceViewMode } from '@/resources/shared/types'
 
 export type ResourceToolbarConfig = {
@@ -91,19 +93,65 @@ export function ResourceToolbar({
   const viewLabel =
     nextView === 'mockup' ? 'Mockup' : nextView === 'gallery' ? 'Gallery' : nextView === 'seed' ? 'Seed' : 'Video'
 
+  // Keyboard shortcuts: 'F' toggles immersion/expand, 'Escape' exits immersion (like doc playground)
+  useEventListener('keydown', (e: KeyboardEvent) => {
+    if (!expand || !onToggleExpand) return
+
+    // Don't intercept when user is typing into an input, textarea, or contentEditable
+    if (
+      e.target instanceof HTMLInputElement ||
+      e.target instanceof HTMLTextAreaElement ||
+      (e.target as HTMLElement)?.isContentEditable
+    ) {
+      return
+    }
+
+    if (e.key === 'Escape' && expanded) {
+      e.preventDefault()
+      bloomSound()
+      onToggleExpand(false)
+    } else if (
+      (e.key === 'f' || e.key === 'F') &&
+      !e.metaKey &&
+      !e.ctrlKey &&
+      !e.altKey
+    ) {
+      e.preventDefault()
+      bloomSound()
+      onToggleExpand(!expanded)
+    }
+  })
+
+  const handleToggleExpand = () => {
+    bloomSound()
+    onToggleExpand?.(!expanded)
+  }
+
+  const handleToggleInfo = () => {
+    bloomSound()
+    onToggleInfo?.(!infoVisible)
+  }
+
+  const handleToggleSidebar = () => {
+    bloomSound()
+    onToggleSidebar?.(!sidebarVisible)
+  }
+
   const leftButtons = (
     <>
       {info && !expanded ? (
         <ToolbarButton
-          label={infoVisible ? 'Hide info' : 'Show info'}
+          label={infoVisible ? 'Hide side panel' : 'Show side panel'}
           pressed={infoVisible}
-          onClick={() => onToggleInfo?.(!infoVisible)}
+          onClick={handleToggleInfo}
         >
-          {infoVisible ? (
-            <IconLayoutSidebarLeftCollapse className="size-4" />
-          ) : (
-            <IconLayoutSidebarLeftExpand className="size-4" />
-          )}
+          <MorphIcon activeKey={infoVisible ? 'expanded' : 'collapsed'} variant="blur-scale">
+            {infoVisible ? (
+              <IconLayoutSidebarLeftCollapse className="size-4" />
+            ) : (
+              <IconLayoutSidebarLeftExpand className="size-4" />
+            )}
+          </MorphIcon>
         </ToolbarButton>
       ) : null}
     </>
@@ -115,24 +163,28 @@ export function ResourceToolbar({
         <ToolbarButton
           label={sidebarVisible ? 'Hide controls' : 'Show controls'}
           pressed={sidebarVisible}
-          onClick={() => onToggleSidebar?.(!sidebarVisible)}
+          onClick={handleToggleSidebar}
         >
-          {sidebarVisible ? (
-            <IconLayoutSidebarRightCollapse className="size-4" />
-          ) : (
-            <IconLayoutSidebarRightExpand className="size-4" />
-          )}
+          <MorphIcon activeKey={sidebarVisible ? 'expanded' : 'collapsed'} variant="blur-scale">
+            {sidebarVisible ? (
+              <IconLayoutSidebarRightCollapse className="size-4" />
+            ) : (
+              <IconLayoutSidebarRightExpand className="size-4" />
+            )}
+          </MorphIcon>
         </ToolbarButton>
       ) : null}
 
-      {/* 3. Plein écran (Expand) */}
+      {/* 3. Plein écran (Expand / Immersion) */}
       {expand ? (
         <ToolbarButton
-          label={expanded ? 'Show panels' : 'Hide panels'}
+          label={expanded ? 'Exit immersion (Esc / F)' : 'Total immersion (Hide UI) [F]'}
           pressed={expanded}
-          onClick={() => onToggleExpand?.(!expanded)}
+          onClick={handleToggleExpand}
         >
-          {expanded ? <IconArrowsMinimize className="size-4" /> : <IconArrowsMaximize className="size-4" />}
+          <MorphIcon activeKey={expanded ? 'expanded' : 'collapsed'} variant="blur-scale">
+            {expanded ? <IconArrowsMinimize className="size-4" /> : <IconArrowsMaximize className="size-4" />}
+          </MorphIcon>
         </ToolbarButton>
       ) : null}
 
