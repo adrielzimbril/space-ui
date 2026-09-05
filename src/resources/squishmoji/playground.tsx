@@ -16,7 +16,6 @@ import { ResourceNav } from '@/resources/components/resource-nav'
 import { ResourceToolbar, type ResourceToolbarConfig } from '@/resources/components/resource-toolbar'
 import { InlineInstallBar } from '@/components/docs/installation/inline-install-bar'
 import { ResourceGallery } from '@/resources/components/resource-gallery'
-import { ResourceInfiniteCanvas } from '@/resources/components/resource-infinite-canvas'
 import { ResourceSeedView } from '@/resources/components/resource-seed-view'
 import { PersonaProvider } from '@/resources/persona'
 import { MockupView } from '@/resources/avatars/mockup-view'
@@ -64,18 +63,17 @@ function snippetFor({
 }
 
 export function SquishmojiPlayground() {
-  const [pool, setPool] = useState<string[]>(() => getRandomPersonas(200))
+  const [pool, setPool] = useState<string[]>(() => getRandomPersonas(126))
   const [shape, setShape] = useState<SquishShapeChoice>('all')
   const [expression, setExpression] = useState<SquishExpressionChoice>('all')
   const [backgroundStyle, setBackgroundStyle] = useState<SquishBackgroundStyleChoice>('all')
   const [size, setSize] = useState(164)
-  const [animate, setAnimate] = useState(true)
+  const [animate, setAnimate] = useState(false)
   const [animWobble, setAnimWobble] = useState(false)
   const [animOnHover, setAnimOnHover] = useState(false)
   const [animOnClick, setAnimOnClick] = useState(false)
   const [view, setView] = useState<ResourceViewMode>('gallery')
   const [seedName, setSeedName] = useState(DEFAULT_SEEDS)
-  const [canvasKey, setCanvasKey] = useState(0)
   const [showRight, setShowRight] = useState(true)
   const [expanded, setExpanded] = useState(false)
   const isDesktop = useMediaQuery('(min-width: 768px)', true)
@@ -116,7 +114,7 @@ export function SquishmojiPlayground() {
   )
 
   const reset = () => {
-    setPool(getRandomPersonas(200))
+    setPool(getRandomPersonas(126))
     setShape('all')
     setExpression('all')
     setBackgroundStyle('all')
@@ -129,7 +127,6 @@ export function SquishmojiPlayground() {
     setView('gallery')
     setShowRight(isDesktop)
     setExpanded(false)
-    setCanvasKey((key) => key + 1)
   }
 
   const toolbarConfig: ResourceToolbarConfig = {
@@ -140,6 +137,7 @@ export function SquishmojiPlayground() {
     reset: true,
     viewToggle: true,
     view,
+    views: ['gallery', 'mockup', 'seed'],
     onViewChange: setView,
     onReset: reset,
     onToggleExpand: setExpanded,
@@ -165,16 +163,7 @@ export function SquishmojiPlayground() {
         view !== 'seed' && !expanded ? <InlineInstallBar packageName="@usespaceui/squishmoji" isShadcn={false} /> : null
       }
       canvas={
-        view === 'canvas' ? (
-          <ResourceInfiniteCanvas
-            key={canvasKey}
-            pool={pool}
-            size={size}
-            onSelect={select}
-            renderMedia={(seed, _index, mediaSize) => renderSquish(seed, mediaSize)}
-            caption={(seed) => captionFor(seed, shape, expression)}
-          />
-        ) : view === 'mockup' ? (
+        view === 'mockup' ? (
           <PersonaProvider
             render={(props) => (
               <Squishmoji
@@ -205,6 +194,7 @@ export function SquishmojiPlayground() {
           <ResourceGallery
             pool={pool}
             onSelect={select}
+            limit={126}
             sidebarLeft={false}
             sidebarRight={showRight && !expanded}
             renderMedia={(seed) => (
@@ -252,7 +242,7 @@ export function SquishmojiPlayground() {
           animOnClick={animOnClick}
           setAnimOnClick={setAnimOnClick}
           regenerateSeeds={() => {
-            const next = getRandomPersonas(200)
+            const next = getRandomPersonas(126)
             setPool(next)
             setSeedName(next[0] ?? DEFAULT_SEEDS)
           }}

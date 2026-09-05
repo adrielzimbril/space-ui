@@ -12,6 +12,7 @@ export function ResourceGallery({
   caption,
   sidebarLeft = false,
   sidebarRight = false,
+  limit = 293,
 }: {
   pool: string[]
   onSelect: (seed: string, index: number) => void
@@ -19,12 +20,13 @@ export function ResourceGallery({
   caption?: (seed: string, index: number) => string
   sidebarLeft?: boolean
   sidebarRight?: boolean
+  limit?: number
 }) {
   const expandedPool = useMemo(() => {
     const result: string[] = []
-    while (result.length < 293 && pool.length > 0) result.push(...pool)
-    return result.slice(0, 293)
-  }, [pool])
+    while (result.length < limit && pool.length > 0) result.push(...pool)
+    return result.slice(0, limit)
+  }, [pool, limit])
   const activeSidebarsCount = Number(sidebarLeft) + Number(sidebarRight)
 
   return (

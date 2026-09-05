@@ -25,6 +25,32 @@ function toLabel(value: string) {
   return value.replace(/[-_]/g, ' ').replace(/\b\w/g, (character) => character.toUpperCase())
 }
 
+function OptionPreview({
+  seed,
+  shape,
+  expression,
+  backgroundStyle,
+}: {
+  seed: string
+  shape: SquishShapeChoice
+  expression: SquishExpressionChoice
+  backgroundStyle: SquishBackgroundStyleChoice
+}) {
+  return (
+    <span className="grid size-6 shrink-0 place-items-center overflow-hidden rounded-full bg-muted [&_svg]:size-full! [&_svg]:shrink-0 [&_svg]:self-center">
+      <Squishmoji
+        seed={seed}
+        size={24}
+        shape={shape}
+        expression={expression}
+        backgroundStyle={backgroundStyle}
+        animate={false}
+        frozenAt={0}
+      />
+    </span>
+  )
+}
+
 export function SquishmojiControlPanel({
   seed,
   shape,
@@ -74,7 +100,7 @@ export function SquishmojiControlPanel({
         <div className="flex items-center gap-2">
           <h2 className="text-xs font-semibold">Squishmoji</h2>
           <span className="text-[0.625rem] text-muted-foreground">
-            {view === 'canvas' ? 'Canvas' : view === 'mockup' ? 'Mockup' : view === 'gallery' ? 'Gallery' : 'Seed'}
+            {view === 'mockup' ? 'Mockup' : view === 'gallery' ? 'Gallery' : 'Seed'}
           </span>
         </div>
       </div>
@@ -82,11 +108,21 @@ export function SquishmojiControlPanel({
         <div className="flex flex-col gap-4 p-3.5">
           <div className="flex items-center gap-3 rounded-xl bg-muted p-2.5">
             <div className="grid size-11 shrink-0 place-items-center overflow-hidden rounded-[0.625rem] bg-background">
-              <Squishmoji seed={activeSeed} size={44} shape={shape} expression={expression} backgroundStyle={backgroundStyle} animate={false} frozenAt={0} />
+              <Squishmoji
+                seed={activeSeed}
+                size={44}
+                shape={shape}
+                expression={expression}
+                backgroundStyle={backgroundStyle}
+                animate={false}
+                frozenAt={0}
+              />
             </div>
             <div className="min-w-0 flex-1">
               <p className="truncate text-xs font-semibold">{toLabel(shape === 'all' ? 'All shapes' : shape)}</p>
-              <p className="truncate text-[0.625rem] text-muted-foreground">{toLabel(expression === 'all' ? 'All expressions' : expression)}</p>
+              <p className="truncate text-[0.625rem] text-muted-foreground">
+                {toLabel(expression === 'all' ? 'All expressions' : expression)}
+              </p>
             </div>
             <Button type="button" variant="ghost" size="icon-sm" aria-label="Randomize seeds" onClick={regenerateSeeds}>
               <IconRefresh />
@@ -96,14 +132,42 @@ export function SquishmojiControlPanel({
           <div className="flex flex-col gap-2">
             <span className="text-[0.6875rem] font-semibold text-muted-foreground">Shape</span>
             <Select value={shape} onValueChange={(value) => value && setShape(value as SquishShapeChoice)}>
-              <SelectTrigger aria-label="Shape" className="h-9 border-0 bg-muted px-3 text-xs">
-                <SelectValue>{toLabel(shape)}</SelectValue>
+              <SelectTrigger aria-label="Shape" className="h-10 border-0 bg-muted px-2.5 text-xs">
+                <SelectValue>
+                  <span className="flex min-w-0 items-center gap-2">
+                    <OptionPreview
+                      seed={activeSeed}
+                      shape={shape}
+                      expression={expression}
+                      backgroundStyle={backgroundStyle}
+                    />
+                    <span className="truncate">{shape === 'all' ? 'All shapes' : toLabel(shape)}</span>
+                  </span>
+                </SelectValue>
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">All</SelectItem>
+                <SelectItem value="all">
+                  <span className="flex items-center gap-2">
+                    <OptionPreview
+                      seed={activeSeed}
+                      shape="all"
+                      expression={expression}
+                      backgroundStyle={backgroundStyle}
+                    />
+                    All shapes
+                  </span>
+                </SelectItem>
                 {SHAPE_VALUES.map((item) => (
                   <SelectItem key={item} value={item}>
-                    {toLabel(item)}
+                    <span className="flex items-center gap-2">
+                      <OptionPreview
+                        seed={`${activeSeed}-${item}`}
+                        shape={item}
+                        expression={expression}
+                        backgroundStyle={backgroundStyle}
+                      />
+                      {toLabel(item)}
+                    </span>
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -112,15 +176,41 @@ export function SquishmojiControlPanel({
 
           <div className="flex flex-col gap-2">
             <span className="text-[0.6875rem] font-semibold text-muted-foreground">Expression</span>
-            <Select value={expression} onValueChange={(value) => value && setExpression(value as SquishExpressionChoice)}>
-              <SelectTrigger aria-label="Expression" className="h-9 border-0 bg-muted px-3 text-xs">
-                <SelectValue>{toLabel(expression)}</SelectValue>
+            <Select
+              value={expression}
+              onValueChange={(value) => value && setExpression(value as SquishExpressionChoice)}
+            >
+              <SelectTrigger aria-label="Expression" className="h-10 border-0 bg-muted px-2.5 text-xs">
+                <SelectValue>
+                  <span className="flex min-w-0 items-center gap-2">
+                    <OptionPreview
+                      seed={activeSeed}
+                      shape={shape}
+                      expression={expression}
+                      backgroundStyle={backgroundStyle}
+                    />
+                    <span className="truncate">{expression === 'all' ? 'All expressions' : toLabel(expression)}</span>
+                  </span>
+                </SelectValue>
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">All</SelectItem>
+                <SelectItem value="all">
+                  <span className="flex items-center gap-2">
+                    <OptionPreview seed={activeSeed} shape={shape} expression="all" backgroundStyle={backgroundStyle} />
+                    All expressions
+                  </span>
+                </SelectItem>
                 {EXPRESSION_VALUES.map((item) => (
                   <SelectItem key={item} value={item}>
-                    {toLabel(item)}
+                    <span className="flex items-center gap-2">
+                      <OptionPreview
+                        seed={`${activeSeed}-${item}`}
+                        shape={shape}
+                        expression={item}
+                        backgroundStyle={backgroundStyle}
+                      />
+                      {toLabel(item)}
+                    </span>
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -133,21 +223,46 @@ export function SquishmojiControlPanel({
               value={backgroundStyle}
               onValueChange={(value) => value && setBackgroundStyle(value as SquishBackgroundStyleChoice)}
             >
-              <SelectTrigger aria-label="Background" className="h-9 border-0 bg-muted px-3 text-xs">
-                <SelectValue>{toLabel(backgroundStyle)}</SelectValue>
+              <SelectTrigger aria-label="Background" className="h-10 border-0 bg-muted px-2.5 text-xs">
+                <SelectValue>
+                  <span className="flex min-w-0 items-center gap-2">
+                    <OptionPreview
+                      seed={activeSeed}
+                      shape={shape}
+                      expression={expression}
+                      backgroundStyle={backgroundStyle}
+                    />
+                    <span className="truncate">
+                      {backgroundStyle === 'all' ? 'All backgrounds' : toLabel(backgroundStyle)}
+                    </span>
+                  </span>
+                </SelectValue>
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">All</SelectItem>
+                <SelectItem value="all">
+                  <span className="flex items-center gap-2">
+                    <OptionPreview seed={activeSeed} shape={shape} expression={expression} backgroundStyle="all" />
+                    All backgrounds
+                  </span>
+                </SelectItem>
                 {BACKGROUND_STYLE_VALUES.map((item) => (
                   <SelectItem key={item} value={item}>
-                    {toLabel(item)}
+                    <span className="flex items-center gap-2">
+                      <OptionPreview
+                        seed={`${activeSeed}-${item}`}
+                        shape={shape}
+                        expression={expression}
+                        backgroundStyle={item}
+                      />
+                      {toLabel(item)}
+                    </span>
                   </SelectItem>
                 ))}
               </SelectContent>
             </Select>
           </div>
 
-          {view === 'canvas' || view === 'seed' ? (
+          {view === 'seed' ? (
             <div className="flex flex-col gap-2">
               <Slider
                 value={[size]}

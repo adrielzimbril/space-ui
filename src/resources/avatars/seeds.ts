@@ -44,7 +44,6 @@ export const HISTORICAL_PERSONAS = [
   'Charles Dickens',
   'Jane Austen',
   'Frida Kahlo',
-  'Mother Teresa',
   'Florence Nightingale',
   'Amelia Earhart',
   'Harriet Tubman',

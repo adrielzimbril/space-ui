@@ -30,6 +30,7 @@ export type ResourceToolbarConfig = {
   reset?: boolean
   viewToggle?: boolean
   view?: 'canvas' | 'mockup' | 'gallery' | 'seed'
+  views?: Array<'canvas' | 'mockup' | 'gallery' | 'seed'>
   onViewChange?: (view: 'canvas' | 'mockup' | 'gallery' | 'seed') => void
   onReset?: () => void
   onToggleExpand?: (expanded: boolean) => void
@@ -57,6 +58,7 @@ export function ResourceToolbar({
     reset = true,
     viewToggle = false,
     view = 'canvas',
+    views = ['canvas', 'mockup', 'gallery', 'seed'],
     onViewChange,
     onReset,
     onToggleExpand,
@@ -76,15 +78,14 @@ export function ResourceToolbar({
   }
 
   const cycleView = () => {
-    if (!onViewChange) return
-    if (view === 'canvas') onViewChange('mockup')
-    else if (view === 'mockup') onViewChange('gallery')
-    else if (view === 'gallery') onViewChange('seed')
-    else onViewChange('canvas')
+    if (!onViewChange || views.length === 0) return
+    const index = views.indexOf(view)
+    const next = views[(index + 1) % views.length] ?? views[0]
+    onViewChange(next)
   }
 
-  const viewLabel =
-    view === 'canvas' ? 'Mockup' : view === 'mockup' ? 'Gallery' : view === 'gallery' ? 'Seed' : 'Canvas'
+  const nextView = views[(Math.max(views.indexOf(view), 0) + 1) % views.length] ?? view
+  const viewLabel = nextView === 'canvas' ? 'Canvas' : nextView === 'mockup' ? 'Mockup' : nextView === 'gallery' ? 'Gallery' : 'Seed'
 
   const leftButtons = (
     <>
