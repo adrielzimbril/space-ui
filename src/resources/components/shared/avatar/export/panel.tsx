@@ -19,6 +19,7 @@ export function AvatarExportPanel({
   onSvg,
   onToggleRecord,
   onAuto,
+  onBlink,
   sequence,
   onAddStep,
   onUpdateStep,
@@ -32,6 +33,7 @@ export function AvatarExportPanel({
   onSvg: () => void
   onToggleRecord: () => void
   onAuto: () => void
+  onBlink: () => void
   sequence: SequenceStep[]
   onAddStep: () => void
   onUpdateStep: (index: number, patch: Partial<SequenceStep>) => void
@@ -54,6 +56,9 @@ export function AvatarExportPanel({
           </Button>
           <Button type="button" size="sm" variant="secondary" onClick={onAuto}>
             Auto 3s
+          </Button>
+          <Button type="button" size="sm" variant="secondary" className="col-span-2" onClick={onBlink}>
+            Blink
           </Button>
         </div>
       </div>
@@ -101,6 +106,30 @@ export function AvatarExportPanel({
                   onChange={(event) => onUpdateStep(index, { durationSec: Number(event.target.value) })}
                   className="h-6 w-10 border border-input bg-background px-1 text-[0.625rem]"
                 />
+                <label className="flex items-center gap-0.5 text-[0.5625rem] text-muted-foreground">
+                  <input
+                    type="checkbox"
+                    checked={step.blink}
+                    onChange={(event) => onUpdateStep(index, { blink: event.target.checked })}
+                  />
+                  Blink
+                </label>
+                <label className="flex items-center gap-0.5 text-[0.5625rem] text-muted-foreground">
+                  <input
+                    type="checkbox"
+                    checked={step.wobble}
+                    onChange={(event) => onUpdateStep(index, { wobble: event.target.checked })}
+                  />
+                  Wobble
+                </label>
+                <label className="flex items-center gap-0.5 text-[0.5625rem] text-muted-foreground">
+                  <input
+                    type="checkbox"
+                    checked={step.animate}
+                    onChange={(event) => onUpdateStep(index, { animate: event.target.checked })}
+                  />
+                  Anim
+                </label>
                 <button type="button" className="text-xs text-destructive" onClick={() => onRemoveStep(index)}>
                   ×
                 </button>

@@ -2,7 +2,6 @@
 
 import { IconRefresh } from '@tabler/icons-react'
 import {
-  BACKGROUND_STYLE_VALUES,
   EXPRESSION_VALUES,
   SHAPE_VALUES,
   type SquishBackgroundStyleChoice,
@@ -10,6 +9,8 @@ import {
   type SquishShapeChoice,
 } from '@usespaceui/squishmoji'
 import { Squishmoji } from '@usespaceui/squishmoji/react'
+import { cn } from '@/registry/lib/utils'
+import { squishPalette } from './palette'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/registry/primitives/select'
 import { Slider } from '@/registry/primitives/slider'
@@ -24,6 +25,27 @@ const SIZE_MAX = 256
 
 function toLabel(value: string) {
   return value.replace(/[-_]/g, ' ').replace(/\b\w/g, (character) => character.toUpperCase())
+}
+
+const BACKGROUND_SWATCHES: Array<{ id: SquishBackgroundStyleChoice; label: string }> = [
+  { id: 'all', label: 'All' },
+  { id: 'solid', label: 'Solid' },
+  { id: 'taygeta', label: 'Taygeta' },
+  { id: 'maia', label: 'Maia' },
+  { id: 'merope', label: 'Merope' },
+  { id: 'celaeno', label: 'Celaeno' },
+  { id: 'alcyone', label: 'Alcyone' },
+]
+
+function backgroundFill(id: SquishBackgroundStyleChoice, body: string, palette: string[]) {
+  const mid = palette[1] ?? body
+  const accent = palette[2] ?? body
+  if (id === 'all') return `conic-gradient(from 210deg, ${body}, ${mid}, ${accent}, ${body})`
+  if (id === 'solid') return body
+  if (id === 'taygeta' || id === 'maia' || id === 'merope')
+    return `radial-gradient(circle at 25% 25%, ${mid}, ${body} 68%)`
+  if (id === 'celaeno') return `linear-gradient(155deg, #ffffff, ${body} 42%, #0f172a)`
+  return `radial-gradient(ellipse at 30% 25%, ${accent}, ${body} 62%, #0f172a)`
 }
 
 function OptionPreview({
@@ -96,6 +118,7 @@ export function SquishmojiControlPanel({
   children?: ReactNode
 }) {
   const activeSeed = seed.trim() || DEFAULT_SEEDS
+  const { body, palette } = squishPalette(activeSeed)
 
   return (
     <div className="flex h-full min-h-0 flex-col">
@@ -222,47 +245,28 @@ export function SquishmojiControlPanel({
 
           <div className="flex flex-col gap-2">
             <span className="text-[0.6875rem] font-semibold text-muted-foreground">Background</span>
-            <Select
-              value={backgroundStyle}
-              onValueChange={(value) => value && setBackgroundStyle(value as SquishBackgroundStyleChoice)}
-            >
-              <SelectTrigger aria-label="Background" className="h-10 border-0 bg-muted px-2.5 text-xs">
-                <SelectValue>
-                  <span className="flex min-w-0 items-center gap-2">
-                    <OptionPreview
-                      seed={activeSeed}
-                      shape={shape}
-                      expression={expression}
-                      backgroundStyle={backgroundStyle}
-                    />
-                    <span className="truncate">
-                      {backgroundStyle === 'all' ? 'All backgrounds' : toLabel(backgroundStyle)}
-                    </span>
-                  </span>
-                </SelectValue>
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">
-                  <span className="flex items-center gap-2">
-                    <OptionPreview seed={activeSeed} shape={shape} expression={expression} backgroundStyle="all" />
-                    All backgrounds
-                  </span>
-                </SelectItem>
-                {BACKGROUND_STYLE_VALUES.map((item) => (
-                  <SelectItem key={item} value={item}>
-                    <span className="flex items-center gap-2">
-                      <OptionPreview
-                        seed={`${activeSeed}-${item}`}
-                        shape={shape}
-                        expression={expression}
-                        backgroundStyle={item}
-                      />
-                      {toLabel(item)}
-                    </span>
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <p className="text-[0.625rem] text-muted-foreground">All = the seed picks. Otherwise you pin a style.</p>
+            <div className="grid grid-cols-3 gap-1.5">
+              {BACKGROUND_SWATCHES.map((swatch) => {
+                const selected = backgroundStyle === swatch.id
+                const dark = swatch.id === 'all' || swatch.id === 'celaeno' || swatch.id === 'alcyone' || swatch.id === 'merope'
+                return (
+                  <button
+                    key={swatch.id}
+                    type="button"
+                    onClick={() => setBackgroundStyle(swatch.id)}
+                    className={cn(
+                      'rounded-lg border px-1.5 py-2 text-[0.625rem] font-semibold',
+                      selected ? 'border-foreground' : 'border-transparent',
+                      dark ? 'text-white' : 'text-foreground',
+                    )}
+                    style={{ background: backgroundFill(swatch.id, body, palette) }}
+                  >
+                    {swatch.label}
+                  </button>
+                )
+              })}
+            </div>
           </div>
 
           {view === 'seed' ? (

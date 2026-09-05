@@ -23,6 +23,7 @@ import { DEFAULT_SEEDS } from '@/resources/shared/seeds'
 import { getRandomPersonas } from '@/resources/shared/utils'
 import type { ResourceViewMode } from '@/resources/shared/types'
 import { SquishmojiControlPanel } from './control-panel'
+import { SquishmojiCodeModal } from './code-modal'
 import { AvatarExportPanel } from '@/resources/components/shared/avatar/export/panel'
 import { exportRaster, exportSvgMarkup } from '@/resources/components/shared/avatar/export/raster'
 import { startLiveRecording, stopLiveRecording } from '@/resources/components/shared/avatar/export/video'
@@ -87,6 +88,8 @@ export function SquishmojiPlayground() {
   const [videoBg, setVideoBg] = useState('transparent')
   const [recording, setRecording] = useState(false)
   const [sequence, setSequence] = useState<SequenceStep[]>([])
+  const [blinkTrigger, setBlinkTrigger] = useState(0)
+  const [selectedSeed, setSelectedSeed] = useState<string | null>(null)
   const stageRef = useRef<HTMLDivElement>(null)
   const isDesktop = useMediaQuery('(min-width: 768px)', true)
 
@@ -125,6 +128,7 @@ export function SquishmojiPlayground() {
       animWobble={animWobble}
       animOnHover={animOnHover}
       animOnClick={animOnClick}
+      blinkTrigger={blinkTrigger}
     />
   )
 
@@ -163,11 +167,11 @@ export function SquishmojiPlayground() {
 
   const select = (seed: string) => {
     bloomSound()
-    setSeedName(seed)
-    setView('seed')
+    setSelectedSeed(seed)
   }
 
   return (
+    <>
     <ResourceStudio
       showLeft={false}
       showRight={showRight && !expanded}
@@ -283,6 +287,7 @@ export function SquishmojiPlayground() {
               const started = startLiveRecording(getSvg, videoBg)
               if (started) setRecording(true)
             }}
+            onBlink={() => setBlinkTrigger((count) => count + 1)}
             onAuto={() =>
               void exportToVideoAuto(name, shape, expression, videoBg, `${fileBase}-auto`, 3, 0, 0, 1, 1, backgroundStyle)
             }
@@ -311,5 +316,19 @@ export function SquishmojiPlayground() {
         </SquishmojiControlPanel>
       }
     />
+      <SquishmojiCodeModal
+        target={selectedSeed ? { seed: selectedSeed } : null}
+        config={{
+          shape,
+          expression,
+          backgroundStyle,
+          animate,
+          animWobble,
+          animOnHover,
+          animOnClick,
+        }}
+        onClose={() => setSelectedSeed(null)}
+      />
+    </>
   )
 }
