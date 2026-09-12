@@ -1,9 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "demo-c-status-badge-08",
+  "name": "demo-c-status-badge-09",
   "type": "registry:component",
-  "title": "Status Badge Mission Quota",
-  "description": "Availability status badge with mission quota and booking details.",
+  "title": "Status Badge Freelance & Direct Hire",
+  "description": "Friendly freelance presence badge with direct project contact callout.",
   "dependencies": [
     "@tabler/icons-react"
   ],
@@ -16,7 +16,7 @@
   ],
   "files": [
     {
-      "path": "src/registry/demo/components/spaceui/status-badge/c-status-badge-08/index.tsx",
+      "path": "src/registry/demo/components/spaceui/status-badge/c-status-badge-09/index.tsx",
       "type": "registry:component",
       "target": "components/spaceui/status-badge.tsx"
     }
