@@ -1,0 +1,45 @@
+---
+title: useAutoHeight
+description: Container height measurement via ResizeObserver and requestAnimationFrame for smooth CSS transitions.
+preview: demo-h-auto-height-01
+---
+
+### Example 2: FAQ Accordion Collapse
+
+<ComponentPreview name="demo-h-auto-height-02" />
+
+## Installation
+
+<ComponentInstallation name="hooks-animation-use-auto-height" />
+
+## Usage
+
+```tsx
+import * as React from 'react'
+import { useAutoHeight } from '@/hooks/use-auto-height'
+
+export default function SpaceUI({ items }: { items: React.ReactNode }) {
+  const { ref, height } = useAutoHeight([items])
+
+  return (
+    <div style={{ height }}>
+      <div ref={ref}>{items}</div>
+    </div>
+  )
+}
+```
+
+## API Reference
+
+### Parameters / Props
+
+| Parameter | Type             | Default | Description      |
+| :-------- | :--------------- | :------ | :--------------- |
+| `deps`    | `DependencyList` | `[]`    | Dependency list. |
+
+### Return Value
+
+| Property | Type                     | Description              |
+| :------- | :----------------------- | :----------------------- |
+| `ref`    | `RefObject<HTMLElement>` | Inner measurable ref.    |
+| `height` | `number`                 | Calculated height in px. |

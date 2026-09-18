@@ -1,0 +1,46 @@
+---
+title: Frost Blurred
+description: Stacked, masked backdrop-filter layers that frost content along an edge.
+preview:
+  name: demo-c-frost-blurred-01
+  contained: false
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-frost-blurred" />
+
+## Usage
+
+```tsx
+import { FrostBlurred } from '@/components/spaceui/frost-blurred'
+
+export default function Hero() {
+  return (
+    <FrostBlurred height="62%" side="bottom">
+      <h1 className="text-8xl font-medium">UImaxxing</h1>
+    </FrostBlurred>
+  )
+}
+```
+
+Without children, render it as an overlay on a relative parent:
+
+```tsx
+<div className="relative">
+  <img src="/cover.jpg" alt="" />
+  <FrostBlurred className="absolute inset-x-0 bottom-0" height="40%" />
+</div>
+```
+
+## Props
+
+| Prop       | Type                                     | Default    | Description                                       |
+| ---------- | ---------------------------------------- | ---------- | ------------------------------------------------- |
+| `layers`   | `number`                                 | `7`        | Stacked progressive blur layers.                  |
+| `strength` | `number`                                 | `1`        | Multiplier on each layer's blur radius.           |
+| `height`   | `string \| number`                       | `'62%'`    | Overlay height (or width if left/right).          |
+| `side`     | `'top' \| 'bottom' \| 'left' \| 'right'` | `'bottom'` | Edge the frost grows from.                        |
+| `tint`     | `number`                                 | `0`        | Optional theme background mix (0 for pure glass). |
+| `opacity`  | `number`                                 | `0.9`      | Layer opacity.                                    |
+| `children` | `React.ReactNode`                        | —          | Content to frost. Omit to use as a pure overlay.  |

@@ -1,0 +1,30 @@
+{
+  "title": "Templates",
+  "description": "Full-page immersive starter templates",
+  "icon": "Layout",
+  "root": true,
+  "pages": [
+    "immersive-lens",
+    "stats",
+    "---Showcase---",
+    "marveen",
+    "cinemax",
+    "one-piece",
+    "haumea",
+    "rocoon",
+    "oleap",
+    "sunabase",
+    "ashura",
+    "folio",
+    "zeusx",
+    "aura",
+    "netra",
+    "forger",
+    "staria",
+    "rival",
+    "tera",
+    "framey",
+    "twelve-ai",
+    "cosmos-ai"
+  ]
+}

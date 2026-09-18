@@ -1,0 +1,50 @@
+---
+title: Heat Shade
+description: WebGPU heat field or climbing licks. Logo cyan on a navy ember.
+preview: demo-c-heat-shade-01
+---
+
+## Installation
+
+<ComponentInstallation name="components-shader-heat-shade" />
+
+Depends on `vgpu`. WebGPU required.
+
+## Files
+
+| File                            | Role                           |
+| ------------------------------- | ------------------------------ |
+| `heat-shade/index.tsx`          | vgpu surface, clock, low-power |
+| `heat-shade/heat-shade.wgsl.ts` | Field boundary                 |
+| `heat-shade/heat-licks.wgsl.ts` | Climbing tongues               |
+
+## Usage
+
+```tsx
+import { HeatShade } from '@/components/shader/heat-shade'
+
+export default function SpaceUI() {
+  return <HeatShade className="h-96 w-full" variant="licks" from="bottom" base="#2a7bba" hot="#43c8ff" speed={1} />
+}
+```
+
+## Variants
+
+### Field
+
+Drifting boundary. Same colors, different silhouette.
+
+<ComponentPreview name="demo-c-heat-shade-02" />
+
+## API Reference
+
+### HeatShade
+
+| Prop        | Type                 | Default    | Description     |
+| ----------- | -------------------- | ---------- | --------------- |
+| `variant`   | `'field' \| 'licks'` | `'licks'`  | Silhouette      |
+| `from`      | `'top' \| 'bottom'`  | `'bottom'` | Origin edge     |
+| `base`      | `string`             | `#2a7bba`  | Navy (logo)     |
+| `hot`       | `string`             | `#43c8ff`  | Cyan rim (logo) |
+| `speed`     | `number`             | `1`        | Drift speed     |
+| `className` | `string`             | —          | Canvas class    |

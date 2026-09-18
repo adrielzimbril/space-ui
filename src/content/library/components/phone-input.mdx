@@ -1,0 +1,113 @@
+---
+title: Phone Input
+description: Allows users to enter international phone numbers with automatic country flag detection, dial codes, and formatted digits.
+component: true
+base: base
+links:
+  api: https://gitlab.com/catamphetamine/react-phone-number-input
+preview:
+  name: demo-c-phone-input-01
+  className: '[&_.preview>*]:w-full [&_.preview>*]:max-w-xs'
+---
+
+We used the [react-phone-number-input](https://gitlab.com/catamphetamine/react-phone-number-input) library to create this component.
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-phone-input" />
+
+## Usage
+
+```tsx
+import { PhoneInput } from '@/components/spaceui/phone-input'
+```
+
+```tsx
+<PhoneInput placeholder="Enter phone number" defaultCountry="US" value={value} onChange={setValue} />
+```
+
+## Examples
+
+### Size
+
+<ComponentPreview name="demo-c-phone-input-02" className="[&_.preview>*]:w-full [&_.preview>*]:max-w-xs" />
+
+## API Reference
+
+### PhoneInput
+
+The main component for entering phone numbers with country selection.
+
+| Prop             | Type                        | Default     | Description                                                |
+| :--------------- | :-------------------------- | :---------- | :--------------------------------------------------------- |
+| `value`          | `string`                    | -           | The current phone number value in E.164 format.            |
+| `onChange`       | `(value: string) => void`   | -           | Callback fired when the value changes.                     |
+| `variant`        | `"sm" \| "default" \| "lg"` | `"default"` | The vertical size of the input and country selector.       |
+| `popupClassName` | `string`                    | -           | Additional CSS classes for the country selection dropdown. |
+| `defaultCountry` | `Country`                   | -           | The default country selected if no value is provided.      |
+| `placeholder`    | `string`                    | -           | Placeholder text for the phone number input.               |
+| `className`      | `string`                    | -           | Additional CSS classes for the root container.             |
+| `disabled`       | `boolean`                   | `false`     | Whether the input and country selector are disabled.       |
+
+---
+
+### Utilities
+
+The component re-exports essential phone number utilities:
+
+```tsx
+import {
+  PhoneInput,
+  isValidPhoneNumber,
+  formatPhoneNumber,
+  formatPhoneNumberIntl,
+  isPossiblePhoneNumber,
+  getCountryCallingCode,
+} from '@/components/spaceui/phone-input'
+```
+
+- **`isValidPhoneNumber(value)`**: Checks if the phone number is valid according to international metadata.
+- **`formatPhoneNumber(value)`**: Formats the phone number in national format.
+- **`formatPhoneNumberIntl(value)`**: Formats the phone number in international format (e.g. `+1 213 373 4253`).
+- **`isPossiblePhoneNumber(value)`**: Quick length check to see if the number could be possible.
+- **`getCountryCallingCode(country)`**: Returns the calling code for a given ISO country code (e.g. `'FR'` -> `'33'`).
+
+---
+
+### External Props
+
+This component also accepts all props from the [react-phone-number-input](https://gitlab.com/catamphetamine/react-phone-number-input#props) library.
+
+## Examples
+
+### Large phone input
+
+<ComponentPreview name="demo-c-phone-input-03" />
+
+### Disabled phone input
+
+<ComponentPreview name="demo-c-phone-input-04" />
+
+### Phone input with preset value
+
+<ComponentPreview name="demo-c-phone-input-05" />
+
+### Phone input with error state
+
+<ComponentPreview name="demo-c-phone-input-06" />
+
+### Phone input with specific default country
+
+<ComponentPreview name="demo-c-phone-input-07" />
+
+### Read-only phone input
+
+<ComponentPreview name="demo-c-phone-input-08" />
+
+### Real-time validation
+
+<ComponentPreview name="demo-c-phone-input-09" />
+
+### With Field, Label and Description
+
+<ComponentPreview name="demo-c-phone-input-10" />

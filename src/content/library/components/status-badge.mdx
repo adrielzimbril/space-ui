@@ -1,0 +1,69 @@
+---
+title: Status Badge
+description: Displays a real-time status indicator with a pulsing dot and color coding to show whether a service or user is online or busy.
+preview: demo-c-status-badge-01
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-status-badge" />
+
+## Usage
+
+```tsx
+import { StatusBadge } from '@/components/spaceui/status-badge'
+```
+
+```tsx
+<StatusBadge status="available" primaryText="Disponible" size="default">
+  <Link href="#contact" className="inline-flex items-center gap-1">
+    <span>1 place restante pour ce mois-ci</span>
+    <ArrowUpRight className="size-3.5" />
+  </Link>
+</StatusBadge>
+```
+
+## API Reference
+
+### StatusBadge Props
+
+| Prop                     | Type                                                                                         | Default     | Description                                                             |
+| ------------------------ | -------------------------------------------------------------------------------------------- | ----------- | ----------------------------------------------------------------------- |
+| `status`                 | `"online" \| "available" \| "busy" \| "away" \| "offline" \| "error" \| "warning" \| "info"` | `"online"`  | Semantic status controlling indicator dot color and ping wave color     |
+| `primaryText`            | `string`                                                                                     | -           | Primary bold label text shown next to the indicator                     |
+| `mode`                   | `"inline" \| "stack"`                                                                        | `"inline"`  | Layout mode (`inline` for badge, `stack` for multi-line card)           |
+| `animated`               | `boolean`                                                                                    | `true`      | Enables animated radar ping wave effect                                 |
+| `showIndicator`          | `boolean`                                                                                    | `true`      | Whether to display the status indicator dot                             |
+| `variant`                | `"default" \| "inverted" \| "outline"`                                                       | `"default"` | Visual style variant for the badge container                            |
+| `size`                   | `"default" \| "xs" \| "sm" \| "md" \| "lg"`                                                  | `"default"` | Sizing scale for badge and indicator                                    |
+| `indicatorClassName`     | `string`                                                                                     | -           | Custom class name for the indicator dot                                 |
+| `primaryTextClassName`   | `string`                                                                                     | -           | Custom class name for the primary text label                            |
+| `secondaryTextClassName` | `string`                                                                                     | -           | Custom class name for the secondary text / children                     |
+| `indicatorBadge`         | `boolean`                                                                                    | `false`     | In stacked mode, encloses the indicator dot in a square badge container |
+
+## Features
+
+### Sizes
+
+<ComponentPreview name="demo-c-status-badge-02" />
+
+### Variants
+
+<ComponentPreview name="demo-c-status-badge-03" />
+
+### Radar Ping & Animation
+
+<ComponentPreview name="demo-c-status-badge-04" />
+
+### Stacked Mode
+
+<ComponentPreview name="demo-c-status-badge-05" />
+
+## Examples
+
+<ShowcaseGrid>
+  <ShowcaseCard name="demo-c-status-badge-06" description="Planning availability with link" />
+  <ShowcaseCard name="demo-c-status-badge-07" description="Unavailable with resumption date" />
+  <ShowcaseCard name="demo-c-status-badge-08" description="Mission quotas" />
+  <ShowcaseCard name="demo-c-status-badge-09" description="Freelance and direct project callout" />
+</ShowcaseGrid>
