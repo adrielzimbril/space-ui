@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-shader-mesh-gradient",
+  "type": "registry:component",
+  "title": "Mesh Gradient",
+  "description": "Dynamic WebGL mesh gradient shader background featuring fluid swirls, configurable color stops, distortion turbulence, and film grain overlay.",
+  "dependencies": ["@paper-design/shaders-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["shader", "gradient", "background"],
+  "files": [
+    {
+      "path": "src/registry/components/shader/mesh-gradient/index.tsx",
+      "type": "registry:component",
+      "target": "components/shader/mesh-gradient.tsx"
+    }
+  ],
+  "createdAt": "2026-09-29",
+  "updatedAt": "2026-09-29"
+}

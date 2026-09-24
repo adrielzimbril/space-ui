@@ -1,0 +1,89 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-mesh-gradient-01",
+  "type": "registry:component",
+  "title": "Default Mesh Gradient",
+  "description": "Dynamic mesh gradient shader background preview with swirling waves and grain.",
+  "registryDependencies": ["https://www.spaceui.one/r/components-shader-mesh-gradient.json"],
+  "categories": ["demo", "shader", "gradient"],
+  "meta": {
+    "demoProps": {
+      "color1": {
+        "value": "#4c9bff"
+      },
+      "color2": {
+        "value": "#1f4fd8"
+      },
+      "color3": {
+        "value": "#0a1a4a"
+      },
+      "speed": {
+        "value": 1,
+        "min": 0,
+        "max": 4,
+        "step": 0.05
+      },
+      "distortion": {
+        "value": 1,
+        "min": 0,
+        "max": 4,
+        "step": 0.1
+      },
+      "swirl": {
+        "value": 0.57,
+        "min": 0,
+        "max": 2,
+        "step": 0.01
+      },
+      "swirlIterations": {
+        "value": 7.4,
+        "min": 1,
+        "max": 20,
+        "step": 0.1
+      },
+      "softness": {
+        "value": 1,
+        "min": 0,
+        "max": 4,
+        "step": 0.1
+      },
+      "proportion": {
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "step": 0.01
+      },
+      "shape": {
+        "value": "edge",
+        "options": ["edge", "wave", "circle"]
+      },
+      "shapeScale": {
+        "value": 0.59,
+        "min": 0,
+        "max": 2,
+        "step": 0.01
+      },
+      "scale": {
+        "value": 1.45,
+        "min": 0.1,
+        "max": 4,
+        "step": 0.05
+      },
+      "rotation": {
+        "value": 120,
+        "min": 0,
+        "max": 360,
+        "step": 1
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "src/registry/demo/components/shader/mesh-gradient/c-mesh-gradient-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/shader/demo-c-mesh-gradient-01.tsx"
+    }
+  ],
+  "createdAt": "2026-09-29",
+  "updatedAt": "2026-09-29"
+}

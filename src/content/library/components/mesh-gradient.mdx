@@ -1,0 +1,52 @@
+---
+title: Mesh Gradient
+description: Dynamic WebGL mesh gradient shader background featuring fluid swirls, configurable color stops, distortion turbulence, and film grain overlay.
+preview: demo-c-mesh-gradient-01
+defaultMode: split
+---
+
+## Installation
+
+<ComponentInstallation name="components-shader-mesh-gradient" />
+
+Depends on `@paper-design/shaders-react`. WebGL required.
+
+## Usage
+
+```tsx
+import { MeshGradient } from '@/components/shader/mesh-gradient'
+
+export default function SpaceUI() {
+  return (
+    <div className="relative h-96 w-full overflow-hidden rounded-2xl">
+      <MeshGradient
+        colors={['#085b96', '#51a0f6', '#cfe5f2']}
+        speed={1}
+        distortion={1}
+        swirl={0.57}
+        rotation={120}
+        grain={true}
+      />
+    </div>
+  )
+}
+```
+
+## API Reference
+
+| Prop              | Type                           | Default                             | Description                               |
+| ----------------- | ------------------------------ | ----------------------------------- | ----------------------------------------- |
+| `colors`          | `string[]`                     | `['#085b96', '#51a0f6', '#cfe5f2']` | Array of color stops for the gradient     |
+| `speed`           | `number`                       | `1`                                 | Time progression multiplier for animation |
+| `distortion`      | `number`                       | `1`                                 | Turbulence wave amplitude                 |
+| `swirl`           | `number`                       | `0.57`                              | Rotational vortex intensity               |
+| `swirlIterations` | `number`                       | `7.4`                               | Depth of swirl fractal iterations         |
+| `softness`        | `number`                       | `1`                                 | Blur and color blend smoothness           |
+| `proportion`      | `number`                       | `0`                                 | Center color distribution bias            |
+| `shape`           | `'edge' \| 'wave' \| 'circle'` | `'edge'`                            | Primary gradient geometry type            |
+| `shapeScale`      | `number`                       | `0.59`                              | Geometric scale factor                    |
+| `scale`           | `number`                       | `1.45`                              | Global mesh magnification                 |
+| `rotation`        | `number`                       | `120`                               | Initial angular orientation in degrees    |
+| `grain`           | `boolean`                      | `true`                              | Organic film grain overlay texture        |
+| `className`       | `string`                       | —                                   | Wrapper CSS class name                    |
+| `style`           | `React.CSSProperties`          | —                                   | Inline style object                       |

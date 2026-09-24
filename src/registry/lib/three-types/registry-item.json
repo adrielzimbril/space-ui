@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lib-three-types",
+  "type": "registry:lib",
+  "title": "Three.js Types",
+  "description": "Lightweight TypeScript type declarations for Three.js shaders and WebGL components.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "categories": ["lib", "types"],
+  "files": [
+    {
+      "path": "src/registry/lib/three-types/three.d.ts",
+      "type": "registry:lib",
+      "target": "types/three.d.ts"
+    }
+  ],
+  "createdAt": "2026-09-01",
+  "updatedAt": "2026-09-29"
+}
