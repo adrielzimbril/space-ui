@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-like-button-01",
+  "type": "registry:component",
+  "title": "Like Button — Default",
+  "description": "A like button with an initial count of 24.",
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-like-button.json"],
+  "categories": ["component", "button", "social"],
+  "files": [
+    {
+      "path": "src/registry/demo/components/button/like-button/c-like-button-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/like-button-demo.tsx"
+    }
+  ],
+  "createdAt": "2026-09-22",
+  "updatedAt": "2026-09-22"
+}

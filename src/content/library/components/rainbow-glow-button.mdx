@@ -1,0 +1,39 @@
+---
+title: Rainbow Glow Button
+description: An interactive dark pill button featuring 6 orbiting colorful blurred orbs and a blur reveal transition on hover.
+preview:
+  name: demo-c-rainbow-glow-button-01
+  contained: false
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-rainbow-glow-button" />
+
+## Usage
+
+```tsx
+import { RainbowGlowButton } from '@/components/spaceui/rainbow-glow-button'
+```
+
+```tsx
+export default function Example() {
+  return (
+    <RainbowGlowButton as="a" href="https://spaceui.one/pricing" target="_blank">
+      Get pro
+    </RainbowGlowButton>
+  )
+}
+```
+
+## API Reference
+
+### RainbowGlowButton Props
+
+| Prop        | Type              | Default        | Description                                                 |
+| ----------- | ----------------- | -------------- | ----------------------------------------------------------- |
+| `as`        | `'button' \| 'a'` | `'button'`     | Render as a button or an anchor link.                       |
+| `href`      | `string`          | —              | Target link URL when `as="a"`.                              |
+| `orbs`      | `OrbConfig[]`     | `DEFAULT_ORBS` | Custom array of orb colors and coordinate motion keyframes. |
+| `className` | `string`          | —              | Additional CSS class names.                                 |
+| `children`  | `React.ReactNode` | —              | Content displayed within the button label.                  |
