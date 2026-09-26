@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-member-selector-01",
+  "type": "registry:component",
+  "title": "Member Selector Demo 01",
+  "description": "Default interactive member selector demo with avatar row, search popover, and participant selection.",
+  "dependencies": ["motion", "lucide-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-member-selector.json"],
+  "categories": ["demo", "component", "member-selector"],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/member-selector/c-member-selector-01/index.tsx",
+      "type": "registry:component",
+      "target": "demo/c-member-selector-01.tsx"
+    }
+  ],
+  "createdAt": "2026-09-26",
+  "updatedAt": "2026-09-26"
+}

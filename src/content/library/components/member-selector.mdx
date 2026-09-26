@@ -1,0 +1,43 @@
+---
+title: Member Selector
+description: An interactive participant and member avatar selector with dynamic row layout, animated selection badges, quick-add button, and searchable popover.
+preview:
+  name: demo-c-member-selector-01
+  contained: false
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-member-selector" />
+
+## Usage
+
+```tsx
+import { MemberSelector } from '@/components/spaceui/member-selector'
+```
+
+```tsx
+const [selected, setSelected] = useState(['1', '2'])
+
+<MemberSelector
+  members={members}
+  selected={selected}
+  onChange={setSelected}
+  maxVisible={5}
+  label="Participants"
+/>
+```
+
+## API Reference
+
+### MemberSelector Props
+
+| Prop         | Type                           | Default      | Description                                                   |
+| ------------ | ------------------------------ | ------------ | ------------------------------------------------------------- |
+| `members`    | `Member[]`                     | **required** | List of available members (`id`, `name`, `email?`, `avatar?`) |
+| `selected`   | `string[]`                     | **required** | Array of currently selected member IDs                        |
+| `onChange`   | `(selected: string[]) => void` | **required** | Callback when selection changes                               |
+| `max`        | `number`                       | -            | Optional maximum number of selectable members                 |
+| `maxVisible` | `number`                       | `5`          | Maximum number of avatars displayed in horizontal row         |
+| `label`      | `string`                       | -            | Optional header label (e.g. "Participants")                   |
+| `className`  | `string`                       | -            | Additional class names applied to the container               |

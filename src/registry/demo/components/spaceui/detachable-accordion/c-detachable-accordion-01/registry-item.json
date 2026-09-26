@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-detachable-accordion-01",
+  "type": "registry:component",
+  "title": "Detachable Accordion — Default",
+  "description": "An accordion component featuring physical separation and corner radius spring transitions upon expanding items.",
+  "dependencies": ["reicon-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-detachable-accordion.json"],
+  "categories": ["component", "accordion", "layout"],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/detachable-accordion/c-detachable-accordion-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/detachable-accordion-demo.tsx"
+    }
+  ],
+  "createdAt": "2026-09-25",
+  "updatedAt": "2026-09-25"
+}

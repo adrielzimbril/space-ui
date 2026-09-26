@@ -1,0 +1,36 @@
+---
+title: Detachable Accordion
+description: An interactive accordion with spring motion where the expanded item physically detaches with animated gaps and rounded corners.
+preview:
+  name: demo-c-detachable-accordion-01
+  contained: false
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-detachable-accordion" />
+
+## Usage
+
+```tsx
+import { DetachableAccordion } from '@/components/spaceui/detachable-accordion'
+```
+
+```tsx
+<DetachableAccordion defaultValue="favorites" detachGap={16} cornerRadius={24} />
+```
+
+## API Reference
+
+### DetachableAccordion Props
+
+| Prop            | Type                                   | Default                                 | Description                                                               |
+| --------------- | -------------------------------------- | --------------------------------------- | ------------------------------------------------------------------------- |
+| `items`         | `DetachableAccordionItem[]`            | `DEFAULT_ITEMS`                         | List of items containing `value`, `title`, `content`, and optional `icon` |
+| `value`         | `string`                               | -                                       | Controlled expanded item value                                            |
+| `defaultValue`  | `string`                               | `""`                                    | Initial expanded item value                                               |
+| `onValueChange` | `(value: string \| undefined) => void` | -                                       | Callback triggered when the expanded item changes                         |
+| `detachGap`     | `number`                               | `16`                                    | Spacing in pixels created above and below the active item                 |
+| `cornerRadius`  | `number`                               | `24`                                    | Border radius in pixels applied to the active item and neighboring edges  |
+| `spring`        | `Transition`                           | `mass: 10, stiffness: 900, damping: 80` | Motion spring configuration for detachment and icon rotation              |
+| `className`     | `string`                               | -                                       | Additional class name applied to outer container                          |

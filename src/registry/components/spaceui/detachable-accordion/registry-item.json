@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-detachable-accordion",
+  "type": "registry:component",
+  "title": "Detachable Accordion",
+  "description": "An interactive accordion with spring motion where the expanded item physically detaches with animated gaps and rounded corners.",
+  "dependencies": ["motion", "lucide-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "accordion", "layout"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/detachable-accordion/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/detachable-accordion.tsx"
+    }
+  ],
+  "createdAt": "2026-09-25",
+  "updatedAt": "2026-09-25"
+}

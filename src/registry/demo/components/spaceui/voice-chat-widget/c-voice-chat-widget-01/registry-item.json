@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-voice-chat-widget-01",
+  "type": "registry:component",
+  "title": "Voice Chat Widget — Default",
+  "description": "A collapsed voice chat pill that expands into a full participant panel on click.",
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-voice-chat-widget.json"],
+  "categories": ["component", "communication", "animation"],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/voice-chat-widget/c-voice-chat-widget-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/voice-chat-widget-demo.tsx"
+    }
+  ],
+  "createdAt": "2026-09-22",
+  "updatedAt": "2026-09-22"
+}

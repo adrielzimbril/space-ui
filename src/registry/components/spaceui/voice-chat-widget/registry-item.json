@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-voice-chat-widget",
+  "type": "registry:component",
+  "title": "Voice Chat Widget",
+  "description": "An expandable voice chat pill with procedural avatars and squishmoji participants, animated speaking indicators, and a smooth pill-to-panel transition.",
+  "dependencies": [
+    "motion",
+    "lucide-react",
+    "@usespaceui/avatars",
+    "@usespaceui/squishmoji",
+    "@keyline-icons/react",
+    "@usespaceui/squircle"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/components-spaceui-button-squircle.json"
+  ],
+  "categories": ["component", "communication", "animation"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/voice-chat-widget/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/voice-chat-widget.tsx"
+    }
+  ],
+  "createdAt": "2026-09-22",
+  "updatedAt": "2026-09-23"
+}

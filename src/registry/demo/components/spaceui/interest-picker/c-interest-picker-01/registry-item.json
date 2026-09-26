@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-interest-picker-01",
+  "type": "registry:component",
+  "title": "Interest Picker — Default",
+  "description": "A draggable interest picker with the default dataset.",
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-interest-picker.json"],
+  "categories": ["component", "selection", "animation"],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/interest-picker/c-interest-picker-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/interest-picker-demo.tsx"
+    }
+  ],
+  "createdAt": "2026-09-22",
+  "updatedAt": "2026-09-22"
+}

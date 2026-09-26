@@ -1,0 +1,40 @@
+---
+title: Gradient File Upload
+description: A refined upload surface with an animated glowing beam border, dynamic radial feedback, file extension badges, and multi-state progress indicators.
+preview:
+  name: demo-c-gradient-file-upload-01
+  contained: false
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-gradient-file-upload" />
+
+## Usage
+
+```tsx
+import { GradientFileUpload } from '@/components/spaceui/gradient-file-upload'
+```
+
+```tsx
+<GradientFileUpload
+  variant="original"
+  maxSizeMb={50}
+  uploadDurationMs={2500}
+  onFileAccepted={(file) => console.log('Selected:', file.name)}
+/>
+```
+
+## API Reference
+
+### GradientFileUpload Props
+
+| Prop               | Type                           | Default      | Description                                                         |
+| ------------------ | ------------------------------ | ------------ | ------------------------------------------------------------------- |
+| `variant`          | `'original' \| 'glow'`         | `'original'` | Visual border animation engine (`original` conic shader or `glow`)  |
+| `accept`           | `string`                       | `"*"`        | Accepted file types (e.g. `image/*,application/pdf`)                |
+| `maxSizeMb`        | `number`                       | `50`         | Maximum file size in megabytes before rejecting                     |
+| `uploadDurationMs` | `number`                       | `2400`       | Simulated upload duration in milliseconds                           |
+| `onFileAccepted`   | `(file: File) => void`         | -            | Callback fired immediately when a valid file is dropped or selected |
+| `onUpload`         | `(file: File) => Promise<...>` | -            | Custom async upload handler returning `{ status, message }`         |
+| `className`        | `string`                       | -            | Additional class name applied to outer container                    |

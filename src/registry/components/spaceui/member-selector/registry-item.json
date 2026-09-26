@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-member-selector",
+  "type": "registry:component",
+  "title": "Member Selector",
+  "description": "An interactive participant and member avatar selector with dynamic row layout, animated selection badges, quick-add button, and searchable popover.",
+  "dependencies": ["motion", "lucide-react"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "avatar", "selector", "popover", "animation"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/member-selector/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/member-selector.tsx"
+    }
+  ],
+  "createdAt": "2026-09-26",
+  "updatedAt": "2026-09-26"
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-gradient-file-upload",
+  "type": "registry:component",
+  "title": "Gradient File Upload",
+  "description": "A refined upload surface with an animated glowing beam border, dynamic radial feedback, file extension badges, and multi-state progress indicators.",
+  "dependencies": ["motion", "@tabler/icons-react", "@usespaceui/sounds", "@usespaceui/squircle"],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
+    "https://www.spaceui.one/r/hooks-utils-format-bytes.json",
+    "https://www.spaceui.one/r/hooks-utils-sleep.json",
+    "https://www.spaceui.one/r/hooks-form-use-file-upload.json"
+  ],
+  "categories": ["component", "input", "upload", "form"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/gradient-file-upload/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/gradient-file-upload.tsx"
+    }
+  ],
+  "createdAt": "2026-09-25",
+  "updatedAt": "2026-09-25"
+}

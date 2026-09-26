@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-gradient-file-upload-01",
+  "type": "registry:component",
+  "title": "Gradient File Upload — Default",
+  "description": "An interactive gradient file upload component with drag & drop and glowing beam outline.",
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-gradient-file-upload.json"],
+  "categories": ["component", "input", "upload"],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/gradient-file-upload/c-gradient-file-upload-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/gradient-file-upload-demo.tsx"
+    }
+  ],
+  "createdAt": "2026-09-25",
+  "updatedAt": "2026-09-25"
+}
