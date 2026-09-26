@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-scroll-text-reveal",
+  "type": "registry:component",
+  "title": "Scroll Text Reveal",
+  "description": "Progressive character or word color/opacity reveal driven by scroll progress.",
+  "dependencies": ["motion"],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "typography", "animation", "text", "scroll"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/scroll-text-reveal/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/scroll-text-reveal.tsx"
+    }
+  ],
+  "createdAt": "2026-09-25",
+  "updatedAt": "2026-09-25"
+}

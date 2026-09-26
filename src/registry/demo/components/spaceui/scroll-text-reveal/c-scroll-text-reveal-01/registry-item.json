@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-scroll-text-reveal-01",
+  "type": "registry:component",
+  "title": "Scroll Text Reveal Demo",
+  "description": "Progressive character-by-character and word-by-word text reveal on scroll.",
+  "dependencies": ["motion", "@usespaceui/squircle"],
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-scroll-text-reveal.json"],
+  "categories": ["demo", "typography", "animation", "text", "scroll"],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/scroll-text-reveal/c-scroll-text-reveal-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/scroll-text-reveal-demo.tsx"
+    }
+  ],
+  "createdAt": "2026-09-25",
+  "updatedAt": "2026-09-25"
+}

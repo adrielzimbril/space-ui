@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-gooey-text-reveal-01",
+  "type": "registry:component",
+  "title": "Gooey Text Reveal — Default",
+  "description": "An immediate gooey blur reveal on a short heading.",
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-gooey-text-reveal.json"],
+  "categories": ["component", "typography", "animation", "text", "scroll"],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/gooey-text-reveal/c-gooey-text-reveal-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/gooey-text-reveal-demo.tsx"
+    }
+  ],
+  "createdAt": "2026-09-22",
+  "updatedAt": "2026-09-22",
+  "dependencies": ["@usespaceui/squircle"]
+}

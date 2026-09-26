@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "demo-c-flip-text-01",
+  "type": "registry:component",
+  "title": "Flip Text — Default",
+  "description": "A looping character flip wave across a short heading.",
+  "registryDependencies": ["https://www.spaceui.one/r/components-spaceui-flip-text.json"],
+  "categories": ["component", "typography", "animation", "text"],
+  "files": [
+    {
+      "path": "src/registry/demo/components/spaceui/flip-text/c-flip-text-01/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/flip-text-demo.tsx"
+    }
+  ],
+  "createdAt": "2026-09-22",
+  "updatedAt": "2026-09-22"
+}

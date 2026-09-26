@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "components-spaceui-flip-text",
+  "type": "registry:component",
+  "title": "Flip Text",
+  "description": "Per-character 3D dual-face flip animation with a sine-eased stagger wave across the text.",
+  "dependencies": [],
+  "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
+  "categories": ["component", "typography", "animation", "text"],
+  "files": [
+    {
+      "path": "src/registry/components/spaceui/flip-text/index.tsx",
+      "type": "registry:component",
+      "target": "components/spaceui/flip-text.tsx"
+    }
+  ],
+  "createdAt": "2026-09-22",
+  "updatedAt": "2026-09-22"
+}
