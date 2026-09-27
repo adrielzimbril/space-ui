@@ -1,0 +1,44 @@
+---
+title: Status Badge Glow
+description: An interactive status monitor with glowing radial reflections, spring-animated status transitions, and staggered character animations for pending, success, and failed states.
+component: true
+base: base
+isPro: true
+preview:
+  name: interactions-status-badge-glow
+  contained: false
+  className: '**:[.preview]:h-auto'
+---
+
+## Installation
+
+<ComponentInstallation name="interactions-status-badge-glow" />
+
+## Usage
+
+```tsx
+import { StatusBadgeGlow, StatusBadgeGlowTable } from '@/components/interactions/status-badge-glow'
+```
+
+```tsx
+<StatusBadgeGlow state="success" />
+<StatusBadgeGlow state="pending" />
+<StatusBadgeGlow state="failed" />
+```
+
+### Interactive Table
+
+```tsx
+<StatusBadgeGlowTable />
+```
+
+## API Reference
+
+### StatusBadgeGlow Props
+
+| Prop        | Type                                   | Default                                                        | Description                                                       |
+| ----------- | -------------------------------------- | -------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `state`     | `"pending" \| "success" \| "failed"`   | `"pending"`                                                    | Semantic execution status controlling glow color, icon and label  |
+| `labels`    | `Partial<Record<StatusState, string>>` | `{ pending: "Pending", success: "Success", failed: "Failed" }` | Custom labels for each state                                      |
+| `onClick`   | `() => void`                           | -                                                              | Optional click handler (enables interactive cycling or drilldown) |
+| `className` | `string`                               | -                                                              | Additional class name applied to badge container                  |

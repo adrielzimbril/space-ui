@@ -3,5 +3,15 @@
   "description": "Components that never sit still",
   "icon": "Sparkles",
   "root": true,
-  "pages": ["---Agents---", "agent-pipeline", "realtime-voice", "---Developers---", "deploy-pipeline"]
+  "pages": [
+    "---Agents---",
+    "agent-pipeline",
+    "agent-usage-card",
+    "realtime-voice",
+    "---Developers---",
+    "deploy-pipeline",
+    "status-badge-glow",
+    "---Finance---",
+    "currency-converter"
+  ]
 }

@@ -1,0 +1,38 @@
+---
+title: Currency Converter
+description: An interactive currency converter and token swap card with real-time exchange rates, NumberFlow spring animations, Space UI Select with flags, and a liquid metal squircle button.
+component: true
+base: base
+isPro: true
+preview:
+  name: interactions-currency-converter
+  contained: false
+  className: '**:[.preview]:h-auto'
+---
+
+## Installation
+
+<ComponentInstallation name="interactions-currency-converter" />
+
+## Usage
+
+```tsx
+import { CurrencyConverter } from '@/components/interactions/currency-converter'
+```
+
+```tsx
+<CurrencyConverter />
+```
+
+## API Reference
+
+### CurrencyConverter Props
+
+| Prop                  | Type                                        | Default              | Description                                                  |
+| --------------------- | ------------------------------------------- | -------------------- | ------------------------------------------------------------ |
+| `initialFromCurrency` | `string`                                    | `"USD"`              | Initial currency code for sending                            |
+| `initialToCurrency`   | `string`                                    | `"EUR"`              | Initial currency code for receiving                          |
+| `initialAmount`       | `number`                                    | `100`                | Initial numerical amount to convert                          |
+| `currencies`          | `Currency[]`                                | `DEFAULT_CURRENCIES` | Custom array of available currency rates and metadata        |
+| `onConvert`           | `(details: CurrencyConvertDetails) => void` | -                    | Callback triggered when the convert action button is pressed |
+| `className`           | `string`                                    | -                    | Additional class name applied to outer Frame container       |

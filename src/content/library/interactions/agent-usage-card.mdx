@@ -1,0 +1,49 @@
+---
+title: Agent Usage Card
+description: An interactive agent status and usage card with segmented progress tracking, live telemetry hours advancement, morph icon controls, squircle buttons, squishmoji status avatar, and a collapsible cost breakdown.
+component: true
+base: base
+isPro: true
+preview:
+  name: interactions-agent-usage-card
+  contained: false
+  className: '**:[.preview]:h-auto'
+---
+
+## Installation
+
+<ComponentInstallation name="interactions-agent-usage-card" />
+
+## Usage
+
+```tsx
+import { AgentUsageCard } from '@/components/interactions/agent-usage-card'
+```
+
+```tsx
+<AgentUsageCard
+  title="Site Reliability Agent"
+  description="Autonomous incident mitigation and cluster telemetry."
+  usedHours={185}
+  totalHours={320}
+  resetLabel="Resets in 8 days"
+  defaultWorking={true}
+/>
+```
+
+## API Reference
+
+### AgentUsageCard Props
+
+| Prop              | Type                         | Default                                                   | Description                                            |
+| ----------------- | ---------------------------- | --------------------------------------------------------- | ------------------------------------------------------ |
+| `title`           | `string`                     | `"Site Reliability Agent"`                                | Title of the agent or service                          |
+| `description`     | `string`                     | `"Autonomous incident mitigation and cluster telemetry."` | Subtitle description beneath the title                 |
+| `usedHours`       | `number`                     | `185`                                                     | Number of hours consumed so far                        |
+| `totalHours`      | `number`                     | `320`                                                     | Total monthly quota in hours                           |
+| `resetLabel`      | `string`                     | `"Resets in 8 days"`                                      | Helper text indicating when the billing quota resets   |
+| `costItems`       | `CostItem[]`                 | `DEFAULT_COST_ITEMS`                                      | Breakdown of hourly costs per component/model          |
+| `defaultWorking`  | `boolean`                    | `false`                                                   | Initial working / running state                        |
+| `defaultExpanded` | `boolean`                    | `false`                                                   | Initial expanded state of the cost breakdown accordion |
+| `onWorkingChange` | `(working: boolean) => void` | -                                                         | Callback triggered when the agent is started or paused |
+| `className`       | `string`                     | -                                                         | Additional class name applied to outer card container  |
