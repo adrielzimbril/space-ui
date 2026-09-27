@@ -1,0 +1,70 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "template-ai-chat-workspace",
+  "type": "registry:block",
+  "title": "AI Chat Workspace",
+  "description": "Full-featured AI Studio chat workspace template featuring conversational threads, multi-model selection, real-time token tracking, reasoning trace, code execution viewer, and dark mode interface.",
+  "dependencies": [
+    "motion",
+    "@tabler/icons-react",
+    "@usespaceui/squishmoji",
+    "@paper-design/shaders-react",
+    "@usespaceui/squircle"
+  ],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/components-spaceui-button-squircle.json",
+    "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
+    "https://www.spaceui.one/r/components-spaceui-animoji.json"
+  ],
+  "categories": ["template", "ai", "chat", "workspace"],
+  "files": [
+    {
+      "path": "src/registry/templates/ai-chat-workspace/index.tsx",
+      "type": "registry:component",
+      "target": "components/templates/ai-chat-workspace/index.tsx"
+    },
+    {
+      "path": "src/registry/templates/ai-chat-workspace/app-select.tsx",
+      "type": "registry:component",
+      "target": "components/templates/ai-chat-workspace/app-select.tsx"
+    },
+    {
+      "path": "src/registry/templates/ai-chat-workspace/chat-composer.tsx",
+      "type": "registry:component",
+      "target": "components/templates/ai-chat-workspace/chat-composer.tsx"
+    },
+    {
+      "path": "src/registry/templates/ai-chat-workspace/chat-sidebar.tsx",
+      "type": "registry:component",
+      "target": "components/templates/ai-chat-workspace/chat-sidebar.tsx"
+    },
+    {
+      "path": "src/registry/templates/ai-chat-workspace/data.ts",
+      "type": "registry:component",
+      "target": "components/templates/ai-chat-workspace/data.ts"
+    },
+    {
+      "path": "src/registry/templates/ai-chat-workspace/logo.tsx",
+      "type": "registry:component",
+      "target": "components/templates/ai-chat-workspace/logo.tsx"
+    },
+    {
+      "path": "src/registry/templates/ai-chat-workspace/message-stream.tsx",
+      "type": "registry:component",
+      "target": "components/templates/ai-chat-workspace/message-stream.tsx"
+    },
+    {
+      "path": "src/registry/templates/ai-chat-workspace/types.ts",
+      "type": "registry:component",
+      "target": "components/templates/ai-chat-workspace/types.ts"
+    },
+    {
+      "path": "src/registry/templates/ai-chat-workspace/user-menu.tsx",
+      "type": "registry:component",
+      "target": "components/templates/ai-chat-workspace/user-menu.tsx"
+    }
+  ],
+  "createdAt": "2026-09-25",
+  "updatedAt": "2026-09-29"
+}

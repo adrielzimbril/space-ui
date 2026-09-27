@@ -4,6 +4,7 @@
   "icon": "Layout",
   "root": true,
   "pages": [
+    "ai-chat-workspace",
     "immersive-lens",
     "stats",
     "---Showcase---",
