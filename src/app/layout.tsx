@@ -15,6 +15,7 @@ import { cookies } from 'next/headers'
 import { Mode, type LayoutMode } from '@/components/providers/layout-mode-provider'
 import { ThemeCookieSync, THEME_COOKIE_KEY } from '@/components/providers/theme-cookie-sync'
 import { ThemeLockScript, THEME_LOCKED_ROUTES } from '@/components/providers/theme-lock-provider'
+import { PostHogProvider } from '@/components/providers/posthog-provider'
 
 // TODO: Cache Components adoption. Refactor this route so this opt-out can be removed.
 // See: https://nextjs.org/docs/app/guides/migrating-to-cache-components
@@ -165,13 +166,15 @@ export default async function Layout({ children }: { children: ReactNode }) {
           // 'screenshot-mode',
         )}
       >
-        <RootProvider search={{ enabled: false }} theme={{ disableTransitionOnChange: true }}>
-          <ThemeLockScript />
-          <ThemeCookieSync />
-          <NuqsAdapter>
-            <GlobalLayoutWrapper initialLayoutMode={initialLayoutMode}>{children}</GlobalLayoutWrapper>
-          </NuqsAdapter>
-        </RootProvider>
+        <PostHogProvider>
+          <RootProvider search={{ enabled: false }} theme={{ disableTransitionOnChange: true }}>
+            <ThemeLockScript />
+            <ThemeCookieSync />
+            <NuqsAdapter>
+              <GlobalLayoutWrapper initialLayoutMode={initialLayoutMode}>{children}</GlobalLayoutWrapper>
+            </NuqsAdapter>
+          </RootProvider>
+        </PostHogProvider>
         <Analytics />
         <SpeedInsights />
       </body>

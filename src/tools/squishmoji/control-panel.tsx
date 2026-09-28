@@ -1,7 +1,7 @@
 'use client'
 
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
-import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Button } from '@/registry/components/button/button-squircle'
 import { TickSlider } from '@/registry/components/spaceui/tick-slider'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/registry/primitives/select'

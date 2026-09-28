@@ -22,6 +22,7 @@ import {
 } from '@tabler/icons-react'
 import { CopyButton } from '@/registry/components/spaceui/copy'
 import { bloomSound } from '@/components/providers/sound-provider'
+import { trackComponentTabSwitched, trackComponentViewed } from '@/lib/analytics/posthog'
 import { formatCodeForDisplay } from '@/lib/install-command'
 import { useBundle, prettify } from '@/components/providers/bundle-provider'
 import { useLayoutMode } from '@/components/providers/layout-mode-provider'
@@ -48,6 +49,8 @@ export interface ShowcaseCardProps extends React.HTMLAttributes<HTMLDivElement> 
   contained?: boolean
   container?: boolean
   isPro?: boolean
+  align?: 'start' | 'center' | 'end'
+  previewClassName?: string
 }
 
 function slugify(text: string): string {
@@ -70,6 +73,8 @@ export function ShowcaseCard({
   contained,
   container,
   className,
+  previewClassName,
+  align,
   children,
   id,
   ...props
@@ -284,11 +289,17 @@ export function ShowcaseCard({
               variant="ghost"
               onClick={() => {
                 bloomSound()
+                trackComponentTabSwitched({
+                  component_name: name,
+                  from_tab: 'preview',
+                  to_tab: 'code',
+                  is_pro: isPro,
+                  time_before_switch_ms: 0,
+                })
                 setCodeDrawerOpen(true)
               }}
               className="gap-1.5 bg-background hover:bg-background text-xs text-foreground cursor-pointer font-medium"
             >
-              {/* <IconFileCode className="size-3.5 text-muted-foreground" /> */}
               <span>Code</span>
             </Button>
           )}
@@ -311,6 +322,8 @@ export function ShowcaseCard({
             themeOverride={themeOverride}
             registryError={Boolean(registryError)}
             reloadKey={key}
+            align={align}
+            previewClassName={previewClassName}
           />
         )}
       </div>

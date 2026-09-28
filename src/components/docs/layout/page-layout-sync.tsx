@@ -79,6 +79,8 @@ export function PageLayoutSync({ mode = Mode.both, defaultMode, path = '', previ
         componentGroup,
         externalUrl: config.externalUrl,
         hideDocPanel: config.showcase,
+        align: config.align,
+        previewClassName: config.previewClassName ?? config.className,
       },
       true,
     )

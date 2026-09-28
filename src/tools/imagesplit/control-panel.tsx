@@ -10,7 +10,7 @@ import {
   tickSound,
   toggleSound,
 } from '@/components/providers/sound-provider'
-import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Button } from '@/registry/components/button/button-squircle'
 import { TickSlider } from '@/registry/components/spaceui/tick-slider'
 import { cn } from '@/registry/lib/utils'
 import { Badge } from '@/registry/primitives/badge'

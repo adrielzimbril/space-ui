@@ -15,7 +15,7 @@ import {
 } from '@tabler/icons-react'
 import { toCanvas, toPng } from 'html-to-image'
 import { ArrayBufferTarget, Muxer } from 'mp4-muxer'
-import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Button } from '@/registry/components/button/button-squircle'
 import { Badge } from '@/registry/primitives/badge'
 import { logger } from '@/registry/utils/logger'
 import { toastManager } from '@/registry/primitives/toast'
@@ -46,6 +46,7 @@ import { cn } from '@/registry/lib/utils'
 import type { AnimType, OgState } from './types'
 import { ANIMS, DEFAULT_OG_STATE } from './presets'
 import posthog from 'posthog-js'
+import { trackToolUsed } from '@/lib/analytics/posthog'
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
 const even = (n: number) => {
@@ -113,6 +114,15 @@ export function OgExportDrawer({ open, onClose, s, cardRef, presetName, onImport
       posthog.capture('og_image_exported', {
         export_format: 'png',
         scale,
+      })
+      trackToolUsed({
+        tool_name: 'og-image',
+        action: 'downloaded',
+        config: {
+          export_format: 'png',
+          scale,
+          layout: s.layout,
+        },
       })
       confirmSound()
     } catch (err) {
@@ -369,6 +379,16 @@ export function OgExportDrawer({ open, onClose, s, cardRef, presetName, onImport
           animation_type: type,
           batch_export: batch,
         })
+        trackToolUsed({
+          tool_name: 'og-image',
+          action: 'exported',
+          config: {
+            export_format: ext,
+            scale,
+            animation_type: type,
+            batch_export: batch,
+          },
+        })
         confirmSound()
         await sleep(300)
       }
@@ -393,6 +413,13 @@ export function OgExportDrawer({ open, onClose, s, cardRef, presetName, onImport
     saveBlob(blob, `spaceui-og-${presetName}-${s.layout}-config.json`)
     posthog.capture('og_image_exported', {
       export_format: 'json',
+    })
+    trackToolUsed({
+      tool_name: 'og-image',
+      action: 'downloaded',
+      config: {
+        export_format: 'json',
+      },
     })
   }
 

@@ -3,6 +3,8 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import { useLocalStorage } from '@/registry/hooks/browser/use-local-storage'
 
+import { trackBundleItemAdded, trackBundleItemRemoved, trackBundleCleared } from '@/lib/analytics/posthog'
+
 export type BundleItem = {
   slug: string
   title: string
@@ -92,14 +94,20 @@ export function BundleProvider({ children }: { children: React.ReactNode }) {
       add: (item) => {
         setItems((current) => mergeItems(current, [item]))
         setMessage(`${item.title} added to bundle`)
+        trackBundleItemAdded({ slug: item.slug, title: item.title, bundle_size: items.length + 1 })
       },
       addMany: (next) => {
         setItems((current) => mergeItems(current, next))
         setMessage(next.length === 1 ? `${next[0].title} added to bundle` : `${next.length} components added to bundle`)
+        for (const item of next) {
+          trackBundleItemAdded({ slug: item.slug, title: item.title, bundle_size: items.length + next.length })
+        }
       },
       clear: () => {
+        const prevCount = items.length
         removeItemsStorage()
         setMessage('Bundle cleared')
+        trackBundleCleared({ previous_count: prevCount })
       },
       count: items.length,
       has: (slug) => items.some((i) => i.slug === slug),
@@ -109,6 +117,7 @@ export function BundleProvider({ children }: { children: React.ReactNode }) {
         const removed = items.find((i) => i.slug === slug)
         setItems((current) => current.filter((i) => i.slug !== slug))
         setMessage(removed ? `${removed.title} removed from bundle` : 'Item removed from bundle')
+        trackBundleItemRemoved({ slug, bundle_size: Math.max(0, items.length - 1) })
       },
       removeMany: (slugs) => {
         const drop = new Set(slugs)
@@ -116,11 +125,19 @@ export function BundleProvider({ children }: { children: React.ReactNode }) {
         setMessage(
           slugs.length === 1 ? '1 component removed from bundle' : `${slugs.length} components removed from bundle`,
         )
+        for (const s of slugs) {
+          trackBundleItemRemoved({ slug: s, bundle_size: Math.max(0, items.length - slugs.length) })
+        }
       },
       toggle: (item) => {
         const exists = items.some((i) => i.slug === item.slug)
         setItems((current) => (exists ? current.filter((i) => i.slug !== item.slug) : [...current, item]))
         setMessage(exists ? `${item.title} removed from bundle` : `${item.title} added to bundle`)
+        if (exists) {
+          trackBundleItemRemoved({ slug: item.slug, bundle_size: Math.max(0, items.length - 1) })
+        } else {
+          trackBundleItemAdded({ slug: item.slug, title: item.title, bundle_size: items.length + 1 })
+        }
       },
     }),
     [items, message, setItems, removeItemsStorage],

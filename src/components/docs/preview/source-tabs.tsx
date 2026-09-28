@@ -10,6 +10,7 @@ import { PreviewLoading } from '@/components/shared/preview-loading'
 import { bloomSound, slideSound } from '@/components/providers/sound-provider'
 import { ScrollArea, ScrollAreaPrimitive } from '@/registry/primitives/scroll-area'
 import { cn } from '@/registry/lib/utils'
+import { trackComponentCodeCopied, trackHookCodeCopied, trackBlockCodeCopied } from '@/lib/analytics/posthog'
 
 export type ResolvedSource = {
   id: string
@@ -103,6 +104,29 @@ export function ComponentSourceTabs({
                     <CopyButton
                       content={s.code}
                       variant="ghost"
+                      onCopiedChange={(copied) => {
+                        if (copied) {
+                          if (s.title.includes('hooks/')) {
+                            trackHookCodeCopied({
+                              hook_name: s.tabLabel.replace(/\.(ts|tsx)$/, ''),
+                              tab: s.language || 'ts',
+                            })
+                          } else if (s.title.includes('blocks/')) {
+                            trackBlockCodeCopied({
+                              block_name: s.tabLabel.replace(/\.(ts|tsx)$/, ''),
+                              is_pro: false,
+                            })
+                          } else {
+                            trackComponentCodeCopied({
+                              component_name: s.tabLabel.replace(/\.(ts|tsx)$/, ''),
+                              component_category: 'source',
+                              tab: s.language,
+                              is_pro: false,
+                              copy_type: 'snippet',
+                            })
+                          }
+                        }
+                      }}
                       className="absolute right-2 top-2 rounded-md bg-muted text-muted-foreground hover:text-foreground cursor-pointer shrink-0 transition-all duration-300 z-10"
                     />
                   )}

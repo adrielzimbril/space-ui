@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
-import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Button } from '@/registry/components/button/button-squircle'
 import { DocsPager } from '@/components/docs/layout/docs-pager'
 import { siteConfig } from '@/config/space-config'
 
@@ -79,7 +79,44 @@ export default function TermsOfServicePage() {
         <hr />
 
         <section>
-          <h2>3. Platform &amp; Registry Use</h2>
+          <h2>3. Pro Access, Digital Products &amp; Strict No-Refund Policy</h2>
+          <p>
+            Space UI offers premium memberships, Lifetime access passes, and individual commercial templates
+            (&ldquo;Digital Products&rdquo;) processed securely via our merchant of record and payment partner Polar.
+          </p>
+          <h3>A. Immediate Digital Delivery</h3>
+          <p>
+            Upon completing a purchase or activating a subscription, you receive immediate and irrevocable digital
+            access to the Space UI Pro registry, source code repositories, CLI tokens, and downloadable assets.
+          </p>
+          <h3>B. Strict No-Refund Policy</h3>
+          <p>
+            Due to the non-returnable, intangible, and immediate nature of digital source code, software libraries, and
+            downloadable files,{' '}
+            <strong>
+              all sales, subscription fees, template purchases, and lifetime access payments are strictly final and
+              non-refundable
+            </strong>
+            .
+          </p>
+          <p>
+            By completing a purchase on Space UI, you expressly acknowledge and agree that your statutory right of
+            withdrawal or cancellation period is waived once access to the digital content has been initiated or
+            granted.
+          </p>
+          <h3>C. Subscription Cancellations</h3>
+          <p>
+            If you subscribe to a recurring billing plan (such as Pro Yearly), you may cancel your subscription at any
+            time via the customer billing portal. Cancellation prevents subsequent recurring renewals. Your access
+            remains active until the end of your prepaid billing period, and no partial or prorated refunds will be
+            issued for unused time.
+          </p>
+        </section>
+
+        <hr />
+
+        <section>
+          <h2>4. Platform &amp; Registry Use</h2>
           <p>
             You may browse our documentation, test interactive demos, and fetch registry items using developer tooling
             or our CLI. When using the platform, you agree not to:
@@ -94,7 +131,7 @@ export default function TermsOfServicePage() {
         <hr />
 
         <section>
-          <h2>4. Community Wall Guidelines</h2>
+          <h2>5. Community Wall Guidelines</h2>
           <p>
             The Space UI Community Wall is an open canvas for developers, designers, and creators to share notes,
             feedback, and signatures.
@@ -118,7 +155,7 @@ export default function TermsOfServicePage() {
         <hr />
 
         <section>
-          <h2>5. User Accounts &amp; Authentication</h2>
+          <h2>6. User Accounts &amp; Authentication</h2>
           <p>
             You may authenticate via third-party OAuth providers (GitHub or Google). You remain responsible for
             maintaining the security of your third-party credentials. You can sign out at any time using the logout
@@ -129,7 +166,7 @@ export default function TermsOfServicePage() {
         <hr />
 
         <section>
-          <h2>6. Intellectual Property</h2>
+          <h2>7. Intellectual Property</h2>
           <p>
             While component code is released under the MIT license, the <strong>Space UI</strong> brand name, domain,
             logos, and original illustrations are protected property. You may mention Space UI to describe compatibility
@@ -141,7 +178,7 @@ export default function TermsOfServicePage() {
         <hr />
 
         <section>
-          <h2>7. Disclaimer of Warranties</h2>
+          <h2>8. Disclaimer of Warranties</h2>
           <p>
             Space UI and all associated software and materials are provided strictly on an{' '}
             <strong>&ldquo;AS IS&rdquo;</strong> and <strong>&ldquo;AS AVAILABLE&rdquo;</strong> basis without
@@ -153,7 +190,7 @@ export default function TermsOfServicePage() {
         <hr />
 
         <section>
-          <h2>8. Limitation of Liability</h2>
+          <h2>9. Limitation of Liability</h2>
           <p>
             To the maximum extent permitted by applicable law, in no event shall Space UI, its maintainers, or
             contributors be liable for any indirect, incidental, special, consequential, or punitive damages arising out
@@ -164,7 +201,7 @@ export default function TermsOfServicePage() {
         <hr />
 
         <section>
-          <h2>9. Modifications to Terms</h2>
+          <h2>10. Modifications to Terms</h2>
           <p>
             We may update these Terms of Service periodically. Continued use of Space UI following updates constitutes
             acceptance of the revised terms.
@@ -174,7 +211,7 @@ export default function TermsOfServicePage() {
         <hr />
 
         <section>
-          <h2>10. Contact &amp; Questions</h2>
+          <h2>11. Contact &amp; Questions</h2>
           <p>For questions or feedback regarding these terms, reach out to us:</p>
           <div className="not-prose flex flex-wrap gap-3 mt-4">
             <Button size="sm" render={<a href={`mailto:${siteConfig.email}`} />}>

@@ -4,7 +4,7 @@ import React from 'react'
 import { cn } from '@/registry/lib/utils'
 import { IconMessageCircleFilled, IconUserFilled, IconGraphFilled } from '@tabler/icons-react'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
-import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Button } from '@/registry/components/button/button-squircle'
 import { StatusBadge } from '@/registry/components/spaceui/status-badge'
 import { logger } from '@/registry/utils/logger'
 

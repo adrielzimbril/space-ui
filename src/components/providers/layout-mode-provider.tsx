@@ -27,6 +27,8 @@ export interface ActivePreviewInfo {
   contained?: boolean
   componentGroup?: string | null
   bigScreen?: boolean
+  align?: 'start' | 'center' | 'end'
+  previewClassName?: string
   /** Raw external URL to iframe instead of the internal /registry/view/ route. */
   externalUrl?: string
   /** No installable code/MDX content to show — hide the split-view info/doc panel entirely. */

@@ -5,12 +5,13 @@ import { motion, AnimatePresence } from 'motion/react'
 import { IconSearch, IconX, IconFolderHeart, IconLoader2, IconArrowDown } from '@tabler/icons-react'
 import { Tabs, TabsList, TabsTab } from '@/registry/primitives/tabs'
 import { InputGroup, InputGroupAddon, InputGroupInput } from '@/registry/primitives/input-group'
-import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Button } from '@/registry/components/button/button-squircle'
 import { MorphIcon } from '@/registry/components/spaceui/morph-icon'
 import { useLoadMore } from '@/registry/hooks/form/use-load-more'
 import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
 import { useInView } from '@/registry/hooks/animation/use-in-view'
 import { toastManager } from '@/registry/primitives/toast'
+import { trackShowcaseTabSwitched, trackSearchUsed } from '@/lib/analytics/posthog'
 import type { ProjectItem } from '@/types/project'
 import { ProjectCard } from '@/components/marketing/showcase/project-card'
 
@@ -118,9 +119,26 @@ export function ShowcaseGallery({ projects }: ShowcaseGalleryProps) {
   // Handle tab switch with AdaptiveDensityGrid fluid morph trigger
   const handleTabChange = (val: FilterTab) => {
     if (val === activeTab) return
+    trackShowcaseTabSwitched({
+      from_tab: activeTab,
+      to_tab: val,
+    })
     setActiveTab(val)
     setIsTabSwitching(true)
   }
+
+  // Track search queries with 800ms debounce
+  React.useEffect(() => {
+    if (!searchQuery.trim()) return
+    const timer = window.setTimeout(() => {
+      trackSearchUsed({
+        query: searchQuery.trim(),
+        results_count: filteredProjects.length,
+        clicked_result_type: 'showcase',
+      })
+    }, 800)
+    return () => window.clearTimeout(timer)
+  }, [searchQuery, filteredProjects.length])
 
   // Reset tab switching rearrangement after spring settling
   React.useEffect(() => {

@@ -308,7 +308,7 @@ export function MobileNavDrawer({
         filtered.push({ title: section.title, items: matchedItems })
       }
     }
-    return filtered
+    return sortComponentsSections(filtered)
   }, [searchQuery, trees])
 
   const renderBadge = (badgeType: string | undefined | null, isPro?: boolean) => {

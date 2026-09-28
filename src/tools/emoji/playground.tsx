@@ -29,6 +29,7 @@ import { viewFromQuery, writeViewQuery } from '@/tools/shared/view'
 const EMOJI_VIEWS: ResourceViewMode[] = ['gallery', 'seed']
 import { EmojiControlPanel } from './control-panel'
 import { DEFAULT_EMOJI, randomEmoji } from './pool'
+import { trackToolUsed } from '@/lib/analytics/posthog'
 
 function snippetFor(emoji: string, source: EmojiSourceType, type: EmojiTypeType, size: number, format?: EmojiFormat) {
   const lines = [`<Emoji`, `  emoji="${emoji}"`, `  source="${source}"`, `  type="${type}"`]
@@ -159,6 +160,11 @@ export function EmojiPlayground({ initialView }: { initialView?: string } = {}) 
             pool={visible}
             onSelect={(character) => {
               bloomSound()
+              trackToolUsed({
+                tool_name: 'emoji',
+                action: 'selected',
+                config: { emoji: character, source, type: activeType },
+              })
               setEmoji(character)
               setView('seed')
               writeViewQuery('seed')
@@ -191,7 +197,14 @@ export function EmojiPlayground({ initialView }: { initialView?: string } = {}) 
             seed={emoji}
             setSeed={(value) => setEmoji(extractEmoji(value) || value.slice(0, 8))}
             placeholder={DEFAULT_EMOJI}
-            onRandomize={() => setEmoji(randomEmoji(catalog))}
+            onRandomize={() => {
+              trackToolUsed({
+                tool_name: 'emoji',
+                action: 'randomized',
+                config: { source, type: activeType },
+              })
+              setEmoji(randomEmoji(catalog))
+            }}
             packageName="@usespaceui/emoji"
             code={code}
             codeTitle="Emoji.tsx"

@@ -57,6 +57,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import type { ComponentProps } from 'react'
 import * as React from 'react'
+import { trackSearchUsed } from '@/lib/analytics/posthog'
 
 interface PageItem {
   value: string
@@ -82,11 +83,14 @@ const GROUP_ORDER = [
   'Primitives',
   'Components',
   'Interactions',
-  'Shader',
-  'Orb',
-  'Effects',
+  'Button',
+  'Buttons',
+  'Text',
   'Texts',
+  'Orb',
   'Backgrounds',
+  'Shader',
+  'Effects',
   'Templates',
   'Hooks',
   'Hook Components',
@@ -108,12 +112,16 @@ function getGroupIcon(group: string, isComponent: boolean) {
       return IconAtom
     case 'Interactions':
       return IconPointerSearch
+    case 'Button':
+    case 'Buttons':
+      return IconPointerSearch
     case 'Shader':
       return IconWaveSine
     case 'Orb':
       return IconAtom
     case 'Effects':
       return IconWand
+    case 'Text':
     case 'Texts':
       return IconTypography
     case 'Backgrounds':
@@ -375,8 +383,28 @@ export function CommandMenu({
     if (!nextOpen) {
       setSelectedType(null)
       setCopyPayload('')
+      setSearchQuery('')
     }
   }
+
+  const totalResultsCount = React.useMemo(() => {
+    return groupedItems.reduce((acc, g) => acc + g.items.length, 0)
+  }, [groupedItems])
+
+  // Track search query after user pauses typing (debounce 800ms)
+  React.useEffect(() => {
+    if (!open || !searchQuery.trim()) return
+
+    const timer = setTimeout(() => {
+      trackSearchUsed({
+        query: searchQuery.trim(),
+        results_count: totalResultsCount,
+        no_results: totalResultsCount === 0,
+      })
+    }, 800)
+
+    return () => clearTimeout(timer)
+  }, [searchQuery, totalResultsCount, open])
 
   // Resolve the install command for the current page
   const currentPageCommand = React.useMemo(() => {
@@ -547,14 +575,23 @@ export function CommandMenu({
                               href={item.url}
                               target={isExternal ? '_blank' : undefined}
                               rel={isExternal ? 'noopener noreferrer' : undefined}
-                              onClick={() => setOpen(false)}
+                              onClick={() => {
+                                trackSearchUsed({
+                                  query: searchQuery,
+                                  results_count: totalResultsCount,
+                                  clicked_result: item.value || item.label,
+                                  clicked_result_type: item.isComponent ? 'component' : item.group.toLowerCase(),
+                                  no_results: false,
+                                })
+                                setOpen(false)
+                              }}
                             />
                           }
                         >
                           <div className="flex items-center gap-2.5 min-w-0">
                             <ItemIcon className="size-4 shrink-0 text-muted-foreground" />
                             <span className="truncate">{item.label}</span>
-                            {item.isPro && <ProBadge size="2xs" asLink={false} liquid={true} className="shrink-0" />}
+                            {item.isPro && <ProBadge size="2xs" asLink={false} variant="glow" className="shrink-0" />}
                           </div>
                           {/* {item.shortcut && (
                             <CommandShortcut>

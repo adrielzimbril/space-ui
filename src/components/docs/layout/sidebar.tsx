@@ -238,7 +238,7 @@ export function DocsSidebar() {
                         </div>
 
                         <div className="flex items-center gap-1.5 shrink-0 ml-auto">
-                          {item.isPro && <ProBadge size="2xs" asLink={false} liquid={true} />}
+                          {item.isPro && <ProBadge size="2xs" asLink={false} variant="glow" />}
                           <NavBadge badge={item.badge} />
                         </div>
                       </Link>

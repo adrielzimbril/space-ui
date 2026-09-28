@@ -3,14 +3,18 @@
 import { MegaMenu } from '@/components/layout/mega-menu'
 import { searchNavShortcuts } from '@/config/menu-config'
 import { siteConfig } from '@/config/space-config'
+import { trackPricingCtaClicked } from '@/lib/analytics/posthog'
+import { Button as ButtonSquircle } from '@/registry/components/button/button-squircle'
 import { GitHubLink } from '@/registry/components/spaceui/github-link'
+import { LiquidBorder } from '@/registry/components/spaceui/liquid-metal-border'
 import { Button } from '@/registry/primitives/button'
 import { Kbd, KbdGroup } from '@/registry/primitives/kbd'
 import { Link } from '@/registry/primitives/link'
-import { IconBrandX, IconSearch } from '@tabler/icons-react'
+import { IconBrandX, IconSearch, IconArrowUpRight } from '@tabler/icons-react'
 import { turn as turnSound } from '@usespaceui/sounds'
 import { Squishmoji } from '@usespaceui/squishmoji/react'
 import dynamic from 'next/dynamic'
+import NextLink from 'next/link'
 
 const CommandMenu = dynamic(() => import('@/components/layout/command-menu').then((mod) => mod.CommandMenu), {
   ssr: false,
@@ -38,8 +42,9 @@ export const SITE_NAV_ITEMS = searchNavShortcuts
 export function SiteHeader() {
   return (
     <header className="sticky top-3 z-50 mx-auto w-full max-w-6xl px-3 sm:px-4 md:px-6 pointer-events-none -mb-17">
-      <div className="relative mx-auto flex sm:grid h-14 grid-cols-[auto_1fr_auto] justify-between items-center gap-3 px-3 md:px-4 lg:px-6 lg:grid-cols-[1fr_auto_1fr] rounded-2xl border border-border bg-background backdrop-blur-lg transition-colors duration-300 pointer-events-auto">
-        <div className="flex min-w-0 items-center gap-2">
+      <div className="relative mx-auto flex h-14 items-center justify-between gap-3 px-3 md:px-4 lg:px-6 rounded-2xl border border-border bg-background backdrop-blur-lg transition-colors duration-300 pointer-events-auto">
+        {/* Left: Logo + MegaMenu beside it */}
+        <div className="flex min-w-0 items-center gap-4 lg:gap-6">
           <Link
             href="/"
             aria-label="Space UI home"
@@ -60,15 +65,15 @@ export function SiteHeader() {
                 className="relative scale-150 origin-center transition-transform"
               />
             </div>
-            {/* <span className="text-sm font-bold inline ml-1.5 lg:hidden">Space UI</span> */}
           </Link>
+
+          <nav className="hidden items-center gap-2 lg:flex">
+            <MegaMenu />
+          </nav>
         </div>
 
-        <nav className="hidden items-center gap-2 lg:flex">
-          <MegaMenu />
-        </nav>
-
-        <div className="flex min-w-0 items-center justify-end gap-1.5">
+        {/* Right: Search, Socials, Liquid Metal Get Pro, Mobile Drawer */}
+        <div className="flex min-w-0 items-center justify-end gap-1.5 sm:gap-2">
           <div className="hidden sm:block w-full flex-1 md:w-auto md:flex-none mr-1">
             <CommandMenu
               navItems={SITE_NAV_ITEMS.map((item) => ({
@@ -94,24 +99,34 @@ export function SiteHeader() {
             <div className="motion-safe:active:scale-[0.96] transition-transform">
               <GitHubLink />
             </div>
-            {/* <div className="motion-safe:active:scale-[0.96] transition-transform">
-              <ModeSwitcher size="lg" />
-            </div> */}
-            {/* <Link
-              href="/dashboard"
-              className="inline-flex size-8 items-center justify-center rounded-md"
-              aria-label="Dashboard"
-              variant="secondary"
-              asButton
-            >
-              <IconLayoutDashboard className="size-4" />
-            </Link> */}
           </div>
 
-          {/* <Link href="/login" asButton className="hidden md:flex items-center gap-2 rounded-lg px-3">
-            <IconLogin className="size-3.5" />
-            <span>Sign in</span>
-          </Link> */}
+          {/* Liquid Metal Get Pro Button */}
+          <NextLink
+            href="/pricing"
+            aria-label="Get Space UI Pro"
+            onClick={() =>
+              trackPricingCtaClicked({
+                plan: 'pro',
+                billing_period: 'yearly',
+                cta_position: 'header',
+                visit_number: 1,
+              })
+            }
+            className="inline-flex items-center group motion-safe:active:scale-[0.97] transition-transform shrink-0"
+          >
+            <LiquidBorder className="inline-flex squircle rounded-full p-[1.5px] shrink-0" preset="chrome">
+              <ButtonSquircle
+                variant="primary"
+                size="sm"
+                squircle
+                className="h-7.5 border-0 px-3 text-xs font-semibold gap-1.5 leading-none select-none shadow-none pointer-events-none"
+              >
+                <span>Get Pro</span>
+                <IconArrowUpRight className="size-3.5 shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </ButtonSquircle>
+            </LiquidBorder>
+          </NextLink>
 
           <MobileNavDrawer />
         </div>

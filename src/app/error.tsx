@@ -1,5 +1,7 @@
 'use client'
 
+import * as React from 'react'
+import Link from 'next/link'
 import { PageLayoutSync } from '@/components/docs/layout/page-layout-sync'
 import { SiteFooter } from '@/components/layout/site-footer'
 import { bloomSound, tickSound } from '@/components/providers/sound-provider'
@@ -10,13 +12,32 @@ import { PixelRevealText } from '@/registry/components/spaceui/pixel-reveal-text
 import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
 import { OpenRunde } from '@/registry/lib/fonts/open-runde'
 import { cn } from '@/registry/lib/utils'
-import Link from 'next/link'
 
-export default function NotFound() {
+export interface ErrorProps {
+  error?: Error & { digest?: string }
+  reset?: () => void
+}
+
+export default function ErrorPage({ error, reset }: ErrorProps) {
+  React.useEffect(() => {
+    if (error) {
+      logger.error(error)
+    }
+  }, [error])
+
   const isXl = useMediaQuery('(min-width: 1440px)', true)
   const isLg = useMediaQuery('(min-width: 1024px)', true)
   const isSm = useMediaQuery('(min-width: 640px)', true)
   const fontSize = isXl ? 132 : isLg ? 102 : isSm ? 88 : 74
+
+  const handleReset = () => {
+    bloomSound()
+    if (reset) {
+      reset()
+    } else if (typeof window !== 'undefined') {
+      window.location.reload()
+    }
+  }
 
   return (
     <div
@@ -33,31 +54,24 @@ export default function NotFound() {
         <div className="flex flex-col items-center justify-center max-w-xl mx-auto">
           <div className="relative flex items-center justify-center select-none">
             <PixelRevealText fontSize={fontSize} pixelSize={4} trigger="loop" speed={0.8}>
-              4<Animoji source="telegram">🛸</Animoji>4
+              5<Animoji source="telegram">💥</Animoji>0
             </PixelRevealText>
           </div>
 
           <h1 className="mt-6 text-balance text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-foreground">
-            <Animoji source="telegram">This page went missing 👾</Animoji>
+            <Animoji source="telegram">Something went wrong 🐞</Animoji>
           </h1>
 
           <p className="mt-3 text-balance text-base sm:text-lg tracking-tight text-muted-foreground leading-relaxed max-w-[48ch]">
             <Animoji source="telegram">
-              This route drifted away. Don&apos;t worry, every others component is intact and ready to ship.
+              An unexpected glitch occurred in orbit. Don&apos;t worry, every other component is intact and you can try
+              again.
             </Animoji>
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button
-              render={<Link href="/components" />}
-              variant="primary"
-              size="lg"
-              pointer
-              hover
-              whileTap
-              onClick={() => bloomSound()}
-            >
-              <span>Explore</span>
+            <Button variant="primary" size="lg" pointer hover whileTap onClick={handleReset}>
+              <span>Try Again</span>
             </Button>
 
             <Button

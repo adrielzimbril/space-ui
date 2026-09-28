@@ -1,8 +1,8 @@
 'use client'
 
-import React, { createContext, useContext, useEffect, useState, useCallback, useMemo } from 'react'
-import * as spaceSounds from '@usespaceui/sounds'
 import { useLocalStorage } from '@/registry/hooks/browser/use-local-storage'
+import * as spaceSounds from '@usespaceui/sounds'
+import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 
 const STORAGE_KEY = 'space-ui-sounds-enabled'
 
@@ -156,9 +156,8 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
   // Initialize Space UI sound bindings once on mount
   useEffect(() => {
     try {
-      const setVoiceSeed = (spaceSounds as { setVoiceSeed?: (seed: string | null) => void }).setVoiceSeed
-      if (typeof setVoiceSeed === 'function') {
-        setVoiceSeed('Space UI')
+      if (typeof spaceSounds.setVoiceSeed === 'function') {
+        spaceSounds.setVoiceSeed('Space UI')
       } else if (typeof spaceSounds.setVoice === 'function') {
         spaceSounds.setVoice('Space UI')
       }
@@ -174,10 +173,9 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
   }, [])
 
   useEffect(() => {
-    const coarse = window.matchMedia('(pointer: coarse)').matches
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-    if (coarse || reducedMotion) {
+    if (reducedMotion) {
       setSuppressed(true)
       isSoundActive = false
       try {
@@ -188,6 +186,7 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
       return
     }
 
+    setSuppressed(false)
     isSoundActive = enabled
     try {
       if (typeof spaceSounds.setEnabled === 'function') {
@@ -199,6 +198,7 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
   const updateEnabled = useCallback(
     (next: boolean) => {
       setEnabledState(next)
+      setSuppressed(false)
       isSoundActive = next
       try {
         if (typeof spaceSounds.setEnabled === 'function') {

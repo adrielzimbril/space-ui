@@ -5,7 +5,7 @@ import { imagelib } from '@/lib/imagelib'
 import { useFileUpload } from '@/registry/hooks/form/use-file-upload'
 import { cn } from '@/registry/lib/utils'
 import { Badge } from '@/registry/primitives/badge'
-import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Button } from '@/registry/components/button/button-squircle'
 import { Group } from '@/registry/primitives/group'
 import { ResourceNav } from '@/tools/components/shared/layout/nav'
 import { ResourceStudio } from '@/tools/components/shared/layout/studio'
@@ -20,6 +20,7 @@ import * as React from 'react'
 import { RevealControlPanel } from './control-panel'
 import { imageSize, pseudoDepth } from './depth'
 import { useRevealEngine } from './use-reveal-engine'
+import { trackToolUsed } from '@/lib/analytics/posthog'
 
 const MIN_ZOOM = 0.25
 const MAX_ZOOM = 4
@@ -107,6 +108,11 @@ export function RevealPlayground() {
   const loadPreset = React.useCallback(
     async (preset: (typeof REVEAL_PRESETS)[number]) => {
       pageSound()
+      trackToolUsed({
+        tool_name: 'reveal',
+        action: 'configured',
+        config: { preset: preset.id, name: preset.name },
+      })
       setBaseSrc(preset.base.url)
       setRevealSrc(preset.reveal.url)
       setBaseName(preset.base.name)
@@ -424,7 +430,14 @@ export function RevealPlayground() {
           loading={loading}
           isRecording={engine.isRecording}
           recordSecondsLeft={engine.recordSecondsLeft}
-          onStartRecording={(d) => void engine.startRecording(d)}
+          onStartRecording={(d) => {
+            trackToolUsed({
+              tool_name: 'reveal',
+              action: 'exported',
+              config: { duration: d },
+            })
+            void engine.startRecording(d)
+          }}
           onCancelRecording={engine.cancelRecording}
         />
       }

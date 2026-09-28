@@ -23,6 +23,8 @@ export interface PreviewContentProps {
   registryError?: boolean
   reloadKey?: number | string
   className?: string
+  previewClassName?: string
+  align?: 'start' | 'center' | 'end'
   externalUrl?: string
 }
 
@@ -41,9 +43,14 @@ export function PreviewContent({
   registryError = false,
   reloadKey,
   className,
+  previewClassName,
+  align,
   externalUrl,
 }: PreviewContentProps) {
   const isContained = getEffectiveContained(contained, container, name, componentGroup)
+  const isStart = align === 'start' || previewClassName?.includes('items-start') || className?.includes('items-start')
+  const isEnd = align === 'end' || previewClassName?.includes('items-end') || className?.includes('items-end')
+  const alignmentClass = isStart ? 'items-start' : isEnd ? 'items-end' : 'items-center'
 
   const resolvedPreviewName = previewName || name
 
@@ -66,7 +73,8 @@ export function PreviewContent({
         key={reloadKey}
         data-slot="preview-viewport"
         className={cn(
-          'flex size-full min-h-0 min-w-0 items-center justify-center',
+          'flex size-full min-h-0 min-w-0 justify-center',
+          alignmentClass,
           isContained ? 'p-4 sm:p-8' : 'p-0',
           className,
         )}
@@ -74,8 +82,10 @@ export function PreviewContent({
         <div
           data-slot="preview"
           className={cn(
-            'flex size-full min-h-0 min-w-0 items-center justify-center *:place-content-center *:justify-center ',
+            'flex size-full min-h-0 min-w-0 justify-center',
+            alignmentClass,
             isContained && 'w-full max-w-72',
+            previewClassName,
           )}
         >
           <Iframe
@@ -95,7 +105,8 @@ export function PreviewContent({
       key={reloadKey}
       data-slot="preview-viewport"
       className={cn(
-        'flex size-full min-h-[inherit] items-center justify-center',
+        'flex size-full min-h-[inherit] justify-center',
+        alignmentClass,
         isContained ? 'p-4 sm:p-8' : 'p-0 overflow-y-auto overflow-x-hidden',
         themeOverride === 'dark'
           ? 'force-dark dark bg-background text-foreground'
@@ -108,8 +119,10 @@ export function PreviewContent({
       <div
         data-slot="preview"
         className={cn(
-          'preview flex justify-center items-center *:place-content-center *:justify-center',
-          isContained ? 'size-full max-w-72' : 'size-full',
+          'preview flex justify-center',
+          alignmentClass,
+          isContained ? 'size-full max-w-72' : 'size-full min-h-full',
+          previewClassName,
         )}
       >
         {Component ? (

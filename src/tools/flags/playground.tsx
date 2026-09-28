@@ -23,6 +23,7 @@ import { ResourceStudio } from '@/tools/components/shared/layout/studio'
 import { ResourceToolbar, type ResourceToolbarConfig } from '@/tools/components/shared/layout/toolbar'
 import { useResourceSidebars } from '@/tools/components/shared/layout/viewport'
 import { TOOL_OUTBOUND } from '@/tools/shared/links'
+import { trackToolUsed } from '@/lib/analytics/posthog'
 
 export function FlagPlayground({
   initialShape,
@@ -144,6 +145,11 @@ export function FlagPlayground({
             pool={visible}
             onSelect={(selectedCode) => {
               bloomSound()
+              trackToolUsed({
+                tool_name: 'flags',
+                action: 'selected',
+                config: { code: selectedCode, mode, shape: effectiveShape },
+              })
               setCode(selectedCode)
               setIsModalOpen(true)
             }}

@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react'
 import { IconBrandFigma, IconBrandGithub, IconPuzzle } from '@tabler/icons-react'
 import { InlineInstallBar } from '@/components/docs/installation/inline-install-bar'
-import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Button } from '@/registry/components/button/button-squircle'
 import { Group } from '@/registry/primitives/group'
 import type { ToolOutboundLinks } from '@/tools/shared/links'
 

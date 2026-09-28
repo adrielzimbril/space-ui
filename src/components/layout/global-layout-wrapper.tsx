@@ -1,17 +1,17 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
-import { ToastProvider, AnchoredToastProvider } from '@/registry/primitives/toast'
+import { FloatNav } from '@/components/layout/float-nav'
 import { SiteHeader } from '@/components/layout/site-header'
-import { SoundProvider } from '@/components/providers/sound-provider'
-import { PackageManagerProvider } from '@/components/providers/package-manager-provider'
 import { BrandColorProvider } from '@/components/providers/brand-color-provider'
 import { BundleProvider } from '@/components/providers/bundle-provider'
-import { LayoutModeProvider, useLayoutMode, Mode, type LayoutMode } from '@/components/providers/layout-mode-provider'
-import { SquircleProvider } from '@/components/providers/squircle-provider'
-import { FloatNav } from '@/components/layout/float-nav'
-import { ThemeLockProvider } from '@/components/providers/theme-lock-provider'
 import { FloatNavProvider, useFloatNavRequested } from '@/components/providers/float-nav-provider'
+import { LayoutModeProvider, Mode, useLayoutMode, type LayoutMode } from '@/components/providers/layout-mode-provider'
+import { PackageManagerProvider } from '@/components/providers/package-manager-provider'
+import { SoundProvider } from '@/components/providers/sound-provider'
+import { SquircleProvider } from '@/components/providers/squircle-provider'
+import { ThemeLockProvider } from '@/components/providers/theme-lock-provider'
+import { AnchoredToastProvider, ToastProvider } from '@/registry/primitives/toast'
+import { usePathname } from 'next/navigation'
 
 function GlobalLayoutContent({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
@@ -25,6 +25,13 @@ function GlobalLayoutContent({ children }: { children: React.ReactNode }) {
   const isMarketing =
     marketingRoutes.includes(pathname) || marketingStartsWithRoutes.some((route) => pathname.startsWith(route))
 
+  const isInteractionsSubpage =
+    (pathname.startsWith('/interactions/') && pathname !== '/interactions/') ||
+    (pathname.startsWith('/library/interactions/') && pathname !== '/library/interactions/') ||
+    (pathname.startsWith('/ui-kit/interactions/') && pathname !== '/ui-kit/interactions/')
+
+  const floatNavClass = isMarketing || isInteractionsSubpage ? 'bottom-6' : undefined
+
   if (isImmersive) {
     return <>{children}</>
   }
@@ -36,7 +43,7 @@ function GlobalLayoutContent({ children }: { children: React.ReactNode }) {
     return (
       <>
         {children}
-        {toolWantsFloatNav && <FloatNav />}
+        {toolWantsFloatNav && <FloatNav className="bottom-6" />}
       </>
     )
   }
@@ -55,7 +62,7 @@ function GlobalLayoutContent({ children }: { children: React.ReactNode }) {
     return (
       <>
         {children}
-        <FloatNav />
+        <FloatNav className={floatNavClass} />
       </>
     )
   }
@@ -65,7 +72,7 @@ function GlobalLayoutContent({ children }: { children: React.ReactNode }) {
       <SiteHeader />
       {children}
       {/* <SiteFooter /> */}
-      <FloatNav />
+      <FloatNav className={floatNavClass} />
     </>
   )
 }

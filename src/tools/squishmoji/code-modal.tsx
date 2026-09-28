@@ -16,6 +16,7 @@ import { Select, SelectItem, SelectPopup, SelectTrigger, SelectValue } from '@/r
 import { exportRaster, exportSvgMarkup } from '@/tools/components/shared/avatar/export/raster'
 import { exportToVideoAuto } from '@/tools/components/shared/avatar/export/squish-video'
 import { ResourceExportModal, type ExportFormat } from '@/tools/components/shared/layout/export-modal'
+import { trackToolUsed } from '@/lib/analytics/posthog'
 
 export interface SquishmojiModalTarget {
   seed: string
@@ -167,6 +168,17 @@ export function SquishmojiCodeModal({
       onDownload={() => {
         const filename = `squishmoji-${seed}`
         const label = exportFormat === 'apng' ? 'APNG' : exportFormat.toUpperCase()
+        trackToolUsed({
+          tool_name: 'squishmoji',
+          action: 'downloaded',
+          config: {
+            seed,
+            shape: config.shape,
+            expression: config.expression,
+            format: exportFormat,
+            size,
+          },
+        })
         void (async () => {
           toastManager.add({ id: 'squish-export', type: 'loading', title: `Exporting ${label}…` })
           try {

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
-import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Button } from '@/registry/components/button/button-squircle'
 import { DocsPager } from '@/components/docs/layout/docs-pager'
 import { siteConfig } from '@/config/space-config'
 import { TypeTable } from '@/components/docs/mdx/type-table'

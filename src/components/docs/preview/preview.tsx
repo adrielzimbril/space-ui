@@ -1,50 +1,52 @@
 'use client'
 
+import registryMeta from '@/__registry__/client-meta.json'
 import { getRegistryComponentGroup } from '@/__registry__/components'
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/registry/primitives/tabs'
-import { Button } from '@/registry/primitives/button'
-import { cn } from '@/registry/lib/utils'
-import React, { Suspense, useEffect, useMemo, useState, useRef } from 'react'
-import { usePreviewTheme } from '@/components/docs/preview/hooks/use-preview-theme'
 import { index } from '@/__registry__/index'
-import { motion, AnimatePresence } from 'motion/react'
-import dynamic from 'next/dynamic'
+import { usePreviewTheme } from '@/components/docs/preview/hooks/use-preview-theme'
+import { useRegistryEntry } from '@/components/docs/preview/hooks/use-registry-entry'
+import { type Binds, Tweakpane } from '@/components/docs/preview/tweakpane'
+import { prettify, useBundle } from '@/components/providers/bundle-provider'
+import { useLayoutMode } from '@/components/providers/layout-mode-provider'
+import { useProAccess } from '@/components/providers/pro-access-provider'
+import { bloomSound } from '@/components/providers/sound-provider'
 import { PreviewLoading } from '@/components/shared/preview-loading'
+import { getEffectiveContained } from '@/config/preview-config'
+import {
+  trackBlockViewed,
+  trackComponentCodeCopied,
+  trackComponentPreviewInteracted,
+  trackComponentTabSwitched,
+  trackComponentViewed,
+  trackPaywallHit,
+  trackTemplatePreviewOpened,
+  trackTemplateViewed,
+} from '@/lib/analytics/posthog'
+import { formatCodeForDisplay } from '@/lib/install-command'
+import { CopyButton } from '@/registry/components/spaceui/copy'
+import { LiquidBorder } from '@/registry/components/spaceui/liquid-metal-border'
+import { ModeSwitcher } from '@/registry/components/spaceui/mode-switcher'
+import { useIsMobile } from '@/registry/hooks/browser/use-media-query'
+import { cn } from '@/registry/lib/utils'
+import { Button } from '@/registry/primitives/button'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/registry/primitives/tabs'
+import {
+  IconAdjustmentsHorizontal,
+  IconExternalLink,
+  IconLock,
+  IconMaximize,
+  IconPackage,
+  IconRotateClockwise,
+} from '@tabler/icons-react'
+import dynamic from 'next/dynamic'
+import { usePathname } from 'next/navigation'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
+import { PreviewContent } from './preview-content'
+import { ShowcaseCard } from './showcase-card'
+import { ProSplitPlaceholder } from './pro-split-placeholder'
 const ShikiRenderer = dynamic(() => import('@/components/docs/code/shiki-renderer').then((m) => m.ShikiRenderer), {
   loading: () => <PreviewLoading className="h-48" />,
 })
-import ReactIcon from '@/registry/icons/react-icon'
-import { type Binds, Tweakpane } from '@/components/docs/preview/tweakpane'
-import { useRegistryEntry } from '@/components/docs/preview/hooks/use-registry-entry'
-import { useIsMobile } from '@/registry/hooks/browser/use-media-query'
-import {
-  IconRotateClockwise,
-  IconExternalLink,
-  IconAdjustmentsHorizontal,
-  IconMaximize,
-  IconPackage,
-  IconSparkles,
-  IconLayersIntersect,
-  IconComponents,
-  IconAtom,
-  IconBox,
-  IconTerminal2,
-  IconRocket,
-  IconGalaxy,
-} from '@tabler/icons-react'
-import { CopyButton } from '@/registry/components/spaceui/copy'
-import { bloomSound } from '@/components/providers/sound-provider'
-import { formatCodeForDisplay } from '@/lib/install-command'
-import { useBundle, prettify } from '@/components/providers/bundle-provider'
-import { useLayoutMode } from '@/components/providers/layout-mode-provider'
-import { getEffectiveContained } from '@/config/preview-config'
-import { ShowcaseCard } from './showcase-card'
-import { PreviewContent } from './preview-content'
-import { ModeSwitcher } from '@/registry/components/spaceui/mode-switcher'
-import registryMeta from '@/__registry__/client-meta.json'
-import { usePathname } from 'next/navigation'
-import { ProSplitPlaceholder } from './pro-split-placeholder'
-import { useProAccess } from '@/components/providers/pro-access-provider'
 
 export interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string
@@ -59,6 +61,8 @@ export interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivEleme
   contained?: boolean
   container?: boolean
   isPro?: boolean
+  align?: 'start' | 'center' | 'end'
+  previewClassName?: string
 }
 
 function flattenFirstLevel(input?: Record<string, Record<string, unknown>> | null): Record<string, unknown> {
@@ -90,6 +94,8 @@ function unwrapValues(obj: Record<string, any>): Record<string, any> {
 export function ComponentPreview({
   name,
   className,
+  previewClassName,
+  align,
   iframe,
   bigScreen = false,
   title,
@@ -125,6 +131,8 @@ export function ComponentPreview({
         allowCopy={allowCopy}
         contained={effectiveContained}
         className={className}
+        align={align}
+        previewClassName={previewClassName}
         {...props}
       >
         {children}
@@ -230,6 +238,84 @@ export function ComponentPreview({
 
   const isEffectivelySelected = activePreview ? activePreview.name === name : isSplit
   const [tab, setTab] = useState<'preview' | 'code'>('preview')
+  const containerRef = useRef<HTMLDivElement>(null)
+  const tabEnterTimeRef = useRef<number>(Date.now())
+
+  // Viewport visibility & duration tracking
+  useEffect(() => {
+    const el = containerRef.current
+    if (!el || typeof IntersectionObserver === 'undefined') return
+
+    let enterTime: number | null = null
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            enterTime = Date.now()
+          } else if (enterTime) {
+            const duration = Date.now() - enterTime
+            if (duration >= 500) {
+              if (isBlock) {
+                trackBlockViewed({
+                  block_name: name,
+                  block_category: cleanGroup || 'block',
+                  is_pro: isPro,
+                })
+              } else if (name.startsWith('template-')) {
+                trackTemplateViewed({
+                  template_name: name,
+                  template_category: cleanGroup || 'template',
+                  is_pro: isPro,
+                  time_on_page_ms: duration,
+                })
+              } else {
+                trackComponentViewed({
+                  component_name: name,
+                  is_pro: isPro,
+                  view_duration_ms: duration,
+                  source_page: pathname || '',
+                })
+              }
+            }
+            enterTime = null
+          }
+        }
+      },
+      { threshold: 0.3 },
+    )
+
+    observer.observe(el)
+    return () => {
+      if (enterTime) {
+        const duration = Date.now() - enterTime
+        if (duration >= 500) {
+          trackComponentViewed({
+            component_name: name,
+            is_pro: isPro,
+            view_duration_ms: duration,
+            source_page: pathname || '',
+          })
+        }
+      }
+      observer.disconnect()
+    }
+  }, [name, isPro, isBlock, cleanGroup, pathname])
+
+  const handleTabChange = (nextTab: 'preview' | 'code') => {
+    if (nextTab !== tab) {
+      const timeBeforeSwitch = Date.now() - tabEnterTimeRef.current
+      trackComponentTabSwitched({
+        component_name: name,
+        from_tab: tab,
+        to_tab: nextTab,
+        is_pro: isPro,
+        time_before_switch_ms: timeBeforeSwitch,
+      })
+      tabEnterTimeRef.current = Date.now()
+      setTab(nextTab)
+    }
+  }
 
   useEffect(() => {
     if (!isSplit) {
@@ -240,6 +326,11 @@ export function ComponentPreview({
   const effectiveRestart = restart || Boolean(binds)
 
   const handleReset = () => {
+    trackComponentPreviewInteracted({
+      component_name: name,
+      interaction_type: 'reset',
+      is_pro: isPro,
+    })
     setKey((prev) => prev + 1)
     const demoProps = (Component as any)?.demoProps ?? entry?.meta?.demoProps ?? {}
     if (Object.keys(demoProps).length > 0) {
@@ -265,6 +356,8 @@ export function ComponentPreview({
         contained: effectiveContained,
         componentGroup,
         bigScreen,
+        align,
+        previewClassName,
       })
     }
   }, [
@@ -283,6 +376,8 @@ export function ComponentPreview({
     effectiveContained,
     componentGroup,
     bigScreen,
+    align,
+    previewClassName,
     setActivePreview,
   ])
 
@@ -303,6 +398,8 @@ export function ComponentPreview({
         contained: effectiveContained,
         componentGroup,
         bigScreen,
+        align,
+        previewClassName,
       })
     }
   }, [
@@ -321,14 +418,16 @@ export function ComponentPreview({
     effectiveContained,
     componentGroup,
     bigScreen,
+    align,
+    previewClassName,
     registerDefaultPreview,
   ])
 
   const showToolbar = (effectiveRestart || effectiveOpen || Boolean(binds)) && !(isSplit && isEffectivelySelected)
 
   return (
-    <div className={cn('rounded-2xl bg-muted w-full p-2 mt-5.5 not-prose', className)} {...props}>
-      <Tabs value={tab} onValueChange={(v) => setTab(v as 'preview' | 'code')} className="gap-0">
+    <div ref={containerRef} className={cn('rounded-2xl bg-muted w-full p-2 mt-5.5 not-prose', className)} {...props}>
+      <Tabs value={tab} onValueChange={(v) => handleTabChange(v as 'preview' | 'code')} className="gap-0">
         <div className="flex flex-wrap items-center justify-between gap-3 px-3 pb-1 pt-1">
           <div className="flex items-center gap-2">
             {!isLocked && (
@@ -343,7 +442,7 @@ export function ComponentPreview({
                   value="preview"
                   onClick={() => {
                     bloomSound()
-                    setTab('preview')
+                    handleTabChange('preview')
                   }}
                   className="relative z-10 px-2.5 py-1.5 text-xs font-semibold text-muted-foreground hover:text-foreground data-active:text-foreground outline-none cursor-pointer transition-all duration-300 data-active:bg-muted"
                 >
@@ -353,7 +452,7 @@ export function ComponentPreview({
                   value="code"
                   onClick={() => {
                     bloomSound()
-                    setTab('code')
+                    handleTabChange('code')
                   }}
                   className="relative z-10 px-2.5 py-1.5 text-xs font-semibold text-muted-foreground hover:text-foreground data-active:text-foreground outline-none cursor-pointer transition-all duration-300 data-active:bg-muted"
                 >
@@ -420,14 +519,52 @@ export function ComponentPreview({
                 enableTransition={false}
               />
             )}
-            {allowCopy && !isLocked && code && (
-              <CopyButton
-                content={code}
-                variant="ghost"
-                size="lg"
-                className="rounded-md bg-background hover:bg-background text-muted-foreground hover:text-foreground cursor-pointer shrink-0 transition-all duration-300 active:scale-[0.96]"
-              />
-            )}
+            {allowCopy &&
+              (!isLocked && code ? (
+                <CopyButton
+                  content={code}
+                  variant="ghost"
+                  size="lg"
+                  onCopiedChange={(copied) => {
+                    if (copied) {
+                      trackComponentCodeCopied({
+                        component_name: name,
+                        component_category: cleanGroup || 'component',
+                        tab: tab,
+                        is_pro: isPro,
+                        copy_type: 'full_code',
+                      })
+                    }
+                  }}
+                  className="rounded-md bg-background hover:bg-background text-muted-foreground hover:text-foreground cursor-pointer shrink-0 transition-all duration-300 active:scale-[0.96]"
+                />
+              ) : isLocked ? (
+                <LiquidBorder
+                  preset="chrome"
+                  className="inline-flex size-10 sm:size-9 [corner-shape:superellipse(1.25)] rounded-lg p-0.625 shrink-0"
+                >
+                  <Button
+                    size="icon"
+                    variant="secondary"
+                    onClick={() => {
+                      bloomSound()
+                      trackPaywallHit({
+                        component_name: name,
+                        component_category: cleanGroup || 'component',
+                        is_pro: true,
+                        trigger: 'copy_button',
+                        user_plan: hasProAccess ? 'pro' : 'free',
+                      })
+                      window.location.href = '/pricing'
+                    }}
+                    className="bg-background! squircle rounded-md cursor-pointer text-muted-foreground hover:text-foreground"
+                    title="Pro component — View plans to unlock"
+                    aria-label="Pro component — View plans to unlock"
+                  >
+                    <IconLock className="size-3.5" />
+                  </Button>
+                </LiquidBorder>
+              ) : null)}
           </div>
         </div>
 
@@ -435,7 +572,7 @@ export function ComponentPreview({
           value="preview"
           className="rounded-[0.875rem] bg-background outline-none mt-2 relative overflow-hidden"
         >
-          <div className="flex items-center justify-center flex-col md:flex-row min-h-105 relative">
+          <div className="flex items-center justify-center flex-col md:flex-row min-h-105 max-h-162 relative">
             <div className="relative size-full flex-1 min-w-0 h-[stretch] flex items-center justify-center">
               {/* Floating controls in top-right only if enabled via props */}
               {showToolbar && (
@@ -458,7 +595,13 @@ export function ComponentPreview({
                     <Button
                       size="icon-xs"
                       variant="ghost"
-                      onClick={() => window.open(`/registry/view/${previewName}`, '_blank')}
+                      onClick={() => {
+                        trackTemplatePreviewOpened({
+                          template_name: name,
+                          from_page: pathname || '',
+                        })
+                        window.open(`/registry/view/${previewName}`, '_blank')
+                      }}
                       className="rounded-sm text-muted-foreground hover:bg-background hover:text-foreground transition-colors cursor-pointer"
                       title="Open in new window"
                       aria-label="Open in new window"
@@ -473,6 +616,11 @@ export function ComponentPreview({
                       variant="ghost"
                       onClick={(e) => {
                         e.stopPropagation()
+                        trackComponentPreviewInteracted({
+                          component_name: name,
+                          interaction_type: 'tweak',
+                          is_pro: isPro,
+                        })
                         handleActivate()
                         setActiveTweakName((prev) => (prev === name ? null : name))
                       }}
@@ -506,6 +654,8 @@ export function ComponentPreview({
                   themeOverride={themeOverride}
                   registryError={Boolean(registryError)}
                   reloadKey={key}
+                  align={align}
+                  previewClassName={previewClassName ?? (className?.includes('items-') ? className : undefined)}
                 />
               )}
             </div>

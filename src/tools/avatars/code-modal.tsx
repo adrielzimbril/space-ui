@@ -5,9 +5,10 @@ import { IconExternalLink } from '@tabler/icons-react'
 import { createAvatar, type AvatarEffect, type AvatarVariant } from '@usespaceui/avatars'
 import { Avatar } from '@usespaceui/avatars/react'
 import { bloomSound } from '@/components/providers/sound-provider'
-import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Button } from '@/registry/components/button/button-squircle'
 import { Select, SelectItem, SelectPopup, SelectTrigger, SelectValue } from '@/registry/primitives/select'
 import { ResourceExportModal, type ExportFormat } from '@/tools/components/shared/layout/export-modal'
+import { trackToolUsed } from '@/lib/analytics/posthog'
 
 const AVATAR_API_BASE_URL = 'https://avatars.spaceui.one'
 
@@ -243,8 +244,21 @@ export function AvatarCodeModal({
             if (exportFormat === 'svg') {
               downloadBlob(new Blob([downloadSvg], { type: 'image/svg+xml;charset=utf-8' }), filename)
             } else {
-              downloadBlob(await rasterizeSvg(downloadSvg, exportFormat, actualExportSize), filename)
+              downloadBlob(
+                await rasterizeSvg(downloadSvg, exportFormat === 'webp' ? 'webp' : 'png', actualExportSize),
+                filename,
+              )
             }
+            trackToolUsed({
+              tool_name: 'avatars',
+              action: 'downloaded',
+              config: {
+                variant: visibleTarget.variant,
+                format: exportFormat,
+                size: actualExportSize,
+                circle: exportCircle,
+              },
+            })
             bloomSound()
           } catch {
             /* ignore rasterize errors */

@@ -1,7 +1,7 @@
 'use client'
 
 import { tickSound, toggleSound } from '@/components/providers/sound-provider'
-import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Button } from '@/registry/components/button/button-squircle'
 import { cn } from '@/registry/lib/utils'
 import { Badge } from '@/registry/primitives/badge'
 import { ScrollArea } from '@/registry/primitives/scroll-area'

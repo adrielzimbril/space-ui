@@ -4,13 +4,13 @@ import { InlineInstallBar } from '@/components/docs/installation/inline-install-
 import { HeroAvatar } from '@/components/marketing/shared/hero'
 import { HeroBadgeText } from '@/components/marketing/shared/hero-badge-text'
 import { siteConfig } from '@/config/space-config'
-import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Button } from '@/registry/components/button/button-squircle'
 import { LiquidBorder } from '@/registry/components/spaceui/liquid-metal-border'
 import { StatusBadge } from '@/registry/components/spaceui/status-badge'
 import { Link } from '@/registry/primitives/link'
 import { IconArrowUpRight } from '@tabler/icons-react'
 import { REGISTRY_STATS } from '@/lib/pricing-config'
-import { PixelFillButton } from '@/registry/components/spaceui/pixel-fill-button'
+import { PixelFillButton } from '@/registry/components/button/pixel-fill-button'
 
 const HERO_BADGE_PHRASES = [
   'Built for Next.js & Base UI 🚀',

@@ -18,21 +18,59 @@ export interface ShikiRendererProps {
   overscrollContain?: boolean
 }
 
-export function ShikiRenderer({
-  code,
-  lang,
-  className,
-  lineNumbers = true,
-  scrollable = true,
-  scrollbarGutter = true,
-  showScrollbar = true,
-  scrollFade = false,
-  overscrollContain = false,
-}: ShikiRendererProps) {
-  const isLoading = !code
+class ShikiErrorBoundary extends React.Component<
+  { fallback: React.ReactNode; children: React.ReactNode },
+  { hasError: boolean }
+> {
+  constructor(props: { fallback: React.ReactNode; children: React.ReactNode }) {
+    super(props)
+    this.state = { hasError: false }
+  }
 
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  override render() {
+    if (this.state.hasError) {
+      return this.props.fallback
+    }
+    return this.props.children
+  }
+}
+
+function CodeFallback({ code, lineNumbers }: { code: string; lineNumbers: boolean }) {
+  if (!lineNumbers) {
+    return (
+      <pre className="w-max min-w-full text-[.8125rem] font-mono leading-6 p-0 m-0 bg-transparent! border-none!">
+        <code className="w-max min-w-full block text-[.8125rem] font-mono text-muted-foreground">{code}</code>
+      </pre>
+    )
+  }
+
+  const lines = code.split('\n')
+  return (
+    <pre className="w-max min-w-full text-[.8125rem] font-mono leading-6 p-0 m-0 bg-transparent! border-none!">
+      <code className="grid w-max min-w-full text-[.8125rem] font-mono">
+        {lines.map((line, index) => (
+          <div key={index} className="flex items-center leading-6 w-auto min-w-auto">
+            <span
+              className="sticky left-0 select-none content-center bg-background pr-4 text-right text-xs font-mono text-muted-foreground/35 w-9 h-full z-1 shrink-0 tabular-nums nd-copy-ignore"
+              data-slot="code-line"
+            >
+              {index + 1}
+            </span>
+            <span className="flex-1 min-w-0 pr-4 text-muted-foreground">{line || ' '}</span>
+          </div>
+        ))}
+      </code>
+    </pre>
+  )
+}
+
+function ShikiHighlight({ code, lang, lineNumbers }: { code: string; lang: string; lineNumbers: boolean }) {
   const rendered = useShiki(
-    isLoading ? '' : code,
+    code,
     {
       lang,
       components: {
@@ -77,12 +115,32 @@ export function ShikiRenderer({
     [lang, code, lineNumbers],
   )
 
-  if (isLoading) {
+  return rendered
+}
+
+export function ShikiRenderer({
+  code,
+  lang,
+  className,
+  lineNumbers = true,
+  scrollable = true,
+  scrollbarGutter = true,
+  showScrollbar = true,
+  scrollFade = false,
+  overscrollContain = false,
+}: ShikiRendererProps) {
+  if (!code) {
     return <PreviewLoading className={cn('h-48', className)} />
   }
 
-  const content = rendered || (
-    <pre className="font-mono text-[.8125rem] p-0 m-0 leading-6 text-muted-foreground">{code}</pre>
+  const fallback = <CodeFallback code={code} lineNumbers={lineNumbers} />
+
+  const content = (
+    <ShikiErrorBoundary fallback={fallback}>
+      <React.Suspense fallback={fallback}>
+        <ShikiHighlight code={code} lang={lang} lineNumbers={lineNumbers} />
+      </React.Suspense>
+    </ShikiErrorBoundary>
   )
 
   if (!scrollable) {

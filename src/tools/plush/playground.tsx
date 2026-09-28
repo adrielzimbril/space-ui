@@ -3,7 +3,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { IconSparkles, IconUpload, IconHandFinger, IconCamera, IconFocus2 } from '@tabler/icons-react'
 import { ToolbarButton } from '@/components/playground/playground-toolbar-button'
-import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Button } from '@/registry/components/button/button-squircle'
 import { Badge } from '@/registry/primitives/badge'
 import {
   confirmSound,
@@ -27,6 +27,7 @@ import { logger } from '@/registry/utils/logger'
 import { DEFAULT_CONFIG, DEFAULT_PRESET, PLUSH_PRESETS } from './presets'
 import type { PlushConfig, PlushPreset, ArtworkData } from './types'
 import posthog from 'posthog-js'
+import { trackToolUsed } from '@/lib/analytics/posthog'
 
 export function PlushPlayground() {
   const [config, setConfig] = useState<PlushConfig>(DEFAULT_CONFIG)
@@ -227,6 +228,15 @@ export function PlushPlayground() {
       posthog.capture('plush_snapshot_exported', {
         snapshot_view: frontView ? 'front' : '3d',
         artwork_source: activePreset ? 'preset' : 'custom',
+      })
+      trackToolUsed({
+        tool_name: 'plush',
+        action: 'downloaded',
+        config: {
+          snapshot_view: frontView ? 'front' : '3d',
+          artwork_source: activePreset ? 'preset' : 'custom',
+          preset_id: activePreset?.id,
+        },
       })
       sparkleSound()
     },

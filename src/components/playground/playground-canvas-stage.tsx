@@ -316,6 +316,8 @@ export function PlaygroundCanvasStage({
                 themeOverride={themeOverride}
                 reloadKey={reloadKey}
                 externalUrl={activePreview.externalUrl}
+                align={activePreview.align}
+                previewClassName={activePreview.previewClassName}
               />
             )}
           </div>

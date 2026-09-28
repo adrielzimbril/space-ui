@@ -7,10 +7,11 @@ import { IconBrandGithub, IconArrowUpRight, IconLock } from '@tabler/icons-react
 import { Frame, FrameFooter, FrameTitle } from '@/registry/primitives/frame'
 import { Card, CardPanel } from '@/registry/primitives/card'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
-import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Button } from '@/registry/components/button/button-squircle'
 import { LiquidBorder } from '@/registry/components/spaceui/liquid-metal-border'
 import { ProBadge } from '@/components/shared/pro-badge'
 import { useInView } from '@/registry/hooks/animation/use-in-view'
+import { trackShowcasePreviewOpened, trackShowcaseGithubClicked, trackPaywallHit } from '@/lib/analytics/posthog'
 import type { ProjectItem } from '@/types/project'
 
 interface ProjectCardProps {
@@ -26,6 +27,36 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
   })
 
   const isContentActive = priority || inView
+
+  const handlePreviewClick = () => {
+    if (project.url) {
+      trackShowcasePreviewOpened({
+        project_id: project.name || project.title,
+        project_title: project.title,
+        url: project.url,
+        is_pro: Boolean(project.isPro),
+      })
+    }
+  }
+
+  const handleGithubClick = () => {
+    if (project.repo_url) {
+      trackShowcaseGithubClicked({
+        project_id: project.name || project.title,
+        project_title: project.title,
+        repo_url: project.repo_url,
+      })
+    }
+  }
+
+  const handlePaywallClick = () => {
+    trackPaywallHit({
+      component_name: project.title,
+      component_category: 'showcase',
+      is_pro: true,
+      trigger: 'showcase_card',
+    })
+  }
 
   return (
     <div ref={containerRef} className="h-full [content-visibility:auto] [contain-intrinsic-size:auto_360px]">
@@ -64,6 +95,7 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
             {project.isPro ? (
               <Link
                 href="/pricing"
+                onClick={handlePaywallClick}
                 className="absolute inset-0 z-0 cursor-pointer"
                 aria-label={`View pricing for ${project.title}`}
               />
@@ -73,6 +105,7 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
                   href={project.url}
                   target="_blank"
                   rel="noreferrer noopener"
+                  onClick={handlePreviewClick}
                   className="absolute inset-0 z-0"
                   aria-label={`Preview ${project.title}`}
                 />
@@ -92,7 +125,7 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
               <Button
                 variant="default"
                 size="icon-xs"
-                render={<a href={project.url} target="_blank" rel="noreferrer noopener" />}
+                render={<a href={project.url} target="_blank" rel="noreferrer noopener" onClick={handlePreviewClick} />}
                 data-space-hover
                 title="Open live preview"
                 className="cursor-pointer"
@@ -105,7 +138,7 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
                 <Button
                   variant="secondary"
                   size="icon-xs"
-                  render={<Link href="/pricing" />}
+                  render={<Link href="/pricing" onClick={handlePaywallClick} />}
                   data-space-hover
                   title="Upgrade to Pro — View pricing"
                   className="cursor-pointer bg-muted! transition-transform duration-200 hover:scale-105 active:scale-95"
@@ -119,7 +152,14 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
                   <Button
                     variant="default"
                     size="icon-xs"
-                    render={<a href={project.repo_url} target="_blank" rel="noreferrer noopener" />}
+                    render={
+                      <a
+                        href={project.repo_url}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        onClick={handleGithubClick}
+                      />
+                    }
                     data-space-hover
                     title="GitHub Repository"
                     className="cursor-pointer"

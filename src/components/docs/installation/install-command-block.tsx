@@ -10,6 +10,7 @@ import { ShikiRenderer } from '@/components/docs/code/shiki-renderer'
 import { usePackageManager, type PackageManager } from '@/components/providers/package-manager-provider'
 import { bloomSound, slideSound } from '@/components/providers/sound-provider'
 import { getShadcnAddCommands, getPackageInstallCommands } from '@/lib/install-command'
+import { trackComponentInstallCopied } from '@/lib/analytics/posthog'
 
 export interface InstallCommandBlockProps extends React.HTMLAttributes<HTMLDivElement> {
   packages?: string | string[]
@@ -125,6 +126,15 @@ export function InstallCommandBlock({
                   content={resolvedCommands[pm]}
                   variant="ghost"
                   size="xs"
+                  onCopiedChange={(copied) => {
+                    if (copied) {
+                      trackComponentInstallCopied({
+                        component_name: packageList || 'component',
+                        package_manager: pm,
+                        is_pro: isShadcn,
+                      })
+                    }
+                  }}
                   className="absolute right-2 top-1/2 -translate-y-1/2 rounded-md bg-background hover:bg-background text-muted-foreground hover:text-foreground cursor-pointer shrink-0 hover:rounded-lg transition-all duration-300"
                 />
               </div>

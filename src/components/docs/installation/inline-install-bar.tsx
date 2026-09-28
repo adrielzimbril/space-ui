@@ -6,6 +6,7 @@ import { usePackageManager, type PackageManager } from '@/components/providers/p
 import { Select, SelectTrigger, SelectValue, SelectPopup, SelectItem } from '@/registry/primitives/select'
 import { CopyButton } from '@/registry/components/spaceui/copy'
 import { getShadcnAddCommands, getPackageInstallCommands, REGISTRY_NAMESPACE } from '@/lib/install-command'
+import { trackComponentInstallCopied } from '@/lib/analytics/posthog'
 import { cn } from '@/registry/lib/utils'
 import { ScrollArea } from '@/registry/primitives/scroll-area'
 
@@ -133,6 +134,15 @@ export function InlineInstallBar({
           content={command}
           variant="ghost"
           size="xs"
+          onCopiedChange={(copied) => {
+            if (copied) {
+              trackComponentInstallCopied({
+                component_name: rawPkg,
+                package_manager: manager,
+                is_pro: isShadcn,
+              })
+            }
+          }}
           className="size-7 shrink-0 [corner-shape:superellipse(1.25)] rounded-md bg-background hover:bg-background text-muted-foreground hover:text-foreground cursor-pointer transition-all duration-200"
         />
       </div>

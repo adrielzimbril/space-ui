@@ -10,7 +10,7 @@ import {
   IconPlayerPlay,
   IconRepeat,
 } from '@tabler/icons-react'
-import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Button } from '@/registry/components/button/button-squircle'
 import { ToolbarButton } from '@/components/playground/playground-toolbar-button'
 import { useFileUpload } from '@/registry/hooks/form/use-file-upload'
 import {

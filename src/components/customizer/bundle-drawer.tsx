@@ -25,6 +25,7 @@ import { useClipboard } from '@/registry/hooks/browser/use-clipboard'
 import { cn } from '@/registry/lib/utils'
 import { REGISTRY_NAMESPACE } from '@/lib/install-command'
 import { TextMorph } from 'torph/react'
+import { trackBundleDrawerOpened, trackBundleShareCopied } from '@/lib/analytics/posthog'
 
 export function BundleDrawer() {
   const { items, count, remove, clear, message } = useBundle()
@@ -42,11 +43,19 @@ export function BundleDrawer() {
   const handleCopyShare = async () => {
     if (!shareUrl) return
     bloomSound()
+    trackBundleShareCopied({ share_url: shareUrl, items_count: count })
     await copyShare(shareUrl)
   }
 
+  const handleOpenChange = (isOpen: boolean) => {
+    setOpen(isOpen)
+    if (isOpen) {
+      trackBundleDrawerOpened({ count, items: items.map((i) => i.slug) })
+    }
+  }
+
   return (
-    <Drawer open={open} onOpenChange={setOpen}>
+    <Drawer open={open} onOpenChange={handleOpenChange}>
       <DrawerTrigger
         render={
           <Button

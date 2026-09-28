@@ -3,7 +3,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import { IconCut, IconDownload, IconPhoto } from '@tabler/icons-react'
-import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Button } from '@/registry/components/button/button-squircle'
 import { Badge } from '@/registry/primitives/badge'
 import {
   bloomSound,
@@ -50,6 +50,7 @@ import {
 } from './split'
 import { DEFAULT_SEEDS } from '@/tools/shared/seeds'
 import posthog from 'posthog-js'
+import { trackToolUsed } from '@/lib/analytics/posthog'
 
 const DEFAULTS: SplitConfig = {
   cols: 3,
@@ -398,6 +399,16 @@ export function ImageSplitPlayground() {
         file_count: fileCount,
         output_format: cfg.format,
         column_count: cfg.cols,
+      })
+      trackToolUsed({
+        tool_name: 'imagesplit',
+        action: 'exported',
+        config: {
+          export_method: exportMethod,
+          file_count: fileCount,
+          output_format: cfg.format,
+          column_count: cfg.cols,
+        },
       })
     },
     [cfg.cols, cfg.format],

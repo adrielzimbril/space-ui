@@ -1,27 +1,24 @@
 'use client'
 
-import React from 'react'
-import { AnimatePresence, motion } from 'motion/react'
-import { useSoundToggle, useUiSound } from '@/components/providers/sound-provider'
-import { useLayoutMode, Mode } from '@/components/providers/layout-mode-provider'
-import { useThemeLock } from '@/components/providers/theme-lock-provider'
-import { IconVolume, IconVolumeOff, IconLayoutColumns, IconLayoutSidebarRight } from '@tabler/icons-react'
-import { Group } from '@/registry/primitives/group'
-import { Button } from '@/registry/primitives/button'
-import { MorphIcon } from '@/registry/components/spaceui/morph-icon'
-import { ModeSwitcher } from '@/registry/components/spaceui/mode-switcher'
+import { BundleDrawer } from '@/components/customizer/bundle-drawer'
 import { ColorPickerNav } from '@/components/customizer/color-picker-nav'
 import { PmNav } from '@/components/customizer/pm-nav'
-import { BundleDrawer } from '@/components/customizer/bundle-drawer'
-import { usePathname } from 'next/navigation'
+import { Mode, useLayoutMode } from '@/components/providers/layout-mode-provider'
+import { useSoundToggle, useUiSound } from '@/components/providers/sound-provider'
+import { useThemeLock } from '@/components/providers/theme-lock-provider'
 import { isMarketingRoute } from '@/config/preview-config'
+import { ModeSwitcher } from '@/registry/components/spaceui/mode-switcher'
+import { MorphIcon } from '@/registry/components/spaceui/morph-icon'
 import { cn } from '@/registry/lib/utils'
+import { Button } from '@/registry/primitives/button'
+import { Group } from '@/registry/primitives/group'
+import { IconLayoutColumns, IconLayoutSidebarRight, IconVolume, IconVolumeOff } from '@tabler/icons-react'
+import { AnimatePresence, motion } from 'motion/react'
+import { usePathname } from 'next/navigation'
 
 function SoundToggle() {
-  const { enabled, setEnabled, suppressed } = useSoundToggle()
+  const { enabled, setEnabled } = useSoundToggle()
   const { playSound } = useUiSound()
-
-  if (suppressed) return null
 
   const toggle = () => {
     const next = !enabled

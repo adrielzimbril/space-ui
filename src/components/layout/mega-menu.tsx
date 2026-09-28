@@ -503,7 +503,7 @@ export function MegaMenu({ className }: { className?: string }) {
           </NavigationMenuItem> */}
 
           {/* Pricing Link */}
-          <NavigationMenuItem value="pricing">
+          {/* <NavigationMenuItem value="pricing">
             <Link
               href="/pricing"
               className={cn(
@@ -517,7 +517,7 @@ export function MegaMenu({ className }: { className?: string }) {
               />
               Pricing
             </Link>
-          </NavigationMenuItem>
+          </NavigationMenuItem> */}
         </NavigationMenuList>
 
         {/* Base UI Animated Viewport & Positioner Portal */}

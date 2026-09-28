@@ -2,7 +2,7 @@
 
 import { openSound, pageSound, tapSound, tickSound, toggleSound } from '@/components/providers/sound-provider'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
-import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Button } from '@/registry/components/button/button-squircle'
 import { TickSlider } from '@/registry/components/spaceui/tick-slider'
 import { cn } from '@/registry/lib/utils'
 import { ScrollArea } from '@/registry/primitives/scroll-area'

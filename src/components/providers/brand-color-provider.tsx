@@ -3,6 +3,7 @@
 import React, { createContext, useContext, useEffect, useCallback, useMemo } from 'react'
 import { DEFAULT_COLOR_CODE } from '@/lib/theme-colors'
 import { useLocalStorage } from '@/registry/hooks/browser/use-local-storage'
+import { trackBrandPaletteChanged } from '@/lib/analytics/posthog'
 
 export interface BrandPalette {
   name: string
@@ -323,9 +324,10 @@ export function BrandColorProvider({ children }: { children: React.ReactNode }) 
   const setPalette = useCallback(
     (name: string) => {
       const found = BRAND_PALETTES.find((p) => p.name === name) || BRAND_PALETTES[0]
+      trackBrandPaletteChanged({ palette_name: found.name, previous_palette: activePalette.name })
       setPaletteName(found.name)
     },
-    [setPaletteName],
+    [setPaletteName, activePalette.name],
   )
 
   const resetPalette = useCallback(() => {

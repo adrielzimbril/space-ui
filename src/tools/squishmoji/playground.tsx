@@ -12,7 +12,7 @@ import {
 import { Squishmoji } from '@usespaceui/squishmoji/react'
 import { bloomSound } from '@/components/providers/sound-provider'
 import { toastManager } from '@/registry/primitives/toast'
-import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Button } from '@/registry/components/button/button-squircle'
 import { ResourceInstallCluster } from '@/tools/components/shared/layout/install-cluster'
 import { TOOL_OUTBOUND } from '@/tools/shared/links'
 import { ResourceGallery } from '@/tools/components/shared/layout/gallery'
@@ -36,6 +36,7 @@ import {
   type MotionFormat,
   type SequenceStep,
 } from '@/tools/components/shared/avatar/export/squish-video'
+import { trackToolUsed } from '@/lib/analytics/posthog'
 
 function captionFor(seed: string, shape: SquishShapeChoice, expression: SquishExpressionChoice) {
   return `${resolveShape(seed, shape)} · ${resolveExpression(seed, expression)}`
@@ -217,6 +218,11 @@ export function useSquishmojiStudio({
 
   const select = (seed: string) => {
     bloomSound()
+    trackToolUsed({
+      tool_name: 'squishmoji',
+      action: 'selected',
+      config: { seed, shape, expression },
+    })
     setSelectedSeed(seed)
   }
 

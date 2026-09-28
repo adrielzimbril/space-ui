@@ -7,9 +7,10 @@ import { getFlagMetadata } from './catalog'
 import { resolveFlagUrl, snippetFor } from './cdn'
 import type { FlagMode, FlagShape } from './types'
 import { bloomSound } from '@/components/providers/sound-provider'
-import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Button } from '@/registry/components/button/button-squircle'
 import { Select, SelectItem, SelectPopup, SelectTrigger, SelectValue } from '@/registry/primitives/select'
 import { ResourceExportModal, type ExportFormat } from '@/tools/components/shared/layout/export-modal'
+import { trackToolUsed } from '@/lib/analytics/posthog'
 
 type FlagModalTab = 'jsx' | 'html' | 'url' | 'svg'
 
@@ -244,6 +245,17 @@ export function FlagCodeModal({
       onExportFormatChange={setExportFormat}
       formats={['svg', 'png', 'webp']}
       onDownload={() => {
+        trackToolUsed({
+          tool_name: 'flags',
+          action: 'downloaded',
+          config: {
+            code: activeCode,
+            shape: resolvedShape,
+            format: exportFormat,
+            size: actualSize,
+            mode,
+          },
+        })
         void (async () => {
           try {
             const filename = `flag-${activeCode}-${resolvedShape}.${exportFormat}`
