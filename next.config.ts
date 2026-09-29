@@ -147,6 +147,36 @@ const config: NextConfig = {
         destination: '/tools/og-image',
         permanent: true,
       },
+      {
+        source: '/ir',
+        destination: '/tools/interaction-recorder',
+        permanent: true,
+      },
+      {
+        source: '/tools/ir',
+        destination: '/tools/interaction-recorder',
+        permanent: true,
+      },
+      {
+        source: '/mn',
+        destination: '/tools/motion',
+        permanent: true,
+      },
+      {
+        source: '/tools/mn',
+        destination: '/tools/motion',
+        permanent: true,
+      },
+      {
+        source: '/cr',
+        destination: '/tools/canvas-recorder',
+        permanent: true,
+      },
+      {
+        source: '/tools/cr',
+        destination: '/tools/canvas-recorder',
+        permanent: true,
+      },
       // All old /ui-kit/* URLs → /* (covers groups, sections, everything)
       {
         source: '/ui-kit/:path*',

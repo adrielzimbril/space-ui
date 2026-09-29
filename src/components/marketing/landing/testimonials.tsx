@@ -17,7 +17,7 @@ interface Testimonial {
   badge?: string
 }
 
-const TESTIMONIALS: Testimonial[] = [
+export const TESTIMONIALS: Testimonial[] = [
   {
     name: 'Swami Malode',
     handle: '@swamimalode',

@@ -12,7 +12,7 @@ import { IconArrowUpRight } from '@tabler/icons-react'
 import { REGISTRY_STATS } from '@/lib/pricing-config'
 import { PixelFillButton } from '@/registry/components/button/pixel-fill-button'
 
-const HERO_BADGE_PHRASES = [
+export const HERO_BADGE_PHRASES = [
   'Built for Next.js & Base UI 🚀',
   `${REGISTRY_STATS.components}+ production-ready components 🐼`,
   'New drops every week 🔥',

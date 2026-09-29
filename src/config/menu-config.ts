@@ -19,6 +19,7 @@ import {
   IconWand,
   IconUsers,
   IconCamera,
+  IconMovie,
 } from '@tabler/icons-react'
 import { DEFAULT_COLOR_CODE } from '@/lib/theme-colors'
 
@@ -230,6 +231,16 @@ export const megaMenuTools: ResourceItem[] = [
     upcoming: false,
     release: 'new',
     color: DEFAULT_COLOR_CODE.BLUE,
+  },
+  {
+    title: 'Motion',
+    label: 'motion',
+    description: 'Motion templates studio with real-time Canvas 2D engine & in-browser MP4 export.',
+    href: '/tools/motion',
+    icon: IconMovie,
+    upcoming: false,
+    release: 'new',
+    color: DEFAULT_COLOR_CODE.VIOLET,
   },
   {
     title: 'OG Image Generator',

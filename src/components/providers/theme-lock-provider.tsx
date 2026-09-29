@@ -12,6 +12,7 @@ export type RouteThemeConstraint = 'dark' | 'light' | null
  */
 export const THEME_LOCKED_ROUTES: Record<string, 'dark' | 'light'> = {
   '/showcase': 'dark',
+  '/tools/launch': 'light',
 }
 
 export function getRouteThemeConstraint(pathname?: string | null): RouteThemeConstraint {
