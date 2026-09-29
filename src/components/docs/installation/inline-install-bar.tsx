@@ -21,6 +21,8 @@ export interface InlineInstallBarProps extends React.HTMLAttributes<HTMLDivEleme
   packageName?: string
   isShadcn?: boolean
   commandOverride?: string | Partial<Record<PackageManager, string>>
+  /** Drives the copy button's copied state from outside (scripted demos); left alone, it tracks real clicks. */
+  copied?: boolean
 }
 
 function ShikiBashCode({ command }: { command: string }) {
@@ -59,6 +61,7 @@ export function InlineInstallBar({
   packageName,
   isShadcn: explicitIsShadcn,
   commandOverride,
+  copied,
   className,
   ...props
 }: InlineInstallBarProps) {
@@ -132,6 +135,7 @@ export function InlineInstallBar({
         </div>
         <CopyButton
           content={command}
+          copied={copied}
           variant="ghost"
           size="xs"
           onCopiedChange={(copied) => {
