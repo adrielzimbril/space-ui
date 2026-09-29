@@ -18,6 +18,7 @@ import {
   IconCut,
   IconWand,
   IconUsers,
+  IconCamera,
 } from '@tabler/icons-react'
 import { DEFAULT_COLOR_CODE } from '@/lib/theme-colors'
 
@@ -219,6 +220,16 @@ export const megaMenuTools: ResourceItem[] = [
     upcoming: false,
     release: 'new',
     color: DEFAULT_COLOR_CODE.RED,
+  },
+  {
+    title: 'Canvas Recorder',
+    label: 'canvas-recorder',
+    description: 'DOM element inspector, 4K screenshots & targeted video interactions.',
+    href: '/tools/canvas-recorder',
+    icon: IconCamera,
+    upcoming: false,
+    release: 'new',
+    color: DEFAULT_COLOR_CODE.BLUE,
   },
   {
     title: 'OG Image Generator',

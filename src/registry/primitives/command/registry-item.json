@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Command",
   "description": "Accessible Command primitive component for Space UI.",
-  "dependencies": ["@base-ui/react", "lucide-react"],
+  "dependencies": ["@base-ui/react", "lucide-react", "@usespaceui/squircle"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/primitives-autocomplete.json",

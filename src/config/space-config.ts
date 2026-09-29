@@ -44,12 +44,12 @@ export const siteConfig = {
   name: 'spaceui.one',
   appName: appInfo.appName,
   email: appInfo.email,
-  title: 'Space UI - Open-source design library for humans and AI',
+  title: 'Space UI - Ship Your Ideas Faster with Better UI',
   headline: 'Ship your ideas faster with better UI',
   description:
-    'An open-source design library built for humans and AI to create expressive, polished, and high-quality interfaces, helping you build better products, faster',
+    'Accelerate your product launch with crafted, interactive UI components. High-conversion blocks, fluid animations, templates, and production-ready tools for builders.',
   ogDescription:
-    'An open-source design library built for humans and AI to create expressive, polished, and high-quality interfaces, helping you build better products, faster',
+    'Turn your ideas into polished, high-converting products faster. A modern library of interactive React components, shaders, and tools designed to wow your users. Built for humans and modern AI workflows.',
   links: {
     docs: `${appInfo.site}/docs`,
     // github: `https://github.com/${appInfo.repoPath}/`,

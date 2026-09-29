@@ -12,5 +12,7 @@
       "type": "registry:lib",
       "target": "lib/next-image-url.ts"
     }
-  ]
+  ],
+  "createdAt": "2026-09-01",
+  "updatedAt": "2026-09-29"
 }

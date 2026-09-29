@@ -2,7 +2,7 @@ import { Badge } from '@/registry/primitives/badge'
 
 export default function Demo() {
   return (
-    <div className="flex flex-wrap items-center gap-2">
+    <div className="flex flex-wrap items-center justify-center gap-2">
       <Badge variant="outline">
         <span aria-hidden="true" className="size-1.5 rounded-full bg-emerald-500" />
         Paid

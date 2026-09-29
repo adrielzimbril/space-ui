@@ -98,6 +98,16 @@ const config: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/pro',
+        destination: '/pricing',
+        permanent: true,
+      },
+      {
+        source: '/pro/:path*',
+        destination: '/pricing',
+        permanent: true,
+      },
+      {
         source: '/resources',
         destination: '/tools',
         permanent: true,

@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Toggle",
   "description": "Accessible Toggle primitive component for Space UI.",
-  "dependencies": ["@base-ui/react", "class-variance-authority"],
+  "dependencies": ["@base-ui/react", "class-variance-authority", "@usespaceui/squircle"],
   "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
   "categories": ["toggle"],
   "files": [
