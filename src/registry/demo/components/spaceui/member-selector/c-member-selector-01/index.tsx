@@ -70,7 +70,7 @@ export default function Demo() {
   const [selectedIds, setSelectedIds] = React.useState<string[]>(['1', '2'])
 
   return (
-    <div className="flex min-h-87.5 w-full items-center justify-center p-6 sm:p-12">
+    <div className="flex w-full items-center justify-center p-6 sm:p-12">
       <div className="relative">
         <MemberSelector
           members={SAMPLE_MEMBERS}

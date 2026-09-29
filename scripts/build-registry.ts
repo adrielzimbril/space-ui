@@ -569,7 +569,11 @@ export const index: Record<string, any> = {`
     // Define the component path from the first file if exists and is a JS/TS component
     const firstFile = typeof item.files[0] === 'string' ? item.files[0] : item.files[0]?.path
     const isCodeComponent =
-      firstFile && /\.(?:tsx?|jsx?)$/.test(firstFile) && item.type !== 'registry:font' && item.type !== 'registry:file'
+      firstFile &&
+      /\.(?:tsx?|jsx?)$/.test(firstFile) &&
+      !firstFile.endsWith('.d.ts') &&
+      item.type !== 'registry:font' &&
+      item.type !== 'registry:file'
     const componentPath = isCodeComponent ? `@/${firstFile.replace(/^src\//, '')}` : ''
 
     // Read files and add content preserving newlines
