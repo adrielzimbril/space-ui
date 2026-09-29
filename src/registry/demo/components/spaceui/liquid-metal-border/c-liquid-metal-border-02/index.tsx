@@ -1,7 +1,7 @@
 'use client'
 
 import { LiquidBorder } from '@/registry/components/spaceui/liquid-metal-border'
-import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Button } from '@/registry/components/button/button-squircle'
 
 export default function Demo() {
   return (

@@ -33,4 +33,4 @@ export const ImageDark = React.forwardRef<HTMLImageElement, ImageDarkProps>(
 
 ImageDark.displayName = 'ImageDark'
 
-export { ImageDark as DarkImage, ImageDark as ThemedImage }
+export default ImageDark

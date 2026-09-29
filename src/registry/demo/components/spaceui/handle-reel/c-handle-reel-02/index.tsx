@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { HandleReel } from '@/registry/components/spaceui/handle-reel'
-import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Button } from '@/registry/components/button/button-squircle'
 import { IconRotateDot } from '@tabler/icons-react'
 
 const CREATIVE_ROLES = ['engineer', 'designer', 'architect', 'builder', 'founder', 'creator', 'developer', 'maker']

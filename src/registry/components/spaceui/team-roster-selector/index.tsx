@@ -6,8 +6,7 @@ import { IconCheck, IconUserPlus } from '@tabler/icons-react'
 import { Avatar } from '@usespaceui/avatars/react'
 import NumberFlow from '@number-flow/react'
 import { MorphIcon } from '@/registry/components/spaceui/morph-icon'
-import { Button } from '@/registry/components/spaceui/button-squircle'
-import { toastManager } from '@/registry/primitives/toast'
+import { Button } from '@/registry/components/button/button-squircle'
 import { cn } from '@/registry/lib/utils'
 
 export type TeamMember = {
@@ -17,15 +16,8 @@ export type TeamMember = {
   role?: string
 }
 
-export const DEFAULT_SPACEUI_MEMBERS: TeamMember[] = [
-  { id: 'guillermo', name: 'Guillermo Rauch', handle: '@rauchg', role: 'Frontend Architect' },
-  { id: 'marc', name: 'Marc Lou', handle: '@marclou', role: 'Product Builder' },
-  { id: 'pieter', name: 'Pieter Levels', handle: '@levelsio', role: 'Autonomous Founder' },
-  { id: 'jony', name: 'Jony Ive', handle: '@jony', role: 'Industrial Form' },
-]
-
 export type TeamRosterSelectorProps = {
-  members?: TeamMember[]
+  members: TeamMember[]
   selectedIds?: string[]
   defaultSelectedIds?: string[]
   onSelectionChange?: (selectedIds: string[]) => void
@@ -39,17 +31,11 @@ export type TeamRosterSelectorProps = {
 const ROW_STEP = 50
 
 export function TeamRosterSelector({
-  members = DEFAULT_SPACEUI_MEMBERS,
+  members = [],
   selectedIds: controlledSelectedIds,
-  defaultSelectedIds = ['guillermo'],
+  defaultSelectedIds = [],
   onSelectionChange,
-  onAction = (ids) => {
-    toastManager.add({
-      type: 'success',
-      title: 'Members assigned',
-      description: `Successfully assigned ${ids.length} member${ids.length > 1 ? 's' : ''}.`,
-    })
-  },
+  onAction,
   actionLabel = 'Assign members',
   corner = 20,
   maxDisplay,
@@ -72,7 +58,7 @@ export function TeamRosterSelector({
 
   return (
     <div
-      className={cn('w-[16.75rem] select-none font-sans flex flex-col gap-2', className)}
+      className={cn('w-67 select-none font-sans flex flex-col gap-2', className)}
       style={
         {
           '--rst-r': `${corner}px`,
@@ -83,7 +69,7 @@ export function TeamRosterSelector({
       {/* Container Card — squircle shape */}
       <div
         onPointerLeave={() => setHoveredIndex(null)}
-        className="squircle rounded-2xl relative flex flex-col gap-1 p-[0.625rem] bg-muted"
+        className="squircle rounded-4xl relative flex flex-col gap-1 p-2.5 bg-muted/50"
       >
         {/* Floating smooth highlight pill */}
         <AnimatePresence>
@@ -102,7 +88,7 @@ export function TeamRosterSelector({
                 damping: 32,
                 mass: 0.8,
               }}
-              className="absolute top-[0.625rem] left-[0.625rem] right-[0.625rem] h-[2.875rem] rounded-[var(--rst-pill-r)] bg-background pointer-events-none z-0"
+              className="absolute top-2.5 left-2.5 right-2.5 h-11.5 rounded-(--rst-pill-r) bg-background pointer-events-none z-0"
             />
           )}
         </AnimatePresence>
@@ -120,7 +106,7 @@ export function TeamRosterSelector({
               onPointerEnter={() => setHoveredIndex(index)}
               onFocus={() => setHoveredIndex(index)}
               onClick={() => toggleMember(member.id)}
-              className="relative z-10 w-full h-[2.875rem] px-[0.625rem] rounded-[var(--rst-pill-r)] flex items-center gap-[0.625rem] cursor-pointer text-left transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="relative z-10 w-full h-[2.875rem] px-2.5 rounded-[var(--rst-pill-r)] flex items-center gap-2.5 cursor-pointer text-left transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               {/* Avatar */}
               <div className="shrink-0 size-[2rem] rounded-full overflow-hidden">
@@ -187,3 +173,5 @@ export function TeamRosterSelector({
     </div>
   )
 }
+
+export default TeamRosterSelector

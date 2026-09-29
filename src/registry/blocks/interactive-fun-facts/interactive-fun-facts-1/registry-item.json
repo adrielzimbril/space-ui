@@ -4,7 +4,7 @@
   "type": "registry:block",
   "title": "Interactive 3D Fun Facts Game",
   "description": "Interactive 3D stacked deck quiz game block with True/False feedback, live score and dialog summary.",
-  "dependencies": ["@tabler/icons-react"],
+  "dependencies": ["@tabler/icons-react", "@usespaceui/squircle"],
   "registryDependencies": [
     "https://www.spaceui.one/r/lib-utils.json",
     "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",

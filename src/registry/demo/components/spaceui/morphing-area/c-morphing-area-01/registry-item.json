@@ -37,5 +37,6 @@
     }
   ],
   "createdAt": "2026-09-17",
-  "updatedAt": "2026-09-17"
+  "updatedAt": "2026-09-17",
+  "dependencies": ["@usespaceui/squircle"]
 }

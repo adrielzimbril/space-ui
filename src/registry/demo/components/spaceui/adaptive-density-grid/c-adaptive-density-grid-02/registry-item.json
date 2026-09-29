@@ -4,7 +4,7 @@
   "type": "registry:component",
   "title": "Category Filter & Templates Reflow",
   "description": "Adaptive density grid acting as category reflow tabs with fluid physics spring pill and card rendering.",
-  "dependencies": ["motion", "@tabler/icons-react"],
+  "dependencies": ["motion", "@tabler/icons-react", "@usespaceui/squircle"],
   "registryDependencies": [
     "https://www.spaceui.one/r/components-spaceui-adaptive-density-grid.json",
     "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",

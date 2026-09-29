@@ -13,15 +13,8 @@ export type SortableMember = {
   tint?: string
 }
 
-export const DEFAULT_SORTABLE_MEMBERS: SortableMember[] = [
-  { id: 'guillermo', name: 'Guillermo Rauch', role: 'Frontend Architect', here: true, tint: '#3b82f6' },
-  { id: 'marc', name: 'Marc Lou', role: 'Product Builder', here: false, tint: '#8b5cf6' },
-  { id: 'pieter', name: 'Pieter Levels', role: 'Autonomous Founder', here: true, tint: '#0ea5e9' },
-  { id: 'jony', name: 'Jony Ive', role: 'Design Lead', here: false, tint: '#10b981' },
-]
-
 export type LiquidSortableListProps = {
-  items?: SortableMember[]
+  items: SortableMember[]
   onOrderChange?: (items: SortableMember[]) => void
   give?: number
   lean?: number
@@ -44,7 +37,7 @@ const springTransition = {
 }
 
 export function LiquidSortableList({
-  items = DEFAULT_SORTABLE_MEMBERS,
+  items = [],
   onOrderChange,
   give = 50,
   lean = 18,
@@ -247,3 +240,5 @@ export function LiquidSortableList({
     </div>
   )
 }
+
+export default LiquidSortableList

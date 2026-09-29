@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { motion, useMotionValue } from 'motion/react'
-import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Button } from '@/registry/components/button/button-squircle'
 import { cn } from '@/registry/lib/utils'
 
 const bubbleSpring = { type: 'spring' as const, stiffness: 200, damping: 20 }

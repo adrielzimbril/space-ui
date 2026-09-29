@@ -6,7 +6,7 @@ import { AdaptiveDensityGrid, type DensityOption } from '@/registry/components/s
 import { Card, CardPanel } from '@/registry/primitives/card'
 import { Frame, FrameFooter, FrameTitle } from '@/registry/primitives/frame'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
-import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Button } from '@/registry/components/button/button-squircle'
 import { InputGroup, InputGroupAddon, InputGroupInput } from '@/registry/primitives/input-group'
 import { IconSearch, IconSparkles, IconLayersIntersect, IconShieldLock } from '@tabler/icons-react'
 

@@ -9,6 +9,7 @@ import { cn } from '@/registry/lib/utils'
 import { flushSync } from 'react-dom'
 import { bloomSound } from '@/components/providers/sound-provider'
 import { useThemeLock } from '@/components/providers/theme-lock-provider'
+import { trackThemeChanged } from '@/lib/analytics/posthog'
 
 export type ThemeValue = 'system' | 'light' | 'dark'
 
@@ -99,6 +100,8 @@ export function ModeSwitcher({
         : currentTheme === 'light'
           ? 'dark'
           : 'system'
+
+    trackThemeChanged({ theme: nextTheme })
 
     if (isControlled) {
       if (enableTransition && buttonRef.current) {

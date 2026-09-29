@@ -4,7 +4,7 @@
   "type": "registry:component",
   "title": "Gooey Tooltip",
   "description": "A tooltip bubble that mouse-follows and gooey-connects to its trigger button on hover.",
-  "dependencies": ["motion"],
+  "dependencies": ["motion", "@usespaceui/squircle"],
   "registryDependencies": ["https://www.spaceui.one/r/lib-utils.json"],
   "categories": ["component", "gooey", "motion"],
   "files": [

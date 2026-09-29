@@ -83,4 +83,5 @@ function CopyButton({
   )
 }
 
-export { CopyButton, buttonVariants as copyButtonVariants }
+export default CopyButton
+export { CopyButton }

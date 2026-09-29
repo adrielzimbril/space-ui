@@ -11,12 +11,6 @@ export type ChecklistItem = {
   done: boolean
 }
 
-export const DEFAULT_CHECKLIST_ITEMS: ChecklistItem[] = [
-  { id: '1', text: 'Book the design studio', done: false },
-  { id: '2', text: 'Review component specs', done: false },
-  { id: '3', text: 'Select typography scale', done: false },
-]
-
 export type InteractiveChecklistProps = {
   items?: ChecklistItem[]
   defaultItems?: ChecklistItem[]
@@ -35,7 +29,7 @@ const RESET_DELAY = 3000
 
 export function InteractiveChecklist({
   items: controlledItems,
-  defaultItems = DEFAULT_CHECKLIST_ITEMS,
+  defaultItems = [],
   onChange,
   bounce = 50,
   corner = 18,
@@ -219,3 +213,5 @@ export function InteractiveChecklist({
     </div>
   )
 }
+
+export default InteractiveChecklist

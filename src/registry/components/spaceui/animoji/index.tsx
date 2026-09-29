@@ -6,7 +6,7 @@ import emojiRegex from 'emoji-regex'
 import { EmojiSource, EmojiType, resolveEmojiUrl, fromUnicode } from '@usespaceui/emoji'
 import { cn } from '@/registry/lib/utils'
 
-type Segment = { kind: 'text'; value: string } | { kind: 'emoji'; value: string }
+export type Segment = { kind: 'text'; value: string } | { kind: 'emoji'; value: string }
 
 // A bare hex codepoint word, e.g. "1f496" or the two-part "1f1e8-1f1ee" for a flag.
 const CODEPOINT_TOKEN = /^[0-9a-fA-F]{4,6}(?:[-_][0-9a-fA-F]{4,6})*$/
@@ -27,7 +27,7 @@ function splitCodepoints(text: string): Segment[] {
 }
 
 // Same regex @usespaceui/emoji resolves codepoints with, so flags/ZWJ combos stay one match.
-function splitEmoji(text: string): Segment[] {
+export function splitEmoji(text: string): Segment[] {
   const segments: Segment[] = []
   let lastIndex = 0
   for (const match of text.matchAll(emojiRegex())) {
@@ -44,7 +44,7 @@ function EmojiGlyph({ emoji, source, className }: { emoji: string; source: Emoji
   // No format: @usespaceui/emoji already defaults to the right one per source + type.
   const src = React.useMemo(() => {
     try {
-      return resolveEmojiUrl(emoji, { source, type: EmojiType.Anim } as never)
+      return resolveEmojiUrl(emoji, { source, type: EmojiType.Anim, fallback: true } as never)
     } catch {
       return ''
     }
@@ -61,6 +61,7 @@ function EmojiGlyph({ emoji, source, className }: { emoji: string; source: Emoji
       alt={emoji}
       width={48}
       height={48}
+      unoptimized
       draggable={false}
       onError={() => setFailed(true)}
       className={cn('pointer-events-none inline-block h-[1em] w-[1em] object-contain align-[-0.1em]', className)}

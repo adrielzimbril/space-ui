@@ -1,0 +1,52 @@
+---
+title: Liquid Mask Crossfade
+description: A WebGL shader component featuring interactive liquid cursor mask crossfade with dynamic trail, refraction, and parallax effects.
+preview:
+  name: demo-c-liquid-mask-crossfade-01
+  contained: false
+---
+
+## Installation
+
+<ComponentInstallation name="components-shader-liquid-mask-crossfade" />
+
+## Usage
+
+```tsx
+import { LiquidMaskCrossfade } from '@/components/shader/liquid-mask-crossfade'
+
+export default function Example() {
+  return (
+    <LiquidMaskCrossfade
+      imageA="https://cdn.spaceui.one/atom/samples/image-0-f.png"
+      imageB="https://cdn.spaceui.one/atom/samples/image-0-b.png"
+      radius={0.15}
+      distortion={0.18}
+      refraction={0.14}
+    />
+  )
+}
+```
+
+## API Reference
+
+| Prop               | Type     | Default     | Description                                   |
+| ------------------ | -------- | ----------- | --------------------------------------------- |
+| `imageA`           | `string` | `-`         | Outer base texture URL                        |
+| `imageB`           | `string` | `-`         | Inner revealed texture URL                    |
+| `radius`           | `number` | `0.15`      | Base radius of the liquid cursor droplet      |
+| `distortion`       | `number` | `0.18`      | Liquid noise distortion intensity             |
+| `noiseScale`       | `number` | `5.7`       | Scale of the FBM procedural noise             |
+| `speed`            | `number` | `0.1`       | Animation speed of procedural liquid noise    |
+| `edgeSoftness`     | `number` | `0.06`      | Softness and blur width of the mask boundary  |
+| `refraction`       | `number` | `0.14`      | Strength of the chromatic refraction effect   |
+| `parallax`         | `number` | `0.05`      | Depth parallax movement of the inner image    |
+| `mouseSmoothness`  | `number` | `0.06`      | Cursor lerp smoothing factor                  |
+| `trailLength`      | `number` | `1.08`      | Length spacing of the cursor droplet trail    |
+| `trailPersistence` | `number` | `0.65`      | Persistence and drag memory of the trail      |
+| `trailTaper`       | `number` | `0.86`      | Taper ratio from cursor head to trail tail    |
+| `idleDelay`        | `number` | `2.0`       | Seconds of inactivity before fade out begins  |
+| `fadeDuration`     | `number` | `0.35`      | Fade-in duration when pointer enters or moves |
+| `fadeOutDuration`  | `number` | `0.7`       | Fade-out duration when cursor goes idle       |
+| `aspectRatio`      | `number` | `undefined` | Optional aspect ratio override                |
+| `className`        | `string` | `undefined` | Additional Tailwind CSS classes               |

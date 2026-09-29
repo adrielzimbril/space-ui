@@ -3,13 +3,11 @@
 import { useState } from 'react'
 import { cn } from '@/registry/lib/utils'
 import { toastManager } from '@/registry/primitives/toast'
-import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Button } from '@/registry/components/button/button-squircle'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import { questionsLocale, type Question, type GameItem } from './data'
 import { GuessButton, QuestionCard } from './question-card'
 import { AllFactsModal, CustomAlert } from './modals'
-
-export { GuessButton, QuestionCard, AllFactsModal, CustomAlert, questionsLocale, type Question, type GameItem }
 
 export function SectionHeader({
   title,

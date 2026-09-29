@@ -408,8 +408,6 @@ export function useGitHubActivity(inputTarget?: string, initialData?: Contributi
   return { target, data, loading, error }
 }
 
-export { useGitHubActivity as useGitHubContributions }
-
 // ── Core GitHub Activity Component (Just The Content) ──
 /**
  * GitHubActivity Component

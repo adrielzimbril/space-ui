@@ -8,7 +8,7 @@ export default function Demo() {
   const [key, setKey] = React.useState(0)
 
   return (
-    <div className="relative w-full overflow-hidden rounded-[0.875rem] bg-muted">
+    <div className="relative w-full overflow-hidden">
       <WordsPreloader key={key} className="min-h-80">
         <p className="text-sm font-semibold text-muted-foreground">Landing page</p>
       </WordsPreloader>

@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react'
 import { cn } from '@/registry/lib/utils'
-import { Button } from '@/registry/components/spaceui/button-squircle'
+import { Button } from '@/registry/components/button/button-squircle'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import {
   Dialog,

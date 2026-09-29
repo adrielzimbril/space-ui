@@ -30,7 +30,7 @@ export default function Demo({
   }, [])
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-8 flex flex-col items-center justify-center min-h-[320px]">
+    <div className="w-full max-w-4xl mx-auto p-8 flex flex-col items-center justify-center">
       <div className="w-full text-center">
         <BlurRevealText
           key={replayKey}

@@ -78,5 +78,3 @@ const USERS: PresenceUser[] = [
 export default function Demo() {
   return <UserPresenceAvatar users={USERS} />
 }
-
-export { Demo as UserPresenceAvatarDemo }
