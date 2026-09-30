@@ -1,156 +1,101 @@
 ---
 title: Skills
-description: Specialized AI agent skills for UI engineering, accessibility, typography, motion, and code quality.
+description: Agent skills that teach your AI assistant how Space UI builds, animates and ships interfaces.
 ---
 
-Space UI includes a comprehensive suite of **Agent Skills** located in `.agents/skills/`. These skills provide AI coding assistants (Claude Code, Cursor, Windsurf, Copilot, Codex, Antigravity) with expert guidelines for building, reviewing, and refactoring production interfaces.
+Your agent can already write code. Space UI skills give it the judgement: the rules, values and hard-won lessons behind our components, written down so Claude Code, Cursor, Windsurf, Codex or Antigravity apply them on their own.
+
+Each skill installs through the shadcn CLI into `.agents/skills/`, where agents discover it automatically. No Space UI code is required: the rules work with any stack and any design system.
 
 ---
 
 ## Available Skills
 
-<Cards className="sm:grid-cols-2 lg:grid-cols-3">
+<Cards className="sm:grid-cols-2">
   <Card
-    title="better-interface"
-    description="Cross-discipline interface audit coordinating accessibility, layout, UX writing, and visual polish."
-    href="#1-better-interface"
-    category="Holistic Review"
-    badge="Multi-Agent"
-    dotColor="bg-purple-400"
-    ringColor="bg-purple-300"
-    actionLabel="View Details"
-  />
-  <Card
-    title="better-accessibility"
-    description="WCAG 2.2 AA and WAI-ARIA compliance, keyboard focus rings, screen reader landmarks, and touch targets."
-    href="#2-better-accessibility"
-    category="A11y Compliance"
-    badge="WCAG 2.2"
-    dotColor="bg-emerald-400"
-    ringColor="bg-emerald-300"
-    actionLabel="View Details"
-  />
-  <Card
-    title="better-ui"
-    description="Micro-interactions, spring physics, hover states, optical alignments, squircle radii, and motion restraint."
-    href="#3-better-ui"
-    category="Design Polish"
-    badge="Springs & Motion"
+    title="Space Motion"
+    description="Timing, transitions, pacing and storytelling, plus frame-perfect 4K export for launch films built in code."
+    href="#space-motion"
+    category="Motion"
+    badge="@spaceui/motion"
     dotColor="bg-blue-400"
     ringColor="bg-blue-300"
-    actionLabel="View Details"
-  />
-  <Card
-    title="better-layout"
-    description="Container queries, responsive breakpoints, negative space rhythm, logical properties, and RTL."
-    href="#4-better-layout"
-    category="Architecture"
-    badge="CSS Grid & Flex"
-    dotColor="bg-amber-400"
-    ringColor="bg-amber-300"
-    actionLabel="View Details"
-  />
-  <Card
-    title="better-typography"
-    description="Variable fonts, type scales, tabular numbers for dynamic data, smart punctuation, and line-heights."
-    href="#5-better-typography"
-    category="Type System"
-    badge="Scales & OpenType"
-    dotColor="bg-rose-400"
-    ringColor="bg-rose-300"
-    actionLabel="View Details"
-  />
-  <Card
-    title="better-colors"
-    description="OKLCH color palettes, contrast ratio verification, semantic token hierarchy, and dark-mode balance."
-    href="#6-better-colors"
-    category="Color Engineering"
-    badge="OKLCH Tokens"
-    dotColor="bg-cyan-400"
-    ringColor="bg-cyan-300"
-    actionLabel="View Details"
-  />
-  <Card
-    title="better-writing"
-    description="Actionable button labels, clear error states, sentence casing, and elimination of jargon."
-    href="#7-better-writing"
-    category="UX Microcopy"
-    badge="Voice & Copy"
-    dotColor="bg-indigo-400"
-    ringColor="bg-indigo-300"
-    actionLabel="View Details"
+    actionLabel="View details"
   />
 </Cards>
 
----
-
-## Detailed Skill Breakdown
-
-### 1. `better-interface`
-
-Coordinates a comprehensive, cross-discipline review across all aspects of your interface. Use it to perform holistic audits on complete pages or features before merging.
-
-- **Trigger Keywords**: `better-interface`, `interface audit`, `full review`, `review this page`
-- **What it checks**: Consistency between layout, typography contrast, interaction states, and accessibility compliance.
-
-### 2. `better-accessibility`
-
-Ensures your components strictly comply with **WCAG 2.2 AA** and **WAI-ARIA** specifications.
-
-- **Trigger Keywords**: `accessibility`, `a11y`, `WCAG`, `aria`, `focus ring`, `keyboard navigation`, `screen reader`
-- **What it checks**: Keyboard focus traps in modals, `aria-expanded` and `aria-controls` bindings, color contrast ratios, touch target sizes (minimum 44x44px), and reduced-motion safety.
-
-### 3. `better-ui`
-
-Applies high-end design engineering principles to elevate component feel from standard to polished.
-
-- **Trigger Keywords**: `UI polish`, `design details`, `micro-interactions`, `hover states`, `border radius`, `springs`
-- **What it checks**: Motion restraint, spring transitions, optical icon alignments, squircle border radii, and active/hover press feedback.
-
-### 4. `better-layout`
-
-Structures robust component layouts using modern CSS primitives.
-
-- **Trigger Keywords**: `layout`, `spacing`, `alignment`, `responsive`, `breakpoints`, `container queries`, `RTL`
-- **What it checks**: Flexbox and grid hierarchies, container queries for component-level responsiveness, logical properties (`ps-`, `pe-`, `ms-`, `me-`), and progressive disclosure.
-
-### 5. `better-typography`
-
-Configures type scales, variable font properties, and reading ergonomics.
-
-- **Trigger Keywords**: `typography`, `fonts`, `line-height`, `letter-spacing`, `tabular numbers`, `truncation`
-- **What it checks**: Tabular numbers (`tnum`) in numeric grids and data tables, heading hierarchy (`h1` through `h6`), line length constraints (60–75ch), and smart punctuation.
-
-### 6. `better-colors`
-
-Guides OKLCH color palettes, dark mode balance, and semantic token assignments.
-
-- **Trigger Keywords**: `colors`, `oklch`, `contrast ratio`, `palette`, `dark mode`, `accent`
-- **What it checks**: Perceptually uniform OKLCH contrast, semantic token hierarchy (`bg-background`, `text-foreground`, `border-border`), and dark-mode luminance adjustments.
-
-### 7. `better-writing`
-
-Crafts direct, clear, and actionable interface microcopy.
-
-- **Trigger Keywords**: `UX writing`, `microcopy`, `button labels`, `error messages`, `empty states`
-- **What it checks**: Action-oriented button verbs ("Save changes" over "Submit"), human-friendly error guidance, sentence casing, and elimination of technical jargon.
+More skills are on the way.
 
 ---
 
-## How to Use Skills with AI Assistants
+## Space Motion
 
-### Claude Code & Antigravity
+Teaches your agent how things should move: arrivals in 350ms, text that comes into focus, scenes that arrive over the last frame instead of fading out, sound only on key actions, and exports rendered frame by frame instead of screen-recorded.
 
-Skills placed in `.agents/skills/` are automatically discovered by agent runtimes. Simply prompt:
-
-```text
-Audit this new settings form using the better-accessibility and better-writing skills.
+```bash
+npx shadcn@latest add @spaceui/motion
 ```
 
-### Cursor & Windsurf
+- **Timing**: exact durations, easings, distances, blur and stagger, and when each one applies.
+- **Films**: scrubbable timelines, transitions, pre-mounting, driving live components, sound cues.
+- **Storytelling**: beat order, copy that sells, emoji as punctuation, layout per scene.
+- **Rendering**: 4K 60fps exports with zero dropped frames on a virtual clock.
 
-Reference the skill documentation in your `.cursorrules` or prompt directly:
+It also points your agent to [`@usespaceui/emoji`](https://www.npmjs.com/package/@usespaceui/emoji), [`@usespaceui/sounds`](https://www.npmjs.com/package/@usespaceui/sounds) and these docs for components to film.
+
+### Prompt to start
+
+Paste this into your agent, swap the brackets, and it installs the skill before it starts:
+
+```text
+Hey! I want to make a [10-second] opener for my product [Product name]: [one line on what it does and who it's for].
+
+First install the Space Motion skill and follow it for everything that moves:
+npx shadcn@latest add https://www.spaceui.one/r/motion.json
+
+Then:
+1. Propose the beats and the copy, one line per scene, and wait for my OK before animating.
+2. Build it as a scrubbable page with one clock (?t= jumps to a moment).
+3. Use animated emoji from @usespaceui/emoji and sounds from @usespaceui/sounds on key actions only.
+4. When I approve it, export it frame by frame in 4K 60fps, not by recording the screen.
+```
+
+### System prompt
+
+For agents and tools that take standing instructions (Claude Projects, custom GPTs, Cursor rules, `CLAUDE.md`):
+
+```text
+You are a motion designer who ships in code. For any animation, transition, product video or opener, follow the Space Motion skill: read .agents/skills/space-motion/SKILL.md, or fetch https://www.spaceui.one/r/motion.json and read its files if it isn't installed.
+
+- Arrivals take ~350ms with a smooth ease-out; close faster than you open; never fade a scene out, let the next one arrive over it.
+- Reveal text by focus: word by word, 12px rise, 8px blur, 40ms stagger. Swap words with a blur swap, never a jump.
+- One idea per scene, two lines max, no dead air past 0.4s. Copy sells a concrete benefit, no filler adjectives.
+- Film the real product and drive it; don't mock it up. Fit each component to its frame.
+- No borders or shadows for depth; two tones and soft continuous corners.
+- Sound only on key actions. At most one animated emoji per line.
+- Everything is a function of one clock, so playback, scrubbing and export match. Warm heavy scenes up before they appear.
+- Agree on the beats and copy before animating. Check your work frame by frame at specific timestamps.
+- Export by rendering frames on a virtual clock, never by screen recording.
+```
+
+---
+
+## Using Skills
+
+Skills in `.agents/skills/` are picked up automatically. Describe the job and the matching skill kicks in:
+
+```text
+Make a 45-second launch video of our landing page, then export it in 4K.
+```
+
+To call one explicitly, name it:
+
+```text
+Review the transitions of this dialog with space-motion.
+```
+
+In editors that don't discover skills on their own, point to the file:
 
 ```markdown
-Review my component according to the rules in .agents/skills/better-ui/SKILL.md.
+Follow the rules in .agents/skills/space-motion/SKILL.md for every animation in this PR.
 ```

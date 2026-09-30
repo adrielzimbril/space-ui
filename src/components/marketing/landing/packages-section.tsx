@@ -23,7 +23,7 @@ export function PackagesSection() {
   return (
     <section ref={ref} id="packages" data-page-section className="mx-auto max-w-7xl scroll-mt-16 px-5 sm:px-6 py-20">
       <div className="flex flex-col items-center justify-center text-center gap-2">
-        <Link href="/tools" data-space-hover className="outline-none">
+        <Link href="/tools" data-space-hover="tick" className="outline-none">
           <Badge
             size="md"
             className="px-3.5 py-1.5 font-semibold text-xs tracking-tight bg-muted text-foreground border-none cursor-pointer"
@@ -32,7 +32,11 @@ export function PackagesSection() {
           </Badge>
         </Link>
         <div className="max-w-2xl">
-          <Link href="/tools" data-space-hover className="group inline-block focus-visible:outline-none cursor-pointer">
+          <Link
+            href="/tools"
+            data-space-hover="tick"
+            className="group inline-block focus-visible:outline-none cursor-pointer"
+          >
             <h2 className="text-[2.125rem] font-semibold tracking-tight text-foreground sm:text-[2.875rem] md:text-[3.375rem] transition-colors group-hover:text-foreground">
               Creative Tools
             </h2>
@@ -57,7 +61,7 @@ export function PackagesSection() {
         <Button
           render={<Link href="/tools" />}
           size="sm"
-          data-space-hover
+          data-space-hover="tick"
           data-space-click="confirm"
           className="inline-flex items-center gap-2 px-6 py-3.5 font-medium active:scale-[0.98] transition-all duration-300"
         >

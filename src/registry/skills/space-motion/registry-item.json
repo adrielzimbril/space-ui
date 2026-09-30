@@ -1,0 +1,47 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "motion",
+  "type": "registry:item",
+  "title": "Space Motion",
+  "description": "Agent skill: motion and transition principles, launch-film storytelling and frame-perfect video export.",
+  "categories": ["skills", "motion", "transitions"],
+  "files": [
+    {
+      "path": "src/registry/skills/space-motion/SKILL.md",
+      "type": "registry:file",
+      "target": "~/.agents/skills/space-motion/SKILL.md"
+    },
+    {
+      "path": "src/registry/skills/space-motion/timing.md",
+      "type": "registry:file",
+      "target": "~/.agents/skills/space-motion/timing.md"
+    },
+    {
+      "path": "src/registry/skills/space-motion/films.md",
+      "type": "registry:file",
+      "target": "~/.agents/skills/space-motion/films.md"
+    },
+    {
+      "path": "src/registry/skills/space-motion/storytelling.md",
+      "type": "registry:file",
+      "target": "~/.agents/skills/space-motion/storytelling.md"
+    },
+    {
+      "path": "src/registry/skills/space-motion/rendering.md",
+      "type": "registry:file",
+      "target": "~/.agents/skills/space-motion/rendering.md"
+    },
+    {
+      "path": "src/registry/skills/space-motion/resources.md",
+      "type": "registry:file",
+      "target": "~/.agents/skills/space-motion/resources.md"
+    },
+    {
+      "path": "src/registry/skills/space-motion/agents/openai.yaml",
+      "type": "registry:file",
+      "target": "~/.agents/skills/space-motion/agents/openai.yaml"
+    }
+  ],
+  "createdAt": "2026-09-30",
+  "updatedAt": "2026-09-30"
+}

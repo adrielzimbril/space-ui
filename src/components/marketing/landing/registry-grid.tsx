@@ -24,7 +24,7 @@ export function RegistryGrid() {
   return (
     <section ref={ref} id="registry" data-page-section className="mx-auto max-w-7xl scroll-mt-16 px-5 sm:px-6 py-20">
       <div className="flex flex-col items-center justify-center text-center gap-3">
-        <Link href="/components" data-space-hover className="outline-none">
+        <Link href="/components" data-space-hover="tick" className="outline-none">
           <Badge
             size="md"
             className="px-3.5 py-1.5 font-semibold text-xs tracking-tight bg-muted text-foreground border-none cursor-pointer"
@@ -35,7 +35,7 @@ export function RegistryGrid() {
         <div className="max-w-2xl">
           <Link
             href="/components"
-            data-space-hover
+            data-space-hover="tick"
             className="group inline-block focus-visible:outline-none cursor-pointer"
           >
             <h2 className="text-[34px] font-semibold tracking-tight text-foreground sm:text-[46px] md:text-[54px] transition-colors group-hover:text-foreground/80">
@@ -64,27 +64,27 @@ export function RegistryGrid() {
       </div>
 
       <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-        <Link href="/primitives" data-space-hover className="rounded-2xl bg-muted p-6 sm:p-8">
+        <Link href="/primitives" data-space-hover="tick" className="rounded-2xl bg-muted p-6 sm:p-8">
           <p className="text-4xl font-semibold tracking-tight text-foreground">{registryStats.primitives}+</p>
           <p className="mt-2 text-sm font-medium text-muted-foreground">Base UI Primitives</p>
         </Link>
 
-        <Link href="/components" data-space-hover className="rounded-2xl bg-muted p-6 sm:p-8">
+        <Link href="/components" data-space-hover="tick" className="rounded-2xl bg-muted p-6 sm:p-8">
           <p className="text-4xl font-semibold tracking-tight text-foreground">{registryStats.components}+</p>
           <p className="mt-2 text-sm font-medium text-muted-foreground">Interactive Components</p>
         </Link>
 
-        <Link href="/templates" data-space-hover className="rounded-2xl bg-muted p-6 sm:p-8">
+        <Link href="/templates" data-space-hover="tick" className="rounded-2xl bg-muted p-6 sm:p-8">
           <p className="text-4xl font-semibold tracking-tight text-foreground">{registryStats.templatesFree}+</p>
           <p className="mt-2 text-sm font-medium text-muted-foreground">Templates</p>
         </Link>
 
-        <Link href="/hooks" data-space-hover className="rounded-2xl bg-muted p-6 sm:p-8">
+        <Link href="/hooks" data-space-hover="tick" className="rounded-2xl bg-muted p-6 sm:p-8">
           <p className="text-4xl font-semibold tracking-tight text-foreground">{registryStats.hooksOnly}+</p>
           <p className="mt-2 text-sm font-medium text-muted-foreground">Production Hooks</p>
         </Link>
 
-        <Link href="/tools" data-space-hover className="rounded-2xl bg-muted p-6 sm:p-8">
+        <Link href="/tools" data-space-hover="tick" className="rounded-2xl bg-muted p-6 sm:p-8">
           <p className="text-4xl font-semibold tracking-tight text-foreground">{megaMenuTools.length}+</p>
           <p className="mt-2 text-sm font-medium text-muted-foreground">Creative Tools</p>
         </Link>
@@ -93,7 +93,7 @@ export function RegistryGrid() {
         <Button
           render={<Link href="/components" />}
           size="sm"
-          data-space-hover
+          data-space-hover="tick"
           data-space-click="confirm"
           className="inline-flex items-center gap-2 px-6 py-3.5 font-medium active:scale-[0.98] transition-all duration-300"
         >

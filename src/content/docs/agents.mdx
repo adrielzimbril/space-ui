@@ -32,7 +32,7 @@ Space UI's agent ecosystem is structured into three dedicated layers:
   <Card
     href="/docs/skills"
     title="Agent Skills"
-    description="7 specialized engineering skills in .agents/skills/ covering accessibility, design polish, typography, and layout."
+    description="Rules and hard-won lessons in .agents/skills/ that your agent applies on its own."
     category="Guides · 02"
     badge="Skill Rules"
     dotColor="bg-green-400"
@@ -126,14 +126,11 @@ When an AI agent operates in your workspace with Space UI:
           <div>
             <h4 className="text-sm font-semibold text-foreground">.agents/skills/ Rules</h4>
             <p className="text-xs text-muted-foreground mt-1 [&_p]:text-xs [&_p]:sm:text-sm [&_p]:leading-relaxed [&_p]:my-0">
-              Specialized interface engineering constraints and design tokens.
+              Rules and lessons your agent applies on its own.
             </p>
           </div>
           <div className="flex flex-wrap gap-1.5">
-                       <Badge size="xs" variant="secondary">better-accessibility</Badge>
-            <Badge size="xs" variant="secondary">better-ui</Badge>
-            <Badge size="xs" variant="secondary">better-layout</Badge>
-
+            <Badge size="xs" variant="secondary">space-motion</Badge>
           </div>
         </CardPanel>
       </CardPrimitives>
@@ -177,12 +174,12 @@ Always reference the exact `@spaceui/<component>` identifier so the agent fetche
 Add an interactive notification list using @spaceui/notification-list and @spaceui/badge.
 ```
 
-### 2. Combine with Specialized Skills
+### 2. Combine with Skills
 
-Ask your agent to apply relevant engineering skills during code generation or code review:
+Ask your agent to apply one of the [Space UI skills](/docs/skills) while it builds or reviews:
 
 ```text
-Review this dialog component. Apply the better-accessibility skill to verify keyboard traps and aria-describedby bindings.
+Review the transitions of this dialog with space-motion and fix anything slower than it should be.
 ```
 
 ### 3. Use Copy Markdown for Context

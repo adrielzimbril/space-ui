@@ -7,7 +7,6 @@ import { getDocsNeighbours } from '@/lib/docs-nav'
 import { RelatedComponents } from '@/components/docs/layout/related-components'
 import { DocsPageHeader } from '@/components/docs/layout/docs-page-header'
 import { DocsPager } from '@/components/docs/layout/docs-pager'
-import { DocsTocSidebar } from '@/components/docs/layout/docs-toc-sidebar'
 import { getDocMetadata } from '@/lib/docs-metadata'
 import { PageLayoutSync } from '@/components/docs/layout/page-layout-sync'
 import { Mode } from '@/config/preview-config'
@@ -116,13 +115,6 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
             <DocsPager prev={prevNav} next={nextNav} />
           </div>
         </div>
-
-        {/* Right Sidebar / TOC */}
-        <DocsTocSidebar
-          toc={pageData.toc}
-          dependencies={docMeta.dependencies}
-          hasRelated={docMeta.relatedComponents.length > 0}
-        />
       </div>
     </>
   )
