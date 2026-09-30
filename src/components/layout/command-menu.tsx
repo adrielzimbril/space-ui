@@ -7,7 +7,8 @@ import { searchNavShortcuts, searchStaticResources } from '@/config/menu-config'
 import { useConfig } from '@/hooks/use-config'
 import { componentCategoryMap, getHookComponentSlugs, getPureUtilSlugs } from '@/lib/content-categories'
 import { getShadcnAddCommands } from '@/lib/install-command'
-import { librarySource, resourcesSource, source } from '@/lib/source'
+import type { Root as PageTreeRoot } from 'fumadocs-core/page-tree'
+import { usePageTreeList } from '@/components/providers/page-trees-provider'
 import { useClipboard } from '@/registry/hooks/browser/use-clipboard'
 import { useIsMac } from '@/registry/hooks/browser/use-is-mac'
 import { useEventListener } from '@/registry/hooks/dom/use-event-listener'
@@ -151,11 +152,12 @@ export function CommandMenu({
   navItems,
   ...props
 }: ComponentProps<typeof CommandDialog> & {
-  tree?: typeof source.pageTree | any
-  trees?: Array<typeof source.pageTree | any>
+  tree?: PageTreeRoot | any
+  trees?: Array<PageTreeRoot | any>
   navItems?: { href: string; label: string }[]
 }) {
   const pathname = usePathname()
+  const defaultTrees = usePageTreeList()
   const isMac = useIsMac()
   const [config] = useConfig()
   const [packageManager] = usePackageManager()
@@ -275,12 +277,7 @@ export function CommandMenu({
     }
 
     // Process all trees provided
-    const treeList =
-      trees && trees.length > 0
-        ? trees
-        : tree
-          ? [tree]
-          : [source.pageTree, librarySource.pageTree, resourcesSource.pageTree]
+    const treeList = trees && trees.length > 0 ? trees : tree ? [tree] : defaultTrees
     treeList.forEach((t) => {
       if (t && Array.isArray(t.children)) {
         t.children.forEach((child: any) => collectPages(child))
@@ -356,7 +353,7 @@ export function CommandMenu({
     })
 
     return result
-  }, [tree, trees, navItems])
+  }, [tree, trees, navItems, defaultTrees])
 
   const handlePageHighlight = (item: PageItem) => {
     if (item.isComponent) {

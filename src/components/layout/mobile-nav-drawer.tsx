@@ -99,7 +99,7 @@ function getGroupIcon(group: string, title?: string) {
 
 import { mobileNavGroups, megaMenuTools, type NavItem } from '@/config/menu-config'
 import { GitHubLink } from '@/registry/components/spaceui/github-link'
-import { source, librarySource, resourcesSource } from '@/lib/source'
+import { usePageTreeList } from '@/components/providers/page-trees-provider'
 
 const NAV_GROUPS = mobileNavGroups
 
@@ -108,11 +108,13 @@ const NAV_GROUPS = mobileNavGroups
 export function MobileNavDrawer({
   open,
   onOpenChange,
-  trees = [source.pageTree, librarySource.pageTree, resourcesSource.pageTree],
+  trees: treesProp,
   trigger,
   triggerClassName,
 }: MobileNavDrawerProps) {
   const pathname = usePathname()
+  const defaultTrees = usePageTreeList()
+  const trees = treesProp ?? defaultTrees
   const [internalOpen, setInternalOpen] = React.useState(false)
   const isControlled = open !== undefined
   const isOpen = isControlled ? open : internalOpen

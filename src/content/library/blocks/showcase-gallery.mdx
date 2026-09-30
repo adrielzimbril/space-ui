@@ -1,0 +1,45 @@
+---
+title: Showcase Gallery
+description: Justified gallery of stills and looping videos. Point at a piece, tap it or tab to it and it steps forward on a spring while the rest makes room.
+isPro: true
+preview:
+  name: block-showcase-gallery
+  contained: false
+---
+
+## Installation
+
+<ComponentInstallation name="block-showcase-gallery" />
+
+## Usage
+
+```tsx
+import { ShowcaseGallery } from '@/components/blocks/showcase-gallery'
+
+const rows = [
+  [
+    { title: 'Launch film', category: 'Motion', image: '/work/launch.webp', video: '/work/launch.mp4', aspect: 16 / 9 },
+    { title: 'Watch face', category: 'Product', image: '/work/watch.webp', video: '/work/watch.mp4', aspect: 0.8 },
+  ],
+  [
+    { title: 'Dashboard', category: 'Product', image: '/work/dashboard.webp', aspect: 16 / 9 },
+    { title: 'Mobile app', category: 'Product', image: '/work/app.webp', aspect: 1 },
+  ],
+]
+
+export default function Work() {
+  return <ShowcaseGallery rows={rows} />
+}
+```
+
+Each row is justified to the full width, with tiles sized by their `aspect` (width / height). In a narrow container the same items regroup two per row and keep their real proportions.
+
+Focus a tile and it steps forward on a spring: it widens, its row grows taller, its neighbours give way without changing the gallery's height, the media pans slightly toward the focus point and a caption with its `title` and `category` comes into focus. Only the focused tile's video plays; with nothing focused, videos play while they're on screen.
+
+- **Mouse**: the focus follows the pointer.
+- **Touch**: tap a tile to focus it, tap it again or anywhere else to let go.
+- **Keyboard**: tab through the tiles; Escape lets go.
+
+With reduced motion the focus still works, without the animation. Videos only load their metadata once they're about to scroll into view.
+
+Remote images go through `next/image`, so add their host to `images.remotePatterns` in `next.config`.

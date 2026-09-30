@@ -7,10 +7,13 @@ import { Frame, FrameFooter, FrameTitle } from '@/registry/primitives/frame'
 import { Card, CardPanel } from '@/registry/primitives/card'
 import { OrbBloop } from '@/registry/components/orb/bloop'
 import { BloopState } from '@/registry/components/orb/bloop/types'
+import { BLOOP_PALETTES, BloopPaletteName } from '@/registry/components/orb/bloop/palettes'
 import { BENTO_CYCLE_INTERVAL } from '@/config/space-config'
 import { useStaggeredInterval } from '@/hooks/use-staggered-interval'
 
 const BLOOP_MODES: BloopState[] = [BloopState.idle, BloopState.listen, BloopState.think, BloopState.speak]
+// Same palette as the component's demo (blue, not dark blue).
+const BLUE = BLOOP_PALETTES[BloopPaletteName.blue]
 
 export function OrbBloopCard({ isVisible = true }: { isVisible?: boolean }) {
   const [bloopState, setBloopState] = React.useState<BloopState>(BloopState.idle)
@@ -32,16 +35,15 @@ export function OrbBloopCard({ isVisible = true }: { isVisible?: boolean }) {
         <CardPanel className="flex-1 flex min-h-72 flex-col items-center justify-center p-4 rounded-lg">
           {isVisible ? (
             <OrbBloop
-              mode={bloopState}
+              state={bloopState}
               size={185}
-              palette="candy"
-              eyeSize={1.12}
-              pupilSize={1.05}
-              glow
-              interactive
-              trackPointer={false}
-              interactiveSquish
-              autoBlink
+              demoMode
+              bloopColorMain={BLUE.main}
+              bloopColorLow={BLUE.low}
+              bloopColorMid={BLUE.mid}
+              bloopColorHigh={BLUE.high}
+              watercolorStrength={0.5}
+              watercolorAnimated={false}
             />
           ) : (
             <div className="size-46 rounded-full bg-muted/60" />

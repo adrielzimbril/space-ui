@@ -17,7 +17,7 @@ import { useMediaQuery, useIsMobile } from '@/registry/hooks/browser/use-media-q
 import { useRegistryEntry } from '@/components/docs/preview/hooks/use-registry-entry'
 import { REGISTRY_NAMESPACE } from '@/lib/install-command'
 import { MobileNavDrawer } from '@/components/layout/mobile-nav-drawer'
-import { source, librarySource, resourcesSource } from '@/lib/source'
+import { usePageTreeList } from '@/components/providers/page-trees-provider'
 import { index } from '@/__registry__/index'
 import { ProximityGrid } from '@/registry/blocks/interactive-grid-hero/interactive-grid-hero-1/proximity-grid'
 
@@ -83,6 +83,7 @@ export function PlaygroundCanvasStage({
 }: PlaygroundCanvasStageProps) {
   const isDesktop = useMediaQuery('(min-width: 1024px)', true)
   const isMobile = useIsMobile()
+  const pageTrees = usePageTreeList()
   const { setActivePreview, isInteractions } = useLayoutMode()
   const { entry } = useRegistryEntry(activePreview?.name ?? null)
   const [tweakMode, setTweakMode] = useState(false)
@@ -231,7 +232,7 @@ export function PlaygroundCanvasStage({
           <ToolbarSection aria-label="Navigation and Drawer triggers" className="left-2 top-2 md:top-4">
             {/* Global Navigation Drawer Button */}
             <MobileNavDrawer
-              trees={[source.pageTree, librarySource.pageTree, resourcesSource.pageTree]}
+              trees={pageTrees}
               triggerClassName="flex!"
               trigger={
                 <ToolbarButton label="Open Mobile Navigation Menu">

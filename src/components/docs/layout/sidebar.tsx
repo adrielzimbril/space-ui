@@ -4,7 +4,7 @@ import * as React from 'react'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { cn } from '@/registry/lib/utils'
-import { source, librarySource } from '@/lib/source'
+import { usePageTrees } from '@/components/providers/page-trees-provider'
 import { IconChevronDown, IconCheck } from '@tabler/icons-react'
 import { slideSound } from '@/components/providers/sound-provider'
 import { Menu, MenuItem, MenuPopup, MenuTrigger } from '@/registry/primitives/menu'
@@ -83,6 +83,7 @@ function scrollSidebarTo(el: HTMLElement, block: 'start' | 'center' = 'center') 
 export function DocsSidebar() {
   const pathname = usePathname()
   const router = useRouter()
+  const { docs: docsTree, library: libraryTree } = usePageTrees()
   const activeItemRef = React.useRef<HTMLLIElement | null>(null)
   const sectionRefs = React.useRef<Record<string, HTMLDivElement | null>>({})
 
@@ -91,8 +92,8 @@ export function DocsSidebar() {
 
   // Determine sections to display
   const sections = React.useMemo<SectionItem[]>(() => {
-    return resolvePathSections(pathname, source.pageTree.children ?? [], librarySource.pageTree.children ?? [])
-  }, [pathname])
+    return resolvePathSections(pathname, docsTree.children ?? [], libraryTree.children ?? [])
+  }, [pathname, docsTree, libraryTree])
 
   const isItemActive = React.useCallback(
     (url: string) => {

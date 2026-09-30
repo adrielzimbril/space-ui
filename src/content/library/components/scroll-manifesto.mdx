@@ -1,0 +1,31 @@
+---
+title: Scroll Manifesto
+description: A pinned statement that comes into focus word by word as you scroll. Each word rises, sharpens from a blur and lights up in reading order.
+isPro: true
+preview:
+  name: demo-c-scroll-manifesto-01
+  contained: false
+  align: start
+  previewClassName: items-start
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-scroll-manifesto" />
+
+## Usage
+
+```tsx
+import { ScrollManifesto } from '@/components/spaceui/scroll-manifesto'
+
+export default function Mission() {
+  return (
+    <ScrollManifesto
+      text="Ship the product only you can build. We made the rest move, sound and feel right."
+      highlight={['only you']}
+    />
+  )
+}
+```
+
+The statement stays pinned while the reader scrolls through `scrollLength` viewport heights, then lets the page continue. It pins inside the nearest scrolling ancestor (a preview pane, a modal) or the window, and shows the text fully revealed when the reader prefers reduced motion.

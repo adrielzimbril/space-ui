@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { Button } from '@/registry/primitives/button'
+import { Button } from '@/registry/components/button/button-squircle'
 import { cn } from '@/registry/lib/utils'
 
 export interface ToolbarButtonProps {
@@ -22,8 +22,9 @@ export function ToolbarButton({ label, pressed, onClick, children, className }: 
         aria-label={label}
         aria-pressed={pressed}
         title={label}
+        pointer
         className={cn(
-          'size-full rounded-lg text-muted-foreground transition-all duration-300 hover:bg-background hover:text-foreground cursor-pointer',
+          'text-muted-foreground hover:bg-background hover:text-foreground',
           pressed && 'text-foreground font-semibold bg-background',
         )}
       >

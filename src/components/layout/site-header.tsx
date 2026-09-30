@@ -10,10 +10,11 @@ import { LiquidBorder } from '@/registry/components/spaceui/liquid-metal-border'
 import { Button } from '@/registry/primitives/button'
 import { Kbd, KbdGroup } from '@/registry/primitives/kbd'
 import { Link } from '@/registry/primitives/link'
-import { IconBrandX, IconSearch, IconArrowUpRight } from '@tabler/icons-react'
+import { IconBrandX, IconSearch, IconArrowUpRight, IconMenu2 } from '@tabler/icons-react'
 import { turn as turnSound } from '@usespaceui/sounds'
 import { Squishmoji } from '@usespaceui/squishmoji/react'
 import dynamic from 'next/dynamic'
+import * as React from 'react'
 import NextLink from 'next/link'
 
 const CommandMenu = dynamic(() => import('@/components/layout/command-menu').then((mod) => mod.CommandMenu), {
@@ -32,10 +33,56 @@ const CommandMenu = dynamic(() => import('@/components/layout/command-menu').the
   ),
 })
 
-const MobileNavDrawer = dynamic(
-  () => import('@/components/layout/mobile-nav-drawer').then((mod) => mod.MobileNavDrawer),
-  { ssr: false },
+const loadMobileNavDrawer = () => import('@/components/layout/mobile-nav-drawer').then((mod) => mod.MobileNavDrawer)
+const MobileNavDrawer = React.lazy(() =>
+  loadMobileNavDrawer().then((MobileNavDrawer) => ({ default: MobileNavDrawer })),
 )
+
+/** The drawer's own trigger, rendered on the server so the icon is there from the first paint. */
+function MobileNavTrigger({ onClick }: { onClick?: () => void }) {
+  return (
+    <Button
+      variant="secondary"
+      size="icon"
+      className="rounded-md lg:hidden cursor-pointer"
+      aria-label="Open Navigation Menu"
+      onClick={onClick}
+    >
+      <IconMenu2 className="size-5" />
+    </Button>
+  )
+}
+
+/**
+ * The drawer's code is heavy, so it loads after the page settles, never before the icon shows.
+ * A tap that lands before it's ready is kept and opens the drawer as soon as it arrives.
+ */
+function LazyMobileNav() {
+  const [load, setLoad] = React.useState(false)
+  const [open, setOpen] = React.useState(false)
+
+  React.useEffect(() => {
+    const start = () => setLoad(true)
+    if ('requestIdleCallback' in window) {
+      const id = window.requestIdleCallback(start, { timeout: 3000 })
+      return () => window.cancelIdleCallback(id)
+    }
+    const id = setTimeout(start, 1500)
+    return () => clearTimeout(id)
+  }, [])
+
+  const openNow = () => {
+    setLoad(true)
+    setOpen(true)
+  }
+
+  if (!load) return <MobileNavTrigger onClick={openNow} />
+  return (
+    <React.Suspense fallback={<MobileNavTrigger onClick={() => setOpen(true)} />}>
+      <MobileNavDrawer open={open} onOpenChange={setOpen} />
+    </React.Suspense>
+  )
+}
 
 export const SITE_NAV_ITEMS = searchNavShortcuts
 
@@ -128,7 +175,7 @@ export function SiteHeader() {
             </LiquidBorder>
           </NextLink>
 
-          <MobileNavDrawer />
+          <LazyMobileNav />
         </div>
       </div>
     </header>

@@ -3,12 +3,13 @@
 import { IconLayout2 } from '@tabler/icons-react'
 import { MobileNavDrawer } from '@/components/layout/mobile-nav-drawer'
 import { ToolbarButton } from '@/components/playground/playground-toolbar-button'
-import { source, librarySource, resourcesSource } from '@/lib/source'
+import { usePageTreeList } from '@/components/providers/page-trees-provider'
 
 export function ResourceNav() {
+  const pageTrees = usePageTreeList()
   return (
     <MobileNavDrawer
-      trees={[source.pageTree, librarySource.pageTree, resourcesSource.pageTree]}
+      trees={pageTrees}
       triggerClassName="flex!"
       trigger={
         <ToolbarButton label="Open navigation">

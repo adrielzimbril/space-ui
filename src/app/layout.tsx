@@ -16,6 +16,8 @@ import { Mode, type LayoutMode } from '@/components/providers/layout-mode-provid
 import { ThemeCookieSync, THEME_COOKIE_KEY } from '@/components/providers/theme-cookie-sync'
 import { ThemeLockScript, THEME_LOCKED_ROUTES } from '@/components/providers/theme-lock-provider'
 import { PostHogProvider } from '@/components/providers/posthog-provider'
+import { PageTreesProvider } from '@/components/providers/page-trees-provider'
+import { librarySource, resourcesSource, source } from '@/lib/source'
 
 // TODO: Cache Components adoption. Refactor this route so this opt-out can be removed.
 // See: https://nextjs.org/docs/app/guides/migrating-to-cache-components
@@ -171,7 +173,16 @@ export default async function Layout({ children }: { children: ReactNode }) {
             <ThemeLockScript />
             <ThemeCookieSync />
             <NuqsAdapter>
-              <GlobalLayoutWrapper initialLayoutMode={initialLayoutMode}>{children}</GlobalLayoutWrapper>
+              {/* Navigation trees built here on the server; client nav reads them from context. */}
+              <PageTreesProvider
+                trees={{
+                  docs: source.pageTree,
+                  library: librarySource.pageTree,
+                  resources: resourcesSource.pageTree,
+                }}
+              >
+                <GlobalLayoutWrapper initialLayoutMode={initialLayoutMode}>{children}</GlobalLayoutWrapper>
+              </PageTreesProvider>
             </NuqsAdapter>
           </RootProvider>
         </PostHogProvider>

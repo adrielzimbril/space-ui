@@ -45,6 +45,8 @@ export interface PlaygroundToolbarProps {
   onToggleBackground?: () => void
 }
 
+const noopSubscribe = () => () => {}
+
 export function PlaygroundToolbar({
   showInfo,
   onToggleInfo,
@@ -68,6 +70,13 @@ export function PlaygroundToolbar({
 }: PlaygroundToolbarProps) {
   const { theme, resolvedTheme, setTheme } = useTheme()
   const effectiveTheme: ThemeValue = getEffectivePreviewTheme(themeOverride, resolvedTheme || theme)
+  // next-themes only knows the resolved theme in the browser: keep the server render and the
+  // hydration pass identical (false), then show the resolved value.
+  const hydrated = React.useSyncExternalStore(
+    noopSubscribe,
+    () => true,
+    () => false,
+  )
 
   const handleToggleTheme = (e?: React.MouseEvent<HTMLElement>) => {
     const target = e?.currentTarget ?? (typeof document !== 'undefined' ? document.body : undefined)
@@ -163,7 +172,9 @@ export function PlaygroundToolbar({
       {/* 4. Canvas / Site Theme Toggle with MorphIcon */}
       <ToolbarButton
         label={
-          themeOverride === 'system' ? `Preview theme: auto (${effectiveTheme})` : `Preview theme: ${themeOverride}`
+          themeOverride === 'system'
+            ? `Preview theme: auto${hydrated ? ` (${effectiveTheme})` : ''}`
+            : `Preview theme: ${themeOverride}`
         }
         onClick={handleToggleTheme}
         className="relative overflow-hidden cursor-pointer"

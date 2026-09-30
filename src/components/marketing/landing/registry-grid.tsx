@@ -8,6 +8,7 @@ import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import { megaMenuTools } from '@/config/menu-config'
 import { IconArrowUpRight } from '@tabler/icons-react'
 import { Button } from '@/registry/components/button/button-squircle'
+import { cn } from '@/registry/lib/utils'
 import { OrbBloopCard } from './bento/registry/orb-bloop-card'
 import { HandleReelCard } from './bento/registry/handle-reel-card'
 import { AnimojiCard } from './bento/registry/animoji-card'
@@ -18,11 +19,44 @@ import { AvatarsSquishmojiCard } from './bento/packages/avatars-squishmoji-card'
 import { LoadingOrbCard } from './bento/registry/loading-orb-card'
 import { EmojiCard } from './bento/packages/emoji-card'
 
-export function RegistryGrid() {
-  const [ref, isVisible] = useInView({ rootMargin: '200px 0px', initialInView: false })
+const subscribeToVisibility = (onChange: () => void) => {
+  document.addEventListener('visibilitychange', onChange)
+  return () => document.removeEventListener('visibilitychange', onChange)
+}
 
+/** False while the tab is in the background. */
+function usePageVisible() {
+  return React.useSyncExternalStore(
+    subscribeToVisibility,
+    () => document.visibilityState === 'visible',
+    () => true,
+  )
+}
+
+/**
+ * Runs one card's live demo only while that card is near the screen and the tab is visible.
+ * (One observer per card: a single grid-wide one started all nine demos at once.)
+ */
+function LiveCard({
+  children,
+  className,
+}: {
+  children: (active: boolean) => React.ReactNode
+  /** Grid placement of the wrapped card (spans): this wrapper is the grid item now. */
+  className?: string
+}) {
+  const [ref, inView] = useInView({ rootMargin: '100px 0px', initialInView: false })
+  const pageVisible = usePageVisible()
   return (
-    <section ref={ref} id="registry" data-page-section className="mx-auto max-w-7xl scroll-mt-16 px-5 sm:px-6 py-20">
+    <div ref={ref} className={cn('relative h-full', className)}>
+      {children(inView && pageVisible)}
+    </div>
+  )
+}
+
+export function RegistryGrid() {
+  return (
+    <section id="registry" data-page-section className="mx-auto max-w-7xl scroll-mt-16 px-5 sm:px-6 py-20">
       <div className="flex flex-col items-center justify-center text-center gap-3">
         <Link href="/components" data-space-hover="tick" className="outline-none">
           <Badge
@@ -48,19 +82,22 @@ export function RegistryGrid() {
         </div>
       </div>
 
-      <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <OrbBloopCard isVisible={isVisible} />
+      {/* data-ph-no-record: live demos rewrite the DOM every frame; keep them out of session replays. */}
+      <div data-ph-no-record className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <LiveCard>{(active) => <OrbBloopCard isVisible={active} />}</LiveCard>
         {/* <MorphingTextCard isVisible={isVisible} /> */}
         {/* <BouncyAccordionCard isVisible={isVisible} /> */}
         <HandleReelCard />
-        <AnimojiCard isVisible={isVisible} />
-        <TimelineCard isVisible={isVisible} />
+        <LiveCard>{(active) => <AnimojiCard isVisible={active} />}</LiveCard>
+        <LiveCard className="md:row-span-2">{(active) => <TimelineCard isVisible={active} />}</LiveCard>
         <GitHubActivityCard />
-        <AvatarsSquishmojiCard isVisible={isVisible} count={9} />
-        <FlagsCard isVisible={isVisible} />
+        <LiveCard className="sm:col-span-2 lg:col-span-2">
+          {(active) => <AvatarsSquishmojiCard isVisible={active} count={9} />}
+        </LiveCard>
+        <LiveCard>{(active) => <FlagsCard isVisible={active} />}</LiveCard>
         {/* <WordsPreloaderCard isVisible={isVisible} /> */}
-        <LoadingOrbCard isVisible={isVisible} />
-        <EmojiCard isVisible={isVisible} />
+        <LiveCard>{(active) => <LoadingOrbCard isVisible={active} />}</LiveCard>
+        <LiveCard>{(active) => <EmojiCard isVisible={active} />}</LiveCard>
       </div>
 
       <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
