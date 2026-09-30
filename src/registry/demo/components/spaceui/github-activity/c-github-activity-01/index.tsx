@@ -12,7 +12,7 @@ export interface GitHubActivityDemoProps {
 }
 
 export default function Demo({
-  user = 'https://github.com/adrielzimbril/spaceui',
+  user = 'https://github.com/usespaceui/ui',
   shape = 'rounded',
   showHeader = true,
   showLegend = true,

@@ -36,7 +36,7 @@ const appInfo = {
   email: 'hello@spaceui.one',
   namespace: 'usespaceui',
   // repoPath: 'usespaceui/ui',
-  repoPath: 'adrielzimbril/spaceui',
+  repoPath: 'usespaceui/ui',
   twitterHandle: '@usespaceui',
 }
 
@@ -53,7 +53,7 @@ export const siteConfig = {
   links: {
     docs: `${appInfo.site}/docs`,
     // github: `https://github.com/${appInfo.repoPath}/`,
-    github: `https://github.com/adrielzimbril/spaceui`,
+    github: `https://github.com/usespaceui/ui`,
     // twitter: `https://x.com/${appInfo.twitterHandle}`,
     x: 'https://x.com/adrielzimbril',
     authorTwitter: 'https://x.com/adrielzimbril',

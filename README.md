@@ -9,7 +9,7 @@
 </p>
 
 <h1 align="center">
-  @adrielzimbril/spaceui
+  @usespaceui/ui
 </h1>
 
 <p align="center">
@@ -18,7 +18,7 @@
 
 <p align="center">
   <a href="https://www.spaceui.one">Live Demo</a> •
-  <a href="https://github.com/adrielzimbril/spaceui">Source Code</a> •
+  <a href="https://github.com/usespaceui/ui">Source Code</a> •
   <a href="https://www.spaceui.one">SpaceUI.one</a>
 </p>
 
@@ -29,11 +29,11 @@
 </p>
 
 <div align="center">
-  <a href="https://github.com/adrielzimbril/spaceui">
-    <img src="https://img.shields.io/github/repo-size/adrielzimbril/spaceui">
+  <a href="https://github.com/usespaceui/ui">
+    <img src="https://img.shields.io/github/repo-size/usespaceui/ui">
   </a>
-  <a href="https://github.com/adrielzimbril/spaceui/blob/main/LICENSE.md">
-    <img src="https://img.shields.io/github/license/adrielzimbril/spaceui" />
+  <a href="https://github.com/usespaceui/ui/blob/main/LICENSE.md">
+    <img src="https://img.shields.io/github/license/usespaceui/ui" />
   </a>
   <br><br>
 </div>
@@ -42,7 +42,7 @@
 
 ## ✨ Overview
 
-`@adrielzimbril/spaceui` is the official Space UI Next.js application.
+`@usespaceui/ui` is the official Space UI Next.js application.
 
 It hosts the documentation, the copy-paste component registry, and live playgrounds for the Space UI primitives.
 
@@ -89,7 +89,7 @@ MIT — Free for commercial and personal use.
 
 ## 🛠 Maintenance
 
-If you find a bug or have a feature request, please open an [issue on GitHub](https://github.com/adrielzimbril/spaceui/issues).
+If you find a bug or have a feature request, please open an [issue on GitHub](https://github.com/usespaceui/ui/issues).
 
 This project follows a [Code of Conduct](./CODE_OF_CONDUCT.md).
 
