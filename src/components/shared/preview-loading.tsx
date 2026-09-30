@@ -32,9 +32,17 @@ export interface PreviewLoadingProps extends React.HTMLAttributes<HTMLDivElement
   size?: 'sm' | 'default' | 'lg'
   morph?: boolean
   label?: string
+  /** Replaces the default space/dev icon cycle. */
+  icons?: LoadingIcon[]
 }
 
-const ICONS = [
+export interface LoadingIcon {
+  id: string
+  component: React.ComponentType<{ className?: string }>
+  spin?: boolean
+}
+
+const ICONS: LoadingIcon[] = [
   { id: 'loader', component: IconLoader2, spin: true },
   { id: 'planet', component: IconPlanet, spin: false },
   { id: 'rocket', component: IconRocket, spin: false },
@@ -65,18 +73,25 @@ const sizeMap = {
   lg: 'size-6',
 }
 
-export function PreviewLoading({ size = 'default', morph = true, label, className, ...props }: PreviewLoadingProps) {
+export function PreviewLoading({
+  size = 'default',
+  morph = true,
+  label,
+  icons = ICONS,
+  className,
+  ...props
+}: PreviewLoadingProps) {
   const [index, setIndex] = React.useState(0)
 
   React.useEffect(() => {
     if (!morph) return
     const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % ICONS.length)
+      setIndex((prev) => (prev + 1) % icons.length)
     }, 1200)
     return () => clearInterval(timer)
-  }, [morph])
+  }, [morph, icons.length])
 
-  const current = ICONS[index]
+  const current = icons[index % icons.length]
   const IconComponent = current.component
 
   return (
