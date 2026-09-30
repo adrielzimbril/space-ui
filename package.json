@@ -56,7 +56,9 @@
     "lint:fix": "next lint --fix",
     "format:write": "prettier --write \"{src,public,scripts,supabase}/**/*.{ts,tsx,json,css,mdx}\" --cache",
     "format:check": "prettier --check \"{src,public,scripts,supabase}/**/*.{ts,tsx,json,css,mdx}\" --cache",
-    "clean:vercel": "node scripts/clean-vercel-deployments.mjs"
+    "clean:vercel": "node scripts/clean-vercel-deployments.mjs",
+    "launch": "node scripts/launch-render.mjs",
+    "launch:all": "pnpm launch && pnpm launch --res 4k"
   },
   "dependencies": {
     "@ai-sdk/openai": "^4.0.60",
