@@ -4,7 +4,8 @@ import * as React from 'react'
 import Link from 'next/link'
 import { IconArrowUpRight } from '@tabler/icons-react'
 import { Frame, FrameFooter, FrameTitle } from '@/registry/primitives/frame'
-import { Card, CardPanel } from '@/registry/primitives/card'
+import { Card } from '@/registry/primitives/card'
+import { CardMediaPanel } from '@/components/marketing/landing/card-media'
 import { OrbBloop } from '@/registry/components/orb/bloop'
 import { BloopState } from '@/registry/components/orb/bloop/types'
 import { BLOOP_PALETTES, BloopPaletteName } from '@/registry/components/orb/bloop/palettes'
@@ -32,7 +33,7 @@ export function OrbBloopCard({ isVisible = true }: { isVisible?: boolean }) {
   return (
     <Frame className="flex flex-col h-full">
       <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
-        <CardPanel className="flex-1 flex min-h-72 flex-col items-center justify-center p-4 rounded-lg">
+        <CardMediaPanel className="flex-1 flex min-h-72 flex-col items-center justify-center p-4 rounded-lg">
           {isVisible ? (
             <OrbBloop
               state={bloopState}
@@ -48,7 +49,7 @@ export function OrbBloopCard({ isVisible = true }: { isVisible?: boolean }) {
           ) : (
             <div className="size-46 rounded-full bg-muted/60" />
           )}
-        </CardPanel>
+        </CardMediaPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">
         <FrameTitle className="text-muted-foreground">Orb Bloop</FrameTitle>

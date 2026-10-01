@@ -4,7 +4,8 @@ import * as React from 'react'
 import Link from 'next/link'
 import { IconArrowUpRight, IconRotateClockwise, IconArrowsShuffle, IconHandFinger } from '@tabler/icons-react'
 import { Frame, FrameFooter, FrameTitle } from '@/registry/primitives/frame'
-import { Card, CardPanel } from '@/registry/primitives/card'
+import { Card } from '@/registry/primitives/card'
+import { CardMediaPanel } from '@/components/marketing/landing/card-media'
 import { Button } from '@/registry/components/button/button-squircle'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import { bloomSound, dropletSound, tapSound, tickSound } from '@/components/providers/sound-provider'
@@ -166,7 +167,7 @@ export function PlushCard({ isVisible = true, hasBeenVisible = true }: PlushCard
   return (
     <Frame className="flex flex-col h-full sm:col-span-2 sm:row-span-2 lg:col-span-2 lg:row-span-2">
       <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
-        <CardPanel className="flex-1 relative flex min-h-95 p-0 overflow-hidden items-center justify-center bg-muted/20 rounded-lg">
+        <CardMediaPanel className="flex-1 relative flex min-h-95 p-0 overflow-hidden items-center justify-center bg-muted/20 rounded-lg">
           <div
             ref={plushCanvasRef}
             onPointerDown={() => {
@@ -194,12 +195,7 @@ export function PlushCard({ isVisible = true, hasBeenVisible = true }: PlushCard
                 : 'filter blur-0 scale-100 opacity-100',
             )}
           />
-
-          <div className="pointer-events-none absolute left-3 top-3 z-10 inline-flex items-center gap-2 rounded-full bg-background/85 px-3 py-1 text-xs text-muted-foreground backdrop-blur-xs border-2 border-muted">
-            <IconHandFinger className="size-3.5 text-foreground" />
-            <span>Drag to groom fur · 3D WebGL</span>
-          </div>
-        </CardPanel>
+        </CardMediaPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">
         <FrameTitle className="text-muted-foreground">Plush 3D Fur</FrameTitle>

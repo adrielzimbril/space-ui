@@ -4,14 +4,15 @@ import * as React from 'react'
 import Link from 'next/link'
 import { IconArrowUpRight } from '@tabler/icons-react'
 import { Frame, FrameFooter, FrameTitle } from '@/registry/primitives/frame'
-import { Card, CardPanel } from '@/registry/primitives/card'
+import { Card } from '@/registry/primitives/card'
+import { CardMediaPanel } from '@/components/marketing/landing/card-media'
 import { BouncyAccordion } from '@/registry/components/spaceui/bouncy-accordion'
 
 export function BouncyAccordionCard() {
   return (
     <Frame className="flex flex-col h-full">
       <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
-        <CardPanel className="flex-1 flex min-h-72 items-center justify-center rounded-lg">
+        <CardMediaPanel className="flex-1 flex min-h-72 items-center justify-center rounded-lg">
           <div className="w-full">
             <BouncyAccordion
               items={[
@@ -30,7 +31,7 @@ export function BouncyAccordionCard() {
               ]}
             />
           </div>
-        </CardPanel>
+        </CardMediaPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">
         <FrameTitle className="text-muted-foreground">Bouncy Accordion</FrameTitle>

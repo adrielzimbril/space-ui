@@ -4,7 +4,8 @@ import * as React from 'react'
 import Link from 'next/link'
 import { IconArrowUpRight } from '@tabler/icons-react'
 import { Frame, FrameFooter, FrameTitle } from '@/registry/primitives/frame'
-import { Card, CardPanel } from '@/registry/primitives/card'
+import { Card } from '@/registry/primitives/card'
+import { CardMediaPanel } from '@/components/marketing/landing/card-media'
 import { LoadingOrb } from '@/registry/components/orb/loading'
 
 const TAILWIND_COLORS = [
@@ -18,7 +19,7 @@ export function LoadingOrbCard({ isVisible = true }: { isVisible?: boolean }) {
   return (
     <Frame className="flex flex-col h-full">
       <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
-        <CardPanel className="flex-1 flex min-h-72 flex-wrap items-center justify-center gap-5 sm:gap-6 p-4 rounded-lg">
+        <CardMediaPanel className="flex-1 flex min-h-72 flex-wrap items-center justify-center gap-5 sm:gap-6 p-4 rounded-lg">
           {TAILWIND_COLORS.map(({ label, className }) => (
             <div key={label} className="flex flex-col items-center gap-2 select-none">
               <div className="flex items-center justify-center">
@@ -27,7 +28,7 @@ export function LoadingOrbCard({ isVisible = true }: { isVisible?: boolean }) {
               <span className="text-xs font-medium tracking-tight text-muted-foreground">{label}</span>
             </div>
           ))}
-        </CardPanel>
+        </CardMediaPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">
         <FrameTitle className="text-muted-foreground">Loading Orb</FrameTitle>

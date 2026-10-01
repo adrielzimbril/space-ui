@@ -58,7 +58,8 @@
     "format:check": "prettier --check \"{src,public,scripts,supabase}/**/*.{ts,tsx,json,css,mdx}\" --cache",
     "clean:vercel": "node scripts/clean-vercel-deployments.mjs",
     "launch": "node scripts/launch-render.mjs",
-    "launch:all": "pnpm launch && pnpm launch --res 4k"
+    "launch:all": "pnpm launch && pnpm launch --res 4k",
+    "cards": "node scripts/cards-render.mjs"
   },
   "dependencies": {
     "@ai-sdk/openai": "^4.0.60",

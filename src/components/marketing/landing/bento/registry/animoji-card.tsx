@@ -4,7 +4,8 @@ import * as React from 'react'
 import Link from 'next/link'
 import { IconArrowUpRight } from '@tabler/icons-react'
 import { Frame, FrameFooter, FrameTitle } from '@/registry/primitives/frame'
-import { Card, CardPanel } from '@/registry/primitives/card'
+import { Card } from '@/registry/primitives/card'
+import { CardMediaPanel } from '@/components/marketing/landing/card-media'
 import { BlurRevealText } from '@/registry/components/spaceui/blur-reveal-text'
 import { Animoji, type AnimojiSource } from '@/registry/components/spaceui/animoji'
 
@@ -62,7 +63,7 @@ export function AnimojiCard({ isVisible = true }: { isVisible?: boolean }) {
   return (
     <Frame className="flex flex-col h-full">
       <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
-        <CardPanel className="flex-1 flex text-center min-h-44 flex-col items-center justify-center p-3.5 rounded-lg">
+        <CardMediaPanel className="flex-1 flex text-center min-h-44 flex-col items-center justify-center p-3.5 rounded-lg">
           <BlurRevealText
             text={PHRASES[index]}
             replayKey={index}
@@ -71,7 +72,7 @@ export function AnimojiCard({ isVisible = true }: { isVisible?: boolean }) {
             className="text-lg text-center font-medium sm:text-xl"
             renderSegment={(segment) => <Animoji source={source}>{segment}</Animoji>}
           />
-        </CardPanel>
+        </CardMediaPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">
         <FrameTitle className="text-muted-foreground">Textmoji Animated</FrameTitle>

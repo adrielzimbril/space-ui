@@ -5,7 +5,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { IconArrowUpRight } from '@tabler/icons-react'
 import { Frame, FrameFooter, FrameTitle } from '@/registry/primitives/frame'
-import { Card, CardPanel } from '@/registry/primitives/card'
+import { Card } from '@/registry/primitives/card'
+import { CardMediaPanel } from '@/components/marketing/landing/card-media'
 import { Button } from '@/registry/primitives/button'
 import { sparkleSound } from '@/components/providers/sound-provider'
 import { MorphIcon } from '@/registry/components/spaceui/morph-icon'
@@ -78,7 +79,7 @@ export function EmojiCard({ isVisible = true }: EmojiCardProps) {
   return (
     <Frame className="flex flex-col h-full">
       <Card className="flex-1 flex flex-col h-full">
-        <CardPanel className="flex-1 flex flex-col justify-center gap-2 p-3.5 min-h-44">
+        <CardMediaPanel className="flex-1 flex flex-col justify-center gap-2 p-3.5 min-h-44">
           <div className="grid grid-cols-3 gap-2.5 items-center justify-items-center">
             {currentEmojis.map((em, slotIdx) => {
               const emojiUrl = resolveEmojiUrl(em.char, {
@@ -117,7 +118,7 @@ export function EmojiCard({ isVisible = true }: EmojiCardProps) {
               )
             })}
           </div>
-        </CardPanel>
+        </CardMediaPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">
         <FrameTitle className="text-muted-foreground">Emoji Hub</FrameTitle>

@@ -4,7 +4,8 @@ import * as React from 'react'
 import Link from 'next/link'
 import { IconArrowUpRight } from '@tabler/icons-react'
 import { Frame, FrameFooter, FrameTitle } from '@/registry/primitives/frame'
-import { Card, CardPanel } from '@/registry/primitives/card'
+import { Card } from '@/registry/primitives/card'
+import { CardMediaPanel } from '@/components/marketing/landing/card-media'
 import { OrbSmooth } from '@/registry/components/orb/smooth'
 import { BENTO_CYCLE_INTERVAL } from '@/config/space-config'
 import { useStaggeredInterval } from '@/hooks/use-staggered-interval'
@@ -41,7 +42,7 @@ export function OrbSmoothCard({ isVisible = true }: { isVisible?: boolean }) {
   return (
     <Frame className="flex flex-col h-full">
       <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
-        <CardPanel className="flex-1 flex min-h-72 flex-col items-center justify-center p-4 rounded-lg">
+        <CardMediaPanel className="flex-1 flex min-h-72 flex-col items-center justify-center p-4 rounded-lg">
           <OrbSmooth
             size={190}
             textureUrl={`https://avatars.spaceui.one/v1?name=${SMOOTH_LUMINA_SEEDS[smoothSeedIndex]}&variant=lumina&format=svg`}
@@ -52,7 +53,7 @@ export function OrbSmoothCard({ isVisible = true }: { isVisible?: boolean }) {
             grainOpacity={SMOOTH_STATES[smoothStateIndex].grain}
             grainAnimated={SMOOTH_STATES[smoothStateIndex].grain > 0}
           />
-        </CardPanel>
+        </CardMediaPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">
         <FrameTitle className="text-muted-foreground">Orb Smooth</FrameTitle>

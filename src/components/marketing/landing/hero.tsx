@@ -25,7 +25,7 @@ export function Hero() {
     <section id="hero" data-page-section className="relative overflow-hidden pt-24 pb-8 md:pb-12">
       <div className="bg-muted rounded-5xl mx-2 md:mx-auto pt-12 pb-16 md:pt-20 md:pb-24 max-w-310 px-5 sm:px-6">
         <div className="flex flex-col items-center justify-center text-center">
-          <Link href="/docs" className="inline-flex items-center group outline-none">
+          <Link href="/components" className="inline-flex items-center group outline-none">
             <StatusBadge
               variant="outline"
               status="online"

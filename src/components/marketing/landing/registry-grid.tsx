@@ -1,14 +1,12 @@
 'use client'
 
-import * as React from 'react'
 import Link from 'next/link'
 import { registryStats } from '@/__registry__/stats'
-import { useInView } from '@/registry/hooks/animation/use-in-view'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import { megaMenuTools } from '@/config/menu-config'
 import { IconArrowUpRight } from '@tabler/icons-react'
 import { Button } from '@/registry/components/button/button-squircle'
-import { cn } from '@/registry/lib/utils'
+import { MediaCard } from './card-media'
 import { OrbBloopCard } from './bento/registry/orb-bloop-card'
 import { HandleReelCard } from './bento/registry/handle-reel-card'
 import { AnimojiCard } from './bento/registry/animoji-card'
@@ -18,41 +16,11 @@ import { GitHubActivityCard } from './bento/registry/github-activity-card'
 import { AvatarsSquishmojiCard } from './bento/packages/avatars-squishmoji-card'
 import { LoadingOrbCard } from './bento/registry/loading-orb-card'
 import { EmojiCard } from './bento/packages/emoji-card'
-
-const subscribeToVisibility = (onChange: () => void) => {
-  document.addEventListener('visibilitychange', onChange)
-  return () => document.removeEventListener('visibilitychange', onChange)
-}
-
-/** False while the tab is in the background. */
-function usePageVisible() {
-  return React.useSyncExternalStore(
-    subscribeToVisibility,
-    () => document.visibilityState === 'visible',
-    () => true,
-  )
-}
-
-/**
- * Runs one card's live demo only while that card is near the screen and the tab is visible.
- * (One observer per card: a single grid-wide one started all nine demos at once.)
- */
-function LiveCard({
-  children,
-  className,
-}: {
-  children: (active: boolean) => React.ReactNode
-  /** Grid placement of the wrapped card (spans): this wrapper is the grid item now. */
-  className?: string
-}) {
-  const [ref, inView] = useInView({ rootMargin: '100px 0px', initialInView: false })
-  const pageVisible = usePageVisible()
-  return (
-    <div ref={ref} className={cn('relative h-full', className)}>
-      {children(inView && pageVisible)}
-    </div>
-  )
-}
+// Hidden cards: uncomment the import with its line in the grid (Card Studio renders them either way).
+// import { OrbSmoothCard } from './bento/registry/orb-smooth-card'
+// import { MorphingTextCard } from './bento/registry/morphing-text-card'
+// import { BouncyAccordionCard } from './bento/registry/bouncy-accordion-card'
+// import { WordsPreloaderCard } from './bento/registry/words-preloader-card'
 
 export function RegistryGrid() {
   return (
@@ -84,20 +52,25 @@ export function RegistryGrid() {
 
       {/* data-ph-no-record: live demos rewrite the DOM every frame; keep them out of session replays. */}
       <div data-ph-no-record className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <LiveCard>{(active) => <OrbBloopCard isVisible={active} />}</LiveCard>
-        {/* <MorphingTextCard isVisible={isVisible} /> */}
-        {/* <BouncyAccordionCard isVisible={isVisible} /> */}
-        <HandleReelCard />
-        <LiveCard>{(active) => <AnimojiCard isVisible={active} />}</LiveCard>
-        <LiveCard className="md:row-span-2">{(active) => <TimelineCard isVisible={active} />}</LiveCard>
-        <GitHubActivityCard />
-        <LiveCard className="sm:col-span-2 lg:col-span-2">
+        <MediaCard id="orb-bloop">{(active) => <OrbBloopCard isVisible={active} />}</MediaCard>
+        {/* <MediaCard id="orb-smooth">{(active) => <OrbSmoothCard isVisible={active} />}</MediaCard> */}
+        {/* <MediaCard id="morphing-text">{() => <MorphingTextCard />}</MediaCard> */}
+        {/* <MediaCard id="bouncy-accordion">{() => <BouncyAccordionCard />}</MediaCard> */}
+        <MediaCard id="handle-reel">{() => <HandleReelCard />}</MediaCard>
+        <MediaCard id="animoji">{(active) => <AnimojiCard isVisible={active} />}</MediaCard>
+        <MediaCard id="timeline" className="md:row-span-2">
+          {(active) => <TimelineCard isVisible={active} />}
+        </MediaCard>
+        <MediaCard id="github-activity" className="sm:col-span-2 lg:col-span-2">
+          {() => <GitHubActivityCard />}
+        </MediaCard>
+        <MediaCard id="avatars" className="sm:col-span-2 lg:col-span-2">
           {(active) => <AvatarsSquishmojiCard isVisible={active} count={9} />}
-        </LiveCard>
-        <LiveCard>{(active) => <FlagsCard isVisible={active} />}</LiveCard>
-        {/* <WordsPreloaderCard isVisible={isVisible} /> */}
-        <LiveCard>{(active) => <LoadingOrbCard isVisible={active} />}</LiveCard>
-        <LiveCard>{(active) => <EmojiCard isVisible={active} />}</LiveCard>
+        </MediaCard>
+        <MediaCard id="flags">{(active) => <FlagsCard isVisible={active} />}</MediaCard>
+        {/* <MediaCard id="words-preloader">{(active) => <WordsPreloaderCard isVisible={active} />}</MediaCard> */}
+        <MediaCard id="loading-orb">{(active) => <LoadingOrbCard isVisible={active} />}</MediaCard>
+        <MediaCard id="emoji">{(active) => <EmojiCard isVisible={active} />}</MediaCard>
       </div>
 
       <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">

@@ -3,6 +3,7 @@
 import * as React from 'react'
 import Link from 'next/link'
 import { PageLayoutSync } from '@/components/docs/layout/page-layout-sync'
+import { SiteHeader } from '@/components/layout/site-header'
 import { SiteFooter } from '@/components/layout/site-footer'
 import { bloomSound, tickSound } from '@/components/providers/sound-provider'
 import { Mode } from '@/config/preview-config'
@@ -12,6 +13,7 @@ import { PixelRevealText } from '@/registry/components/spaceui/pixel-reveal-text
 import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
 import { OpenRunde } from '@/registry/lib/fonts/open-runde'
 import { cn } from '@/registry/lib/utils'
+import { logger } from '@/registry/utils/logger'
 
 export interface ErrorProps {
   error?: Error & { digest?: string }
@@ -49,6 +51,8 @@ export default function ErrorPage({ error, reset }: ErrorProps) {
       )}
     >
       <PageLayoutSync mode={Mode.standard} defaultMode={Mode.standard} />
+
+      <SiteHeader />
 
       <main className="flex flex-1 flex-col items-center justify-center min-h-[calc(80dvh-4rem)] px-5 sm:px-6 py-20 md:py-28 text-center">
         <div className="flex flex-col items-center justify-center max-w-xl mx-auto">

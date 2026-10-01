@@ -1,6 +1,7 @@
 'use client'
 
 import { PageLayoutSync } from '@/components/docs/layout/page-layout-sync'
+import { SiteHeader } from '@/components/layout/site-header'
 import { SiteFooter } from '@/components/layout/site-footer'
 import { bloomSound, tickSound } from '@/components/providers/sound-provider'
 import { Mode } from '@/config/preview-config'
@@ -28,6 +29,8 @@ export default function NotFound() {
       )}
     >
       <PageLayoutSync mode={Mode.standard} defaultMode={Mode.standard} />
+
+      <SiteHeader />
 
       <main className="flex flex-1 flex-col items-center justify-center min-h-[calc(80dvh-4rem)] px-5 sm:px-6 py-20 md:py-28 text-center">
         <div className="flex flex-col items-center justify-center max-w-xl mx-auto">

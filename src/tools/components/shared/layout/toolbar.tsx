@@ -1,6 +1,6 @@
 'use client'
 
-import type { ReactNode } from 'react'
+import { useSyncExternalStore, type ReactNode } from 'react'
 import { useTheme } from 'next-themes'
 import {
   IconLayoutSidebarLeftCollapse,
@@ -24,6 +24,8 @@ import { triggerThemeTransition } from '@/registry/components/spaceui/mode-switc
 import { useEventListener } from '@/registry/hooks/dom/use-event-listener'
 import { bloomSound } from '@/components/providers/sound-provider'
 import type { ResourceViewMode } from '@/tools/shared/types'
+
+const noopSubscribe = () => () => {}
 
 export type ResourceToolbarConfig = {
   theme?: boolean
@@ -75,7 +77,13 @@ export function ResourceToolbar({
   } = config
 
   const { resolvedTheme, setTheme } = useTheme()
-  const activeTheme = resolvedTheme === 'dark' ? 'dark' : 'light'
+  // The theme is only known on the client: render the light state until hydrated, like the server did.
+  const hydrated = useSyncExternalStore(
+    noopSubscribe,
+    () => true,
+    () => false,
+  )
+  const activeTheme = hydrated && resolvedTheme === 'dark' ? 'dark' : 'light'
 
   const handleToggleTheme = (event: React.MouseEvent<HTMLButtonElement>) => {
     const next = activeTheme === 'dark' ? 'light' : 'dark'

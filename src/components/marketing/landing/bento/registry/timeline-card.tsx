@@ -5,7 +5,8 @@ import Link from 'next/link'
 import { motion } from 'motion/react'
 import { IconCheck, IconCircle, IconChevronRight, IconArrowUpRight } from '@tabler/icons-react'
 import { Frame, FrameHeader, FrameFooter, FrameTitle, FramePanel } from '@/registry/primitives/frame'
-import { Card, CardPanel } from '@/registry/primitives/card'
+import { Card } from '@/registry/primitives/card'
+import { CardMediaPanel } from '@/components/marketing/landing/card-media'
 import { Badge } from '@/registry/primitives/badge'
 import { MorphIcon } from '@/registry/components/spaceui/morph-icon'
 import { Spinner } from '@/registry/primitives/spinner'
@@ -206,7 +207,7 @@ export function TimelineCard({ isVisible = true }: { isVisible?: boolean }) {
   return (
     <Frame className="flex flex-col h-full md:row-span-2">
       <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
-        <CardPanel className="flex-1 flex min-h-72 md:max-h-none max-h-72 overflow-y-auto p-2 sm:p-3 rounded-lg [&::-webkit-scrollbar]:hidden">
+        <CardMediaPanel className="flex-1 flex min-h-72 md:max-h-none max-h-72 overflow-y-auto p-2 sm:p-3 rounded-lg [&::-webkit-scrollbar]:hidden">
           <div
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
@@ -288,7 +289,7 @@ export function TimelineCard({ isVisible = true }: { isVisible?: boolean }) {
               })}
             </Timeline>
           </div>
-        </CardPanel>
+        </CardMediaPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">
         <FrameTitle className="text-muted-foreground">Timeline</FrameTitle>

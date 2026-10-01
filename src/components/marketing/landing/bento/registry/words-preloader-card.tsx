@@ -5,7 +5,8 @@ import Link from 'next/link'
 import { IconArrowUpRight, IconRotateClockwise } from '@tabler/icons-react'
 import { motion } from 'motion/react'
 import { Frame, FrameFooter, FrameTitle } from '@/registry/primitives/frame'
-import { Card, CardPanel } from '@/registry/primitives/card'
+import { Card } from '@/registry/primitives/card'
+import { CardMediaPanel } from '@/components/marketing/landing/card-media'
 import { Button } from '@/registry/primitives/button'
 import { WordsPreloader } from '@/registry/components/spaceui/words-preloader'
 import { tickSound } from '@/components/providers/sound-provider'
@@ -26,7 +27,7 @@ export function WordsPreloaderCard({ isVisible = true }: { isVisible?: boolean }
   return (
     <Frame className="flex flex-col h-full">
       <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
-        <CardPanel className="flex-1 flex min-h-72 p-0 overflow-hidden relative rounded-lg">
+        <CardMediaPanel className="flex-1 flex min-h-72 p-0 overflow-hidden relative rounded-lg">
           <div className="relative w-full h-full min-h-72 flex flex-col items-center justify-center overflow-hidden rounded-xl bg-muted/10">
             <WordsPreloader
               key={preloaderKey}
@@ -55,7 +56,7 @@ export function WordsPreloaderCard({ isVisible = true }: { isVisible?: boolean }
               </motion.div>
             </WordsPreloader>
           </div>
-        </CardPanel>
+        </CardMediaPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">
         <FrameTitle className="text-muted-foreground">Words Preloader</FrameTitle>

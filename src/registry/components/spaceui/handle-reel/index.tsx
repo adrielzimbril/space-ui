@@ -134,7 +134,10 @@ export function HandleReel({
 
   // Measure text baseline height directly from DOM probe
   React.useLayoutEffect(() => {
-    const measured = probeRef.current?.offsetHeight ?? 0
+    // Subpixel height: offsetHeight rounds (28.8 → 29) and the error adds up row after row. The
+    // computed style, unlike getBoundingClientRect, ignores any scale transform on an ancestor.
+    const probe = probeRef.current
+    const measured = probe ? parseFloat(getComputedStyle(probe).height) || 0 : 0
     if (measured && measured !== rowHeight) {
       setRowHeight(measured)
     }
@@ -147,7 +150,7 @@ export function HandleReel({
 
     const motionQuery = typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)')
 
-    if (motionQuery?.matches) {
+    if (motionQuery && motionQuery.matches) {
       translateY.set(getSlotPosition(lockIndex))
       setReelStatus('settled')
       onLand?.(finalName)
@@ -219,9 +222,15 @@ export function HandleReel({
 
               if (isTargetSlot && editable && isAtRest) {
                 return (
-                  <div key={idx} className="relative inline-flex items-center whitespace-nowrap leading-[1.2]">
-                    {/* Shadow span ensuring perfect inline bounding box */}
-                    <span aria-hidden="true" className="invisible pointer-events-none whitespace-pre select-none">
+                  <div key={idx} className="relative flex w-fit items-center whitespace-nowrap leading-[1.2]">
+                    {/* Draws the text, laid out like every other row. An input centers its text from
+                        the font's ascent/descent instead of the line box, which sat it ~1px lower
+                        than the prefix, so the input on top only takes the typing and the caret. */}
+                    <span
+                      aria-hidden="true"
+                      className="pointer-events-none whitespace-pre select-none transition-[color] duration-500 ease-out"
+                      style={{ color: activeColor }}
+                    >
                       {inputValue || ' '}
                     </span>
 
@@ -239,7 +248,7 @@ export function HandleReel({
                       spellCheck={false}
                       autoComplete="off"
                       className="absolute inset-0 h-full w-full border-0 bg-transparent p-0 text-inherit font-inherit tracking-inherit outline-none focus:outline-none"
-                      style={{ color: activeColor }}
+                      style={{ color: 'transparent', caretColor: activeColor }}
                     />
                   </div>
                 )

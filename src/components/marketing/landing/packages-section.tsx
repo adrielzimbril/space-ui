@@ -1,27 +1,17 @@
 'use client'
 
-import * as React from 'react'
 import Link from 'next/link'
-import { useInView } from '@/registry/hooks/animation/use-in-view'
 import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import { Button } from '@/registry/components/button/button-squircle'
 import { AvatarsSquishmojiCard } from './bento/packages/avatars-squishmoji-card'
 import { FlagsCard } from './bento/packages/flags-card'
 import { EmojiCard } from './bento/packages/emoji-card'
+import { MediaCard } from './card-media'
 import { IconArrowUpRight } from '@tabler/icons-react'
 
 export function PackagesSection() {
-  const [ref, isVisible] = useInView({ threshold: 0.05, rootMargin: '80px' })
-  const [hasBeenVisible, setHasBeenVisible] = React.useState(false)
-
-  React.useEffect(() => {
-    if (isVisible) {
-      setHasBeenVisible(true)
-    }
-  }, [isVisible])
-
   return (
-    <section ref={ref} id="packages" data-page-section className="mx-auto max-w-7xl scroll-mt-16 px-5 sm:px-6 py-20">
+    <section id="packages" data-page-section className="mx-auto max-w-7xl scroll-mt-16 px-5 sm:px-6 py-20">
       <div className="flex flex-col items-center justify-center text-center gap-2">
         <Link href="/tools" data-space-hover="tick" className="outline-none">
           <Badge
@@ -50,12 +40,14 @@ export function PackagesSection() {
 
       <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {/* <PlushCard isVisible={isVisible} hasBeenVisible={hasBeenVisible} /> */}
-        <AvatarsSquishmojiCard isVisible={isVisible} />
+        <MediaCard id="avatars-compact" className="sm:col-span-2 lg:col-span-2">
+          {(active) => <AvatarsSquishmojiCard isVisible={active} />}
+        </MediaCard>
         {/* <SquircleCard /> */}
-        <FlagsCard isVisible={isVisible} />
+        <MediaCard id="flags-compact">{(active) => <FlagsCard isVisible={active} />}</MediaCard>
         {/* <AudioCard /> */}
         {/* <ImageSplitCard isVisible={isVisible} /> */}
-        <EmojiCard isVisible={isVisible} />
+        <MediaCard id="emoji-compact">{(active) => <EmojiCard isVisible={active} />}</MediaCard>
       </div>
       <div className="flex mt-6 justify-center self-center align-center">
         <Button

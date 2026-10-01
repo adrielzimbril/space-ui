@@ -4,7 +4,8 @@ import * as React from 'react'
 import Link from 'next/link'
 import { IconArrowUpRight } from '@tabler/icons-react'
 import { Frame, FrameFooter, FrameTitle } from '@/registry/primitives/frame'
-import { Card, CardPanel } from '@/registry/primitives/card'
+import { Card } from '@/registry/primitives/card'
+import { CardMediaPanel } from '@/components/marketing/landing/card-media'
 import { AssetFlag } from '@/tools/flags/asset-flag'
 import { MorphIcon } from '@/registry/components/spaceui/morph-icon'
 import { tickSound } from '@/components/providers/sound-provider'
@@ -65,7 +66,7 @@ export function FlagsCard({ isVisible = true }: FlagsCardProps) {
   return (
     <Frame className="flex flex-col h-full">
       <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
-        <CardPanel className="flex-1 flex flex-col justify-center gap-3 p-3.5 min-h-44 rounded-lg">
+        <CardMediaPanel className="flex-1 flex flex-col justify-center gap-3 p-3.5 min-h-44 rounded-lg">
           <div className="grid grid-cols-3 gap-2.5 items-center justify-items-center">
             {FLAG_SETS[flagSetIndex].map((f, slotIdx) => (
               <div
@@ -87,7 +88,7 @@ export function FlagsCard({ isVisible = true }: FlagsCardProps) {
               </div>
             ))}
           </div>
-        </CardPanel>
+        </CardMediaPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">
         <FrameTitle className="text-muted-foreground">SVG Flags</FrameTitle>

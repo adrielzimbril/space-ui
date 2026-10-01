@@ -8,7 +8,8 @@ import type { SquishBackgroundStyle, SquishExpression } from '@usespaceui/squish
 import { Avatar } from '@usespaceui/avatars/react'
 import type { AvatarVariant } from '@usespaceui/avatars'
 import { Frame, FrameFooter, FrameTitle } from '@/registry/primitives/frame'
-import { Card, CardPanel } from '@/registry/primitives/card'
+import { Card } from '@/registry/primitives/card'
+import { CardMediaPanel } from '@/components/marketing/landing/card-media'
 import { dropletSound, tapSound } from '@/components/providers/sound-provider'
 import { BENTO_CYCLE_INTERVAL } from '@/config/space-config'
 import { useStaggeredInterval } from '@/hooks/use-staggered-interval'
@@ -105,7 +106,7 @@ export function AvatarsSquishmojiCard({ isVisible = true, className, count = 6 }
   return (
     <Frame className={cn('flex flex-col h-full sm:col-span-2 lg:col-span-2', className)}>
       <Card className="flex-1 flex flex-col h-full rounded-xl before:rounded-xl overflow-hidden">
-        <CardPanel className="flex-1 flex flex-col justify-center gap-3 p-4 min-h-48 rounded-lg">
+        <CardMediaPanel className="flex-1 flex flex-col justify-center gap-3 p-4 min-h-48 rounded-lg">
           <div
             className={cn(
               'grid gap-2 w-full items-center justify-items-center',
@@ -154,7 +155,7 @@ export function AvatarsSquishmojiCard({ isVisible = true, className, count = 6 }
               </div>
             ))}
           </div>
-        </CardPanel>
+        </CardMediaPanel>
       </Card>
       <FrameFooter className="flex flex-row items-center justify-between p-2">
         <FrameTitle className="text-muted-foreground">Generative Avatars &amp; Squishmoji</FrameTitle>
