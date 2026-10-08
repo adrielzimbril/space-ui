@@ -16,6 +16,7 @@ export interface DocsPageHeaderProps {
   prevNav?: NavItem
   nextNav?: NavItem
   showMetadata?: boolean
+  showPageActions?: boolean
 }
 
 export function DocsPageHeader({
@@ -29,7 +30,10 @@ export function DocsPageHeader({
   prevNav,
   nextNav,
   showMetadata = true,
+  showPageActions = true,
 }: DocsPageHeaderProps) {
+  const hasNav = showPageActions || prevNav || nextNav
+
   return (
     <div className="flex flex-col gap-3">
       {/* <DocsBreadcrumb slug={slug} className="mb-1" /> */}
@@ -37,10 +41,12 @@ export function DocsPageHeader({
         <h1 className="scroll-m-20 text-3xl font-semibold tracking-tight sm:text-4xl">{title}</h1>
 
         {/* Mobile Actions / Quick Nav */}
-        <div className="docs-nav fixed inset-x-0 bottom-0 z-50 flex items-center justify-between gap-2 border-t border-border bg-background px-6 py-4 sm:static sm:z-0 sm:border-t-0 sm:bg-transparent sm:p-0">
-          <PageActions path={path} url={url} />
-          <DocsMobileNav prev={prevNav} next={nextNav} />
-        </div>
+        {hasNav && showPageActions && (
+          <div className="docs-nav fixed inset-x-0 bottom-0 z-50 flex items-center justify-between gap-2 border-t border-border bg-background px-6 py-4 sm:static sm:z-0 sm:border-t-0 sm:bg-transparent sm:p-0">
+            <PageActions path={path} url={url} />
+            <DocsMobileNav prev={prevNav} next={nextNav} />
+          </div>
+        )}
       </div>
 
       {description && <p className="text-muted-foreground">{description}</p>}

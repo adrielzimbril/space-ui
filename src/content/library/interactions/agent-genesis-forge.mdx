@@ -1,0 +1,43 @@
+---
+title: Agent Genesis Forge
+description: Specialized agent synthesis and provisioning studio with skill matrix configuration, persona tuning, and live code preview.
+component: true
+base: base
+isPro: true
+preview:
+  name: interactions-agent-genesis-forge
+  contained: false
+  className: '**:[.preview]:h-auto'
+---
+
+## Installation
+
+<ComponentInstallation name="interactions-agent-genesis-forge" />
+
+## Usage
+
+```tsx
+import { AgentGenesisForge } from '@/registry/interactions/agent-genesis-forge'
+```
+
+```tsx
+<AgentGenesisForge
+  initialActivePresetIndex={0}
+  autoPlay={true}
+  speed={1}
+  onSequenceComplete={() => console.log('Agent synthesized successfully')}
+/>
+```
+
+## API Reference
+
+### AgentGenesisForge Props
+
+| Prop                       | Type            | Default         | Description                                                                        |
+| :------------------------- | :-------------- | :-------------- | :--------------------------------------------------------------------------------- |
+| `presets`                  | `AgentPreset[]` | `AGENT_PRESETS` | Available agent archetypes, system prompt templates, and default skill selections. |
+| `initialActivePresetIndex` | `number`        | `0`             | Initially selected agent archetype.                                                |
+| `autoPlay`                 | `boolean`       | `true`          | Cycles through synthesis and calibration phases automatically.                     |
+| `speed`                    | `number`        | `1`             | Playback speed multiplier for forging progress.                                    |
+| `className`                | `string`        | `''`            | Additional Tailwind utility classes for the outer container.                       |
+| `onSequenceComplete`       | `() => void`    | `-`             | Callback invoked when agent instantiation successfully finalizes.                  |

@@ -18,6 +18,7 @@ import { ThemeLockScript, THEME_LOCKED_ROUTES } from '@/components/providers/the
 import { PostHogProvider } from '@/components/providers/posthog-provider'
 import { PageTreesProvider } from '@/components/providers/page-trees-provider'
 import { librarySource, resourcesSource, source } from '@/lib/source'
+import NextTopLoader from 'nextjs-toploader'
 
 // TODO: Cache Components adoption. Refactor this route so this opt-out can be removed.
 // See: https://nextjs.org/docs/app/guides/migrating-to-cache-components
@@ -168,6 +169,18 @@ export default async function Layout({ children }: { children: ReactNode }) {
           // 'screenshot-mode',
         )}
       >
+        <NextTopLoader
+          color="var(--primary)"
+          initialPosition={0.08}
+          crawlSpeed={200}
+          height={2.5}
+          crawl={true}
+          showSpinner={false}
+          easing="ease"
+          speed={200}
+          shadow={false}
+          zIndex={99999}
+        />
         <PostHogProvider>
           <RootProvider search={{ enabled: false }} theme={{ disableTransitionOnChange: true }}>
             <ThemeLockScript />

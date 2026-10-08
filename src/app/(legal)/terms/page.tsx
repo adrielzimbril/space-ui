@@ -26,10 +26,9 @@ export default function TermsOfServicePage() {
       </nav>
 
       {/* Header */}
-      <header className="flex flex-col gap-3 pb-4">
+      <header className="flex flex-col gap-3 pb-8">
         <div className="flex flex-wrap items-center gap-2">
           <Badge size="sm">Terms of Service</Badge>
-          <span className="text-xs text-muted-foreground">v1.0.0</span>
           <span className="text-muted-foreground">·</span>
           <span className="text-xs text-muted-foreground">Last updated: September 15, 2026</span>
         </div>
@@ -226,9 +225,6 @@ export default function TermsOfServicePage() {
           </div>
         </section>
       </article>
-
-      {/* Docs Pager Navigation */}
-      <DocsPager prev={{ name: 'Privacy Policy', url: '/privacy' }} />
     </div>
   )
 }

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Space Interactions"
+  short_description: "Architectural rules, strict styling invariants, and registry composition for Space UI interactions"

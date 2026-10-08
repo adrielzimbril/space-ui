@@ -1,0 +1,25 @@
+{
+  "name": "interactions-agent-activity-feed",
+  "type": "registry:component",
+  "title": "Agent Activity Feed",
+  "description": "Real-time telemetry event stream monitoring tool executions, state diffs, tokens expended, and security policy checks.",
+  "dependencies": ["motion", "@usespaceui/squishmoji", "@usespaceui/sounds"],
+  "registryDependencies": [
+    "https://www.spaceui.one/r/lib-utils.json",
+    "https://www.spaceui.one/r/components-spaceui-badge-squircle.json",
+    "https://www.spaceui.one/r/components-spaceui-blur-reveal-text.json",
+    "https://www.spaceui.one/r/primitives-card.json",
+    "https://www.spaceui.one/r/primitives-frame.json"
+  ],
+  "categories": ["interaction", "agents", "activity", "logs", "feed"],
+  "files": [
+    {
+      "path": "src/registry/interactions/agent-activity-feed/index.tsx",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/registry/interactions/agent-activity-feed/data.ts",
+      "type": "registry:component"
+    }
+  ]
+}

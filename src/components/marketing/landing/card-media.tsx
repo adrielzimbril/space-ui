@@ -105,7 +105,7 @@ function CardVideo({ id, media, active }: CardMediaSlot) {
   return (
     <div
       data-slot="card-panel"
-      className="relative flex-1 overflow-hidden rounded-lg"
+      className="relative flex-1 overflow-hidden rounded-lg pointer-events-none"
       style={{ aspectRatio: `${media.width} / ${media.height}` }}
     >
       {/* Both posters are in the markup so the right one shows before hydration, in either theme;
@@ -136,10 +136,13 @@ function CardVideo({ id, media, active }: CardMediaSlot) {
           playsInline
           preload="none"
           aria-hidden
+          tabIndex={-1}
           disablePictureInPicture
+          disableRemotePlayback
+          controls={false}
           onPlaying={() => setPlayingSrc(src)}
           className={cn(
-            'absolute inset-0 size-full object-cover transition-opacity duration-300',
+            'pointer-events-none absolute inset-0 size-full object-cover select-none transition-opacity duration-300',
             playingSrc === src ? 'opacity-100' : 'opacity-0',
           )}
         />

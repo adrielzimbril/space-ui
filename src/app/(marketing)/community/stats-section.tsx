@@ -121,7 +121,7 @@ export function StatsSection({
             </div>
             <span className="text-sm font-medium">Leave a Note</span>
           </Button>
-          {user && (
+          {/* {user && (
             <Button
               variant="secondary"
               size="lg"
@@ -134,7 +134,7 @@ export function StatsSection({
             >
               <span className="text-sm font-medium">{isLoggingOut ? 'Logging out' : 'Logout'}</span>
             </Button>
-          )}
+          )} */}
         </div>
       )}
     </div>

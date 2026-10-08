@@ -59,6 +59,7 @@ export default function NotFound() {
               hover
               whileTap
               onClick={() => bloomSound()}
+              className="border-none"
             >
               <span>Explore</span>
             </Button>

@@ -74,7 +74,7 @@ export default function ErrorPage({ error, reset }: ErrorProps) {
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button variant="primary" size="lg" pointer hover whileTap onClick={handleReset}>
+            <Button variant="primary" size="lg" pointer hover whileTap onClick={handleReset} className="border-none">
               <span>Try Again</span>
             </Button>
 

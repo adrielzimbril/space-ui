@@ -142,6 +142,7 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
               prevNav={prevNav}
               nextNav={nextNav}
               showMetadata={!showCatalog}
+              showPageActions={!showCatalog}
             />
 
             {/* Markdown Body */}

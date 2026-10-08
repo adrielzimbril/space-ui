@@ -1,0 +1,37 @@
+---
+title: Agent Activity Feed
+description: Real-time telemetry event stream monitoring tool executions, state diffs, tokens expended, and security policy checks.
+component: true
+base: base
+isPro: true
+preview:
+  name: interactions-agent-activity-feed
+  contained: false
+  className: '**:[.preview]:h-auto'
+---
+
+## Installation
+
+<ComponentInstallation name="interactions-agent-activity-feed" />
+
+## Usage
+
+```tsx
+import { AgentActivityFeed } from '@/registry/interactions/agent-activity-feed'
+```
+
+```tsx
+<AgentActivityFeed autoPlay={true} speed={1} />
+```
+
+## API Reference
+
+### AgentActivityFeed Props
+
+| Prop           | Type                     | Default     | Description                                                  |
+| :------------- | :----------------------- | :---------- | :----------------------------------------------------------- |
+| `preset`       | `AgentActivityPresetKey` | `'general'` | Active preset stream containing agent operational telemetry. |
+| `autoPlay`     | `boolean`                | `true`      | Cycles through event filters and presets automatically.      |
+| `speed`        | `number`                 | `1`         | Speed multiplier for auto-advance transitions.               |
+| `pauseOnHover` | `boolean`                | `true`      | Pauses autonomous cycling while pointer is over the frame.   |
+| `className`    | `string`                 | `''`        | Additional Tailwind utility classes for the outer container. |

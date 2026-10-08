@@ -52,11 +52,11 @@ export function AvatarFallback({
 
   return (
     <AvatarPrimitive.Fallback
-      className={cn('size-full rounded-[inherit]', className)}
+      className={cn('size-full [corner-shape:inherit] rounded-[inherit]', className)}
       data-slot="avatar-fallback"
       {...props}
     >
-      <img src={src} alt={resolvedName} className="size-full rounded-[inherit] object-cover" />
+      <img src={src} alt={resolvedName} className="size-full [corner-shape:inherit] rounded-[inherit] object-cover" />
     </AvatarPrimitive.Fallback>
   )
 }

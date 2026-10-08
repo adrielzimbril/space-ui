@@ -1,0 +1,37 @@
+---
+title: Agent Clearance Deck
+description: Autonomous credential and permission elevation deck with interactive risk scopes, countdown timer, and audit logs.
+component: true
+base: base
+isPro: true
+preview:
+  name: interactions-agent-clearance-deck
+  contained: false
+  className: '**:[.preview]:h-auto'
+---
+
+## Installation
+
+<ComponentInstallation name="interactions-agent-clearance-deck" />
+
+## Usage
+
+```tsx
+import { AgentClearanceDeck } from '@/registry/interactions/agent-clearance-deck'
+```
+
+```tsx
+<AgentClearanceDeck autoPlay={true} speed={1} onSequenceComplete={() => console.log('Clearance cycle finished')} />
+```
+
+## API Reference
+
+### AgentClearanceDeck Props
+
+| Prop                 | Type                 | Default              | Description                                                                |
+| :------------------- | :------------------- | :------------------- | :------------------------------------------------------------------------- |
+| `initialRequests`    | `ClearanceRequest[]` | `CLEARANCE_REQUESTS` | List of credential elevation requests with scopes, TTLs, and risk ratings. |
+| `autoPlay`           | `boolean`            | `true`               | Automatically cycles and resolves clearance requests in sequence.          |
+| `speed`              | `number`             | `1`                  | Speed multiplier for approval countdown timers.                            |
+| `className`          | `string`             | `''`                 | Additional Tailwind utility classes for the outer card.                    |
+| `onSequenceComplete` | `() => void`         | `-`                  | Callback invoked when all requests in the deck have been processed.        |

@@ -14,7 +14,7 @@ export const CARD_MEDIA_BASE = 'https://cdn.spaceui.one/atom/launch/demos'
 export const MAX_VIDEO_BYTES = 1024 * 1024
 
 /** Rendered, but better live (say, it reacts to the cursor). */
-const KEEP_LIVE = new Set<string>([])
+const KEEP_LIVE = new Set<string>(['github', 'github-activity', 'image-split', 'audio', 'squircle'])
 
 export type CardMediaTheme = 'light' | 'dark'
 

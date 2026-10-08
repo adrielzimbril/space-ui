@@ -57,6 +57,8 @@ const FOOTER_GROUPS: FooterGroup[] = [
       { label: 'MCP & AI Protocol', href: '/docs/mcp' },
       { label: 'Agent Skills', href: '/docs/skills' },
       { label: 'Changelog', href: '/docs/changelog' },
+      { label: 'Terms of Service', href: '/terms' },
+      { label: 'Privacy Policy', href: '/privacy' },
     ],
   },
   {

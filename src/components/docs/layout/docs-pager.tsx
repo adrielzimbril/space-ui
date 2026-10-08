@@ -19,39 +19,35 @@ export function DocsPager({ prev, next, className }: DocsPagerProps) {
   if (!prev && !next) return null
 
   return (
-    <div className={cn('flex justify-between items-center gap-4 mt-10 mb-6 not-prose w-full', className)}>
+    <div className={cn('grid grid-cols-2 gap-2 sm:gap-4 mt-10 mb-6 not-prose w-full min-w-0', className)}>
       {prev ? (
         <Link
           href={prev.url}
           prefetch={false}
-          className="group relative w-fit flex items-center gap-3 p-2 rounded-2xl border-[.25rem] border-muted bg-muted transition-all duration-300"
+          className="group relative flex items-center gap-2 px-3 py-2 rounded-2xl border-[.25rem] border-muted bg-muted transition-all duration-300 min-w-0 w-full"
         >
           <IconArrowLeft className="size-4 shrink-0 text-muted-foreground group-hover:text-foreground transition-all" />
-          <div className="flex flex-col gap-1.5 min-w-0">
-            <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors truncate">
-              {prev.name}
-            </span>
-          </div>
+          <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors truncate min-w-0 flex-1">
+            {prev.name}
+          </span>
         </Link>
       ) : (
-        <div className="hidden sm:block" />
+        <div />
       )}
 
       {next ? (
         <Link
           href={next.url}
           prefetch={false}
-          className="group relative w-fit place-self-end flex items-center justify-between text-right gap-3 p-2 rounded-2xl border-[.25rem] border-muted bg-muted transition-all duration-300 sm:col-start-2"
+          className="group relative flex items-center justify-end text-right gap-2 px-3 py-2 rounded-2xl border-[.25rem] border-muted bg-muted transition-all duration-300 min-w-0 w-full"
         >
-          <div className="flex flex-col items-end text-right gap-1.5 min-w-0 flex-1">
-            <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors truncate">
-              {next.name}
-            </span>
-          </div>
+          <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors truncate min-w-0 flex-1">
+            {next.name}
+          </span>
           <IconArrowRight className="size-4 shrink-0 text-muted-foreground group-hover:text-foreground transition-all" />
         </Link>
       ) : (
-        <div className="hidden sm:block" />
+        <div />
       )}
     </div>
   )

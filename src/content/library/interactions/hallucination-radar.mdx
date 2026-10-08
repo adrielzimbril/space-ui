@@ -1,0 +1,37 @@
+---
+title: Hallucination Radar
+description: Real-time hallucination defense radar tracking semantic grounding scores, citation provenance, and contradiction risk.
+component: true
+base: base
+isPro: true
+preview:
+  name: interactions-hallucination-radar
+  contained: false
+  className: '**:[.preview]:h-auto'
+---
+
+## Installation
+
+<ComponentInstallation name="interactions-hallucination-radar" />
+
+## Usage
+
+```tsx
+import { HallucinationRadar } from '@/registry/interactions/hallucination-radar'
+```
+
+```tsx
+<HallucinationRadar autoPlay={true} speed={1} />
+```
+
+## API Reference
+
+### FactGroundingRadar Props
+
+| Prop                 | Type          | Default       | Description                                                                            |
+| :------------------- | :------------ | :------------ | :------------------------------------------------------------------------------------- |
+| `claims`             | `FactClaim[]` | `FACT_CLAIMS` | Claims under evaluation with provenance source links and grounding confidence indices. |
+| `autoPlay`           | `boolean`     | `true`        | Performs continuous rotational radar sweeps and claim evaluations.                     |
+| `speed`              | `number`      | `1`           | Radar angular velocity and evaluation speed multiplier.                                |
+| `className`          | `string`      | `''`          | Additional Tailwind utility classes for the outer container.                           |
+| `onSequenceComplete` | `() => void`  | `-`           | Callback triggered when all claims have undergone factual verification.                |

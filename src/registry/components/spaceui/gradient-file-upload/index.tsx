@@ -596,7 +596,7 @@ function AmbientGlow({
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-[-0.09375rem] -z-10 rounded-[inherit] opacity-90 transition-opacity duration-300"
+        className="pointer-events-none absolute inset-[-0.09375rem] -z-10 [corner-shape:inherit] rounded-[inherit] opacity-90 transition-opacity duration-300"
         style={{
           background: gradientColors,
           backgroundSize: '250% 250%',
@@ -604,7 +604,10 @@ function AmbientGlow({
           filter: `blur(0.25rem) brightness(${brightness}) saturate(${saturation})`,
         }}
       />
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 rounded-[inherit] bg-muted" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 [corner-shape:inherit] rounded-[inherit] bg-muted"
+      />
       {children}
     </div>
   )

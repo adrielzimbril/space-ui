@@ -1,0 +1,53 @@
+---
+title: Rainbow Glow Border
+description: Smooth animated rainbow glow border wrap with drifting color orbs. Put any registry component inside.
+isPro: true
+preview:
+  name: demo-c-rainbow-glow-border-01
+  className: mb-4
+---
+
+## Installation
+
+<ComponentInstallation name="components-spaceui-rainbow-glow-border" />
+
+## Usage
+
+```tsx
+import { RainbowGlowBorder } from '@/components/spaceui/rainbow-glow-border'
+import { Avatar } from '@/components/ui/avatar'
+import { AvatarFallback } from '@/components/spaceui/avatar-extended'
+
+;<RainbowGlowBorder className="inline-flex size-14 rounded-full p-0.75">
+  <Avatar className="size-full">
+    <AvatarFallback name="rainbow" variant="lumina" />
+  </Avatar>
+</RainbowGlowBorder>
+```
+
+`rounded-*` and `p-0.75` on `RainbowGlowBorder` control the glow ring shape and thickness.
+
+## Variants
+
+### Button
+
+<ComponentPreview name="demo-c-rainbow-glow-border-02" className="mb-4" />
+
+### Card
+
+<ComponentPreview name="demo-c-rainbow-glow-border-03" className="mb-4" />
+
+### Presets
+
+<ComponentPreview name="demo-c-rainbow-glow-border-04" className="mb-4" />
+
+## Props
+
+| Prop             | Type                                                                 | Default     | Description                                                    |
+| ---------------- | -------------------------------------------------------------------- | ----------- | -------------------------------------------------------------- |
+| `children`       | `React.ReactNode`                                                    | —           | Any registry component                                         |
+| `preset`         | `'rainbow' \| 'aurora' \| 'sunset' \| 'neon' \| 'cyber' \| 'chrome'` | `'rainbow'` | Built-in animated palette presets                              |
+| `orbs`           | `OrbConfig[]`                                                        | —           | Custom array of orb colors and trajectories (overrides preset) |
+| `innerClassName` | `string`                                                             | —           | Class names for the relative content wrapper                   |
+| `blur`           | `number`                                                             | `6`         | Gaussian blur radius applied to drifting orbs in pixels        |
+| `duration`       | `number`                                                             | `3`         | Loop duration in seconds for each cycle                        |

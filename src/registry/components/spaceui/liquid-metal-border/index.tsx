@@ -109,7 +109,7 @@ export function LiquidBorder({
       {/* CSS gradient fallback (initial 0ms) -> background (after shader inits) */}
       <div
         className={cn(
-          'pointer-events-none absolute inset-0 rounded-[inherit] bg-linear-to-b transition-all duration-700',
+          'pointer-events-none absolute inset-0 [corner-shape:inherit] rounded-[inherit] bg-linear-to-b transition-all duration-700',
           isReady ? activeBackground : activeFallback,
         )}
       />

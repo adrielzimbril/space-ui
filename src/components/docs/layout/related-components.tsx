@@ -22,7 +22,7 @@ function RelatedCard({ item }: { item: RelatedComponent }) {
   return (
     <Link
       href={item.url}
-      className="group relative flex flex-col justify-between rounded-2xl p-1 gap-1 bg-muted hover:bg-muted/80 transition-all duration-300 min-w-64"
+      className="group relative flex flex-col justify-between rounded-2xl p-1 gap-1 bg-muted hover:bg-muted/80 transition-all duration-300 w-full min-w-0"
     >
       <div className="flex w-full px-2.5 pt-2 pb-1 items-center justify-between gap-2">
         <span className="font-semibold text-sm text-foreground group-hover:text-primary transition-colors truncate">

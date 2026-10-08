@@ -1,0 +1,37 @@
+---
+title: Cognitive Pulse Monitor
+description: Real-time neural load monitor visualizing agent attention distribution, context window pressure, and reasoning heatmaps.
+component: true
+base: base
+isPro: true
+preview:
+  name: interactions-cognitive-pulse-monitor
+  contained: false
+  className: '**:[.preview]:h-auto'
+---
+
+## Installation
+
+<ComponentInstallation name="interactions-cognitive-pulse-monitor" />
+
+## Usage
+
+```tsx
+import { CognitivePulseMonitor } from '@/registry/interactions/cognitive-pulse-monitor'
+```
+
+```tsx
+<CognitivePulseMonitor autoPlay={true} speed={1} onSequenceComplete={() => console.log('Telemetry cycle concluded')} />
+```
+
+## API Reference
+
+### CognitivePulseMonitor Props
+
+| Prop                 | Type             | Default          | Description                                                                                  |
+| :------------------- | :--------------- | :--------------- | :------------------------------------------------------------------------------------------- |
+| `agents`             | `AgentProfile[]` | `AGENT_PROFILES` | Worker agent profiles with live cognitive load, token throughput, and context depth metrics. |
+| `autoPlay`           | `boolean`        | `true`           | Simulates active reasoning spikes and context expansion dynamics.                            |
+| `speed`              | `number`         | `1`              | Sampling frequency multiplier for neural pulse waves.                                        |
+| `className`          | `string`         | `''`             | Additional Tailwind utility classes for the outer container.                                 |
+| `onSequenceComplete` | `() => void`     | `-`              | Callback fired upon completing a full cognitive monitoring epoch.                            |

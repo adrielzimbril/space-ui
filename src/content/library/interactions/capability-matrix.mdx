@@ -1,0 +1,37 @@
+---
+title: Capability Matrix
+description: Dynamic capability registry showcasing multi-modal agent skills, verification states, and runtime sandboxing telemetry.
+component: true
+base: base
+isPro: true
+preview:
+  name: interactions-capability-matrix
+  contained: false
+  className: '**:[.preview]:h-auto'
+---
+
+## Installation
+
+<ComponentInstallation name="interactions-capability-matrix" />
+
+## Usage
+
+```tsx
+import { CapabilityMatrix } from '@/registry/interactions/capability-matrix'
+```
+
+```tsx
+<CapabilityMatrix autoPlay={true} speed={1} onSequenceComplete={() => console.log('Capability audit complete')} />
+```
+
+## API Reference
+
+### CapabilityMatrix Props
+
+| Prop                  | Type               | Default                | Description                                                                       |
+| :-------------------- | :----------------- | :--------------------- | :-------------------------------------------------------------------------------- |
+| `initialCapabilities` | `CapabilityItem[]` | `DEFAULT_CAPABILITIES` | Registered agent tool definitions, security compliance levels, and health status. |
+| `autoPlay`            | `boolean`          | `true`                 | Automatically runs periodic sandbox health checks and verification runs.          |
+| `speed`               | `number`           | `1`                    | Speed multiplier for verification transitions.                                    |
+| `className`           | `string`           | `''`                   | Additional Tailwind utility classes for the outer container.                      |
+| `onSequenceComplete`  | `() => void`       | `-`                    | Callback triggered upon completing a full capability audit pass.                  |

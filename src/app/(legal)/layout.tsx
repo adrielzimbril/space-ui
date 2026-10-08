@@ -14,7 +14,7 @@ export default function LegalLayout({ children }: { children: ReactNode }) {
       )}
     >
       <main className="flex-1 w-full pt-24 pb-20">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">{children}</div>
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-16">{children}</div>
       </main>
       <SiteFooter />
     </div>

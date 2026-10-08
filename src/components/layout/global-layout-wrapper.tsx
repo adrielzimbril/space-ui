@@ -10,6 +10,7 @@ import { PackageManagerProvider } from '@/components/providers/package-manager-p
 import { SoundProvider } from '@/components/providers/sound-provider'
 import { SquircleProvider } from '@/components/providers/squircle-provider'
 import { ThemeLockProvider } from '@/components/providers/theme-lock-provider'
+import { AuthProvider } from '@/components/providers/auth-provider'
 import { AnchoredToastProvider, ToastProvider } from '@/registry/primitives/toast'
 import { usePathname } from 'next/navigation'
 
@@ -18,7 +19,7 @@ function GlobalLayoutContent({ children }: { children: React.ReactNode }) {
   const { isStandard, isImmersive } = useLayoutMode()
   const toolWantsFloatNav = useFloatNavRequested()
   const isResourceStudio = pathname.startsWith('/tools/')
-  const marketingRoutes = ['/', '/tools', '/pricing', '/terms', '/privacy']
+  const marketingRoutes = ['/', '/tools', '/pricing', '/terms', '/privacy', '/login']
 
   const marketingStartsWithRoutes = ['/showcase']
 
@@ -30,7 +31,23 @@ function GlobalLayoutContent({ children }: { children: React.ReactNode }) {
     (pathname.startsWith('/library/interactions/') && pathname !== '/library/interactions/') ||
     (pathname.startsWith('/ui-kit/interactions/') && pathname !== '/ui-kit/interactions/')
 
-  const floatNavClass = isMarketing || isInteractionsSubpage ? 'bottom-6' : undefined
+  const catalogIndexRoutes = [
+    '/components',
+    '/primitives',
+    '/blocks',
+    '/hooks',
+    '/templates',
+    '/interactions',
+    '/library/components',
+    '/library/primitives',
+    '/library/blocks',
+    '/library/hooks',
+    '/library/templates',
+    '/library/interactions',
+  ]
+  const isCatalogIndexPage = catalogIndexRoutes.includes(pathname)
+
+  const floatNavClass = isMarketing || isInteractionsSubpage || isCatalogIndexPage ? 'bottom-6' : undefined
 
   if (isImmersive) {
     return <>{children}</>
@@ -109,7 +126,9 @@ export function GlobalLayoutWrapper({
     <SquircleProvider>
       <ToastProvider>
         <AnchoredToastProvider>
-          <SoundProvider>{content}</SoundProvider>
+          <SoundProvider>
+            <AuthProvider>{content}</AuthProvider>
+          </SoundProvider>
         </AnchoredToastProvider>
       </ToastProvider>
     </SquircleProvider>

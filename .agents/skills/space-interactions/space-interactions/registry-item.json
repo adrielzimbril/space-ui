@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "space-interactions",
+  "type": "registry:item",
+  "title": "Space Interactions",
+  "description": "Agent skill: engineering rules, strict styling invariants, container architecture, and registry composition for Space UI interactions.",
+  "categories": ["skills", "interactions", "animation", "components"],
+  "files": [
+    {
+      "path": "src/registry/skills/space-interactions/SKILL.md",
+      "type": "registry:file",
+      "target": "~/.agents/skills/space-interactions/SKILL.md"
+    },
+    {
+      "path": "src/registry/skills/space-interactions/rules.md",
+      "type": "registry:file",
+      "target": "~/.agents/skills/space-interactions/rules.md"
+    },
+    {
+      "path": "src/registry/skills/space-interactions/patterns.md",
+      "type": "registry:file",
+      "target": "~/.agents/skills/space-interactions/patterns.md"
+    },
+    {
+      "path": "src/registry/skills/space-interactions/components.md",
+      "type": "registry:file",
+      "target": "~/.agents/skills/space-interactions/components.md"
+    },
+    {
+      "path": "src/registry/skills/space-interactions/agents/openai.yaml",
+      "type": "registry:file",
+      "target": "~/.agents/skills/space-interactions/agents/openai.yaml"
+    }
+  ],
+  "createdAt": "2026-10-01",
+  "updatedAt": "2026-10-01"
+}

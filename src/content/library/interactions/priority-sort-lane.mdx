@@ -1,0 +1,37 @@
+---
+title: Priority Sort Lane
+description: Dynamic priority queue sorting high-urgency agent goals with interactive reordering and urgency-decay visualizations.
+component: true
+base: base
+isPro: true
+preview:
+  name: interactions-priority-sort-lane
+  contained: false
+  className: '**:[.preview]:h-auto'
+---
+
+## Installation
+
+<ComponentInstallation name="interactions-priority-sort-lane" />
+
+## Usage
+
+```tsx
+import { PrioritySortLane } from '@/registry/interactions/priority-sort-lane'
+```
+
+```tsx
+<PrioritySortLane autoPlay={true} speed={1} onSequenceComplete={() => console.log('Sort lane rebalanced')} />
+```
+
+## API Reference
+
+### PrioritySortLane Props
+
+| Prop                 | Type         | Default         | Description                                                       |
+| :------------------- | :----------- | :-------------- | :---------------------------------------------------------------- |
+| `initialTasks`       | `LaneTask[]` | `DEFAULT_TASKS` | Priority-tagged agent subgoals distributed across urgency levels. |
+| `autoPlay`           | `boolean`    | `true`          | Dynamically rebalances and promotes high-urgency tasks.           |
+| `speed`              | `number`     | `1`             | Speed multiplier for automatic priority shift intervals.          |
+| `className`          | `string`     | `''`            | Additional Tailwind utility classes for the outer container.      |
+| `onSequenceComplete` | `() => void` | `-`             | Callback fired when all pending tasks in the lane are sorted.     |
