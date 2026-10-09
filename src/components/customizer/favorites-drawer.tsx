@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { useBundle } from '@/components/providers/bundle-provider'
+import { useFavorites } from '@/components/providers/favorites-provider'
 import { useBrandColor } from '@/components/providers/brand-color-provider'
 import { bloomSound, slideSound } from '@/components/providers/sound-provider'
 import { InlineInstallBar } from '@/components/docs/installation/inline-install-bar'
@@ -20,15 +20,16 @@ import {
   DrawerClose,
   DrawerTitle,
 } from '@/registry/primitives/drawer'
-import { IconPackage, IconPackageExport, IconX, IconBox, IconShare, IconTrash } from '@tabler/icons-react'
+import { IconPackageExport, IconX, IconBox, IconShare, IconTrash } from '@tabler/icons-react'
+import { HeartIcon } from '@/components/shared/favorite-button'
 import { useClipboard } from '@/registry/hooks/browser/use-clipboard'
 import { cn } from '@/registry/lib/utils'
 import { REGISTRY_NAMESPACE } from '@/lib/install-command'
 import { TextMorph } from 'torph/react'
-import { trackBundleDrawerOpened, trackBundleShareCopied } from '@/lib/analytics/posthog'
+import { trackFavoritesDrawerOpened, trackFavoritesShareCopied } from '@/lib/analytics/posthog'
 
-export function BundleDrawer() {
-  const { items, count, remove, clear, message } = useBundle()
+export function FavoritesDrawer() {
+  const { items, count, remove, clear, message } = useFavorites()
   const { activePalette } = useBrandColor()
   const [open, setOpen] = useState(false)
   const { copy: copyShare, copied: copiedShare } = useClipboard({ timeout: 1500 })
@@ -37,20 +38,20 @@ export function BundleDrawer() {
     if (typeof window === 'undefined' || items.length === 0) return ''
     const slugs = items.map((i) => i.slug).join(',')
     const themeParam = activePalette.name !== 'zinc' ? `&theme=${activePalette.name}` : ''
-    return `${window.location.origin}/docs?bundle=${slugs}${themeParam}`
+    return `${window.location.origin}/docs?favorites=${slugs}${themeParam}`
   }, [items, activePalette.name])
 
   const handleCopyShare = async () => {
     if (!shareUrl) return
     bloomSound()
-    trackBundleShareCopied({ share_url: shareUrl, items_count: count })
+    trackFavoritesShareCopied({ share_url: shareUrl, items_count: count })
     await copyShare(shareUrl)
   }
 
   const handleOpenChange = (isOpen: boolean) => {
     setOpen(isOpen)
     if (isOpen) {
-      trackBundleDrawerOpened({ count, items: items.map((i) => i.slug) })
+      trackFavoritesDrawerOpened({ count, items: items.map((i) => i.slug) })
     }
   }
 
@@ -60,7 +61,7 @@ export function BundleDrawer() {
         render={
           <Button
             variant="ghost"
-            aria-label={`Open component bundle (${count} selected)`}
+            aria-label={`Open component favorites (${count} selected)`}
             className={cn(
               'inline-flex items-center gap-1.5 rounded-lg! px-2.5 h-8 bg-background hover:bg-background text-muted-foreground hover:text-foreground cursor-pointer transition-all active:scale-[0.96]',
               count > 0 && 'bg-secondary border-4! border-background text-foreground font-semibold',
@@ -69,9 +70,9 @@ export function BundleDrawer() {
               bloomSound()
             }}
           >
-            <IconPackage className="size-3.5" />
+            <HeartIcon filled={count > 0} className={cn('size-3.5', count > 0 && 'text-rose-500')} />
             <span className="hidden sm:inline font-medium text-xs">
-              <TextMorph>Bundle</TextMorph>
+              <TextMorph>Favorites</TextMorph>
             </span>
             {count > 0 && (
               <Badge
@@ -100,16 +101,9 @@ export function BundleDrawer() {
             <div className="inline-flex items-center gap-2">
               <IconLogo size="sm" />
               <span className="text-sm font-semibold">Space UI</span>
-              <Badge
-                variant="outline"
-                size="sm"
-                className="rounded-sm text-[10px] uppercase tracking-wider text-muted-foreground ml-1"
-              >
-                <TextMorph>{`Bundle (${count})`}</TextMorph>
-              </Badge>
             </div>
 
-            <DrawerTitle className="sr-only">Install Bundle</DrawerTitle>
+            <DrawerTitle className="sr-only">Component Favorites</DrawerTitle>
 
             <div className="flex items-center gap-1.5 ml-auto">
               <Kbd className="hidden sm:inline-flex">Esc</Kbd>
@@ -137,8 +131,8 @@ export function BundleDrawer() {
               {/* Selected Components Section */}
               <div>
                 <div className="flex items-center justify-between px-4 py-1.5 text-xs font-medium tracking-wider text-muted-foreground">
-                  <span>Selected Components</span>
-                  <span className="text-[.6875rem] uppercase text-muted-foreground">
+                  <span>Components</span>
+                  <span className="text-[.6875rem] text-muted-foreground">
                     <TextMorph>{`${count} ${count <= 1 ? 'Item' : 'Items'}`}</TextMorph>
                   </span>
                 </div>
@@ -146,11 +140,11 @@ export function BundleDrawer() {
                 {count === 0 ? (
                   <div className="p-8 text-center text-sm text-muted-foreground flex flex-col items-center justify-center gap-2">
                     <div className="size-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground">
-                      <IconPackageExport className="size-5" />
+                      <HeartIcon className="size-5" />
                     </div>
-                    <div className="text-sm font-medium text-foreground">Your bundle is empty</div>
+                    <div className="text-sm font-medium text-foreground">No favorites yet</div>
                     <div className="text-xs text-muted-foreground max-w-xs">
-                      Add components from documentation to build your bundle.
+                      Click the heart on any component in the documentation to add it to your favorites.
                     </div>
                   </div>
                 ) : (
@@ -208,7 +202,7 @@ export function BundleDrawer() {
               className="flex h-8 gap-2 items-center justify-center bg-background! rounded-md px-3 text-sm font-medium hover:bg-muted text-foreground cursor-pointer"
             >
               <IconShare className="size-3.5 text-muted-foreground" />
-              <TextMorph>{copiedShare ? 'Copied link!' : 'Share bundle'}</TextMorph>
+              <TextMorph>{copiedShare ? 'Copied link!' : 'Share favorites'}</TextMorph>
             </Button>
           ) : (
             <span />

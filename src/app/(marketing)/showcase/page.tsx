@@ -11,11 +11,7 @@ export const metadata: Metadata = {
 }
 
 export default function ShowcasePage() {
-  const projects = (projectsData.projects as ProjectItem[]).map((p) => ({
-    ...p,
-    repo: p.isPro ? '' : p.repo,
-    repo_url: p.isPro ? '' : p.repo_url,
-  }))
+  const projects = projectsData.projects as ProjectItem[]
 
   return (
     <PageThemeLock theme="dark">

@@ -94,15 +94,14 @@ export function SiteHeader() {
   const appMeta = (user?.app_metadata || {}) as Record<string, any>
   const userMeta = (user?.user_metadata || {}) as Record<string, any>
   const isPro = Boolean(
-    user && (
-      appMeta.plan === 'pro' ||
+    user &&
+    (appMeta.plan === 'pro' ||
       appMeta.plan === 'lifetime' ||
       appMeta.has_paid === true ||
       appMeta.subscription_status === 'active' ||
       userMeta.is_pro ||
       userMeta.isPro ||
-      userMeta.plan === 'pro'
-    ),
+      userMeta.plan === 'pro'),
   )
 
   return (

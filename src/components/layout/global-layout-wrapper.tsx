@@ -3,7 +3,7 @@
 import { FloatNav } from '@/components/layout/float-nav'
 import { SiteHeader } from '@/components/layout/site-header'
 import { BrandColorProvider } from '@/components/providers/brand-color-provider'
-import { BundleProvider } from '@/components/providers/bundle-provider'
+import { FavoritesProvider } from '@/components/providers/favorites-provider'
 import { FloatNavProvider, useFloatNavRequested } from '@/components/providers/float-nav-provider'
 import { LayoutModeProvider, Mode, useLayoutMode, type LayoutMode } from '@/components/providers/layout-mode-provider'
 import { PackageManagerProvider } from '@/components/providers/package-manager-provider'
@@ -110,13 +110,13 @@ export function GlobalLayoutWrapper({
     <ThemeLockProvider>
       <PackageManagerProvider>
         <BrandColorProvider>
-          <BundleProvider>
+          <FavoritesProvider>
             <LayoutModeProvider initialMode={initialLayoutMode}>
               <FloatNavProvider>
                 <GlobalLayoutContent>{children}</GlobalLayoutContent>
               </FloatNavProvider>
             </LayoutModeProvider>
-          </BundleProvider>
+          </FavoritesProvider>
         </BrandColorProvider>
       </PackageManagerProvider>
     </ThemeLockProvider>

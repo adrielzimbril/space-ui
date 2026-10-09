@@ -7,11 +7,7 @@ import { ProjectCard } from '@/components/marketing/showcase/project-card'
 import { cn } from '@/registry/lib/utils'
 
 export function ShowcaseSection() {
-  const allProjects = (projectsData.projects as ProjectItem[]).map((p) => ({
-    ...p,
-    repo: p.isPro ? '' : p.repo,
-    repo_url: p.isPro ? '' : p.repo_url,
-  }))
+  const allProjects = projectsData.projects as ProjectItem[]
   // Curate 3 standout projects for the homepage showcase (e.g. CineMax Pro, Cosmos AI, Marveen Pro)
   const featuredNames = ['cinemax-landing', 'cosmos-ai-landing', 'marveen-landing']
   const featured = allProjects.filter((p) => featuredNames.includes(p.name))

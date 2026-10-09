@@ -1,6 +1,6 @@
 'use client'
 
-import { BundleDrawer } from '@/components/customizer/bundle-drawer'
+import { FavoritesDrawer } from '@/components/customizer/favorites-drawer'
 import { ColorPickerNav } from '@/components/customizer/color-picker-nav'
 import { PmNav } from '@/components/customizer/pm-nav'
 import { Mode, useLayoutMode } from '@/components/providers/layout-mode-provider'
@@ -124,9 +124,9 @@ export function FloatNav({ className }: { className?: string }) {
         {/* Divider */}
         <div className="h-3.5 w-px bg-border" />
 
-        {/* Package Manager & Bundle */}
+        {/* Package Manager & Favorites */}
         <PmNav />
-        <BundleDrawer />
+        <FavoritesDrawer />
       </Group>
     </nav>
   )

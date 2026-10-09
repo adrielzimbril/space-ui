@@ -90,7 +90,7 @@ const KNOWN_SHORT_MAPPINGS: Record<string, string> = {
 }
 
 /**
- * Resolve an exact registry item identifier name (e.g. "components-spaceui-morphing-text", "primitives-button")
+ * Resolve an exact registry item identifier name (e.g. "components-spaceui-morphing-text", "primitives-button", "interactions-agent-pipeline")
  */
 export function resolveRegistryItemName(raw: string): string {
   if (!raw) return ''
@@ -109,14 +109,17 @@ export function resolveRegistryItemName(raw: string): string {
     return KNOWN_SHORT_MAPPINGS[clean]
   }
 
-  // 2. Already prefixed or exact (primitives-, components-, block-, template-, hooks-, lib-)
+  // 2. Already prefixed or exact (primitives-, components-, interactions-, block-, template-, hooks-, lib-, icons-)
   if (
     clean.startsWith('primitives-') ||
     clean.startsWith('components-') ||
+    clean.startsWith('interactions-') ||
     clean.startsWith('block-') ||
     clean.startsWith('template-') ||
     clean.startsWith('hooks-') ||
-    clean.startsWith('lib-')
+    clean.startsWith('lib-') ||
+    clean.startsWith('icons-') ||
+    clean.startsWith('demo-')
   ) {
     return clean
   }

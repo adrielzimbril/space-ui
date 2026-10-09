@@ -97,6 +97,7 @@
     "fluid-crossfade",
     "fluid-dither-crossfade",
     "liquid-mask-crossfade",
-    "mesh-gradient"
+    "mesh-gradient",
+    "liquid-mesh-blur"
   ]
 }

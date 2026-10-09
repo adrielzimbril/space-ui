@@ -6,7 +6,8 @@ import { index } from '@/__registry__/index'
 import { usePreviewTheme } from '@/components/docs/preview/hooks/use-preview-theme'
 import { useRegistryEntry } from '@/components/docs/preview/hooks/use-registry-entry'
 import { type Binds, Tweakpane } from '@/components/docs/preview/tweakpane'
-import { prettify, useBundle } from '@/components/providers/bundle-provider'
+import { prettify } from '@/components/providers/favorites-provider'
+import { FavoriteButton } from '@/components/shared/favorite-button'
 import { useLayoutMode } from '@/components/providers/layout-mode-provider'
 import { useProAccess } from '@/components/providers/pro-access-provider'
 import { bloomSound } from '@/components/providers/sound-provider'
@@ -35,7 +36,6 @@ import {
   IconExternalLink,
   IconLock,
   IconMaximize,
-  IconPackage,
   IconRotateClockwise,
 } from '@tabler/icons-react'
 import dynamic from 'next/dynamic'
@@ -142,8 +142,6 @@ export function ComponentPreview({
 
   const { isSplit, setActivePreview, activePreview, registerDefaultPreview, activeTweakName, setActiveTweakName } =
     useLayoutMode()
-  const { has, toggle } = useBundle()
-  const isBundled = has(name)
   const isSelected = activePreview?.name === name
 
   const isMobile = useIsMobile()
@@ -426,7 +424,11 @@ export function ComponentPreview({
   const showToolbar = (effectiveRestart || effectiveOpen || Boolean(binds)) && !(isSplit && isEffectivelySelected)
 
   return (
-    <div ref={containerRef} className={cn('rounded-2xl bg-muted w-full p-2 mt-5.5 not-prose', className)} {...props}>
+    <div
+      ref={containerRef}
+      className={cn('rounded-2xl [corner-shape:superellipse(1.25)] bg-muted w-full p-2 mt-5.5 not-prose', className)}
+      {...props}
+    >
       <Tabs value={tab} onValueChange={(v) => handleTabChange(v as 'preview' | 'code')} className="gap-0">
         <div className="flex flex-wrap items-center justify-between gap-3 px-3 pb-1 pt-1">
           <div className="flex items-center gap-2">
@@ -463,22 +465,13 @@ export function ComponentPreview({
           </div>
 
           <div className="flex items-center gap-2 ml-auto">
-            <Button
+            <FavoriteButton
+              slug={name}
+              title={title ?? prettify(name)}
               size="icon-lg"
               variant="ghost"
-              onClick={() => {
-                bloomSound()
-                toggle({ slug: name, title: title ?? prettify(name) })
-              }}
-              className={cn(
-                'bg-background hover:bg-background text-muted-foreground hover:text-foreground cursor-pointer shrink-0 transition-all duration-300 active:scale-[0.96]',
-                isBundled && 'bg-secondary border-4 border-background text-foreground font-bold',
-              )}
-              title={isBundled ? 'Remove from bundle' : 'Add to bundle'}
-              aria-label={isBundled ? 'Remove from bundle' : 'Add to bundle'}
-            >
-              <IconPackage className="size-3.5" />
-            </Button>
+              className="bg-background hover:bg-background text-muted-foreground hover:text-foreground cursor-pointer shrink-0 transition-all duration-300 active:scale-[0.96]"
+            />
             {isSplit && !isEffectivelySelected && (
               <Button
                 size="icon-lg"

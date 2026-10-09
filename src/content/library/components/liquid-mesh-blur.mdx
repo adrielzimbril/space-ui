@@ -1,0 +1,48 @@
+---
+title: Liquid Mesh Blur
+description: Organic liquid mesh gradient shader background blending orbiting particle clusters through a high-radius Gaussian blur diffusion filter.
+preview: demo-c-liquid-mesh-blur-01
+defaultMode: split
+isPro: true
+---
+
+## Installation
+
+<ComponentInstallation name="components-shader-liquid-mesh-blur" />
+
+## Usage
+
+```tsx
+import { LiquidMeshBlur } from '@/components/shader/liquid-mesh-blur'
+
+export default function SpaceUI() {
+  return (
+    <div className="relative h-96 w-full overflow-hidden rounded-2xl">
+      <LiquidMeshBlur blur={60} speed={1} particleCount={70} interactive={true} />
+    </div>
+  )
+}
+```
+
+## Examples
+
+### Top Ambient Glow
+
+<ComponentPreview name="demo-c-liquid-mesh-blur-02" />
+
+## API Reference
+
+| Prop                 | Type                  | Default                                                              | Description                                          |
+| -------------------- | --------------------- | -------------------------------------------------------------------- | ---------------------------------------------------- |
+| `colors`             | `string[]`            | `['#7C5CFC', '#0EA5E9', '#FF6F59', '#B8EE3A', '#E040FB', '#06B6D4']` | Array of hex color strings for fluid clusters        |
+| `color1` .. `color6` | `string`              | —                                                                    | Direct overrides for individual cluster colors       |
+| `blur`               | `number`              | `60`                                                                 | Gaussian blur diffusion radius in pixels             |
+| `speed`              | `number`              | `1`                                                                  | Orbit & drift velocity multiplier                    |
+| `particleCount`      | `number`              | `70`                                                                 | Total number of animated fluid particles             |
+| `minSize`            | `number`              | `130`                                                                | Minimum particle radius in pixels                    |
+| `maxSize`            | `number`              | `230`                                                                | Maximum particle radius in pixels                    |
+| `contrast`           | `number`              | `1.1`                                                                | Color contrast multiplier applied with blur filter   |
+| `interactive`        | `boolean`             | `true`                                                               | Enables pointer tracking attraction & repulsion      |
+| `className`          | `string`              | —                                                                    | Optional container CSS class name                    |
+| `style`              | `React.CSSProperties` | —                                                                    | Inline styles for wrapper container                  |
+| `children`           | `React.ReactNode`     | —                                                                    | Content overlaid cleanly on top of the liquid canvas |

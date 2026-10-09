@@ -24,7 +24,8 @@ import { CopyButton } from '@/registry/components/spaceui/copy'
 import { bloomSound } from '@/components/providers/sound-provider'
 import { trackComponentTabSwitched, trackComponentViewed } from '@/lib/analytics/posthog'
 import { formatCodeForDisplay } from '@/lib/install-command'
-import { useBundle, prettify } from '@/components/providers/bundle-provider'
+import { prettify } from '@/components/providers/favorites-provider'
+import { FavoriteButton } from '@/components/shared/favorite-button'
 import { useLayoutMode } from '@/components/providers/layout-mode-provider'
 import dynamic from 'next/dynamic'
 const CodeDrawer = dynamic(() => import('@/components/docs/preview/code-drawer').then((m) => m.CodeDrawer), {
@@ -83,8 +84,6 @@ export function ShowcaseCard({
   const { themeOverride, setThemeOverride } = usePreviewTheme(name)
   const [codeDrawerOpen, setCodeDrawerOpen] = useState(false)
   const { isSplit, setActivePreview, activePreview, registerDefaultPreview } = useLayoutMode()
-  const { has, toggle } = useBundle()
-  const isBundled = has(name)
   const isSelected = activePreview?.name === name
   const { entry, error: registryError } = useRegistryEntry(name)
   const componentGroup = getRegistryComponentGroup(name)
@@ -227,22 +226,13 @@ export function ShowcaseCard({
             />
           )} */}
 
-          <Button
+          <FavoriteButton
+            slug={name}
+            title={displayLabel || prettify(name)}
             size="icon"
             variant="ghost"
-            onClick={() => {
-              bloomSound()
-              toggle({ slug: name, title: displayLabel || prettify(name) })
-            }}
-            className={cn(
-              'size-7 bg-background hover:bg-background text-muted-foreground hover:text-foreground cursor-pointer active:scale-[0.96] transition-all',
-              isBundled && 'bg-secondary border-4 border-background text-foreground font-semibold',
-            )}
-            title={isBundled ? 'Remove from bundle' : 'Add to bundle'}
-            aria-label={isBundled ? 'Remove from bundle' : 'Add to bundle'}
-          >
-            <IconPackage className="size-3.5" />
-          </Button>
+            className="size-7 bg-background hover:bg-background text-muted-foreground hover:text-foreground cursor-pointer active:scale-[0.96] transition-all"
+          />
 
           {isSplit && !isSelected && (
             <Button

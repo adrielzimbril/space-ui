@@ -14,6 +14,7 @@ import { useMediaQuery } from '@/registry/hooks/browser/use-media-query'
 import { OpenRunde } from '@/registry/lib/fonts/open-runde'
 import { cn } from '@/registry/lib/utils'
 import { logger } from '@/registry/utils/logger'
+import { trackException } from '@/lib/analytics/posthog'
 
 export interface ErrorProps {
   error?: Error & { digest?: string }
@@ -24,6 +25,17 @@ export default function ErrorPage({ error, reset }: ErrorProps) {
   React.useEffect(() => {
     if (error) {
       logger.error(error)
+      try {
+        trackException({
+          error_message: error.message || 'Next.js application crash',
+          error_stack: error.stack || error.digest || '',
+          error_type: error.name || 'ApplicationError',
+          page: typeof window !== 'undefined' ? window.location.pathname : '',
+          is_fatal: true,
+        })
+      } catch {
+        // Ignore analytics reporting failure
+      }
     }
   }, [error])
 

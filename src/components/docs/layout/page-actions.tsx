@@ -7,7 +7,6 @@ import {
   IconCopy,
   IconExternalLink,
   IconMessageCircle,
-  IconPackage,
   IconMarkdown,
 } from '@tabler/icons-react'
 import { cn } from '@/registry/lib/utils'
@@ -15,7 +14,8 @@ import { Popover, PopoverContent, PopoverTrigger } from 'fumadocs-ui/components/
 import { Group } from '@/registry/primitives/group'
 import { Button } from '@/registry/primitives/button'
 import { Link } from '@/registry/primitives/link'
-import { useBundle, prettify } from '@/components/providers/bundle-provider'
+import { FavoriteButton } from '@/components/shared/favorite-button'
+import { prettify } from '@/components/providers/favorites-provider'
 import { useUiSound } from '@/components/providers/sound-provider'
 import { useClipboard } from '@/registry/hooks/browser/use-clipboard'
 import { siteConfig } from '@/config/space-config'
@@ -41,9 +41,7 @@ export function PageActions({
   const resolvedGithubUrl =
     githubUrl ?? (path ? `${siteConfig.links.github}/blob/main/src/content/${path}` : siteConfig.links.github)
 
-  const { has, toggle } = useBundle()
   const { playSound } = useUiSound()
-  const isBundled = componentName ? has(componentName) : false
   const { copy, copied: checked } = useClipboard({ timeout: 2000 })
 
   const onClick = async () => {
@@ -147,21 +145,16 @@ export function PageActions({
     <Group className="inline-flex items-center rounded-xl bg-muted p-0.5 gap-1 transition-colors">
       {componentName && (
         <>
-          <Button
-            onClick={() => {
-              playSound('bloom')
-              toggle({ slug: componentName, title: prettify(componentName) })
-            }}
+          <FavoriteButton
+            slug={componentName}
+            title={prettify(componentName)}
+            showLabel
+            label="Favorite"
+            activeLabel="Favorited"
             variant="ghost"
-            className={cn(
-              'inline-flex items-center gap-1.5 px-2.5 bg-background hover:bg-background text-muted-foreground hover:text-foreground active:scale-[0.96] transition-all',
-              isBundled && 'bg-secondary border-4 border-background text-foreground font-semibold',
-            )}
-            title={isBundled ? 'Remove from bundle' : 'Add to bundle'}
-          >
-            <IconPackage className="size-3.5" />
-            <TextMorph>{isBundled ? 'In Bundle' : 'Bundle'}</TextMorph>
-          </Button>
+            size="default"
+            className="inline-flex items-center gap-1.5 px-2.5 h-7 bg-background hover:bg-background text-muted-foreground hover:text-foreground active:scale-[0.96] transition-all text-xs"
+          />
           <div className="h-3.5 w-px bg-border/60" />
         </>
       )}

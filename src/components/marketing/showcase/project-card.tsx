@@ -10,6 +10,7 @@ import { Badge } from '@/registry/components/spaceui/badge-squircle'
 import { Button } from '@/registry/components/button/button-squircle'
 import { LiquidBorder } from '@/registry/components/spaceui/liquid-metal-border'
 import { ProBadge } from '@/components/shared/pro-badge'
+import { useProAccess } from '@/components/providers/pro-access-provider'
 import { useInView } from '@/registry/hooks/animation/use-in-view'
 import { trackShowcasePreviewOpened, trackShowcaseGithubClicked, trackPaywallHit } from '@/lib/analytics/posthog'
 import type { ProjectItem } from '@/types/project'
@@ -20,6 +21,9 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, priority = false }: ProjectCardProps) {
+  const hasProAccess = useProAccess()
+  const isLocked = Boolean(project.isPro && !hasProAccess)
+
   // In-view memory management: unmount heavy image decodes when scrolled far off-screen
   const [containerRef, inView] = useInView({
     rootMargin: '350px 0px',
@@ -92,7 +96,7 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
               )}
             </div>
 
-            {project.isPro ? (
+            {isLocked ? (
               <Link
                 href="/pricing"
                 onClick={handlePaywallClick}
@@ -133,7 +137,7 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
                 <IconArrowUpRight className="size-3.5" />
               </Button>
             )}
-            {project.isPro ? (
+            {isLocked ? (
               <LiquidBorder className="inline-flex squircle rounded-full p-0.75">
                 <Button
                   variant="secondary"
@@ -161,7 +165,7 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
                       />
                     }
                     data-space-hover
-                    title="GitHub Repository"
+                    title={project.isPro ? 'GitHub Repository (Pro)' : 'GitHub Repository'}
                     className="cursor-pointer"
                   >
                     <IconBrandGithub className="size-3.5" />

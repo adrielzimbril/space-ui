@@ -73,6 +73,9 @@ export function InlineInstallBar({
     (rawPkg.startsWith(`${REGISTRY_NAMESPACE}/`) ||
       rawPkg.startsWith('components-') ||
       rawPkg.startsWith('primitives-') ||
+      rawPkg.startsWith('interactions-') ||
+      rawPkg.startsWith('block-') ||
+      rawPkg.startsWith('template-') ||
       rawPkg.startsWith('icons-') ||
       rawPkg.startsWith('hooks-') ||
       rawPkg.startsWith('p-') ||

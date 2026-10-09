@@ -3,12 +3,15 @@ import { RegistryGrid } from '@/components/marketing/landing/registry-grid'
 import { PackagesSection } from '@/components/marketing/landing/packages-section'
 import { ShowcaseSection } from '@/components/marketing/landing/showcase-section'
 import { TestimonialsSection } from '@/components/marketing/landing/testimonials'
+import { getHeroBadgePhrases } from '@/lib/registry-drops'
 
-export default function HomePage() {
+export default async function HomePage() {
+  const badgePhrases = await getHeroBadgePhrases(7)
+
   return (
     <main className="relative min-h-dvh bg-background text-foreground selection:bg-primary/20">
       {/* 1. Hero — Value proposition + CLI install bar */}
-      <Hero />
+      <Hero badgePhrases={badgePhrases} />
 
       {/* 2. Registry Grid — Real components, interactive previews, and real counters */}
       <RegistryGrid />

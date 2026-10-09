@@ -228,7 +228,7 @@ export function ShowcaseGallery({ projects }: ShowcaseGalleryProps) {
             <AnimatePresence mode="popLayout" initial={false}>
               {visibleProjects.map((project, idx) => (
                 <motion.div
-                  key={project.id ?? project.name ?? idx}
+                  key={project.name ?? idx}
                   layout
                   initial={{ opacity: 0, scale: 0.94, y: 12 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
